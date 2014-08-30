@@ -7,13 +7,16 @@
 //
 
 #import "AppDelegate.h"
+#import "Things.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+    Things *itemList = [[Things alloc] init];
+    UINavigationController *navCon = [[UINavigationController alloc] initWithRootViewController: itemList];
+    self.window.rootViewController = navCon;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
