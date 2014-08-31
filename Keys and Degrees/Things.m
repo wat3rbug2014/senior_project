@@ -16,7 +16,7 @@
 
 @implementation Things
 
-@synthesize deviceDB;
+@synthesize btManager;
 @synthesize addButton;
 
 static NSString *cellWithTemp = @"ShowTemp";
@@ -27,11 +27,8 @@ static NSString *cellBasic = @"Basic";
     self = [super initWithStyle:style];
     if (self) {
         self.title = @"Keys and Things";
-        // Custom initialization
-        // load core data
-        // get devices already saved
+        btManager = [[DeviceManager alloc] init];
         addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addDevicesToList)];
-        deviceDB = [[DeviceList alloc] init];
     }
     return self;
 }
@@ -59,14 +56,13 @@ static NSString *cellBasic = @"Basic";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return [deviceDB count];
+    return [btManager selectedDeviceCount];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    BTDeviceInfo *currentDevice = [deviceDB deviceAtIndex:indexPath.row];
-    
+    BTDeviceInfo *currentDevice = [btManager selectedDeviceAtIndex:indexPath.row];
     NSString *currentId;
     if ([currentDevice useTemp]) {
         currentId = cellWithTemp;
@@ -94,7 +90,7 @@ static NSString *cellBasic = @"Basic";
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [deviceDB removeDeviceAtIndex:indexPath.row];
+        [btManager removeDeviceAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -104,9 +100,9 @@ static NSString *cellBasic = @"Basic";
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     DeviceDetailVC *detailView = [[DeviceDetailVC alloc] initWithNibName:@"DeviceDetailVC" bundle:nil];
-    BTDeviceInfo *selectedItem = [deviceDB deviceAtIndex:indexPath.row];
+    BTDeviceInfo *selectedItem = [btManager selectedDeviceAtIndex:indexPath.row];
     [detailView setTitle: [[selectedItem deviceID] name]];
-    [detailView setBluetoothPeripheral:selectedItem];
+    [detailView setBtManager:btManager];
     [self.navigationController pushViewController:detailView animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
@@ -115,22 +111,9 @@ static NSString *cellBasic = @"Basic";
 #pragma mark DeviceDataSourceProtocol methods
 
 
--(void) updateDeviceListing:(BTDeviceInfo*) newListing {
+-(void) passReferenceToBTManager:(DeviceManager*) newListing {
     
-    NSLog(@"selected device is %@", [[newListing deviceID] name]);
-    bool isNew = true;
-    for (int i = 0; i < [deviceDB count]; i++) {
-        BTDeviceInfo *currentDevice = [deviceDB deviceAtIndex:i];
-        if ([currentDevice deviceID].identifier == [newListing deviceID].identifier) {
-            isNew = false;
-        }
-    }
-    NSLog(@"device count is %d", [deviceDB count]);
-    if (isNew) {
-        NSMutableArray *newDeviceListing = [NSMutableArray arrayWithArray:[deviceDB devices]];
-        [newDeviceListing addObject:newListing];
-        [deviceDB setDevices:newDeviceListing];
-    }
+    btManager = newListing;
     [self.tableView reloadData];
 }
 
@@ -142,6 +125,8 @@ static NSString *cellBasic = @"Basic";
     
     DiscoveryViewController *discoverDevices = [[DiscoveryViewController alloc] init];
     discoverDevices.deviceDataSourceDelegate = self;
+    [discoverDevices setBluetoothSearchBox:btManager];
     [self.navigationController pushViewController:discoverDevices animated:YES];
 }
+
 @end

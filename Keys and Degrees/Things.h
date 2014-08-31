@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "DeviceList.h"
 #import "DiscoveryViewController.h"
+#import "DeviceManager.h"
 
 @interface Things : UITableViewController <DeviceDataSourceProtocol>
 
 @property (nonatomic, assign) id delegate;
-@property (nonatomic, retain) DeviceList *deviceDB;
+@property (retain) DeviceManager *btManager;
 @property (nonatomic, retain) UIBarButtonItem *addButton;
 
 -(void) addDevicesToList;
