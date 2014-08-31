@@ -115,6 +115,7 @@ static NSString *cellBasic = @"Basic";
     DeviceDetailVC *detailView = [[DeviceDetailVC alloc] initWithNibName:@"DeviceDetailVC" bundle:nil];
     BTDeviceInfo *selectedItem = [deviceDB deviceAtIndex:indexPath.row];
     [detailView setTitle: [[selectedItem deviceID] name]];
+    [detailView setBluetoothPeripheral:selectedItem];
     [self.navigationController pushViewController:detailView animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
