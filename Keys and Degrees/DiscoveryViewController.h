@@ -16,4 +16,5 @@
 @property (retain) DeviceList *devices;
 @property (retain) DiscoveryController *bluetoothSearchBox;
 
+-(void) receivedNotificationOfBTDiscovery;
 @end

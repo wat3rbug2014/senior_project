@@ -7,7 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BTDeviceInfo.h"
+#import <CoreBluetooth/CoreBluetooth.h>
 
-@interface DiscoveryController : NSObject
+@interface DiscoveryController : NSObject <CBCentralManagerDelegate>
+
+@property CBCentralManager *btManager;
+@property NSArray *discoveredDevices;
+
+
+-(BTDeviceInfo*) getDeviceAtIndex: (NSUInteger) index;
+
 
 @end

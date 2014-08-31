@@ -7,6 +7,7 @@
 //
 
 #import "DiscoveryViewController.h"
+#import "BTDeviceInfo.h"
 
 @interface DiscoveryViewController ()
 
@@ -16,6 +17,8 @@
 
 @synthesize devices;
 @synthesize bluetoothSearchBox;
+static NSString *cellWithTemp = @"ShowTemp";
+static NSString *cellBasic = @"Basic";
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -23,7 +26,9 @@
     if (self) {
         bluetoothSearchBox = [[DiscoveryController alloc] init];
         self.title = @"Discovery";
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedNotificationOfBTDiscovery) name:@"BTDiscoveryChange" object:bluetoothSearchBox];
     }
+
     return self;
 }
 
@@ -53,21 +58,44 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+
+    return [devices count];
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    // get the information from the discovery controller
+    // create a BTDeviceInfo item
+    //BTDeviceInfo *selectedDevice = [[BTDeviceInfo alloc] init];
+    // add it to the DeviceList
+    // then call deselectRow
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    CBPeripheral *currentDevice = [devices deviceAtIndex:indexPath.row];
+    
+    NSString *currentId;
+    if (true    ) {
+        // use identifier for temp
+        
+        currentId = cellWithTemp;
+    } else {
+        // use identifier for no temp
+        
+        currentId = cellBasic;
+    }
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:currentId];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:currentId];
+    }
     
     // Configure the cell...
-    
+    [[cell textLabel] setText:[currentDevice name]];
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -118,4 +146,15 @@
 }
 */
 
+-(void) dealloc {
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"BTDiscoveryChange" object:bluetoothSearchBox];
+}
+
+-(void) receivedNotificationOfBTDiscovery {
+    
+    NSLog(@"Received notification");
+    [devices useDevices:[bluetoothSearchBox discoveredDevices]];
+    [self.tableView reloadData];
+}
 @end

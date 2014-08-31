@@ -19,6 +19,12 @@
 		A567A21F19B137EB00609221 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A567A20719B137EB00609221 /* UIKit.framework */; };
 		A567A22719B137EB00609221 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A567A22519B137EB00609221 /* InfoPlist.strings */; };
 		A567A22919B137EB00609221 /* Keys_and_DegreesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A567A22819B137EB00609221 /* Keys_and_DegreesTests.m */; };
+		A567A23419B1383F00609221 /* Things.m in Sources */ = {isa = PBXBuildFile; fileRef = A567A23319B1383F00609221 /* Things.m */; };
+		A567A23A19B144FD00609221 /* BTDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A567A23919B144FD00609221 /* BTDeviceInfo.m */; };
+		A567A23D19B2038000609221 /* DeviceList.m in Sources */ = {isa = PBXBuildFile; fileRef = A567A23C19B2038000609221 /* DeviceList.m */; };
+		A567A24019B20CAB00609221 /* DiscoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A567A23F19B20CAB00609221 /* DiscoveryViewController.m */; };
+		A567A24319B20D6C00609221 /* DiscoveryController.m in Sources */ = {isa = PBXBuildFile; fileRef = A567A24219B20D6C00609221 /* DiscoveryController.m */; };
+		A567A24519B2233D00609221 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A567A24419B2233D00609221 /* CoreBluetooth.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +54,17 @@
 		A567A22419B137EB00609221 /* Keys and DegreesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Keys and DegreesTests-Info.plist"; sourceTree = "<group>"; };
 		A567A22619B137EB00609221 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A567A22819B137EB00609221 /* Keys_and_DegreesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Keys_and_DegreesTests.m; sourceTree = "<group>"; };
+		A567A23219B1383F00609221 /* Things.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Things.h; sourceTree = "<group>"; };
+		A567A23319B1383F00609221 /* Things.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Things.m; sourceTree = "<group>"; };
+		A567A23819B144FD00609221 /* BTDeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDeviceInfo.h; sourceTree = "<group>"; };
+		A567A23919B144FD00609221 /* BTDeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTDeviceInfo.m; sourceTree = "<group>"; };
+		A567A23B19B2038000609221 /* DeviceList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceList.h; sourceTree = "<group>"; };
+		A567A23C19B2038000609221 /* DeviceList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceList.m; sourceTree = "<group>"; };
+		A567A23E19B20CAB00609221 /* DiscoveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoveryViewController.h; sourceTree = "<group>"; };
+		A567A23F19B20CAB00609221 /* DiscoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoveryViewController.m; sourceTree = "<group>"; };
+		A567A24119B20D6C00609221 /* DiscoveryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoveryController.h; sourceTree = "<group>"; };
+		A567A24219B20D6C00609221 /* DiscoveryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoveryController.m; sourceTree = "<group>"; };
+		A567A24419B2233D00609221 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A567A24519B2233D00609221 /* CoreBluetooth.framework in Frameworks */,
 				A567A20619B137EB00609221 /* CoreGraphics.framework in Frameworks */,
 				A567A20819B137EB00609221 /* UIKit.framework in Frameworks */,
 				A567A20419B137EB00609221 /* Foundation.framework in Frameworks */,
@@ -96,6 +114,7 @@
 		A567A20219B137EB00609221 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A567A24419B2233D00609221 /* CoreBluetooth.framework */,
 				A567A20319B137EB00609221 /* Foundation.framework */,
 				A567A20519B137EB00609221 /* CoreGraphics.framework */,
 				A567A20719B137EB00609221 /* UIKit.framework */,
@@ -111,6 +130,16 @@
 				A567A21319B137EB00609221 /* AppDelegate.m */,
 				A567A21519B137EB00609221 /* Images.xcassets */,
 				A567A20A19B137EB00609221 /* Supporting Files */,
+				A567A23219B1383F00609221 /* Things.h */,
+				A567A23319B1383F00609221 /* Things.m */,
+				A567A23819B144FD00609221 /* BTDeviceInfo.h */,
+				A567A23919B144FD00609221 /* BTDeviceInfo.m */,
+				A567A23B19B2038000609221 /* DeviceList.h */,
+				A567A23C19B2038000609221 /* DeviceList.m */,
+				A567A23E19B20CAB00609221 /* DiscoveryViewController.h */,
+				A567A23F19B20CAB00609221 /* DiscoveryViewController.m */,
+				A567A24119B20D6C00609221 /* DiscoveryController.h */,
+				A567A24219B20D6C00609221 /* DiscoveryController.m */,
 			);
 			path = "Keys and Degrees";
 			sourceTree = "<group>";
@@ -239,8 +268,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A567A23D19B2038000609221 /* DeviceList.m in Sources */,
+				A567A24319B20D6C00609221 /* DiscoveryController.m in Sources */,
 				A567A21419B137EB00609221 /* AppDelegate.m in Sources */,
+				A567A24019B20CAB00609221 /* DiscoveryViewController.m in Sources */,
+				A567A23A19B144FD00609221 /* BTDeviceInfo.m in Sources */,
 				A567A21019B137EB00609221 /* main.m in Sources */,
+				A567A23419B1383F00609221 /* Things.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

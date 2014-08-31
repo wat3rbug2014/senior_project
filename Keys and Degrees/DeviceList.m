@@ -12,6 +12,14 @@
 
 @synthesize devices;
 
+-(id) init {
+    
+    if (self = [super init]) {
+        [self loadDataStore];
+    }
+    return self;
+}
+
 -(NSInteger) count {
     
     return [devices count];
@@ -40,6 +48,29 @@
     [temp removeObjectAtIndex:index];
     devices = temp;
     [self updateDataStore];
+}
+
+-(CBPeripheral*) deviceAtIndex:(NSInteger)index {
+    
+    if (index >= 0 && index < [devices count]) {
+        return [devices objectAtIndex:index];
+    } else {
+        return nil;
+    }
+}
+-(void) useDevices:(NSArray *)newDevices {
+    
+    self.devices = newDevices;
+}
+
+-(void) loadDataStore {
+    
+    
+}
+
+-(void) saveDataStore {
+    
+    
 }
 
 -(void) updateDataStore {

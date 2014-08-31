@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "BTDeviceInfo.h"
+#import <CoreBluetooth/CoreBluetooth.h>
 
 @interface DeviceList : NSObject
 
@@ -15,6 +16,10 @@
 
 -(NSInteger) count;
 -(void) addDevice: (BTDeviceInfo*)device;
+-(void) useDevices: (NSArray*) newDevices;
 -(void) removeDevice: (NSString*)name;
+-(CBPeripheral*) deviceAtIndex: (NSInteger) index;
 -(void) updateDataStore;
+-(void) loadDataStore;
+-(void) saveDataStore;
 @end
