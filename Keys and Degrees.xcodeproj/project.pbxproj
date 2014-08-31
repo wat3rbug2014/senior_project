@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A550CCB519B2B5EA000361AE /* DeviceDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A550CCB319B2B5EA000361AE /* DeviceDetailVC.m */; };
+		A550CCB619B2B5EA000361AE /* DeviceDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A550CCB419B2B5EA000361AE /* DeviceDetailVC.xib */; };
 		A567A20419B137EB00609221 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A567A20319B137EB00609221 /* Foundation.framework */; };
 		A567A20619B137EB00609221 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A567A20519B137EB00609221 /* CoreGraphics.framework */; };
 		A567A20819B137EB00609221 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A567A20719B137EB00609221 /* UIKit.framework */; };
@@ -38,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A550CCB219B2B5EA000361AE /* DeviceDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceDetailVC.h; sourceTree = "<group>"; };
+		A550CCB319B2B5EA000361AE /* DeviceDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceDetailVC.m; sourceTree = "<group>"; };
+		A550CCB419B2B5EA000361AE /* DeviceDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviceDetailVC.xib; sourceTree = "<group>"; };
 		A567A20019B137EB00609221 /* Keys and Degrees.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Keys and Degrees.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A567A20319B137EB00609221 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A567A20519B137EB00609221 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -140,6 +145,9 @@
 				A567A23F19B20CAB00609221 /* DiscoveryViewController.m */,
 				A567A24119B20D6C00609221 /* DiscoveryController.h */,
 				A567A24219B20D6C00609221 /* DiscoveryController.m */,
+				A550CCB219B2B5EA000361AE /* DeviceDetailVC.h */,
+				A550CCB319B2B5EA000361AE /* DeviceDetailVC.m */,
+				A550CCB419B2B5EA000361AE /* DeviceDetailVC.xib */,
 			);
 			path = "Keys and Degrees";
 			sourceTree = "<group>";
@@ -249,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A567A20E19B137EB00609221 /* InfoPlist.strings in Resources */,
+				A550CCB619B2B5EA000361AE /* DeviceDetailVC.xib in Resources */,
 				A567A21619B137EB00609221 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,6 +284,7 @@
 				A567A23A19B144FD00609221 /* BTDeviceInfo.m in Sources */,
 				A567A21019B137EB00609221 /* main.m in Sources */,
 				A567A23419B1383F00609221 /* Things.m in Sources */,
+				A550CCB519B2B5EA000361AE /* DeviceDetailVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,4 +10,9 @@
 
 @interface DeviceDetailVC : UIViewController
 
+@property (nonatomic, retain) IBOutlet UISwitch *soundSelect;
+@property (nonatomic, retain) IBOutlet UILabel *soundSelectDisplay;
+@property BOOL useSounds;
+
+-(IBAction)changeSoundSetting:(id)sender;
 @end

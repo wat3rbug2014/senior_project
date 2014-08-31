@@ -14,11 +14,13 @@
 
 @implementation DeviceDetailVC
 
+@synthesize  useSounds;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        self.useSounds = true;
     }
     return self;
 }
@@ -35,4 +37,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark -
+#pragma mark Custom methods
+
+-(IBAction)changeSoundSetting:(id)sender {
+    
+    useSounds = !useSounds;
+    if (useSounds) {
+        NSLog(@"Sounds are on");
+    } else {
+        NSLog(@"Sounds are off");
+    }
+}
 @end
