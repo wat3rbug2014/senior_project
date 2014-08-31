@@ -15,7 +15,7 @@
 @property (retain) NSArray *devices;
 
 -(NSInteger) count;
--(void) addDevice: (BTDeviceInfo*)device;
+-(void) addDevice: (CBPeripheral*)device;
 -(void) useDevices: (NSArray*) newDevices;
 -(void) removeDevice: (NSString*)name;
 -(CBPeripheral*) deviceAtIndex: (NSInteger) index;

@@ -10,11 +10,18 @@
 #import "DeviceList.h"
 #import "DiscoveryController.h"
 
+@protocol DeviceDataSourceProtocol <NSObject>
+
+-(void) updateDeviceListing:(NSArray*) newListing;
+
+@end
+
 @interface DiscoveryViewController : UITableViewController
 
 
-@property (retain) DeviceList *devices;
+@property (retain) NSArray *devices;
 @property (retain) DiscoveryController *bluetoothSearchBox;
+@property (nonatomic,assign) id deviceDataSourceDelegate;
 
 -(void) receivedNotificationOfBTDiscovery;
 @end

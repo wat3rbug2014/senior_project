@@ -19,6 +19,7 @@
 @synthesize bluetoothSearchBox;
 static NSString *cellWithTemp = @"ShowTemp";
 static NSString *cellBasic = @"Basic";
+@synthesize deviceDataSourceDelegate;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -49,6 +50,13 @@ static NSString *cellBasic = @"Basic";
     // Dispose of any resources that can be recreated.
 }
 
+-(void) viewWillDisappear:(BOOL)animated {
+    
+    devices = [bluetoothSearchBox discoveredDevices];
+    [deviceDataSourceDelegate updateDeviceListing:devices];
+}
+
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -64,9 +72,7 @@ static NSString *cellBasic = @"Basic";
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    // get the information from the discovery controller
-    // create a BTDeviceInfo item
-    //BTDeviceInfo *selectedDevice = [[BTDeviceInfo alloc] init];
+    
     // add it to the DeviceList
     // then call deselectRow
 }
@@ -74,7 +80,7 @@ static NSString *cellBasic = @"Basic";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    CBPeripheral *currentDevice = [devices deviceAtIndex:indexPath.row];
+    CBPeripheral *currentDevice = [devices objectAtIndex:indexPath.row];
     
     NSString *currentId;
     if (true    ) {
@@ -154,7 +160,8 @@ static NSString *cellBasic = @"Basic";
 -(void) receivedNotificationOfBTDiscovery {
     
     NSLog(@"Received notification");
-    [devices useDevices:[bluetoothSearchBox discoveredDevices]];
+    NSLog(@"VC: devices count = %d\tbtSearch count = %d", [devices count], [[bluetoothSearchBox discoveredDevices] count]);
+    devices = [bluetoothSearchBox discoveredDevices];
     [self.tableView reloadData];
 }
 @end

@@ -59,6 +59,7 @@
         NSLog(@"Discovered %@", [peripheral name]);
         discoveredDevices = existingDiscoveredDevices;
         [[NSNotificationCenter defaultCenter] postNotificationName:@"BTDiscoveryChange" object:self];
+
     }
 }
 

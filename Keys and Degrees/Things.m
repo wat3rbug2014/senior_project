@@ -18,8 +18,11 @@
 @synthesize deviceDB;
 @synthesize addButton;
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
+static NSString *cellWithTemp = @"ShowTemp";
+static NSString *cellBasic = @"Basic";
+
+- (id)initWithStyle:(UITableViewStyle)style {
+    
     self = [super initWithStyle:style];
     if (self) {
         self.title = @"Keys and Things";
@@ -62,18 +65,31 @@
     return [deviceDB count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    // figure out if the cell needs to display
+    CBPeripheral *currentDevice = [deviceDB deviceAtIndex:indexPath.row];
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    NSString *currentId;
+    if (true    ) {
+        // use identifier for temp
+        
+        currentId = cellWithTemp;
+    } else {
+        // use identifier for no temp
+        
+        currentId = cellBasic;
+    }
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:currentId];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:currentId];
+    }
     
     // Configure the cell...
-    
+    [[cell textLabel] setText:[currentDevice name]];
     return cell;
 }
-*/
+
 
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -121,10 +137,15 @@
 }
 */
 
+-(void) updateDeviceListing:(NSArray*) newListing {
+    
+    [deviceDB useDevices: newListing];
+}
+
 -(void) addDevicesToList {
     
     DiscoveryViewController *discoverDevices = [[DiscoveryViewController alloc] init];
-    [discoverDevices setDevices:self.deviceDB];
+    discoverDevices.deviceDataSourceDelegate = self;
     [self.navigationController pushViewController:discoverDevices animated:YES];
 }
 @end

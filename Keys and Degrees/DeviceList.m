@@ -25,7 +25,7 @@
     return [devices count];
 }
 
--(void) addDevice:(BTDeviceInfo *)device {
+-(void) addDevice:(CBPeripheral *)device {
     
     // see if this is the way to change an array -- been a while
     
@@ -39,7 +39,7 @@
     
     int index = 0;
     for (int i = 0; i < [devices count]; i++) {
-        BTDeviceInfo *currentDevice = [devices objectAtIndex:i];
+        CBPeripheral *currentDevice = [devices objectAtIndex:i];
         if ([[currentDevice name] isEqualToString:name]) {
             index = i;
         }
@@ -60,7 +60,8 @@
 }
 -(void) useDevices:(NSArray *)newDevices {
     
-    self.devices = newDevices;
+    NSMutableArray *temp = [NSMutableArray arrayWithArray:newDevices];
+    self.devices = temp;
 }
 
 -(void) loadDataStore {
