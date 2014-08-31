@@ -12,7 +12,7 @@
 
 @protocol DeviceDataSourceProtocol <NSObject>
 
--(void) updateDeviceListing:(CBPeripheral*) newListing;
+-(void) updateDeviceListing:(BTDeviceInfo*) newListing;
 
 @end
 
@@ -22,7 +22,7 @@
 @property (retain) NSArray *devices;
 @property (retain) DiscoveryController *bluetoothSearchBox;
 @property (nonatomic,assign) id deviceDataSourceDelegate;
-@property (nonatomic, retain) CBPeripheral *selectedDevice;
+@property (nonatomic, retain) BTDeviceInfo *selectedDevice;
 
 -(void) receivedNotificationOfBTDiscovery;
 @end

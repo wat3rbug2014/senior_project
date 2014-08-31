@@ -471,6 +471,7 @@
 				A567A22E19B137EB00609221 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A567A22F19B137EB00609221 /* Build configuration list for PBXNativeTarget "Keys and DegreesTests" */ = {
 			isa = XCConfigurationList;
@@ -479,6 +480,7 @@
 				A567A23119B137EB00609221 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

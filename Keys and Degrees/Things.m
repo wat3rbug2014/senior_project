@@ -68,7 +68,7 @@ static NSString *cellBasic = @"Basic";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    CBPeripheral *currentDevice = [deviceDB deviceAtIndex:indexPath.row];
+    BTDeviceInfo *currentDevice = [deviceDB deviceAtIndex:indexPath.row];
     
     NSString *currentId;
     if (true    ) {
@@ -86,7 +86,7 @@ static NSString *cellBasic = @"Basic";
     }
     
     // Configure the cell...
-    [[cell textLabel] setText:[currentDevice name]];
+    [[cell textLabel] setText:[currentDevice deviceID].name];
     return cell;
 }
 
@@ -137,15 +137,15 @@ static NSString *cellBasic = @"Basic";
 }
 */
 
--(void) updateDeviceListing:(CBPeripheral*) newListing {
+-(void) updateDeviceListing:(BTDeviceInfo*) newListing {
     
     // see if device is in the listings
     // add it if it is new
-    NSLog(@"selected device is %@", [newListing name]);
+    NSLog(@"selected device is %@", [[newListing deviceID] name]);
     bool isNew = true;
     for (int i = 0; i < [deviceDB count]; i++) {
-        CBPeripheral *currentDevice = [deviceDB deviceAtIndex:i];
-        if (currentDevice.UUID == newListing.UUID) {
+        BTDeviceInfo *currentDevice = [deviceDB deviceAtIndex:i];
+        if ([currentDevice deviceID].UUID == [newListing deviceID].UUID) {
             isNew = false;
         }
     }

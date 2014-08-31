@@ -73,8 +73,8 @@ static NSString *cellBasic = @"Basic";
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    
-    selectedDevice = [devices objectAtIndex:indexPath.row];
+    BTDeviceInfo *newSelection = [[BTDeviceInfo alloc] initWithDevice:[devices objectAtIndex:indexPath.row]];
+    selectedDevice = newSelection;
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     [self.navigationController popViewControllerAnimated:YES];
 }

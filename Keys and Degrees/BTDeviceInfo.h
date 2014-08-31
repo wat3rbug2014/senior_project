@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreBluetooth/CoreBluetooth.h>
 
 @interface BTDeviceInfo : NSObject
 
-@property NSString *name;
-@property NSString *alias;
 @property int temp;
 @property BOOL useTemp;
-@property NSString *deviceID;
+@property CBPeripheral *deviceID;
 
+-(id) initWithDevice:(CBPeripheral*) newDevice;
 @end

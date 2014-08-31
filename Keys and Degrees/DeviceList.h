@@ -18,7 +18,7 @@
 -(void) addDevice: (CBPeripheral*)device;
 -(void) useDevices: (NSArray*) newDevices;
 -(void) removeDevice: (NSString*)name;
--(CBPeripheral*) deviceAtIndex: (NSInteger) index;
+-(BTDeviceInfo*) deviceAtIndex: (NSInteger) index;
 -(void) updateDataStore;
 -(void) loadDataStore;
 -(void) saveDataStore;
