@@ -11,9 +11,9 @@
 
 @interface BTDeviceInfo : NSObject
 
+@property CBPeripheral *deviceID;
 @property int temp;
 @property BOOL useTemp;
-@property CBPeripheral *deviceID;
 
 -(id) initWithDevice:(CBPeripheral*) newDevice;
 @end

@@ -12,6 +12,10 @@
 
 @synthesize devices;
 
+#pragma mark -
+#pragma Super class methods
+
+
 -(id) init {
     
     if (self = [super init]) {
@@ -20,14 +24,11 @@
     return self;
 }
 
--(NSInteger) count {
-    
-    return [devices count];
-}
+#pragma mark -
+#pragma mark Custom methods
+
 
 -(void) addDevice:(CBPeripheral *)device {
-    
-    // see if this is the way to change an array -- been a while
     
     BTDeviceInfo *newDevice = [[BTDeviceInfo alloc] initWithDevice:device];
     NSMutableArray *temp = [NSMutableArray arrayWithArray:devices];
@@ -36,11 +37,23 @@
     [self updateDataStore];
 }
 
--(void) removeDeviceAtIndex: (NSInteger) index {
+-(NSInteger) count {
     
-    NSMutableArray *temp = [NSMutableArray arrayWithArray:devices];
-    [temp removeObjectAtIndex:index];
-    devices = temp;
+    return [devices count];
+}
+
+-(BTDeviceInfo*) deviceAtIndex:(NSInteger)index {
+    
+    if (index >= 0 && index < [devices count]) {
+        return [devices objectAtIndex:index];
+    } else {
+        return nil;
+    }
+}
+
+-(void) loadDataStore {
+    
+    
 }
 
 -(void) removeDevice:(NSString *)name {
@@ -58,23 +71,11 @@
     [self updateDataStore];
 }
 
--(BTDeviceInfo*) deviceAtIndex:(NSInteger)index {
+-(void) removeDeviceAtIndex: (NSInteger) index {
     
-    if (index >= 0 && index < [devices count]) {
-        return [devices objectAtIndex:index];
-    } else {
-        return nil;
-    }
-}
--(void) useDevices:(NSArray *)newDevices {
-    
-    NSMutableArray *temp = [NSMutableArray arrayWithArray:newDevices];
-    self.devices = temp;
-}
-
--(void) loadDataStore {
-    
-    
+    NSMutableArray *temp = [NSMutableArray arrayWithArray:devices];
+    [temp removeObjectAtIndex:index];
+    devices = temp;
 }
 
 -(void) saveDataStore {
@@ -86,4 +87,11 @@
     
     
 }
+
+-(void) useDevices:(NSArray *)newDevices {
+    
+    NSMutableArray *temp = [NSMutableArray arrayWithArray:newDevices];
+    self.devices = temp;
+}
+
 @end

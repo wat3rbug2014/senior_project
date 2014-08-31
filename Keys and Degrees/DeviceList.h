@@ -14,13 +14,14 @@
 
 @property (retain) NSArray *devices;
 
--(NSInteger) count;
 -(void) addDevice: (CBPeripheral*)device;
--(void) useDevices: (NSArray*) newDevices;
--(void) removeDevice: (NSString*)name;
+-(NSInteger) count;
 -(BTDeviceInfo*) deviceAtIndex: (NSInteger) index;
--(void) updateDataStore;
 -(void) loadDataStore;
--(void) saveDataStore;
+-(void) removeDevice: (NSString*)name;
 -(void) removeDeviceAtIndex: (NSInteger) index;
+-(void) saveDataStore;
+-(void) updateDataStore;
+-(void) useDevices: (NSArray*) newDevices;
+
 @end

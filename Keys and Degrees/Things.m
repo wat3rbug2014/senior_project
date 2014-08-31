@@ -69,12 +69,8 @@ static NSString *cellBasic = @"Basic";
     
     NSString *currentId;
     if ([currentDevice useTemp]) {
-        // use identifier for temp
-        
         currentId = cellWithTemp;
     } else {
-        // use identifier for no temp
-        
         currentId = cellBasic;
     }
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:currentId];
@@ -86,20 +82,14 @@ static NSString *cellBasic = @"Basic";
             [[cell detailTextLabel] setText:@"Temperature"];
         }
     }
-    
-    // Configure the cell...
     [[cell textLabel] setText:[currentDevice deviceID].name];
     return cell;
 }
-
-
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     
     return YES;
 }
-
-
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -121,37 +111,12 @@ static NSString *cellBasic = @"Basic";
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
+#pragma mark -
+#pragma mark DeviceDataSourceProtocol methods
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 -(void) updateDeviceListing:(BTDeviceInfo*) newListing {
     
-    // see if device is in the listings
-    // add it if it is new
     NSLog(@"selected device is %@", [[newListing deviceID] name]);
     bool isNew = true;
     for (int i = 0; i < [deviceDB count]; i++) {
@@ -168,6 +133,10 @@ static NSString *cellBasic = @"Basic";
     }
     [self.tableView reloadData];
 }
+
+#pragma mark -
+#pragma mark Custom methods
+
 
 -(void) addDevicesToList {
     

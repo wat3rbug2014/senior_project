@@ -18,11 +18,11 @@
 
 @interface DiscoveryViewController : UITableViewController
 
-
-@property (retain) NSArray *devices;
 @property (retain) DiscoveryController *bluetoothSearchBox;
+@property (retain) NSArray *devices;
 @property (nonatomic,assign) id deviceDataSourceDelegate;
 @property (nonatomic, retain) BTDeviceInfo *selectedDevice;
 
 -(void) receivedNotificationOfBTDiscovery;
+
 @end

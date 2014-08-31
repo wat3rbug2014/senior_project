@@ -13,10 +13,6 @@
 @interface DiscoveryController : NSObject <CBCentralManagerDelegate, CBPeripheralDelegate>
 
 @property CBCentralManager *btManager;
-@property NSArray *discoveredDevices;
-
-
--(BTDeviceInfo*) getDeviceAtIndex: (NSUInteger) index;
-
+@property (strong) NSArray *discoveredDevices;
 
 @end

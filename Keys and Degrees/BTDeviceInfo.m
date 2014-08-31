@@ -10,15 +10,14 @@
 
 @implementation BTDeviceInfo
 
-@synthesize temp;
 @synthesize deviceID;
+@synthesize temp;
 @synthesize useTemp;
 
 -(id) initWithDevice:(CBPeripheral *)newDevice {
     
     if (self = [super init]) {
         deviceID = newDevice;
-        //[newDevice discoverServices:nil];
     }
     return self;
 }

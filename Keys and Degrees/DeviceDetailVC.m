@@ -14,12 +14,16 @@
 
 @implementation DeviceDetailVC
 
-@synthesize  useSounds;
 @synthesize btManager;
 @synthesize bluetoothPeripheral;
+@synthesize useSounds;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+#pragma mark -
+#pragma mark Super class methods
+
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.useSounds = true;
@@ -28,10 +32,9 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
+    
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,16 +52,25 @@
         [btManager cancelPeripheralConnection:[bluetoothPeripheral deviceID]];
     }
 }
+
 #pragma mark -
 #pragma CBCentralManagerDelegate Protocol methods
+
 
 -(void) centralManagerDidUpdateState:(CBCentralManager *)central {
     
     if ([central state] == CBCentralManagerStatePoweredOn) {
         [[bluetoothPeripheral deviceID] setDelegate:self];
-        [btManager connectPeripheral:[bluetoothPeripheral deviceID] options:nil];
-        NSLog(@"Connecting to %@", [[bluetoothPeripheral deviceID] name]);
+        if ([[bluetoothPeripheral deviceID] state] == CBPeripheralStateDisconnected) {
+            [btManager connectPeripheral:[bluetoothPeripheral deviceID] options:nil];
+            NSLog(@"Detail: Connecting to %@", [[bluetoothPeripheral deviceID] name]);
+            [[bluetoothPeripheral deviceID] readRSSI];
+            NSLog(@"%@ signal strength is %@ dB", [[bluetoothPeripheral deviceID] name], [[bluetoothPeripheral deviceID] RSSI]);
+        }
         // do subscription to service to receive updates
+    }
+    if ([central state] == CBCentralManagerStateResetting || [central state] == CBCentralManagerStatePoweredOff) {
+        NSLog(@"Lost the manager...");
     }
 }
 
@@ -82,9 +94,18 @@
     // start doing RSSI and temp readings and doing routine
     
     NSLog(@"Connected to %@", [peripheral name]);
+    
 }
 
+#pragma mark -
+#pragma mark CBPeripheralManagerDelegate methods
 
+-(void) peripheralDidUpdateRSSI:(CBPeripheral *)peripheral error:(NSError *)error {
+    
+    if (error != nil) {
+        NSLog(@"error is %@", [error description]);
+    }
+}
 
 #pragma mark -
 #pragma mark Custom methods

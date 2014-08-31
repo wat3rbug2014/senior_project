@@ -10,33 +10,27 @@
 
 @implementation DiscoveryController
 
+@synthesize btManager;
+@synthesize discoveredDevices;
+
+#pragma mark -
+#pragma mark Super class methods
+
 
 -(id) init {
     
     if (self = [super init]) {
         discoveredDevices = nil;
-        // fix this to scan for temperature and proximity options
-        
         btManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil options:nil];
-        
     }
     return self;
-}
-
-@synthesize discoveredDevices;
-@synthesize btManager;
-
--(BTDeviceInfo*) getDeviceAtIndex: (NSUInteger) index {
-    
-    BTDeviceInfo *currentDevice = [[BTDeviceInfo alloc] init];
-    // some code to
-    return currentDevice;
 }
 
 -(void) dealloc {
     
     if ([btManager state] == CBCentralManagerStateUnknown || [btManager state] == CBCentralManagerStatePoweredOn || [btManager state] == CBCentralManagerStateResetting) {
         [btManager stopScan];
+        btManager = nil;
         NSLog(@"Scanning stopped");
     }
 }
@@ -44,11 +38,15 @@
 #pragma mark -
 #pragma CBCentralManagerDelegate Protocol methods
 
+
 -(void) centralManagerDidUpdateState:(CBCentralManager *)central {
     
     if ([central state] == CBCentralManagerStatePoweredOn) {
         [btManager scanForPeripheralsWithServices:nil options:nil];
         NSLog(@"Starting scan...");
+    }
+    if ([central state] == CBCentralManagerStatePoweredOff || [central state] == CBCentralManagerStateResetting) {
+        NSLog(@"Lost the manager...");
     }
 }
 
@@ -75,9 +73,9 @@
     [peripheral discoverServices:[NSArray arrayWithObject: tempSrvID]];
 }
 
-
 #pragma mark -
 #pragma mark CBPeripheral methods
+
 
 -(void) peripheral:(CBPeripheral *)peripheral didDiscoverServices:(NSError *)error {
     
@@ -85,4 +83,5 @@
         NSLog(@"Discovered %@", service);
     }
 }
+
 @end
