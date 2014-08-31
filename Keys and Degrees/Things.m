@@ -36,14 +36,10 @@ static NSString *cellBasic = @"Basic";
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
+    
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
     self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
     self.navigationItem.rightBarButtonItem = addButton;
 }
@@ -54,7 +50,7 @@ static NSString *cellBasic = @"Basic";
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
+#pragma mark - TableViewDataSource delegate methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
@@ -83,7 +79,12 @@ static NSString *cellBasic = @"Basic";
     }
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:currentId];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:currentId];
+        if (currentId == cellBasic) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:currentId];
+        } else {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:currentId];
+            [[cell detailTextLabel] setText:@"Temperature"];
+        }
     }
     
     // Configure the cell...
@@ -155,7 +156,7 @@ static NSString *cellBasic = @"Basic";
     bool isNew = true;
     for (int i = 0; i < [deviceDB count]; i++) {
         BTDeviceInfo *currentDevice = [deviceDB deviceAtIndex:i];
-        if ([currentDevice deviceID].UUID == [newListing deviceID].UUID) {
+        if ([currentDevice deviceID].identifier == [newListing deviceID].identifier) {
             isNew = false;
         }
     }

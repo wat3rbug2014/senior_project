@@ -76,6 +76,9 @@ static NSString *cellBasic = @"Basic";
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     BTDeviceInfo *newSelection = [[BTDeviceInfo alloc] initWithDevice:[devices objectAtIndex:indexPath.row]];
+    if (![[[newSelection deviceID] name] isEqualToString:@"Apple TV"] ) {
+        [newSelection setUseTemp:YES];
+    }
     selectedDevice = newSelection;
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     [self.navigationController popViewControllerAnimated:YES];
@@ -163,8 +166,9 @@ static NSString *cellBasic = @"Basic";
 
 -(void) receivedNotificationOfBTDiscovery {
     
-    NSLog(@"Received notification");
+    NSLog(@"Received notification.  Device count is %d", [[bluetoothSearchBox discoveredDevices] count]);
     devices = [bluetoothSearchBox discoveredDevices];
+    
     [self.tableView reloadData];
 }
 @end

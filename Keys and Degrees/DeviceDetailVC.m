@@ -58,7 +58,7 @@
         [[bluetoothPeripheral deviceID] setDelegate:self];
         [btManager connectPeripheral:[bluetoothPeripheral deviceID] options:nil];
         NSLog(@"Connecting to %@", [[bluetoothPeripheral deviceID] name]);
-        [[bluetoothPeripheral deviceID] discoverServices:nil];
+        // do subscription to service to receive updates
     }
 }
 

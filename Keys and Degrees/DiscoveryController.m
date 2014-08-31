@@ -60,8 +60,7 @@
         NSLog(@"Discovered %@", [peripheral name]);
         discoveredDevices = existingDiscoveredDevices;
         [[NSNotificationCenter defaultCenter] postNotificationName:@"BTDiscoveryChange" object:self];
-        [btManager connectPeripheral:peripheral options:nil];
-
+        //[btManager connectPeripheral:peripheral options:nil];
     }
 }
 
@@ -69,9 +68,11 @@
     
     NSLog(@"Connected to %@", [peripheral name]);
     [peripheral setDelegate:self];
+    
+    // fix this so name and temp guage will be checked
+    
     CBUUID *tempSrvID = [CBUUID UUIDWithString:@"0008"];
     [peripheral discoverServices:[NSArray arrayWithObject: tempSrvID]];
-    //[peripheral discoverServices:nil];
 }
 
 
