@@ -35,6 +35,13 @@
     [self updateDataStore];
 }
 
+-(void) removeDeviceAtIndex: (NSInteger) index {
+    
+    NSMutableArray *temp = [NSMutableArray arrayWithArray:devices];
+    [temp removeObjectAtIndex:index];
+    devices = temp;
+}
+
 -(void) removeDevice:(NSString *)name {
     
     int index = 0;

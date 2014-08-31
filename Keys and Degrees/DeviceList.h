@@ -22,4 +22,5 @@
 -(void) updateDataStore;
 -(void) loadDataStore;
 -(void) saveDataStore;
+-(void) removeDeviceAtIndex: (NSInteger) index;
 @end

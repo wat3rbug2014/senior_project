@@ -102,7 +102,7 @@ static NSString *cellBasic = @"Basic";
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
+        [deviceDB removeDeviceAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -137,9 +137,25 @@ static NSString *cellBasic = @"Basic";
 }
 */
 
--(void) updateDeviceListing:(NSArray*) newListing {
+-(void) updateDeviceListing:(CBPeripheral*) newListing {
     
-    [deviceDB useDevices: newListing];
+    // see if device is in the listings
+    // add it if it is new
+    NSLog(@"selected device is %@", [newListing name]);
+    bool isNew = true;
+    for (int i = 0; i < [deviceDB count]; i++) {
+        CBPeripheral *currentDevice = [deviceDB deviceAtIndex:i];
+        if (currentDevice.UUID == newListing.UUID) {
+            isNew = false;
+        }
+    }
+    NSLog(@"device count is %d", [deviceDB count]);
+    if (isNew) {
+        NSMutableArray *newDeviceListing = [NSMutableArray arrayWithArray:[deviceDB devices]];
+        [newDeviceListing addObject:newListing];
+        [deviceDB setDevices:newDeviceListing];
+    }
+    [self.tableView reloadData];
 }
 
 -(void) addDevicesToList {
