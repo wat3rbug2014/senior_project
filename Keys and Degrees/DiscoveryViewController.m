@@ -20,6 +20,8 @@
 static NSString *cellWithTemp = @"ShowTemp";
 static NSString *cellBasic = @"Basic";
 @synthesize deviceDataSourceDelegate;
+@synthesize selectedDevice;
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -52,8 +54,7 @@ static NSString *cellBasic = @"Basic";
 
 -(void) viewWillDisappear:(BOOL)animated {
     
-    devices = [bluetoothSearchBox discoveredDevices];
-    [deviceDataSourceDelegate updateDeviceListing:devices];
+    [deviceDataSourceDelegate updateDeviceListing:selectedDevice];
 }
 
 
@@ -73,8 +74,9 @@ static NSString *cellBasic = @"Basic";
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     
-    // add it to the DeviceList
-    // then call deselectRow
+    selectedDevice = [devices objectAtIndex:indexPath.row];
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 
@@ -160,7 +162,6 @@ static NSString *cellBasic = @"Basic";
 -(void) receivedNotificationOfBTDiscovery {
     
     NSLog(@"Received notification");
-    NSLog(@"VC: devices count = %d\tbtSearch count = %d", [devices count], [[bluetoothSearchBox discoveredDevices] count]);
     devices = [bluetoothSearchBox discoveredDevices];
     [self.tableView reloadData];
 }
