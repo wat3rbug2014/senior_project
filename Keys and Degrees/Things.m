@@ -8,6 +8,7 @@
 
 #import "Things.h"
 #import "DiscoveryViewController.h"
+#import "DeviceDetailVC.h"
 
 @interface Things ()
 
@@ -71,7 +72,7 @@ static NSString *cellBasic = @"Basic";
     BTDeviceInfo *currentDevice = [deviceDB deviceAtIndex:indexPath.row];
     
     NSString *currentId;
-    if (true    ) {
+    if ([currentDevice useTemp]) {
         // use identifier for temp
         
         currentId = cellWithTemp;
@@ -109,6 +110,14 @@ static NSString *cellBasic = @"Basic";
     }   
 }
 
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    DeviceDetailVC *detailView = [[DeviceDetailVC alloc] initWithNibName:@"DeviceDetailVC" bundle:nil];
+    BTDeviceInfo *selectedItem = [deviceDB deviceAtIndex:indexPath.row];
+    [detailView setTitle: [[selectedItem deviceID] name]];
+    [self.navigationController pushViewController:detailView animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 
 /*
 // Override to support rearranging the table view.
