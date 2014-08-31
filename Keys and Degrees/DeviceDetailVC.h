@@ -10,7 +10,7 @@
 #import <CoreBluetooth/CoreBluetooth.h>
 #import "BTDeviceInfo.h"
 
-@interface DeviceDetailVC : UIViewController <CBCentralManagerDelegate>
+@interface DeviceDetailVC : UIViewController <CBCentralManagerDelegate, CBPeripheralDelegate>
 
 @property (nonatomic, retain) IBOutlet UISwitch *soundSelect;
 @property (nonatomic, retain) IBOutlet UILabel *soundSelectDisplay;

@@ -53,14 +53,35 @@
 }
 
 -(void) centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI {
+    
     if ([peripheral name] != NULL) {
         NSMutableArray *existingDiscoveredDevices = [NSMutableArray arrayWithArray:discoveredDevices];
         [existingDiscoveredDevices addObject:peripheral];
         NSLog(@"Discovered %@", [peripheral name]);
         discoveredDevices = existingDiscoveredDevices;
         [[NSNotificationCenter defaultCenter] postNotificationName:@"BTDiscoveryChange" object:self];
+        [btManager connectPeripheral:peripheral options:nil];
 
     }
 }
 
+-(void) centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral {
+    
+    NSLog(@"Connected to %@", [peripheral name]);
+    [peripheral setDelegate:self];
+    CBUUID *tempSrvID = [CBUUID UUIDWithString:@"0008"];
+    [peripheral discoverServices:[NSArray arrayWithObject: tempSrvID]];
+    //[peripheral discoverServices:nil];
+}
+
+
+#pragma mark -
+#pragma mark CBPeripheral methods
+
+-(void) peripheral:(CBPeripheral *)peripheral didDiscoverServices:(NSError *)error {
+    
+    for (CBService *service in [peripheral services]) {
+        NSLog(@"Discovered %@", service);
+    }
+}
 @end

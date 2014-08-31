@@ -54,7 +54,9 @@ static NSString *cellBasic = @"Basic";
 
 -(void) viewWillDisappear:(BOOL)animated {
     
-    [deviceDataSourceDelegate updateDeviceListing:selectedDevice];
+    if (selectedDevice != nil) {
+        [deviceDataSourceDelegate updateDeviceListing:selectedDevice];
+    }
 }
 
 

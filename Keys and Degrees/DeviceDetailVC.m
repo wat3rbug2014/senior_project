@@ -55,8 +55,10 @@
 -(void) centralManagerDidUpdateState:(CBCentralManager *)central {
     
     if ([central state] == CBCentralManagerStatePoweredOn) {
+        [[bluetoothPeripheral deviceID] setDelegate:self];
         [btManager connectPeripheral:[bluetoothPeripheral deviceID] options:nil];
         NSLog(@"Connecting to %@", [[bluetoothPeripheral deviceID] name]);
+        [[bluetoothPeripheral deviceID] discoverServices:nil];
     }
 }
 

@@ -10,7 +10,7 @@
 #import "BTDeviceInfo.h"
 #import <CoreBluetooth/CoreBluetooth.h>
 
-@interface DiscoveryController : NSObject <CBCentralManagerDelegate>
+@interface DiscoveryController : NSObject <CBCentralManagerDelegate, CBPeripheralDelegate>
 
 @property CBCentralManager *btManager;
 @property NSArray *discoveredDevices;
