@@ -15,9 +15,12 @@
 @interface DeviceDetailVC : UIViewController <AVAudioPlayerDelegate>
 
 @property DeviceManager *btManager;
+@property (nonatomic, retain) IBOutlet UILabel *distanceDisplay;
 @property (nonatomic, retain) AVAudioPlayer *soundPlayer;
 @property (nonatomic, retain) IBOutlet UISwitch *soundSelect;
 @property BOOL useSounds;
 
+-(NSInteger) calculateDistanceWithTXPwr: (NSInteger) power;
 -(IBAction)changeSoundSetting:(id)sender;
+-(void) flashTheScreen;
 @end

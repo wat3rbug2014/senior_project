@@ -39,7 +39,6 @@
     
     if ([btManager state] == CBCentralManagerStateUnknown || [btManager state] == CBCentralManagerStatePoweredOn || [btManager state] == CBCentralManagerStateResetting) {
         [btManager stopScan];
-        btManager = nil;
         if (monitoringTimer != nil) {
             [monitoringTimer invalidate];
             monitoringTimer = nil;
@@ -183,6 +182,8 @@
     if (deviceInUse != nil) {
         NSLog(@"start monitoring %@", [[deviceInUse deviceID] name]);
         [btManager connectPeripheral:[deviceInUse deviceID] options:nil];
+    } else {
+        NSLog(@"Failed to start monitoring");
     }
 }
 
@@ -210,8 +211,10 @@
 
 -(void) stopMonitoring {
     
-    [btManager cancelPeripheralConnection:[deviceInUse deviceID]];
-    NSLog(@"stop monitoring %@", [[deviceInUse deviceID] name]);
+    if (deviceInUse != nil) {
+        [btManager cancelPeripheralConnection:[deviceInUse deviceID]];
+        NSLog(@"stop monitoring %@", [[deviceInUse deviceID] name]);
+    }
     [monitoringTimer invalidate];
     monitoringTimer = nil;
 }

@@ -15,6 +15,7 @@
 @implementation DeviceDetailVC
 
 @synthesize btManager;
+@synthesize distanceDisplay;
 @synthesize soundPlayer;
 @synthesize soundSelect;
 @synthesize useSounds;
@@ -34,31 +35,37 @@
     return self;
 }
 
+-(void) dealloc {
+    
+    [btManager stopMonitoring];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"BTMonitoringUpdate" object:btManager];
+}
+
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    [distanceDisplay setText:nil];
     [btManager setManagerDelegate:self];
     [btManager startMonitoring];
-    NSString *soundFile = [[NSBundle mainBundle] pathForResource:@"Ping 1" ofType:AVFileTypeAppleM4A];
-    NSURL *soundFileLocation = [NSURL URLWithString:soundFile];
+    NSString *soundFile = [[NSBundle mainBundle] pathForResource:@"Ping" ofType:@"m4a"];
+    NSURL *soundFileLocation = [[NSURL alloc] initFileURLWithPath:soundFile];
     NSError *error;
-    soundPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFileLocation fileTypeHint:AVFileTypeAppleM4A error:&error];
+    soundPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFileLocation error:&error];
     [soundPlayer prepareToPlay];
     if (error != nil) {
         NSLog(@"error is %@", [error description]);
     }
     [soundPlayer setDelegate:self];
-    if ([soundPlayer url] == nil) {
-        NSLog(@"Fix the file location");
-    }
-    
 }
 
--(void) dealloc {
+-(void) viewWillAppear:(BOOL)animated {
+    
+    NSLog(@"going to appear");
+}
+-(void) viewWillDisappear:(BOOL)animated {
     
     [btManager stopMonitoring];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"BTMonitoringUpdate" object:btManager];
-    [btManager setDeviceInUse:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -80,6 +87,18 @@
     }
 }
 
+-(NSInteger) calculateDistanceWithTXPwr: (NSInteger) power {
+    
+    NSInteger result = 0;
+    
+    return result;
+}
+
+-(void) flashTheScreen {
+    
+    NSLog(@"screen flash");
+}
+
 #pragma mark -
 #pragma mark BTManagerNotifcation methods
 
@@ -90,9 +109,35 @@
     if (useSounds) {
         [soundPlayer play];
     }
-    // play sound
+    NSInteger distance = [self calculateDistanceWithTXPwr:0]; // need variable here from peripheral
+    [distanceDisplay setText: [NSString stringWithFormat:@"%d ft", distance]];
+    if ([[btManager deviceInUse] useTemp]) {
+        
+        // get temperature from peripheral and display it
+    }
     // update color
-    // update temperature if available
+}
+
+#pragma mark -
+#pragma mark AVAudioPlayerDelegate methods
+
+
+-(void) audioPlayerBeginInterruption:(AVAudioPlayer *)player {
+    
+    NSLog(@"sounds interrupted");
+    useSounds = false;
+}
+
+-(void) audioPlayerEndInterruption:(AVAudioPlayer *)player withOptions:(NSUInteger)flags {
+    
+    NSLog(@"sound interruption ended");
+    useSounds = [soundSelect isOn];
+}
+
+-(void) audioPlayerDecodeErrorDidOccur:(AVAudioPlayer *)player error:(NSError *)error {
+    
+    // do nothing because I want silent fail
+    NSLog(@"silent fail of sound");
 }
 
 @end
