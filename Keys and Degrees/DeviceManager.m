@@ -13,6 +13,7 @@
 @synthesize btManager;
 @synthesize deviceInUse;
 @synthesize discoveredDevices;
+@synthesize managerDelegate;
 @synthesize monitoringTimer;
 @synthesize selectedDevices;
 @synthesize signalStrength;
@@ -26,7 +27,7 @@
     
     if (self = [super init]) {
         discoveredDevices = nil;
-        
+        timeInterval = 3.0;
         // Custom initialization
         // load core data
         // get devices already saved
@@ -124,10 +125,9 @@
     signalStrength = [peripheral RSSI];
     monitoringTimer = [NSTimer scheduledTimerWithTimeInterval:timeInterval target:self selector:@selector(getDeviceUpdates)
                                                      userInfo:nil repeats:NO];
-    // perform sound
-    NSLog(@"Make sound");
-    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"BTMonitoringUpdate" object:self];
 }
+
 #pragma mark -
 #pragma mark Custom methods
 

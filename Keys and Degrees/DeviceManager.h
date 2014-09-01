@@ -10,12 +10,14 @@
 #import "BTDeviceInfo.h"
 #import <CoreBluetooth/CoreBluetooth.h>
 
+
 @interface DeviceManager : NSObject <CBCentralManagerDelegate, CBPeripheralDelegate>
 
 
 @property CBCentralManager *btManager;
 @property (strong) BTDeviceInfo *deviceInUse;
 @property (strong) NSArray *discoveredDevices;
+@property (strong) id managerDelegate;
 @property NSTimer  *monitoringTimer;
 @property (strong) NSArray *selectedDevices;
 @property NSNumber *signalStrength;
