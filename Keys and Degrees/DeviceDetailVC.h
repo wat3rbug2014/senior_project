@@ -9,13 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <CoreBluetooth/CoreBluetooth.h>
 #import "BTDeviceInfo.h"
+#import "DeviceManager.h"
 
-@interface DeviceDetailVC : UIViewController <CBCentralManagerDelegate, CBPeripheralDelegate>
+@interface DeviceDetailVC : UIViewController
 
-@property (nonatomic, retain) BTDeviceInfo *bluetoothPeripheral;
-@property CBCentralManager *btManager;
+@property DeviceManager *btManager;
 @property (nonatomic, retain) IBOutlet UISwitch *soundSelect;
-@property (nonatomic, retain) IBOutlet UILabel *soundSelectDisplay;
 @property BOOL useSounds;
 
 -(IBAction)changeSoundSetting:(id)sender;
