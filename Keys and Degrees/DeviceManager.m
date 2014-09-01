@@ -49,12 +49,10 @@
     
     if ([central state] == CBCentralManagerStatePoweredOn) { // may need check to see if in discovery mode or regular
         [btManager scanForPeripheralsWithServices:nil options:nil];
-        state = DMscanning;
         NSLog(@"Starting scan...");
     }
     if ([central state] == CBCentralManagerStatePoweredOff || [central state] == CBCentralManagerStateResetting) {
         NSLog(@"Lost the manager...");
-        state = DMnotInUse;
     }
 }
 
@@ -151,7 +149,6 @@
     if (deviceInUse != nil) {
         NSLog(@"start monitoring %@", [[deviceInUse deviceID] name]);
         [btManager connectPeripheral:[deviceInUse deviceID] options:nil];
-        state = DMmonitoring;
     }
 }
 
@@ -164,11 +161,9 @@
         [btManager scanForPeripheralsWithServices:nil options:nil];
         deviceInUse = nil;
         NSLog(@"Starting scan...");
-        state = DMscanning;
     }
     if ([btManager state] == CBCentralManagerStatePoweredOff || [btManager state] == CBCentralManagerStateResetting) {
         NSLog(@"Lost the manager...");
-        state = DMnotInUse;
     }
 
 }
@@ -177,14 +172,12 @@
     
     [btManager stopScan];
     NSLog(@"Stopping scan");
-    state = DMnotInUse;
 }
 
 -(void) stopMonitoring {
     
     [btManager cancelPeripheralConnection:[deviceInUse deviceID]];
     NSLog(@"stop monitoring %@", [[deviceInUse deviceID] name]);
-    state = DMnotInUse;
 }
 
 @end

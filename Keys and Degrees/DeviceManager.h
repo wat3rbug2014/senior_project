@@ -12,11 +12,6 @@
 
 @interface DeviceManager : NSObject <CBCentralManagerDelegate, CBPeripheralDelegate>
 
-typedef enum managerState {
-    DMnotInUse = 0,
-    DMscanning,
-    DMmonitoring
-} DMState;
 
 @property CBCentralManager *btManager;
 @property (strong) BTDeviceInfo *deviceInUse;
