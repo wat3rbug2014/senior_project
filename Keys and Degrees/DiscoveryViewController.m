@@ -19,9 +19,7 @@ static NSString *cellWithTemp = @"ShowTemp";
 static NSString *cellBasic = @"Basic";
 
 @synthesize bluetoothSearchBox;
-@synthesize devices;
 @synthesize deviceDataSourceDelegate;
-@synthesize selectedDevice;
 
 #pragma mark -
 #pragma mark Super class methods
@@ -31,7 +29,6 @@ static NSString *cellBasic = @"Basic";
     
     self = [super initWithStyle:style];
     if (self) {
-        bluetoothSearchBox = [[DiscoveryController alloc] init];
         self.title = @"Discovery";
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedNotificationOfBTDiscovery) name:@"BTDiscoveryChange" object:bluetoothSearchBox];
     }
@@ -51,9 +48,7 @@ static NSString *cellBasic = @"Basic";
 
 -(void) viewWillDisappear:(BOOL)animated {
     
-    if (selectedDevice != nil) {
-        [deviceDataSourceDelegate updateDeviceListing:selectedDevice];
-    }
+        [deviceDataSourceDelegate passReferenceToBTManager:bluetoothSearchBox];
 }
 
 -(void) dealloc {
@@ -72,26 +67,19 @@ static NSString *cellBasic = @"Basic";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return [devices count];
+    return [bluetoothSearchBox discoveredDeviceCount];
 }
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    BTDeviceInfo *newSelection = [[BTDeviceInfo alloc] initWithDevice:[devices objectAtIndex:indexPath.row]];
-    // fix this so that temperature is updated correctly
-    
-    if (![[[newSelection deviceID] name] isEqualToString:@"Apple TV"] ) {
-        [newSelection setUseTemp:YES];
-    }
-    selectedDevice = newSelection;
+    [bluetoothSearchBox setDeviceInUse: [[bluetoothSearchBox discoveredDevices] objectAtIndex:indexPath.row]];
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    CBPeripheral *currentDevice = [devices objectAtIndex:indexPath.row];
-    
+    BTDeviceInfo *currentDevice = [[bluetoothSearchBox discoveredDevices] objectAtIndex:indexPath.row];
     NSString *currentId;
     if (true    ) {
         currentId = cellWithTemp;
@@ -102,7 +90,7 @@ static NSString *cellBasic = @"Basic";
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:currentId];
     }
-    [[cell textLabel] setText:[currentDevice name]];
+    [[cell textLabel] setText:[[currentDevice deviceID ]name]];
     return cell;
 }
 
@@ -111,9 +99,7 @@ static NSString *cellBasic = @"Basic";
 
 
 -(void) receivedNotificationOfBTDiscovery {
-    
-    NSLog(@"Received notification.  Device count is %d", [[bluetoothSearchBox discoveredDevices] count]);
-    devices = [bluetoothSearchBox discoveredDevices];    
+       
     [self.tableView reloadData];
 }
 @end

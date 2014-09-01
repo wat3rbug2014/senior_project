@@ -8,20 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "DeviceList.h"
-#import "DiscoveryController.h"
+#import "DeviceManager.h"
 
 @protocol DeviceDataSourceProtocol <NSObject>
 
--(void) updateDeviceListing:(BTDeviceInfo*) newListing;
+-(void) passReferenceToBTManager:(DeviceManager*) manager;
 
 @end
 
 @interface DiscoveryViewController : UITableViewController
 
-@property (retain) DiscoveryController *bluetoothSearchBox;
-@property (retain) NSArray *devices;
+@property (retain) DeviceManager *bluetoothSearchBox;
 @property (nonatomic,assign) id deviceDataSourceDelegate;
-@property (nonatomic, retain) BTDeviceInfo *selectedDevice;
 
 -(void) receivedNotificationOfBTDiscovery;
 
