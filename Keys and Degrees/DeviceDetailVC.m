@@ -15,6 +15,8 @@
 @implementation DeviceDetailVC
 
 @synthesize btManager;
+@synthesize soundPlayer;
+@synthesize soundSelect;
 @synthesize useSounds;
 
 #pragma mark -
@@ -26,6 +28,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.useSounds = true;
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didGetResponseFromDevice)
+                                                     name:@"BTMonitoringUpdate" object:btManager];
     }
     return self;
 }
@@ -33,12 +37,27 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    [btManager setManagerDelegate:self];
     [btManager startMonitoring];
+    NSString *soundFile = [[NSBundle mainBundle] pathForResource:@"Ping 1" ofType:AVFileTypeAppleM4A];
+    NSURL *soundFileLocation = [NSURL URLWithString:soundFile];
+    NSError *error;
+    soundPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFileLocation fileTypeHint:AVFileTypeAppleM4A error:&error];
+    [soundPlayer prepareToPlay];
+    if (error != nil) {
+        NSLog(@"error is %@", [error description]);
+    }
+    [soundPlayer setDelegate:self];
+    if ([soundPlayer url] == nil) {
+        NSLog(@"Fix the file location");
+    }
+    
 }
 
 -(void) dealloc {
     
     [btManager stopMonitoring];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"BTMonitoringUpdate" object:btManager];
     [btManager setDeviceInUse:nil];
 }
 
@@ -60,4 +79,20 @@
         NSLog(@"Sounds are off");
     }
 }
+
+#pragma mark -
+#pragma mark BTManagerNotifcation methods
+
+
+-(void) didGetResponseFromDevice {
+    
+    NSLog(@"Play sound");
+    if (useSounds) {
+        [soundPlayer play];
+    }
+    // play sound
+    // update color
+    // update temperature if available
+}
+
 @end

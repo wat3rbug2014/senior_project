@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreBluetooth/CoreBluetooth.h>
+#import <AVFoundation/AVFoundation.h>
 #import "BTDeviceInfo.h"
 #import "DeviceManager.h"
 
-@interface DeviceDetailVC : UIViewController
+@interface DeviceDetailVC : UIViewController <AVAudioPlayerDelegate>
 
 @property DeviceManager *btManager;
+@property (nonatomic, retain) AVAudioPlayer *soundPlayer;
 @property (nonatomic, retain) IBOutlet UISwitch *soundSelect;
 @property BOOL useSounds;
 
