@@ -47,11 +47,6 @@ static NSString *cellBasic = @"Basic";
     // Dispose of any resources that can be recreated.
 }
 
--(void) viewWillDisappear:(BOOL)animated {
-    
-        [deviceDataSourceDelegate passReferenceToBTManager:bluetoothSearchBox];
-}
-
 -(void) dealloc {
     
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"BTDiscoveryChange" object:bluetoothSearchBox];

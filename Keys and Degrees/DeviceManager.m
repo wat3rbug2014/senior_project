@@ -60,13 +60,22 @@
 
 -(void) centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI {
     
-    if ([peripheral name] != NULL) {
-        NSMutableArray *existingDiscoveredDevices = [NSMutableArray arrayWithArray:discoveredDevices];
-        BTDeviceInfo *newDevice = [[BTDeviceInfo alloc] initWithDevice:peripheral];
-        [existingDiscoveredDevices addObject:newDevice];
-        NSLog(@"Discovered %@", [peripheral name]);
-        discoveredDevices = existingDiscoveredDevices;
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"BTDiscoveryChange" object:self];
+    if ([peripheral name] != nil) {
+        bool isNew = true;
+        for (BTDeviceInfo *currentDevice in discoveredDevices) {
+            if ([[currentDevice deviceID] identifier] == [peripheral identifier]) {
+                isNew = false;
+                NSLog(@"%@ is not new", [peripheral name]);
+            }
+        }
+        if (isNew) {
+            NSMutableArray *existingDiscoveredDevices = [NSMutableArray arrayWithArray:discoveredDevices];
+            BTDeviceInfo *newDevice = [[BTDeviceInfo alloc] initWithDevice:peripheral];
+            [existingDiscoveredDevices addObject:newDevice];
+            NSLog(@"Discovered %@", [peripheral name]);
+            discoveredDevices = existingDiscoveredDevices;
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"BTDiscoveryChange" object:self];
+        }
     }
 }
 
@@ -148,7 +157,9 @@
 
 -(void) startScan {
     
-    btManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil options:nil];
+    if (btManager == nil) {
+        btManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil options:nil];
+    }
     if ([btManager state] == CBCentralManagerStatePoweredOn) {
         [btManager scanForPeripheralsWithServices:nil options:nil];
         deviceInUse = nil;

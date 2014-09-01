@@ -39,8 +39,13 @@ static NSString *cellBasic = @"Basic";
     self.clearsSelectionOnViewWillAppear = NO;
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
     self.navigationItem.rightBarButtonItem = addButton;
+    
 }
 
+-(void) viewWillAppear:(BOOL)animated {
+    
+    [self.tableView reloadData];
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -107,19 +112,6 @@ static NSString *cellBasic = @"Basic";
     [self.navigationController pushViewController:detailView animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [tableView reloadData];
-}
-
-#pragma mark -
-#pragma mark DeviceDataSourceProtocol methods
-
-
-// do i need this since the object is defined here?
-
--(void) passReferenceToBTManager:(DeviceManager*) newListing {
-    
-    NSLog(@"Received the manager");
-    btManager = newListing;
-    [self.tableView reloadData];
 }
 
 #pragma mark -

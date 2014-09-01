@@ -10,11 +10,6 @@
 #import "DeviceList.h"
 #import "DeviceManager.h"
 
-@protocol DeviceDataSourceProtocol <NSObject>
-
--(void) passReferenceToBTManager:(DeviceManager*) manager;
-
-@end
 
 @interface DiscoveryViewController : UITableViewController
 

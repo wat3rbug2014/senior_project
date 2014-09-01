@@ -11,7 +11,7 @@
 #import "DiscoveryViewController.h"
 #import "DeviceManager.h"
 
-@interface Things : UITableViewController <DeviceDataSourceProtocol>
+@interface Things : UITableViewController 
 
 @property (nonatomic, assign) id delegate;
 @property (retain) DeviceManager *btManager;
