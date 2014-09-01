@@ -106,8 +106,8 @@ static NSString *cellBasic = @"Basic";
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     DeviceDetailVC *detailView = [[DeviceDetailVC alloc] initWithNibName:@"DeviceDetailVC" bundle:nil];
-    BTDeviceInfo *selectedItem = [btManager selectedDeviceAtIndex:indexPath.row];
-    [detailView setTitle: [[selectedItem deviceID] name]];
+    [btManager setDeviceInUse:[btManager selectedDeviceAtIndex:indexPath.row]];
+    [detailView setTitle: [[[btManager deviceInUse] deviceID] name]];
     [detailView setBtManager:btManager];
     [self.navigationController pushViewController:detailView animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
