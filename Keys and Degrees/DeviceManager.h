@@ -16,12 +16,15 @@
 @property CBCentralManager *btManager;
 @property (strong) BTDeviceInfo *deviceInUse;
 @property (strong) NSArray *discoveredDevices;
+@property NSTimer  *monitoringTimer;
 @property (strong) NSArray *selectedDevices;
-@property int state;
+@property NSNumber *signalStrength;
+@property float timeInterval;
 
 -(BTDeviceInfo*) discoveredDeviceAtIndex: (NSInteger) index;
 -(NSInteger) discoveredDeviceCount;
 -(void) addDevice: (BTDeviceInfo*) newDevice;
+-(void) getDeviceUpdates;
 -(void) removeDeviceAtIndex: (NSInteger) index;
 -(BTDeviceInfo*) selectedDeviceAtIndex: (NSInteger) index;
 -(NSInteger) selectedDeviceCount;

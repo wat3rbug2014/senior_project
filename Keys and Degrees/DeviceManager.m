@@ -13,8 +13,10 @@
 @synthesize btManager;
 @synthesize deviceInUse;
 @synthesize discoveredDevices;
+@synthesize monitoringTimer;
 @synthesize selectedDevices;
-@synthesize state;
+@synthesize signalStrength;
+@synthesize timeInterval;
 
 #pragma mark -
 #pragma mark Super class methods
@@ -37,6 +39,10 @@
     if ([btManager state] == CBCentralManagerStateUnknown || [btManager state] == CBCentralManagerStatePoweredOn || [btManager state] == CBCentralManagerStateResetting) {
         [btManager stopScan];
         btManager = nil;
+        if (monitoringTimer != nil) {
+            [monitoringTimer invalidate];
+            monitoringTimer = nil;
+        }
         NSLog(@"Scanning stopped");
     }
 }
@@ -86,6 +92,8 @@
     
     CBUUID *tempSrvID = [CBUUID UUIDWithString:@"0008"];
     [peripheral discoverServices:[NSArray arrayWithObject: tempSrvID]];
+    [peripheral readRSSI];
+
 }
 
 #pragma mark -
@@ -99,6 +107,27 @@
     }
 }
 
+-(void) peripheralDidUpdateRSSI:(CBPeripheral *)peripheral error:(NSError *)error {
+    
+        NSLog(@"%@ is at  %@ dB and %f seconds", [peripheral name], [peripheral RSSI], timeInterval);
+    if (signalStrength == 0) {
+        signalStrength = [peripheral RSSI];
+    }
+    if ([peripheral RSSI] > signalStrength) {
+        if (timeInterval > 0.0 || [peripheral RSSI] == [NSNumber numberWithInt:-38]) {
+            timeInterval -= .25;
+        }
+    }
+    if ([peripheral RSSI] < signalStrength) {
+        timeInterval += .25;
+    }
+    signalStrength = [peripheral RSSI];
+    monitoringTimer = [NSTimer scheduledTimerWithTimeInterval:timeInterval target:self selector:@selector(getDeviceUpdates)
+                                                     userInfo:nil repeats:NO];
+    // perform sound
+    NSLog(@"Make sound");
+    
+}
 #pragma mark -
 #pragma mark Custom methods
 
@@ -118,6 +147,11 @@
 -(NSInteger) discoveredDeviceCount {
     
     return [discoveredDevices count];
+}
+
+-(void) getDeviceUpdates {
+    
+    [[deviceInUse deviceID] readRSSI];
 }
 
 -(void) removeDeviceAtIndex:(NSInteger)index {
@@ -178,6 +212,8 @@
     
     [btManager cancelPeripheralConnection:[deviceInUse deviceID]];
     NSLog(@"stop monitoring %@", [[deviceInUse deviceID] name]);
+    [monitoringTimer invalidate];
+    monitoringTimer = nil;
 }
 
 @end
