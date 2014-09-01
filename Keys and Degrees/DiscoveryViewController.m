@@ -38,6 +38,7 @@ static NSString *cellBasic = @"Basic";
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    [bluetoothSearchBox startScan];
 }
 
 - (void)didReceiveMemoryWarning
@@ -72,7 +73,9 @@ static NSString *cellBasic = @"Basic";
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    [bluetoothSearchBox setDeviceInUse: [[bluetoothSearchBox discoveredDevices] objectAtIndex:indexPath.row]];
+    [bluetoothSearchBox selectDiscoveredDeviceAtIndex:indexPath.row];
+    NSLog(@"Selected %@", [[[bluetoothSearchBox discoveredDeviceAtIndex:indexPath.row] deviceID] name]);
+    [bluetoothSearchBox stopScan];
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     [self.navigationController popViewControllerAnimated:YES];
 }

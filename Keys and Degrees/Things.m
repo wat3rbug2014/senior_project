@@ -41,6 +41,7 @@ static NSString *cellBasic = @"Basic";
     self.navigationItem.rightBarButtonItem = addButton;
 }
 
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -105,14 +106,18 @@ static NSString *cellBasic = @"Basic";
     [detailView setBtManager:btManager];
     [self.navigationController pushViewController:detailView animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [tableView reloadData];
 }
 
 #pragma mark -
 #pragma mark DeviceDataSourceProtocol methods
 
 
+// do i need this since the object is defined here?
+
 -(void) passReferenceToBTManager:(DeviceManager*) newListing {
     
+    NSLog(@"Received the manager");
     btManager = newListing;
     [self.tableView reloadData];
 }
