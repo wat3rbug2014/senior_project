@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5072E6B19B40DF20081803B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5072E6A19B40DF20081803B /* AVFoundation.framework */; };
+		A5072E7119B4ACE00081803B /* Ping.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A5072E7019B4ACE00081803B /* Ping.m4a */; };
 		A550CCB519B2B5EA000361AE /* DeviceDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A550CCB319B2B5EA000361AE /* DeviceDetailVC.m */; };
 		A550CCB619B2B5EA000361AE /* DeviceDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A550CCB419B2B5EA000361AE /* DeviceDetailVC.xib */; };
 		A567A20419B137EB00609221 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A567A20319B137EB00609221 /* Foundation.framework */; };
@@ -25,7 +27,7 @@
 		A567A23A19B144FD00609221 /* BTDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A567A23919B144FD00609221 /* BTDeviceInfo.m */; };
 		A567A23D19B2038000609221 /* DeviceList.m in Sources */ = {isa = PBXBuildFile; fileRef = A567A23C19B2038000609221 /* DeviceList.m */; };
 		A567A24019B20CAB00609221 /* DiscoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A567A23F19B20CAB00609221 /* DiscoveryViewController.m */; };
-		A567A24319B20D6C00609221 /* DiscoveryController.m in Sources */ = {isa = PBXBuildFile; fileRef = A567A24219B20D6C00609221 /* DiscoveryController.m */; };
+		A567A24319B20D6C00609221 /* DeviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A567A24219B20D6C00609221 /* DeviceManager.m */; };
 		A567A24519B2233D00609221 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A567A24419B2233D00609221 /* CoreBluetooth.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A5072E6A19B40DF20081803B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		A5072E6E19B40F3D0081803B /* Ping 1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Ping 1.m4a"; path = "../../../../Music/iTunes/iTunes Media/Music/Douglas Gardiner/Douglas Gardiner's Album/Ping 1.m4a"; sourceTree = "<group>"; };
+		A5072E7019B4ACE00081803B /* Ping.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ping.m4a; sourceTree = "<group>"; };
 		A550CCB219B2B5EA000361AE /* DeviceDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceDetailVC.h; sourceTree = "<group>"; };
 		A550CCB319B2B5EA000361AE /* DeviceDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceDetailVC.m; sourceTree = "<group>"; };
 		A550CCB419B2B5EA000361AE /* DeviceDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviceDetailVC.xib; sourceTree = "<group>"; };
@@ -67,8 +72,8 @@
 		A567A23C19B2038000609221 /* DeviceList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceList.m; sourceTree = "<group>"; };
 		A567A23E19B20CAB00609221 /* DiscoveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoveryViewController.h; sourceTree = "<group>"; };
 		A567A23F19B20CAB00609221 /* DiscoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoveryViewController.m; sourceTree = "<group>"; };
-		A567A24119B20D6C00609221 /* DiscoveryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoveryController.h; sourceTree = "<group>"; };
-		A567A24219B20D6C00609221 /* DiscoveryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoveryController.m; sourceTree = "<group>"; };
+		A567A24119B20D6C00609221 /* DeviceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceManager.h; sourceTree = "<group>"; };
+		A567A24219B20D6C00609221 /* DeviceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceManager.m; sourceTree = "<group>"; };
 		A567A24419B2233D00609221 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -77,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5072E6B19B40DF20081803B /* AVFoundation.framework in Frameworks */,
 				A567A24519B2233D00609221 /* CoreBluetooth.framework in Frameworks */,
 				A567A20619B137EB00609221 /* CoreGraphics.framework in Frameworks */,
 				A567A20819B137EB00609221 /* UIKit.framework in Frameworks */,
@@ -100,6 +106,7 @@
 		A567A1F719B137EA00609221 = {
 			isa = PBXGroup;
 			children = (
+				A5072E7019B4ACE00081803B /* Ping.m4a */,
 				A567A20919B137EB00609221 /* Keys and Degrees */,
 				A567A22219B137EB00609221 /* Keys and DegreesTests */,
 				A567A20219B137EB00609221 /* Frameworks */,
@@ -119,6 +126,7 @@
 		A567A20219B137EB00609221 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A5072E6A19B40DF20081803B /* AVFoundation.framework */,
 				A567A24419B2233D00609221 /* CoreBluetooth.framework */,
 				A567A20319B137EB00609221 /* Foundation.framework */,
 				A567A20519B137EB00609221 /* CoreGraphics.framework */,
@@ -143,8 +151,8 @@
 				A567A23C19B2038000609221 /* DeviceList.m */,
 				A567A23E19B20CAB00609221 /* DiscoveryViewController.h */,
 				A567A23F19B20CAB00609221 /* DiscoveryViewController.m */,
-				A567A24119B20D6C00609221 /* DiscoveryController.h */,
-				A567A24219B20D6C00609221 /* DiscoveryController.m */,
+				A567A24119B20D6C00609221 /* DeviceManager.h */,
+				A567A24219B20D6C00609221 /* DeviceManager.m */,
 				A550CCB219B2B5EA000361AE /* DeviceDetailVC.h */,
 				A550CCB319B2B5EA000361AE /* DeviceDetailVC.m */,
 				A550CCB419B2B5EA000361AE /* DeviceDetailVC.xib */,
@@ -155,6 +163,7 @@
 		A567A20A19B137EB00609221 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A5072E6E19B40F3D0081803B /* Ping 1.m4a */,
 				A567A20B19B137EB00609221 /* Keys and Degrees-Info.plist */,
 				A567A20C19B137EB00609221 /* InfoPlist.strings */,
 				A567A20F19B137EB00609221 /* main.m */,
@@ -228,6 +237,13 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Douglas Gardiner";
 				TargetAttributes = {
+					A567A1FF19B137EB00609221 = {
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
 					A567A21A19B137EB00609221 = {
 						TestTargetID = A567A1FF19B137EB00609221;
 					};
@@ -256,6 +272,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5072E7119B4ACE00081803B /* Ping.m4a in Resources */,
 				A567A20E19B137EB00609221 /* InfoPlist.strings in Resources */,
 				A550CCB619B2B5EA000361AE /* DeviceDetailVC.xib in Resources */,
 				A567A21619B137EB00609221 /* Images.xcassets in Resources */,
@@ -278,7 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A567A23D19B2038000609221 /* DeviceList.m in Sources */,
-				A567A24319B20D6C00609221 /* DiscoveryController.m in Sources */,
+				A567A24319B20D6C00609221 /* DeviceManager.m in Sources */,
 				A567A21419B137EB00609221 /* AppDelegate.m in Sources */,
 				A567A24019B20CAB00609221 /* DiscoveryViewController.m in Sources */,
 				A567A23A19B144FD00609221 /* BTDeviceInfo.m in Sources */,

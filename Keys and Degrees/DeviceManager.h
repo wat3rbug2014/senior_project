@@ -10,6 +10,14 @@
 #import "BTDeviceInfo.h"
 #import <CoreBluetooth/CoreBluetooth.h>
 
+#define TI_TMP_SERVICE @"F000AA00-0451-4000-B000-000000000000"
+#define TI_TMP_CHARACTERISTIC_TMP @"F000AA01-0451-4000-B000-000000000000"
+#define TI_TMP_CHARACTERISTIC_ON_OFF @"F000AA02-0451-4000-B000-000000000000"
+
+#define TX_PWR_SERVICE @"0x1804"
+#define TEMP_SENSOR_SERVICE @"0x1809"
+
+
 
 @interface DeviceManager : NSObject <CBCentralManagerDelegate, CBPeripheralDelegate>
 

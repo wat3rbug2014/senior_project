@@ -27,7 +27,9 @@
     
     if (self = [super init]) {
         discoveredDevices = nil;
-        timeInterval = 3.0;
+        timeInterval = 1.0;
+        signalStrength = 0;
+        [[deviceInUse deviceID] setDelegate:self];
         // Custom initialization
         // load core data
         // get devices already saved
@@ -53,7 +55,9 @@
 
 -(void) centralManagerDidUpdateState:(CBCentralManager *)central {
     
-    if ([central state] == CBCentralManagerStatePoweredOn) { // may need check to see if in discovery mode or regular
+    // fix this so it accounts for all states
+    
+    if ([central state] == CBCentralManagerStatePoweredOn) {
         [btManager scanForPeripheralsWithServices:nil options:nil];
         NSLog(@"Starting scan...");
     }
@@ -65,6 +69,9 @@
 -(void) centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI {
     
     if ([peripheral name] != nil) {
+        
+        // check for duplicates and prevent them from being added to the list
+        
         bool isNew = true;
         for (BTDeviceInfo *currentDevice in discoveredDevices) {
             if ([[currentDevice deviceID] identifier] == [peripheral identifier]) {
@@ -72,6 +79,8 @@
                 NSLog(@"%@ is not new", [peripheral name]);
             }
         }
+        // Add the new item to the list.
+        
         if (isNew) {
             NSMutableArray *existingDiscoveredDevices = [NSMutableArray arrayWithArray:discoveredDevices];
             BTDeviceInfo *newDevice = [[BTDeviceInfo alloc] initWithDevice:peripheral];
@@ -88,10 +97,15 @@
     NSLog(@"Connected to %@", [peripheral name]);
     [peripheral setDelegate:self];
     
+    // start discovery of services
+    
     // fix this so name and temp guage will be checked
     
-    CBUUID *tempSrvID = [CBUUID UUIDWithString:@"0008"];
-    [peripheral discoverServices:[NSArray arrayWithObject: tempSrvID]];
+    CBUUID *tempSrvID = [CBUUID UUIDWithString:TEMP_SENSOR_SERVICE];
+    CBUUID *txPwrID = [CBUUID UUIDWithString:TX_PWR_SERVICE];
+    CBUUID *tiTmpSrvID = [CBUUID UUIDWithString:TI_TMP_SERVICE];
+
+    [peripheral discoverServices:[NSArray arrayWithObjects: txPwrID, tempSrvID, tiTmpSrvID, nil]];
     [peripheral readRSSI];
 
 }
@@ -100,31 +114,57 @@
 #pragma mark CBPeripheral methods
 
 
+-(void) peripheral:(CBPeripheral *)peripheral didDiscoverCharacteristicsForService:(CBService *)service error:(NSError *)error {
+    
+    for (CBCharacteristic *currentService in [service characteristics]) {
+        NSLog(@"characteristic is %@", [currentService description]);
+        
+    }
+}
+
 -(void) peripheral:(CBPeripheral *)peripheral didDiscoverServices:(NSError *)error {
     
+    if (error != nil) {
+        NSLog(@"Error %@", [error description]);
+    }
+    // list the services - for debugging purposes because apparently correct UUIDs are hard to find.
+    
+    NSLog(@"Discovered services");
     for (CBService *service in [peripheral services]) {
-        NSLog(@"Discovered %@", service);
+        NSLog(@"Service: %@", service.UUID);
+        CBUUID *tmpOn = [CBUUID UUIDWithString:TI_TMP_CHARACTERISTIC_ON_OFF];
+        CBUUID *tmpChar = [CBUUID UUIDWithString:TI_TMP_CHARACTERISTIC_TMP];
+        NSArray *characteristics = [NSArray arrayWithObjects:tmpChar, tmpOn, nil];
+        [peripheral discoverCharacteristics: characteristics forService:service];
     }
 }
 
 -(void) peripheralDidUpdateRSSI:(CBPeripheral *)peripheral error:(NSError *)error {
     
-        NSLog(@"%@ is at  %@ dB and %f seconds", [peripheral name], [peripheral RSSI], timeInterval);
+    // this needs to be fixed
+    
+    NSLog(@"previous RSSI %@\ttime: %f", signalStrength, timeInterval);
     if (signalStrength == 0) {
         signalStrength = [peripheral RSSI];
     }
     if ([peripheral RSSI] > signalStrength) {
-        if (timeInterval > 0.0 || [peripheral RSSI] == [NSNumber numberWithInt:-38]) {
-            timeInterval -= .25;
+        if (timeInterval > 0.0) {
+            timeInterval += .25;
         }
     }
     if ([peripheral RSSI] < signalStrength) {
-        timeInterval += .25;
+        timeInterval -= .25;
     }
+    NSLog(@"current RSSI %@ \ttime: %f", [peripheral RSSI], timeInterval);
     signalStrength = [peripheral RSSI];
     monitoringTimer = [NSTimer scheduledTimerWithTimeInterval:timeInterval target:self selector:@selector(getDeviceUpdates)
                                                      userInfo:nil repeats:NO];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"BTMonitoringUpdate" object:self];
+}
+
+-(void) centralManager:(CBCentralManager *)central didFailToConnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error {
+    
+    // do an alert because device is lost and then dismiss this controller.
 }
 
 #pragma mark -

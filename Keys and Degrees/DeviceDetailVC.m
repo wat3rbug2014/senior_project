@@ -58,10 +58,6 @@
     [soundPlayer setDelegate:self];
 }
 
--(void) viewWillAppear:(BOOL)animated {
-    
-    NSLog(@"going to appear");
-}
 -(void) viewWillDisappear:(BOOL)animated {
     
     [btManager stopMonitoring];
