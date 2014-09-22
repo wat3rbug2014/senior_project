@@ -10,6 +10,7 @@
 #import "BTDeviceManager.h"
 #import "HeartMonitorSelectVC.h"
 #import "ActivityMonitorSelectVC.h"
+#import "GraphVC.h"
 
 @interface HomeScreenVC ()
 
@@ -37,6 +38,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [graphButton setBackgroundColor:[UIColor greenColor]];
     [activityButton setBackgroundColor:[UIColor redColor]];
     [toggleRunButton setBackgroundColor:[UIColor redColor]];
     btDevices = [[BTDeviceManager alloc] init];
@@ -45,7 +47,6 @@
 
 -(void) viewWillAppear:(BOOL)animated {
     
-    NSLog(@"Checking color");
     if ([btDevices heartMonitorIsConnected]) {
         [heartRateButton setBackgroundColor:[UIColor greenColor]];
     } else {
@@ -77,13 +78,14 @@
 -(IBAction)selectHeartMonitor:(id)sender {
 
     HeartMonitorSelectVC *heartSelectorVC = [[HeartMonitorSelectVC alloc] initWithDeviceManager:btDevices];
-    [heartSelectorVC setTitle:@"Heart Rate Monitors"];
     [self.navigationController pushViewController:heartSelectorVC animated:YES];
     
 }
 
 -(IBAction)showGraph:(id)sender {
     
+    GraphVC *graphDisplay = [[GraphVC alloc] initWithDeviceManager: btDevices];
+    [self.navigationController pushViewController:graphDisplay animated:YES];
     
 }
 

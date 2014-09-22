@@ -22,8 +22,13 @@
 @property NSInteger selectedIndexForActivityMonitor;
 @property BOOL heartMonitorIsConnected;
 @property BOOL activityMonitorIsConnected;
+@property NSInteger heartRate;
+@property BOOL isActive;
 
 -(NSInteger) discoveredDevicesForType: (NSInteger) type;
 -(id) deviceAtIndex: (NSInteger) index forMonitorType: (NSInteger) type;
+
+-(NSInteger) receivedHeartRateMeasurement;
+-(BOOL) isActiveMeasurementReceived;
 
 @end

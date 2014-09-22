@@ -17,6 +17,8 @@
 @synthesize selectedIndexForHeartMonitor;
 @synthesize heartMonitorIsConnected;
 @synthesize activityMonitorIsConnected;
+@synthesize heartRate;
+@synthesize isActive;
 
 -(id) init {
     
@@ -57,6 +59,23 @@
     } else {
         return  [activityDevices objectAtIndex:index];
     }
+}
+
+-(NSInteger) receivedHeartRateMeasurement {
+    
+    if ([self heartRate] < 60) {
+        [self setHeartRate:60];
+    }
+    if ([self heartRate] > 180) {
+        [self setHeartRate:60];
+    }
+    return  [self heartRate];
+}
+
+-(BOOL) isActiveMeasurementReceived {
+    
+    [self setIsActive:![self isActive]];
+    return [self isActive];
 }
 
 @end

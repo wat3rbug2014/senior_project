@@ -29,6 +29,8 @@
 		A5886FE019CF2EE800E143F2 /* DeviceSelectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A5886FDF19CF2EE800E143F2 /* DeviceSelectionVC.m */; };
 		A5886FE319CF8CA100E143F2 /* BTDeviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A5886FE219CF8CA100E143F2 /* BTDeviceManager.m */; };
 		A5886FE619CF940500E143F2 /* DummyDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = A5886FE519CF940500E143F2 /* DummyDevice.m */; };
+		A5C5125119D074CD00554928 /* GraphVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C5124F19D074CD00554928 /* GraphVC.m */; };
+		A5C5125219D074CD00554928 /* GraphVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5C5125019D074CD00554928 /* GraphVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,9 @@
 		A5886FE219CF8CA100E143F2 /* BTDeviceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTDeviceManager.m; sourceTree = "<group>"; };
 		A5886FE419CF940500E143F2 /* DummyDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DummyDevice.h; sourceTree = "<group>"; };
 		A5886FE519CF940500E143F2 /* DummyDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DummyDevice.m; sourceTree = "<group>"; };
+		A5C5124E19D074CD00554928 /* GraphVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphVC.h; sourceTree = "<group>"; };
+		A5C5124F19D074CD00554928 /* GraphVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphVC.m; sourceTree = "<group>"; };
+		A5C5125019D074CD00554928 /* GraphVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GraphVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +153,9 @@
 				A506D65019D0594300BF9DC6 /* ActivityMonitorSelectVC.m */,
 				A5886FDE19CF2EE700E143F2 /* DeviceSelectionVC.h */,
 				A5886FDF19CF2EE800E143F2 /* DeviceSelectionVC.m */,
+				A5C5124E19D074CD00554928 /* GraphVC.h */,
+				A5C5124F19D074CD00554928 /* GraphVC.m */,
+				A5C5125019D074CD00554928 /* GraphVC.xib */,
 				A569FB8619CDEE5500A69C61 /* AppDelegate.h */,
 				A569FB8719CDEE5500A69C61 /* AppDelegate.m */,
 				A569FB8C19CDEE5500A69C61 /* Images.xcassets */,
@@ -264,6 +272,7 @@
 				A569FB8219CDEE5500A69C61 /* InfoPlist.strings in Resources */,
 				A5886FDD19CF254800E143F2 /* HomeScreenVC.xib in Resources */,
 				A569FB8D19CDEE5500A69C61 /* Images.xcassets in Resources */,
+				A5C5125219D074CD00554928 /* GraphVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +296,7 @@
 				A569FB8819CDEE5500A69C61 /* AppDelegate.m in Sources */,
 				A506D64E19D055AC00BF9DC6 /* HeartMonitorSelectVC.m in Sources */,
 				A5886FE619CF940500E143F2 /* DummyDevice.m in Sources */,
+				A5C5125119D074CD00554928 /* GraphVC.m in Sources */,
 				A569FB8419CDEE5500A69C61 /* main.m in Sources */,
 				A506D65119D0594300BF9DC6 /* ActivityMonitorSelectVC.m in Sources */,
 				A569FB8B19CDEE5500A69C61 /* TestGUI.xcdatamodeld in Sources */,
