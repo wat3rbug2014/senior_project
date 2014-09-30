@@ -24,9 +24,9 @@
 		A569FB9719CDEE5500A69C61 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A569FB7B19CDEE5500A69C61 /* CoreData.framework */; };
 		A569FB9F19CDEE5500A69C61 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A569FB9D19CDEE5500A69C61 /* InfoPlist.strings */; };
 		A569FBA119CDEE5500A69C61 /* TestGUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A569FBA019CDEE5500A69C61 /* TestGUITests.m */; };
-		A57845A219DB06C700ACB62B /* TickrX.m in Sources */ = {isa = PBXBuildFile; fileRef = A57845A119DB06C700ACB62B /* TickrX.m */; };
+		A57845A219DB06C700ACB62B /* WahooTickrX.m in Sources */ = {isa = PBXBuildFile; fileRef = A57845A119DB06C700ACB62B /* WahooTickrX.m */; };
 		A57845A419DB072200ACB62B /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A57845A319DB072200ACB62B /* CoreBluetooth.framework */; };
-		A57845A719DB095600ACB62B /* Jawbone.m in Sources */ = {isa = PBXBuildFile; fileRef = A57845A619DB095600ACB62B /* Jawbone.m */; };
+		A57845A719DB095600ACB62B /* JawboneUP24.m in Sources */ = {isa = PBXBuildFile; fileRef = A57845A619DB095600ACB62B /* JawboneUP24.m */; };
 		A57845AA19DB09A300ACB62B /* FitBitFlex.m in Sources */ = {isa = PBXBuildFile; fileRef = A57845A919DB09A300ACB62B /* FitBitFlex.m */; };
 		A57845AD19DB09DB00ACB62B /* PolarH7.m in Sources */ = {isa = PBXBuildFile; fileRef = A57845AC19DB09DB00ACB62B /* PolarH7.m */; };
 		A5886FDC19CF254800E143F2 /* HomeScreenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A5886FDA19CF254800E143F2 /* HomeScreenVC.m */; };
@@ -72,11 +72,11 @@
 		A569FB9E19CDEE5500A69C61 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A569FBA019CDEE5500A69C61 /* TestGUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestGUITests.m; sourceTree = "<group>"; };
 		A578459F19DB054300ACB62B /* DeviceConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceConnection.h; sourceTree = "<group>"; };
-		A57845A019DB06C700ACB62B /* TickrX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TickrX.h; sourceTree = "<group>"; };
-		A57845A119DB06C700ACB62B /* TickrX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TickrX.m; sourceTree = "<group>"; };
+		A57845A019DB06C700ACB62B /* WahooTickrX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WahooTickrX.h; sourceTree = "<group>"; };
+		A57845A119DB06C700ACB62B /* WahooTickrX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WahooTickrX.m; sourceTree = "<group>"; };
 		A57845A319DB072200ACB62B /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
-		A57845A519DB095600ACB62B /* Jawbone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Jawbone.h; sourceTree = "<group>"; };
-		A57845A619DB095600ACB62B /* Jawbone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Jawbone.m; sourceTree = "<group>"; };
+		A57845A519DB095600ACB62B /* JawboneUP24.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JawboneUP24.h; sourceTree = "<group>"; };
+		A57845A619DB095600ACB62B /* JawboneUP24.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JawboneUP24.m; sourceTree = "<group>"; };
 		A57845A819DB09A300ACB62B /* FitBitFlex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FitBitFlex.h; sourceTree = "<group>"; };
 		A57845A919DB09A300ACB62B /* FitBitFlex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FitBitFlex.m; sourceTree = "<group>"; };
 		A57845AB19DB09DB00ACB62B /* PolarH7.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolarH7.h; sourceTree = "<group>"; };
@@ -176,12 +176,12 @@
 				A5C5125019D074CD00554928 /* GraphVC.xib */,
 				A57845A819DB09A300ACB62B /* FitBitFlex.h */,
 				A57845A919DB09A300ACB62B /* FitBitFlex.m */,
-				A57845A519DB095600ACB62B /* Jawbone.h */,
-				A57845A619DB095600ACB62B /* Jawbone.m */,
+				A57845A519DB095600ACB62B /* JawboneUP24.h */,
+				A57845A619DB095600ACB62B /* JawboneUP24.m */,
 				A57845AB19DB09DB00ACB62B /* PolarH7.h */,
 				A57845AC19DB09DB00ACB62B /* PolarH7.m */,
-				A57845A019DB06C700ACB62B /* TickrX.h */,
-				A57845A119DB06C700ACB62B /* TickrX.m */,
+				A57845A019DB06C700ACB62B /* WahooTickrX.h */,
+				A57845A119DB06C700ACB62B /* WahooTickrX.m */,
 				A569FB8619CDEE5500A69C61 /* AppDelegate.h */,
 				A569FB8719CDEE5500A69C61 /* AppDelegate.m */,
 				A569FB8C19CDEE5500A69C61 /* Images.xcassets */,
@@ -321,7 +321,7 @@
 				A5886FE019CF2EE800E143F2 /* DeviceSelectionVC.m in Sources */,
 				A569FB8819CDEE5500A69C61 /* AppDelegate.m in Sources */,
 				A506D64E19D055AC00BF9DC6 /* HeartMonitorSelectVC.m in Sources */,
-				A57845A219DB06C700ACB62B /* TickrX.m in Sources */,
+				A57845A219DB06C700ACB62B /* WahooTickrX.m in Sources */,
 				A5886FE619CF940500E143F2 /* DummyDevice.m in Sources */,
 				A5C5125119D074CD00554928 /* GraphVC.m in Sources */,
 				A57845AD19DB09DB00ACB62B /* PolarH7.m in Sources */,
@@ -329,7 +329,7 @@
 				A569FB8419CDEE5500A69C61 /* main.m in Sources */,
 				A506D65119D0594300BF9DC6 /* ActivityMonitorSelectVC.m in Sources */,
 				A569FB8B19CDEE5500A69C61 /* TestGUI.xcdatamodeld in Sources */,
-				A57845A719DB095600ACB62B /* Jawbone.m in Sources */,
+				A57845A719DB095600ACB62B /* JawboneUP24.m in Sources */,
 				A5886FDC19CF254800E143F2 /* HomeScreenVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
