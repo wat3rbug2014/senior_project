@@ -8,38 +8,25 @@
 
 /* This protocol is created to make an API for the devices so that similar operations can be performed.
  * All of the devices are CBPeripheral devices.  They have different UUIDs for their services and differing
- * charaacteristics, so their interactions are different.  This API is an attempt to hide the complexity
+ * characteristics, so their interactions are different.  This API is an attempt to hide the complexity
  * for the sake of brevity in the code and to make things more readable elsewhere.  Device specific 
  * operations are done in the class files associated with the devices.
  **/
 
 #import <Foundation/Foundation.h>
 
-@protocol DeviceConnection <NSObject>
+@protocol DeviceConnection <CBPeripheralDelegate>
 
 @required
 
 /*
  * This method does a check to see if the the device is actually connected and returns a value of
- * TRUE if it is currently connected.
+ * TRUE if it is currently connected.  If the Device is in the CBPeripheralDeviceIsConnecting state,
+ * the return value is FALSE.
  * @return TRUE or FALSE value if the device is connected.
  **/
 
 -(BOOL) isConnected;
-
-/*
- * This method provides a top level connection mechanism to the device.  Because there is another method
- * for checking the final status of connection, the connection state is not returned.
- **/
-
--(void) connect;
-
-/*
- * This method provides a top level disconnection mechanism to the device.  Because there is another method
- * for checking the final status of connection, the connection state is not returned.
- **/
-
--(void) disconnect;
 
 /*
  * This method returns the data to be received.  Because the default datatype from the CBCperipheral method

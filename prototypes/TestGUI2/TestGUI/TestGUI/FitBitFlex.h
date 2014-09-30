@@ -18,6 +18,9 @@
 #import <CoreBluetooth/CoreBluetooth.h>
 #import "DeviceConnection.h"
 
-@interface FitBitFlex : CBPeripheral <CBPeripheralDelegate, DeviceConnection>
+@interface FitBitFlex : CBPeripheral <DeviceConnection>
+
+@property (retain) CBCharacteristic *batteryCharacteristic;
+@property NSInteger batteryLvl;
 
 @end

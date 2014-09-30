@@ -19,6 +19,6 @@
 #import <CoreBluetooth/CoreBluetooth.h>
 #import "DeviceConnection.h"
 
-@interface PolarH7 : CBPeripheral <CBPeripheralDelegate, DeviceConnection>
+@interface PolarH7 : CBPeripheral <DeviceConnection>
 
 @end

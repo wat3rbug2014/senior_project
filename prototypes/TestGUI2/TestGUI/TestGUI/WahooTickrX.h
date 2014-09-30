@@ -19,6 +19,6 @@
 #import <CoreBluetooth/CoreBluetooth.h>
 #import "DeviceConnection.h"
 
-@interface WahooTickrX : CBPeripheral <CBPeripheralDelegate, DeviceConnection>
+@interface WahooTickrX : CBPeripheral <DeviceConnection>
 
 @end

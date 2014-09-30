@@ -18,6 +18,6 @@
 #import <CoreBluetooth/CoreBluetooth.h>
 #import "DeviceConnection.h"
 
-@interface JawboneUP24 : CBPeripheral <CBPeripheralDelegate, DeviceConnection>
+@interface JawboneUP24 : CBPeripheral <DeviceConnection>
 
 @end
