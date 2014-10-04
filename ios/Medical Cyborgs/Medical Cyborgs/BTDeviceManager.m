@@ -7,6 +7,8 @@
 //
 
 #import "BTDeviceManager.h"
+#import "MonitorCreationFactory.h"
+#import "DeviceConnection.h"
 #import "DummyDevice.h"
 
 @implementation BTDeviceManager
@@ -123,6 +125,16 @@
 
 -(void) centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI {
     
-    
+    id<DeviceConnection> newDevice = [MonitorCreationFactory createFromPeripheral:peripheral];
+    NSMutableArray *buffer = nil;
+    if ([newDevice type] == HEART_MONITOR) {
+        buffer = [NSMutableArray arrayWithArray:heartDevices];
+        [buffer addObject:newDevice];
+        heartDevices = buffer;
+    } else {
+        buffer = [NSMutableArray arrayWithArray:activityDevices];
+        [buffer addObject:newDevice];
+        activityDevices = buffer;
+    }
 }
 @end

@@ -12,10 +12,10 @@
 #import "JawboneUP24.h"
 #import "PolarH7.h"
 #import "WahooTickrX.h"
+#import "DeviceTypes.h"
 
 #define DEVICE_NUM 3
-#define HEART_MONITOR 1
-#define ACTIVITY_MONITOR 2
+
 
 @interface BTDeviceManager : NSObject <CBCentralManagerDelegate>
 
