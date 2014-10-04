@@ -68,9 +68,13 @@
     
     NSArray *services;
     if (type == ACTIVITY_MONITOR) {
+        
+        // temporary workaround since only one device is known at the moment
+        
         services =[[NSArray alloc] initWithObjects:[CBUUID UUIDWithString:FLEX_SERV_UUID], nil];
     } else {
         
+        // need information on the other devices
     }
     [manager scanForPeripheralsWithServices:services options:nil];
     NSLog(@"Scanning devices");
@@ -78,6 +82,7 @@
 
 -(void) stopScan {
     
+    NSLog(@"Stopping scan");
     [manager stopScan];
 }
 
@@ -125,6 +130,7 @@
 
 -(void) centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI {
     
+    NSLog(@"Discovered a device");
     id<DeviceConnection> newDevice = [MonitorCreationFactory createFromPeripheral:peripheral];
     NSMutableArray *buffer = nil;
     if ([newDevice type] == HEART_MONITOR) {

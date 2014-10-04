@@ -47,8 +47,10 @@ NSString * const FLEX_SERV_UUID = @"45C3";
 
 -(NSInteger) batteryLevel {
     
-    if (batteryCharacteristic != nil) {
-        [super readValueForCharacteristic:batteryCharacteristic];
+    if ([self isConnected]) {
+        if (batteryCharacteristic != nil) {
+            [super readValueForCharacteristic:batteryCharacteristic];
+        }
     }
     return batteryLvl;
 }
