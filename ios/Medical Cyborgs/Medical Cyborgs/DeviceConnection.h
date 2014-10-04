@@ -19,6 +19,15 @@
 
 @required
 
+
+/*
+ * This initialization method creates the desired device based on the CBPeripheral that is discovered.
+ *  It is common to all types of devices and will probably bypass very use of the standard init method
+ * for those classes.
+ **/
+
+-(id) initWithPeripheral: (CBPeripheral*) peripheral;
+
 /*
  * This method does a check to see if the the device is actually connected and returns a value of
  * TRUE if it is currently connected.  If the Device is in the CBPeripheralDeviceIsConnecting state,
@@ -42,5 +51,18 @@
  **/
 
 -(NSInteger) batteryLevel;
+
+/*
+ * This method returns the device type.  It is used for a shallow query of the object so that it can be placed in
+ * correct array of the bluetooth manager.  See DeviceTypes.h for the values.
+ **/
+
+-(NSInteger) type;
+
+/*
+ * This sets the device type so that the device can be easily placed in the desired array of the controller.
+ **/
+
+-(void) setType:(NSInteger) type;
 
 @end
