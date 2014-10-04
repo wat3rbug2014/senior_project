@@ -18,8 +18,9 @@
 #import <CoreBluetooth/CoreBluetooth.h>
 #import "DeviceConnection.h"
 
-@interface JawboneUP24 : CBPeripheral <DeviceConnection>
+@interface JawboneUP24 : NSObject <DeviceConnection>
 
 @property NSInteger type;
+@property (retain) CBPeripheral *peripheral;
 
 @end

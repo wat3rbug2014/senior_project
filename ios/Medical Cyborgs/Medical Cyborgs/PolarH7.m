@@ -10,19 +10,18 @@
 
 @implementation PolarH7
 
+-(id) initWithPeripheral: (CBPeripheral*) peripheral {
+    
+    if (self = [super init]) {
+        _peripheral = peripheral;
+        _peripheral.delegate = self;
+    }
+    return self;
+}
+
 -(BOOL)isConnected {
     
-    return true;
-}
-
--(void) connect {
-    
-    
-}
-
--(void) disconnect {
-    
-    
+    return ([_peripheral state] == CBPeripheralStateConnected) ? TRUE : FALSE;
 }
 
 -(NSData*) getData {
@@ -46,6 +45,11 @@
 -(void) setType:(NSInteger)type {
     
     self.type = type;
+}
+
+-(NSString*) name {
+    
+    return [self.peripheral name];
 }
 
 @end

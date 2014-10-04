@@ -65,4 +65,11 @@
 
 -(void) setType:(NSInteger) type;
 
+ /*
+  * Returns the device name of the CBPeripheral that is in the class of the object.  Created for easy reading
+  * and consist access.
+  **/
+
+-(NSString*) name;
+
 @end

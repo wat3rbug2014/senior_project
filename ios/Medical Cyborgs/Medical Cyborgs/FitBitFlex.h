@@ -21,8 +21,9 @@
 
 extern NSString * const FLEX_SERV_UUID;
 
-@interface FitBitFlex : CBPeripheral <DeviceConnection>
+@interface FitBitFlex : NSObject <DeviceConnection>
 
+@property (retain) CBPeripheral *peripheral;
 @property (retain) CBCharacteristic *batteryCharacteristic;
 @property NSInteger batteryLvl;
 @property NSInteger type;

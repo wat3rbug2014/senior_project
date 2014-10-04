@@ -14,19 +14,16 @@ NSString * const FLEX_SERV_UUID = @"45C3";
 
 @synthesize batteryCharacteristic;
 @synthesize batteryLvl;
+@synthesize type;
 
--(id) init {
-    
-    if (self = [super init]) {
-        self.delegate = self;
-    }
-    return self;
-}
 
 -(id) initWithPeripheral: (CBPeripheral*) peripheral {
     
-    self = (FitBitFlex*)peripheral;
-    self.delegate = self;
+    if (self = [super init]) {
+        _peripheral = peripheral;
+        _peripheral.delegate = self;
+        type = ACTIVITY_MONITOR;
+    }
     return self;
 }
 
@@ -34,7 +31,7 @@ NSString * const FLEX_SERV_UUID = @"45C3";
 
 -(BOOL)isConnected {
     
-    return ([super state] == CBPeripheralStateConnected) ? TRUE : FALSE;
+    return ([_peripheral state] == CBPeripheralStateConnected) ? TRUE : FALSE;
 }
 
 -(NSData*) getData {
@@ -49,7 +46,7 @@ NSString * const FLEX_SERV_UUID = @"45C3";
     
     if ([self isConnected]) {
         if (batteryCharacteristic != nil) {
-            [super readValueForCharacteristic:batteryCharacteristic];
+            [_peripheral readValueForCharacteristic:batteryCharacteristic];
         }
     }
     return batteryLvl;
@@ -57,12 +54,17 @@ NSString * const FLEX_SERV_UUID = @"45C3";
 
 -(NSInteger) type {
     
-    return self.type;
+    return type;
 }
 
--(void) setType:(NSInteger)type {
+-(void) setType:(NSInteger) newType {
     
-    self.type = type;
+    self.type = newType;
+}
+
+-(NSString*) name {
+    
+    return [self.peripheral name];
 }
 
 #pragma mark CBPeripheralDelegate protocol methods

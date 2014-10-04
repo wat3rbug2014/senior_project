@@ -19,15 +19,24 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = @"Activity Monitors";
-        [self.deviceManager discoverDevicesForType: HEART_MONITOR];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceListUpdated) name:@"BTDeviceDiscovery" object:self.deviceManager];
     }
     return self;
 }
 
-- (void)viewDidLoad
-{
+-(void) dealloc {
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+- (void)viewDidLoad {
+    
     [super viewDidLoad];
-    [[self deviceManager] discoveredDevicesForType:ACTIVITY_MONITOR];
+}
+
+-(void) viewWillAppear:(BOOL)animated {
+    
+    [self.deviceManager discoverDevicesForType:ACTIVITY_MONITOR];
+    [super viewWillAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,12 +60,18 @@
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    
-
-
     [super.deviceManager setActivityMonitorIsConnected:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [self.navigationController popViewControllerAnimated:YES];
     
 }
+
+#pragma mark Custom methods
+
+
+-(void) deviceListUpdated {
+    
+    [self.tableView reloadData];
+}
+
 @end
