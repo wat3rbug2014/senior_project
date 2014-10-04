@@ -21,4 +21,6 @@
 
 @interface PolarH7 : CBPeripheral <DeviceConnection>
 
+@property NSInteger type;
+
 @end

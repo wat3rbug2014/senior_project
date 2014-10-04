@@ -21,4 +21,6 @@
 
 @interface WahooTickrX : CBPeripheral <DeviceConnection>
 
+@property NSInteger type;
+
 @end

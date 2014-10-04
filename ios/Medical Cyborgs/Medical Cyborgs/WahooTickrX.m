@@ -39,4 +39,14 @@
     return 100;
 }
 
+-(NSInteger) type {
+    
+    return self.type;
+}
+
+-(void) setType:(NSInteger)type {
+    
+    self.type = type;
+}
+
 @end

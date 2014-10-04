@@ -15,7 +15,6 @@ NSString * const FLEX_SERV_UUID = @"45C3";
 @synthesize batteryCharacteristic;
 @synthesize batteryLvl;
 
-
 -(id) init {
     
     if (self = [super init]) {
@@ -24,6 +23,12 @@ NSString * const FLEX_SERV_UUID = @"45C3";
     return self;
 }
 
+-(id) initWithPeripheral: (CBPeripheral*) peripheral {
+    
+    self = (FitBitFlex*)peripheral;
+    self.delegate = self;
+    return self;
+}
 
 #pragma mark DeviceConnection protocol methods
 
@@ -48,6 +53,15 @@ NSString * const FLEX_SERV_UUID = @"45C3";
     return batteryLvl;
 }
 
+-(NSInteger) type {
+    
+    return self.type;
+}
+
+-(void) setType:(NSInteger)type {
+    
+    self.type = type;
+}
 
 #pragma mark CBPeripheralDelegate protocol methods
 
@@ -62,7 +76,6 @@ NSString * const FLEX_SERV_UUID = @"45C3";
     // may need to check if that will really be equal
     
     if (characteristic == batteryCharacteristic) {
-        NSData *readValue = [characteristic value];
         
         // translate the data into something usable.
         // update the batteryLvl

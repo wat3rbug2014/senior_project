@@ -17,6 +17,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreBluetooth/CoreBluetooth.h>
 #import "DeviceConnection.h"
+#import "DeviceTypes.h"
 
 extern NSString * const FLEX_SERV_UUID;
 
@@ -24,5 +25,6 @@ extern NSString * const FLEX_SERV_UUID;
 
 @property (retain) CBCharacteristic *batteryCharacteristic;
 @property NSInteger batteryLvl;
+@property NSInteger type;
 
 @end
