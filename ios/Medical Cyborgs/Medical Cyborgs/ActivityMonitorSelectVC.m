@@ -19,6 +19,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = @"Activity Monitors";
+        [self.deviceManager discoverDevicesForType: HEART_MONITOR];
     }
     return self;
 }
@@ -26,7 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [[self deviceManager] discoveredDevicesForType:ACTIVITY_MONITOR];
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,8 +52,8 @@
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     
-    DummyDevice *selectedDevice = [super.deviceManager deviceAtIndex:indexPath.row forMonitorType:ACTIVITY_MONITOR];
-    [selectedDevice setIsConnected:YES];
+
+
     [super.deviceManager setActivityMonitorIsConnected:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [self.navigationController popViewControllerAnimated:YES];

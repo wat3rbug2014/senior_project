@@ -10,8 +10,11 @@
 
 @implementation FitBitFlex
 
+NSString * const FLEX_SERV_UUID = @"45C3";
+
 @synthesize batteryCharacteristic;
 @synthesize batteryLvl;
+
 
 -(id) init {
     

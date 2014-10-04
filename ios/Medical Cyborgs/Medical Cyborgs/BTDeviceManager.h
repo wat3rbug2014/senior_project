@@ -7,13 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DummyDevice.h"
+#import <CoreBluetooth/CoreBluetooth.h>
+#import "FitBitFlex.h"
+#import "JawboneUP24.h"
+#import "PolarH7.h"
+#import "WahooTickrX.h"
 
 #define DEVICE_NUM 3
 #define HEART_MONITOR 1
 #define ACTIVITY_MONITOR 2
 
-@interface BTDeviceManager : NSObject
+@interface BTDeviceManager : NSObject <CBCentralManagerDelegate>
 
 
 @property NSArray *heartDevices;
@@ -22,13 +26,14 @@
 @property NSInteger selectedIndexForActivityMonitor;
 @property BOOL heartMonitorIsConnected;
 @property BOOL activityMonitorIsConnected;
-@property NSInteger heartRate;
 @property BOOL isActive;
+@property NSInteger searchType;
+@property (retain) CBCentralManager *manager;
 
 -(NSInteger) discoveredDevicesForType: (NSInteger) type;
 -(id) deviceAtIndex: (NSInteger) index forMonitorType: (NSInteger) type;
 
--(NSInteger) receivedHeartRateMeasurement;
 -(BOOL) isActiveMeasurementReceived;
-
+-(void) discoverDevicesForType: (NSInteger) type;
+-(void) stopScan;
 @end

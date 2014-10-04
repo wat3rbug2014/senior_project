@@ -18,6 +18,8 @@
 #import <CoreBluetooth/CoreBluetooth.h>
 #import "DeviceConnection.h"
 
+extern NSString * const FLEX_SERV_UUID;
+
 @interface FitBitFlex : CBPeripheral <DeviceConnection>
 
 @property (retain) CBCharacteristic *batteryCharacteristic;
