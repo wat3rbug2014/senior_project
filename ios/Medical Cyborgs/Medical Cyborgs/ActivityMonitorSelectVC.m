@@ -19,7 +19,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = @"Activity Monitors";
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceListUpdated) name:@"BTDeviceDiscovery" object:self.deviceManager];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceListUpdated)
+                name:@"BTDeviceDiscovery" object:self.deviceManager];
     }
     return self;
 }
@@ -28,6 +29,7 @@
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
+
 - (void)viewDidLoad {
     
     [super viewDidLoad];
@@ -53,14 +55,18 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSString *identifier = @"Default";
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identifier];
     [[cell textLabel] setText:[[[super.deviceManager activityDevices ] objectAtIndex:indexPath.row] name]];
+    if ([super.deviceManager selectedIndexForActivityMonitor] == indexPath.row) {
+        [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
+    }
     return cell;
 }
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [super.deviceManager setActivityMonitorIsConnected:YES];
+    [super.deviceManager setSelectedIndexForActivityMonitor:indexPath.row];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [self.navigationController popViewControllerAnimated:YES];
     
