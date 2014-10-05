@@ -23,30 +23,11 @@
 @synthesize manager;
 @synthesize searchType;
 
-/*
- * This initialization has dummy data that will be removed as real time is put
- * into place.
- **/
 
 -(id) init {
     
     if (self = [super init]) {
         manager = [[CBCentralManager alloc] initWithDelegate:self queue:nil]; // maybe this needs to be on another thread
-        
-        NSMutableArray *deviceListBuild = [NSMutableArray arrayWithCapacity:DEVICE_NUM];
-        for (int i = 0; i < DEVICE_NUM; i++) {
-            DummyDevice *temp = [[DummyDevice alloc] init];
-            [temp setName: [NSString stringWithFormat:@"Heart Test%d", i]];
-            [deviceListBuild addObject:temp];
-        }
-        heartDevices = deviceListBuild;
-//        deviceListBuild = [NSMutableArray arrayWithCapacity:DEVICE_NUM];
-//        for (int i = 0; i < DEVICE_NUM; i++) {
-//            DummyDevice *temp = [[DummyDevice alloc] init];
-//            [temp setName: [NSString stringWithFormat:@"Activity Test%d", i]];
-//            [deviceListBuild addObject:temp];
-//        }
-//        activityDevices = deviceListBuild;
     }
     return self;
 }
@@ -56,6 +37,7 @@
     [manager setDelegate:nil];
     manager = nil;
 }
+
 /*
  * This function starts the discovery process based on the type of device
  * it is looking to find.  At this time there is HEART_MONITOR and ACTIVITY_MONITOR
@@ -76,15 +58,27 @@
         
         // need information on the other devices
     }
-    [manager scanForPeripheralsWithServices:services options:nil];
     NSLog(@"Scanning devices");
+    [manager scanForPeripheralsWithServices:nil options:nil];
 }
+
+/*
+ * This function allows remote shutdown of discovery process to conserve the battery.  Its purpose is to allow
+ * the dismissal of selection viewcontrollers to shut the discovery because the devicemanager class is shared
+ * throughout the application.
+ **/
 
 -(void) stopScan {
     
     NSLog(@"Stopping scan");
     [manager stopScan];
 }
+
+/*
+ * This function returns the count of the number of devices found during the discovery process of either the
+ * heart monitor or activity monitor discovery.  Accepted types are to be found in DeviceTypes.h
+ * @param An integer result of the count of devices that have been found.
+ **/
 
 -(NSInteger) discoveredDevicesForType:(NSInteger)type {
     
@@ -95,9 +89,15 @@
     }
 }
 
-// this should change from id for compile time checks
+/*
+ * This returns the device object based on the index and the device type that discovery is done to obtain.
+ * The monitor type is an integer based on the constants found in DeviceTypes.h.  
+ * @param index is the index from the table which is in sync with the array of devices that have been discovered.
+ * @param type it the integer value that determines which array to retrieve the device class.
+ * @return Returns the device object that correlates to the DeviceConnection protocol.
+ **/
 
--(id) deviceAtIndex: (NSInteger) index forMonitorType: (NSInteger) type {
+-(id<DeviceConnection>) deviceAtIndex: (NSInteger) index forMonitorType: (NSInteger) type {
     
     if (type == HEART_MONITOR) {
         return [heartDevices objectAtIndex:index];
@@ -113,8 +113,8 @@
     return [self isActive];
 }
 
-
 #pragma mark CBCentralManagerDelegate methods
+
 
 -(void) centralManagerDidUpdateState:(CBCentralManager *)central {
     
@@ -135,12 +135,31 @@
     NSMutableArray *buffer = nil;
     if ([newDevice type] == HEART_MONITOR) {
         buffer = [NSMutableArray arrayWithArray:heartDevices];
-        [buffer addObject:newDevice];
-        heartDevices = buffer;
+        BOOL isNew = false;
+        for (id<DeviceConnection> currentDevice in buffer) {
+            if ([[currentDevice name] isEqual:[newDevice name]]) {
+                isNew = true;
+            }
+        }
+        if (!isNew) {
+            [buffer addObject:newDevice];
+            heartDevices = buffer;
+        }
     } else {
         buffer = [NSMutableArray arrayWithArray:activityDevices];
-        [buffer addObject:newDevice];
-        activityDevices = buffer;
+        BOOL isNew = false;
+        for (id<DeviceConnection> currentDevice in buffer) {
+            if ([[currentDevice name] isEqual:[newDevice name]]) {
+                isNew = true;
+            }
+        }
+        if (!isNew) {
+            [buffer addObject:newDevice];
+            activityDevices = buffer;
+        }
     }
+    NSLog(@"Device: %@", [newDevice name]);
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"BTDeviceDiscovery" object:self];
 }
+
 @end
