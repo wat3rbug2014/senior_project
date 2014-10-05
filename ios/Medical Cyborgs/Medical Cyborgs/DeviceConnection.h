@@ -22,7 +22,7 @@
 
 /*
  * This initialization method creates the desired device based on the CBPeripheral that is discovered.
- *  It is common to all types of devices and will probably bypass very use of the standard init method
+ * It is common to all types of devices and will probably bypass very use of the standard init method
  * for those classes.
  **/
 

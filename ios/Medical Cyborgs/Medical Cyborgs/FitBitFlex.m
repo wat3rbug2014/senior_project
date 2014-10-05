@@ -29,6 +29,7 @@ NSString * const FLEX_SERV_UUID = @"45C3";
 
 #pragma mark DeviceConnection protocol methods
 
+
 -(BOOL)isConnected {
     
     return ([_peripheral state] == CBPeripheralStateConnected) ? TRUE : FALSE;
@@ -36,13 +37,16 @@ NSString * const FLEX_SERV_UUID = @"45C3";
 
 -(NSData*) getData {
     
+    // This function is not filled out
+    
     NSData *results = nil;
-    
-    
     return results;
 }
 
 -(NSInteger) batteryLevel {
+    
+    // This method needs to be thought out.  There is device response lag which will
+    // give inaccurate readings.
     
     if ([self isConnected]) {
         if (batteryCharacteristic != nil) {
