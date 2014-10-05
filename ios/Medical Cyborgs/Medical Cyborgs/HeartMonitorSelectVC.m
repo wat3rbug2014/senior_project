@@ -19,7 +19,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = @"Heart Rate Monitors";
+        self.title = @"Heart Monitors";
     }
     return self;
 }
@@ -30,8 +30,20 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning
-{
+-(void) viewWillAppear:(BOOL)animated {
+    
+    [self.deviceManager discoverDevicesForType:HEART_MONITOR];
+    [super viewWillAppear:animated];
+}
+
+-(void) viewWillDisappear:(BOOL)animated {
+    
+    [self.deviceManager stopScan];
+    [super viewWillDisappear:animated];
+}
+
+- (void)didReceiveMemoryWarning {
+    
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -44,30 +56,25 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSString *identifier = @"Default";
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-    [[cell textLabel] setText:[[[super.deviceManager heartDevices ] objectAtIndex:indexPath.row] name]];
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identifier];
+    [[cell textLabel] setText:[[[super.deviceManager heartDevices] objectAtIndex:indexPath.row] name]];
+    if ([super.deviceManager selectedIndexForHeartMonitor] == indexPath.row) {
+        [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
+    }
     return cell;
+
 }
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
 
-    DummyDevice *selectedDevice = [super.deviceManager deviceAtIndex:indexPath.row forMonitorType:HEART_MONITOR];
-    [selectedDevice setIsConnected:YES];
+    [super.deviceManager setSelectedIndexForHeartMonitor:indexPath.row];
     [super.deviceManager setHeartMonitorIsConnected:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [self.navigationController popViewControllerAnimated:YES];
     
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+#pragma mark Custom methods
 
 @end

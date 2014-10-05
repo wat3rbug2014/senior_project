@@ -10,6 +10,5 @@
 
 @interface ActivityMonitorSelectVC : DeviceSelectionVC
 
--(void) deviceListUpdated;
 
 @end

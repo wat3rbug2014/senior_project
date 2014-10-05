@@ -17,13 +17,12 @@
 
 @synthesize deviceManager;
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    // not used
+- (id)initWithStyle:(UITableViewStyle)style {
     
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceListUpdated)
+                name:@"BTDeviceDiscovery" object:self.deviceManager];
     }
     return self;
 }
@@ -32,20 +31,22 @@
     
     // this may be a bad hack because I haven't defined self yet
     
-    self = [self initWithStyle:UITableViewStylePlain];
-    self.deviceManager = newDeviceManager;
+    if (self = [self initWithStyle:UITableViewStylePlain]) {
+        self.deviceManager = newDeviceManager;
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceListUpdated)
+                name:@"BTDeviceDiscovery" object:self.deviceManager];
+    }
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
+    
     [super viewDidLoad];
+}
+
+-(void) dealloc {
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [[NSNotificationCenter defaultCenter] removeObserver:self.deviceManager];
 }
 
 - (void)didReceiveMemoryWarning
@@ -59,6 +60,11 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
     return 1;
+}
+
+-(void) deviceListUpdated {
+    
+    [self.tableView reloadData];
 }
 
 @end

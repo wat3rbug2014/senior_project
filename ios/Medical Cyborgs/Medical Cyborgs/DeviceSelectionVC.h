@@ -14,5 +14,6 @@
 @property BTDeviceManager *deviceManager;
 
 -(id) initWithDeviceManager: (BTDeviceManager*) newDeviceManager;
+-(void) deviceListUpdated;
 
 @end

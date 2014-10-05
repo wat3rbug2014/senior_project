@@ -19,15 +19,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = @"Activity Monitors";
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceListUpdated)
-                name:@"BTDeviceDiscovery" object:self.deviceManager];
     }
     return self;
-}
-
--(void) dealloc {
-    
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)viewDidLoad {
@@ -39,6 +32,12 @@
     
     [self.deviceManager discoverDevicesForType:ACTIVITY_MONITOR];
     [super viewWillAppear:animated];
+}
+
+-(void) viewWillDisappear:(BOOL)animated {
+    
+    [self.deviceManager stopScan];
+    [super viewWillDisappear:animated];
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,7 +55,7 @@
     
     NSString *identifier = @"Default";
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identifier];
-    [[cell textLabel] setText:[[[super.deviceManager activityDevices ] objectAtIndex:indexPath.row] name]];
+    [[cell textLabel] setText:[[[super.deviceManager activityDevices] objectAtIndex:indexPath.row] name]];
     if ([super.deviceManager selectedIndexForActivityMonitor] == indexPath.row) {
         [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
     }
@@ -75,9 +74,5 @@
 #pragma mark Custom methods
 
 
--(void) deviceListUpdated {
-    
-    [self.tableView reloadData];
-}
 
 @end
