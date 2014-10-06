@@ -32,6 +32,12 @@
     return self;
 }
 
+/*
+ * This method is mostly not needed because of ARC.  However, it is important to understand that only one instance of the
+ * CBCentralManager should exist.  This just demonstrates that the references must be cleared so that dangling
+ * pointers don't cause a bug somewhere else.
+ **/
+
 -(void) dealloc {
     
     [manager setDelegate:nil];
@@ -42,8 +48,9 @@
  * This function starts the discovery process based on the type of device
  * it is looking to find.  At this time there is HEART_MONITOR and ACTIVITY_MONITOR
  * types.
+ *
  * @param The integer that designates whether a heart monitor or an activity monitor
- * will be the attempt to discover.
+ *          will be the attempt to discover.
  **/
 
 -(void) discoverDevicesForType:(NSInteger)type {
@@ -77,6 +84,7 @@
 /*
  * This function returns the count of the number of devices found during the discovery process of either the
  * heart monitor or activity monitor discovery.  Accepted types are to be found in DeviceTypes.h
+ *
  * @param An integer result of the count of devices that have been found.
  **/
 
@@ -91,7 +99,8 @@
 
 /*
  * This returns the device object based on the index and the device type that discovery is done to obtain.
- * The monitor type is an integer based on the constants found in DeviceTypes.h.  
+ * The monitor type is an integer based on the constants found in DeviceTypes.h. 
+ *
  * @param index is the index from the table which is in sync with the array of devices that have been discovered.
  * @param type it the integer value that determines which array to retrieve the device class.
  * @return Returns the device object that correlates to the DeviceConnection protocol.
@@ -106,6 +115,7 @@
     }
 }
 
+// undecided on whether this should remain
 
 -(BOOL) isActiveMeasurementReceived {
     
@@ -132,7 +142,17 @@
     
     NSLog(@"Discovered a device");
     id<DeviceConnection> newDevice = [MonitorCreationFactory createFromPeripheral:peripheral];
+    
+    // get rid of false positive devices.  Sometimes a device is discovered but there
+    // is no information for it.
+    
+    if (newDevice == nil) {
+        return;
+    }
     NSMutableArray *buffer = nil;
+    
+    // do the check for duplicates and add to heart monitors
+    
     if ([newDevice type] == HEART_MONITOR) {
         buffer = [NSMutableArray arrayWithArray:heartDevices];
         BOOL isNew = false;
@@ -145,6 +165,8 @@
             [buffer addObject:newDevice];
             heartDevices = buffer;
         }
+        // do the check for duplicates and add to activity monitors
+        
     } else {
         buffer = [NSMutableArray arrayWithArray:activityDevices];
         BOOL isNew = false;
@@ -158,6 +180,8 @@
             activityDevices = buffer;
         }
     }
+    // post a notification so that the tableviews can update their views
+    
     NSLog(@"Device: %@", [newDevice name]);
     [[NSNotificationCenter defaultCenter] postNotificationName:@"BTDeviceDiscovery" object:self];
 }
