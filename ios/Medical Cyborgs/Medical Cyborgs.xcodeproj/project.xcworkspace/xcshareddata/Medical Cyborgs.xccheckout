@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>6E1F558D-FD71-47C1-8B19-CA8C63BEE4B8</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Medical Cyborgs</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E0F2AE38F26B9AB9619688ED2CB6F443004A157A</key>
+		<string>https://github.com/wat3rbug2014/senior_project.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ios/Medical Cyborgs/Medical Cyborgs.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E0F2AE38F26B9AB9619688ED2CB6F443004A157A</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/wat3rbug2014/senior_project.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E0F2AE38F26B9AB9619688ED2CB6F443004A157A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E0F2AE38F26B9AB9619688ED2CB6F443004A157A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Senior%20Project</string>
+		</dict>
+	</array>
+</dict>
+</plist>
