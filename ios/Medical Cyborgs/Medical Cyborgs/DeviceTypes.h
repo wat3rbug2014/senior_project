@@ -18,4 +18,7 @@
 #define HEART_MONITOR 1
 #define ACTIVITY_MONITOR 2
 
+#define BATTERY @"Battery"
+#define BATTERY_LVL @"Battery Level"
+
 #endif

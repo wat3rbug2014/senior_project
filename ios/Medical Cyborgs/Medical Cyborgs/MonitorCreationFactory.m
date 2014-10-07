@@ -41,6 +41,7 @@
         return nil;
     }
     if ([[peripheral name] rangeOfString:@"Flex"].location != NSNotFound) {
+        NSLog(@"Making FitBit Flex object");
         result = [[FitBitFlex alloc] initWithPeripheral:peripheral];
     }
     // The information for these devices is not known yet
