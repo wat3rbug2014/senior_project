@@ -57,7 +57,9 @@
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identifier];
     id<DeviceConnection> currentDevice = [[super.deviceManager activityDevices] objectAtIndex:indexPath.row];
     [[cell textLabel] setText:[currentDevice name]];
-    [[cell detailTextLabel] setText:[currentDevice manufacturer]];
+    if ([currentDevice respondsToSelector:@selector(manufacturer)]) {
+        [[cell detailTextLabel] setText:[currentDevice manufacturer]];
+    }
     if ([super.deviceManager selectedIndexForActivityMonitor] == indexPath.row) {
         [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
     }
