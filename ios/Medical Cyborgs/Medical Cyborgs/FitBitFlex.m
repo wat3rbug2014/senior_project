@@ -23,6 +23,7 @@ NSString * const FLEX_SERV_UUID = @"45C3";
         _peripheral = peripheral;
         _peripheral.delegate = self;
         type = ACTIVITY_MONITOR;
+        [peripheral discoverServices:nil];
     }
     return self;
 }
@@ -71,6 +72,10 @@ NSString * const FLEX_SERV_UUID = @"45C3";
     return [self.peripheral name];
 }
 
+-(NSString*) manufacturer {
+    
+    return nil;
+}
 #pragma mark CBPeripheralDelegate protocol methods
 
 -(void) peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error {
@@ -88,6 +93,16 @@ NSString * const FLEX_SERV_UUID = @"45C3";
         // translate the data into something usable.
         // update the batteryLvl
     }
+}
 
+-(void) peripheral:(CBPeripheral *)peripheral didDiscoverServices:(NSError *)error {
+    
+    // figure out the possibilities so that we can handle them.
+    if (error != nil) {
+        NSLog(@"Error %@", [error description]);
+    }
+    for (CBCharacteristic *currentTrait in [peripheral services]) {
+        // go through each for discovery8
+    }
 }
 @end

@@ -23,15 +23,20 @@
 /*
  * This initialization method creates the desired device based on the CBPeripheral that is discovered.
  * It is common to all types of devices and will probably bypass very use of the standard init method
- * for those classes.
+ * for those classes.  This method is used by the MonitorCreationFactory as a standard for initializing
+ * the device and providing all of the methods in this protocol.
+ *
+ * @param CBPeripheral is the device object that the CBCentralManager discovered.
+ * @return id<DeviceConnection> This object is any class that conforms to the DeviceConnection protocol.
  **/
 
--(id) initWithPeripheral: (CBPeripheral*) peripheral;
+-(id<DeviceConnection>) initWithPeripheral: (CBPeripheral*) peripheral;
 
 /*
  * This method does a check to see if the the device is actually connected and returns a value of
  * TRUE if it is currently connected.  If the Device is in the CBPeripheralDeviceIsConnecting state,
  * the return value is FALSE.
+ *
  * @return TRUE or FALSE value if the device is connected.
  **/
 
@@ -40,14 +45,20 @@
 /*
  * This method returns the data to be received.  Because the default datatype from the CBCperipheral method
  * is NSData, this is left to keep consistency across all classes that use this interface.  For more
- * specific breakdown of the data see the classes that use this protocol for other methods.
+ * specific breakdown of the data see the classes that use this protocol for other methods.  It is noted that
+ * no conversion has been performed on the data and the Endianness is undetermined.
+ *
+ * @return NSData The raw data received from the device without any filtration or conversion.
  **/
 
 -(NSData*) getData;
 
 /*
  * This method returns the battery level expressed as a percentage from 0 to 100.  NSInteger is used to keep
- * platform differences to a minimum.
+ * platform differences to a minimum.  Not all devices will support the battery level function.  The result will
+ * be 0 if the characteristic is not defined within the device.
+ * 
+ * @return NSInteger value between 0 and 100 representing the percentage of charge on the devices battery.
  **/
 
 -(NSInteger) batteryLevel;
@@ -55,12 +66,17 @@
 /*
  * This method returns the device type.  It is used for a shallow query of the object so that it can be placed in
  * correct array of the bluetooth manager.  See DeviceTypes.h for the values.
+ *
+ * @return Returns an NSInteger that fits within the confines of the DeviceTypes.h file.
  **/
 
 -(NSInteger) type;
 
 /*
  * This sets the device type so that the device can be easily placed in the desired array of the controller.
+ *
+ * @param type is the NSInteger defined from the DeviceTypes.h file.  This field is used to help determine
+ *         if a device belongs in the heart monitors array or the activity monitors array.
  **/
 
 -(void) setType:(NSInteger) type;
@@ -68,8 +84,21 @@
  /*
   * Returns the device name of the CBPeripheral that is in the class of the object.  Created for easy reading
   * and consist access.
+  *
+  * @return an NSString of the device name.
   **/
 
 -(NSString*) name;
+
+@optional
+
+ /*
+  * This method is used to fill in details in the discovery view table.  It is optional.
+  *
+  * @return This NSString value that the device broadcast for the manufacturer name in the
+  *         Device Information characteristic.  Not all devices have this information.
+  **/
+
+-(NSString*) manufacturer;
 
 @end

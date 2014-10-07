@@ -55,7 +55,9 @@
     
     NSString *identifier = @"Default";
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identifier];
-    [[cell textLabel] setText:[[[super.deviceManager activityDevices] objectAtIndex:indexPath.row] name]];
+    id<DeviceConnection> currentDevice = [[super.deviceManager activityDevices] objectAtIndex:indexPath.row];
+    [[cell textLabel] setText:[currentDevice name]];
+    [[cell detailTextLabel] setText:[currentDevice manufacturer]];
     if ([super.deviceManager selectedIndexForActivityMonitor] == indexPath.row) {
         [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
     }
