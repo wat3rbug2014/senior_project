@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreBluetooth/CoreBluetooth.h>
+#import "DeviceConnection.h"
 
 @interface MonitorCreationFactory : NSObject
 
-+(id) createFromPeripheral: (CBPeripheral*) peripheral;
++(id<DeviceConnection>) createFromPeripheral: (CBPeripheral*) peripheral;
 
 @end

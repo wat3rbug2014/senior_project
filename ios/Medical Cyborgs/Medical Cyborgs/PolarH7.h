@@ -22,6 +22,7 @@
 @interface PolarH7 : NSObject <DeviceConnection>
 
 @property NSInteger type;
-@property (retain) CBPeripheral *peripheral;
+@property NSInteger updatedBatteryLevel;
+@property (retain) CBPeripheral *device;
 
 @end

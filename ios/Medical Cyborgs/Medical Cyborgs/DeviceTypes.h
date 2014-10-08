@@ -20,5 +20,6 @@
 
 #define BATTERY @"Battery"
 #define BATTERY_LVL @"Battery Level"
+#define DEVICE_READ_VALUE @"BTDeviceValueUpdated"
 
 #endif

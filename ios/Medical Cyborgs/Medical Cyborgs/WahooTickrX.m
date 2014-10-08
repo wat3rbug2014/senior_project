@@ -11,18 +11,21 @@
 
 @implementation WahooTickrX
 
+@synthesize updatedBatteryLevel;
+@synthesize device;
+
 -(id) initWithPeripheral: (CBPeripheral*) peripheral {
     
     if (self = [super init]) {
-        _peripheral = peripheral;
-        _peripheral.delegate = self;
+        device = peripheral;
+        device.delegate = self;
     }
     return self;
 }
 
 -(BOOL)isConnected {
     
-    return ([_peripheral state] == CBPeripheralStateConnected) ? TRUE : FALSE;
+    return ([device state] == CBPeripheralStateConnected) ? TRUE : FALSE;
 }
 
 -(NSData*) getData {
@@ -33,10 +36,6 @@
     return results;
 }
 
--(NSInteger) batteryLevel {
-    
-    return 100;
-}
 
 -(NSInteger) type {
     
@@ -50,7 +49,17 @@
 
 -(NSString*) name {
     
-    return [self.peripheral name];
+    return [device name];
+}
+
+-(void) getTableInformation {
+    
+    
+}
+
+-(void) updateBatteryLevel {
+    
+    
 }
 
 @end

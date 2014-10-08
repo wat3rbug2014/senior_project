@@ -54,14 +54,20 @@
 -(NSData*) getData;
 
 /*
- * This method returns the battery level expressed as a percentage from 0 to 100.  NSInteger is used to keep
- * platform differences to a minimum.  Not all devices will support the battery level function.  The result will
- * be 0 if the characteristic is not defined within the device.
- * 
- * @return NSInteger value between 0 and 100 representing the percentage of charge on the devices battery.
+ * This method retrieves the battery level as expressed as a percent integer.  It assumed that a
+ * updateBatteryLevel call was made, otherwise the last known value is returned.
+ *
+ * @return NSInteger value from 0 to 100 expressing the percent of charge. 0 is default for unread
+ * or unreadable battery level characteristic.
  **/
 
--(NSInteger) batteryLevel;
+-(NSInteger) updatedBatteryLevel;
+
+/*
+ * This method forces the device to read and broadcast the battery level.
+ **/
+
+-(void) updateBatteryLevel;
 
 /*
  * This method returns the device type.  It is used for a shallow query of the object so that it can be placed in
@@ -89,6 +95,12 @@
   **/
 
 -(NSString*) name;
+
+
+
+-(CBPeripheral*) device;
+
+-(void) getTableInformation;
 
 @optional
 

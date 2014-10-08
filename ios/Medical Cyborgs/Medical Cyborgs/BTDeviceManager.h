@@ -36,4 +36,6 @@
 -(BOOL) isActiveMeasurementReceived;
 -(void) discoverDevicesForType: (NSInteger) type;
 -(void) stopScan;
+-(void) disconnectDevicesForType: (NSInteger) type;
+
 @end

@@ -32,8 +32,8 @@
 
 -(void) viewWillAppear:(BOOL)animated {
     
-    [self.deviceManager discoverDevicesForType:HEART_MONITOR];
     [super viewWillAppear:animated];
+    [self.deviceManager discoverDevicesForType:HEART_MONITOR];
 }
 
 -(void) viewWillDisappear:(BOOL)animated {

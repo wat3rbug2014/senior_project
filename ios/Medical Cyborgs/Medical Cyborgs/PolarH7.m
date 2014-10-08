@@ -10,18 +10,21 @@
 
 @implementation PolarH7
 
+@synthesize device;
+@synthesize updatedBatteryLevel;
+
 -(id) initWithPeripheral: (CBPeripheral*) peripheral {
     
     if (self = [super init]) {
-        _peripheral = peripheral;
-        _peripheral.delegate = self;
+        device = peripheral;
+        [device setDelegate:self];
     }
     return self;
 }
 
 -(BOOL)isConnected {
     
-    return ([_peripheral state] == CBPeripheralStateConnected) ? TRUE : FALSE;
+    return ([device state] == CBPeripheralStateConnected) ? TRUE : FALSE;
 }
 
 -(NSData*) getData {
@@ -32,10 +35,7 @@
     return results;
 }
 
--(NSInteger) batteryLevel {
-    
-    return 100;
-}
+
 
 -(NSInteger) type {
     
@@ -49,7 +49,17 @@
 
 -(NSString*) name {
     
-    return [self.peripheral name];
+    return [device name];
+}
+
+-(void) updateBatteryLevel {
+    
+    
+}
+
+-(void) getTableInformation {
+    
+    
 }
 
 @end

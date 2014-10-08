@@ -40,6 +40,7 @@
 
 -(void) dealloc {
     
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     [manager setDelegate:nil];
     manager = nil;
 }
@@ -115,6 +116,27 @@
     }
 }
 
+/*
+ * This method is to tidy up after a device selection screen.  In order to get device details
+ * all the devices that werte scanned have to be connected.  Since only one is connected during 
+ * the monitoring process the others need to disconnect.  Only those device types are disconnected.
+ *
+ * @param type The device type as designated by the DeviceTypes.h file.
+ **/
+
+-(void) disconnectDevicesForType: (NSInteger) type {
+    
+    if (type == HEART_MONITOR) {
+        for (id<DeviceConnection> currentDevice in heartDevices) {
+            [manager cancelPeripheralConnection:[currentDevice device]];
+        }
+    } else {
+        for (id<DeviceConnection> currentDevice in activityDevices) {
+            [manager cancelPeripheralConnection:[currentDevice device]];
+        }
+    }
+}
+
 // undecided on whether this should remain
 
 -(BOOL) isActiveMeasurementReceived {
@@ -138,13 +160,14 @@
 
 }
 
--(void) centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI {
+-(void) centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral
+     advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI {
     
     NSLog(@"Discovered a device");
     id<DeviceConnection> newDevice = [MonitorCreationFactory createFromPeripheral:peripheral];
     
     // get rid of false positive devices.  Sometimes a device is discovered but there
-    // is no information for it.
+    // is no information for it or there is a duplicate.
     
     if (newDevice == nil) {
         return;
@@ -182,8 +205,25 @@
     }
     // post a notification so that the tableviews can update their views
     
-    NSLog(@"Device: %@", [newDevice name]);
+    NSLog(@"Device: %@ connecting...", [newDevice name]);
+    [manager connectPeripheral:[newDevice device] options:nil];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"BTDeviceDiscovery" object:self];
+}
+
+-(void) centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral {
+    
+    NSLog(@"Connected to %@", [peripheral name]);
+    if ([self searchType] == ACTIVITY_MONITOR) {
+        for (id<DeviceConnection> currentDevice in activityDevices) {
+            if ([[currentDevice device] isEqual:peripheral]) {
+                
+                // query the device and get this information so the table and update even though
+                // we are discarding the local result.
+                
+                [currentDevice getTableInformation];
+            }
+        }
+    }
 }
 
 @end

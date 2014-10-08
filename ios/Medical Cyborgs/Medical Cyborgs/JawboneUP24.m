@@ -10,6 +10,8 @@
 
 @implementation JawboneUP24
 
+@synthesize updatedBatteryLevel;
+@synthesize device;
 
 -(id) initWithPeripheral: (CBPeripheral*) peripheral {
     
@@ -33,10 +35,7 @@
     return results;
 }
 
--(NSInteger) batteryLevel {
-    
-    return 100;
-}
+
 
 -(NSInteger) type {
     
@@ -51,6 +50,16 @@
 -(NSString*) name {
     
     return [self.peripheral name];
+}
+
+-(void) updateBatteryLevel {
+    
+    
+}
+
+-(void) getTableInformation {
+    
+    
 }
 
 @end

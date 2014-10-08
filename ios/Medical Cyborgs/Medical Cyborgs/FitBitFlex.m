@@ -13,18 +13,18 @@
 NSString * const FLEX_SERV_UUID = @"45C3";
 
 @synthesize batteryService;
-@synthesize batteryLvl;
+@synthesize updatedBatteryLevel;
 @synthesize type;
 @synthesize batteryLvlChar;
+@synthesize device;
+@synthesize deviceManufacturer;
 
 -(id) initWithPeripheral: (CBPeripheral*) peripheral {
     
     if (self = [super init]) {
-        self.peripheral = peripheral;
-        self.peripheral.delegate = self;
+        device = peripheral;
+        [device setDelegate:self];
         type = ACTIVITY_MONITOR;
-        NSLog(@"Scanning services");
-        [self.peripheral discoverServices:nil];
     }
     return self;
 }
@@ -34,7 +34,7 @@ NSString * const FLEX_SERV_UUID = @"45C3";
 
 -(BOOL)isConnected {
     
-    return ([_peripheral state] == CBPeripheralStateConnected) ? TRUE : FALSE;
+    return ([device state] == CBPeripheralStateConnected) ? TRUE : FALSE;
 }
 
 -(NSData*) getData {
@@ -45,17 +45,26 @@ NSString * const FLEX_SERV_UUID = @"45C3";
     return results;
 }
 
--(NSInteger) batteryLevel {
-    
-    // This method needs to be thought out.  There is device response lag which will
-    // give inaccurate readings.
+-(void) updateBatteryLevel {
     
     if ([self isConnected]) {
-        if (batteryService != nil) {
+        NSLog(@"getting battery level");
+        
+        // perform discovery for the battery
+        
+        if (batteryLvlChar == nil || batteryService == nil) {
+            NSLog(@"discovering battery stuff");
+            [device discoverServices:nil];
+        } else {
             
+            // battery services already discovered, just need to be read
+            
+            NSLog(@"battery already discovered");
+            [device readValueForCharacteristic:batteryLvlChar];
         }
+    } else {
+        NSLog(@"device not connected");
     }
-    return batteryLvl;
 }
 
 -(NSInteger) type {
@@ -70,12 +79,17 @@ NSString * const FLEX_SERV_UUID = @"45C3";
 
 -(NSString*) name {
     
-    return [self.peripheral name];
+    return [device name];
 }
 
 -(NSString*) manufacturer {
     
     return nil;
+}
+
+-(void) getTableInformation {
+    
+    [self updateBatteryLevel];
 }
 
 #pragma mark CBPeripheralDelegate protocol methods
@@ -84,14 +98,15 @@ NSString * const FLEX_SERV_UUID = @"45C3";
 -(void) peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error {
     
     if (error != nil) {
-        batteryLvl = 0;
-        return;
+        updatedBatteryLevel = 0;
     }
     if ([characteristic isEqual:batteryLvlChar]) {
         uint8_t rawBattery = 0;
         [[batteryLvlChar value] getBytes:&rawBattery length:1];
         NSLog(@"Battery read is %d", rawBattery);
-        [self setBatteryLvl:(NSInteger) [NSNumber numberWithInt:rawBattery]];
+        [self setUpdatedBatteryLevel:(NSInteger) rawBattery];
+        NSNotification *readValueNotification = [[NSNotification alloc] initWithName:DEVICE_READ_VALUE object:self userInfo:nil];
+        [[NSNotificationCenter defaultCenter] postNotification:readValueNotification];
     }
 }
 
@@ -99,11 +114,12 @@ NSString * const FLEX_SERV_UUID = @"45C3";
     
     // figure out the possibilities so that we can handle them.
     
+    NSLog(@"discovered services");
     if (error != nil) {
         NSLog(@"Error %@", [error description]);
     }
     for (CBService *service in [peripheral services]) {
-        NSLog(@"Discovered %@", [service UUID]);
+        NSLog(@"Service: %@", [service UUID]);
     }
     for (CBService *currentService in [peripheral services]) {
         NSString *currentServiceStr = [NSString stringWithFormat:@"%@",[currentService UUID]];
@@ -131,10 +147,11 @@ NSString * const FLEX_SERV_UUID = @"45C3";
         for (CBCharacteristic *currentChar in [service characteristics]) {
             NSString *currentCharStr = [NSString stringWithFormat:@"%@", [currentChar UUID]];
             if ([currentCharStr rangeOfString:BATTERY_LVL].location != NSNotFound) {
+                NSLog(@"found characterisitic for battery");
                 if (batteryLvlChar == nil) {
                     batteryLvlChar = currentChar;
+                    [peripheral setNotifyValue:YES forCharacteristic:currentChar];
                 }
-                [peripheral readValueForCharacteristic:currentChar];
             }
         }
     }

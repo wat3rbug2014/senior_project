@@ -26,17 +26,21 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTable:)
+                                                 name:DEVICE_READ_VALUE object:nil];
 }
 
 -(void) viewWillAppear:(BOOL)animated {
     
-    [self.deviceManager discoverDevicesForType:ACTIVITY_MONITOR];
     [super viewWillAppear:animated];
+    [self.deviceManager setSearchType:ACTIVITY_MONITOR];
+    [self.deviceManager discoverDevicesForType:ACTIVITY_MONITOR];
 }
 
 -(void) viewWillDisappear:(BOOL)animated {
     
     [self.deviceManager stopScan];
+    [self.deviceManager disconnectDevicesForType:ACTIVITY_MONITOR];
     [super viewWillDisappear:animated];
 }
 
@@ -57,8 +61,10 @@
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identifier];
     id<DeviceConnection> currentDevice = [[super.deviceManager activityDevices] objectAtIndex:indexPath.row];
     [[cell textLabel] setText:[currentDevice name]];
-    if ([currentDevice respondsToSelector:@selector(manufacturer)]) {
-        [[cell detailTextLabel] setText:[currentDevice manufacturer]];
+    if ([currentDevice respondsToSelector:@selector(updatedBatteryLevel)]) {
+        [[cell detailTextLabel] setText:[NSString stringWithFormat:@"%d%%",[currentDevice updatedBatteryLevel]]];
+    //if ([currentDevice respondsToSelector:@selector(manufacturer)]) {
+        //[[cell detailTextLabel] setText:[currentDevice manufacturer]];
     }
     if ([super.deviceManager selectedIndexForActivityMonitor] == indexPath.row) {
         [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
@@ -78,5 +84,10 @@
 #pragma mark Custom methods
 
 
-
+-(void) updateTable:(NSNotification*) notification {
+    
+    NSLog(@"Updating table");
+    [self.tableView reloadData];
+    
+}
 @end

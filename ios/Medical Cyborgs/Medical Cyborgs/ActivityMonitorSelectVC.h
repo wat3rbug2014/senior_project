@@ -11,4 +11,5 @@
 @interface ActivityMonitorSelectVC : DeviceSelectionVC
 
 
+-(void) updateTable: (NSNotification*) notification;
 @end
