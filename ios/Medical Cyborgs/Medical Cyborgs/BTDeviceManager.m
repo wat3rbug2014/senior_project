@@ -226,4 +226,11 @@
     }
 }
 
+-(void) centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error {
+    
+    if (error != nil) {
+        // not sure what to do because not connecting is a desired result
+    }
+    NSLog(@"%@ is disconnected", [peripheral name]);
+}
 @end

@@ -84,7 +84,7 @@ NSString * const FLEX_SERV_UUID = @"45C3";
 
 -(NSString*) manufacturer {
     
-    return nil;
+    return [self deviceManufacturer];
 }
 
 -(void) getTableInformation {
