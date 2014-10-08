@@ -28,6 +28,8 @@
     
     if (self = [super init]) {
         manager = [[CBCentralManager alloc] initWithDelegate:self queue:nil]; // maybe this needs to be on another thread
+        selectedIndexForActivityMonitor = NONE_SELECTED;
+        selectedIndexForHeartMonitor = NONE_SELECTED;
     }
     return self;
 }

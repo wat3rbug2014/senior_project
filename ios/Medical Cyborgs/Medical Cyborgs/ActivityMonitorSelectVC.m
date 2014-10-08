@@ -61,11 +61,14 @@
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
     id<DeviceConnection> currentDevice = [[super.deviceManager activityDevices] objectAtIndex:indexPath.row];
     [[cell textLabel] setText:[currentDevice name]];
+    UIImageView *batteryCharge = [[UIImageView alloc] initWithFrame:CGRectMake(230, 0, 32, 32)];
+    [batteryCharge setImage:[UIImage imageNamed:@"battery_empty_32.png"]];
     if ([currentDevice respondsToSelector:@selector(updatedBatteryLevel)]) {
+        
+        // select the battery icon based on charge
+        
         int lvl = [currentDevice updatedBatteryLevel];
-        //UILabel *batteryCharge = [[UILabel alloc] initWithFrame:CGRectMake(230, 2, 48, 48)];
-        //[batteryCharge setText:[NSString stringWithFormat:@"%d%%", lvl]];
-        UIImageView *batteryCharge = [[UIImageView alloc] initWithFrame:CGRectMake(230, 2, 32, 32)];
+
         if (lvl == 100) {
             [batteryCharge setImage:[UIImage imageNamed:@"battery_full_32.png"]];
         }
@@ -84,11 +87,16 @@
         if (lvl <= 20) {
             [batteryCharge setImage:[UIImage imageNamed:@"battery_empty_32.png"]];
         }
-        [cell addSubview:batteryCharge];
     }
+    [cell addSubview:batteryCharge];
+    
+    // add manufacturer information
+    
     if ([currentDevice respondsToSelector:@selector(manufacturer)]) {
         [[cell detailTextLabel] setText:[currentDevice manufacturer]];
     }
+    // add checkmark for the currently selected device
+    
     if ([super.deviceManager selectedIndexForActivityMonitor] == indexPath.row) {
         [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
     }
@@ -97,11 +105,22 @@
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    [super.deviceManager setActivityMonitorIsConnected:YES];
-    [super.deviceManager setSelectedIndexForActivityMonitor:indexPath.row];
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    [self.navigationController popViewControllerAnimated:YES];
+    // deselect the device
     
+    if ([super.deviceManager selectedIndexForActivityMonitor] == indexPath.row) {
+        [super.deviceManager setActivityMonitorIsConnected:NO];
+        [super.deviceManager setSelectedIndexForActivityMonitor:NONE_SELECTED];
+        [[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryNone];
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    } else {
+        
+        // select the device
+        
+        [super.deviceManager setActivityMonitorIsConnected:YES];
+        [super.deviceManager setSelectedIndexForActivityMonitor:indexPath.row];
+        [[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryCheckmark];
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    }
 }
 
 #pragma mark Custom methods
