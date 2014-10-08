@@ -62,8 +62,27 @@
     id<DeviceConnection> currentDevice = [[super.deviceManager activityDevices] objectAtIndex:indexPath.row];
     [[cell textLabel] setText:[currentDevice name]];
     if ([currentDevice respondsToSelector:@selector(updatedBatteryLevel)]) {
-        [[cell detailTextLabel] setText:[NSString stringWithFormat:@"%d%%",[currentDevice updatedBatteryLevel]]];
-    //if ([currentDevice respondsToSelector:@selector(manufacturer)]) {
+//        int lvl = [currentDevice updatedBatteryLevel];
+//        UIImageView *img = [[UIImageView alloc] initWithFrame:CGRectMake(150, 2, 48, 48)];
+//        if (lvl > 80) {
+//            [img setImage:[UIImage imageNamed:@"battery_discharging_100.png"]];
+//        }
+//        if (lvl <= 80 && lvl > 60) {
+//            [img setImage:[UIImage imageNamed:@"battery_discharging_80.png"]];
+//        }
+//        if (lvl <= 60 && lvl > 40) {
+//            [img setImage:[UIImage imageNamed:@"battery_discharging_60.png"]];
+//        }
+//        if (lvl <= 40 && lvl > 20) {
+//            [img setImage:[UIImage imageNamed:@"battery_discharging_40.png"]];
+//        }
+//        if (lvl <= 20) {
+//            [img setImage:[UIImage imageNamed:@"battery_discharging_20.png"]];
+//        }
+//        [cell addSubview:img];
+        [[cell detailTextLabel] setText:[NSString stringWithFormat:@"%d%%", [currentDevice updatedBatteryLevel]]];
+    }
+    if ([currentDevice respondsToSelector:@selector(manufacturer)]) {
         //[[cell detailTextLabel] setText:[currentDevice manufacturer]];
     }
     if ([super.deviceManager selectedIndexForActivityMonitor] == indexPath.row) {

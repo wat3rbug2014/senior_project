@@ -105,9 +105,14 @@ NSString * const FLEX_SERV_UUID = @"45C3";
         [[batteryLvlChar value] getBytes:&rawBattery length:1];
         NSLog(@"Battery read is %d", rawBattery);
         [self setUpdatedBatteryLevel:(NSInteger) rawBattery];
-        NSNotification *readValueNotification = [[NSNotification alloc] initWithName:DEVICE_READ_VALUE object:self userInfo:nil];
-        [[NSNotificationCenter defaultCenter] postNotification:readValueNotification];
     }
+    if ([[NSString stringWithFormat:@"%@",[characteristic UUID]] rangeOfString:@"Manufacturer"].location != NSNotFound) {
+        deviceManufacturer = [[NSString alloc] initWithData:[characteristic value] encoding:NSUTF8StringEncoding];
+        NSLog(@"Manufacturer is %@", deviceManufacturer);
+        
+    }
+    NSNotification *readValueNotification = [[NSNotification alloc] initWithName:DEVICE_READ_VALUE object:self userInfo:nil];
+    [[NSNotificationCenter defaultCenter] postNotification:readValueNotification];
 }
 
 -(void) peripheral:(CBPeripheral *)peripheral didDiscoverServices:(NSError *)error {
@@ -132,6 +137,11 @@ NSString * const FLEX_SERV_UUID = @"45C3";
             }
             [peripheral discoverCharacteristics:nil forService:currentService];
         }
+        // read manufacturer
+        
+        if ([currentServiceStr rangeOfString:@"Device Info"].location != NSNotFound) {
+            [peripheral discoverCharacteristics:nil forService:currentService];
+        }
         // do the other services also
     }
 }
@@ -152,6 +162,13 @@ NSString * const FLEX_SERV_UUID = @"45C3";
                     batteryLvlChar = currentChar;
                     [peripheral setNotifyValue:YES forCharacteristic:currentChar];
                 }
+            }
+        }
+    }
+    if ([[NSString stringWithFormat:@"%@",[service UUID]] rangeOfString:@"Device Info"].location != NSNotFound) {
+        for (CBCharacteristic *currentChar in [service characteristics]) {
+            if ([[NSString stringWithFormat:@"%@",currentChar] rangeOfString:@"Manufacturer"].location != NSNotFound) {
+                [peripheral readValueForCharacteristic:currentChar];
             }
         }
     }
