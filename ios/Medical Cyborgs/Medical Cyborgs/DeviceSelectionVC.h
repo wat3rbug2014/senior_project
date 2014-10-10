@@ -1,5 +1,5 @@
 //
-//  DeviceSelectionVCTableViewController.h
+//  DeviceSelectionVC.h
 //  Medical Cyborgs
 //
 //  Created by Douglas Gardiner on 9/21/14.
@@ -36,8 +36,10 @@
  * used because the number of items to be discovered is very small and the overhead 
  * is small.  Otherwise it is recommended to just reload the section and choose the 
  * type of animation.
+ * 
+ * @param notification A NSNotification object, not used at this time.
  **/
 
--(void) deviceListUpdated;
+-(void) updateTable:(NSNotification*) notification;
 
 @end

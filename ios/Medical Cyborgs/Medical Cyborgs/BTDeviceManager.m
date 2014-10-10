@@ -1,6 +1,5 @@
 //
-//  BTDummyData.m
-//  TestGUI
+//  Medical Cyborgs
 //
 //  Created by Douglas Gardiner on 9/21/14.
 //  Copyright (c) 2014 Douglas Gardiner. All rights reserved.
@@ -9,7 +8,7 @@
 #import "BTDeviceManager.h"
 #import "MonitorCreationFactory.h"
 #import "DeviceConnection.h"
-#import "DummyDevice.h"
+
 
 @implementation BTDeviceManager
 

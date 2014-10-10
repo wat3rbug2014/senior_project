@@ -1,6 +1,6 @@
 //
 //  ActivityMonitorSelectVC.m
-//  TestGUI
+//  Medical Cyborgs
 //
 //  Created by Douglas Gardiner on 9/22/14.
 //  Copyright (c) 2014 Douglas Gardiner. All rights reserved.
@@ -14,8 +14,8 @@
 
 @implementation ActivityMonitorSelectVC
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = @"Activity Monitors";
@@ -49,6 +49,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark UITableViewDataSource protocol methods
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
@@ -123,13 +126,4 @@
     }
 }
 
-#pragma mark Custom methods
-
-
--(void) updateTable:(NSNotification*) notification {
-    
-    NSLog(@"Updating table");
-    [self.tableView reloadData];
-    
-}
 @end

@@ -1,5 +1,5 @@
 //
-//  DeviceSelectionVCTableViewController.m
+//  DeviceSelectionVC.m
 //  Medical Cyborgs
 //
 //  Created by Douglas Gardiner on 9/21/14.
@@ -32,7 +32,7 @@
     
     if (self = [self initWithStyle:UITableViewStylePlain]) {
         self.deviceManager = newDeviceManager;
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceListUpdated)
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTable:)
                 name:@"BTDeviceDiscovery" object:self.deviceManager];
     }
     return self;
@@ -65,7 +65,7 @@
 #pragma mark - Custom methods
 
 
--(void) deviceListUpdated {
+-(void) updateTable:(NSNotification*) notification {
     
     [self.tableView reloadData];
 }

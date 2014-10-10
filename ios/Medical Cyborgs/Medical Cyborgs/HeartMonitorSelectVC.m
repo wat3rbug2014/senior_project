@@ -75,6 +75,4 @@
     
 }
 
-#pragma mark Custom methods
-
 @end
