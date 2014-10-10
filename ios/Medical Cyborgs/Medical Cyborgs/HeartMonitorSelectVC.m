@@ -7,7 +7,6 @@
 // Blahd ahdsahdahdadsasa
 
 #import "HeartMonitorSelectVC.h"
-#import "DummyDevice.h"
 
 @interface HeartMonitorSelectVC ()
 
@@ -56,7 +55,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSString *identifier = @"Default";
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identifier];
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
+                                                   reuseIdentifier:identifier];
     [[cell textLabel] setText:[[[super.deviceManager heartDevices] objectAtIndex:indexPath.row] name]];
     if ([super.deviceManager selectedIndexForHeartMonitor] == indexPath.row) {
         [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
