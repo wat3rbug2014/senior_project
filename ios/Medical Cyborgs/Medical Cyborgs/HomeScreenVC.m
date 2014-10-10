@@ -1,6 +1,6 @@
 //
 //  HomeScreenVC.m
-//  TestGUI
+//  Medical Cyborgs
 //
 //  Created by Douglas Gardiner on 9/21/14.
 //  Copyright (c) 2014 Douglas Gardiner. All rights reserved.
