@@ -27,6 +27,9 @@
 @synthesize btDevices;
 @synthesize personalInfoButton;
 
+#pragma mark Standard UIViewController methods
+
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -37,8 +40,8 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
+    
     [super viewDidLoad];
     [self setColorForButton:graphButton isReady:YES];
     [self setColorForButton:activityButton isReady:NO];
@@ -62,6 +65,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark HomeScreenVC custom methods
+
+
+-(IBAction)alterPersonalSettings:(id)sender {
+    
+    SettingsVC *settings = [[SettingsVC alloc] init];
+    [self.navigationController pushViewController:settings animated:YES];
+}
+
 
 -(IBAction)selectActivityMonitor:(id)sender {
     
@@ -72,17 +84,30 @@
 }
 
 -(IBAction)selectHeartMonitor:(id)sender {
-
+    
     HeartMonitorSelectVC *heartSelectorVC = [[HeartMonitorSelectVC alloc] initWithDeviceManager:btDevices];
     [self.navigationController pushViewController:heartSelectorVC animated:YES];
     
+}
+
+-(void) setColorForButton:(UIButton *)button isReady:(BOOL)ready {
+    
+    if (![button isKindOfClass:[UIButton class]] || button == nil) {
+        return;
+    }
+    if (ready) {
+        [button setBackgroundColor:[UIColor greenColor]];
+        [[button titleLabel] setTextColor:[UIColor blackColor]];
+    } else {
+        [button setBackgroundColor:[UIColor redColor]];
+        [[button titleLabel] setTextColor:[UIColor whiteColor]];
+    }
 }
 
 -(IBAction)showGraph:(id)sender {
     
     GraphVC *graphDisplay = [[GraphVC alloc] initWithDeviceManager: btDevices];
     [self.navigationController pushViewController:graphDisplay animated:YES];
-    
 }
 
 -(IBAction)toggleMonitoring:(id)sender {
@@ -94,23 +119,6 @@
     } else {
         [toggleRunButton setBackgroundColor:[UIColor redColor]];
         [toggleRunButton setTitle:@"Start" forState:UIControlStateNormal];
-    }
-}
-
--(IBAction)alterPersonalSettings:(id)sender {
-    
-    SettingsVC *settings = [[SettingsVC alloc] init];
-    [self.navigationController pushViewController:settings animated:YES];
-}
-
--(void) setColorForButton:(UIButton *)button isReady:(BOOL)ready {
-    
-    if (ready) {
-        [button setBackgroundColor:[UIColor greenColor]];
-        [[button titleLabel] setTextColor:[UIColor blackColor]];
-    } else {
-        [button setBackgroundColor:[UIColor redColor]];
-        [[button titleLabel] setTextColor:[UIColor whiteColor]];
     }
 }
 
