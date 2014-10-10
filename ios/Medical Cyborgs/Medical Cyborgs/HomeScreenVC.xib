@@ -9,6 +9,7 @@
                 <outlet property="activityButton" destination="702-xy-XU2" id="f2M-eP-ibY"/>
                 <outlet property="graphButton" destination="LJx-X6-RXE" id="FmO-X6-T2V"/>
                 <outlet property="heartRateButton" destination="6IN-Bb-mgx" id="cn7-OQ-Cvn"/>
+                <outlet property="personalInfoButton" destination="EbY-WH-AhK" id="8lJ-MI-vDM"/>
                 <outlet property="toggleRunButton" destination="coR-DD-Drd" id="63H-Fh-4oD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -19,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6IN-Bb-mgx">
-                    <rect key="frame" x="63" y="85" width="195" height="62"/>
+                    <rect key="frame" x="63" y="115" width="195" height="40"/>
                     <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" title="Heart Rate">
@@ -30,7 +31,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="702-xy-XU2">
-                    <rect key="frame" x="63" y="190" width="195" height="62"/>
+                    <rect key="frame" x="63" y="182" width="195" height="40"/>
                     <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" title="Activity">
@@ -41,10 +42,11 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LJx-X6-RXE">
-                    <rect key="frame" x="63" y="292" width="195" height="62"/>
+                    <rect key="frame" x="63" y="248" width="195" height="40"/>
                     <color key="backgroundColor" red="0.50196081399917603" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" title="Graph">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -52,7 +54,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="coR-DD-Drd">
-                    <rect key="frame" x="63" y="389" width="195" height="62"/>
+                    <rect key="frame" x="63" y="385" width="195" height="40"/>
                     <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" title="Start">
@@ -60,6 +62,17 @@
                     </state>
                     <connections>
                         <action selector="toggleMonitoring:" destination="-1" eventType="touchUpInside" id="mzv-rB-wuf"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EbY-WH-AhK">
+                    <rect key="frame" x="63" y="317" width="195" height="40"/>
+                    <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="Personal Information">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="alterPersonalSettings:" destination="-1" eventType="touchUpInside" id="xkW-lJ-scp"/>
                     </connections>
                 </button>
             </subviews>

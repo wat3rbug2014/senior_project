@@ -16,6 +16,7 @@
 @property (retain, nonatomic) IBOutlet UIButton *activityButton;
 @property (retain, nonatomic) IBOutlet UIButton *graphButton;
 @property (retain, nonatomic) IBOutlet UIButton *toggleRunButton;
+@property (retain, nonatomic) IBOutlet UIButton *personalInfoButton;
 @property BOOL isMonitoring;
 @property (retain) BTDeviceManager *btDevices;
 
@@ -24,5 +25,7 @@
 -(IBAction)selectActivityMonitor:(id)sender;
 -(IBAction)showGraph:(id)sender;
 -(IBAction)toggleMonitoring:(id)sender;
+-(IBAction)alterPersonalSettings:(id)sender;
+-(void) setColorForButton:(UIButton*) button isReady: (BOOL) ready;
 
 @end
