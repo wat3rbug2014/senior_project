@@ -33,6 +33,8 @@
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
+    
+    NSLog(@"app is now in background");
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
@@ -46,6 +48,20 @@
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
+    
+    // untested
+    
+    UINavigationController *mainWindow = (UINavigationController*)self.window.rootViewController;
+    NSArray *VCs = [mainWindow viewControllers];
+    for (UIViewController *currentVC in VCs) {
+        if ([currentVC isKindOfClass:[HomeScreenVC class]]) {
+            HomeScreenVC *home = (HomeScreenVC*)currentVC;
+            [[home btDevices] stopScan];
+            [[home btDevices] disconnectDevicesForType:ACTIVITY_MONITOR];
+            [[home btDevices] disconnectDevicesForType:HEART_MONITOR];
+            
+        }
+    }
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 

@@ -219,7 +219,7 @@
         for (id<DeviceConnection> currentDevice in activityDevices) {
             if ([[currentDevice device] isEqual:peripheral]) {
                 
-                // query the device and get this information so the table and update even though
+                // query the device and get this information to the table and update even though
                 // we are discarding the local result.
                 
                 [currentDevice getTableInformation];
