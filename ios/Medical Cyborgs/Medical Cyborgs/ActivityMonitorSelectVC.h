@@ -6,9 +6,10 @@
 //  Copyright (c) 2014 Douglas Gardiner. All rights reserved.
 //
 
-#import "DeviceSelectionVC.h"
+#import "BTDeviceManager.h"
+#import <UIKit/UIKit.h>
 
-@interface ActivityMonitorSelectVC : DeviceSelectionVC
+@interface ActivityMonitorSelectVC : UITableViewController
 
 @property BTDeviceManager *deviceManager;
 

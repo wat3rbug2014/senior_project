@@ -6,9 +6,10 @@
 //  Copyright (c) 2014 Douglas Gardiner. All rights reserved.
 //
 
-#import "DeviceSelectionVC.h"
+#import <UIKit/UIKit.h>
+#import "BTDeviceManager.h"
 
-@interface HeartMonitorSelectVC : DeviceSelectionVC
+@interface HeartMonitorSelectVC : UITableViewController
 
 @property BTDeviceManager *deviceManager;
 

@@ -14,6 +14,8 @@
 
 @implementation HeartMonitorSelectVC
 
+@synthesize deviceManager;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -72,7 +74,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return [[super.deviceManager heartDevices] count];
+    return [[deviceManager heartDevices] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -80,8 +82,8 @@
     NSString *identifier = @"Default";
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
                                                    reuseIdentifier:identifier];
-    [[cell textLabel] setText:[[[super.deviceManager heartDevices] objectAtIndex:indexPath.row] name]];
-    if ([super.deviceManager selectedIndexForHeartMonitor] == indexPath.row) {
+    [[cell textLabel] setText:[[[deviceManager heartDevices] objectAtIndex:indexPath.row] name]];
+    if ([deviceManager selectedIndexForHeartMonitor] == indexPath.row) {
         [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
     }
     return cell;
@@ -91,8 +93,8 @@
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
 
-    [super.deviceManager setSelectedIndexForHeartMonitor:indexPath.row];
-    [super.deviceManager setHeartMonitorIsConnected:YES];
+    [deviceManager setSelectedIndexForHeartMonitor:indexPath.row];
+    [deviceManager setHeartMonitorIsConnected:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [self.navigationController popViewControllerAnimated:YES];
     
