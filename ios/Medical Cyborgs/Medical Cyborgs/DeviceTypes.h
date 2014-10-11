@@ -9,11 +9,11 @@
 #ifndef Medical_Cyborgs_DeviceTypes_h
 #define Medical_Cyborgs_DeviceTypes_h
 
-/*
+/**
  * These constants are used in several view controllers and the device manager.
  * It seemed necessary to keep the definitions in one location to reduce confusion
  * and the possbilility of bugs based on selection criteria for the view controllers.
- **/
+ */
 
 #define HEART_MONITOR 1
 #define ACTIVITY_MONITOR 2

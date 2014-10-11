@@ -19,10 +19,10 @@
 @property (retain) NSDate *patientDOB;
 
 
-/*
+/**
  * This method updates the patient information  to reflect the date that is
  * selected from the UIDatePicker object.
- **/
+ */
 
 -(void) updateDOB;
 
