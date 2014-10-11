@@ -23,6 +23,21 @@
     return self;
 }
 
+-(id) initWithDeviceManager: (BTDeviceManager*) newDeviceManager {
+    
+    if (newDeviceManager == nil) {
+        return nil;
+    }
+    // this may be a bad hack because I haven't defined self yet
+    
+    if (self = [self initWithStyle:UITableViewStylePlain]) {
+        self.deviceManager = newDeviceManager;
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTable:)
+                                                     name:@"BTDeviceDiscovery" object:self.deviceManager];
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -45,6 +60,14 @@
     
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark UITableViewDataSource protocol methods
+
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -73,6 +96,14 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [self.navigationController popViewControllerAnimated:YES];
     
+}
+
+#pragma mark Custom methods
+
+
+-(void) updateTable:(NSNotification*) notification {
+    
+    [self.tableView reloadData];
 }
 
 @end
