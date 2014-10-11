@@ -32,6 +32,7 @@
 
 -(id<DeviceConnection>) initWithPeripheral: (CBPeripheral*) peripheral;
 
+
 /*
  * This method does a check to see if the the device is actually connected and returns a value of
  * TRUE if it is currently connected.  If the Device is in the CBPeripheralDeviceIsConnecting state,
@@ -41,6 +42,7 @@
  **/
 
 -(BOOL) isConnected;
+
 
 /*
  * This method returns the data to be received.  Because the default datatype from the CBCperipheral method
@@ -53,6 +55,7 @@
 
 -(NSData*) getData;
 
+
 /*
  * This method retrieves the battery level as expressed as a percent integer.  It assumed that a
  * updateBatteryLevel call was made, otherwise the last known value is returned.
@@ -63,11 +66,13 @@
 
 -(NSInteger) updatedBatteryLevel;
 
+
 /*
  * This method forces the device to read and broadcast the battery level.
  **/
 
 -(void) updateBatteryLevel;
+
 
 /*
  * This method returns the device type.  It is used for a shallow query of the object so that it can be placed in
@@ -77,6 +82,7 @@
  **/
 
 -(NSInteger) type;
+
 
 /*
  * This sets the device type so that the device can be easily placed in the desired array of the controller.
@@ -97,12 +103,23 @@
 -(NSString*) name;
 
 
+/*
+ * This method returns the actual CBPeripheral device for use with the device manager in order to manage
+ * connectivity to the device.  This object is imuutable and does not have hany write characteristics.
+ **/
 
 -(CBPeripheral*) device;
 
+
+/*
+ * This method forces queries of the device in order to get the applicable data for this device.
+ **/
+
 -(void) getTableInformation;
 
+
 @optional
+
 
  /*
   * This method is used to fill in details in the discovery view table.  It is optional.

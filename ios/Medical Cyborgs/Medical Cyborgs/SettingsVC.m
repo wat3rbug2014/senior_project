@@ -28,11 +28,13 @@
     NSDate *today = [NSDate date];
     [dobSelector setMaximumDate:today];
     [dobSelector setMinimumDate:[NSDate distantPast]];
-    [dobSelector addTarget:self action:@selector(updateDOB) forControlEvents:UIControlEventValueChanged];
+    [dobSelector addTarget:self action:@selector(updateDOB)
+          forControlEvents:UIControlEventValueChanged];
     [self.view addSubview:dobSelector];
 }
 
 - (void)didReceiveMemoryWarning {
+    
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
