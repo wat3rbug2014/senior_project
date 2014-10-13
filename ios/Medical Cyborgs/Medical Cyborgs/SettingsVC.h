@@ -7,16 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PersonalInfo.h"
+
 #define MONTH_COMP 0
 #define DAY_COMP 1
 #define YEAR_COMP 2
+#define NONE_FOUND 0
 
-@interface SettingsVC : UIViewController 
+
+
+@interface SettingsVC : UIViewController <UITextFieldDelegate>
 
 @property (retain, nonatomic) IBOutlet UITextField *firstNameEntry;
 @property (retain, nonatomic) IBOutlet UITextField *lastNameEntry;
 @property (retain, nonatomic) IBOutlet UIDatePicker *dobSelector;
-@property (retain) NSDate *patientDOB;
+@property (retain) PersonalInfo *patientData;
 
 
 /**
