@@ -32,12 +32,14 @@
 
 
 /**
- * This function starts the discovery process based on the type of device
- * it is looking to find.  At this time there is HEART_MONITOR and ACTIVITY_MONITOR
- * types.
+ * This function gives the current count of the number of devices found in the 
+ * discovery process based on the type of device it is looking to find.  At this 
+ * time there is HEART_MONITOR and ACTIVITY_MONITOR types.  See DeviceTypes.h for more
+ * details.
  *
- * @param The integer that designates whether a heart monitor or an activity monitor
+ * @param type The integer that designates whether a heart monitor or an activity monitor
  *          will be the attempt to discover.
+ * @return The number of devices found.
  */
 
 -(NSInteger) discoveredDevicesForType: (NSInteger) type;
@@ -59,7 +61,7 @@
  * This function returns the count of the number of devices found during the discovery process of either the
  * heart monitor or activity monitor discovery.  Accepted types are to be found in DeviceTypes.h
  *
- * @param An integer result of the count of devices that have been found.
+ * @param type An integer result of the count of devices that have been found.
  */
 
 -(void) discoverDevicesForType: (NSInteger) type;

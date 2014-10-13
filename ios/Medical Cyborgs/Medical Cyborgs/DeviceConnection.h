@@ -46,7 +46,7 @@
 
 
 /**
- * This method returns the data to be received.  Because the default datatype from the CBCperipheral method
+ * This method returns the data to be received.  Because the default datatype from the CBperipheral method
  * is NSData, this is left to keep consistency across all classes that use this interface.  For more
  * specific breakdown of the data see the classes that use this protocol for other methods.  It is noted that
  * no conversion has been performed on the data and the Endianness is undetermined.
@@ -106,7 +106,7 @@
 
 /**
  * This method returns the actual CBPeripheral device for use with the device manager in order to manage
- * connectivity to the device.  This object is imuutable and does not have hany write characteristics.
+ * connectivity to the device.  This object is immutable and does not have hany write characteristics.
  */
 
 -(CBPeripheral*) device;
