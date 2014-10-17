@@ -7,6 +7,7 @@
 //
 
 #import "SettingsVC.h"
+#import "DatabaseConstants.h"
 
 @interface SettingsVC ()
 
@@ -19,19 +20,20 @@
 @synthesize firstNameEntry;
 @synthesize lastNameEntry;
 @synthesize patientData;
+@synthesize serverResponseData;
 
 
--(id) init {
+-(id) initWithPersonalInformation: (PersonalInfo*) existingPatientData {
     
     if (self = [super init]) {
-        patientData = [[PersonalInfo alloc] init];
+        self.patientData = existingPatientData;
     }
     return self;
 }
-
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    patientData = [[PersonalInfo alloc] init];
     dobSelector = [[UIDatePicker alloc] initWithFrame:CGRectMake(0.0, 260.0, 320.0, 80.0)];
     [dobSelector setDatePickerMode:UIDatePickerModeDate];
     NSDate *today = [NSDate date];
@@ -41,7 +43,6 @@
           forControlEvents:UIControlEventValueChanged];
     [firstNameEntry setDelegate:self];
     [lastNameEntry setDelegate:self];
-
     [self.view addSubview:dobSelector];
 }
 
@@ -53,7 +54,9 @@
     
     [firstNameEntry setText:[patientData firstName]];
     [lastNameEntry setText:[patientData lastName]];
-    [dobSelector setDate:[patientData dob]];
+    if ([patientData dob] != nil) {
+        [dobSelector setDate:[patientData dob]];
+    }
 }
 
 -(void) viewWillDisappear:(BOOL)animated {
@@ -88,25 +91,27 @@
         [super viewWillDisappear:animated];
         return;
     } else {
-        if ([patientData patientID] > NONE_FOUND) {
-            [patientData saveInformation];
+        // go to database and get patientID
+        
+        // test this to make sure it does not hold up things
+        NSString *birthDateStr = [NSString stringWithFormat:@"%d-%d-%d", year, month, day];
+        NSString *urlStr = [NSString stringWithFormat:
+            @"http://%@/testpatient.php?first_name=%@&last_name=%@&dob=%@",
+            ADDRESS,[patientData firstName], [patientData lastName], birthDateStr];
+        NSURL *databaseUrl = [NSURL URLWithString:urlStr];
+        NSLog(@"url: %@",urlStr);
+        NSURLRequest *dbRequest = [NSURLRequest requestWithURL:databaseUrl];
+        //NSURLConnection *dbConnection = [[NSURLConnection alloc] initWithRequest:dbRequest delegate:self startImmediately:YES];
+        NSURLResponse *serverResponse = nil;
+        NSError *error = nil;
+        //[NSURLConnection sendAsynchronousRequest:dbRequest queue:[NSOperationQueue currentQueue] completionHandler:<#^(NSURLResponse *response, NSData *data, NSError *connectionError)handler#>];
+        [serverResponseData appendData:[NSURLConnection sendSynchronousRequest:dbRequest
+                returningResponse:&serverResponse error:&error]];
+        if (error != nil) {
+            NSLog(@"got an error %@", error);
         } else {
-            
+            NSLog(@"success %d", [serverResponseData length]);
         }
-    // read from defaults
-
-    // if first name last name and dob is different then get new id
-    // set default id to 0
-    // write name and dob to defaults
-    //check if network available
-    // if network available
-    // open database
-    // do add statement to database
-    // check success
-    //do select statement to database
-    // if only 1 result
-    // get result
-    // close database
     }
     [super viewWillDisappear:animated];
 }
@@ -135,10 +140,44 @@
     return YES;
 }
 
+#pragma NSURLConnectionDelegate methods
+
+
+-(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    
+    NSLog(@"couldn't reach: see %@", error);
+}
+
+#pragma NSURLConnectDataDelegate methods 
+
+
+-(void) connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+    
+    NSLog(@"got a response from %@", [response description]);
+}
+
+-(void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    
+    [serverResponseData appendData:data];
+    NSLog(@"got some data %d", [serverResponseData length]);
+}
+
+-(void) connection:(NSURLConnection *)connection didSendBodyData:(NSInteger)bytesWritten totalBytesWritten:(NSInteger)totalBytesWritten totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite {
+    
+    NSLog(@"not sure what to use this for");
+}
+
+-(void) connectionDidFinishLoading:(NSURLConnection *)connection {
+    
+    NSLog(@"That was the last");
+}
+#pragma mark Custom methods
+
+
 -(void) updateDOB {
     
-    [self setPatientDOB:[dobSelector date]];
-    NSLog(@"selecting %@", patientDOB);
+    [patientData setDob:[dobSelector date]];
+    NSLog(@"selecting %@", [patientData dob]);
 }
 
 

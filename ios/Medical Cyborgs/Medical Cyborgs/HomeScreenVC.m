@@ -26,6 +26,7 @@
 @synthesize isMonitoring;
 @synthesize btDevices;
 @synthesize personalInfoButton;
+@synthesize patientInfo;
 
 #pragma mark Standard UIViewController methods
 
@@ -36,6 +37,7 @@
     if (self) {
         self.title = @"Home";
         isMonitoring = false;
+        self.patientInfo = [[PersonalInfo alloc] init];
     }
     return self;
 }

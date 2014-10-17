@@ -16,13 +16,16 @@
 
 
 
-@interface SettingsVC : UIViewController <UITextFieldDelegate>
+@interface SettingsVC : UIViewController <UITextFieldDelegate,NSURLConnectionDelegate, NSURLConnectionDataDelegate>
 
 @property (retain, nonatomic) IBOutlet UITextField *firstNameEntry;
 @property (retain, nonatomic) IBOutlet UITextField *lastNameEntry;
 @property (retain, nonatomic) IBOutlet UIDatePicker *dobSelector;
-@property (retain) PersonalInfo *patientData;
+@property (retain, strong) PersonalInfo *patientData;
+@property (retain) NSMutableData *serverResponseData;
 
+
+-(id) initWithPersonalInformation:(PersonalInfo*) existingPatientData;
 
 /**
  * This method updates the patient information  to reflect the date that is

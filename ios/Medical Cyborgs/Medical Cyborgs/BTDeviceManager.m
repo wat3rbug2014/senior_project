@@ -29,6 +29,12 @@
         manager = [[CBCentralManager alloc] initWithDelegate:self queue:nil]; // maybe this needs to be on another thread
         selectedIndexForActivityMonitor = NONE_SELECTED;
         selectedIndexForHeartMonitor = NONE_SELECTED;
+//        NSArray *services;
+//        services =[[NSArray alloc] initWithObjects:[CBUUID UUIDWithString:FLEX_SERV_UUID], nil];
+//        NSArray *oldDevices = [manager retrieveConnectedPeripheralsWithServices:services];
+//        for (CBPeripheral *currentDevice in oldDevices) {
+//            [manager cancelPeripheralConnection: currentDevice];
+//        }
     }
     return self;
 }

@@ -46,6 +46,9 @@
     [updatedInfo setObject:firstName forKey:F_NAME];
     [updatedInfo setObject:lastName forKey:L_NAME];
     [updatedInfo setObject:dob forKey:DOB];
+    if (patientID == nil) {
+        patientID = 0;
+    }
     [updatedInfo setObject:patientID forKey:PATIENT_ID];
     [defaults setObject:updatedInfo forKey:USER_DEFAULT_KEY];
     [defaults synchronize];

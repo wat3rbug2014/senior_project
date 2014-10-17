@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BTDeviceManager.h"
+#import "PersonalInfo.h"
 
 
 @interface HomeScreenVC : UIViewController
@@ -19,6 +20,7 @@
 @property (retain, nonatomic) IBOutlet UIButton *personalInfoButton;
 @property BOOL isMonitoring;
 @property (retain) BTDeviceManager *btDevices;
+@property (retain) PersonalInfo *patientInfo;
 
 
 /**
