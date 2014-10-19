@@ -8,8 +8,9 @@
 
 #import "BTDeviceManager.h"
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
-@interface ActivityMonitorSelectVC : UITableViewController
+@interface ActivityMonitorSelectVC : UITableViewController <AVAudioPlayerDelegate>
 
 @property BTDeviceManager *deviceManager;
 
@@ -41,6 +42,6 @@
  */
 
 -(void) updateTable:(NSNotification*) notification;
-
+-(void) playSelectionSound;
 
 @end
