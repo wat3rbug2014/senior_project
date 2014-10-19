@@ -10,9 +10,10 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
-@interface ActivityMonitorSelectVC : UITableViewController <AVAudioPlayerDelegate>
+@interface ActivityMonitorSelectVC : UITableViewController
 
 @property BTDeviceManager *deviceManager;
+@property AVAudioPlayer *soundPlayer;
 
 /**
  * Creates a device selection view controller.  The purpose of the method
@@ -31,7 +32,7 @@
 
 
 /**
- * This function is the default method that is called when the device manager
+ * This method is the default method that is called when the device manager
  * discovers a device. Its intent is to allow the tableview to update since the
  * count of devices has changed and information is available. A table reload is
  * used because the number of items to be discovered is very small and the overhead
@@ -42,6 +43,12 @@
  */
 
 -(void) updateTable:(NSNotification*) notification;
+
+/**
+ * This method is called whenever a cell is selected or deselected.  Its purpose is to
+ * play an audio file whenever the selection takes places to give an audio clue that you
+ * selected or deselected a device.
+ */
 -(void) playSelectionSound;
 
 @end

@@ -15,7 +15,7 @@
 @implementation ActivityMonitorSelectVC
 
 @synthesize deviceManager;
-
+@synthesize soundPlayer;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     
@@ -151,22 +151,6 @@
     [self playSelectionSound];
 }
 
-#pragma AVAudioPlayerDelegate methods
-
-
--(void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
-    
-    NSLog(@"successful play");
-}
-
--(void) audioPlayerDecodeErrorDidOccur:(AVAudioPlayer *)player error:(NSError *)error {
-    
-    if (error != nil) {
-        NSLog(@"got an error during playback: %@", [error description]);
-    }
-    NSLog(@"some other error in playback of sound");
-}
-
 #pragma mark Custom methods
 
 
@@ -178,26 +162,12 @@
 -(void) playSelectionSound {
     
     NSError *error = nil;
-    
-    // this stuff is supposed to fix playback error but does not
-    
-    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:&error];
-    if (error != nil) {
-        NSLog(@"error: %@", [error description]);
-    }
-    [[AVAudioSession sharedInstance] setActive:YES error:&error];
-    if (error != nil) {
-        NSLog(@"error: %@", [error description]);
-    }
-    // end of hack for playback
-    
     NSString *soundFile = [[NSBundle mainBundle] pathForResource:@"click_one" ofType:@"m4a"];
     NSURL *soundFileLocation = [[NSURL alloc] initFileURLWithPath:soundFile];
-    AVAudioPlayer *soundPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFileLocation error:&error];
+    soundPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFileLocation error:&error];
     if (error != nil) {
         NSLog(@"sound went wrong");
     }
-    [soundPlayer setDelegate:self];
     [soundPlayer prepareToPlay];
     NSLog(@"playing sound");
     [soundPlayer play];
