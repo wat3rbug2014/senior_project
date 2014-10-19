@@ -41,6 +41,11 @@
     return self;
 }
 
+-(void) dealloc {
+    
+    soundPlayer = nil;
+    
+}
 - (void)viewDidLoad {
     
     [super viewDidLoad];
