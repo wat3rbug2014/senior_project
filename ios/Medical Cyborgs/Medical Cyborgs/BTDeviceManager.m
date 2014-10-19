@@ -127,6 +127,10 @@
 -(void) centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral
      advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI {
     
+    // a recent API bug returns a nil peripheral related to caching devices 
+    if (peripheral == nil) {
+        return;
+    }
     NSLog(@"Discovered a device");
     id<DeviceConnection> newDevice = [MonitorCreationFactory createFromPeripheral:peripheral];
     
