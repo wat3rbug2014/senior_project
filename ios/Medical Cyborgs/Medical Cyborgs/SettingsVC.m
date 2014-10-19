@@ -91,15 +91,33 @@
         [super viewWillDisappear:animated];
         return;
     } else {
-        // go to database and get patientID
         
+        //save the current data except the patientID
+        
+        [patientData setFirstName:[firstNameEntry text]];
+        [patientData setLastName:[lastNameEntry text]];
+        [patientData setDob:[dobSelector date]];
+        [patientData saveInformation];
+        
+        // setup dob components for URL
+        
+        NSDateComponents *dobComponents = [[NSCalendar currentCalendar] components: NSCalendarUnitDay |
+            NSCalendarUnitMonth | NSCalendarUnitYear fromDate:[dobSelector date]];
+        month = [dobComponents month];
+        year = [dobComponents year];
+        day = [dobComponents day];
+
+        NSString *firstNameStr = [NSString stringWithFormat:@"first_name=%@", [patientData firstName]];
+        NSString *lastNameStr = [NSString stringWithFormat:@"last_name=%@", [patientData lastName]];
+        NSString *birthDateStr = [NSString stringWithFormat:@"dob=%d-%d-%d", year, month, day];
+        NSString *rawUserUrl = [NSString stringWithFormat:@"&%@&%@&%@", firstNameStr, lastNameStr, birthDateStr];
+        NSString *userUrl = [rawUserUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        NSURL *databaseUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", SERVER_BASE_URL, userUrl]];
+        NSLog(@"url: %@",databaseUrl);
+        
+        // go to database and get patientID
         // test this to make sure it does not hold up things
-        NSString *birthDateStr = [NSString stringWithFormat:@"%d-%d-%d", year, month, day];
-        NSString *urlStr = [NSString stringWithFormat:
-            @"http://%@/testpatient.php?first_name=%@&last_name=%@&dob=%@",
-            ADDRESS,[patientData firstName], [patientData lastName], birthDateStr];
-        NSURL *databaseUrl = [NSURL URLWithString:urlStr];
-        NSLog(@"url: %@",urlStr);
+        
         NSURLRequest *dbRequest = [NSURLRequest requestWithURL:databaseUrl];
         //NSURLConnection *dbConnection = [[NSURLConnection alloc] initWithRequest:dbRequest delegate:self startImmediately:YES];
         NSURLResponse *serverResponse = nil;

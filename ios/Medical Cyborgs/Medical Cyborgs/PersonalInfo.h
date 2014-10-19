@@ -18,6 +18,7 @@
 #define L_NAME @"Last Name"
 #define DOB @"DOB"
 #define PATIENT_ID @"patientID"
+#define NO_ID_SET -1
 
 
 @interface PersonalInfo : NSObject

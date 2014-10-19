@@ -9,7 +9,7 @@
 #ifndef Medical_Cyborgs_DatabaseConstants_h
 #define Medical_Cyborgs_DatabaseConstants_h
 
-#define ADDRESS @"192.168.1.100/~douglas"
+#define SERVER_BASE_URL @"http://192.168.1.100/testpatient.php?"
 #define DATABASE @"test"
 #define USER @"app_user"
 #define PASSWD @"1f1ndu5"
