@@ -15,6 +15,7 @@
  */
 
 #import <Foundation/Foundation.h>
+#import <CoreBluetooth/CoreBluetooth.h>
 
 #define NO_BATTERY_VALUE 0
 #define BATTERY_LOW_NOTIFCATION_STR @"Battery Level Low"
