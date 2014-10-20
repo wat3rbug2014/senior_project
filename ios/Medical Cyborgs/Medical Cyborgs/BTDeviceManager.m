@@ -22,7 +22,6 @@
 @synthesize manager;
 @synthesize searchType;
 
-
 -(id) init {
     
     if (self = [super init]) {

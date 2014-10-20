@@ -13,6 +13,8 @@
 #import "PolarH7.h"
 #import "WahooTickrX.h"
 #import "DeviceTypes.h"
+#import "DeviceConnection.h"
+#import "HeartMonitorProtocol.h"
 
 #define DEVICE_NUM 3
 
