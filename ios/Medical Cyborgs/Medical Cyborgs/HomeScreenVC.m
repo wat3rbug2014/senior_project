@@ -76,7 +76,7 @@
     
     SettingsVC *settings = [[SettingsVC alloc] init];
     [self.navigationController pushViewController:settings animated:YES];
-    [self playClickSound];
+    [self playViewChangeSound];
 }
 
 
@@ -85,14 +85,14 @@
     ActivityMonitorSelectVC *heartSelectorVC = [[ActivityMonitorSelectVC alloc] initWithDeviceManager:btDevices];
     [heartSelectorVC setTitle:@"Activity Monitors"];
     [self.navigationController pushViewController:heartSelectorVC animated:YES];
-    [self playClickSound];
+    [self playViewChangeSound];
 }
 
 -(IBAction)selectHeartMonitor:(id)sender {
     
     HeartMonitorSelectVC *heartSelectorVC = [[HeartMonitorSelectVC alloc] initWithDeviceManager:btDevices];
     [self.navigationController pushViewController:heartSelectorVC animated:YES];
-    [self playClickSound];
+    [self playViewChangeSound];
 }
 
 -(void) setColorForButton:(UIButton *)button isReady:(BOOL)ready {
@@ -112,7 +112,7 @@
 -(IBAction)showGraph:(id)sender {
     
     GraphVC *graphDisplay = [[GraphVC alloc] initWithDeviceManager: btDevices];
-    [self playClickSound];
+    [self playViewChangeSound];
     [self.navigationController pushViewController:graphDisplay animated:YES];
 }
 
@@ -129,15 +129,30 @@
     [self playClickSound];
 }
 
+-(void) playViewChangeSound {
+    
+    NSString *soundFile = [[NSBundle mainBundle] pathForResource:@"Star Trek Door" ofType:@"m4r"];
+    NSURL *soundFileLocation = [[NSURL alloc] initFileURLWithPath:soundFile];
+    [self playSoundWithFile:soundFileLocation];
+}
+
 -(void) playClickSound {
     
-    NSError *error = nil;
     NSString *soundFile = [[NSBundle mainBundle] pathForResource:@"click_one" ofType:@"m4a"];
     NSURL *soundFileLocation = [[NSURL alloc] initFileURLWithPath:soundFile];
-    soundPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFileLocation error:&error];
+    [self playSoundWithFile:soundFileLocation];
+}
+
+-(void) playSoundWithFile:(NSURL *)soundFile {
+    
+    NSError *error = nil;
+    soundPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFile error:&error];
+    float old_volume = [soundPlayer volume];
     if (error == nil) {
+        [soundPlayer setVolume:0.5];
         [soundPlayer prepareToPlay];
         [soundPlayer play];
+        [soundPlayer setVolume:old_volume];
     }
 }
 @end

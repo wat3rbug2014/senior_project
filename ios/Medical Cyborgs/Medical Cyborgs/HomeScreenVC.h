@@ -98,9 +98,18 @@
 
 
 /**
- * This method is used for audio cue that a button has been selected.
+ * This method is used for audio cue that a view is about to be displayed.
+ */
+
+-(void) playViewChangeSound;
+
+
+/**
+ * This method is used to sound the audio cue that the monitoring button has been selected.
  */
 
 -(void) playClickSound;
+
+-(void) playSoundWithFile: (NSURL*) soundFile;
 
 @end
