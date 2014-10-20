@@ -16,6 +16,9 @@
 
 #import <Foundation/Foundation.h>
 
+#define NO_BATTERY_VALUE 0
+#define BATTERY_LOW_NOTIFCATION_STR @"Battery Level Low"
+
 @protocol DeviceConnection <CBPeripheralDelegate>
 
 @required
