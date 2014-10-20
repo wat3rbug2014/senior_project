@@ -15,11 +15,12 @@
 #import <Foundation/Foundation.h>
 #import "DeviceConnection.h"
 #import "PersonalInfo.h"
+#import "HeartMonitorProtocol.h"
 
 @interface DevicePollManager : NSObject
 
 
-@property (retain) id<DeviceConnection> heartMonitor;
+@property (retain) id<DeviceConnection,HeartMonitorProtocol> heartMonitor;
 @property (retain) id<DeviceConnection> activityMonitor;
 @property (retain) NSData *database;
 @property PersonalInfo *patientInfo;
