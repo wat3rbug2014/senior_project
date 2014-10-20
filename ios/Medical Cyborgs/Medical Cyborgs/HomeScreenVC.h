@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BTDeviceManager.h"
 #import "PersonalInfo.h"
+#import <AVFoundation/AVFoundation.h>
 
 
 @interface HomeScreenVC : UIViewController
@@ -21,6 +22,7 @@
 @property BOOL isMonitoring;
 @property (retain) BTDeviceManager *btDevices;
 @property (retain) PersonalInfo *patientInfo;
+@property AVAudioPlayer *soundPlayer;
 
 
 /**
@@ -93,5 +95,12 @@
  */
 
 -(IBAction)toggleMonitoring:(id)sender;
+
+
+/**
+ * This method is used for audio cue that a button has been selected.
+ */
+
+-(void) playClickSound;
 
 @end

@@ -12,6 +12,7 @@
 #import "ActivityMonitorSelectVC.h"
 #import "GraphVC.h"
 #import "SettingsVC.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface HomeScreenVC ()
 
@@ -27,6 +28,7 @@
 @synthesize btDevices;
 @synthesize personalInfoButton;
 @synthesize patientInfo;
+@synthesize soundPlayer;
 
 #pragma mark Standard UIViewController methods
 
@@ -74,6 +76,7 @@
     
     SettingsVC *settings = [[SettingsVC alloc] init];
     [self.navigationController pushViewController:settings animated:YES];
+    [self playClickSound];
 }
 
 
@@ -82,14 +85,14 @@
     ActivityMonitorSelectVC *heartSelectorVC = [[ActivityMonitorSelectVC alloc] initWithDeviceManager:btDevices];
     [heartSelectorVC setTitle:@"Activity Monitors"];
     [self.navigationController pushViewController:heartSelectorVC animated:YES];
-
+    [self playClickSound];
 }
 
 -(IBAction)selectHeartMonitor:(id)sender {
     
     HeartMonitorSelectVC *heartSelectorVC = [[HeartMonitorSelectVC alloc] initWithDeviceManager:btDevices];
     [self.navigationController pushViewController:heartSelectorVC animated:YES];
-    
+    [self playClickSound];
 }
 
 -(void) setColorForButton:(UIButton *)button isReady:(BOOL)ready {
@@ -109,6 +112,7 @@
 -(IBAction)showGraph:(id)sender {
     
     GraphVC *graphDisplay = [[GraphVC alloc] initWithDeviceManager: btDevices];
+    [self playClickSound];
     [self.navigationController pushViewController:graphDisplay animated:YES];
 }
 
@@ -122,6 +126,18 @@
         [toggleRunButton setBackgroundColor:[UIColor redColor]];
         [toggleRunButton setTitle:@"Start" forState:UIControlStateNormal];
     }
+    [self playClickSound];
 }
 
+-(void) playClickSound {
+    
+    NSError *error = nil;
+    NSString *soundFile = [[NSBundle mainBundle] pathForResource:@"click_one" ofType:@"m4a"];
+    NSURL *soundFileLocation = [[NSURL alloc] initFileURLWithPath:soundFile];
+    soundPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFileLocation error:&error];
+    if (error == nil) {
+        [soundPlayer prepareToPlay];
+        [soundPlayer play];
+    }
+}
 @end
