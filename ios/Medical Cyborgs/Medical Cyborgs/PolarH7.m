@@ -62,4 +62,10 @@
     
 }
 
+-(NSInteger) getHeartRate {
+    
+    NSInteger result = 0;
+    
+    return result;
+}
 @end
