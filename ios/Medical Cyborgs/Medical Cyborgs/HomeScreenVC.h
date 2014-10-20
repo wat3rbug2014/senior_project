@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 #import "BTDeviceManager.h"
 #import "PersonalInfo.h"
-#import <AVFoundation/AVFoundation.h>
-
+#import "DevicePollManager.h"
 
 @interface HomeScreenVC : UIViewController
 
@@ -23,6 +23,9 @@
 @property (retain) BTDeviceManager *btDevices;
 @property (retain) PersonalInfo *patientInfo;
 @property AVAudioPlayer *soundPlayer;
+@property (retain) DevicePollManager *poller;
+@property NSRunLoop *pollRunLoop;
+@property NSTimer *pollTimer;
 
 
 /**
@@ -109,6 +112,12 @@
  */
 
 -(void) playClickSound;
+
+/**
+ * This method is the base method that the others use for playing the audio file.  It does
+ * the setup of the audio player and uses the file passed to it for playback.
+ * @param soundFile The NSURL of the file to be played.
+ */
 
 -(void) playSoundWithFile: (NSURL*) soundFile;
 

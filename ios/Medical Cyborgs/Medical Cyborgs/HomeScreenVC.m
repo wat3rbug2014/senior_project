@@ -29,6 +29,9 @@
 @synthesize personalInfoButton;
 @synthesize patientInfo;
 @synthesize soundPlayer;
+@synthesize poller;
+@synthesize pollRunLoop;
+@synthesize pollTimer;
 
 #pragma mark Standard UIViewController methods
 
@@ -63,6 +66,12 @@
     [super viewWillAppear:animated];
 }
 
+-(void) viewWillDisappear:(BOOL)animated {
+    
+    [self playViewChangeSound];
+    [super viewWillDisappear:animated];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -76,7 +85,6 @@
     
     SettingsVC *settings = [[SettingsVC alloc] init];
     [self.navigationController pushViewController:settings animated:YES];
-    [self playViewChangeSound];
 }
 
 
@@ -85,14 +93,12 @@
     ActivityMonitorSelectVC *heartSelectorVC = [[ActivityMonitorSelectVC alloc] initWithDeviceManager:btDevices];
     [heartSelectorVC setTitle:@"Activity Monitors"];
     [self.navigationController pushViewController:heartSelectorVC animated:YES];
-    [self playViewChangeSound];
 }
 
 -(IBAction)selectHeartMonitor:(id)sender {
     
     HeartMonitorSelectVC *heartSelectorVC = [[HeartMonitorSelectVC alloc] initWithDeviceManager:btDevices];
     [self.navigationController pushViewController:heartSelectorVC animated:YES];
-    [self playViewChangeSound];
 }
 
 -(void) setColorForButton:(UIButton *)button isReady:(BOOL)ready {
@@ -112,7 +118,6 @@
 -(IBAction)showGraph:(id)sender {
     
     GraphVC *graphDisplay = [[GraphVC alloc] initWithDeviceManager: btDevices];
-    [self playViewChangeSound];
     [self.navigationController pushViewController:graphDisplay animated:YES];
 }
 
@@ -122,9 +127,29 @@
     if ([self isMonitoring]) {
         [toggleRunButton setTitle:@"Stop" forState:UIControlStateNormal];
         [toggleRunButton setBackgroundColor:[UIColor greenColor]];
+        
+        //setup polling object
+        
+        id currentHeartMon = [[btDevices heartDevices] objectAtIndex:[btDevices selectedIndexForHeartMonitor]];
+        id currentActivityMon = [[btDevices activityDevices] objectAtIndex:[btDevices selectedIndexForActivityMonitor]];
+        poller = [[DevicePollManager alloc] initWithDataStore:nil heartMonitor:currentHeartMon
+            activityMonitor:currentActivityMon];
+        
+        // setup run loop
+        
+        pollRunLoop = [NSRunLoop mainRunLoop];
+        NSTimeInterval intveral =  5.0;
+        pollTimer = [NSTimer scheduledTimerWithTimeInterval:intveral target:poller
+                selector:@selector(pollDevicesForData) userInfo:nil repeats:YES];
+        [pollRunLoop addTimer:pollTimer forMode:NSDefaultRunLoopMode];
+        NSLog(@"started running");
+        [pollRunLoop run];
     } else {
         [toggleRunButton setBackgroundColor:[UIColor redColor]];
         [toggleRunButton setTitle:@"Start" forState:UIControlStateNormal];
+        NSLog(@"stopped running");
+        [pollRunLoop cancelPerformSelector:@selector(pollDevicesForData) target:poller argument:nil];
+        [pollTimer invalidate];
     }
     [self playClickSound];
 }
@@ -145,14 +170,16 @@
 
 -(void) playSoundWithFile:(NSURL *)soundFile {
     
+    if (soundPlayer == nil) {
+        return;
+    }
     NSError *error = nil;
     soundPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFile error:&error];
-    float old_volume = [soundPlayer volume];
     if (error == nil) {
-        [soundPlayer setVolume:0.5];
         [soundPlayer prepareToPlay];
         [soundPlayer play];
-        [soundPlayer setVolume:old_volume];
+    } else {
+        NSLog(@"error with sound: %@", [error description]);
     }
 }
 @end
