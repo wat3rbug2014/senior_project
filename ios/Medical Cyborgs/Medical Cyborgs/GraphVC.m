@@ -14,11 +14,11 @@
 
 @implementation GraphVC
 
-@synthesize deviceManager;
+@synthesize devicePoller;
 
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = @"Measurements";
@@ -26,10 +26,10 @@
     return self;
 }
 
--(id) initWithDeviceManager: (BTDeviceManager*) newDeviceManager {
+-(id) initWithDevicePoller:(DevicePollManager *) newDevicePoller {
     
     if (self = [self initWithNibName:@"GraphVC" bundle:nil]) {
-        deviceManager = newDeviceManager;
+        devicePoller = newDevicePoller;
     }
     return self;
 }
