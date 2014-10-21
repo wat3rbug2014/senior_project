@@ -7,13 +7,12 @@
 //
 
 #import "BTDeviceManager.h"
-#import <UIKit/UIKit.h>
-#import <AVFoundation/AVFoundation.h>
+#import "TableVCWithSoundsTableViewController.h"
 
-@interface ActivityMonitorSelectVC : UITableViewController
+
+@interface ActivityMonitorSelectVC : TableVCWithSoundsTableViewController
 
 @property BTDeviceManager *deviceManager;
-@property AVAudioPlayer *soundPlayer;
 
 /**
  * Creates a device selection view controller.  The purpose of the method
@@ -43,12 +42,5 @@
  */
 
 -(void) updateTable:(NSNotification*) notification;
-
-/**
- * This method is called whenever a cell is selected or deselected.  Its purpose is to
- * play an audio file whenever the selection takes places to give an audio clue that you
- * selected or deselected a device.
- */
--(void) playSelectionSound;
 
 @end

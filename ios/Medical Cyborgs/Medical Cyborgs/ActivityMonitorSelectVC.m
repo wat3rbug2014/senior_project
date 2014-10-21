@@ -41,11 +41,6 @@
     return self;
 }
 
--(void) dealloc {
-    
-    soundPlayer = nil;
-    
-}
 - (void)viewDidLoad {
     
     [super viewDidLoad];
@@ -153,7 +148,7 @@
         [[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryCheckmark];
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
-    [self playSelectionSound];
+    [self playClickSound];
 }
 
 #pragma mark Custom methods
@@ -162,20 +157,6 @@
 -(void) updateTable:(NSNotification*) notification {
     
     [self.tableView reloadData];
-}
-
--(void) playSelectionSound {
-    
-    NSError *error = nil;
-    NSString *soundFile = [[NSBundle mainBundle] pathForResource:@"click_one" ofType:@"m4a"];
-    NSURL *soundFileLocation = [[NSURL alloc] initFileURLWithPath:soundFile];
-    soundPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFileLocation error:&error];
-    if (error != nil) {
-        NSLog(@"sound went wrong");
-    }
-    [soundPlayer prepareToPlay];
-    NSLog(@"playing sound");
-    [soundPlayer play];
 }
 
 @end

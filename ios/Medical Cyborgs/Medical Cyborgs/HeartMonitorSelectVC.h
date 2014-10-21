@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "BTDeviceManager.h"
+#import <AVFoundation/AVFoundation.h>
+#import "TableVCWithSoundsTableViewController.h"
 
-@interface HeartMonitorSelectVC : UITableViewController
+@interface HeartMonitorSelectVC : TableVCWithSoundsTableViewController
 
 @property BTDeviceManager *deviceManager;
 
@@ -41,5 +43,6 @@
  */
 
 -(void) updateTable:(NSNotification*) notification;
+
 
 @end
