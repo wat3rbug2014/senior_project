@@ -12,7 +12,7 @@
 #import "ActivityMonitorSelectVC.h"
 #import "GraphVC.h"
 #import "SettingsVC.h"
-#import <AVFoundation/AVFoundation.h>
+#import "RemoteDBConnectionManager.h"
 
 @interface HomeScreenVC ()
 
@@ -29,9 +29,11 @@
 @synthesize personalInfoButton;
 @synthesize patientInfo;
 @synthesize soundPlayer;
-@synthesize poller;
+@synthesize devicePoller;
 @synthesize pollRunLoop;
-@synthesize pollTimer;
+@synthesize devicePollTimer;
+@synthesize serverPollTimer;
+@synthesize serverPoller;
 
 #pragma mark Standard UIViewController methods
 
@@ -56,7 +58,6 @@
     [self setColorForButton:personalInfoButton isReady:NO];
     [self setColorForButton:toggleRunButton isReady:NO];
     btDevices = [[BTDeviceManager alloc] init];
-    
 }
 
 -(void) viewWillAppear:(BOOL)animated {
@@ -124,39 +125,46 @@
 -(IBAction)toggleMonitoring:(id)sender {
     
     [self setIsMonitoring:![self isMonitoring]];
+    [self setColorForButton:toggleRunButton isReady:[self isMonitoring]];
+    [self playClickSound];
     if ([self isMonitoring]) {
-        [toggleRunButton setTitle:@"Stop" forState:UIControlStateNormal];
-        [toggleRunButton setBackgroundColor:[UIColor greenColor]];
+        [[toggleRunButton titleLabel] setText:@"Stop"];
         
-        //setup polling object
+        //setup polling objects
         
         id currentHeartMon = [[btDevices heartDevices] objectAtIndex:[btDevices selectedIndexForHeartMonitor]];
         id currentActivityMon = [[btDevices activityDevices] objectAtIndex:[btDevices selectedIndexForActivityMonitor]];
-        poller = [[DevicePollManager alloc] initWithDataStore:nil heartMonitor:currentHeartMon
+        devicePoller = [[DevicePollManager alloc] initWithDataStore:nil heartMonitor:currentHeartMon
             activityMonitor:currentActivityMon];
+        serverPoller = [[RemoteDBConnectionManager alloc] initWithDatabase:nil];
         
         // setup run loop
         
         pollRunLoop = [NSRunLoop mainRunLoop];
         NSTimeInterval intveral =  5.0;
-        pollTimer = [NSTimer scheduledTimerWithTimeInterval:intveral target:poller
+        NSTimeInterval serverTime = 300.0;
+        
+        devicePollTimer = [NSTimer scheduledTimerWithTimeInterval:intveral target:devicePoller
                 selector:@selector(pollDevicesForData) userInfo:nil repeats:YES];
-        [pollRunLoop addTimer:pollTimer forMode:NSDefaultRunLoopMode];
+        serverPollTimer = [NSTimer scheduledTimerWithTimeInterval:serverTime target:serverPoller selector:@selector(pushDataToRemoteServer) userInfo:nil repeats:YES];
+        [pollRunLoop addTimer:devicePollTimer forMode:NSDefaultRunLoopMode];
+        [pollRunLoop addTimer:serverPollTimer forMode:NSDefaultRunLoopMode];
         NSLog(@"started running");
         [pollRunLoop run];
     } else {
-        [toggleRunButton setBackgroundColor:[UIColor redColor]];
-        [toggleRunButton setTitle:@"Start" forState:UIControlStateNormal];
+        [[toggleRunButton titleLabel] setText:@"Start"];
         NSLog(@"stopped running");
-        [pollRunLoop cancelPerformSelector:@selector(pollDevicesForData) target:poller argument:nil];
-        [pollTimer invalidate];
+        [pollRunLoop cancelPerformSelector:@selector(pollDevicesForData) target:devicePoller argument:nil];
+        [pollRunLoop cancelPerformSelector:@selector(pushDataToRemoteServer) target:serverPoller argument:nil];
+        [serverPollTimer invalidate];
+        [devicePollTimer invalidate];
+        [serverPoller flushDatabaseToRemoteServer];
     }
-    [self playClickSound];
 }
 
 -(void) playViewChangeSound {
     
-    NSString *soundFile = [[NSBundle mainBundle] pathForResource:@"Star Trek Door" ofType:@"m4r"];
+    NSString *soundFile = [[NSBundle mainBundle] pathForResource:@"Star Trek Door" ofType:@"m4a"];
     NSURL *soundFileLocation = [[NSURL alloc] initFileURLWithPath:soundFile];
     [self playSoundWithFile:soundFileLocation];
 }

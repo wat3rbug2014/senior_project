@@ -11,6 +11,7 @@
 #import "BTDeviceManager.h"
 #import "PersonalInfo.h"
 #import "DevicePollManager.h"
+#import "RemoteDBConnectionManager.h"
 
 @interface HomeScreenVC : UIViewController
 
@@ -23,9 +24,11 @@
 @property (retain) BTDeviceManager *btDevices;
 @property (retain) PersonalInfo *patientInfo;
 @property AVAudioPlayer *soundPlayer;
-@property (retain) DevicePollManager *poller;
+@property (retain) DevicePollManager *devicePoller;
+@property (retain) RemoteDBConnectionManager *serverPoller;
 @property NSRunLoop *pollRunLoop;
-@property NSTimer *pollTimer;
+@property NSTimer *devicePollTimer;
+@property NSTimer *serverPollTimer;
 
 
 /**

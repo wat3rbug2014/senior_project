@@ -10,28 +10,33 @@
 
 @implementation RemoteDBConnectionManager
 
-@synthesize patient;
-//@synthesize delegate;
 
--(id) init {
+@synthesize database;
+
+-(id) initWithDatabase: (NSData*) datastore {
     
     if (self = [super init]) {
-        patient = nil;
+        database = datastore;
     }
     return self;
 }
 
--(BOOL) patientIDUpdateSuccess:(PersonalInfo *)newPatient {
+-(void) pushDataToRemoteServer {
     
-    BOOL result = NO;
-    if (newPatient == nil) {
-        return result;
+    NSLog(@"connecting to database");
+    // connect to database
+    
+    while (database != nil) { // this needs to be fixed for data store
+        NSLog(@"pushing to server");
     }
-    patient = newPatient;
-    NSString *findOldID = [NSString stringWithFormat:
-            @"SELECT PATIENT_ID FROM PATIENTS WHERE FIRST_NAME='%@' AND LAST_NAME='%@' AND DOB='%@'",
-            [patient firstName], [patient lastName], [patient dob]];
-    
-    return result;
+    // push data to server
+    // close connection
+    NSLog(@"End of server update");
 }
+
+-(void) flushDatabaseToRemoteServer {
+    
+    
+}
+
 @end
