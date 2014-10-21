@@ -6,10 +6,11 @@
 //  Copyright (c) 2014 Douglas Gardiner. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "VCWithSounds.h"
 #import "BTDeviceManager.h"
 
-@interface GraphVC : UIViewController
+
+@interface GraphVC : VCWithSounds
 
 @property BTDeviceManager *deviceManager;
 

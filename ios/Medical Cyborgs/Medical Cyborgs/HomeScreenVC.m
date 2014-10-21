@@ -28,7 +28,6 @@
 @synthesize btDevices;
 @synthesize personalInfoButton;
 @synthesize patientInfo;
-@synthesize soundPlayer;
 @synthesize devicePoller;
 @synthesize pollRunLoop;
 @synthesize devicePollTimer;
@@ -67,11 +66,6 @@
     [super viewWillAppear:animated];
 }
 
--(void) viewWillDisappear:(BOOL)animated {
-    
-    [self playViewChangeSound];
-    [super viewWillDisappear:animated];
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -126,7 +120,7 @@
     
     [self setIsMonitoring:![self isMonitoring]];
     [self setColorForButton:toggleRunButton isReady:[self isMonitoring]];
-    [self playClickSound];
+    [super playClickSound];
     if ([self isMonitoring]) {
         [[toggleRunButton titleLabel] setText:@"Stop"];
         
@@ -142,7 +136,7 @@
         
         pollRunLoop = [NSRunLoop mainRunLoop];
         NSTimeInterval intveral =  5.0;
-        NSTimeInterval serverTime = 300.0;
+        NSTimeInterval serverTime = 60.0;
         
         devicePollTimer = [NSTimer scheduledTimerWithTimeInterval:intveral target:devicePoller
                 selector:@selector(pollDevicesForData) userInfo:nil repeats:YES];
@@ -162,32 +156,4 @@
     }
 }
 
--(void) playViewChangeSound {
-    
-    NSString *soundFile = [[NSBundle mainBundle] pathForResource:@"Star Trek Door" ofType:@"m4a"];
-    NSURL *soundFileLocation = [[NSURL alloc] initFileURLWithPath:soundFile];
-    [self playSoundWithFile:soundFileLocation];
-}
-
--(void) playClickSound {
-    
-    NSString *soundFile = [[NSBundle mainBundle] pathForResource:@"click_one" ofType:@"m4a"];
-    NSURL *soundFileLocation = [[NSURL alloc] initFileURLWithPath:soundFile];
-    [self playSoundWithFile:soundFileLocation];
-}
-
--(void) playSoundWithFile:(NSURL *)soundFile {
-    
-    if (soundPlayer == nil) {
-        return;
-    }
-    NSError *error = nil;
-    soundPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFile error:&error];
-    if (error == nil) {
-        [soundPlayer prepareToPlay];
-        [soundPlayer play];
-    } else {
-        NSLog(@"error with sound: %@", [error description]);
-    }
-}
 @end
