@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Douglas Gardiner. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "VCWithSounds.h"
 #import "PersonalInfo.h"
 
 #define MONTH_COMP 0
@@ -16,7 +16,7 @@
 
 
 
-@interface SettingsVC : UIViewController <UITextFieldDelegate,NSURLConnectionDelegate, NSURLConnectionDataDelegate>
+@interface SettingsVC : VCWithSounds <UITextFieldDelegate,NSURLConnectionDelegate, NSURLConnectionDataDelegate>
 
 @property (retain, nonatomic) IBOutlet UITextField *firstNameEntry;
 @property (retain, nonatomic) IBOutlet UITextField *lastNameEntry;
@@ -33,5 +33,7 @@
  */
 
 -(void) updateDOB;
+
+
 
 @end
