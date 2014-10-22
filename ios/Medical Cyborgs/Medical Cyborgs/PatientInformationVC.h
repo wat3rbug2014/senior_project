@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Douglas Gardiner. All rights reserved.
 //
 
-#import "VCWithSounds.h"
+#import <UIKit/UIKit.h>
 #import "PersonalInfo.h"
 
 #define MONTH_COMP 0
@@ -16,13 +16,13 @@
 
 
 
-@interface PatientInformationVC : VCWithSounds <UITextFieldDelegate,NSURLConnectionDelegate, NSURLConnectionDataDelegate>
+@interface PatientInformationVC : UIViewController <UITextFieldDelegate,NSURLConnectionDelegate, NSURLConnectionDataDelegate>
 
 @property (retain, nonatomic) IBOutlet UITextField *firstNameEntry;
 @property (retain, nonatomic) IBOutlet UITextField *lastNameEntry;
 @property (retain, nonatomic) IBOutlet UIDatePicker *dobSelector;
 @property (retain, strong) PersonalInfo *patientData;
-@property (retain) NSMutableData *serverResponseData;
+@property (retain) NSMutableData *_serverResponseData;
 
 
 /**

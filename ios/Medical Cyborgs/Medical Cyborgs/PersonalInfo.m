@@ -27,11 +27,6 @@
     return self;
 }
 
--(void) dealloc {
-    
-    [self saveInformation];
-}
-
 -(void) loadInformation {
     
     [self setFirstName:[self.personalData objectForKey:F_NAME]];

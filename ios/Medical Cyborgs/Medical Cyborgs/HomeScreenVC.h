@@ -11,6 +11,7 @@
 #import "PersonalInfo.h"
 #import "DevicePollManager.h"
 #import "RemoteDBConnectionManager.h"
+#import "PatientInformationVC.h"
 
 @interface HomeScreenVC : UIViewController
 
@@ -20,6 +21,7 @@
 @property (retain, nonatomic) IBOutlet UIButton *toggleRunButton;
 @property (retain, nonatomic) IBOutlet UIButton *personalInfoButton;
 @property BOOL isMonitoring;
+@property PatientInformationVC *settings;
 @property (retain) BTDeviceManager *btDevices;
 @property (retain) PersonalInfo *patientInfo;
 @property (retain) DevicePollManager *devicePoller;
@@ -100,5 +102,7 @@
 
 -(IBAction)toggleMonitoring:(id)sender;
 
+
+-(void) checkForUpdatedPatientID;
 
 @end

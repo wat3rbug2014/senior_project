@@ -20,7 +20,7 @@
 @synthesize firstNameEntry;
 @synthesize lastNameEntry;
 @synthesize patientData;
-@synthesize serverResponseData;
+@synthesize _serverResponseData;
 
 
 -(id) initWithPersonalInformation: (PersonalInfo*) existingPatientData {
@@ -112,6 +112,7 @@
         NSString *birthDateStr = [NSString stringWithFormat:@"dob=%d-%d-%d", year, month, day];
         NSString *rawUserUrl = [NSString stringWithFormat:@"&%@&%@&%@", firstNameStr, lastNameStr, birthDateStr];
         NSString *userUrl = [rawUserUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        NSLog(@"user url %@", userUrl);
         NSURL *databaseUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", SERVER_BASE_URL, userUrl]];
         NSLog(@"url: %@",databaseUrl);
         
@@ -122,13 +123,12 @@
         //NSURLConnection *dbConnection = [[NSURLConnection alloc] initWithRequest:dbRequest delegate:self startImmediately:YES];
         NSURLResponse *serverResponse = nil;
         NSError *error = nil;
-        //[NSURLConnection sendAsynchronousRequest:dbRequest queue:[NSOperationQueue currentQueue] completionHandler:<#^(NSURLResponse *response, NSData *data, NSError *connectionError)handler#>];
-        [serverResponseData appendData:[NSURLConnection sendSynchronousRequest:dbRequest
-                returningResponse:&serverResponse error:&error]];
+        NSURLConnection *connector = [[NSURLConnection alloc] initWithRequest: dbRequest delegate: self startImmediately: YES];
         if (error != nil) {
             NSLog(@"got an error %@", error);
         } else {
-            NSLog(@"success %d", [serverResponseData length]);
+            NSLog(@"success %d", [_serverResponseData length]);
+            NSLog(@"some data is %@", [serverResponse URL]);
         }
     }
     [super viewWillDisappear:animated];
@@ -172,13 +172,14 @@
 
 -(void) connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
     
-    NSLog(@"got a response from %@", [response description]);
+    _serverResponseData = [[NSMutableData alloc] init];
+    NSLog(@"got a response");
 }
 
 -(void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     
-    [serverResponseData appendData:data];
-    NSLog(@"got some data %d", [serverResponseData length]);
+    [_serverResponseData appendData:data];
+    NSLog(@"got some data %d", [_serverResponseData length]);
 }
 
 -(void) connection:(NSURLConnection *)connection didSendBodyData:(NSInteger)bytesWritten totalBytesWritten:(NSInteger)totalBytesWritten totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite {
@@ -188,8 +189,15 @@
 
 -(void) connectionDidFinishLoading:(NSURLConnection *)connection {
     
-    NSLog(@"That was the last");
+    NSString *patientIDResponseString = [[NSString alloc] initWithData: _serverResponseData encoding: NSUTF8StringEncoding];
+    NSLog(@"Data is now %@", patientIDResponseString);
+    NSInteger receivedInt = [patientIDResponseString integerValue];
+    NSNumber *newID = [[NSNumber alloc] initWithInteger:receivedInt];
+    [patientData setPatientID: newID];
+    [patientData saveInformation];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"PersonalInfoUpdated" object:self];
 }
+
 #pragma mark Custom methods
 
 

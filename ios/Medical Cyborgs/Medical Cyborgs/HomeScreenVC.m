@@ -11,7 +11,6 @@
 #import "HeartMonitorSelectVC.h"
 #import "ActivityMonitorSelectVC.h"
 #import "GraphVC.h"
-#import "PatientInformationVC.h"
 #import "RemoteDBConnectionManager.h"
 
 @interface HomeScreenVC ()
@@ -33,6 +32,7 @@
 @synthesize devicePollTimer;
 @synthesize serverPollTimer;
 @synthesize serverPoller;
+@synthesize settings;
 
 #pragma mark Standard UIViewController methods
 
@@ -44,8 +44,14 @@
         self.title = @"Home";
         isMonitoring = false;
         self.patientInfo = [[PersonalInfo alloc] init];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkForUpdatedPatientID) name:@"PersonalInfoUpdated" object:settings];
     }
     return self;
+}
+
+-(void) dealloc {
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)viewDidLoad {
@@ -66,6 +72,7 @@
     [self setColorForButton:heartRateButton isReady:[btDevices heartMonitorIsConnected]];
     [self setColorForButton:activityButton isReady:[btDevices activityMonitorIsConnected]];
     [self setColorForButton:toggleRunButton isReady:[self isMonitoring]];
+    [self checkForUpdatedPatientID];
     [super viewWillAppear:animated];
 }
 
@@ -81,7 +88,7 @@
 
 -(IBAction)alterPersonalSettings:(id)sender {
     
-    PatientInformationVC *settings = [[PatientInformationVC alloc] init];
+    settings = [[PatientInformationVC alloc] init];
     [self.navigationController pushViewController:settings animated:YES];
 }
 
@@ -158,6 +165,19 @@
         [serverPollTimer invalidate];
         [devicePollTimer invalidate];
         [serverPoller flushDatabaseToRemoteServer];
+    }
+}
+
+-(void) checkForUpdatedPatientID {
+    
+    NSLog(@"Checking personal info");
+    [patientInfo loadInformation];
+    if ([[patientInfo patientID] intValue] != NO_ID_SET) {
+        NSLog(@"patient id is %@", [patientInfo patientID]);
+        [self setColorForButton:personalInfoButton isReady:YES];
+    } else {
+        NSLog(@"no patient id");
+        [self setColorForButton:personalInfoButton isReady:NO];
     }
 }
 
