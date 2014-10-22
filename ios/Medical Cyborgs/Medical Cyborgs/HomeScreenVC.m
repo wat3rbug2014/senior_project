@@ -11,7 +11,7 @@
 #import "HeartMonitorSelectVC.h"
 #import "ActivityMonitorSelectVC.h"
 #import "GraphVC.h"
-#import "SettingsVC.h"
+#import "PatientInformationVC.h"
 #import "RemoteDBConnectionManager.h"
 
 @interface HomeScreenVC ()
@@ -56,6 +56,8 @@
     [self setColorForButton:heartRateButton isReady:NO];
     [self setColorForButton:personalInfoButton isReady:NO];
     [self setColorForButton:toggleRunButton isReady:NO];
+    [[toggleRunButton titleLabel] setText:@"Start"];
+    [[toggleRunButton titleLabel] setTextColor:[UIColor whiteColor]];
     btDevices = [[BTDeviceManager alloc] init];
 }
 
@@ -63,6 +65,7 @@
     
     [self setColorForButton:heartRateButton isReady:[btDevices heartMonitorIsConnected]];
     [self setColorForButton:activityButton isReady:[btDevices activityMonitorIsConnected]];
+    [self setColorForButton:toggleRunButton isReady:[self isMonitoring]];
     [super viewWillAppear:animated];
 }
 
@@ -78,7 +81,7 @@
 
 -(IBAction)alterPersonalSettings:(id)sender {
     
-    SettingsVC *settings = [[SettingsVC alloc] init];
+    PatientInformationVC *settings = [[PatientInformationVC alloc] init];
     [self.navigationController pushViewController:settings animated:YES];
 }
 
@@ -103,16 +106,18 @@
     }
     if (ready) {
         [button setBackgroundColor:[UIColor greenColor]];
+        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [[button titleLabel] setTextColor:[UIColor blackColor]];
     } else {
         [button setBackgroundColor:[UIColor redColor]];
         [[button titleLabel] setTextColor:[UIColor whiteColor]];
+        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     }
 }
 
 -(IBAction)showGraph:(id)sender {
     
-    GraphVC *graphDisplay = [[GraphVC alloc] initWithDeviceManager: btDevices];
+    GraphVC *graphDisplay = [[GraphVC alloc] initWithDevicePoller: devicePoller];
     [self.navigationController pushViewController:graphDisplay animated:YES];
 }
 
@@ -120,9 +125,9 @@
     
     [self setIsMonitoring:![self isMonitoring]];
     [self setColorForButton:toggleRunButton isReady:[self isMonitoring]];
-    [super playClickSound];
+    //[super playClickSound];
     if ([self isMonitoring]) {
-        [[toggleRunButton titleLabel] setText:@"Stop"];
+        [toggleRunButton setTitle:@"Stop" forState:UIControlStateNormal];
         
         //setup polling objects
         
@@ -146,7 +151,7 @@
         NSLog(@"started running");
         [pollRunLoop run];
     } else {
-        [[toggleRunButton titleLabel] setText:@"Start"];
+        [toggleRunButton setTitle:@"Start" forState:UIControlStateNormal];
         NSLog(@"stopped running");
         [pollRunLoop cancelPerformSelector:@selector(pollDevicesForData) target:devicePoller argument:nil];
         [pollRunLoop cancelPerformSelector:@selector(pushDataToRemoteServer) target:serverPoller argument:nil];

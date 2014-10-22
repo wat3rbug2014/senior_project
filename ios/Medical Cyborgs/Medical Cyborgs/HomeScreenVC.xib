@@ -6,12 +6,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeScreenVC">
             <connections>
-                <outlet property="activityButton" destination="702-xy-XU2" id="f2M-eP-ibY"/>
-                <outlet property="graphButton" destination="LJx-X6-RXE" id="FmO-X6-T2V"/>
-                <outlet property="heartRateButton" destination="6IN-Bb-mgx" id="cn7-OQ-Cvn"/>
-                <outlet property="personalInfoButton" destination="EbY-WH-AhK" id="8lJ-MI-vDM"/>
-                <outlet property="toggleRunButton" destination="coR-DD-Drd" id="63H-Fh-4oD"/>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="activityButton" destination="702-xy-XU2" id="2bJ-Ds-eVc"/>
+                <outlet property="graphButton" destination="LJx-X6-RXE" id="dVA-KQ-2cN"/>
+                <outlet property="heartRateButton" destination="6IN-Bb-mgx" id="udV-4t-voE"/>
+                <outlet property="personalInfoButton" destination="EbY-WH-AhK" id="rhj-Ux-EMT"/>
+                <outlet property="toggleRunButton" destination="bmg-6T-WyY" id="Eg9-pb-A3o"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="KsZ-Ls-9Iv"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -53,17 +53,6 @@
                         <action selector="showGraph:" destination="-1" eventType="touchUpInside" id="kc2-Cw-TAl"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="coR-DD-Drd">
-                    <rect key="frame" x="63" y="385" width="195" height="40"/>
-                    <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
-                    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <state key="normal" title="Start">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="toggleMonitoring:" destination="-1" eventType="touchUpInside" id="mzv-rB-wuf"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EbY-WH-AhK">
                     <rect key="frame" x="63" y="317" width="195" height="40"/>
                     <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
@@ -73,6 +62,17 @@
                     </state>
                     <connections>
                         <action selector="alterPersonalSettings:" destination="-1" eventType="touchUpInside" id="xkW-lJ-scp"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmg-6T-WyY">
+                    <rect key="frame" x="63" y="386" width="195" height="40"/>
+                    <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="Start">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="toggleMonitoring:" destination="-1" eventType="touchUpInside" id="5QO-I4-Ro9"/>
                     </connections>
                 </button>
             </subviews>

@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Douglas Gardiner. All rights reserved.
 //
 
-#import "VCWithSounds.h"
+#import <UIKit/UIKit.h>
 #import "BTDeviceManager.h"
 #import "PersonalInfo.h"
 #import "DevicePollManager.h"
 #import "RemoteDBConnectionManager.h"
 
-@interface HomeScreenVC : VCWithSounds
+@interface HomeScreenVC : UIViewController
 
 @property (retain, nonatomic) IBOutlet UIButton *heartRateButton;
 @property (retain, nonatomic) IBOutlet UIButton *activityButton;
