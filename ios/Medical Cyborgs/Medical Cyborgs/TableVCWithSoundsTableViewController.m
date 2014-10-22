@@ -7,7 +7,7 @@
 //
 
 #import "TableVCWithSoundsTableViewController.h"
-#import "VCWithSounds.h"
+#import <UIKit/UIKit.h>
 
 @interface TableVCWithSoundsTableViewController ()
 
@@ -46,7 +46,8 @@
 
 -(void) playViewChangeSound {
     
-    NSString *soundFile = [[NSBundle mainBundle] pathForResource:@"Star Trek Door" ofType:@"m4r"];
+    NSString *soundFile = nil; // disabled because overall navigation will change
+   // NSString *soundFile = [[NSBundle mainBundle] pathForResource:@"Star Trek Door" ofType:@"m4r"];
     NSURL *soundFileLocation = [[NSURL alloc] initFileURLWithPath:soundFile];
     [self playSoundWithFile:soundFileLocation];
 }
@@ -60,11 +61,14 @@
 
 -(void) playSoundWithFile:(NSURL *)soundFile {
     
+    if (soundFile == nil) {
+        return;
+    }
     NSError *error = nil;
     soundPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFile error:&error];
     float old_volume = [soundPlayer volume];
     if (error == nil) {
-        [soundPlayer setVolume:0.5];
+        [soundPlayer setVolume:0.2];
         [soundPlayer prepareToPlay];
         [soundPlayer play];
         [soundPlayer setVolume:old_volume];
