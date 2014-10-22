@@ -6,6 +6,13 @@
 //  Copyright (c) 2014 Douglas Gardiner. All rights reserved.
 //
 
+
+
+/**
+ * TODO:
+ * Test for network latency
+ * Do some kind of alert window to notify user to check network settings.
+ */
 #import "PatientInformationVC.h"
 #import "DatabaseConstants.h"
 
@@ -30,6 +37,7 @@
     }
     return self;
 }
+
 - (void)viewDidLoad {
     
     [super viewDidLoad];
@@ -117,19 +125,10 @@
         NSLog(@"url: %@",databaseUrl);
         
         // go to database and get patientID
-        // test this to make sure it does not hold up things
         
         NSURLRequest *dbRequest = [NSURLRequest requestWithURL:databaseUrl];
-        //NSURLConnection *dbConnection = [[NSURLConnection alloc] initWithRequest:dbRequest delegate:self startImmediately:YES];
-        NSURLResponse *serverResponse = nil;
-        NSError *error = nil;
         NSURLConnection *connector = [[NSURLConnection alloc] initWithRequest: dbRequest delegate: self startImmediately: YES];
-        if (error != nil) {
-            NSLog(@"got an error %@", error);
-        } else {
-            NSLog(@"success %d", [_serverResponseData length]);
-            NSLog(@"some data is %@", [serverResponse URL]);
-        }
+        [connector start];
     }
     [super viewWillDisappear:animated];
 }
@@ -142,7 +141,10 @@
 
 #pragma mark UITextFieldViewDelegate methods
 
+
 -(BOOL) textFieldShouldReturn:(UITextField *)textField {
+    
+    // update the first name or last name depending on textfield
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSMutableDictionary *personalInfo = [NSMutableDictionary
@@ -153,6 +155,8 @@
     if ([textField isEqual:lastNameEntry]) {
         [personalInfo setObject:[lastNameEntry text] forKey:L_NAME];
     }
+    // save results and dismiss the keyboard
+    
     [defaults setObject:personalInfo forKey:USER_DEFAULT_KEY];
     [defaults synchronize];
     [textField resignFirstResponder];
@@ -165,6 +169,7 @@
 -(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
     
     NSLog(@"couldn't reach: see %@", error);
+    // make an alert that the server is not reachable...maybe.  What can the user do about this?
 }
 
 #pragma NSURLConnectDataDelegate methods 
@@ -179,15 +184,16 @@
 -(void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     
     [_serverResponseData appendData:data];
-    NSLog(@"got some data %d", [_serverResponseData length]);
-}
-
--(void) connection:(NSURLConnection *)connection didSendBodyData:(NSInteger)bytesWritten totalBytesWritten:(NSInteger)totalBytesWritten totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite {
-    
-    NSLog(@"not sure what to use this for");
+    NSLog(@"got some data %d bytes", [_serverResponseData length]);
 }
 
 -(void) connectionDidFinishLoading:(NSURLConnection *)connection {
+    
+    /**
+     * WARNING:  The expected response from the server is just UTF8 text representing the integer value of
+     * the patient ID.  If this should change, this method needs to be altered to parse the information
+     * correctly.
+     */
     
     NSString *patientIDResponseString = [[NSString alloc] initWithData: _serverResponseData encoding: NSUTF8StringEncoding];
     NSLog(@"Data is now %@", patientIDResponseString);
@@ -195,6 +201,9 @@
     NSNumber *newID = [[NSNumber alloc] initWithInteger:receivedInt];
     [patientData setPatientID: newID];
     [patientData saveInformation];
+    
+    // Notify home screen that an ID is received and try updating the buttons to reflect the change.
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:@"PersonalInfoUpdated" object:self];
 }
 
