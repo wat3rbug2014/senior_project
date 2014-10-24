@@ -19,6 +19,9 @@ NSString * const FLEX_SERV_UUID = @"45C3";
 @synthesize device;
 @synthesize deviceManufacturer;
 
+#pragma mark DeviceConnection protocol methods
+
+
 -(id) initWithPeripheral: (CBPeripheral*) peripheral {
     
     if (self = [super init]) {
@@ -28,9 +31,6 @@ NSString * const FLEX_SERV_UUID = @"45C3";
     }
     return self;
 }
-
-#pragma mark DeviceConnection protocol methods
-
 
 -(BOOL)isConnected {
     

@@ -40,15 +40,16 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
+    
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTable:) name:DEVICE_READ_VALUE object:nil];
 }
 
 -(void) viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
+    [self.deviceManager setSearchType:HEART_MONITOR];
     [self.deviceManager discoverDevicesForType:HEART_MONITOR];
 }
 
@@ -75,21 +76,55 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    NSLog(@"heart devices %d", [[deviceManager heartDevices] count]);
     return [[deviceManager heartDevices] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSString *identifier = @"Default";
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
-                                                   reuseIdentifier:identifier];
-    [[cell textLabel] setText:[[[deviceManager heartDevices] objectAtIndex:indexPath.row] name]];
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
+    id<DeviceConnection> currentDevice = [[deviceManager heartDevices] objectAtIndex:indexPath.row];
+    [[cell textLabel] setText:[currentDevice name]];
+    UIImageView *batteryCharge = [[UIImageView alloc] initWithFrame:CGRectMake(230, 6, 32, 32)];
+    [batteryCharge setImage:[UIImage imageNamed:@"battery_empty_32.png"]];
+    if ([currentDevice respondsToSelector:@selector(updatedBatteryLevel)]) {
+        
+        // select the battery icon based on charge
+        
+        int lvl = [currentDevice updatedBatteryLevel];
+        
+        if (lvl == 100) {
+            [batteryCharge setImage:[UIImage imageNamed:@"battery_full_32.png"]];
+        }
+        if (lvl > 80 && lvl < 100) {
+            [batteryCharge setImage:[UIImage imageNamed:@"battery_4_32.png"]];
+        }
+        if (lvl <= 80 && lvl > 60) {
+            [batteryCharge setImage:[UIImage imageNamed:@"battery_3_32.png"]];
+        }
+        if (lvl <= 60 && lvl > 40) {
+            [batteryCharge setImage:[UIImage imageNamed:@"battery_2_32.png"]];
+        }
+        if (lvl <= 40 && lvl  > 20) {
+            [batteryCharge setImage:[UIImage imageNamed:@"battery_1_32.png"]];
+        }
+        if (lvl <= 20) {
+            [batteryCharge setImage:[UIImage imageNamed:@"battery_empty_32.png"]];
+        }
+    }
+    [cell addSubview:batteryCharge];
+    
+    // add manufacturer information
+    
+    if ([currentDevice respondsToSelector:@selector(manufacturer)]) {
+        [[cell detailTextLabel] setText:[currentDevice manufacturer]];
+    }
+    // add checkmark for the currently selected device
+    
     if ([deviceManager selectedIndexForHeartMonitor] == indexPath.row) {
         [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
     }
     return cell;
-
 }
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

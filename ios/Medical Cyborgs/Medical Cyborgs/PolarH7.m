@@ -20,6 +20,9 @@
 
 NSString * const POLARH7_SERV_UUID = @"180D";
 
+#pragma mark DeviceConnection protocol methods
+
+
 -(id) initWithPeripheral: (CBPeripheral*) peripheral {
     
     if (self = [super init]) {
@@ -43,8 +46,6 @@ NSString * const POLARH7_SERV_UUID = @"180D";
     return results;
 }
 
-
-
 -(NSInteger) type {
     
     return type;
@@ -58,6 +59,11 @@ NSString * const POLARH7_SERV_UUID = @"180D";
 -(NSString*) name {
     
     return [device name];
+}
+
+-(NSString*) manufacturer {
+    
+    return [self deviceManufacturer];
 }
 
 -(void) updateBatteryLevel {
@@ -86,6 +92,9 @@ NSString * const POLARH7_SERV_UUID = @"180D";
     
     [self updateBatteryLevel];
 }
+
+#pragma mark HeartMonitorProtocol methods
+
 
 -(NSInteger) getHeartRate {
     
@@ -159,10 +168,10 @@ NSString * const POLARH7_SERV_UUID = @"180D";
         for (CBCharacteristic *currentChar in [service characteristics]) {
             NSString *currentCharStr = [NSString stringWithFormat:@"%@", [currentChar UUID]];
             if ([currentCharStr rangeOfString:BATTERY_LVL].location != NSNotFound) {
-                NSLog(@"%@: found characterisitic for battery", [device name]);
+                NSLog(@"%@: found characteristic for battery", [device name]);
                 if (batteryLvlChar == nil) {
                     batteryLvlChar = currentChar;
-                    [peripheral setNotifyValue:YES forCharacteristic:currentChar];
+                    [peripheral readValueForCharacteristic:currentChar];
                 }
             }
         }

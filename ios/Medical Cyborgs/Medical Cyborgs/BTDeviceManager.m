@@ -47,6 +47,14 @@
 -(void) dealloc {
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    NSMutableArray *completeBuffer = [[NSMutableArray alloc] initWithArray:activityDevices];
+    [completeBuffer addObjectsFromArray:heartDevices];
+    for (id<DeviceConnection> currentDevice in completeBuffer) {
+        if ([currentDevice isConnected]) {
+            NSLog(@"disconnecting %@", [currentDevice name]);
+            [manager cancelPeripheralConnection:[currentDevice device]];
+        }
+    }
     [manager setDelegate:nil];
     manager = nil;
 }
@@ -55,7 +63,7 @@
 
 -(void) discoverDevicesForType:(NSInteger)type {
     
-    NSArray *services;
+    NSArray *services = nil;
     if (type == ACTIVITY_MONITOR) {
         
         // temporary workaround since only one device is known at the moment
@@ -165,6 +173,7 @@
             activityDevices = buffer;
         }
     }
+    NSLog(@"Activity devices: %d\theart devices: %d", [activityDevices count], [heartDevices count]);
     // post a notification so that the tableviews can update their views
     
     NSLog(@"Device: %@ connecting...", [newDevice name]);
@@ -174,15 +183,18 @@
 
 -(void) centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral {
     
-    NSLog(@"Connected to %@", [peripheral name]);
-    for (id<DeviceConnection> currentDevice in activityDevices) {
-        if ([[currentDevice device] isEqual:peripheral]) {
+    NSMutableArray *completeBuffer = [[NSMutableArray alloc] initWithArray:activityDevices];
+    [completeBuffer addObjectsFromArray:heartDevices];
+
+    for (id<DeviceConnection> currentDevice in completeBuffer) {
+        if ([[currentDevice name] isEqual:[peripheral name]]) {
                 
             // query the device and get this information to the table and update even though
             // we are discarding the local result.
-            if ([[currentDevice device] state] == CBPeripheralStateConnected) {
-                [currentDevice getTableInformation];
-            }
+            NSLog(@"Getting information for %@" , [currentDevice name]);
+            [currentDevice getTableInformation];
+        } else {
+            NSLog(@"Not getting info for %@", [peripheral name]);
         }
     }
 }
