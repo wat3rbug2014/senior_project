@@ -196,10 +196,9 @@
      */
     
     NSString *patientIDResponseString = [[NSString alloc] initWithData: _serverResponseData encoding: NSUTF8StringEncoding];
-    NSLog(@"Data is now %@", patientIDResponseString);
     NSInteger receivedInt = [patientIDResponseString integerValue];
-    NSNumber *newID = [[NSNumber alloc] initWithInteger:receivedInt];
-    [patientData setPatientID: newID];
+    NSLog(@"Data is now %d", receivedInt);
+    [patientData setPatientID: receivedInt];
     [patientData saveInformation];
     
     // Notify home screen that an ID is received and try updating the buttons to reflect the change.

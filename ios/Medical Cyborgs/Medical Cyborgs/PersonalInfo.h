@@ -26,7 +26,7 @@
 @property NSString *firstName;
 @property NSString *lastName;
 @property NSDate *dob;
-@property NSNumber* patientID;
+@property NSInteger patientID;
 @property NSUserDefaults *defaults;
 @property NSDictionary *personalData;
 

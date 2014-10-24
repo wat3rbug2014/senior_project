@@ -31,9 +31,9 @@
     
     [self setFirstName:[self.personalData objectForKey:F_NAME]];
     [self setLastName:[self.personalData objectForKey:L_NAME]];
-    [self setPatientID:[self.personalData objectForKey:PATIENT_ID]];
-    if ([self patientID] == nil || [self patientID] == 0) {
-        [self setPatientID:[NSNumber numberWithInt:NO_ID_SET]];
+    [self setPatientID:[[self.personalData objectForKey:PATIENT_ID] integerValue]];
+    if ([self patientID] == 0) {
+        [self setPatientID:NO_ID_SET];
     }
     [self setDob:[self.personalData objectForKey:DOB]];
 }
@@ -44,10 +44,10 @@
     [updatedInfo setObject:firstName forKey:F_NAME];
     [updatedInfo setObject:lastName forKey:L_NAME];
     [updatedInfo setObject:dob forKey:DOB];
-    if (patientID == nil) {
-        patientID = [NSNumber numberWithInt:NO_ID_SET];
+    if (patientID == 0) {
+        patientID = NO_ID_SET;
     }
-    [updatedInfo setObject:patientID forKey:PATIENT_ID];
+    [updatedInfo setObject:[NSNumber numberWithInteger:patientID] forKey:PATIENT_ID];
     [defaults setObject:updatedInfo forKey:USER_DEFAULT_KEY];
     [defaults synchronize];
 }

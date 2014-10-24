@@ -171,9 +171,10 @@
 -(void) checkForUpdatedPatientID {
     
     NSLog(@"Checking personal info");
-    [patientInfo loadInformation];
-    if ([[patientInfo patientID] intValue] != NO_ID_SET) {
-        NSLog(@"patient id is %@", [patientInfo patientID]);
+    patientInfo = nil;
+    patientInfo = [[PersonalInfo alloc] init];
+    if ([patientInfo patientID] != NO_ID_SET) {
+        NSLog(@"patient id is %d", [patientInfo patientID]);
         [self setColorForButton:personalInfoButton isReady:YES];
     } else {
         NSLog(@"no patient id");
