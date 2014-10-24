@@ -35,7 +35,7 @@
     if (self = [self initWithStyle:UITableViewStylePlain]) {
         self.deviceManager = newDeviceManager;
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTable:)
-                                                     name:@"BTDeviceDiscovery" object:self.deviceManager];
+            name:@"BTDeviceDiscovery" object:self.deviceManager];
     }
     return self;
 }
@@ -55,6 +55,7 @@
 -(void) viewWillDisappear:(BOOL)animated {
     
     [self.deviceManager stopScan];
+    [self.deviceManager disconnectDevicesForType:HEART_MONITOR];
     [super viewWillDisappear:animated];
 }
 
@@ -74,6 +75,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
+    NSLog(@"heart devices %d", [[deviceManager heartDevices] count]);
     return [[deviceManager heartDevices] count];
 }
 
@@ -92,12 +94,24 @@
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-
-    [deviceManager setSelectedIndexForHeartMonitor:indexPath.row];
-    [deviceManager setHeartMonitorIsConnected:YES];
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    [self.navigationController popViewControllerAnimated:YES];
+    // deselect the device
     
+    if ([deviceManager selectedIndexForHeartMonitor] == indexPath.row) {
+        [deviceManager setHeartMonitorIsConnected:NO];
+        [deviceManager setSelectedIndexForActivityMonitor:NONE_SELECTED];
+        [[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryNone];
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        
+    } else {
+        
+        // select the device
+        
+        [deviceManager setHeartMonitorIsConnected:YES];
+        [deviceManager setSelectedIndexForHeartMonitor:indexPath.row];
+        [[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryCheckmark];
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    }
+    [self playClickSound];
 }
 
 #pragma mark Custom methods

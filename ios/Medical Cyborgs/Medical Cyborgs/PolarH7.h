@@ -18,13 +18,18 @@
 #import <Foundation/Foundation.h>
 #import <CoreBluetooth/CoreBluetooth.h>
 #import "DeviceConnection.h"
+#import "DeviceTypes.h"
 #import "HeartMonitorProtocol.h"
+
+extern NSString * const POLARH7_SERV_UUID;
 
 @interface PolarH7 : NSObject <DeviceConnection, HeartMonitorProtocol>
 
 @property NSInteger type;
+@property (retain) CBService *batteryService;
+@property (retain) CBCharacteristic *batteryLvlChar;
 @property NSInteger updatedBatteryLevel;
 @property (retain) CBPeripheral *device;
-
+@property (retain) NSString *deviceManufacturer;
 
 @end

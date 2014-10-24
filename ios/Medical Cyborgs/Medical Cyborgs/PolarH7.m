@@ -11,13 +11,21 @@
 @implementation PolarH7
 
 @synthesize device;
+@synthesize batteryService;
+@synthesize batteryLvlChar;
 @synthesize updatedBatteryLevel;
+@synthesize deviceManufacturer;
+@synthesize type;
+
+
+NSString * const POLARH7_SERV_UUID = @"180D";
 
 -(id) initWithPeripheral: (CBPeripheral*) peripheral {
     
     if (self = [super init]) {
         device = peripheral;
         [device setDelegate:self];
+        type = HEART_MONITOR;
     }
     return self;
 }
@@ -39,12 +47,12 @@
 
 -(NSInteger) type {
     
-    return self.type;
+    return type;
 }
 
--(void) setType:(NSInteger)type {
+-(void) setType:(NSInteger)newType {
     
-    self.type = type;
+    type = newType;
 }
 
 -(NSString*) name {
@@ -54,12 +62,29 @@
 
 -(void) updateBatteryLevel {
     
-    
+    if ([self isConnected]) {
+        NSLog(@"%@ getting battery level", [device name]);
+        
+        // perform discovery for the battery
+        
+        if (batteryLvlChar == nil || batteryService == nil) {
+            NSLog(@"%@ discovering battery stuff", [device name]);
+            [device discoverServices:nil];
+        } else {
+            
+            // battery services already discovered, just need to be read
+            
+            NSLog(@"%@ battery already discovered", [device name]);
+            [device readValueForCharacteristic:batteryLvlChar];
+        }
+    } else {
+        NSLog(@"%@ not connected", [device name]);
+    }
 }
 
 -(void) getTableInformation {
     
-    
+    [self updateBatteryLevel];
 }
 
 -(NSInteger) getHeartRate {
@@ -68,4 +93,87 @@
     
     return result;
 }
+
+#pragma mark CBPeripheralDelegate protocol methods
+
+
+-(void) peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error {
+    
+    if (error != nil) {
+        updatedBatteryLevel = 0;
+    }
+    if ([characteristic isEqual:batteryLvlChar]) {
+        uint8_t rawBattery = 0;
+        [[batteryLvlChar value] getBytes:&rawBattery length:1];
+        NSLog(@"%@ Battery read is %d", [device name], rawBattery);
+        [self setUpdatedBatteryLevel:(NSInteger) rawBattery];
+    }
+    if ([[NSString stringWithFormat:@"%@",[characteristic UUID]] rangeOfString:@"Manufacturer"].location != NSNotFound) {
+        deviceManufacturer = [[NSString alloc] initWithData:[characteristic value] encoding:NSUTF8StringEncoding];
+        NSLog(@"Manufacturer is %@", deviceManufacturer);
+        
+    }
+    NSNotification *readValueNotification = [[NSNotification alloc] initWithName:DEVICE_READ_VALUE object:self userInfo:nil];
+    [[NSNotificationCenter defaultCenter] postNotification:readValueNotification];
+}
+
+-(void) peripheral:(CBPeripheral *)peripheral didDiscoverServices:(NSError *)error {
+    
+    // figure out the possibilities so that we can handle them.
+    
+    NSLog(@"%@ discovered services", [peripheral name]);
+    if (error != nil) {
+        NSLog(@"Error %@", [error description]);
+    }
+    for (CBService *service in [peripheral services]) {
+        NSLog(@"%@ Service: %@", [peripheral name], [service UUID]);
+    }
+    for (CBService *currentService in [peripheral services]) {
+        NSString *currentServiceStr = [NSString stringWithFormat:@"%@",[currentService UUID]];
+        
+        // check for battery level
+        
+        if ([currentServiceStr rangeOfString:BATTERY].location != NSNotFound) {
+            if (batteryService == nil) {
+                batteryService = currentService;
+            }
+            [peripheral discoverCharacteristics:nil forService:currentService];
+        }
+        // read manufacturer
+        
+        if ([currentServiceStr rangeOfString:@"Device Info"].location != NSNotFound) {
+            [peripheral discoverCharacteristics:nil forService:currentService];
+        }
+        // do the other services also
+    }
+}
+
+-(void) peripheral:(CBPeripheral *)peripheral didDiscoverCharacteristicsForService:(CBService *)service error:(NSError *)error {
+    
+    // figure out the possibilities so that we can handle them.
+    
+    if (error != nil) {
+        NSLog(@"Error %@", [error description]);
+    }
+    if ([service isEqual:batteryService]) {
+        for (CBCharacteristic *currentChar in [service characteristics]) {
+            NSString *currentCharStr = [NSString stringWithFormat:@"%@", [currentChar UUID]];
+            if ([currentCharStr rangeOfString:BATTERY_LVL].location != NSNotFound) {
+                NSLog(@"%@: found characterisitic for battery", [device name]);
+                if (batteryLvlChar == nil) {
+                    batteryLvlChar = currentChar;
+                    [peripheral setNotifyValue:YES forCharacteristic:currentChar];
+                }
+            }
+        }
+    }
+    if ([[NSString stringWithFormat:@"%@",[service UUID]] rangeOfString:@"Device Info"].location != NSNotFound) {
+        for (CBCharacteristic *currentChar in [service characteristics]) {
+            if ([[NSString stringWithFormat:@"%@",currentChar] rangeOfString:@"Manufacturer"].location != NSNotFound) {
+                [peripheral readValueForCharacteristic:currentChar];
+            }
+        }
+    }
+}
+
 @end

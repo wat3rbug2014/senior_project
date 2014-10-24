@@ -62,11 +62,12 @@
         
         services =[[NSArray alloc] initWithObjects:[CBUUID UUIDWithString:FLEX_SERV_UUID], nil];
     } else {
-        
+        services = [[NSArray alloc] initWithObjects:[CBUUID UUIDWithString:POLARH7_SERV_UUID], nil];
         // need information on the other devices
     }
     NSLog(@"Scanning devices");
-    [manager scanForPeripheralsWithServices:nil options:nil];
+    //[manager scanForPeripheralsWithServices:nil options:nil];
+    [manager scanForPeripheralsWithServices:services options:nil];
 }
 
 -(void) stopScan {
@@ -93,16 +94,10 @@
     }
 }
 
-
-
 -(void) disconnectDevicesForType: (NSInteger) type {
-    
-    if (type == HEART_MONITOR) {
-        for (id<DeviceConnection> currentDevice in heartDevices) {
-            [manager cancelPeripheralConnection:[currentDevice device]];
-        }
-    } else {
-        for (id<DeviceConnection> currentDevice in activityDevices) {
+
+    for (id<DeviceConnection> currentDevice in heartDevices) {
+        if ([currentDevice type] == type) {
             [manager cancelPeripheralConnection:[currentDevice device]];
         }
     }
@@ -126,28 +121,28 @@
 -(void) centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral
      advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI {
     
-    // a recent API bug returns a nil peripheral related to caching devices 
+     NSLog(@"Discovered a device %@", [peripheral description]);
+    
+    // a recent API bug returns a nil peripheral related to cached devices
+    
     if (peripheral == nil) {
         return;
     }
-    NSLog(@"Discovered a device");
-    id<DeviceConnection> newDevice = [MonitorCreationFactory createFromPeripheral:peripheral];
-    
-    // get rid of false positive devices.  Sometimes a device is discovered but there
-    // is no information for it or there is a duplicate.
-    
-    if (newDevice == nil) {
+    if ([peripheral identifier] == nil) {
+        NSLog(@"false positive");
         return;
     }
+    NSLog(@"preliminary duplicates removed");
+    id<DeviceConnection> newDevice = [MonitorCreationFactory createFromPeripheral:peripheral];
     NSMutableArray *buffer = nil;
     
-    // do the check for duplicates and add to heart monitors
+    // do the check for duplicates and add to heart monitors if it is original
     
     if ([newDevice type] == HEART_MONITOR) {
         buffer = [NSMutableArray arrayWithArray:heartDevices];
         BOOL isNew = false;
         for (id<DeviceConnection> currentDevice in buffer) {
-            if ([[currentDevice name] isEqual:[newDevice name]]) {
+            if ([[[currentDevice device] identifier] isEqual:[[newDevice device] identifier]]) {
                 isNew = true;
             }
         }
@@ -161,7 +156,7 @@
         buffer = [NSMutableArray arrayWithArray:activityDevices];
         BOOL isNew = false;
         for (id<DeviceConnection> currentDevice in buffer) {
-            if ([[currentDevice name] isEqual:[newDevice name]]) {
+            if ([[[currentDevice device] identifier] isEqual:[[newDevice device] identifier]]) {
                 isNew = true;
             }
         }
@@ -180,13 +175,12 @@
 -(void) centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral {
     
     NSLog(@"Connected to %@", [peripheral name]);
-    if ([self searchType] == ACTIVITY_MONITOR) {
-        for (id<DeviceConnection> currentDevice in activityDevices) {
-            if ([[currentDevice device] isEqual:peripheral]) {
+    for (id<DeviceConnection> currentDevice in activityDevices) {
+        if ([[currentDevice device] isEqual:peripheral]) {
                 
-                // query the device and get this information to the table and update even though
-                // we are discarding the local result.
-                
+            // query the device and get this information to the table and update even though
+            // we are discarding the local result.
+            if ([[currentDevice device] state] == CBPeripheralStateConnected) {
                 [currentDevice getTableInformation];
             }
         }
