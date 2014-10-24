@@ -88,4 +88,6 @@
 
 -(void) disconnectDevicesForType: (NSInteger) type;
 
+-(void) disconnectAllDevices;
+
 @end

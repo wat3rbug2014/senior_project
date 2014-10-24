@@ -28,12 +28,6 @@
         manager = [[CBCentralManager alloc] initWithDelegate:self queue:nil]; // maybe this needs to be on another thread
         selectedIndexForActivityMonitor = NONE_SELECTED;
         selectedIndexForHeartMonitor = NONE_SELECTED;
-//        NSArray *services;
-//        services =[[NSArray alloc] initWithObjects:[CBUUID UUIDWithString:FLEX_SERV_UUID], nil];
-//        NSArray *oldDevices = [manager retrieveConnectedPeripheralsWithServices:services];
-//        for (CBPeripheral *currentDevice in oldDevices) {
-//            [manager cancelPeripheralConnection: currentDevice];
-//        }
     }
     return self;
 }
@@ -47,6 +41,12 @@
 -(void) dealloc {
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [manager setDelegate:nil];
+    manager = nil;
+}
+
+-(void) disconnectAllDevices {
+    
     NSMutableArray *completeBuffer = [[NSMutableArray alloc] initWithArray:activityDevices];
     [completeBuffer addObjectsFromArray:heartDevices];
     for (id<DeviceConnection> currentDevice in completeBuffer) {
@@ -55,11 +55,7 @@
             [manager cancelPeripheralConnection:[currentDevice device]];
         }
     }
-    [manager setDelegate:nil];
-    manager = nil;
 }
-
-
 
 -(void) discoverDevicesForType:(NSInteger)type {
     
