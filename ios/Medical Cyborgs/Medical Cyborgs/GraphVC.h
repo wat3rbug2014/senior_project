@@ -5,13 +5,11 @@
 //  Created by Douglas Gardiner on 9/22/14.
 //  Copyright (c) 2014 Douglas Gardiner. All rights reserved.
 //
-
-#import "VCWithSounds.h"
+#import <UIKit/UIKit.h>
 #import "BTDeviceManager.h"
 #import "DevicePollManager.h"
 
-
-@interface GraphVC : VCWithSounds
+@interface GraphVC : UIViewController
 
 
 @property DevicePollManager *devicePoller;
