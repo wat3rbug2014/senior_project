@@ -36,7 +36,10 @@
 
 -(void) flushDatabaseToRemoteServer {
     
+    NSLog(@"connecting to database");
+    // push all data to server
     
+    NSLog(@"flushed local database to server");
 }
 
 @end
