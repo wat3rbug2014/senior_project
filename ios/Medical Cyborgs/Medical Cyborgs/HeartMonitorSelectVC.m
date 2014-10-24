@@ -133,7 +133,7 @@
     
     if ([deviceManager selectedIndexForHeartMonitor] == indexPath.row) {
         [deviceManager setHeartMonitorIsConnected:NO];
-        [deviceManager setSelectedIndexForActivityMonitor:NONE_SELECTED];
+        [deviceManager setSelectedIndexForHeartMonitor:NONE_SELECTED];
         [[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryNone];
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
         
