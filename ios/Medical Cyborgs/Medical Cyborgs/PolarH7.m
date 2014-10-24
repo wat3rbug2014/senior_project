@@ -13,9 +13,12 @@
 @synthesize device;
 @synthesize batteryService;
 @synthesize batteryLvlChar;
+@synthesize heartRateChar;
+@synthesize heartRateService;
 @synthesize updatedBatteryLevel;
 @synthesize deviceManufacturer;
 @synthesize type;
+@synthesize currentHeartRate;
 
 
 NSString * const POLARH7_SERV_UUID = @"180D";
@@ -35,7 +38,11 @@ NSString * const POLARH7_SERV_UUID = @"180D";
 
 -(BOOL)isConnected {
     
-    return ([device state] == CBPeripheralStateConnected) ? TRUE : FALSE;
+    BOOL result = false;
+    if (device != nil && [device state] == CBPeripheralStateConnected) {
+        result = true;
+    }
+    return result;
 }
 
 -(NSData*) getData {
@@ -98,9 +105,7 @@ NSString * const POLARH7_SERV_UUID = @"180D";
 
 -(NSInteger) getHeartRate {
     
-    NSInteger result = 0;
-    
-    return result;
+    return currentHeartRate;
 }
 
 #pragma mark CBPeripheralDelegate protocol methods
@@ -111,12 +116,30 @@ NSString * const POLARH7_SERV_UUID = @"180D";
     if (error != nil) {
         updatedBatteryLevel = 0;
     }
+    // read heart rate
+    
+    if ([characteristic isEqual:heartRateChar]) {
+        NSData *heartData = [heartRateChar value];
+        const uint8_t *heartReg = [heartData bytes];
+        uint16_t bpm = 0;
+        if ((heartReg[0] & 0x01) == 0) {
+            bpm = heartReg[1];
+        } else {
+            bpm = CFSwapInt16LittleToHost(*(uint16_t *)(&heartReg[1]));
+        }
+        currentHeartRate = (NSInteger)bpm;
+        NSLog(@"Current heart rate: %d", currentHeartRate);
+    }
+    // read battery level
+    
     if ([characteristic isEqual:batteryLvlChar]) {
         uint8_t rawBattery = 0;
         [[batteryLvlChar value] getBytes:&rawBattery length:1];
         NSLog(@"%@ Battery read is %d", [device name], rawBattery);
         [self setUpdatedBatteryLevel:(NSInteger) rawBattery];
     }
+    // read manufacturer
+    
     if ([[NSString stringWithFormat:@"%@",[characteristic UUID]] rangeOfString:@"Manufacturer"].location != NSNotFound) {
         deviceManufacturer = [[NSString alloc] initWithData:[characteristic value] encoding:NSUTF8StringEncoding];
         NSLog(@"Manufacturer is %@", deviceManufacturer);
@@ -153,7 +176,15 @@ NSString * const POLARH7_SERV_UUID = @"180D";
         if ([currentServiceStr rangeOfString:@"Device Info"].location != NSNotFound) {
             [peripheral discoverCharacteristics:nil forService:currentService];
         }
-        // do the other services also
+        // read heart rate
+        
+        if ([currentServiceStr rangeOfString:@"Heart Rate"].location != NSNotFound) {
+            if (heartRateService == nil) {
+                NSLog(@"checking heart rate");
+                heartRateService = currentService;
+            }
+            [peripheral discoverCharacteristics:nil forService:currentService];
+        }
     }
 }
 
@@ -183,6 +214,19 @@ NSString * const POLARH7_SERV_UUID = @"180D";
             }
         }
     }
+    if ([service isEqual:heartRateService]) {
+        for (CBCharacteristic *currentChar in [service characteristics]) {
+            NSString *currentCharStr = [NSString stringWithFormat:@"%@", [currentChar UUID]];
+            if ([currentCharStr rangeOfString:@"2A37"].location != NSNotFound) {
+                NSLog(@"found heart rate characteristic and reading...");
+                if (heartRateChar == nil) {
+                    heartRateChar = currentChar;
+                    [peripheral setNotifyValue:YES forCharacteristic:currentChar];
+                }
+            }
+        }
+    }
+    NSLog(@"characteristic is %@", [service UUID]);
 }
 
 @end
