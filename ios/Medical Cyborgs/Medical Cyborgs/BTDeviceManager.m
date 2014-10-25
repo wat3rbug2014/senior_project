@@ -107,6 +107,12 @@
     }
 }
 
+-(void)connectMonitors {
+    
+    [manager connectPeripheral: [heartDevices objectAtIndex:[self selectedIndexForHeartMonitor]]options:nil];
+    [manager connectPeripheral:[activityDevices objectAtIndex:[self selectedIndexForActivityMonitor]] options:nil];
+}
+
 #pragma mark CBCentralManagerDelegate methods
 
 

@@ -16,16 +16,16 @@
 #import "DeviceConnection.h"
 #import "PersonalInfo.h"
 #import "HeartMonitorProtocol.h"
+#import "BTDeviceManager.h"
 
 @interface DevicePollManager : NSObject
 
 
-@property (retain) id<DeviceConnection,HeartMonitorProtocol> heartMonitor;
-@property (retain) id<DeviceConnection> activityMonitor;
 @property (retain) NSData *database;
 @property PersonalInfo *patientInfo;
 @property NSInteger patientID;
-
+@property (retain) BTDeviceManager *deviceManager;
+@property BOOL isThisFirstPoll;
 
 /**
  * This is the preferred initialization method.  The datastore and the two components are passed
@@ -33,7 +33,7 @@
  * polling is to occur.
  */
 
--(id) initWithDataStore:(NSData*) dataStore heartMonitor: (id) newHeartMonitor activityMonitor: (id) newActivityMonitor;
+-(id) initWithDataStore:(NSData*) dataStore andDevicemanager: (BTDeviceManager*) newDeviceManager;
 
 
 /**

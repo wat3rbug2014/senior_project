@@ -69,6 +69,8 @@
 
 -(void) viewWillAppear:(BOOL)animated {
     
+    // set button colors
+    
     [self setColorForButton:heartRateButton isReady:[btDevices heartMonitorIsConnected]];
     [self setColorForButton:activityButton isReady:[btDevices activityMonitorIsConnected]];
     [self setColorForButton:toggleRunButton isReady:[self isMonitoring]];

@@ -11,20 +11,19 @@
 @implementation DevicePollManager
 
 @synthesize database;
-@synthesize heartMonitor;
-@synthesize activityMonitor;
+@synthesize deviceManager;
 @synthesize patientInfo;
 @synthesize patientID;
+@synthesize isThisFirstPoll;
 
-
--(id) initWithDataStore:(NSData *)dataStore heartMonitor:(id)newHeartMonitor activityMonitor:(id)newActivityMonitor {
+-(id) initWithDataStore:(NSData *)dataStore andDevicemanager:(BTDeviceManager *)newDeviceManager {
     
     if (self = [super init]) {
-        heartMonitor = newHeartMonitor;
-        activityMonitor = newActivityMonitor;
+        deviceManager = newDeviceManager;
         database = dataStore;
         patientInfo = [[PersonalInfo alloc] init];
         patientID = (NSInteger)[patientInfo patientID]; // make sure this works
+        isThisFirstPoll = YES;
     }
     return self;
 }
@@ -34,8 +33,8 @@
     // getting setup information
 
     NSLog(@"verifying input before poll");
-    if (heartMonitor == nil || activityMonitor == nil || database == nil) {
-        return;
+    if (isThisFirstPoll) {
+        [deviceManager connectMonitors];
     }
     // check the patient id, if bad retrieve it again and then check
     
@@ -53,9 +52,10 @@
     // get device data
     
     NSLog(@"getting data from heart monitor");
-    NSInteger heartRate = [heartMonitor getHeartRate];
+   // NSInteger heartRate = [heartMonitor getHeartRate];
+   // NSLog(@"heart rate is %d", heartRate);
     NSLog(@"getting data from activity monitor");
-    NSData *activityData = [activityMonitor getData];
+   // NSData *activityData = [activityMonitor getData];
     
     // setup insert statement to local store
     

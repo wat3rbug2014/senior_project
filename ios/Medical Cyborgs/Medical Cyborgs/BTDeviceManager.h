@@ -90,4 +90,6 @@
 
 -(void) disconnectAllDevices;
 
+-(void) connectMonitors;
+
 @end

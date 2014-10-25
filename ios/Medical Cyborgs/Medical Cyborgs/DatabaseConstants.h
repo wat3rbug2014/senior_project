@@ -10,9 +10,9 @@
 #define Medical_Cyborgs_DatabaseConstants_h
 
 #define SERVER_BASE_URL @"http://192.168.1.100/testpatient.php?" // home test
-//#define SERVER_BASE_URL @"http://172.31.99.52/testpatient.php?"   // coffee shop test
-#define DATABASE @"test"
-#define USER @"app_user"
-#define PASSWD @"1f1ndu5"
+//#define SERVER_BASE_URL @"http://10.91.55.85/testpatient.php?"   // coffee shop test
+#define DATABASE @"c438814fa01g1"
+#define USER @"c438814fa01g1"
+#define PASSWD @"5936686"
 
 #endif
