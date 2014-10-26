@@ -25,6 +25,8 @@
 @property PersonalInfo *patientInfo;
 @property NSInteger patientID;
 @property (retain) BTDeviceManager *deviceManager;
+@property id<DeviceConnection> heartMonitor;
+@property id<DeviceConnection> activityMonitor;
 @property BOOL isThisFirstPoll;
 
 /**

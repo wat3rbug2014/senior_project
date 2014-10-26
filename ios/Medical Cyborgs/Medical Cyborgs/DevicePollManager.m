@@ -15,6 +15,8 @@
 @synthesize patientInfo;
 @synthesize patientID;
 @synthesize isThisFirstPoll;
+@synthesize heartMonitor;
+@synthesize activityMonitor;
 
 -(id) initWithDataStore:(NSData *)dataStore andDevicemanager:(BTDeviceManager *)newDeviceManager {
     
