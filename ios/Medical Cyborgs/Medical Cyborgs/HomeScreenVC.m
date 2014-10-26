@@ -140,10 +140,8 @@
         
         //setup polling objects
         
-        id currentHeartMon = [[btDevices heartDevices] objectAtIndex:[btDevices selectedIndexForHeartMonitor]];
-        id currentActivityMon = [[btDevices activityDevices] objectAtIndex:[btDevices selectedIndexForActivityMonitor]];
-        devicePoller = [[DevicePollManager alloc] initWithDataStore:nil heartMonitor:currentHeartMon
-            activityMonitor:currentActivityMon];
+        [btDevices selectedIndexForActivityMonitor]];
+        devicePoller = [[DevicePollManager alloc] initWithDataStore:nil andDevicemanager:btDevices];
         serverPoller = [[RemoteDBConnectionManager alloc] initWithDatabase:nil];
         
         // setup run loop

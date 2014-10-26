@@ -29,6 +29,7 @@
 @property BOOL heartMonitorIsConnected;
 @property BOOL activityMonitorIsConnected;
 @property BOOL isActive;
+@property BOOL isInDiscoveryMode;
 @property NSInteger searchType;
 @property (retain) CBCentralManager *manager;
 

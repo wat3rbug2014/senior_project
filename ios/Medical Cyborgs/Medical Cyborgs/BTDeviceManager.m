@@ -21,6 +21,7 @@
 @synthesize isActive;
 @synthesize manager;
 @synthesize searchType;
+@synthesize isInDiscoveryMode;
 
 -(id) init {
     
@@ -28,6 +29,7 @@
         manager = [[CBCentralManager alloc] initWithDelegate:self queue:nil]; // maybe this needs to be on another thread
         selectedIndexForActivityMonitor = NONE_SELECTED;
         selectedIndexForHeartMonitor = NONE_SELECTED;
+        isInDiscoveryMode = NO;
     }
     return self;
 }
@@ -70,6 +72,7 @@
         // need information on the other devices
     }
     NSLog(@"Scanning devices");
+    [self setIsInDiscoveryMode:YES];
     //[manager scanForPeripheralsWithServices:nil options:nil];
     [manager scanForPeripheralsWithServices:services options:nil];
 }
@@ -78,6 +81,7 @@
     
     NSLog(@"Stopping scan");
     [manager stopScan];
+    [self setIsInDiscoveryMode:NO];
 }
 
 -(NSInteger) discoveredDevicesForType:(NSInteger)type {
@@ -188,15 +192,17 @@
     NSMutableArray *completeBuffer = [[NSMutableArray alloc] initWithArray:activityDevices];
     [completeBuffer addObjectsFromArray:heartDevices];
 
-    for (id<DeviceConnection> currentDevice in completeBuffer) {
-        if ([[currentDevice name] isEqual:[peripheral name]]) {
+    if([self isInDiscoveryMode]) {
+        for (id<DeviceConnection> currentDevice in completeBuffer) {
+            if ([[currentDevice name] isEqual:[peripheral name]]) {
                 
-            // query the device and get this information to the table and update even though
-            // we are discarding the local result.
-            NSLog(@"Getting information for %@" , [currentDevice name]);
-            [currentDevice getTableInformation];
-        } else {
-            NSLog(@"Not getting info for %@", [peripheral name]);
+                // query the device and get this information to the table and update even though
+                // we are discarding the local result.
+                NSLog(@"Getting information for %@" , [currentDevice name]);
+                [currentDevice getTableInformation];
+            } else {
+                NSLog(@"Not getting info for %@", [peripheral name]);
+            }
         }
     }
 }
