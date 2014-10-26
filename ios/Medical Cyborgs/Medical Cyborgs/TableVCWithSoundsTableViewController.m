@@ -40,14 +40,13 @@
 
 -(void) viewWillDisappear:(BOOL)animated {
     
-    [self playViewChangeSound];
+    //[self playViewChangeSound];
     [super viewWillDisappear:animated];
 }
 
 -(void) playViewChangeSound {
     
-    NSString *soundFile = nil; // disabled because overall navigation will change
-   // NSString *soundFile = [[NSBundle mainBundle] pathForResource:@"Star Trek Door" ofType:@"m4r"];
+    NSString *soundFile = [[NSBundle mainBundle] pathForResource:@"Star Trek Door" ofType:@"m4a"];
     NSURL *soundFileLocation = [[NSURL alloc] initFileURLWithPath:soundFile];
     [self playSoundWithFile:soundFileLocation];
 }
