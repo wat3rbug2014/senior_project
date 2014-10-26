@@ -22,6 +22,7 @@
 #import "HeartMonitorProtocol.h"
 
 extern NSString * const POLARH7_SERV_UUID;
+extern NSString * const POLARH7_HRM_UUID;
 
 @interface PolarH7 : NSObject <DeviceConnection, HeartMonitorProtocol>
 

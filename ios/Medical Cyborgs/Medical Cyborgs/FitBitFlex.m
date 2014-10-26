@@ -92,6 +92,17 @@ NSString * const FLEX_SERV_UUID = @"45C3";
     [self updateBatteryLevel];
 }
 
+-(void) shouldMonitor:(BOOL)monitor {
+    
+    if (monitor) {
+        [device readValueForCharacteristic:batteryLvlChar];
+        //[device setNotifyValue:YES forCharacteristic:<#(CBCharacteristic *)#>]
+    } else {
+        [device setNotifyValue:NO forCharacteristic:batteryLvlChar];
+        //[device setNotifyValue:YES forCharacteristic:<#(CBCharacteristic *)#>]
+    }
+
+}
 #pragma mark CBPeripheralDelegate protocol methods
 
 

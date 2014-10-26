@@ -22,6 +22,7 @@
 
 
 NSString * const POLARH7_SERV_UUID = @"180D";
+NSString * const POLARH7_HRM_UUID = @"2A37";
 
 #pragma mark DeviceConnection protocol methods
 
@@ -98,6 +99,15 @@ NSString * const POLARH7_SERV_UUID = @"180D";
 -(void) getTableInformation {
     
     [self updateBatteryLevel];
+}
+
+-(void) shouldMonitor:(BOOL)monitor {
+    
+    if (monitor) {
+        [device setNotifyValue:YES forCharacteristic:heartRateChar];
+    } else {
+        [device setNotifyValue:NO forCharacteristic:heartRateChar];
+    }
 }
 
 #pragma mark HeartMonitorProtocol methods
@@ -217,7 +227,7 @@ NSString * const POLARH7_SERV_UUID = @"180D";
     if ([service isEqual:heartRateService]) {
         for (CBCharacteristic *currentChar in [service characteristics]) {
             NSString *currentCharStr = [NSString stringWithFormat:@"%@", [currentChar UUID]];
-            if ([currentCharStr rangeOfString:@"2A37"].location != NSNotFound) {
+            if ([currentCharStr rangeOfString:POLARH7_HRM_UUID].location != NSNotFound) {
                 NSLog(@"found heart rate characteristic and reading...");
                 if (heartRateChar == nil) {
                     heartRateChar = currentChar;
