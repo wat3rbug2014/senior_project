@@ -122,6 +122,12 @@
 
 -(void) getTableInformation;
 
+/**
+ * This method is used to toggle monitoring because the devices can have setup and teardown procedures.
+ * @param monitor The state to decide whether to start monitoring or not.
+ */
+
+-(void) shouldMonitor: (BOOL) monitor;
 
 @optional
 
