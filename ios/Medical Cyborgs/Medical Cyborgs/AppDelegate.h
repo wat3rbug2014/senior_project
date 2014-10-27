@@ -7,13 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CoreDataHelper.h"
 #import "BTDeviceManager.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic, readonly) CoreDataHelper *coreDataHelper;
 @property (strong, nonatomic) BTDeviceManager *deviceManager;
 
 @end

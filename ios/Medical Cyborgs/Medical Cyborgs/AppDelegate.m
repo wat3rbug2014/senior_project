@@ -19,16 +19,6 @@
 
 @synthesize deviceManager;
 
-- (CoreDataHelper*)cdh {
-    if (debug==1) {
-        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
-    }
-    if (!_coreDataHelper) {
-        _coreDataHelper = [CoreDataHelper new];
-        [_coreDataHelper setupCoreData];
-    }
-    return _coreDataHelper;
-}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
@@ -51,7 +41,7 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     
     NSLog(@"app is now in background");
-    [[self cdh] saveContext];
+
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
@@ -64,7 +54,7 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     
-    [[self cdh] saveContext];
+
     [deviceManager disconnectAllDevices];
     
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
