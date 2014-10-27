@@ -140,7 +140,7 @@
         
         //setup polling objects
         
-        [btDevices selectedIndexForActivityMonitor]];
+        [btDevices selectedIndexForActivityMonitor];
         devicePoller = [[DevicePollManager alloc] initWithDataStore:nil andDevicemanager:btDevices];
         serverPoller = [[RemoteDBConnectionManager alloc] initWithDatabase:nil];
         
