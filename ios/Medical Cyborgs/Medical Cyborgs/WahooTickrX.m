@@ -25,7 +25,11 @@
 
 -(BOOL)isConnected {
     
-    return ([device state] == CBPeripheralStateConnected) ? TRUE : FALSE;
+    BOOL result = true;
+    if (device == nil || [device state] != CBPeripheralStateConnected) {
+        return false;
+    }
+    return result;
 }
 
 -(NSData*) getData {

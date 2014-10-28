@@ -33,8 +33,12 @@ NSString * const FLEX_SERV_UUID = @"45C3";
 }
 
 -(BOOL)isConnected {
-    
-    return ([device state] == CBPeripheralStateConnected) ? TRUE : FALSE;
+
+    BOOL result = true;
+    if (device == nil || [device state] != CBPeripheralStateConnected) {
+        return false;
+    }
+    return result;
 }
 
 -(NSData*) getData {

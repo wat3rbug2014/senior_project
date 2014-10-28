@@ -39,12 +39,13 @@ NSString * const POLARH7_HRM_UUID = @"2A37";
 
 -(BOOL)isConnected {
     
-    BOOL result = false;
-    if (device != nil && [device state] == CBPeripheralStateConnected) {
-        result = true;
+    BOOL result = true;
+    if (device == nil || [device state] != CBPeripheralStateConnected) {
+        return false;
     }
     return result;
 }
+
 
 -(NSData*) getData {
     
