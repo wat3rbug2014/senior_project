@@ -102,7 +102,18 @@
 
 -(IBAction)toggleMonitoring:(id)sender;
 
+/**
+ * This method checks to see if the patientID has been updated.  It is used because
+ * of the network delay and the delay for the userdefaults on synchronization.
+ */
 
 -(void) checkForUpdatedPatientID;
+
+/**
+ * This method is called when a notification is given by the device poller.  It determines
+ * how the UI is to respond to the event.
+ */
+
+-(void) pollFailed: (NSNotification*) notification;
 
 @end
