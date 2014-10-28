@@ -59,6 +59,13 @@
     }
 }
 
+-(void)connectMonitors {
+ 
+    [self setIsInDiscoveryMode:NO];
+    [manager connectPeripheral:[[heartDevices objectAtIndex:selectedIndexForHeartMonitor] device] options:nil];
+    [manager connectPeripheral:[[activityDevices objectAtIndex:selectedIndexForActivityMonitor] device] options:nil];
+}
+
 -(void) discoverDevicesForType:(NSInteger)type {
     
     NSArray *services = nil;
@@ -109,12 +116,6 @@
             [manager cancelPeripheralConnection:[currentDevice device]];
         }
     }
-}
-
--(void)connectMonitors {
-    
-    [manager connectPeripheral: [heartDevices objectAtIndex:[self selectedIndexForHeartMonitor]]options:nil];
-    [manager connectPeripheral:[activityDevices objectAtIndex:[self selectedIndexForActivityMonitor]] options:nil];
 }
 
 #pragma mark CBCentralManagerDelegate methods

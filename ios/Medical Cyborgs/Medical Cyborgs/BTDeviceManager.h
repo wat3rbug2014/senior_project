@@ -42,6 +42,7 @@
  *
  * @param type The integer that designates whether a heart monitor or an activity monitor
  *          will be the attempt to discover.
+ *
  * @return The number of devices found.
  */
 
@@ -53,7 +54,9 @@
  * The monitor type is an integer based on the constants found in DeviceTypes.h.
  *
  * @param index is the index from the table which is in sync with the array of devices that have been discovered.
+ *
  * @param type it the integer value that determines which array to retrieve the device class.
+ *
  * @return Returns the device object that correlates to the DeviceConnection protocol.
  */
 
@@ -89,7 +92,19 @@
 
 -(void) disconnectDevicesForType: (NSInteger) type;
 
+
+/**
+ * This method is for disconnecting the devices that are used for monitoring.  Both this method and the 
+ * connect Monitors are meant to keep the battery lasting longer by not keeping connectivity when not in use.
+ */
+ 
 -(void) disconnectAllDevices;
+
+
+/**
+ * This method connects the monitoring devices that have been selected from the various other views.
+ * It is used for the device poller to initiate the polling
+ */
 
 -(void) connectMonitors;
 
