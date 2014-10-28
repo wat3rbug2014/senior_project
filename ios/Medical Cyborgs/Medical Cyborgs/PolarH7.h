@@ -31,7 +31,7 @@ extern NSString * const POLARH7_HRM_UUID;
 @property (retain) CBCharacteristic *batteryLvlChar;
 @property (retain) CBService *heartRateService;
 @property (retain) CBCharacteristic *heartRateChar;
-@property NSInteger updatedBatteryLevel;
+@property (readonly) NSInteger batteryLevel;
 @property (retain) CBPeripheral *device;
 @property (retain) NSString *deviceManufacturer;
 @property NSInteger currentHeartRate;

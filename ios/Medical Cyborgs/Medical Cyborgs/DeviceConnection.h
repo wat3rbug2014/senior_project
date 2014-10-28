@@ -69,14 +69,14 @@
  * or unreadable battery level characteristic.
  */
 
--(NSInteger) updatedBatteryLevel;
+-(NSInteger) batteryLevel;
 
 
 /**
  * This method forces the device to read and broadcast the battery level.
  */
 
--(void) updateBatteryLevel;
+-(void) discoverBatteryLevel;
 
 
 /**

@@ -15,7 +15,7 @@
 @synthesize batteryLvlChar;
 @synthesize heartRateChar;
 @synthesize heartRateService;
-@synthesize updatedBatteryLevel;
+@synthesize batteryLevel;
 @synthesize deviceManufacturer;
 @synthesize type;
 @synthesize currentHeartRate;
@@ -75,7 +75,7 @@ NSString * const POLARH7_HRM_UUID = @"2A37";
     return [self deviceManufacturer];
 }
 
--(void) updateBatteryLevel {
+-(void) discoverBatteryLevel {
     
     if ([self isConnected]) {
         NSLog(@"%@ getting battery level", [device name]);
@@ -99,7 +99,7 @@ NSString * const POLARH7_HRM_UUID = @"2A37";
 
 -(void) getTableInformation {
     
-    [self updateBatteryLevel];
+    [self discoverBatteryLevel];
 }
 
 -(void) shouldMonitor:(BOOL)monitor {
@@ -125,7 +125,7 @@ NSString * const POLARH7_HRM_UUID = @"2A37";
 -(void) peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error {
     
     if (error != nil) {
-        updatedBatteryLevel = 0;
+        batteryLevel = 0;
     }
     // read heart rate
     
@@ -139,7 +139,7 @@ NSString * const POLARH7_HRM_UUID = @"2A37";
             bpm = CFSwapInt16LittleToHost(*(uint16_t *)(&heartReg[1]));
         }
         currentHeartRate = (NSInteger)bpm;
-        NSLog(@"Current heart rate: %d", currentHeartRate);
+        NSLog(@"Current heart rate: %d", (int) currentHeartRate);
     }
     // read battery level
     
@@ -147,7 +147,7 @@ NSString * const POLARH7_HRM_UUID = @"2A37";
         uint8_t rawBattery = 0;
         [[batteryLvlChar value] getBytes:&rawBattery length:1];
         NSLog(@"%@ Battery read is %d", [device name], rawBattery);
-        [self setUpdatedBatteryLevel:(NSInteger) rawBattery];
+        batteryLevel = (NSInteger) rawBattery;
     }
     // read manufacturer
     

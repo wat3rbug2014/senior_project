@@ -13,7 +13,7 @@
 NSString * const FLEX_SERV_UUID = @"45C3";
 
 @synthesize batteryService;
-@synthesize updatedBatteryLevel;
+@synthesize batteryLevel;
 @synthesize type;
 @synthesize batteryLvlChar;
 @synthesize device;
@@ -49,7 +49,7 @@ NSString * const FLEX_SERV_UUID = @"45C3";
     return results;
 }
 
--(void) updateBatteryLevel {
+-(void) discoverBatteryLevel {
     
     if ([self isConnected]) {
         NSLog(@"getting battery level");
@@ -93,7 +93,7 @@ NSString * const FLEX_SERV_UUID = @"45C3";
 
 -(void) getTableInformation {
     
-    [self updateBatteryLevel];
+    [self discoverBatteryLevel];
 }
 
 -(void) shouldMonitor:(BOOL)monitor {
@@ -113,13 +113,13 @@ NSString * const FLEX_SERV_UUID = @"45C3";
 -(void) peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error {
     
     if (error != nil) {
-        updatedBatteryLevel = 0;
+        batteryLevel = 0;
     }
     if ([characteristic isEqual:batteryLvlChar]) {
         uint8_t rawBattery = 0;
         [[batteryLvlChar value] getBytes:&rawBattery length:1];
         NSLog(@"Battery read is %d", rawBattery);
-        [self setUpdatedBatteryLevel:(NSInteger) rawBattery];
+        batteryLevel = (NSInteger) rawBattery;
     }
     if ([[NSString stringWithFormat:@"%@",[characteristic UUID]] rangeOfString:@"Manufacturer"].location != NSNotFound) {
         deviceManufacturer = [[NSString alloc] initWithData:[characteristic value] encoding:NSUTF8StringEncoding];

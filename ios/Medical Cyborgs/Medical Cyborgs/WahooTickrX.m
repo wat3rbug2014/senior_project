@@ -11,8 +11,10 @@
 
 @implementation WahooTickrX
 
-@synthesize updatedBatteryLevel;
+@synthesize batteryLevel;
 @synthesize device;
+@synthesize batteryLvlChar;
+@synthesize batteryService;
 
 -(id) initWithPeripheral: (CBPeripheral*) peripheral {
     
@@ -61,9 +63,26 @@
     
 }
 
--(void) updateBatteryLevel {
+-(void) discoverBatteryLevel {
     
-    
+    if ([self isConnected]) {
+        NSLog(@"getting battery level");
+        
+        // perform discovery for the battery
+        
+        if (batteryLvlChar == nil || batteryService == nil) {
+            NSLog(@"discovering battery stuff");
+            [device discoverServices:nil];
+        } else {
+            
+            // battery services already discovered, just need to be read
+            
+            NSLog(@"battery already discovered");
+            [device readValueForCharacteristic:batteryLvlChar];
+        }
+    } else {
+        NSLog(@"device not connected");
+    }
 }
 
 -(void) shouldMonitor: (BOOL) monitor {

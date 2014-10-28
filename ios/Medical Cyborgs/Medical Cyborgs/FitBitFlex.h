@@ -27,7 +27,7 @@ extern NSString * const FLEX_SERV_UUID;
 @property (retain, strong) CBPeripheral *device;
 @property (retain) CBService *batteryService;
 @property (retain) CBCharacteristic *batteryLvlChar;
-@property NSInteger updatedBatteryLevel;
+@property (readonly) NSInteger batteryLevel;
 @property NSInteger type;
 @property (retain) NSString *deviceManufacturer;
 

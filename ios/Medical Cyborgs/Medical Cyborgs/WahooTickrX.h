@@ -22,7 +22,9 @@
 @interface WahooTickrX : NSObject <DeviceConnection>
 
 @property NSInteger type;
-@property NSInteger updatedBatteryLevel;
+@property (readonly) NSInteger batteryLevel;
 @property (retain) CBPeripheral *device;
+@property (retain) CBService *batteryService;
+@property (retain) CBCharacteristic *batteryLvlChar;
 
 @end
