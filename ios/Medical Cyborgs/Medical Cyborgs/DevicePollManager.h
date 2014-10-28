@@ -17,17 +17,22 @@
 #import "PersonalInfo.h"
 #import "HeartMonitorProtocol.h"
 #import "BTDeviceManager.h"
+#import "DBManager.h"
+#import "ActivityMonitorProtocol.h"
 
 @interface DevicePollManager : NSObject
 
 
-@property (retain) NSData *database;
 @property PersonalInfo *patientInfo;
 @property NSInteger patientID;
 @property (retain) BTDeviceManager *deviceManager;
-@property id<DeviceConnection> heartMonitor;
-@property id<DeviceConnection> activityMonitor;
-@property BOOL isThisFirstPoll;
+@property id<DeviceConnection, HeartMonitorProtocol> heartMonitor;
+@property id<DeviceConnection, ActivityMonitorProtocol> activityMonitor;
+@property DBManager *database;
+@property BOOL batteryAlertGiven;
+@property BOOL ableToPoll;
+@property BOOL isHeartMonitorReady;
+@property BOOL isActivityMonitorReady;
 
 /**
  * This is the preferred initialization method.  The datastore and the two components are passed
@@ -46,4 +51,24 @@
  */
 
 -(void) pollDevicesForData;
+
+
+/**
+ * This method checks the condition of the devices to make sure both are connected and then
+ * proceeds with the poll.
+ */
+
+-(void) continuePollAfterDevicesConnect;
+
+
+/**
+ * This method is used by the device manager to notify the poller that a device is connected.
+ *  It is used to help signal the device poller that it can continue because all devices are
+ * connected.
+ *
+ * @param notification The notification that is used to update device status.
+ */
+
+-(void) didReceiveNotificationDeviceConnected: (NSNotification*) notification;
+
 @end

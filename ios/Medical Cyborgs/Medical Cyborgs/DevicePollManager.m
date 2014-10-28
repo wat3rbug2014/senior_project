@@ -7,6 +7,8 @@
 //
 
 #import "DevicePollManager.h"
+#import "DummyData.h"
+#import "HeartMonitorProtocol.h"
 
 @implementation DevicePollManager
 
@@ -14,73 +16,99 @@
 @synthesize deviceManager;
 @synthesize patientInfo;
 @synthesize patientID;
-@synthesize isThisFirstPoll;
+@synthesize ableToPoll;
 @synthesize heartMonitor;
 @synthesize activityMonitor;
+@synthesize batteryAlertGiven;
+@synthesize isActivityMonitorReady;
+@synthesize isHeartMonitorReady;
 
--(id) initWithDataStore:(NSData *)dataStore andDevicemanager:(BTDeviceManager *)newDeviceManager {
+
+-(id) initWithDataStore:(DBManager *)dataStore andDevicemanager:(BTDeviceManager *)newDeviceManager {
     
     if (self = [super init]) {
         deviceManager = newDeviceManager;
         database = dataStore;
         patientInfo = [[PersonalInfo alloc] init];
         patientID = (NSInteger)[patientInfo patientID]; // make sure this works
-        isThisFirstPoll = YES;
+        ableToPoll = YES;
+        batteryAlertGiven = NO;
+        isHeartMonitorReady = NO;
+        isActivityMonitorReady = NO;
     }
     return self;
 }
 
 -(void) pollDevicesForData {
     
-    // getting setup information
-
     NSLog(@"verifying input before poll");
-    if (isThisFirstPoll) {
-        [deviceManager connectMonitors];
+    if ([self patientID] == NO_ID_SET) {
+        NSLog(@"No patient ID\nPolling stopped");
+        return;
     }
-    // check the patient id, if bad retrieve it again and then check
+    //[deviceManager connectMonitors];
+}
+
+-(void)didReceiveNotificationDeviceConnected:(NSNotification *)notification {
+  
+//    id connectDevice = [notification object];
+//    
+//    // if object is not a device it means it failed
+//    
+//    if (![connectDevice conformsToProtocol: @protocol(DeviceConnection) ]) {
+//        NSLog(@"The fail portion is caught here.\nStopping poll");
+//        return;
+//    }
+//    // determine heart or activity and flag appropriate one is connected
+//    
+//    if ([[notification object] conformsToProtocol: @protocol(HeartMonitorProtocol)]) {
+//        [self setIsHeartMonitorReady:YES];
+//        [self setHeartMonitor:[notification object]];
+//        NSLog(@"heart monitor connected\nContinue polling");
+//    } else {
+//        [self setActivityMonitor:[notification object]];
+//        [self setIsActivityMonitorReady:YES];
+//        NSLog(@"activity monitor connected\nContinue polling");
+//    }
+    [self continuePollAfterDevicesConnect];
+}
+
+-(void)continuePollAfterDevicesConnect {
     
-    if (patientID == NO_ID_SET) {
-        [patientInfo loadInformation];
-        patientID = (NSInteger)[patientInfo patientID];
-        if (patientID == NO_ID_SET) {
-            
-            // post a notification or something that we cannot monitor because patient info
-            // is not set
-            
-            return;
-        }
-    }
-    // get device data
+    // make sure both are connected before polling proceeds
     
+//    if (![self isHeartMonitorReady]) {
+//        NSLog(@"heart monitor is not ready\nStopping poll");
+//        return;
+//    }
+//    if (![self isActivityMonitorReady]) {
+//        NSLog(@"activity monitor is not ready\nStopping poll");
+//        return;
+//    }
+    DummyData *testData = [[DummyData alloc] init];
     NSLog(@"getting data from heart monitor");
-   // NSInteger heartRate = [heartMonitor getHeartRate];
-   // NSLog(@"heart rate is %d", heartRate);
+    //NSInteger heartRate = (NSInteger)[heartMonitor getHeartRate];
+    NSInteger heartRate = [testData heartRate];
+
     NSLog(@"getting data from activity monitor");
-   // NSData *activityData = [activityMonitor getData];
+
+    //float latitude = [activityMonitor getLatitude];
+    float latitude = [testData latitude];
+    //float longitude = [activityMonitor getLongitude];
+    float longitude = [testData longitude];
     
-    // setup insert statement to local store
     
     NSLog(@"storing data in database");
     
-    
-    // getting battery level
-    
-    NSLog(@"getting battery levels");
-    [heartMonitor updateBatteryLevel];
-    [activityMonitor updateBatteryLevel];
-    if([heartMonitor updatedBatteryLevel] < 20 && [heartMonitor updatedBatteryLevel] !=  NO_BATTERY_VALUE) {
-        NSLog(@"posting notification for heart monitor");
-        NSNotification *batteryNotification =
-            [NSNotification notificationWithName:BATTERY_LOW_NOTIFCATION_STR object:heartMonitor userInfo:nil];
-        [[NSNotificationCenter defaultCenter] postNotification:batteryNotification];
+    if (database == nil) {
+        database = [[DBManager alloc] initWithpatientID:[self patientID]];
     }
-    if ([activityMonitor updatedBatteryLevel] < 20 && [activityMonitor updatedBatteryLevel] != NO_BATTERY_VALUE) {
-        NSLog(@"posting notification for activity monitor");
-        NSNotification *batteryNotification =
-            [NSNotification notificationWithName:BATTERY_LOW_NOTIFCATION_STR object:activityMonitor userInfo:nil];
-        [[NSNotificationCenter defaultCenter] postNotification:batteryNotification];
-    }
+    [database setHrmeasurement:heartRate];
+    [database setLatitude:latitude];
+    [database setLongitude:longitude];
+    [database setTimestamp:[NSDate date]];
+    [database insertDataIntoDB];
+    
     NSLog(@"finished poll");
 }
 @end
