@@ -93,7 +93,7 @@
         
         // select the battery icon based on charge
         
-        int lvl = [currentDevice updatedBatteryLevel];
+        int lvl = [currentDevice batteryLevel];
 
         if (lvl == 100) {
             [batteryCharge setImage:[UIImage imageNamed:@"battery_full_32.png"]];
