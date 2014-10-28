@@ -205,6 +205,20 @@
                 NSLog(@"Not getting info for %@", [peripheral name]);
             }
         }
+    } else {
+        NSNotification *connectNotification = nil;
+        for (id<DeviceConnection> currentDevice in completeBuffer) {
+            if ([[currentDevice name] isEqual:[peripheral name]]) {
+                if ([currentDevice type] == ACTIVITY_MONITOR) {
+                    connectNotification = [[NSNotification alloc] initWithName:@"ActivityMonConnected"
+                        object:currentDevice userInfo:nil];
+                } else {
+                    connectNotification = [[NSNotification alloc] initWithName:@"HeartMonConnected"
+                        object:currentDevice userInfo:nil];
+                }
+            }
+        }
+        [[NSNotificationCenter defaultCenter] postNotification:connectNotification];
     }
 }
 
@@ -214,5 +228,16 @@
         // not sure what to do because not connecting is a desired result
     }
     NSLog(@"%@ is disconnected", [peripheral name]);
+}
+
+-(void) centralManager:(CBCentralManager *)central didFailToConnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error {
+    
+    if (![self isInDiscoveryMode]) {
+        NSLog(@"Unable to connect to %@", [peripheral identifier]);
+        NSNotification *failedNotification = [[NSNotification alloc] initWithName:@"DevicePollFailed" object:self userInfo:nil];
+        [[NSNotificationCenter defaultCenter] postNotification:failedNotification];
+    } else {
+        NSLog(@"unable to connect to %@ is discovery mode", [peripheral identifier]);
+    }
 }
 @end
