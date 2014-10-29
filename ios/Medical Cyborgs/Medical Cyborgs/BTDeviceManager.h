@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <CoreBluetooth/CoreBluetooth.h>
 #import "FitBitFlex.h"
-#import "JawboneUP24.h"
 #import "PolarH7.h"
 #import "WahooTickrX.h"
 #import "DeviceTypes.h"
