@@ -47,6 +47,7 @@
         return;
     }
     //[deviceManager connectMonitors];
+    [self continuePollAfterDevicesConnect]; // remove after test
 }
 
 -(void)didReceiveNotificationDeviceConnected:(NSNotification *)notification {
