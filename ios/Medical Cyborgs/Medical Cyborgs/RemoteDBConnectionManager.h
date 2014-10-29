@@ -8,13 +8,20 @@
 
 #import <Foundation/Foundation.h>
 #import "PersonalInfo.h"
+#import "DBManager.h"
+#import "LocalDBResult.h"
 
 @interface RemoteDBConnectionManager : NSObject <NSURLConnectionDataDelegate>
 
-@property NSData *database;
+@property DBManager *database;
+@property NSInteger patientID;
+@property (nonatomic) LocalDBResult* currentRow;
+@property (retain) NSMutableData *_serverResponseData;
 
--(id) initWithDatabase: (NSData*) datastore;
+
+-(id) initWithDatabase: (DBManager*) datastore;
 -(void) pushDataToRemoteServer;
--(void) flushDatabaseToRemoteServer;
-
+-(void) sendRowToServer;
+-(void) removeCurrentRowInLocalDB;
+-(NSString*) URLEncodedString: (NSString*) utfString;
 @end

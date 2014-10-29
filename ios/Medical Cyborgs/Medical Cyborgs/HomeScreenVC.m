@@ -44,7 +44,10 @@
         self.title = @"Home";
         isMonitoring = false;
         self.patientInfo = [[PersonalInfo alloc] init];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkForUpdatedPatientID) name:@"PersonalInfoUpdated" object:settings];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pollFailed:)
+            name:@"DevicePollFailed" object:self.devicePoller];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkForUpdatedPatientID)
+            name:@"PersonalInfoUpdated" object:settings];
     }
     return self;
 }
@@ -124,13 +127,26 @@
     }
 }
 
--(IBAction)showGraph:(id)sender {
+-(IBAction) showGraph:(id)sender {
     
     GraphVC *graphDisplay = [[GraphVC alloc] initWithDevicePoller: devicePoller];
     [self.navigationController pushViewController:graphDisplay animated:YES];
 }
 
--(IBAction)toggleMonitoring:(id)sender {
+-(IBAction) toggleMonitoring:(id)sender {
+    
+    // check to see if it is allowed to start monitoring
+    
+    if ([patientInfo patientID] == NO_ID_SET) {
+        return;
+    }
+//    if ([btDevices selectedIndexForActivityMonitor] == NONE_SELECTED) {
+//        return;
+//    }
+//    if ([btDevices selectedIndexForHeartMonitor] == NONE_SELECTED) {
+//        return;
+//    }
+    // change the button color and stop or start the pollers
     
     [self setIsMonitoring:![self isMonitoring]];
     [self setColorForButton:toggleRunButton isReady:[self isMonitoring]];
@@ -143,6 +159,7 @@
         [btDevices selectedIndexForActivityMonitor];
         devicePoller = [[DevicePollManager alloc] initWithDataStore:nil andDevicemanager:btDevices];
         serverPoller = [[RemoteDBConnectionManager alloc] initWithDatabase:nil];
+        [serverPoller setPatientID:[patientInfo patientID]];
         
         // setup run loop
         
@@ -158,13 +175,16 @@
         NSLog(@"started running");
         [pollRunLoop run];
     } else {
+        
+        // stop the pollers
+        
         [toggleRunButton setTitle:@"Start" forState:UIControlStateNormal];
         NSLog(@"stopped running");
         [pollRunLoop cancelPerformSelector:@selector(pollDevicesForData) target:devicePoller argument:nil];
         [pollRunLoop cancelPerformSelector:@selector(pushDataToRemoteServer) target:serverPoller argument:nil];
         [serverPollTimer invalidate];
         [devicePollTimer invalidate];
-        [serverPoller flushDatabaseToRemoteServer];
+        [serverPoller pushDataToRemoteServer];
     }
 }
 
@@ -174,7 +194,7 @@
     patientInfo = nil;
     patientInfo = [[PersonalInfo alloc] init];
     if ([patientInfo patientID] != NO_ID_SET) {
-        NSLog(@"patient id is %d", [patientInfo patientID]);
+        NSLog(@"patient id is %d", (int)[patientInfo patientID]);
         [self setColorForButton:personalInfoButton isReady:YES];
     } else {
         NSLog(@"no patient id");
@@ -182,4 +202,18 @@
     }
 }
 
+-(void) pollFailed: (NSNotification*) notification {
+    
+    NSString *title = nil;
+    NSString *message = nil;
+
+    // check to see if battery for activity monitor or heart monitor is low
+    
+    UIAlertController *popup = [UIAlertController alertControllerWithTitle:title message:message
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
+    [popup addAction:action];
+    [self.navigationController presentViewController:popup animated:YES completion:nil];
+    [self setColorForButton:toggleRunButton isReady:NO];
+}
 @end
