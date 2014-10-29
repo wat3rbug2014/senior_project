@@ -9,7 +9,6 @@
 #import "MonitorCreationFactory.h"
 #import "DeviceConnection.h"
 #import "FitBitFlex.h"
-#import "JawboneUP24.h"
 #import "PolarH7.h"
 #import "WahooTickrX.h"
 
@@ -31,9 +30,6 @@
     }
     // The information for these devices is not known yet
     
-//    if ([[peripheral name] rangeOfString:@"Jawbone"].location != NSNotFound) {
-//        result = [[JawboneUP24 alloc] initWithPeripheral:peripheral];
-//    }
 //    if ([[peripheral name] rangeOfString:@"Flex"].location != NSNotFound) {
 //        result = [[WahooTickrX alloc] initWithPeripheral:peripheral];
 //    }
