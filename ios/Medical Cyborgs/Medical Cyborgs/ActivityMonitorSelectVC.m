@@ -89,7 +89,7 @@
     [[cell textLabel] setText:[currentDevice name]];
     UIImageView *batteryCharge = [[UIImageView alloc] initWithFrame:CGRectMake(230, 6, 32, 32)];
     [batteryCharge setImage:[UIImage imageNamed:@"battery_empty_32.png"]];
-    if ([currentDevice respondsToSelector:@selector(updatedBatteryLevel)]) {
+    if ([currentDevice conformsToProtocol:@protocol(DeviceConnection)]) {
         
         // select the battery icon based on charge
         
