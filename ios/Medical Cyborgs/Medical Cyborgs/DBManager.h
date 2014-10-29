@@ -9,7 +9,7 @@
 
 #import <Foundation/Foundation.h>
 #import <sqlite3.h>
-#import "LocalDBConstants.h"
+#import "LocalDBResult.h"
 
 @interface DBManager : NSObject
 
@@ -18,9 +18,9 @@
 @property NSInteger patientID;
 @property BOOL moreRowsToRetrieve;
 @property sqlite3 *database;
+@property NSInteger rowCount;
 @property (nonatomic, strong) NSString *databasePath;
 @property sqlite3_stmt *sqlStatement;
-
 @property NSInteger hrmeasurement;
 @property float latitude;
 @property float longitude;
@@ -74,7 +74,7 @@
  * @return The string representation of the row returned.
  */
 
--(DBResult) retrieveRow;
+-(LocalDBResult*) retrieveRow;
 
 
 /**
@@ -111,7 +111,7 @@
  * May 10 1970 at 6:45 pm and 10 seconds.
  */
 
--(NSString*) timeStampAsString;
++(NSString*) timeStampAsString: (NSDate*) selectedTime;
 
 
 /**

@@ -8,7 +8,7 @@
 
 #import "DBManager.h"
 #import "PersonalInfo.h"
-#import "LocalDBConstants.h"
+#import "LocalDBResult.h"
 
 @implementation DBManager
 
@@ -23,6 +23,7 @@
 @synthesize databasePath;
 @synthesize timestamp;
 @synthesize sqlStatement;
+@synthesize rowCount;
 
 -(instancetype)init {
     
@@ -71,7 +72,7 @@
 
 -(void)insertDataIntoDB {
     
-    NSString *insertStatement = [NSString stringWithFormat:@"INSERT INTO MEASUREMENTS (patientID, longitude, latitude, heart_rate, time_measurement) VALUES (%d, %f, %f, %d, '%@')", (int)patientID, longitude, latitude, (int)hrmeasurement,[self timeStampAsString]];
+    NSString *insertStatement = [NSString stringWithFormat:@"INSERT INTO MEASUREMENTS (patientID, longitude, latitude, heart_rate, time_measurement) VALUES (%d, %f, %f, %d, '%@')", (int)patientID, longitude, latitude, (int)hrmeasurement, [DBManager timeStampAsString:timestamp]];
     NSLog(@"SQL: %@", insertStatement);
     if ([self openLocalDBWithSQLQueryIsSuccessful:insertStatement]) {
         NSLog(@"Insert prep successful");
@@ -85,9 +86,10 @@
     }
 }
 
--(DBResult)retrieveRow {
+-(LocalDBResult*) retrieveRow {
     
-    DBResult result;
+    LocalDBResult *result = nil;
+    result = [[LocalDBResult alloc] init];
     NSString *retrieveStatement = @"SELECT heart_rate, latitude, longitude, time_measurement FROM MEASUREMENTS";
     if ([self openLocalDBWithSQLQueryIsSuccessful:retrieveStatement]) {
         int row_result = sqlite3_step(sqlStatement);
@@ -95,29 +97,33 @@
             result.heartRate = sqlite3_column_int(sqlStatement, 0);
             result.latitude = (float)sqlite3_column_double(sqlStatement, 1);
             result.longitude = (float)sqlite3_column_double(sqlStatement, 2);
-            result.timestamp = sqlite3_column_double(sqlStatement, 3);
+            char* dateChar = (char*)sqlite3_column_text(sqlStatement, 3);
+            NSString *temp = [[NSString alloc] initWithCString:dateChar encoding:NSUTF8StringEncoding];
+            [result setTimeStamp:temp];
+            NSLog(@"retrieved %s:\tconverted %@",dateChar, temp);
         } else {
             NSLog(@"retrieve row execute failed");
-            [self closeLocalDBConnection];
         }
     } else {
         NSLog(@"retrieve row prep failed");
-        [self closeLocalDBConnection];
     }
+    [self closeLocalDBConnection];
     return result;
 }
 
 -(void) deleteRowAtTimeStamp: (NSString*) oldTimeStamp {
     
+    
     NSString *deleteStatement = [NSString stringWithFormat:
         @"DELETE FROM MEASUREMENTS WHERE patientID = '%d' AND time_measurement = '%@'",
         (int)patientID, oldTimeStamp];
+    //NSString *deleteStatement = @"DELETE FROM MEASUREMENTS WHERE patientID = 19";
     NSLog(@"SQL: %@", deleteStatement);
     if ([self openLocalDBWithSQLQueryIsSuccessful:deleteStatement]) {
         if (sqlite3_step(sqlStatement) == SQLITE_DONE) {
             NSLog(@"delete execute successful");
         } else {
-            NSLog(@"delete execute failed");
+            NSLog(@"delete execute failed\n%s",sqlite3_errmsg(database));
         }
         [self closeLocalDBConnection];
     } else {
@@ -136,6 +142,7 @@
         if (sqlite3_step(sqlStatement) == SQLITE_ROW) {
             int count = sqlite3_column_int(sqlStatement, 0);
             NSLog(@"count is %d", count);
+            [self setRowCount:count];
             if (count > 0 ) {
                 [self setMoreRowsToRetrieve:YES];
             } else {
@@ -151,11 +158,11 @@
     return !moreRowsToRetrieve;
 }
 
--(NSString*) timeStampAsString {
++(NSString*) timeStampAsString: (NSDate*) selectedTime {
     
     NSDateComponents *timeStampComponents = [[NSCalendar currentCalendar] components:
         NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear | NSCalendarUnitHour
-        | NSCalendarUnitMinute | NSCalendarUnitSecond fromDate:timestamp];
+        | NSCalendarUnitMinute | NSCalendarUnitSecond fromDate:selectedTime];
     int month = (int)[timeStampComponents month];
     int year = (int)[timeStampComponents year];
     int day = (int)[timeStampComponents day];
