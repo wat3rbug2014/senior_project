@@ -126,7 +126,8 @@
         
         // go to database and get patientID
         
-        NSURLRequest *dbRequest = [NSURLRequest requestWithURL:databaseUrl];
+        NSTimeInterval requestTime = 15.0;
+        NSURLRequest *dbRequest = [NSURLRequest requestWithURL:databaseUrl cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:requestTime];
         NSURLConnection *connector = [[NSURLConnection alloc] initWithRequest: dbRequest delegate: self startImmediately: YES];
         [connector start];
     }
@@ -196,6 +197,7 @@
      */
     
     NSString *patientIDResponseString = [[NSString alloc] initWithData: _serverResponseData encoding: NSUTF8StringEncoding];
+    NSLog(@"raw data is %@", patientIDResponseString); // starbucks login found one time
     NSInteger receivedInt = [patientIDResponseString integerValue];
     NSLog(@"Data is now %d", receivedInt);
     [patientData setPatientID: receivedInt];
