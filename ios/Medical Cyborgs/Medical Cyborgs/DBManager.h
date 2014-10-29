@@ -9,6 +9,7 @@
 
 #import <Foundation/Foundation.h>
 #import <sqlite3.h>
+#import "LocalDBConstants.h"
 
 @interface DBManager : NSObject
 
@@ -16,9 +17,9 @@
 @property (nonatomic, strong) NSString *databaseFilename;
 @property NSInteger patientID;
 @property BOOL moreRowsToRetrieve;
-@property (nonatomic, strong) NSMutableString *sqlInsertStatement;
 @property sqlite3 *database;
 @property (nonatomic, strong) NSString *databasePath;
+@property sqlite3_stmt *sqlStatement;
 
 @property NSInteger hrmeasurement;
 @property float latitude;
@@ -73,7 +74,7 @@
  * @return The string representation of the row returned.
  */
 
--(NSString*) retrieveRow;
+-(DBResult) retrieveRow;
 
 
 /**
@@ -126,19 +127,15 @@
 
 
 /**
- * This is a generic database query method.  It is for simplification of the process since the same
- * commands are executed.  The result is one row of the table if a select is done.  It is noted that 
- * a select is done each and every time it is called if getting successfive rows.  Without a deletion
- * the result will be the same.  All other queries do not have responses, so the resulting NSString is
- * nil.
  *
- * @param query The complete SQL query that is to be used.  It follows SQL that is used for sqlite3.
- * Not all SQL functions are supported.  See http://www.sqlite.org/docs.html for details.
- *
- * @return The result string for a select.  The first row in the selection, nil if other statements are 
- * used.
  */
 
--(NSString*) didPrepAndExecuteQuery: (NSString*) query;
+-(BOOL) openLocalDBWithSQLQueryIsSuccessful: (NSString*) query;
 
+
+/**
+ *
+ */
+
+-(void) closeLocalDBConnection;
 @end

@@ -8,6 +8,7 @@
 
 #import "DBManager.h"
 #import "PersonalInfo.h"
+#import "LocalDBConstants.h"
 
 @implementation DBManager
 
@@ -15,13 +16,13 @@
 @synthesize databaseFilename;
 @synthesize patientID;
 @synthesize moreRowsToRetrieve;
-@synthesize sqlInsertStatement;
 @synthesize hrmeasurement;
 @synthesize latitude;
 @synthesize longitude;
 @synthesize database;
 @synthesize databasePath;
 @synthesize timestamp;
+@synthesize sqlStatement;
 
 -(instancetype)init {
     
@@ -70,66 +71,128 @@
 
 -(void)insertDataIntoDB {
     
-    NSString *insertStatement = [NSString stringWithFormat:@"INSERT INTO MEASUREMENTS (patientID, longitude, latitude, heart_rate, time_measurement) VALUES ('%d','%f','%f', '%d', '%@')", patientID, longitude, latitude, hrmeasurement,[self timeStampAsString]];
-    [self didPrepAndExecuteQuery:insertStatement];
+    NSString *insertStatement = [NSString stringWithFormat:@"INSERT INTO MEASUREMENTS (patientID, longitude, latitude, heart_rate, time_measurement) VALUES (%d, %f, %f, %d, '%@')", (int)patientID, longitude, latitude, (int)hrmeasurement,[self timeStampAsString]];
+    NSLog(@"SQL: %@", insertStatement);
+    if ([self openLocalDBWithSQLQueryIsSuccessful:insertStatement]) {
+        NSLog(@"Insert prep successful");
+        if(sqlite3_step(sqlStatement) == SQLITE_DONE) {
+            NSLog(@"insert execute successful");
+        } else {
+            NSLog(@"insert execute failed");
+        }
+    } else {
+        NSLog(@"insert prep failed");
+    }
 }
 
--(NSString *)retrieveRow {
+-(DBResult)retrieveRow {
     
-    NSString *result = nil;
-    
+    DBResult result;
+    NSString *retrieveStatement = @"SELECT heart_rate, latitude, longitude, time_measurement FROM MEASUREMENTS";
+    if ([self openLocalDBWithSQLQueryIsSuccessful:retrieveStatement]) {
+        int row_result = sqlite3_step(sqlStatement);
+        if (row_result == SQLITE_ROW) {
+            result.heartRate = sqlite3_column_int(sqlStatement, 0);
+            result.latitude = (float)sqlite3_column_double(sqlStatement, 1);
+            result.longitude = (float)sqlite3_column_double(sqlStatement, 2);
+            result.timestamp = sqlite3_column_double(sqlStatement, 3);
+        } else {
+            NSLog(@"retrieve row execute failed");
+            [self closeLocalDBConnection];
+        }
+    } else {
+        NSLog(@"retrieve row prep failed");
+        [self closeLocalDBConnection];
+    }
     return result;
 }
 
 -(void) deleteRowAtTimeStamp: (NSString*) oldTimeStamp {
     
-    NSString *deleteStatement = [NSString stringWithFormat:@"DELETE FROM MEASUREMENTS WHERE patientID = '%d' AND time_measurement = '%@'", patientID, oldTimeStamp];
-    [self didPrepAndExecuteQuery:deleteStatement];
+    NSString *deleteStatement = [NSString stringWithFormat:
+        @"DELETE FROM MEASUREMENTS WHERE patientID = '%d' AND time_measurement = '%@'",
+        (int)patientID, oldTimeStamp];
+    NSLog(@"SQL: %@", deleteStatement);
+    if ([self openLocalDBWithSQLQueryIsSuccessful:deleteStatement]) {
+        if (sqlite3_step(sqlStatement) == SQLITE_DONE) {
+            NSLog(@"delete execute successful");
+        } else {
+            NSLog(@"delete execute failed");
+        }
+        [self closeLocalDBConnection];
+    } else {
+        NSLog(@"delete prep failed");
+    }
 }
 
 - (BOOL) isDatabaseEmpty {
     
-    NSString *countString = @"SELECT COUNT(*) FROM MEASUREMENTS";
-    [self didPrepAndExecuteQuery:countString];
-    return !moreRowsToRetrieve;
-}
-
--(NSString*) didPrepAndExecuteQuery:(NSString *)query {
+    // test this cause decision tree is hairy
     
-    NSString *result = nil;
-    BOOL openDatabaseResult = sqlite3_open([databasePath UTF8String], &database);
-    if(openDatabaseResult == SQLITE_OK) {
-        sqlite3_stmt *compiledStatement;
-        BOOL prepareStatementResult = sqlite3_prepare_v2(database, [query UTF8String], -1, &compiledStatement, NULL);
-        if(prepareStatementResult == SQLITE_OK) {
-            if(sqlite3_step(compiledStatement) == SQLITE_ERROR) {
-                NSLog(@"error working %@:\n\n%s", query, sqlite3_errmsg(database));
+    NSString *countString = @"SELECT COUNT(*) FROM MEASUREMENTS";
+    NSLog(@"SQL: %@", countString);
+    if ([self openLocalDBWithSQLQueryIsSuccessful:countString]) {
+        NSLog(@"count prep successful");
+        if (sqlite3_step(sqlStatement) == SQLITE_ROW) {
+            int count = sqlite3_column_int(sqlStatement, 0);
+            NSLog(@"count is %d", count);
+            if (count > 0 ) {
+                [self setMoreRowsToRetrieve:YES];
             } else {
-                NSLog(@"query success");
-                int rows = sqlite3_column_int(compiledStatement, 0);
-                if ( rows > 0) {
-                    moreRowsToRetrieve = YES;
-                } else {
-                    moreRowsToRetrieve = NO;
-                }
+                [self setMoreRowsToRetrieve:NO];
             }
+        } else {
+            NSLog(@"count failed step");
         }
+        [self closeLocalDBConnection];
+    } else {
+        NSLog(@"count failed prep");
     }
-    sqlite3_close(database);
-    return result;
+    return !moreRowsToRetrieve;
 }
 
 -(NSString*) timeStampAsString {
     
-    NSDateComponents *timeStampComponents = [[NSCalendar currentCalendar] components: NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond fromDate:timestamp];
-    int month = [timeStampComponents month];
-    int year = [timeStampComponents year];
-    int day = [timeStampComponents day];
-    int hour =[timeStampComponents hour];
-    int minute = [timeStampComponents minute];
-    int seconds = [timeStampComponents second];
-    NSString *result = [NSString stringWithFormat:@"%d-%d-%d %d:%d:%d", year, month, day, hour, minute, seconds];
+    NSDateComponents *timeStampComponents = [[NSCalendar currentCalendar] components:
+        NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear | NSCalendarUnitHour
+        | NSCalendarUnitMinute | NSCalendarUnitSecond fromDate:timestamp];
+    int month = (int)[timeStampComponents month];
+    int year = (int)[timeStampComponents year];
+    int day = (int)[timeStampComponents day];
+    int hour = (int)[timeStampComponents hour];
+    int minute = (int)[timeStampComponents minute];
+    int seconds = (int)[timeStampComponents second];
+    NSString *result = [NSString stringWithFormat:@"%d-%d-%d %d:%d:%d", year, month, day,
+        hour, minute, seconds];
     return result;
 }
 
+-(BOOL) openLocalDBWithSQLQueryIsSuccessful:(NSString *)query {
+    
+    BOOL success = NO;
+    success = sqlite3_open([databasePath UTF8String], &database);
+    sqlStatement = nil;
+    if(success == SQLITE_OK) {
+        int prepareStatementResult = sqlite3_prepare_v2(database, [query UTF8String], -1,
+            &sqlStatement, NULL);
+        if (prepareStatementResult == SQLITE_OK) {
+            success = YES;
+        } else {
+            success = NO;
+            NSLog(@"error working %@:\n\n%s", query, sqlite3_errmsg(database));
+            NSLog(@"error code: %d", sqlite3_errcode(database));
+        }
+    } else {
+        success = NO;
+        NSLog(@"error working %@:\n\n%s", query, sqlite3_errmsg(database));
+        NSLog(@"error code: %d", sqlite3_errcode(database));
+    }
+    return success;
+}
+
+-(void)closeLocalDBConnection {
+    
+    sqlite3_finalize(sqlStatement);
+    sqlite3_close(database);
+}
 @end
