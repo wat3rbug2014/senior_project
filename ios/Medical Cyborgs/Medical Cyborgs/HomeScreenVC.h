@@ -6,6 +6,12 @@
 //  Copyright (c) 2014 Douglas Gardiner. All rights reserved.
 //
 
+/**
+ * This is the first screen you see when the application starts. It
+ * provides buttons to navigate through device selection, patient
+ * information setup and toggle the monitoring for the application.
+ */
+
 #import <UIKit/UIKit.h>
 #import "BTDeviceManager.h"
 #import "PersonalInfo.h"

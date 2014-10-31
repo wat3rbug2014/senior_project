@@ -6,6 +6,12 @@
 //  Copyright (c) 2014 Douglas Gardiner. All rights reserved.
 //
 
+/**
+ * This is a simple data class that is used to pass around from the
+ * database to classes that are using it.  It was created to simply string 
+ * manipulation.
+ */
+
 #import <Foundation/Foundation.h>
 
 @interface LocalDBResult : NSObject
