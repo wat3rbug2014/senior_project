@@ -147,7 +147,7 @@ NSString * const POLARH7_HRM_UUID = @"2A37";
         uint8_t rawBattery = 0;
         [[batteryLvlChar value] getBytes:&rawBattery length:1];
         NSLog(@"%@ Battery read is %d", [device name], rawBattery);
-        batteryLevel = (NSInteger) rawBattery;
+        batteryLevel = rawBattery;
     }
     // read manufacturer
     
