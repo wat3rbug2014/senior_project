@@ -5,6 +5,22 @@
 //  Created by Douglas Gardiner on 10/4/14.
 //  Copyright (c) 2014 Douglas Gardiner. All rights reserved.
 //
+/**
+ * This class is a factory.  The purpose is to use polymorphic behavior in the creation
+ * of the device classes without the calling class having to know the details.  The setup
+ * details are in the createFromPeripheral method.
+ *
+ * NOTE: In order to add more devices to this application the following must be done.
+ *
+ * 1.  A class for that device must be created.
+ * 2.  The class must at a minimum follow and implement the methods in the DeviceConnection
+ *     protocol.
+ * 3.  If the device does heart monitoring it must use the methods in the HeartMonitorProtocol.
+ * 4.  If the device does activity monitoring it must use the methods in the
+ *     ActivityMonitorProtocol.
+ * 5.  The +(id<DeviceConnection>) createFromPeripheral: (CBPeripheral*) peripheral must
+ * be updated
+ */
 
 #import <Foundation/Foundation.h>
 #import <CoreBluetooth/CoreBluetooth.h>
