@@ -17,6 +17,8 @@
 @synthesize patientID;
 @synthesize _serverResponseData;
 @synthesize currentRow;
+@synthesize failedAttempts;
+@synthesize remoteUnreachable;
 
 -(id) initWithDatabase: (DBManager*) datastore {
     
@@ -27,29 +29,43 @@
             database = datastore;
         }
         patientID = NO_ID_SET;
+        failedAttempts = 0;
+        remoteUnreachable = NO;
     }
     return self;
 }
 
 -(void) pushDataToRemoteServer {
     
+    if (database == nil) {
+        NSLog(@"There is no database\nShutting down");
+        return;
+    }
     NSLog(@"connecting to database");
-    if(![database isDatabaseEmpty]) {
-        NSLog(@"rows in database to push: %d", [database rowCount]);
+    if(!remoteUnreachable && ![database isDatabaseEmpty]) {
+        NSLog(@"rows in database to push: %d", (int)[database rowCount]);
         [self sendRowToServer];
     } else {
-        NSLog(@"database is empty");
+        if ([database isDatabaseEmpty]) {
+            NSLog(@"database is empty");
+        } else {
+            NSLog(@"Unable to reach server");
+        }
     }
 }
 
 -(void)sendRowToServer {
     
+    if (database == nil) {
+        NSLog(@"database failure occurred");
+        return;
+    }
     currentRow = [database retrieveRow];
     
     // put the data into a URL
     
-    NSString *patientStr = [NSString stringWithFormat:@"patientID=%d", patientID];
-    NSString *heartRateStr = [NSString stringWithFormat:@"heart_rate=%d", [currentRow heartRate]];
+    NSString *patientStr = [NSString stringWithFormat:@"patientID=%d", (int)patientID];
+    NSString *heartRateStr = [NSString stringWithFormat:@"heart_rate=%d", (int)[currentRow heartRate]];
     NSString *latStr = [NSString stringWithFormat:@"latitude=%f", [currentRow latitude]];
     NSString *longStr = [NSString stringWithFormat:@"longitude=%f", [currentRow longitude]];
 
@@ -57,13 +73,11 @@
     NSString *timeStr = [NSString stringWithFormat:@"time_measurement=%@",[currentRow timeStamp]];
     NSString *rawUserUrl = [NSString stringWithFormat:@"&%@&%@&%@&%@&%@", patientStr, heartRateStr, latStr,
         longStr, timeStr];
-    //NSString *userUrl = [rawUserUrl stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
     NSString *userUrl = [self URLEncodedString:rawUserUrl];
-    //NSLog(@"user url %@", userUrl);
-    NSURL *databaseUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", DB_BASE_URL, userUrl]];
+    NSURL *databaseUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", INSERT_DB_BASE_URL, userUrl]];
     NSLog(@"url: %@",databaseUrl);
     
-    // go to database and add row of data
+    // go to server and add row of data
     
     NSTimeInterval requestTime = 15.0;
     NSURLRequest *dbRequest = [NSURLRequest requestWithURL:databaseUrl cachePolicy:
@@ -82,9 +96,14 @@
 
 -(NSString*) URLEncodedString: (NSString*) utfString {
     
+    // setup a c string
+    
     NSMutableString * output = [NSMutableString string];
     const char * source = [utfString UTF8String];
-    int sourceLen = strlen(source);
+    int sourceLen = (int)strlen(source);
+    
+    // walk through string and change characters when found
+    
     for (int i = 0; i < sourceLen; ++i) {
         const unsigned char thisChar = (const unsigned char)source[i];
         if (false && thisChar == ' '){
@@ -95,6 +114,9 @@
                    (thisChar >= '0' && thisChar <= '9') ||
                    thisChar == '&' || thisChar == '?' ||
                    thisChar == '=') {
+            
+            // place characters in NSString
+            
             [output appendFormat:@"%c", thisChar];
         } else {
             [output appendFormat:@"%%%02X", thisChar];
@@ -109,7 +131,12 @@
 -(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
     
     NSLog(@"couldn't reach: see %@", error);
-    // make an alert that the server is not reachable...maybe.  What can the user do about this?
+    failedAttempts++;
+    if (failedAttempts < 3) {
+        [self sendRowToServer];
+    } else {
+        remoteUnreachable = YES;
+    }
 }
 
 -(void) connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
@@ -121,7 +148,7 @@
 -(void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     
     [_serverResponseData appendData:data];
-    NSLog(@"got data %d bytes", [_serverResponseData length]);
+    NSLog(@"got data %d bytes", (int)[_serverResponseData length]);
 }
 
 -(void) connectionDidFinishLoading:(NSURLConnection *)connection {
@@ -135,8 +162,10 @@
     NSString *patientIDResponseString = [[NSString alloc] initWithData: _serverResponseData encoding: NSUTF8StringEncoding];
     NSLog(@"raw data is %@", patientIDResponseString); // starbucks login found one time
     NSInteger receivedInt = [patientIDResponseString integerValue];
-    NSLog(@"Data is now %d", receivedInt);
+    NSLog(@"Data is now %d", (int)receivedInt);
     if (![database isDatabaseEmpty]) {
+        remoteUnreachable = NO;
+        failedAttempts = 0;
         [self removeCurrentRowInLocalDB];
     }
 }
