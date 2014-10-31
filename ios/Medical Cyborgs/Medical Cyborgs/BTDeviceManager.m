@@ -69,7 +69,7 @@
 -(void) discoverDevicesForType:(NSInteger)type {
     
     NSArray *services = nil;
-    if (type == ACTIVITY_MONITOR) {
+    if ((type & ACTIVITY_MONITOR) == ACTIVITY_MONITOR) {
         
         // temporary workaround since only one device is known at the moment
         
@@ -93,7 +93,7 @@
 
 -(NSInteger) discoveredDevicesForType:(NSInteger)type {
     
-    if (type == HEART_MONITOR) {
+    if ((type & ACTIVITY_MONITOR) == HEART_MONITOR) {
         return [heartDevices count];
     } else {
         return  [activityDevices count];
@@ -102,7 +102,7 @@
 
 -(id<DeviceConnection>) deviceAtIndex: (NSInteger) index forMonitorType: (NSInteger) type {
     
-    if (type == HEART_MONITOR) {
+    if ((type & HEART_MONITOR) == HEART_MONITOR) {
         return [heartDevices objectAtIndex:index];
     } else {
         return  [activityDevices objectAtIndex:index];
@@ -153,7 +153,7 @@
     
     // do the check for duplicates and add to heart monitors if it is original
     
-    if ([newDevice type] == HEART_MONITOR) {
+    if (([newDevice type] & HEART_MONITOR) == HEART_MONITOR) {
         buffer = [NSMutableArray arrayWithArray:heartDevices];
         BOOL isNew = false;
         for (id<DeviceConnection> currentDevice in buffer) {
@@ -180,7 +180,7 @@
             activityDevices = buffer;
         }
     }
-    NSLog(@"Activity devices: %d\theart devices: %d", [activityDevices count], [heartDevices count]);
+    NSLog(@"Activity devices: %d\theart devices: %d", (int)[activityDevices count], (int)[heartDevices count]);
     // post a notification so that the tableviews can update their views
     
     NSLog(@"Device: %@ connecting...", [newDevice name]);
@@ -209,10 +209,11 @@
         NSNotification *connectNotification = nil;
         for (id<DeviceConnection> currentDevice in completeBuffer) {
             if ([[currentDevice name] isEqual:[peripheral name]]) {
-                if ([currentDevice type] == ACTIVITY_MONITOR) {
+                if (([currentDevice type] & ACTIVITY_MONITOR) == ACTIVITY_MONITOR) {
                     connectNotification = [[NSNotification alloc] initWithName:@"ActivityMonConnected"
                         object:currentDevice userInfo:nil];
-                } else {
+                }
+                if (([currentDevice type] & HEART_MONITOR) == HEART_MONITOR) {
                     connectNotification = [[NSNotification alloc] initWithName:@"HeartMonConnected"
                         object:currentDevice userInfo:nil];
                 }

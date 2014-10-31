@@ -5,7 +5,10 @@
 //  Created by Douglas Gardiner on 10/25/14.
 //  Copyright (c) 2014 Douglas Gardiner. All rights reserved.
 //
-// NOTE: I have not tested this yet.
+/**
+ * This class handles the local SQLITE3 database.  All functions needed to
+ * use this database are enclosed in the class.
+ */
 
 #import <Foundation/Foundation.h>
 #import <sqlite3.h>
@@ -107,7 +110,7 @@
  * format that is useable to databases.  The assumptions are that the date has been updated.
  * This method is called only from this class.
  *
- * @return The result string is a p[arsed date.  An example is '1970-05-10 18:45:10'.  That is
+ * @return The result string is a parsed date.  An example is '1970-05-10 18:45:10'.  That is
  * May 10 1970 at 6:45 pm and 10 seconds.
  */
 
@@ -127,15 +130,25 @@
 
 
 /**
+ * This method is used to open the database connection and prepare the database with the
+ * the SQL statement provided.  It is meant to be private to this class only.  NOTE: since this
+ * database is SQLITE not all ACID compliant functions are used.  Furthermore some contraints, such
+ * as date have different syntaxes associated with them.  Please see https://www.sqlite.org/docs.html
+ * for more details relating to SQLITE.
  *
+ * @param query is the SQL statement to use on the database.
+ *
+ * @return Yes if the query is valid and the database is open.
  */
 
 -(BOOL) openLocalDBWithSQLQueryIsSuccessful: (NSString*) query;
 
 
 /**
- *
+ * This method is meant to be a private method.  It is meant to finalize the database and close the
+ * database.  All results from the query will be lost as memory is freed during finalization.
  */
 
 -(void) closeLocalDBConnection;
+
 @end

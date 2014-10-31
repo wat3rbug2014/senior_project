@@ -69,7 +69,7 @@
  * or unreadable battery level characteristic.
  */
 
--(NSInteger) batteryLevel;
+-(int) batteryLevel;
 
 
 /**

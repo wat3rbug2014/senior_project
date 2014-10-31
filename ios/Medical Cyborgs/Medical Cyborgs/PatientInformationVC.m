@@ -77,9 +77,9 @@
     NSUInteger flags = NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear;
     NSCalendar* calendar = [NSCalendar currentCalendar];
     NSDateComponents* currentComponents = [calendar components:flags fromDate:[dobSelector date] toDate:[NSDate date] options:0];
-    int month = [currentComponents month];
-    int day = [currentComponents day];
-    int year = [currentComponents year];
+    int month = (int)[currentComponents month];
+    int day = (int)[currentComponents day];
+    int year = (int)[currentComponents year];
     if (day == 0 && month == 0 && year == 0) {
         isDateInvalid = true;
     } else {
@@ -111,9 +111,9 @@
         
         NSDateComponents *dobComponents = [[NSCalendar currentCalendar] components: NSCalendarUnitDay |
             NSCalendarUnitMonth | NSCalendarUnitYear fromDate:[dobSelector date]];
-        month = [dobComponents month];
-        year = [dobComponents year];
-        day = [dobComponents day];
+        month = (int)[dobComponents month];
+        year = (int)[dobComponents year];
+        day = (int)[dobComponents day];
 
         NSString *firstNameStr = [NSString stringWithFormat:@"first_name=%@", [patientData firstName]];
         NSString *lastNameStr = [NSString stringWithFormat:@"last_name=%@", [patientData lastName]];
@@ -121,7 +121,7 @@
         NSString *rawUserUrl = [NSString stringWithFormat:@"&%@&%@&%@", firstNameStr, lastNameStr, birthDateStr];
         NSString *userUrl = [rawUserUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         NSLog(@"user url %@", userUrl);
-        NSURL *databaseUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", SERVER_BASE_URL, userUrl]];
+        NSURL *databaseUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", PATIENTID_BASE_URL, userUrl]];
         NSLog(@"url: %@",databaseUrl);
         
         // go to database and get patientID
@@ -185,7 +185,7 @@
 -(void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     
     [_serverResponseData appendData:data];
-    NSLog(@"got some data %d bytes", [_serverResponseData length]);
+    NSLog(@"got some data %d bytes", (int)[_serverResponseData length]);
 }
 
 -(void) connectionDidFinishLoading:(NSURLConnection *)connection {
@@ -199,7 +199,7 @@
     NSString *patientIDResponseString = [[NSString alloc] initWithData: _serverResponseData encoding: NSUTF8StringEncoding];
     NSLog(@"raw data is %@", patientIDResponseString); // starbucks login found one time
     NSInteger receivedInt = [patientIDResponseString integerValue];
-    NSLog(@"Data is now %d", receivedInt);
+    NSLog(@"Data is now %d", (int)receivedInt);
     [patientData setPatientID: receivedInt];
     [patientData saveInformation];
     

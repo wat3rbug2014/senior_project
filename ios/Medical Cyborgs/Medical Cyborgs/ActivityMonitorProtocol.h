@@ -5,6 +5,8 @@
 //  Created by Douglas Gardiner on 10/28/14.
 //  Copyright (c) 2014 Douglas Gardiner. All rights reserved.
 //
+// WARNING: This is under construction because it is not known how the
+// activity devices work yet.
 
 #import <Foundation/Foundation.h>
 

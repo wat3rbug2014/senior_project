@@ -6,6 +6,15 @@
 //  Copyright (c) 2014 Douglas Gardiner. All rights reserved.
 //
 
+/**
+ * This manager handles the overall connection and discovery of the bluetooth
+ * devices.  WARNING:  Making multiple instances of this manager will result
+ * in errors.  The CBCentral is not a singleton object.  The overall meaning is that
+ * you will have troubles discovering and utilizing devices is there are more than 
+ * instance of this object.  I will at a later date transform this into a singleton
+ * so that the undefined behavior can be minimized.
+ */
+
 #import <Foundation/Foundation.h>
 #import <CoreBluetooth/CoreBluetooth.h>
 #import "FitBitFlex.h"

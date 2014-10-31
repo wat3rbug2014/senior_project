@@ -19,15 +19,16 @@
 #import <CoreBluetooth/CoreBluetooth.h>
 #import "DeviceConnection.h"
 #import "DeviceTypes.h"
+#import "ActivityMonitorProtocol.h"
 
 extern NSString * const FLEX_SERV_UUID;
 
-@interface FitBitFlex : NSObject <DeviceConnection, CBPeripheralDelegate>
+@interface FitBitFlex : NSObject <DeviceConnection, CBPeripheralDelegate, ActivityMonitorProtocol>
 
 @property (retain, strong) CBPeripheral *device;
 @property (retain) CBService *batteryService;
 @property (retain) CBCharacteristic *batteryLvlChar;
-@property (readonly) NSInteger batteryLevel;
+@property int batteryLevel;
 @property NSInteger type;
 @property (retain) NSString *deviceManufacturer;
 

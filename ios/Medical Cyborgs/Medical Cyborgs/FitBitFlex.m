@@ -119,7 +119,7 @@ NSString * const FLEX_SERV_UUID = @"45C3";
         uint8_t rawBattery = 0;
         [[batteryLvlChar value] getBytes:&rawBattery length:1];
         NSLog(@"Battery read is %d", rawBattery);
-        batteryLevel = (NSInteger) rawBattery;
+        batteryLevel = rawBattery;
     }
     if ([[NSString stringWithFormat:@"%@",[characteristic UUID]] rangeOfString:@"Manufacturer"].location != NSNotFound) {
         deviceManufacturer = [[NSString alloc] initWithData:[characteristic value] encoding:NSUTF8StringEncoding];
