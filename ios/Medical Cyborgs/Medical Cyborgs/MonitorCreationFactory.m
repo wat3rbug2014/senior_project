@@ -11,6 +11,7 @@
 #import "FitBitFlex.h"
 #import "PolarH7.h"
 #import "WahooTickrX.h"
+#import "MioGlobalLink.h"
 
 @implementation MonitorCreationFactory
 
@@ -33,6 +34,9 @@
 //    if ([[peripheral name] rangeOfString:@"Flex"].location != NSNotFound) {
 //        result = [[WahooTickrX alloc] initWithPeripheral:peripheral];
 //    }
+    if ([[peripheral name] rangeOfString:@"MIO"].location!= NSNotFound) {
+        result = [[MioGlobalLink alloc] initWithPeripheral:peripheral];
+    }
     if ([[peripheral name] rangeOfString:@"Polar H7"].location != NSNotFound) {
         result = [[PolarH7 alloc] initWithPeripheral:peripheral];
     }
