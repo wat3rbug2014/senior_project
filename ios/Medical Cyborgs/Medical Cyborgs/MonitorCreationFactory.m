@@ -7,7 +7,7 @@
 //
 
 #import "MonitorCreationFactory.h"
-#import "DeviceConnection.h"
+#import "DeviceCommonInfoInterface.h"
 #import "FitBitFlex.h"
 #import "PolarH7.h"
 #import "WahooTickrX.h"
@@ -16,7 +16,7 @@
 @implementation MonitorCreationFactory
 
 
-+(id<DeviceConnection>) createFromPeripheral: (CBPeripheral*) peripheral {
++(id<DeviceCommonInfoInterface>) createFromPeripheral: (CBPeripheral*) peripheral {
     
     id result = nil;
     

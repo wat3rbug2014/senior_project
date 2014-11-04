@@ -7,7 +7,7 @@
 
 #import "BTDeviceManager.h"
 #import "MonitorCreationFactory.h"
-#import "DeviceConnection.h"
+#import "DeviceCommonInfoInterface.h"
 
 
 @implementation BTDeviceManager
@@ -22,6 +22,19 @@
 @synthesize manager;
 @synthesize searchType;
 @synthesize isInDiscoveryMode;
+
+
+
++(id)sharedManager {
+    
+    static BTDeviceManager *manager = nil;
+    @synchronized(self) {
+        if (manager == nil) {
+            manager = [[BTDeviceManager alloc] init];
+        }
+    }
+    return manager;
+}
 
 -(id) init {
     
@@ -51,7 +64,7 @@
     
     NSMutableArray *completeBuffer = [[NSMutableArray alloc] initWithArray:activityDevices];
     [completeBuffer addObjectsFromArray:heartDevices];
-    for (id<DeviceConnection> currentDevice in completeBuffer) {
+    for (id<DeviceCommonInfoInterface> currentDevice in completeBuffer) {
         if ([currentDevice isConnected]) {
             NSLog(@"disconnecting %@", [currentDevice name]);
             [manager cancelPeripheralConnection:[currentDevice device]];
@@ -100,7 +113,7 @@
     }
 }
 
--(id<DeviceConnection>) deviceAtIndex: (NSInteger) index forMonitorType: (NSInteger) type {
+-(id<DeviceCommonInfoInterface>) deviceAtIndex: (NSInteger) index forMonitorType: (NSInteger) type {
     
     if ((type & HEART_MONITOR) == HEART_MONITOR) {
         return [heartDevices objectAtIndex:index];
@@ -111,7 +124,7 @@
 
 -(void) disconnectDevicesForType: (NSInteger) type {
 
-    for (id<DeviceConnection> currentDevice in heartDevices) {
+    for (id<DeviceCommonInfoInterface> currentDevice in heartDevices) {
         if ([currentDevice type] == type) {
             [manager cancelPeripheralConnection:[currentDevice device]];
         }
@@ -148,7 +161,7 @@
         return;
     }
     NSLog(@"preliminary duplicates removed");
-    id<DeviceConnection> newDevice = [MonitorCreationFactory createFromPeripheral:peripheral];
+    id<DeviceCommonInfoInterface> newDevice = [MonitorCreationFactory createFromPeripheral:peripheral];
     NSMutableArray *buffer = nil;
     
     // do the check for duplicates and add to heart monitors if it is original
@@ -156,7 +169,7 @@
     if (([newDevice type] & HEART_MONITOR) == HEART_MONITOR) {
         buffer = [NSMutableArray arrayWithArray:heartDevices];
         BOOL isNew = false;
-        for (id<DeviceConnection> currentDevice in buffer) {
+        for (id<DeviceCommonInfoInterface> currentDevice in buffer) {
             if ([[[currentDevice device] identifier] isEqual:[[newDevice device] identifier]]) {
                 isNew = true;
             }
@@ -170,7 +183,7 @@
     } else {
         buffer = [NSMutableArray arrayWithArray:activityDevices];
         BOOL isNew = false;
-        for (id<DeviceConnection> currentDevice in buffer) {
+        for (id<DeviceCommonInfoInterface> currentDevice in buffer) {
             if ([[[currentDevice device] identifier] isEqual:[[newDevice device] identifier]]) {
                 isNew = true;
             }
@@ -194,7 +207,7 @@
     [completeBuffer addObjectsFromArray:heartDevices];
 
     if([self isInDiscoveryMode]) {
-        for (id<DeviceConnection> currentDevice in completeBuffer) {
+        for (id<DeviceCommonInfoInterface> currentDevice in completeBuffer) {
             if ([[currentDevice name] isEqual:[peripheral name]]) {
                 
                 // query the device and get this information to the table and update even though
@@ -207,7 +220,7 @@
         }
     } else {
         NSNotification *connectNotification = nil;
-        for (id<DeviceConnection> currentDevice in completeBuffer) {
+        for (id<DeviceCommonInfoInterface> currentDevice in completeBuffer) {
             if ([[currentDevice name] isEqual:[peripheral name]]) {
                 if (([currentDevice type] & ACTIVITY_MONITOR) == ACTIVITY_MONITOR) {
                     connectNotification = [[NSNotification alloc] initWithName:@"ActivityMonConnected"

@@ -83,11 +83,11 @@
     
     NSString *identifier = @"Default";
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
-    id<DeviceConnection> currentDevice = [[deviceManager heartDevices] objectAtIndex:indexPath.row];
+    id<DeviceCommonInfoInterface> currentDevice = [[deviceManager heartDevices] objectAtIndex:indexPath.row];
     [[cell textLabel] setText:[currentDevice name]];
     UIImageView *batteryCharge = [[UIImageView alloc] initWithFrame:CGRectMake(230, 6, 32, 32)];
     [batteryCharge setImage:[UIImage imageNamed:@"battery_empty_32.png"]];
-    if ([currentDevice conformsToProtocol:@protocol(DeviceConnection)]) {
+    if ([currentDevice conformsToProtocol:@protocol(DeviceCommonInfoInterface)]) {
         
         // select the battery icon based on charge
         

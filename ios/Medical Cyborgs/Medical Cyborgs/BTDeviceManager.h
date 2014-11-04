@@ -8,11 +8,8 @@
 
 /**
  * This manager handles the overall connection and discovery of the bluetooth
- * devices.  WARNING:  Making multiple instances of this manager will result
- * in errors.  The CBCentral is not a singleton object.  The overall meaning is that
- * you will have troubles discovering and utilizing devices is there are more than 
- * instance of this object.  I will at a later date transform this into a singleton
- * so that the undefined behavior can be minimized.
+ * devices.  It performs scanning, connectivity and management of the devices for
+ * the selection view controllers.
  */
 
 #import <Foundation/Foundation.h>
@@ -21,7 +18,7 @@
 #import "PolarH7.h"
 #import "WahooTickrX.h"
 #import "DeviceTypes.h"
-#import "DeviceConnection.h"
+#import "DeviceCommonInfoInterface.h"
 #import "HeartMonitorProtocol.h"
 
 #define DEVICE_NUM 3
@@ -41,6 +38,10 @@
 @property NSInteger searchType;
 @property (retain) CBCentralManager *manager;
 
+
+
+
++(id) sharedManager;
 
 /**
  * This function gives the current count of the number of devices found in the 

@@ -20,6 +20,8 @@
 #define HEART_AND_ACTIVITY_MONITOR 3
 #define NONE_SELECTED -1
 
+// fix this code smell
+
 #define BATTERY @"Battery"
 #define BATTERY_LVL @"Battery Level"
 #define DEVICE_READ_VALUE @"BTDeviceValueUpdated"
@@ -30,6 +32,6 @@ typedef enum {
     ACTIVE = 3,
     EXERCISE = 4,
     TRAVEL = 5
-} ActivityMode;
+} ActivityLevel;
 
 #endif

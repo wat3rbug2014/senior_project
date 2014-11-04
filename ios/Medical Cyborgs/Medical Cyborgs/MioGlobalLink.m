@@ -136,6 +136,14 @@
     return currentHeartRate;
 }
 
+#pragma mark ActivityMonitorProtocol methods
+
+
+-(NSInteger)getActivityLevel {
+    
+    return SLEEPING;
+}
+
 #pragma mark CBPeripheralDelegate protocol methods
 
 

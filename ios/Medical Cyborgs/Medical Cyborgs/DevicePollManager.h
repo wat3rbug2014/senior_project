@@ -13,7 +13,7 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "DeviceConnection.h"
+#import "DeviceCommonInfoInterface.h"
 #import "PersonalInfo.h"
 #import "HeartMonitorProtocol.h"
 #import "BTDeviceManager.h"
@@ -26,8 +26,8 @@
 @property PersonalInfo *patientInfo;
 @property NSInteger patientID;
 @property (retain) BTDeviceManager *deviceManager;
-@property id<DeviceConnection, HeartMonitorProtocol> heartMonitor;
-@property id<DeviceConnection, ActivityMonitorProtocol> activityMonitor;
+@property id<DeviceCommonInfoInterface, HeartMonitorProtocol> heartMonitor;
+@property id<DeviceCommonInfoInterface, ActivityMonitorProtocol> activityMonitor;
 @property DBManager *database;
 @property BOOL batteryAlertGiven;
 @property BOOL ableToPoll;

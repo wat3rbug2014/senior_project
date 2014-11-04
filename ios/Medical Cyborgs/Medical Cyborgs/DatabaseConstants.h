@@ -13,9 +13,10 @@
 #ifndef Medical_Cyborgs_DatabaseConstants_h
 #define Medical_Cyborgs_DatabaseConstants_h
 
-#define PATIENTID_BASE_URL @"http://192.168.1.100/testpatient2.php?" // home test
-//#define PATIENTID_BASE_URL @"http://172.31.99.52/testpatient2.php?"   // coffee shop test
-//#define INSERT_ID_BASE_URL @"http://172.31.99.52/addmeasurement2.php?"
-#define INSERT_DB_BASE_URL @"http://192.168.1.100/addmeasurement2.php?"
+//#define PATIENTID_BASE_URL @"http://192.168.1.100/testpatient2.php?" // home test
+#define PATIENTID_BASE_URL @"http://172.31.99.52/testpatient2.php?"   // coffee shop test
+
+//#define INSERT_DB_BASE_URL @"http://192.168.1.100/addmeasurement2.php?"
+#define INSERT_DB_BASE_URL @"http://172.31.99.52/addmeasurement2.php?"
 
 #endif
