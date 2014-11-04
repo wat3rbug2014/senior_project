@@ -7,7 +7,7 @@
 //
 
 #import "WahooTickrX.h"
-#import "DeviceConnection.h"
+#import "DeviceCommonInfoInterface.h"
 
 @implementation WahooTickrX
 

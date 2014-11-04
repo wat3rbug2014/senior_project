@@ -24,22 +24,20 @@
 @synthesize timestamp;
 @synthesize sqlStatement;
 @synthesize rowCount;
+@synthesize patientInfo;
 
 -(instancetype)init {
     
     NSString *dbFilename = @"project.sql";
     if (self= [super init]) {
-        // Set the documents directory path to the documentsDirectory property.
+
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-        self.documentsDirectory = [paths objectAtIndex:0];
-        
-        // Keep the database filename.
-        self.databaseFilename = dbFilename;
-        
-        // Copy the database file into the documents directory if necessary.
+        documentsDirectory = [paths objectAtIndex:0];
+        databaseFilename = dbFilename;
         [self copyDatabaseIntoDocumentsDirectory];
-        self.patientID = NO_ID_SET;
         databasePath = [self.documentsDirectory stringByAppendingPathComponent:self.databaseFilename];
+        patientInfo = [[PersonalInfo alloc] init];
+        patientID = [patientInfo patientID];
     }
     return self;
 }

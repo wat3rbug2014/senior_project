@@ -18,6 +18,7 @@
 #import "DevicePollManager.h"
 #import "RemoteDBConnectionManager.h"
 #import "PatientInformationVC.h"
+#import "BackgroundScheduler.h"
 
 @interface HomeScreenVC : UIViewController
 
@@ -35,7 +36,10 @@
 @property NSRunLoop *pollRunLoop;
 @property NSTimer *devicePollTimer;
 @property NSTimer *serverPollTimer;
+@property BackgroundScheduler *scheduler;
 
+
+-(id) initWithBackgroundScheduler: (BackgroundScheduler*) scheduler;
 
 /**
  * This method sets up the UIViewController to display the personal settings page.

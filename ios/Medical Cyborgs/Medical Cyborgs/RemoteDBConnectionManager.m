@@ -54,6 +54,11 @@
     }
 }
 
+-(void)flushDatabase {
+    
+    [self pushDataToRemoteServer];
+}
+
 -(void)sendRowToServer {
     
     if (database == nil) {

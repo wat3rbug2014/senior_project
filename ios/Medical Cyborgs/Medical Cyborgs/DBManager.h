@@ -13,6 +13,7 @@
 #import <Foundation/Foundation.h>
 #import <sqlite3.h>
 #import "LocalDBResult.h"
+#import "PersonalInfo.h"
 
 @interface DBManager : NSObject
 
@@ -28,6 +29,7 @@
 @property float latitude;
 @property float longitude;
 @property NSDate *timestamp;
+@property PersonalInfo *patientInfo;
 
 
 /**

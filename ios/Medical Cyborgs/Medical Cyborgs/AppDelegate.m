@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import "HomeScreenVC.h"
 
-#define debug 1
 
 @interface AppDelegate ()
 
@@ -17,15 +16,14 @@
 
 @implementation AppDelegate
 
-@synthesize deviceManager;
+@synthesize processScheduler;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    processScheduler = [[BackgroundScheduler alloc] init];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.deviceManager = [[BTDeviceManager alloc] init];
-    HomeScreenVC *homeScreen = [[HomeScreenVC alloc] init];
-    [homeScreen setBtDevices:deviceManager];
+    HomeScreenVC *homeScreen = [[HomeScreenVC alloc] initWithBackgroundScheduler:processScheduler];
     UINavigationController *navCon = [[UINavigationController alloc] initWithRootViewController:homeScreen];
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = navCon;
@@ -34,8 +32,8 @@
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+
+    [[processScheduler serverPoller] flushDatabase];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
@@ -55,9 +53,8 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     
 
-    [deviceManager disconnectAllDevices];
-    
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [[processScheduler deviceManager]  disconnectAllDevices];
+    [[processScheduler serverPoller] flushDatabase];
 }
 
 @end

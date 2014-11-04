@@ -17,9 +17,9 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreBluetooth/CoreBluetooth.h>
-#import "DeviceConnection.h"
+#import "DeviceCommonInfoInterface.h"
 
-@interface WahooTickrX : NSObject <DeviceConnection>
+@interface WahooTickrX : NSObject <DeviceCommonInfoInterface>
 
 @property NSInteger type;
 @property (readonly) NSInteger batteryLevel;

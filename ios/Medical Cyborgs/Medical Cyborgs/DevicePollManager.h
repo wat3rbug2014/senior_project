@@ -40,7 +40,7 @@
  * polling is to occur.
  */
 
--(id) initWithDataStore:(NSData*) dataStore andDevicemanager: (BTDeviceManager*) newDeviceManager;
+-(id) initWithDataStore:(DBManager*) dataStore andDevicemanager: (BTDeviceManager*) newDeviceManager;
 
 
 /**

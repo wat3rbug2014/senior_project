@@ -12,6 +12,7 @@
 #import "ActivityMonitorSelectVC.h"
 #import "GraphVC.h"
 #import "RemoteDBConnectionManager.h"
+#import "BackgroundScheduler.h"
 
 @interface HomeScreenVC ()
 
@@ -33,6 +34,7 @@
 @synthesize serverPollTimer;
 @synthesize serverPoller;
 @synthesize settings;
+@synthesize scheduler;
 
 #pragma mark Standard UIViewController methods
 
@@ -42,12 +44,22 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = @"Home";
+            }
+    return self;
+}
+
+-(id) initWithBackgroundScheduler: (BackgroundScheduler*) newScheduler {
+    
+    if (self = [self initWithNibName:@"HomeScreenVC" bundle:nil]) {
         isMonitoring = false;
-        self.patientInfo = [[PersonalInfo alloc] init];
+        scheduler = newScheduler;
+        devicePoller = [scheduler devicePoller];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pollFailed:)
-            name:@"DevicePollFailed" object:self.devicePoller];
+            name:@"DevicePollFailed" object: devicePoller];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkForUpdatedPatientID)
             name:@"PersonalInfoUpdated" object:settings];
+        btDevices = [scheduler deviceManager];
+
     }
     return self;
 }
@@ -67,7 +79,6 @@
     [self setColorForButton:toggleRunButton isReady:NO];
     [[toggleRunButton titleLabel] setText:@"Start"];
     [[toggleRunButton titleLabel] setTextColor:[UIColor whiteColor]];
-    btDevices = [[BTDeviceManager alloc] init];
 }
 
 -(void) viewWillAppear:(BOOL)animated {
@@ -153,38 +164,11 @@
     //[super playClickSound];
     if ([self isMonitoring]) {
         [toggleRunButton setTitle:@"Stop" forState:UIControlStateNormal];
-        
-        //setup polling objects
-        
-        [btDevices selectedIndexForActivityMonitor];
-        devicePoller = [[DevicePollManager alloc] initWithDataStore:nil andDevicemanager:btDevices];
-        serverPoller = [[RemoteDBConnectionManager alloc] initWithDatabase:nil];
-        [serverPoller setPatientID:[patientInfo patientID]];
-        
-        // setup run loop
-        
-        pollRunLoop = [NSRunLoop mainRunLoop];
-        NSTimeInterval intveral =  5.0;
-        NSTimeInterval serverTime = 60.0;
-        
-        devicePollTimer = [NSTimer scheduledTimerWithTimeInterval:intveral target:devicePoller
-                selector:@selector(pollDevicesForData) userInfo:nil repeats:YES];
-        serverPollTimer = [NSTimer scheduledTimerWithTimeInterval:serverTime target:serverPoller selector:@selector(pushDataToRemoteServer) userInfo:nil repeats:YES];
-        [pollRunLoop addTimer:devicePollTimer forMode:NSDefaultRunLoopMode];
-        [pollRunLoop addTimer:serverPollTimer forMode:NSDefaultRunLoopMode];
+        [scheduler setPatient:patientInfo];
         NSLog(@"started running");
-        [pollRunLoop run];
+        [scheduler startMonitoring];
     } else {
-        
-        // stop the pollers
-        
-        [toggleRunButton setTitle:@"Start" forState:UIControlStateNormal];
-        NSLog(@"stopped running");
-        [pollRunLoop cancelPerformSelector:@selector(pollDevicesForData) target:devicePoller argument:nil];
-        [pollRunLoop cancelPerformSelector:@selector(pushDataToRemoteServer) target:serverPoller argument:nil];
-        [serverPollTimer invalidate];
-        [devicePollTimer invalidate];
-        [serverPoller pushDataToRemoteServer];
+        [scheduler stopMonitoring];
     }
 }
 
