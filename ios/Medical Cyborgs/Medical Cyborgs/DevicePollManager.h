@@ -34,6 +34,7 @@
 @property BOOL isHeartMonitorReady;
 @property BOOL isActivityMonitorReady;
 
+
 /**
  * This is the preferred initialization method.  The datastore and the two components are passed
  * so that polling can happen imediately. WARNING:  This initialization method must be used if any

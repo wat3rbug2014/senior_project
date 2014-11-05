@@ -93,17 +93,12 @@
 
     NSLog(@"getting data from activity monitor");
 
-    //float latitude = [activityMonitor getLatitude];
-    float latitude = [testData latitude];
-    //float longitude = [activityMonitor getLongitude];
-    float longitude = [testData longitude];
+
     
     
     NSLog(@"storing data in database");
     
     [database setHrmeasurement:heartRate];
-    [database setLatitude:latitude];
-    [database setLongitude:longitude];
     [database setTimestamp:[NSDate date]];
     [database insertDataIntoDB];
     
