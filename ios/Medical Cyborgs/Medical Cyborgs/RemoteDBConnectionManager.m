@@ -28,7 +28,7 @@
         } else {
             database = datastore;
         }
-        patientID = NO_ID_SET;
+        patientID = [database patientID];
         failedAttempts = 0;
         remoteUnreachable = NO;
     }

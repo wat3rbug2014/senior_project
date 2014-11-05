@@ -46,6 +46,7 @@
     
     if (self = [self init]) {
         self.patientID = currentPatient;
+        [self purgeDatabase]; // added to clean database before use.
     }
     return self;
 }
@@ -115,7 +116,7 @@
     NSString *deleteStatement = [NSString stringWithFormat:
         @"DELETE FROM MEASUREMENTS WHERE patientID = '%d' AND time_measurement = '%@'",
         (int)patientID, oldTimeStamp];
-    //NSString *deleteStatement = @"DELETE FROM MEASUREMENTS WHERE patientID = 19";
+    //NSString *deleteStatement = @"DELETE FROM MEASUREMENTS WHERE patientID = 0";
     NSLog(@"SQL: %@", deleteStatement);
     if ([self openLocalDBWithSQLQueryIsSuccessful:deleteStatement]) {
         if (sqlite3_step(sqlStatement) == SQLITE_DONE) {
@@ -199,5 +200,19 @@
     
     sqlite3_finalize(sqlStatement);
     sqlite3_close(database);
+}
+
+-(void) purgeDatabase; {
+    
+    if([self openLocalDBWithSQLQueryIsSuccessful:@"DELETE FROM MEASUREMENTS"]) {
+        if (sqlite3_step(sqlStatement) == SQLITE_DONE) {
+            NSLog(@"delete execute successful");
+        } else {
+            NSLog(@"delete execute failed\n%s",sqlite3_errmsg(database));
+        }
+        [self closeLocalDBConnection];
+    } else {
+        NSLog(@"delete prep failed");
+    }
 }
 @end

@@ -153,4 +153,6 @@
 
 -(void) closeLocalDBConnection;
 
+
+-(void) purgeDatabase;
 @end

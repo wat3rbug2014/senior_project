@@ -29,8 +29,7 @@
     if (self = [super init]) {
         deviceManager = newDeviceManager;
         database = dataStore;
-        patientInfo = [[PersonalInfo alloc] init];
-        patientID = (NSInteger)[patientInfo patientID]; // make sure this works
+        patientID = [database patientID];
         ableToPoll = YES;
         batteryAlertGiven = NO;
         isHeartMonitorReady = NO;
