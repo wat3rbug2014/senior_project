@@ -29,7 +29,8 @@
 @property float latitude;
 @property float longitude;
 @property NSDate *timestamp;
-@property PersonalInfo *patientInfo;
+
+
 
 
 /**

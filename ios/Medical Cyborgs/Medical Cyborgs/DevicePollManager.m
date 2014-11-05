@@ -45,6 +45,7 @@
         NSLog(@"No patient ID\nPolling stopped");
         return;
     }
+    [database setPatientID:patientID];
     //[deviceManager connectMonitors];
     [self continuePollAfterDevicesConnect]; // remove after test
 }
@@ -100,9 +101,6 @@
     
     NSLog(@"storing data in database");
     
-    if (database == nil) {
-        database = [[DBManager alloc] initWithpatientID:[self patientID]];
-    }
     [database setHrmeasurement:heartRate];
     [database setLatitude:latitude];
     [database setLongitude:longitude];

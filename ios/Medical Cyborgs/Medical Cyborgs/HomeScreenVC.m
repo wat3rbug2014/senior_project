@@ -54,6 +54,7 @@
         isMonitoring = false;
         scheduler = newScheduler;
         devicePoller = [scheduler devicePoller];
+        patientInfo = [scheduler patient];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pollFailed:)
             name:@"DevicePollFailed" object: devicePoller];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkForUpdatedPatientID)
@@ -104,7 +105,7 @@
 
 -(IBAction)alterPersonalSettings:(id)sender {
     
-    settings = [[PatientInformationVC alloc] init];
+    settings = [[PatientInformationVC alloc] initWithPersonalInformation:patientInfo];
     [self.navigationController pushViewController:settings animated:YES];
 }
 
@@ -166,7 +167,7 @@
         [toggleRunButton setTitle:@"Stop" forState:UIControlStateNormal];
         [scheduler setPatient:patientInfo];
         NSLog(@"started running");
-        [scheduler startMonitoring];
+        [scheduler startMonitoringWithPatientID:[patientInfo patientID]];
     } else {
         [scheduler stopMonitoring];
     }
@@ -175,8 +176,7 @@
 -(void) checkForUpdatedPatientID {
     
     NSLog(@"Checking personal info");
-    patientInfo = nil;
-    patientInfo = [[PersonalInfo alloc] init];
+    NSLog(@"loading patient info");
     if ([patientInfo patientID] != NO_ID_SET) {
         NSLog(@"patient id is %d", (int)[patientInfo patientID]);
         [self setColorForButton:personalInfoButton isReady:YES];

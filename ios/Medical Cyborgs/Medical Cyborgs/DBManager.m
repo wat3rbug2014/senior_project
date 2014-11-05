@@ -24,7 +24,7 @@
 @synthesize timestamp;
 @synthesize sqlStatement;
 @synthesize rowCount;
-@synthesize patientInfo;
+
 
 -(instancetype)init {
     
@@ -36,8 +36,6 @@
         databaseFilename = dbFilename;
         [self copyDatabaseIntoDocumentsDirectory];
         databasePath = [self.documentsDirectory stringByAppendingPathComponent:self.databaseFilename];
-        patientInfo = [[PersonalInfo alloc] init];
-        patientID = [patientInfo patientID];
     }
     return self;
 }

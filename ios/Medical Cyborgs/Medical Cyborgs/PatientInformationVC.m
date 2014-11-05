@@ -41,7 +41,6 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    patientData = [[PersonalInfo alloc] init];
     dobSelector = [[UIDatePicker alloc] initWithFrame:CGRectMake(0.0, 260.0, 320.0, 80.0)];
     [dobSelector setDatePickerMode:UIDatePickerModeDate];
     NSDate *today = [NSDate date];
@@ -147,19 +146,15 @@
     
     // update the first name or last name depending on textfield
     
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSMutableDictionary *personalInfo = [NSMutableDictionary
-        dictionaryWithDictionary:[defaults dictionaryForKey:USER_DEFAULT_KEY]];
     if ([textField isEqual:firstNameEntry]) {
-        [personalInfo setObject:[firstNameEntry text] forKey:F_NAME];
+        [patientData setFirstName:[firstNameEntry text]];
     }
     if ([textField isEqual:lastNameEntry]) {
-        [personalInfo setObject:[lastNameEntry text] forKey:L_NAME];
+        [patientData setLastName:[lastNameEntry text]];
     }
     // save results and dismiss the keyboard
-    
-    [defaults setObject:personalInfo forKey:USER_DEFAULT_KEY];
-    [defaults synchronize];
+
+    [patientData saveInformation];
     [textField resignFirstResponder];
     return YES;
 }
