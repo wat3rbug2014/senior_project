@@ -17,6 +17,7 @@
 @synthesize personalData;
 @synthesize defaults;
 
+
 -(id) init {
     
     if (self = [super init]) {
@@ -30,6 +31,11 @@
 -(void) dealloc {
     
     [self saveInformation];
+}
+
+-(NSInteger) age {
+    
+    return  [self calculateAgeUsingDate:dob];
 }
 
 -(void) loadInformation {
@@ -53,7 +59,17 @@
         patientID = NO_ID_SET;
     }
     [updatedInfo setObject:[NSNumber numberWithInteger:patientID] forKey:PATIENT_ID];
+    [updatedInfo setObject:[NSNumber numberWithInteger:[self age]] forKey:AGE];
     [defaults setObject:updatedInfo forKey:USER_DEFAULT_KEY];
     [defaults synchronize];
+}
+
+-(NSInteger)calculateAgeUsingDate:(NSDate *)currentDOB {
+    
+    assert(currentDOB != nil);
+    NSDate *now = [NSDate date];
+    NSDateComponents *ageComponents = [[NSCalendar currentCalendar] components:NSCalendarUnitYear
+        fromDate:dob toDate:now options:0];
+    return [ageComponents year];
 }
 @end

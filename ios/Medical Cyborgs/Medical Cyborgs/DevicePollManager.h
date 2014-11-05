@@ -72,4 +72,6 @@
 
 -(void) didReceiveNotificationDeviceConnected: (NSNotification*) notification;
 
+-(int) activityLevelBasedOnHeartRate: (NSInteger) heartRate;
+
 @end

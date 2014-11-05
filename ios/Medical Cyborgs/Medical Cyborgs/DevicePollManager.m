@@ -99,9 +99,36 @@
     NSLog(@"storing data in database");
     
     [database setHrmeasurement:heartRate];
+    
+    // check this
+    
+    [database setActivityLevel:[self activityLevelBasedOnHeartRate:heartRate]];
+    
+    // end of check portion
+    
     [database setTimestamp:[NSDate date]];
     [database insertDataIntoDB];
     
     NSLog(@"finished poll");
+}
+
+-(int) activityLevelBasedOnHeartRate: (NSInteger) heartRate {
+    
+    NSInteger result = 0;
+    NSInteger mhr = 208 - ((NSInteger)(.7 * [database age]));
+    float percentOfMax = ((float)heartRate/ (float)mhr);
+    if (percentOfMax < 0.5) {
+        result =  SLEEPING;
+    }
+    if (percentOfMax >= 0.5 && percentOfMax < 0.6) {
+        result = TROUBLE_SLEEP;
+    }
+    if (percentOfMax >= 0.6 && percentOfMax < 0.7) {
+        result = TRAVEL;
+    }
+    if (percentOfMax >= 0.7) {
+        result = ACTIVE;
+    }
+    return result;
 }
 @end

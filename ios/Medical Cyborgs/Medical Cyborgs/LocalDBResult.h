@@ -21,5 +21,6 @@
 @property float latitude;
 @property float longitude;
 @property NSString *timeStamp;
+@property NSInteger activityLevel;
 
 @end

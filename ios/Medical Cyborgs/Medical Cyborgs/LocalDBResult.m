@@ -15,5 +15,6 @@
 @synthesize longitude;
 @synthesize heartRate;
 @synthesize timeStamp;
+@synthesize activityLevel;
 
 @end
