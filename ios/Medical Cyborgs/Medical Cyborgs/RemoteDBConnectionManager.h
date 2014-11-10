@@ -20,6 +20,7 @@
  */
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "PersonalInfo.h"
 #import "DBManager.h"
 #import "LocalDBResult.h"

@@ -53,8 +53,12 @@
         }
         // setup the other managers
         
+        patient = [[PersonalInfo alloc] init];
         deviceManager = [BTDeviceManager sharedManager];
         database = [[DBManager alloc] initWithpatientID:[patient patientID]];
+        if ([patient dob] != nil) {
+            [database setAge:[patient age]];
+        }
         devicePoller = [[DevicePollManager alloc] initWithDataStore:database andDevicemanager:deviceManager];
         serverPoller = [[RemoteDBConnectionManager alloc] initWithDatabase:database];
         allowMonitoring = NO;
@@ -64,12 +68,14 @@
     return self;
 }
 
--(void)startMonitoring {
+-(void)startMonitoringWithPatientID:(NSInteger)identifier {
     
     // make sure there is patientID before starting
     // just extra precaution
     
-    if ([patient patientID] == NO_ID_SET) {
+    [patient setPatientID:identifier];
+    [patient saveInformation];
+    if ([patient patientID] == NO_ID_SET && patient != nil) {
         [patient loadInformation];
         if ([patient patientID] == NO_ID_SET) {
             allowMonitoring = NO;
@@ -80,11 +86,15 @@
     } else {
         allowMonitoring = YES;
     }
+    [devicePoller setPatientID:[patient patientID]];
+    [serverPoller setPatientID:[patient patientID]];
+    [locationManager startMonitoringSignificantLocationChanges];
     [self performScan];
 }
 
 -(void)stopMonitoring {
     
+    [locationManager stopMonitoringSignificantLocationChanges];
     [runLoop cancelPerformSelectorsWithTarget:self];
     [serverPoller flushDatabase];
     [devicePollTimer invalidate];
@@ -131,6 +141,7 @@
 
 -(void) locationManager: (CLLocationManager*) manager didUpdateLocations: (NSArray*) locations {
     
+    NSLog(@"location update happened");
     CLLocation *currentLocation = [locations objectAtIndex: [locations count] - 1];
     [database setLongitude:[currentLocation coordinate].longitude];
     [database setLatitude:[currentLocation coordinate].latitude];
