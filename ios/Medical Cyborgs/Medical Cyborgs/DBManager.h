@@ -28,6 +28,8 @@
 @property NSInteger hrmeasurement;
 @property float latitude;
 @property float longitude;
+@property int activityLevel;
+@property NSInteger age;
 @property NSDate *timestamp;
 
 

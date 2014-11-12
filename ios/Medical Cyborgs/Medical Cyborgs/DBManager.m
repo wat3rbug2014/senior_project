@@ -24,7 +24,8 @@
 @synthesize timestamp;
 @synthesize sqlStatement;
 @synthesize rowCount;
-
+@synthesize activityLevel;
+@synthesize age;
 
 -(instancetype)init {
     
@@ -69,7 +70,9 @@
 
 -(void)insertDataIntoDB {
     
-    NSString *insertStatement = [NSString stringWithFormat:@"INSERT INTO MEASUREMENTS (patientID, longitude, latitude, heart_rate, time_measurement) VALUES (%d, %f, %f, %d, '%@')", (int)patientID, longitude, latitude, (int)hrmeasurement, [DBManager timeStampAsString:timestamp]];
+    assert(age != 0);
+    assert(patientID != NO_ID_SET);
+    NSString *insertStatement = [NSString stringWithFormat:@"INSERT INTO MEASUREMENTS (patientID, longitude, latitude, heart_rate, time_measurement, activity_level) VALUES (%d, %f, %f, %d, '%@', %d)", (int)patientID, longitude, latitude, (int)hrmeasurement, [DBManager timeStampAsString:timestamp], activityLevel];
     NSLog(@"SQL: %@", insertStatement);
     if ([self openLocalDBWithSQLQueryIsSuccessful:insertStatement]) {
         NSLog(@"Insert prep successful");
@@ -87,13 +90,14 @@
     
     LocalDBResult *result = nil;
     result = [[LocalDBResult alloc] init];
-    NSString *retrieveStatement = @"SELECT heart_rate, latitude, longitude, time_measurement FROM MEASUREMENTS";
+    NSString *retrieveStatement = @"SELECT heart_rate, latitude, longitude, time_measurement, activity_level FROM MEASUREMENTS";
     if ([self openLocalDBWithSQLQueryIsSuccessful:retrieveStatement]) {
         int row_result = sqlite3_step(sqlStatement);
         if (row_result == SQLITE_ROW) {
             result.heartRate = sqlite3_column_int(sqlStatement, 0);
             result.latitude = (float)sqlite3_column_double(sqlStatement, 1);
             result.longitude = (float)sqlite3_column_double(sqlStatement, 2);
+            result.activityLevel = sqlite3_column_int(sqlStatement, 4);
             char* dateChar = (char*)sqlite3_column_text(sqlStatement, 3);
             NSString *temp = [[NSString alloc] initWithCString:dateChar encoding:NSUTF8StringEncoding];
             [result setTimeStamp:temp];

@@ -20,6 +20,7 @@
 @synthesize failedAttempts;
 @synthesize remoteUnreachable;
 
+
 -(id) initWithDatabase: (DBManager*) datastore {
     
     if (self = [super init]) {
@@ -84,12 +85,18 @@
     
     // go to server and add row of data
     
-    NSTimeInterval requestTime = 15.0;
-    NSURLRequest *dbRequest = [NSURLRequest requestWithURL:databaseUrl cachePolicy:
-        NSURLRequestReloadIgnoringCacheData timeoutInterval:requestTime];
-    NSURLConnection *connector = [[NSURLConnection alloc] initWithRequest: dbRequest delegate:
-        self startImmediately: YES];
-    [connector start];
+    NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfiguration];
+    NSURLSessionTask *task = [session dataTaskWithURL:databaseUrl completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        if (error != nil) {
+            remoteUnreachable = YES;
+            //completionHandler(UIBackgroundFetchResultFailed);
+            return;
+        }
+        
+    }];
+    [task resume];
 }
 
 -(void) removeCurrentRowInLocalDB {
@@ -173,6 +180,7 @@
         failedAttempts = 0;
         [self removeCurrentRowInLocalDB];
     }
+    
 }
 
 @end

@@ -152,9 +152,8 @@
     if ([textField isEqual:lastNameEntry]) {
         [patientData setLastName:[lastNameEntry text]];
     }
-    // save results and dismiss the keyboard
+    // dismiss the keyboard
 
-    [patientData saveInformation];
     [textField resignFirstResponder];
     return YES;
 }
