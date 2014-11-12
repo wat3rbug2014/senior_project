@@ -34,6 +34,7 @@
         batteryAlertGiven = NO;
         isHeartMonitorReady = NO;
         isActivityMonitorReady = NO;
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveNotificationDeviceConnected:) name:@"HeartMonConnected" object:deviceManager];
     }
     return self;
 }
@@ -46,54 +47,20 @@
         return;
     }
     [database setPatientID:patientID];
-    //[deviceManager connectMonitors];
-    [self continuePollAfterDevicesConnect]; // remove after test
-}
-
--(void)didReceiveNotificationDeviceConnected:(NSNotification *)notification {
-  
-//    id connectDevice = [notification object];
-//    
-//    // if object is not a device it means it failed
-//    
-//    if (![connectDevice conformsToProtocol: @protocol(DeviceConnection) ]) {
-//        NSLog(@"The fail portion is caught here.\nStopping poll");
-//        return;
-//    }
-//    // determine heart or activity and flag appropriate one is connected
-//    
-//    if ([[notification object] conformsToProtocol: @protocol(HeartMonitorProtocol)]) {
-//        [self setIsHeartMonitorReady:YES];
-//        [self setHeartMonitor:[notification object]];
-//        NSLog(@"heart monitor connected\nContinue polling");
-//    } else {
-//        [self setActivityMonitor:[notification object]];
-//        [self setIsActivityMonitorReady:YES];
-//        NSLog(@"activity monitor connected\nContinue polling");
-//    }
-    [self continuePollAfterDevicesConnect];
-}
-
--(void)continuePollAfterDevicesConnect {
+    [self setHeartMonitor:[[deviceManager heartDevices] objectAtIndex:[deviceManager selectedIndexForHeartMonitor]]];
+    if (![heartMonitor isConnected]) {
+        NSLog(@"Device poller attempt to connect to devices");
+        [deviceManager connectMonitors];
+        return;
+    }
+    NSLog(@"Device poller already has connected devices");
     
-    // make sure both are connected before polling proceeds
-    
-//    if (![self isHeartMonitorReady]) {
-//        NSLog(@"heart monitor is not ready\nStopping poll");
-//        return;
-//    }
-//    if (![self isActivityMonitorReady]) {
-//        NSLog(@"activity monitor is not ready\nStopping poll");
-//        return;
-//    }
-    DummyData *testData = [[DummyData alloc] init];
     NSLog(@"getting data from heart monitor");
-    //NSInteger heartRate = (NSInteger)[heartMonitor getHeartRate];
-    NSInteger heartRate = [testData heartRate];
-
+    NSInteger heartRate = (NSInteger)[heartMonitor getHeartRate];
+    
     NSLog(@"getting data from activity monitor");
-
-
+    
+    
     
     
     NSLog(@"storing data in database");
@@ -110,6 +77,31 @@
     [database insertDataIntoDB];
     
     NSLog(@"finished poll");
+}
+
+-(void)didReceiveNotificationDeviceConnected:(NSNotification *)notification {
+  
+    id connectDevice = [notification object];
+    
+    // if object is not a device it means it failed
+    
+    if (![connectDevice conformsToProtocol: @protocol(DeviceCommonInfoInterface) ]) {
+        NSLog(@"The fail portion is caught here.\nStopping poll");
+        return;
+    }
+    // determine heart or activity and flag appropriate one is connected
+    
+    if ([[notification object] conformsToProtocol: @protocol(HeartMonitorProtocol)]) {
+        [self setIsHeartMonitorReady:YES];
+        [self setHeartMonitor:[notification object]];
+        NSLog(@"heart monitor connected\nContinue polling");
+        [heartMonitor shouldMonitor:YES];
+    } else {
+        [self setActivityMonitor:[notification object]];
+        [self setIsActivityMonitorReady:YES];
+        NSLog(@"activity monitor connected\nContinue polling");
+        [activityMonitor shouldMonitor:YES];
+    }
 }
 
 -(int) activityLevelBasedOnHeartRate: (NSInteger) heartRate {

@@ -46,15 +46,6 @@
     return result;
 }
 
-
--(NSData*) getData {
-    
-    NSData *results = nil;
-    
-    
-    return results;
-}
-
 -(NSInteger) type {
     
     return type;
@@ -121,7 +112,7 @@
     return result;
 }
 
--(float)getLongitude {
+-(float) getLongitude {
     
     float result;
     

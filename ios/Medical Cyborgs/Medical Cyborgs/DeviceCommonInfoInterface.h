@@ -50,18 +50,6 @@
 
 
 /**
- * This method returns the data to be received.  Because the default datatype from the CBperipheral method
- * is NSData, this is left to keep consistency across all classes that use this interface.  For more
- * specific breakdown of the data see the classes that use this protocol for other methods.  It is noted that
- * no conversion has been performed on the data and the Endianness is undetermined.
- *
- * @return NSData The raw data received from the device without any filtration or conversion.
- */
-
--(NSData*) getData;
-
-
-/**
  * This method retrieves the battery level as expressed as a percent integer.  It assumed that a
  * updateBatteryLevel call was made, otherwise the last known value is returned.
  *

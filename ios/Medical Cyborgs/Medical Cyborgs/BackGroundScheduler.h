@@ -37,9 +37,11 @@
  * This methods starts the polling process.  It checks the devices for updated
  * information and passes them to the database for updates.  It also performs
  * network updates to the server based on what it finds in the local datbase.
+ *
+ * @param identifier The patientID that will be used for polling.
  */
 
--(void) startMonitoring;
+-(void) startMonitoringWithPatientID:(NSInteger) identifier;
 
 
 /**

@@ -77,26 +77,19 @@
 
 
     NSString *timeStr = [NSString stringWithFormat:@"time_measurement=%@",[currentRow timeStamp]];
-    NSString *rawUserUrl = [NSString stringWithFormat:@"&%@&%@&%@&%@&%@", patientStr, heartRateStr, latStr,
-        longStr, timeStr];
+    NSString *activeStr = [NSString stringWithFormat:@"activity_level=%d",(int)[currentRow activityLevel]];
+    NSString *rawUserUrl = [NSString stringWithFormat:@"&%@&%@&%@&%@&%@&%@", patientStr, heartRateStr, latStr,
+        longStr, activeStr, timeStr];
     NSString *userUrl = [self URLEncodedString:rawUserUrl];
     NSURL *databaseUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", INSERT_DB_BASE_URL, userUrl]];
     NSLog(@"url: %@",databaseUrl);
     
     // go to server and add row of data
     
-    NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfiguration];
-    NSURLSessionTask *task = [session dataTaskWithURL:databaseUrl completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        
-        if (error != nil) {
-            remoteUnreachable = YES;
-            //completionHandler(UIBackgroundFetchResultFailed);
-            return;
-        }
-        
-    }];
-    [task resume];
+    NSURLRequest *request = [NSURLRequest requestWithURL:databaseUrl
+        cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:15.0];
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:NO];
+    [connection start];
 }
 
 -(void) removeCurrentRowInLocalDB {
@@ -182,5 +175,7 @@
     }
     
 }
+
+
 
 @end

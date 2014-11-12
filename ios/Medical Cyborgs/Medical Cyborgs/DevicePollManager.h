@@ -55,14 +55,6 @@
 
 
 /**
- * This method checks the condition of the devices to make sure both are connected and then
- * proceeds with the poll.
- */
-
--(void) continuePollAfterDevicesConnect;
-
-
-/**
  * This method is used by the device manager to notify the poller that a device is connected.
  *  It is used to help signal the device poller that it can continue because all devices are
  * connected.
@@ -72,6 +64,9 @@
 
 -(void) didReceiveNotificationDeviceConnected: (NSNotification*) notification;
 
+
+
 -(int) activityLevelBasedOnHeartRate: (NSInteger) heartRate;
+
 
 @end

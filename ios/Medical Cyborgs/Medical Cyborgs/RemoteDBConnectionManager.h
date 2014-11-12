@@ -25,7 +25,7 @@
 #import "DBManager.h"
 #import "LocalDBResult.h"
 
-@interface RemoteDBConnectionManager : NSObject <NSURLConnectionDataDelegate>
+@interface RemoteDBConnectionManager : NSObject <NSURLConnectionDelegate>
 
 @property DBManager *database;
 @property NSInteger patientID;

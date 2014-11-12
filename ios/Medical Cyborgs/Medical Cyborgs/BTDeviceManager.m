@@ -75,8 +75,9 @@
 -(void)connectMonitors {
  
     [self setIsInDiscoveryMode:NO];
+    NSLog(@"connecting devices");
     [manager connectPeripheral:[[heartDevices objectAtIndex:selectedIndexForHeartMonitor] device] options:nil];
-    [manager connectPeripheral:[[activityDevices objectAtIndex:selectedIndexForActivityMonitor] device] options:nil];
+    //[manager connectPeripheral:[[activityDevices objectAtIndex:selectedIndexForActivityMonitor] device] options:nil];
 }
 
 -(void) discoverDevicesForType:(NSInteger)type {
@@ -220,16 +221,23 @@
         }
     } else {
         NSNotification *connectNotification = nil;
+        NSLog(@"Determining which device is connected");
         for (id<DeviceCommonInfoInterface> currentDevice in completeBuffer) {
             if ([[currentDevice name] isEqual:[peripheral name]]) {
                 if (([currentDevice type] & ACTIVITY_MONITOR) == ACTIVITY_MONITOR) {
                     connectNotification = [[NSNotification alloc] initWithName:@"ActivityMonConnected"
                         object:currentDevice userInfo:nil];
+                    NSLog(@"Found activity monitor %@", [peripheral name]);
+                    [self setActivityMonitorIsConnected:YES];
                 }
                 if (([currentDevice type] & HEART_MONITOR) == HEART_MONITOR) {
+                    NSLog(@"Found heart monitor %@", [peripheral name]);
                     connectNotification = [[NSNotification alloc] initWithName:@"HeartMonConnected"
                         object:currentDevice userInfo:nil];
+                    [self setHeartMonitorIsConnected:YES];
                 }
+                [currentDevice shouldMonitor:YES];
+                [currentDevice getTableInformation];
             }
         }
         [[NSNotificationCenter defaultCenter] postNotification:connectNotification];

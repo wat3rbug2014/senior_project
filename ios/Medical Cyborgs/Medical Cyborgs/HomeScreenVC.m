@@ -155,9 +155,9 @@
 //    if ([btDevices selectedIndexForActivityMonitor] == NONE_SELECTED) {
 //        return;
 //    }
-//    if ([btDevices selectedIndexForHeartMonitor] == NONE_SELECTED) {
-//        return;
-//    }
+    if ([btDevices selectedIndexForHeartMonitor] == NONE_SELECTED) {
+        return;
+    }
     // change the button color and stop or start the pollers
     
     [self setIsMonitoring:![self isMonitoring]];
