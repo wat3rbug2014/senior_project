@@ -28,6 +28,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = navCon;
     [self.window makeKeyAndVisible];
+    [application setMinimumBackgroundFetchInterval:5.0];
     return YES;
 }
 
@@ -57,4 +58,8 @@
     [[processScheduler serverPoller] flushDatabase];
 }
 
+-(void) application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+    
+    [processScheduler performScan];
+}
 @end
