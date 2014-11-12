@@ -1,0 +1,86 @@
+<?xml version="1.0" ?>
+<project name="Broadcaster Tool" basedir="." default="run"  xmlns:cs="antlib:com.puppycrawl.tools.checkstyle">
+	
+<taskdef resource="checkstyletask.properties" classpath="${lib}/checkstyle-all.jar"/>
+  <property name="build" location="build"/>
+  <property name="src" location="src"/>
+  <property name="dist" location="dist"/>
+  <property name="docs" location="docs"/>
+
+
+  <description>
+    Broadcaster Tool
+  </description>
+
+<!-- INIT - setup the directories and copy files. -->
+
+  <target name="init" description="sets up directories">
+    <mkdir dir="${build}"/>
+    <mkdir dir="${dist}"/>
+  </target>
+
+<!-- COMPILE - all the compiler stuff is done here. -->
+
+  <target name="compile" depends="init" description="Compile" >
+    <echo>Compiling...</echo>
+    <javac debug="on" srcdir="${src}" destdir="${build}" includeantruntime="false" classpath="${lib}">
+      <compilerarg value="-Xlint"/> 
+       <!-- or -->
+      <compilerarg value="-Xlint:unchecked"/> 
+    </javac>
+  </target>
+
+<!-- CLEAN - deletes old files and directories for a clean build. -->
+
+    <target name="clean" description="Deletes generated directories">
+      <echo>Starting from scratch.  Deleting class and jars</echo>
+      <delete dir="${build}" />
+      <delete dir="${dist}" />
+	  <delete dir="${docs}" />
+    </target>
+	
+<!-- JAR - makes a jar file of the broadcaster portion -->
+
+    <target name="jar" depends="compile" description="builds the jar file">
+       <jar destfile="${dist}/broadcaster.jar" basedir="${build}">
+          <manifest>
+            <attribute name="Main-Class" value="Broadcaster"/>
+          </manifest>
+       </jar>
+	<echo>Generating documents for Broadcaster</echo>
+		<javadoc access="public" destdir="${docs}" author="true" version="false" 
+			   use="true" classpath="${lib}">
+		        <fileset dir="${src}" defaultexcludes="yes">
+		            <include name="**/*java"/>
+		        </fileset>
+		    </javadoc>
+    </target>	
+		
+		
+<!-- RUN - used for testing.  It also does the jarball. -->
+    
+	<target name="run" depends="jar" description="runs the application">
+	      <echo>Starting Boradcaster</echo>
+	      <java jar="${dist}/broadcaster.jar" fork="true" />
+	    </target>
+				
+
+<!-- BUILD - builds documentation and jar from the build directory -->
+
+	<target name="build" depends="jar" description="builds docs, jar and class files."/>
+
+<!-- REBUILD - cleans up and runs after a compile and jar.  Used for testing -->
+
+    <target name="rebuild" depends="clean,jar" description="cleanly compiles all sources."/>
+
+<target name="checkstyle" description="Runs checkstyle on all the source files">
+	<taskdef resource="checkstyletask.properties" classpath="${lib}/checkstyle-5.3-all.jar"/>
+	<checkstyle config="${config}/sun_checks.xml">
+	<fileset dir="${src}" includes="*.java"/>
+	<formatter type="plain"/>
+</checkstyle>
+</target>
+	
+<!-- END of PROJECT -->
+
+</project>

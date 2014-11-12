@@ -1,0 +1,119 @@
+//
+//  BTDummyData.h
+//  Medical Cyborgs
+//
+//  Created by Douglas Gardiner on 9/21/14.
+//  Copyright (c) 2014 Douglas Gardiner. All rights reserved.
+//
+
+/**
+ * This manager handles the overall connection and discovery of the bluetooth
+ * devices.  WARNING:  Making multiple instances of this manager will result
+ * in errors.  The CBCentral is not a singleton object.  The overall meaning is that
+ * you will have troubles discovering and utilizing devices is there are more than 
+ * instance of this object.  I will at a later date transform this into a singleton
+ * so that the undefined behavior can be minimized.
+ */
+
+#import <Foundation/Foundation.h>
+#import <CoreBluetooth/CoreBluetooth.h>
+#import "FitBitFlex.h"
+#import "PolarH7.h"
+#import "WahooTickrX.h"
+#import "DeviceTypes.h"
+#import "DeviceConnection.h"
+#import "HeartMonitorProtocol.h"
+
+#define DEVICE_NUM 3
+
+
+@interface BTDeviceManager : NSObject <CBCentralManagerDelegate>
+
+
+@property NSArray *heartDevices;
+@property NSArray *activityDevices;
+@property NSInteger selectedIndexForHeartMonitor;
+@property NSInteger selectedIndexForActivityMonitor;
+@property BOOL heartMonitorIsConnected;
+@property BOOL activityMonitorIsConnected;
+@property BOOL isActive;
+@property BOOL isInDiscoveryMode;
+@property NSInteger searchType;
+@property (retain) CBCentralManager *manager;
+
+
+/**
+ * This function gives the current count of the number of devices found in the 
+ * discovery process based on the type of device it is looking to find.  At this 
+ * time there is HEART_MONITOR and ACTIVITY_MONITOR types.  See DeviceTypes.h for more
+ * details.
+ *
+ * @param type The integer that designates whether a heart monitor or an activity monitor
+ *          will be the attempt to discover.
+ *
+ * @return The number of devices found.
+ */
+
+-(NSInteger) discoveredDevicesForType: (NSInteger) type;
+
+
+/**
+ * This returns the device object based on the index and the device type that discovery is done to obtain.
+ * The monitor type is an integer based on the constants found in DeviceTypes.h.
+ *
+ * @param index is the index from the table which is in sync with the array of devices that have been discovered.
+ *
+ * @param type it the integer value that determines which array to retrieve the device class.
+ *
+ * @return Returns the device object that correlates to the DeviceConnection protocol.
+ */
+
+-(id) deviceAtIndex: (NSInteger) index forMonitorType: (NSInteger) type;
+
+
+/**
+ * This function returns the count of the number of devices found during the discovery process of either the
+ * heart monitor or activity monitor discovery.  Accepted types are to be found in DeviceTypes.h
+ *
+ * @param type An integer result of the count of devices that have been found.
+ */
+
+-(void) discoverDevicesForType: (NSInteger) type;
+
+
+/**
+ * This function allows remote shutdown of discovery process to conserve the battery.  Its purpose is to allow
+ * the dismissal of selection viewcontrollers to shut the discovery because the devicemanager class is shared
+ * throughout the application.
+ */
+
+-(void) stopScan;
+
+
+/**
+ * This method is to tidy up after a device selection screen.  In order to get device details
+ * all the devices that werte scanned have to be connected.  Since only one is connected during
+ * the monitoring process the others need to disconnect.  Only those device types are disconnected.
+ *
+ * @param type The device type as designated by the DeviceTypes.h file.
+ */
+
+-(void) disconnectDevicesForType: (NSInteger) type;
+
+
+/**
+ * This method is for disconnecting the devices that are used for monitoring.  Both this method and the 
+ * connect Monitors are meant to keep the battery lasting longer by not keeping connectivity when not in use.
+ */
+ 
+-(void) disconnectAllDevices;
+
+
+/**
+ * This method connects the monitoring devices that have been selected from the various other views.
+ * It is used for the device poller to initiate the polling
+ */
+
+-(void) connectMonitors;
+
+@end
