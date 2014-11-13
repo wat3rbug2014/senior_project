@@ -96,7 +96,8 @@
         [self setHeartMonitor:[notification object]];
         NSLog(@"heart monitor connected\nContinue polling");
         [heartMonitor shouldMonitor:YES];
-    } else {
+    }
+    if ([[notification object] conformsToProtocol: @protocol(ActivityMonitorProtocol)]) {
         [self setActivityMonitor:[notification object]];
         [self setIsActivityMonitorReady:YES];
         NSLog(@"activity monitor connected\nContinue polling");
@@ -106,19 +107,19 @@
 
 -(int) activityLevelBasedOnHeartRate: (NSInteger) heartRate {
     
-    NSInteger result = 0;
+    int result = 0;
     NSInteger mhr = 208 - ((NSInteger)(.7 * [database age]));
     float percentOfMax = ((float)heartRate/ (float)mhr);
-    if (percentOfMax < 0.5) {
+    if (percentOfMax < 0.4) {
         result =  SLEEPING;
     }
-    if (percentOfMax >= 0.5 && percentOfMax < 0.6) {
+    if (percentOfMax >= 0.4 && percentOfMax < 0.5) {
         result = TROUBLE_SLEEP;
     }
-    if (percentOfMax >= 0.6 && percentOfMax < 0.7) {
+    if (percentOfMax >= 0.5 && percentOfMax < 0.6) {
         result = TRAVEL;
     }
-    if (percentOfMax >= 0.7) {
+    if (percentOfMax >= 0.6) {
         result = ACTIVE;
     }
     return result;
