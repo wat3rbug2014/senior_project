@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "BackgroundScheduler.h"
+#import "HomeScreenVC.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) BackgroundScheduler *processScheduler;
+@property (strong) HomeScreenVC *homeScreen;
 
 @end
 

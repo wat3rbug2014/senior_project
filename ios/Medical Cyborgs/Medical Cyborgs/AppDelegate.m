@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "HomeScreenVC.h"
 
 
 @interface AppDelegate ()
@@ -17,13 +16,13 @@
 @implementation AppDelegate
 
 @synthesize processScheduler;
-
+@synthesize homeScreen;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     processScheduler = [[BackgroundScheduler alloc] init];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    HomeScreenVC *homeScreen = [[HomeScreenVC alloc] initWithBackgroundScheduler:processScheduler];
+    homeScreen = [[HomeScreenVC alloc] initWithBackgroundScheduler:processScheduler];
     UINavigationController *navCon = [[UINavigationController alloc] initWithRootViewController:homeScreen];
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = navCon;
