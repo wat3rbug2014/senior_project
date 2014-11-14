@@ -66,10 +66,10 @@
  *
  * @param type it the integer value that determines which array to retrieve the device class.
  *
- * @return Returns the device object that correlates to the DeviceConnection protocol.
+ * @return Returns the device object that correlates to the DeviceCommonInfoInterface protocol.
  */
 
--(id) deviceAtIndex: (NSInteger) index forMonitorType: (NSInteger) type;
+-(id<DeviceCommonInfoInterface>) deviceAtIndex: (NSInteger) index forMonitorType: (NSInteger) type;
 
 
 /**
