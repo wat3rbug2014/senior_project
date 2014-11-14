@@ -29,9 +29,6 @@
 @synthesize personalInfoButton;
 @synthesize patientInfo;
 @synthesize devicePoller;
-@synthesize pollRunLoop;
-@synthesize devicePollTimer;
-@synthesize serverPollTimer;
 @synthesize serverPoller;
 @synthesize settings;
 @synthesize scheduler;

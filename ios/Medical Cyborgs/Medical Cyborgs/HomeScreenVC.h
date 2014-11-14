@@ -33,9 +33,6 @@
 @property (retain) PersonalInfo *patientInfo;
 @property (retain) DevicePollManager *devicePoller;
 @property (retain) RemoteDBConnectionManager *serverPoller;
-@property NSRunLoop *pollRunLoop;
-@property NSTimer *devicePollTimer;
-@property NSTimer *serverPollTimer;
 @property BackgroundScheduler *scheduler;
 
 
