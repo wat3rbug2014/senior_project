@@ -33,6 +33,7 @@
 @property BOOL ableToPoll;
 @property BOOL isHeartMonitorReady;
 @property BOOL isActivityMonitorReady;
+@property int currentHeartRate;
 
 
 /**

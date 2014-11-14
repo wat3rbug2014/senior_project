@@ -22,10 +22,14 @@
 @synthesize batteryAlertGiven;
 @synthesize isActivityMonitorReady;
 @synthesize isHeartMonitorReady;
+@synthesize currentHeartRate;
 
 
 -(id) initWithDataStore:(DBManager *)dataStore andDevicemanager:(BTDeviceManager *)newDeviceManager {
     
+    if (dataStore == nil || newDeviceManager == nil) {
+        return nil;
+    }
     if (self = [super init]) {
         deviceManager = newDeviceManager;
         database = dataStore;
@@ -34,6 +38,8 @@
         batteryAlertGiven = NO;
         isHeartMonitorReady = NO;
         isActivityMonitorReady = NO;
+        heartMonitor = [[deviceManager heartDevices] objectAtIndex:[deviceManager selectedIndexForHeartMonitor]];
+        activityMonitor = [[deviceManager activityDevices] objectAtIndex:[deviceManager selectedIndexForActivityMonitor]];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveNotificationDeviceConnected:) name:@"HeartMonConnected" object:deviceManager];
     }
     return self;
@@ -47,7 +53,6 @@
         return;
     }
     [database setPatientID:patientID];
-    [self setHeartMonitor:[[deviceManager heartDevices] objectAtIndex:[deviceManager selectedIndexForHeartMonitor]]];
     if (![heartMonitor isConnected]) {
         NSLog(@"Device poller attempt to connect to devices");
         [deviceManager connectMonitors];
@@ -56,7 +61,7 @@
     NSLog(@"Device poller already has connected devices");
     
     NSLog(@"getting data from heart monitor");
-    NSInteger heartRate = (NSInteger)[heartMonitor getHeartRate];
+    currentHeartRate = (int)[heartMonitor getHeartRate];
     
     NSLog(@"getting data from activity monitor");
     
@@ -65,11 +70,11 @@
     
     NSLog(@"storing data in database");
     
-    [database setHrmeasurement:heartRate];
+    [database setHrmeasurement:currentHeartRate];
     
     // check this
     
-    [database setActivityLevel:[self activityLevelBasedOnHeartRate:heartRate]];
+    [database setActivityLevel:[self activityLevelBasedOnHeartRate:currentHeartRate]];
     
     // end of check portion
     
