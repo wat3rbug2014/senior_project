@@ -27,12 +27,13 @@
 
 /**
  * This initialization method creates the desired device based on the CBPeripheral that is discovered.
- * It is common to all types of devices and will probably bypass very use of the standard init method
+ * It is common to all types of devices and will bypass use of the standard init method
  * for those classes.  This method is used by the MonitorCreationFactory as a standard for initializing
  * the device and providing all of the methods in this protocol.
  *
  * @param CBPeripheral is the device object that the CBCentralManager discovered.
- * @return id<DeviceConnection> This object is any class that conforms to the DeviceConnection protocol.
+ * @return id<DeviceCommonInfoInterface> This object is any class that conforms to the 
+ *          DeviceCommonInfoInterface protocol.
  */
 
 -(id<DeviceCommonInfoInterface>) initWithPeripheral: (CBPeripheral*) peripheral;
@@ -40,7 +41,7 @@
 
 /**
  * This method does a check to see if the the device is actually connected and returns a value of
- * TRUE if it is currently connected.  If the Device is in the CBPeripheralDeviceIsConnecting state,
+ * TRUE if it is currently connected.  If the Device is in the any other state,
  * the return value is FALSE.
  *
  * @return TRUE or FALSE value if the device is connected.

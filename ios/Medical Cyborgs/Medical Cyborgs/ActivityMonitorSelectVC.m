@@ -14,8 +14,6 @@
 
 @implementation ActivityMonitorSelectVC
 
-@synthesize deviceManager;
-@synthesize soundPlayer;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     
@@ -78,14 +76,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return [[deviceManager activityDevices] count];
+    return [super numberOfSectionsInTableView:tableView];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSString *identifier = @"Default";
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
-    id<DeviceCommonInfoInterface> currentDevice = [[deviceManager activityDevices] objectAtIndex:indexPath.row];
+    id<DeviceCommonInfoInterface> currentDevice = [[super.deviceManager activityDevices] objectAtIndex:indexPath.row];
     [[cell textLabel] setText:[currentDevice name]];
     UIImageView *batteryCharge = [[UIImageView alloc] initWithFrame:CGRectMake(230, 6, 32, 32)];
     [batteryCharge setImage:[UIImage imageNamed:@"battery_empty_32.png"]];
@@ -123,7 +121,7 @@
     }
     // add checkmark for the currently selected device
     
-    if ([deviceManager selectedIndexForActivityMonitor] == indexPath.row) {
+    if ([super.deviceManager selectedIndexForActivityMonitor] == indexPath.row) {
         [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
     }
     return cell;
@@ -133,9 +131,9 @@
     
     // deselect the device
     
-    if ([deviceManager selectedIndexForActivityMonitor] == indexPath.row) {
-        [deviceManager setActivityMonitorIsConnected:NO];
-        [deviceManager setSelectedIndexForActivityMonitor:NONE_SELECTED];
+    if ([super.deviceManager selectedIndexForActivityMonitor] == indexPath.row) {
+        [super.deviceManager setActivityMonitorIsConnected:NO];
+        [super.deviceManager setSelectedIndexForActivityMonitor:NONE_SELECTED];
         [[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryNone];
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
         
@@ -143,20 +141,12 @@
         
         // select the device
         
-        [deviceManager setActivityMonitorIsConnected:YES];
-        [deviceManager setSelectedIndexForActivityMonitor:indexPath.row];
+        [super.deviceManager setActivityMonitorIsConnected:YES];
+        [super.deviceManager setSelectedIndexForActivityMonitor:indexPath.row];
         [[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryCheckmark];
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
     [self playClickSound];
-}
-
-#pragma mark Custom methods
-
-
--(void) updateTable:(NSNotification*) notification {
-    
-    [self.tableView reloadData];
 }
 
 @end

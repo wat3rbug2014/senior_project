@@ -15,6 +15,7 @@
 @synthesize device;
 @synthesize batteryLvlChar;
 @synthesize batteryService;
+@synthesize currentHeartRate;
 
 -(id) initWithPeripheral: (CBPeripheral*) peripheral {
     
@@ -83,6 +84,11 @@
     } else {
         NSLog(@"device not connected");
     }
+}
+
+-(NSInteger)getHeartRate {
+    
+    return currentHeartRate;
 }
 
 -(void) shouldMonitor: (BOOL) monitor {

@@ -23,7 +23,7 @@
 
 extern NSString * const FLEX_SERV_UUID;
 
-@interface FitBitFlex : NSObject <DeviceCommonInfoInterface, CBPeripheralDelegate, ActivityMonitorProtocol>
+@interface FitBitFlex : NSObject <DeviceCommonInfoInterface, ActivityMonitorProtocol>
 
 @property (retain, strong) CBPeripheral *device;
 @property (retain) CBService *batteryService;
