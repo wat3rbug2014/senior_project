@@ -23,6 +23,9 @@
 
 -(id) initWithDatabase: (DBManager*) datastore {
     
+    if (datastore == nil) {
+        return nil;
+    }
     if (self = [super init]) {
         if (datastore == nil) {
             database = [[DBManager alloc] init];
