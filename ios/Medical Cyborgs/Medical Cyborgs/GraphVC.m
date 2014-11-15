@@ -15,6 +15,7 @@
 @implementation GraphVC
 
 @synthesize devicePoller;
+@synthesize heartRateDisplay;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -22,8 +23,14 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = @"Measurements";
+        [devicePoller addObserver:self forKeyPath:@"currentHeartRate" options:NSKeyValueObservingOptionNew context:nil];
     }
     return self;
+}
+
+-(void) dealloc {
+    
+    [self removeObserver:devicePoller forKeyPath:@"currentHeartRate"];
 }
 
 -(id) initWithDevicePoller:(DevicePollManager *) newDevicePoller {
@@ -37,7 +44,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [devicePoller pollDevicesForData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,4 +53,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    
+    
+}
 @end

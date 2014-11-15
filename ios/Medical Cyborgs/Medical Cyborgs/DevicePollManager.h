@@ -63,11 +63,13 @@
  * @param notification The notification that is used to update device status.
  */
 
--(void) didReceiveNotificationDeviceConnected: (NSNotification*) notification;
+-(void) didReceiveNotificationDeviceConnected;
 
 
 
 -(int) activityLevelBasedOnHeartRate: (NSInteger) heartRate;
 
+
+-(void) stopMonitoring;
 
 @end

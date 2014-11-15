@@ -40,11 +40,21 @@
         isActivityMonitorReady = NO;
         heartMonitor = [[deviceManager heartDevices] objectAtIndex:[deviceManager selectedIndexForHeartMonitor]];
         activityMonitor = [[deviceManager activityDevices] objectAtIndex:[deviceManager selectedIndexForActivityMonitor]];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveNotificationDeviceConnected:) name:@"HeartMonConnected" object:deviceManager];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveNotificationDeviceConnected) name: BTHeartConnected object:deviceManager];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveNotificationDeviceConnected) name: BTActivityConnected object:deviceManager];
     }
     return self;
 }
 
+-(void) dealloc {
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+-(void) stopMonitoring {
+    
+    [deviceManager disconnectDevicesForType:HEART_MONITOR];
+}
 -(void) pollDevicesForData {
     
     NSLog(@"verifying input before poll");
@@ -66,8 +76,6 @@
     NSLog(@"getting data from activity monitor");
     
     
-    
-    
     NSLog(@"storing data in database");
     
     [database setHrmeasurement:currentHeartRate];
@@ -84,26 +92,20 @@
     NSLog(@"finished poll");
 }
 
--(void)didReceiveNotificationDeviceConnected:(NSNotification *)notification {
+-(void)didReceiveNotificationDeviceConnected {
   
-    id connectDevice = [notification object];
-    
-    // if object is not a device it means it failed
-    
-    if (![connectDevice conformsToProtocol: @protocol(DeviceCommonInfoInterface) ]) {
-        NSLog(@"The fail portion is caught here.\nStopping poll");
-        return;
-    }
     // determine heart or activity and flag appropriate one is connected
     
-    if ([[notification object] conformsToProtocol: @protocol(HeartMonitorProtocol)]) {
+    heartMonitor = [[deviceManager heartDevices] objectAtIndex:
+                    [deviceManager selectedIndexForHeartMonitor]];
+    activityMonitor = [[deviceManager activityDevices] objectAtIndex:
+                       [deviceManager selectedIndexForActivityMonitor]];
+    if ([heartMonitor isConnected]) {
         [self setIsHeartMonitorReady:YES];
-        [self setHeartMonitor:[notification object]];
         NSLog(@"heart monitor connected\nContinue polling");
         [heartMonitor shouldMonitor:YES];
     }
-    if ([[notification object] conformsToProtocol: @protocol(ActivityMonitorProtocol)]) {
-        [self setActivityMonitor:[notification object]];
+    if ([activityMonitor isConnected]) {
         [self setIsActivityMonitorReady:YES];
         NSLog(@"activity monitor connected\nContinue polling");
         [activityMonitor shouldMonitor:YES];

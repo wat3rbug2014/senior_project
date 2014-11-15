@@ -108,6 +108,15 @@ NSString * const FLEX_SERV_UUID = @"45C3";
 
 }
 
+-(BOOL) discoveryComplete {
+    
+    BOOL result = YES;
+    if (batteryLvlChar == nil || batteryService == nil) {
+        result = NO;
+    }
+    return result;
+}
+
 #pragma mark ActivityMonitorProtocol methods
 
 

@@ -37,9 +37,11 @@
 @property BOOL isInDiscoveryMode;
 @property NSInteger searchType;
 @property (retain) CBCentralManager *manager;
+@property NSTimer *waitForDevices;
+@property NSRunLoop *runLoop;
 
-
-
+extern NSString *const BTHeartConnected;
+extern NSString *const BTActivityConnected;
 
 +(id) sharedManager;
 

@@ -28,5 +28,7 @@
 @property (retain) CBService *batteryService;
 @property (retain) CBCharacteristic *batteryLvlChar;
 @property NSInteger currentHeartRate;
+@property (retain) CBService *heartRateService;
+@property (retain)CBCharacteristic *heartRateChar;
 
 @end

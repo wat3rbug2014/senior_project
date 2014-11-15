@@ -16,6 +16,8 @@
 @synthesize batteryLvlChar;
 @synthesize batteryService;
 @synthesize currentHeartRate;
+@synthesize heartRateService;
+@synthesize heartRateChar;
 
 -(id) initWithPeripheral: (CBPeripheral*) peripheral {
     
@@ -95,4 +97,17 @@
     
     
 }
+
+-(BOOL) discoveryComplete {
+    
+    BOOL result = YES;
+    if (heartRateChar == nil || heartRateService == nil) {
+        result = NO;
+    }
+    if (batteryLvlChar == nil || batteryService == nil) {
+        result = NO;
+    }
+    return result;
+}
+
 @end

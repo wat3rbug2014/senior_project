@@ -22,8 +22,12 @@
 @synthesize manager;
 @synthesize searchType;
 @synthesize isInDiscoveryMode;
+@synthesize waitForDevices;
+@synthesize runLoop;
 
 
+NSString *const BTHeartConnected = @"BTHeartConnected";
+NSString *const BTActivityConnected = @"BTActivityConnected";
 
 +(id)sharedManager {
     
@@ -75,7 +79,8 @@
 -(void)connectMonitors {
  
     [self setIsInDiscoveryMode:NO];
-    NSLog(@"connecting devices");
+    id currentHeartDevice = [heartDevices objectAtIndex:selectedIndexForHeartMonitor];
+    NSLog(@"Connecting %@",[currentHeartDevice name]);
     [manager connectPeripheral:[[heartDevices objectAtIndex:selectedIndexForHeartMonitor] device] options:nil];
     //[manager connectPeripheral:[[activityDevices objectAtIndex:selectedIndexForActivityMonitor] device] options:nil];
 }
@@ -100,8 +105,32 @@
 
 -(void) stopScan {
     
+    BOOL readyToStopScan = YES;
+    if ([heartDevices count] > 0) {
+        if (![[heartDevices objectAtIndex: selectedIndexForHeartMonitor] discoveryComplete]) {
+            readyToStopScan = NO;
+        }
+    }
+    if ([activityDevices count] > 0) {
+        if (![[activityDevices objectAtIndex:selectedIndexForActivityMonitor] discoveryComplete]) {
+            readyToStopScan = NO;
+        }
+    }
+    if (!readyToStopScan) {
+        NSLog(@"Waiting for devices to be discovered before disconnection");
+        waitForDevices = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self
+            selector:@selector(stopScan) userInfo:nil repeats:YES];
+        runLoop = [NSRunLoop currentRunLoop];
+        [runLoop addTimer:waitForDevices forMode:NSDefaultRunLoopMode];
+        return;
+    } else {
+        NSLog(@"devices discovered");
+        [waitForDevices invalidate];
+        [runLoop cancelPerformSelectorsWithTarget:self];
+    }
     NSLog(@"Stopping scan");
     [manager stopScan];
+    [self disconnectAllDevices];
     [self setIsInDiscoveryMode:NO];
 }
 
@@ -125,8 +154,10 @@
 
 -(void) disconnectDevicesForType: (NSInteger) type {
 
-    for (id<DeviceCommonInfoInterface> currentDevice in heartDevices) {
-        if ([currentDevice type] == type) {
+    NSMutableArray *completeBuffer = [[NSMutableArray alloc] initWithArray:activityDevices];
+    [completeBuffer addObjectsFromArray:heartDevices];
+    for (id<DeviceCommonInfoInterface> currentDevice in completeBuffer) {
+        if (![currentDevice isConnected] || ([currentDevice type] & type) == type) {
             [manager cancelPeripheralConnection:[currentDevice device]];
         }
     }
@@ -220,23 +251,46 @@
             }
         }
     } else {
+        
+        // going through all devices that were discovered
+        
         NSNotification *connectNotification = nil;
         NSLog(@"Determining which device is connected");
         for (id<DeviceCommonInfoInterface> currentDevice in completeBuffer) {
             if ([[currentDevice name] isEqual:[peripheral name]]) {
+                
+                // if activity device discovered notify everyone and update index
+                
                 if (([currentDevice type] & ACTIVITY_MONITOR) == ACTIVITY_MONITOR) {
-                    connectNotification = [[NSNotification alloc] initWithName:@"ActivityMonConnected"
-                        object:currentDevice userInfo:nil];
+                    connectNotification = [[NSNotification alloc] initWithName:BTActivityConnected
+                        object:self userInfo:nil];
                     NSLog(@"Found activity monitor %@", [peripheral name]);
                     [self setActivityMonitorIsConnected:YES];
+                    NSString *connectedName =  [NSString stringWithFormat:@"%@",[[currentDevice device] name]];
+                    for (int index = 0; index < [heartDevices count]; index++) {
+                        CBPeripheral *device = [heartDevices objectAtIndex: index];
+                        NSString *listedDeviceName = [NSString stringWithFormat:@"%@", [device name]];
+                        if ([connectedName rangeOfString:listedDeviceName].location != NSNotFound) {
+                            selectedIndexForHeartMonitor = index;
+                        }
+                    }
                 }
                 if (([currentDevice type] & HEART_MONITOR) == HEART_MONITOR) {
                     NSLog(@"Found heart monitor %@", [peripheral name]);
-                    connectNotification = [[NSNotification alloc] initWithName:@"HeartMonConnected"
-                        object:currentDevice userInfo:nil];
+                    [self setActivityMonitorIsConnected:YES];
+                    NSString *connectedName =  [NSString stringWithFormat:@"%@",[[currentDevice device] name]];
+                    for (int index = 0; index < [activityDevices count]; index++) {
+                        CBPeripheral *device = [activityDevices objectAtIndex: index];
+                        NSString *listedDeviceName = [NSString stringWithFormat:@"%@", [device name]];
+                        if ([connectedName rangeOfString:listedDeviceName].location != NSNotFound) {
+                            selectedIndexForActivityMonitor = index;
+                        }
+                    }
+                    connectNotification = [[NSNotification alloc] initWithName:BTHeartConnected
+                        object:self userInfo:nil];
                     [self setHeartMonitorIsConnected:YES];
                 }
-                [currentDevice shouldMonitor:YES];
+                //[currentDevice shouldMonitor:YES];
                 [currentDevice getTableInformation];
             }
         }

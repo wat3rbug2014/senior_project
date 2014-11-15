@@ -99,6 +99,7 @@
     [serverPoller flushDatabase];
     [devicePollTimer invalidate];
     [serverPollTimer invalidate];
+    [devicePoller stopMonitoring];
 }
 
 -(void)performScan {

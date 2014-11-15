@@ -17,6 +17,7 @@
 
 
 @property DevicePollManager *devicePoller;
+@property (retain) IBOutlet UILabel *heartRateDisplay;
 
 
 /**

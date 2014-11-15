@@ -111,6 +111,18 @@ NSString * const POLARH7_HRM_UUID = @"2A37";
     }
 }
 
+-(BOOL) discoveryComplete {
+    
+    BOOL result = YES;
+    if (heartRateChar == nil || heartRateService == nil) {
+        result = NO;
+    }
+    if (batteryLvlChar == nil || batteryService == nil) {
+        result = NO;
+    }
+    return result;
+}
+
 #pragma mark HeartMonitorProtocol methods
 
 

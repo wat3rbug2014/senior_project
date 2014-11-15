@@ -102,6 +102,18 @@
     }
 }
 
+-(BOOL) discoveryComplete {
+    
+    BOOL result = YES;
+    if (heartRateChar == nil || heartRateService == nil) {
+        result = NO;
+    }
+    if (batteryLvlChar == nil || batteryService == nil) {
+        result = NO;
+    }
+    return result;
+}
+
 #pragma mark ActivityMonitorProtocol methods
 
 

@@ -118,6 +118,15 @@
 
 -(void) shouldMonitor: (BOOL) monitor;
 
+
+/**
+ * This method is used to prevent premature interruption of discovery scan.
+ *
+ * @return YES if all of the services for this device have been discovered.
+ */
+
+-(BOOL) discoveryComplete;
+
 @optional
 
 
