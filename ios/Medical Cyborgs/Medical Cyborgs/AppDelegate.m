@@ -53,7 +53,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     
 
-    [[processScheduler deviceManager]  disconnectAllDevices];
+    [[processScheduler deviceManager]  disconnectSelectedMonitors];
     [[processScheduler serverPoller] flushDatabase];
 }
 

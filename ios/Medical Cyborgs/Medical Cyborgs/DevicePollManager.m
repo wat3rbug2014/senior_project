@@ -53,7 +53,7 @@
 
 -(void) stopMonitoring {
     
-    [deviceManager disconnectDevicesForType:HEART_MONITOR];
+    //[deviceManager disconnectSelectedMonitors];
 }
 -(void) pollDevicesForData {
     
@@ -65,7 +65,7 @@
     [database setPatientID:patientID];
     if (![heartMonitor isConnected]) {
         NSLog(@"Device poller attempt to connect to devices");
-        [deviceManager connectMonitors];
+        [deviceManager connectSelectedMonitors];
         return;
     }
     NSLog(@"Device poller already has connected devices");
@@ -96,19 +96,25 @@
   
     // determine heart or activity and flag appropriate one is connected
     
-    heartMonitor = [[deviceManager heartDevices] objectAtIndex:
-                    [deviceManager selectedIndexForHeartMonitor]];
-    activityMonitor = [[deviceManager activityDevices] objectAtIndex:
-                       [deviceManager selectedIndexForActivityMonitor]];
-    if ([heartMonitor isConnected]) {
-        [self setIsHeartMonitorReady:YES];
-        NSLog(@"heart monitor connected\nContinue polling");
-        [heartMonitor shouldMonitor:YES];
+    if ([deviceManager selectedIndexForHeartMonitor] == NONE_SELECTED) {
+        return;
+    } else {
+        heartMonitor = [deviceManager selectedHeartMonitor];
+        if ([heartMonitor isConnected]) {
+            [self setIsHeartMonitorReady:YES];
+            NSLog(@"heart monitor connected\nContinue polling");
+            [heartMonitor shouldMonitor:YES];
+        }
     }
-    if ([activityMonitor isConnected]) {
-        [self setIsActivityMonitorReady:YES];
-        NSLog(@"activity monitor connected\nContinue polling");
-        [activityMonitor shouldMonitor:YES];
+    if ([deviceManager selectedIndexForActivityMonitor] == NONE_SELECTED) {
+        return;
+    } else {
+        activityMonitor = [deviceManager selectedActivityMonitor];
+        if ([activityMonitor isConnected]) {
+            [self setIsActivityMonitorReady:YES];
+            NSLog(@"activity monitor connected\nContinue polling");
+            [activityMonitor shouldMonitor:YES];
+        }
     }
 }
 
@@ -131,4 +137,5 @@
     }
     return result;
 }
+
 @end

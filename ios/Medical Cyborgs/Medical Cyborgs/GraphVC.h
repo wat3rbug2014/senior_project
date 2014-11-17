@@ -18,6 +18,9 @@
 
 @property DevicePollManager *devicePoller;
 @property (retain) IBOutlet UILabel *heartRateDisplay;
+@property (retain) IBOutlet UILabel *activityDisplay;
+@property NSTimer *displayTimer;
+@property NSRunLoop *runLoop;
 
 
 /**
@@ -34,5 +37,7 @@
  */
 
 -(id) initWithDevicePoller: (DevicePollManager*) devicePoller;
+
+-(void) updateDisplay;
 
 @end

@@ -10,11 +10,9 @@
  * conform to the activity monitoring services.
  */
 
-#import "BTDeviceManager.h"
-#import "TableVCWithSoundsT.h"
+#import "TableVCWithSounds.h"
 
 
-@interface ActivityMonitorSelectVC : TableVCWithSoundsT
-
+@interface ActivityMonitorSelectVC : TableVCWithSounds
 
 @end

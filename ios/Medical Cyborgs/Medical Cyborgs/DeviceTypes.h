@@ -15,16 +15,12 @@
  * and the possbilility of bugs based on selection criteria for the view controllers.
  */
 
-#define HEART_MONITOR 1
-#define ACTIVITY_MONITOR 2
-#define HEART_AND_ACTIVITY_MONITOR 3
-#define NONE_SELECTED -1
 
-// fix this code smell
-
-#define BATTERY @"Battery"
-#define BATTERY_LVL @"Battery Level"
-#define DEVICE_READ_VALUE @"BTDeviceValueUpdated"
+typedef enum {
+    HEART_MONITOR = 1,
+    ACTIVITY_MONITOR = 2,
+    HEART_AND_ACTIVITY_MONITOR = 3
+} DeviceType;
 
 typedef enum {
     SLEEPING = 1,

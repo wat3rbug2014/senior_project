@@ -12,14 +12,9 @@
  */
 
 #import <UIKit/UIKit.h>
-#import "BTDeviceManager.h"
 #import <AVFoundation/AVFoundation.h>
-#import "TableVCWithSoundsT.h"
+#import "TableVCWithSounds.h"
 
-@interface HeartMonitorSelectVC : TableVCWithSoundsT
-
-@property BTDeviceManager *deviceManager;
-
-
+@interface HeartMonitorSelectVC : TableVCWithSounds
 
 @end

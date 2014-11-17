@@ -32,7 +32,7 @@
     if (self = [super init]) {
         device = peripheral;
         [device setDelegate:self];
-        type = HEART_AND_ACTIVITY_MONITOR;
+        type = HEART_MONITOR;
     }
     return self;
 }
@@ -96,8 +96,10 @@
 -(void) shouldMonitor:(BOOL)monitor {
     
     if (monitor) {
-        [device setNotifyValue:YES forCharacteristic:heartRateChar];
+        NSLog(@"turning heart rate on");
+        [device readValueForCharacteristic:heartRateChar];
     } else {
+        NSLog(@"turning heart rate off");
         [device setNotifyValue:NO forCharacteristic:heartRateChar];
     }
 }
@@ -114,28 +116,30 @@
     return result;
 }
 
-#pragma mark ActivityMonitorProtocol methods
-
-
--(float) getLatitude {
-    
-    float result;
-    
-    return result;
-}
-
--(float) getLongitude {
-    
-    float result;
-    
-    return result;
-}
 
 #pragma mark HeartMonitorProtocol methods
 
 
 -(NSInteger) getHeartRate {
     
+    if ([self isConnected]) {
+        NSLog(@"%@ getting heart rate", [device name]);
+        
+        // perform discovery for the battery
+        
+        if (heartRateChar == nil || heartRateService == nil) {
+            NSLog(@"%@ discovering heart rate stuff", [device name]);
+            [device discoverServices:nil];
+        } else {
+            
+            // battery services already discovered, just need to be read
+            
+            NSLog(@"%@ battery heart rate discovered", [device name]);
+            [device readValueForCharacteristic:heartRateChar];
+        }
+    } else {
+        NSLog(@"%@ not connected", [device name]);
+    }
     return currentHeartRate;
 }
 

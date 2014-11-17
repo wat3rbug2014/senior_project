@@ -11,7 +11,7 @@
 #import "ActivityMonitorProtocol.h"
 #import "DeviceCommonInfoInterface.h"
 
-@interface MioGlobalLink : NSObject <DeviceCommonInfoInterface, HeartMonitorProtocol, ActivityMonitorProtocol>
+@interface MioGlobalLink : NSObject <DeviceCommonInfoInterface, HeartMonitorProtocol>
 
 @property NSInteger type;
 @property (retain) CBService *batteryService;

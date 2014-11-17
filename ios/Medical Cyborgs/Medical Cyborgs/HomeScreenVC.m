@@ -83,8 +83,16 @@
     
     // set button colors
     
-    [self setColorForButton:heartRateButton isReady:[btDevices heartMonitorIsConnected]];
-    [self setColorForButton:activityButton isReady:[btDevices activityMonitorIsConnected]];
+    if ([btDevices selectedIndexForHeartMonitor] == NONE_SELECTED) {
+        [self setColorForButton:heartRateButton isReady:NO];
+    } else {
+        [self setColorForButton:heartRateButton isReady:YES];
+    }
+    if ([btDevices selectedIndexForActivityMonitor] == NONE_SELECTED) {
+        [self setColorForButton:activityButton isReady:NO];
+    } else {
+        [self setColorForButton:activityButton isReady:YES];
+    }
     [self setColorForButton:toggleRunButton isReady:[self isMonitoring]];
     [self checkForUpdatedPatientID];
     [super viewWillAppear:animated];
