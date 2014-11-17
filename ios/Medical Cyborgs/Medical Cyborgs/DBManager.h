@@ -13,6 +13,7 @@
 #import <Foundation/Foundation.h>
 #import <sqlite3.h>
 #import "LocalDBResult.h"
+#import "PersonalInfo.h"
 
 @interface DBManager : NSObject
 
@@ -27,7 +28,11 @@
 @property NSInteger hrmeasurement;
 @property float latitude;
 @property float longitude;
+@property int activityLevel;
+@property NSInteger age;
 @property NSDate *timestamp;
+
+
 
 
 /**
@@ -151,4 +156,6 @@
 
 -(void) closeLocalDBConnection;
 
+
+-(void) purgeDatabase;
 @end

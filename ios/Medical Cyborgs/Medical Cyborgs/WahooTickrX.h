@@ -17,14 +17,18 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreBluetooth/CoreBluetooth.h>
-#import "DeviceConnection.h"
+#import "DeviceCommonInfoInterface.h"
+#import "HeartMonitorProtocol.h"
 
-@interface WahooTickrX : NSObject <DeviceConnection>
+@interface WahooTickrX : NSObject <DeviceCommonInfoInterface, HeartMonitorProtocol>
 
 @property NSInteger type;
 @property (readonly) NSInteger batteryLevel;
 @property (retain) CBPeripheral *device;
 @property (retain) CBService *batteryService;
 @property (retain) CBCharacteristic *batteryLvlChar;
+@property NSInteger currentHeartRate;
+@property (retain) CBService *heartRateService;
+@property (retain)CBCharacteristic *heartRateChar;
 
 @end

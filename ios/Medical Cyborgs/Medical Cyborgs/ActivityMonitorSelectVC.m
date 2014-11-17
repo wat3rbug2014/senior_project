@@ -14,8 +14,7 @@
 
 @implementation ActivityMonitorSelectVC
 
-@synthesize deviceManager;
-@synthesize soundPlayer;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     
@@ -33,10 +32,9 @@
     }
     // this may be a bad hack because I haven't defined self yet
     
-    if (self = [self initWithStyle:UITableViewStylePlain]) {
-        self.deviceManager = newDeviceManager;
+    if (self = [super initWithDeviceManager:newDeviceManager]) {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTable:)
-            name:@"BTDeviceDiscovery" object:self.deviceManager];
+            name:DEVICE_DISCOVERED object:super.deviceManager];
     }
     return self;
 }
@@ -51,14 +49,12 @@
 -(void) viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
-    [self.deviceManager setSearchType:ACTIVITY_MONITOR];
-    [self.deviceManager discoverDevicesForType:ACTIVITY_MONITOR];
+    [super.deviceManager startScanForType:ACTIVITY_MONITOR];
 }
 
 -(void) viewWillDisappear:(BOOL)animated {
     
-    [self.deviceManager stopScan];
-    [self.deviceManager disconnectDevicesForType:ACTIVITY_MONITOR];
+    [super.deviceManager stopScan];
     [super viewWillDisappear:animated];
 }
 
@@ -78,18 +74,18 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return [[deviceManager activityDevices] count];
+    return [super numberOfSectionsInTableView:tableView];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSString *identifier = @"Default";
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
-    id<DeviceConnection> currentDevice = [[deviceManager activityDevices] objectAtIndex:indexPath.row];
+    id<DeviceCommonInfoInterface> currentDevice = [super.deviceManager deviceAtIndex:indexPath.row forType:ACTIVITY_MONITOR];
     [[cell textLabel] setText:[currentDevice name]];
     UIImageView *batteryCharge = [[UIImageView alloc] initWithFrame:CGRectMake(230, 6, 32, 32)];
     [batteryCharge setImage:[UIImage imageNamed:@"battery_empty_32.png"]];
-    if ([currentDevice conformsToProtocol:@protocol(DeviceConnection)]) {
+    if ([currentDevice conformsToProtocol:@protocol(DeviceCommonInfoInterface)]) {
         
         // select the battery icon based on charge
         
@@ -123,7 +119,7 @@
     }
     // add checkmark for the currently selected device
     
-    if ([deviceManager selectedIndexForActivityMonitor] == indexPath.row) {
+    if ([super.deviceManager selectedIndexForActivityMonitor] == indexPath.row) {
         [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
     }
     return cell;
@@ -133,9 +129,8 @@
     
     // deselect the device
     
-    if ([deviceManager selectedIndexForActivityMonitor] == indexPath.row) {
-        [deviceManager setActivityMonitorIsConnected:NO];
-        [deviceManager setSelectedIndexForActivityMonitor:NONE_SELECTED];
+    if ([super.deviceManager selectedIndexForActivityMonitor] == indexPath.row) {
+        [super.deviceManager deselectDeviceType:ACTIVITY_MONITOR];
         [[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryNone];
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
         
@@ -143,20 +138,11 @@
         
         // select the device
         
-        [deviceManager setActivityMonitorIsConnected:YES];
-        [deviceManager setSelectedIndexForActivityMonitor:indexPath.row];
+        [super.deviceManager setSelectedIndexForActivityMonitor:indexPath.row];
         [[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryCheckmark];
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
     [self playClickSound];
-}
-
-#pragma mark Custom methods
-
-
--(void) updateTable:(NSNotification*) notification {
-    
-    [self.tableView reloadData];
 }
 
 @end

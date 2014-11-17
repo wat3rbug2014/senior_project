@@ -21,8 +21,7 @@
 @synthesize currentHeartRate;
 
 
-NSString * const POLARH7_SERV_UUID = @"180D";
-NSString * const POLARH7_HRM_UUID = @"2A37";
+
 
 #pragma mark DeviceConnection protocol methods
 
@@ -109,6 +108,18 @@ NSString * const POLARH7_HRM_UUID = @"2A37";
     } else {
         [device setNotifyValue:NO forCharacteristic:heartRateChar];
     }
+}
+
+-(BOOL) discoveryComplete {
+    
+    BOOL result = YES;
+    if (heartRateChar == nil || heartRateService == nil) {
+        result = NO;
+    }
+    if (batteryLvlChar == nil || batteryService == nil) {
+        result = NO;
+    }
+    return result;
 }
 
 #pragma mark HeartMonitorProtocol methods

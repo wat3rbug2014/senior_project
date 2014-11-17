@@ -7,7 +7,7 @@
 //
 
 #import "WahooTickrX.h"
-#import "DeviceConnection.h"
+#import "DeviceCommonInfoInterface.h"
 
 @implementation WahooTickrX
 
@@ -15,6 +15,9 @@
 @synthesize device;
 @synthesize batteryLvlChar;
 @synthesize batteryService;
+@synthesize currentHeartRate;
+@synthesize heartRateService;
+@synthesize heartRateChar;
 
 -(id) initWithPeripheral: (CBPeripheral*) peripheral {
     
@@ -85,8 +88,26 @@
     }
 }
 
+-(NSInteger)getHeartRate {
+    
+    return currentHeartRate;
+}
+
 -(void) shouldMonitor: (BOOL) monitor {
     
     
 }
+
+-(BOOL) discoveryComplete {
+    
+    BOOL result = YES;
+    if (heartRateChar == nil || heartRateService == nil) {
+        result = NO;
+    }
+    if (batteryLvlChar == nil || batteryService == nil) {
+        result = NO;
+    }
+    return result;
+}
+
 @end

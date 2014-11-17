@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BTDeviceManager.h"
+#import "BackgroundScheduler.h"
+#import "HomeScreenVC.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) BTDeviceManager *deviceManager;
+@property (strong, nonatomic) BackgroundScheduler *processScheduler;
+@property (strong) HomeScreenVC *homeScreen;
 
 @end
 

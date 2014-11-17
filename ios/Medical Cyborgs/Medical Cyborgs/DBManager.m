@@ -24,21 +24,18 @@
 @synthesize timestamp;
 @synthesize sqlStatement;
 @synthesize rowCount;
+@synthesize activityLevel;
+@synthesize age;
 
 -(instancetype)init {
     
     NSString *dbFilename = @"project.sql";
     if (self= [super init]) {
-        // Set the documents directory path to the documentsDirectory property.
+
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-        self.documentsDirectory = [paths objectAtIndex:0];
-        
-        // Keep the database filename.
-        self.databaseFilename = dbFilename;
-        
-        // Copy the database file into the documents directory if necessary.
+        documentsDirectory = [paths objectAtIndex:0];
+        databaseFilename = dbFilename;
         [self copyDatabaseIntoDocumentsDirectory];
-        self.patientID = NO_ID_SET;
         databasePath = [self.documentsDirectory stringByAppendingPathComponent:self.databaseFilename];
     }
     return self;
@@ -48,6 +45,7 @@
     
     if (self = [self init]) {
         self.patientID = currentPatient;
+        [self purgeDatabase]; // added to clean database before use.
     }
     return self;
 }
@@ -72,7 +70,9 @@
 
 -(void)insertDataIntoDB {
     
-    NSString *insertStatement = [NSString stringWithFormat:@"INSERT INTO MEASUREMENTS (patientID, longitude, latitude, heart_rate, time_measurement) VALUES (%d, %f, %f, %d, '%@')", (int)patientID, longitude, latitude, (int)hrmeasurement, [DBManager timeStampAsString:timestamp]];
+    assert(age != 0);
+    assert(patientID != NO_ID_SET);
+    NSString *insertStatement = [NSString stringWithFormat:@"INSERT INTO MEASUREMENTS (patientID, longitude, latitude, heart_rate, time_measurement, activity_level) VALUES (%d, %f, %f, %d, '%@', %d)", (int)patientID, longitude, latitude, (int)hrmeasurement, [DBManager timeStampAsString:timestamp], activityLevel];
     NSLog(@"SQL: %@", insertStatement);
     if ([self openLocalDBWithSQLQueryIsSuccessful:insertStatement]) {
         NSLog(@"Insert prep successful");
@@ -90,13 +90,14 @@
     
     LocalDBResult *result = nil;
     result = [[LocalDBResult alloc] init];
-    NSString *retrieveStatement = @"SELECT heart_rate, latitude, longitude, time_measurement FROM MEASUREMENTS";
+    NSString *retrieveStatement = @"SELECT heart_rate, latitude, longitude, time_measurement, activity_level FROM MEASUREMENTS";
     if ([self openLocalDBWithSQLQueryIsSuccessful:retrieveStatement]) {
         int row_result = sqlite3_step(sqlStatement);
         if (row_result == SQLITE_ROW) {
             result.heartRate = sqlite3_column_int(sqlStatement, 0);
             result.latitude = (float)sqlite3_column_double(sqlStatement, 1);
             result.longitude = (float)sqlite3_column_double(sqlStatement, 2);
+            result.activityLevel = sqlite3_column_int(sqlStatement, 4);
             char* dateChar = (char*)sqlite3_column_text(sqlStatement, 3);
             NSString *temp = [[NSString alloc] initWithCString:dateChar encoding:NSUTF8StringEncoding];
             [result setTimeStamp:temp];
@@ -117,7 +118,7 @@
     NSString *deleteStatement = [NSString stringWithFormat:
         @"DELETE FROM MEASUREMENTS WHERE patientID = '%d' AND time_measurement = '%@'",
         (int)patientID, oldTimeStamp];
-    //NSString *deleteStatement = @"DELETE FROM MEASUREMENTS WHERE patientID = 19";
+    //NSString *deleteStatement = @"DELETE FROM MEASUREMENTS WHERE patientID = 0";
     NSLog(@"SQL: %@", deleteStatement);
     if ([self openLocalDBWithSQLQueryIsSuccessful:deleteStatement]) {
         if (sqlite3_step(sqlStatement) == SQLITE_DONE) {
@@ -201,5 +202,19 @@
     
     sqlite3_finalize(sqlStatement);
     sqlite3_close(database);
+}
+
+-(void) purgeDatabase; {
+    
+    if([self openLocalDBWithSQLQueryIsSuccessful:@"DELETE FROM MEASUREMENTS"]) {
+        if (sqlite3_step(sqlStatement) == SQLITE_DONE) {
+            NSLog(@"delete execute successful");
+        } else {
+            NSLog(@"delete execute failed\n%s",sqlite3_errmsg(database));
+        }
+        [self closeLocalDBConnection];
+    } else {
+        NSLog(@"delete prep failed");
+    }
 }
 @end

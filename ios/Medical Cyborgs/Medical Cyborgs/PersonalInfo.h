@@ -26,6 +26,7 @@
 #define DOB @"DOB"
 #define PATIENT_ID @"patientID"
 #define NO_ID_SET -1
+#define AGE @"Age"
 
 
 @interface PersonalInfo : NSObject
@@ -36,6 +37,7 @@
 @property NSInteger patientID;
 @property NSUserDefaults *defaults;
 @property NSDictionary *personalData;
+@property (readonly) NSInteger age;
 
 
 /**
@@ -59,4 +61,16 @@
  */
 
 -(void) dealloc;
+
+
+/**
+ * This method calculates the ages using DateComponents.
+ *
+ * @param currentDOB Todays date.  It is left to allow changes based on what is passed and not just restricted to todays date.
+ *
+ * @return An integer value express based on years.
+ */
+
+-(NSInteger) calculateAgeUsingDate: (NSDate*) currentDOB;
+
 @end

@@ -20,15 +20,19 @@
 @synthesize failedAttempts;
 @synthesize remoteUnreachable;
 
+
 -(id) initWithDatabase: (DBManager*) datastore {
     
+    if (datastore == nil) {
+        return nil;
+    }
     if (self = [super init]) {
         if (datastore == nil) {
             database = [[DBManager alloc] init];
         } else {
             database = datastore;
         }
-        patientID = NO_ID_SET;
+        patientID = [database patientID];
         failedAttempts = 0;
         remoteUnreachable = NO;
     }
@@ -54,6 +58,11 @@
     }
 }
 
+-(void)flushDatabase {
+    
+    [self pushDataToRemoteServer];
+}
+
 -(void)sendRowToServer {
     
     if (database == nil) {
@@ -71,20 +80,19 @@
 
 
     NSString *timeStr = [NSString stringWithFormat:@"time_measurement=%@",[currentRow timeStamp]];
-    NSString *rawUserUrl = [NSString stringWithFormat:@"&%@&%@&%@&%@&%@", patientStr, heartRateStr, latStr,
-        longStr, timeStr];
+    NSString *activeStr = [NSString stringWithFormat:@"activity_level=%d",(int)[currentRow activityLevel]];
+    NSString *rawUserUrl = [NSString stringWithFormat:@"&%@&%@&%@&%@&%@&%@", patientStr, heartRateStr, latStr,
+        longStr, activeStr, timeStr];
     NSString *userUrl = [self URLEncodedString:rawUserUrl];
     NSURL *databaseUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", INSERT_DB_BASE_URL, userUrl]];
     NSLog(@"url: %@",databaseUrl);
     
     // go to server and add row of data
     
-    NSTimeInterval requestTime = 15.0;
-    NSURLRequest *dbRequest = [NSURLRequest requestWithURL:databaseUrl cachePolicy:
-        NSURLRequestReloadIgnoringCacheData timeoutInterval:requestTime];
-    NSURLConnection *connector = [[NSURLConnection alloc] initWithRequest: dbRequest delegate:
-        self startImmediately: YES];
-    [connector start];
+    NSURLRequest *request = [NSURLRequest requestWithURL:databaseUrl
+        cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:15.0];
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:NO];
+    [connection start];
 }
 
 -(void) removeCurrentRowInLocalDB {
@@ -168,6 +176,9 @@
         failedAttempts = 0;
         [self removeCurrentRowInLocalDB];
     }
+    
 }
+
+
 
 @end

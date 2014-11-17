@@ -14,7 +14,6 @@
 
 @implementation HeartMonitorSelectVC
 
-@synthesize deviceManager;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,13 +31,13 @@
     }
     // this may be a bad hack because I haven't defined self yet
     
-    if (self = [self initWithStyle:UITableViewStylePlain]) {
-        self.deviceManager = newDeviceManager;
+    if (self = [super initWithDeviceManager:newDeviceManager]) {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTable:)
-            name:@"BTDeviceDiscovery" object:self.deviceManager];
+                                                     name:DEVICE_DISCOVERED object:super.deviceManager];
     }
     return self;
 }
+
 
 - (void)viewDidLoad {
     
@@ -49,14 +48,12 @@
 -(void) viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
-    [self.deviceManager setSearchType:HEART_MONITOR];
-    [self.deviceManager discoverDevicesForType:HEART_MONITOR];
+    [super.deviceManager startScanForType:HEART_MONITOR];
 }
 
 -(void) viewWillDisappear:(BOOL)animated {
     
     [self.deviceManager stopScan];
-    [self.deviceManager disconnectDevicesForType:HEART_MONITOR];
     [super viewWillDisappear:animated];
 }
 
@@ -76,18 +73,18 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return [[deviceManager heartDevices] count];
+    return [[super.deviceManager heartDevices] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSString *identifier = @"Default";
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
-    id<DeviceConnection> currentDevice = [[deviceManager heartDevices] objectAtIndex:indexPath.row];
+    id<DeviceCommonInfoInterface> currentDevice = [super.deviceManager deviceAtIndex:indexPath.row forType:HEART_MONITOR];
     [[cell textLabel] setText:[currentDevice name]];
     UIImageView *batteryCharge = [[UIImageView alloc] initWithFrame:CGRectMake(230, 6, 32, 32)];
     [batteryCharge setImage:[UIImage imageNamed:@"battery_empty_32.png"]];
-    if ([currentDevice conformsToProtocol:@protocol(DeviceConnection)]) {
+    if ([currentDevice conformsToProtocol:@protocol(DeviceCommonInfoInterface)]) {
         
         // select the battery icon based on charge
         
@@ -121,7 +118,7 @@
     }
     // add checkmark for the currently selected device
     
-    if ([deviceManager selectedIndexForHeartMonitor] == indexPath.row) {
+    if ([super.deviceManager selectedIndexForHeartMonitor] == indexPath.row) {
         [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
     }
     return cell;
@@ -131,30 +128,19 @@
     
     // deselect the device
     
-    if ([deviceManager selectedIndexForHeartMonitor] == indexPath.row) {
-        [deviceManager setHeartMonitorIsConnected:NO];
-        [deviceManager setSelectedIndexForHeartMonitor:NONE_SELECTED];
+    if ([super.deviceManager selectedIndexForHeartMonitor] == indexPath.row) {
+        [super.deviceManager deselectDeviceType:HEART_MONITOR];
         [[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryNone];
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
-        
     } else {
         
         // select the device
         
-        [deviceManager setHeartMonitorIsConnected:YES];
-        [deviceManager setSelectedIndexForHeartMonitor:indexPath.row];
+        [super.deviceManager selectDeviceType:HEART_MONITOR atIndex:indexPath.row];
         [[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryCheckmark];
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
     [self playClickSound];
-}
-
-#pragma mark Custom methods
-
-
--(void) updateTable:(NSNotification*) notification {
-    
-    [self.tableView reloadData];
 }
 
 @end

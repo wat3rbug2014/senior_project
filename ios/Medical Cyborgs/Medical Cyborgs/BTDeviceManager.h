@@ -8,39 +8,56 @@
 
 /**
  * This manager handles the overall connection and discovery of the bluetooth
- * devices.  WARNING:  Making multiple instances of this manager will result
- * in errors.  The CBCentral is not a singleton object.  The overall meaning is that
- * you will have troubles discovering and utilizing devices is there are more than 
- * instance of this object.  I will at a later date transform this into a singleton
- * so that the undefined behavior can be minimized.
+ * devices.  It performs scanning, connectivity and management of the devices for
+ * the selection view controllers.
  */
 
 #import <Foundation/Foundation.h>
 #import <CoreBluetooth/CoreBluetooth.h>
-#import "FitBitFlex.h"
-#import "PolarH7.h"
-#import "WahooTickrX.h"
 #import "DeviceTypes.h"
-#import "DeviceConnection.h"
+#import "DeviceCommonInfoInterface.h"
 #import "HeartMonitorProtocol.h"
-
-#define DEVICE_NUM 3
+#import "ActivityMonitorProtocol.h"
+#import "DeviceConstantsAndStaticFunctions.h"
 
 
 @interface BTDeviceManager : NSObject <CBCentralManagerDelegate>
 
 
+@property id<HeartMonitorProtocol, DeviceCommonInfoInterface> selectedHeartMonitor;
+@property id<ActivityMonitorProtocol, DeviceCommonInfoInterface> selectedActivityMonitor;
 @property NSArray *heartDevices;
 @property NSArray *activityDevices;
 @property NSInteger selectedIndexForHeartMonitor;
 @property NSInteger selectedIndexForActivityMonitor;
-@property BOOL heartMonitorIsConnected;
-@property BOOL activityMonitorIsConnected;
-@property BOOL isActive;
 @property BOOL isInDiscoveryMode;
-@property NSInteger searchType;
 @property (retain) CBCentralManager *manager;
+@property NSInteger searchType;
+@property BOOL isActive;
+@property NSTimer *waitForDevices;
+@property NSRunLoop *runLoop;
 
+
+
+/**
+ * This method starts the scanning process for a particular type of device. See
+ * DeviceTypes.h for values relating to the kind of device to scan.
+ *
+ * @param type The integer value representing the kind of services to scan and discover.
+ */
+
+-(void) startScanForType: (NSInteger) type;
+
+
+/**
+ * This is the preferred method of initialization.  This object is treated as a singleton 
+ * because nil objects and other conflicts will result from using more than one instance of
+ * a CBCentral object, which is included in this object.
+ *
+ * @return The shared instance of a BTDeviceManager.
+ */
+
++(id) sharedManager;
 
 /**
  * This function gives the current count of the number of devices found in the 
@@ -58,30 +75,6 @@
 
 
 /**
- * This returns the device object based on the index and the device type that discovery is done to obtain.
- * The monitor type is an integer based on the constants found in DeviceTypes.h.
- *
- * @param index is the index from the table which is in sync with the array of devices that have been discovered.
- *
- * @param type it the integer value that determines which array to retrieve the device class.
- *
- * @return Returns the device object that correlates to the DeviceConnection protocol.
- */
-
--(id) deviceAtIndex: (NSInteger) index forMonitorType: (NSInteger) type;
-
-
-/**
- * This function returns the count of the number of devices found during the discovery process of either the
- * heart monitor or activity monitor discovery.  Accepted types are to be found in DeviceTypes.h
- *
- * @param type An integer result of the count of devices that have been found.
- */
-
--(void) discoverDevicesForType: (NSInteger) type;
-
-
-/**
  * This function allows remote shutdown of discovery process to conserve the battery.  Its purpose is to allow
  * the dismissal of selection viewcontrollers to shut the discovery because the devicemanager class is shared
  * throughout the application.
@@ -91,22 +84,11 @@
 
 
 /**
- * This method is to tidy up after a device selection screen.  In order to get device details
- * all the devices that werte scanned have to be connected.  Since only one is connected during
- * the monitoring process the others need to disconnect.  Only those device types are disconnected.
- *
- * @param type The device type as designated by the DeviceTypes.h file.
- */
-
--(void) disconnectDevicesForType: (NSInteger) type;
-
-
-/**
  * This method is for disconnecting the devices that are used for monitoring.  Both this method and the 
  * connect Monitors are meant to keep the battery lasting longer by not keeping connectivity when not in use.
  */
  
--(void) disconnectAllDevices;
+-(void) disconnectSelectedMonitors;
 
 
 /**
@@ -114,6 +96,56 @@
  * It is used for the device poller to initiate the polling
  */
 
--(void) connectMonitors;
+-(void) connectSelectedMonitors;
+
+
+/** 
+ * This method is used to go through disconnecting every device after discovery.  It is used when the viewcontrollers
+ * are being dismissed and the scanning is stopped.  In order to discover all the characteristics needed for
+ * operation in other parts of the application, things like battery service, heart rate measurements etc must be
+ * discovered and that can only happen when the devices are connected.
+ */
+
+-(void) disconnectAllDevices;
+
+/**
+ * This method is to be used by the tableviews so that individual devices can be selected and the appropriate
+ * variables updated to reflect it.
+ *
+ * @param type The device type to select.  See DeviceTypes.h for details.
+ *
+ * @param index The index of the array of devices within a particular type.
+ */
+
+-(void) selectDeviceType: (NSInteger) type atIndex:(NSInteger) index;
+
+
+/**
+ * This method is to be used by the tableviews so that individual devices can be deselected and the appropriate
+ * variables updated to reflect it.
+ *
+ * @param type The device type to deselect.  See DeviceTypes.h for details.
+ */
+
+-(void) deselectDeviceType: (NSInteger) type;
+
+
+/**
+ * This method is used by the tableview to get the devices that they need to query for their
+ * views.
+ *
+ * @param index The index within the device types that are the same.
+ *
+ * @param type The device type that the search is restricted to performing.
+ *
+ * @return The device that is selected.  The DeviceCommonInfoInterface is the
+ *  restrictor and all devices must conform to this protocol, otherwise the result is
+ * nil.
+ */
+
+-(id<DeviceCommonInfoInterface>) deviceAtIndex: (NSInteger) index forType: (NSInteger) type;
+
+
+-(id<DeviceCommonInfoInterface>) monitorMatchingCBPeripheral: (CBPeripheral*) device;
 
 @end

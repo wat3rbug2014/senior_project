@@ -24,7 +24,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreBluetooth/CoreBluetooth.h>
-#import "DeviceConnection.h"
+#import "DeviceCommonInfoInterface.h"
 
 @interface MonitorCreationFactory : NSObject
 
@@ -44,6 +44,6 @@
  *          must be checked for nil cases.
  */
 
-+(id<DeviceConnection>) createFromPeripheral: (CBPeripheral*) peripheral;
++(id<DeviceCommonInfoInterface>) createFromPeripheral: (CBPeripheral*) peripheral;
 
 @end

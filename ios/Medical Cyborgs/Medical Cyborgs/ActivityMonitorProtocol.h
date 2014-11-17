@@ -10,7 +10,6 @@
 
 #import <Foundation/Foundation.h>
 
-
 /**
  * This protocol is designed to be used on all activity monitor devices.
  * The methods enclosed ensure uniform operation with the application, irrespective
@@ -21,22 +20,11 @@
 @protocol ActivityMonitorProtocol <NSObject>
 
 /**
- * This method gets the current longitude value from the monitor that utilizes this
- * protocol.
+ * This methods get an activity level.  The result is defined in the DeviceTypes.h file.
  *
- * @return A float of the current longitude from the activity monitor.
+ * @return An integer value that corresponds with the activity level constants in DeviceTypes.h
  */
 
--(float) getLongitude;
-
-
-/**
- * This method gets the current latitude value from the monitor that utilizes this
- * protocol.
- *
- * @return A float of the current latitude from the activity monitor.
- */
-
--(float) getLatitude;
+-(NSInteger) getActivityLevel;
 
 @end

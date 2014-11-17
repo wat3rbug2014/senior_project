@@ -20,11 +20,12 @@
  */
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "PersonalInfo.h"
 #import "DBManager.h"
 #import "LocalDBResult.h"
 
-@interface RemoteDBConnectionManager : NSObject <NSURLConnectionDataDelegate>
+@interface RemoteDBConnectionManager : NSObject <NSURLConnectionDelegate>
 
 @property DBManager *database;
 @property NSInteger patientID;
@@ -91,4 +92,6 @@
  */
 
 -(NSString*) URLEncodedString: (NSString*) utfString;
+
+-(void) flushDatabase;
 @end

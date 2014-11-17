@@ -17,14 +17,13 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreBluetooth/CoreBluetooth.h>
-#import "DeviceConnection.h"
+#import "DeviceCommonInfoInterface.h"
 #import "DeviceTypes.h"
 #import "HeartMonitorProtocol.h"
 
-extern NSString * const POLARH7_SERV_UUID;
-extern NSString * const POLARH7_HRM_UUID;
 
-@interface PolarH7 : NSObject <DeviceConnection, HeartMonitorProtocol>
+
+@interface PolarH7 : NSObject <DeviceCommonInfoInterface, HeartMonitorProtocol>
 
 @property NSInteger type;
 @property (retain) CBService *batteryService;
