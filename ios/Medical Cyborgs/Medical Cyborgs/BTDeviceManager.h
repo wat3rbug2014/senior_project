@@ -37,7 +37,7 @@
 @property BOOL isActive;
 @property NSTimer *waitForDevices;
 @property NSRunLoop *runLoop;
-@property id delegate;
+@property (nonatomic, weak) id delegate;
 
 
 /**
