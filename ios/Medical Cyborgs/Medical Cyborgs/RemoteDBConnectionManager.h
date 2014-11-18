@@ -93,5 +93,4 @@
 
 -(NSString*) URLEncodedString: (NSString*) utfString;
 
--(void) flushDatabase;
 @end

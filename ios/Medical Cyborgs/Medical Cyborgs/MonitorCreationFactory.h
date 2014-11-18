@@ -13,12 +13,12 @@
  * NOTE: In order to add more devices to this application the following must be done.
  *
  * 1.  A class for that device must be created.
- * 2.  The class must at a minimum follow and implement the methods in the DeviceConnection
+ * 2.  The class must at a minimum follow and implement the methods in the DeviceCommonInfoInterface
  *     protocol.
  * 3.  If the device does heart monitoring it must use the methods in the HeartMonitorProtocol.
  * 4.  If the device does activity monitoring it must use the methods in the
  *     ActivityMonitorProtocol.
- * 5.  The +(id<DeviceConnection>) createFromPeripheral: (CBPeripheral*) peripheral must
+ * 5.  The +(id<DeviceCommonInfoInterface>) createFromPeripheral: (CBPeripheral*) peripheral must
  * be updated
  */
 
@@ -39,9 +39,9 @@
  *
  * @param peripheral is the device bluetooth device peripheral object that is passed from the device
  *          manager.
- * @return The return is an object of the class that fits in the DeviceConnection protocol.  All devices
- *          must follow the protocol for proper utilization and to prevent runtime crashes.  The return value
- *          must be checked for nil cases.
+ * @return The return is an object of the class that fits in the DeviceCommonInfoInterface protocol.  
+ *          All devices must follow the protocol for proper utilization and to prevent runtime crashes.  
+ *          The return value must be checked for nil cases.
  */
 
 +(id<DeviceCommonInfoInterface>) createFromPeripheral: (CBPeripheral*) peripheral;

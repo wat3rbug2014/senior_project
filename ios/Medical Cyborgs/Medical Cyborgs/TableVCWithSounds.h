@@ -6,6 +6,11 @@
 //  Copyright (c) 2014 Douglas Gardiner. All rights reserved.
 //
 
+/**
+ * This base class is a viewcontroller with sound implementation.  It allows
+ * clicking sounds when a device is selected.
+ */
+
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import "BTDeviceManager.h"
@@ -65,6 +70,5 @@
  */
 
 -(void) updateTable:(NSNotification*) notification;
-
 
 @end

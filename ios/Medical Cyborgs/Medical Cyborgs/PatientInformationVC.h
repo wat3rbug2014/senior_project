@@ -5,6 +5,10 @@
 //  Created by Douglas Gardiner on 10/9/14.
 //  Copyright (c) 2014 Douglas Gardiner. All rights reserved.
 //
+/**
+ * This class is the view controller that is used to update the patient information
+ *  It updates the database and the PersonalInfo that is stored as standard defaults.
+ */
 
 #import <UIKit/UIKit.h>
 #import "PersonalInfo.h"
@@ -13,7 +17,6 @@
 #define DAY_COMP 1
 #define YEAR_COMP 2
 #define NONE_FOUND 0
-
 
 
 @interface PatientInformationVC : UIViewController <UITextFieldDelegate,NSURLConnectionDelegate, NSURLConnectionDataDelegate>
@@ -43,7 +46,5 @@
  */
 
 -(void) updateDOB;
-
-
 
 @end
