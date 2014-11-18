@@ -1,0 +1,271 @@
+\hypertarget{interface_b_t_device_manager}{\section{B\-T\-Device\-Manager Class Reference}
+\label{interface_b_t_device_manager}\index{B\-T\-Device\-Manager@{B\-T\-Device\-Manager}}
+}
+
+
+{\ttfamily \#import $<$B\-T\-Device\-Manager.\-h$>$}
+
+Inheritance diagram for B\-T\-Device\-Manager\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_b_t_device_manager}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{interface_b_t_device_manager_a8ccfdb80e7396a787703df2e2145783b}{start\-Scan\-For\-Type\-:}
+\item 
+(N\-S\-Integer) -\/ \hyperlink{interface_b_t_device_manager_af88f5d1516142ed353cdcac2268dadfb}{discovered\-Devices\-For\-Type\-:}
+\item 
+(void) -\/ \hyperlink{interface_b_t_device_manager_a77d4c5c16c2e82bed7e5f2f65bcd2dfb}{stop\-Scan}
+\item 
+(void) -\/ \hyperlink{interface_b_t_device_manager_ae310a606d4e735e7813319e366f67aa2}{disconnect\-Selected\-Monitors}
+\item 
+(void) -\/ \hyperlink{interface_b_t_device_manager_afda16d6654df9d6eddde47c5a3ae38ec}{connect\-Selected\-Monitors}
+\item 
+(void) -\/ \hyperlink{interface_b_t_device_manager_aee2928325606cb3f338a5ecb8ef35560}{disconnect\-All\-Devices}
+\item 
+(void) -\/ \hyperlink{interface_b_t_device_manager_af3f435a6fec885eca732034a12239504}{select\-Device\-Type\-:at\-Index\-:}
+\item 
+(void) -\/ \hyperlink{interface_b_t_device_manager_a916adc15288fd7428a30954a57f0af0a}{deselect\-Device\-Type\-:}
+\item 
+(id$<$ \hyperlink{protocol_device_common_info_interface-p}{Device\-Common\-Info\-Interface} $>$) -\/ \hyperlink{interface_b_t_device_manager_a84c51142e50c343ffa90c5bf9afee48b}{device\-At\-Index\-:for\-Type\-:}
+\item 
+\hypertarget{interface_b_t_device_manager_af11257d463445c307cd38c9e284c6826}{(id$<$ \hyperlink{protocol_device_common_info_interface-p}{Device\-Common\-Info\-Interface} $>$) -\/ {\bfseries monitor\-Matching\-C\-B\-Peripheral\-:}}\label{interface_b_t_device_manager_af11257d463445c307cd38c9e284c6826}
+
+\item 
+(id$<$ \hyperlink{protocol_heart_monitor_protocol-p}{Heart\-Monitor\-Protocol}, \\*
+\hyperlink{protocol_device_common_info_interface-p}{Device\-Common\-Info\-Interface} $>$) -\/ \hyperlink{interface_b_t_device_manager_a1c4ad74783cb71a008c926f2e5ec3835}{selected\-Heart\-Monitor}
+\item 
+(void) -\/ \hyperlink{interface_b_t_device_manager_a005786995ec17c9a94e85a882bfd4896}{set\-Selected\-Heart\-Monitor\-:}
+\item 
+(id$<$ \hyperlink{protocol_activity_monitor_protocol-p}{Activity\-Monitor\-Protocol}, \\*
+\hyperlink{protocol_device_common_info_interface-p}{Device\-Common\-Info\-Interface} $>$) -\/ \hyperlink{interface_b_t_device_manager_aaca0fdc9335bbc7465e91ad0f5c4dbb2}{selected\-Activity\-Monitor}
+\item 
+(void) -\/ \hyperlink{interface_b_t_device_manager_a6d8e2982b9a3ad004563736f89d98cb1}{set\-Selected\-Activity\-Monitor\-:}
+\end{DoxyCompactItemize}
+\subsection*{Class Methods}
+\begin{DoxyCompactItemize}
+\item 
+(id) + \hyperlink{interface_b_t_device_manager_a38ff364ec62dc4ab4aea65f2aebed98c}{shared\-Manager}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_b_t_device_manager_ab303b2617a6391db56c3b61f217f9b6b}{id$<$ \hyperlink{protocol_heart_monitor_protocol-p}{Heart\-Monitor\-Protocol}, \\*
+\hyperlink{protocol_device_common_info_interface-p}{Device\-Common\-Info\-Interface} $>$ {\bfseries \-\_\-selected\-Heart\-Monitor}}\label{interface_b_t_device_manager_ab303b2617a6391db56c3b61f217f9b6b}
+
+\item 
+\hypertarget{interface_b_t_device_manager_a53a05cc87797350638a2b82c337eb854}{id$<$ \hyperlink{protocol_activity_monitor_protocol-p}{Activity\-Monitor\-Protocol}, \\*
+\hyperlink{protocol_device_common_info_interface-p}{Device\-Common\-Info\-Interface} $>$ {\bfseries \-\_\-selected\-Activity\-Monitor}}\label{interface_b_t_device_manager_a53a05cc87797350638a2b82c337eb854}
+
+\item 
+\hypertarget{interface_b_t_device_manager_a76ffd5887aa2d8c8ea20df2384851d41}{N\-S\-Array $\ast$ {\bfseries heart\-Devices}}\label{interface_b_t_device_manager_a76ffd5887aa2d8c8ea20df2384851d41}
+
+\item 
+\hypertarget{interface_b_t_device_manager_a8f6f577bb25b7dcd8b3857d6497bff4e}{N\-S\-Array $\ast$ {\bfseries activity\-Devices}}\label{interface_b_t_device_manager_a8f6f577bb25b7dcd8b3857d6497bff4e}
+
+\item 
+\hypertarget{interface_b_t_device_manager_a98add70110c91e4266481e312d96afbf}{N\-S\-Integer {\bfseries selected\-Index\-For\-Heart\-Monitor}}\label{interface_b_t_device_manager_a98add70110c91e4266481e312d96afbf}
+
+\item 
+\hypertarget{interface_b_t_device_manager_a8e47d59f0a40f8d96f4fea826be853d1}{N\-S\-Integer {\bfseries selected\-Index\-For\-Activity\-Monitor}}\label{interface_b_t_device_manager_a8e47d59f0a40f8d96f4fea826be853d1}
+
+\item 
+\hypertarget{interface_b_t_device_manager_a15cc71749368c5de76624c5c4e4f7b3c}{B\-O\-O\-L {\bfseries is\-In\-Discovery\-Mode}}\label{interface_b_t_device_manager_a15cc71749368c5de76624c5c4e4f7b3c}
+
+\item 
+\hypertarget{interface_b_t_device_manager_a61d03c41c000f28ce50e88bd9b8f6be9}{C\-B\-Central\-Manager $\ast$ {\bfseries manager}}\label{interface_b_t_device_manager_a61d03c41c000f28ce50e88bd9b8f6be9}
+
+\item 
+\hypertarget{interface_b_t_device_manager_a610db66209e9d142e5451ceedc3c6a36}{N\-S\-Integer {\bfseries search\-Type}}\label{interface_b_t_device_manager_a610db66209e9d142e5451ceedc3c6a36}
+
+\item 
+\hypertarget{interface_b_t_device_manager_a0864f241d9fc14f03e5f8e2b4dd0667a}{B\-O\-O\-L {\bfseries is\-Active}}\label{interface_b_t_device_manager_a0864f241d9fc14f03e5f8e2b4dd0667a}
+
+\item 
+\hypertarget{interface_b_t_device_manager_aad4f780b6477ad7d37f6e85f3f40f1c0}{N\-S\-Timer $\ast$ {\bfseries wait\-For\-Devices}}\label{interface_b_t_device_manager_aad4f780b6477ad7d37f6e85f3f40f1c0}
+
+\item 
+\hypertarget{interface_b_t_device_manager_a2f3ce5cb472e8f042d4b427518d0ffea}{N\-S\-Run\-Loop $\ast$ {\bfseries run\-Loop}}\label{interface_b_t_device_manager_a2f3ce5cb472e8f042d4b427518d0ffea}
+
+\item 
+\hypertarget{interface_b_t_device_manager_a53dc4023fb9a5873cd8f7a82489d25c0}{id {\bfseries delegate}}\label{interface_b_t_device_manager_a53dc4023fb9a5873cd8f7a82489d25c0}
+
+\item 
+\hypertarget{interface_b_t_device_manager_ac70dac2c693cf191a05a606d7cea9763}{N\-S\-Integer {\bfseries discovery\-Count}}\label{interface_b_t_device_manager_ac70dac2c693cf191a05a606d7cea9763}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This manager handles the overall connection and discovery of the bluetooth devices. It performs scanning, connectivity and management of the devices for the selection view controllers. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_b_t_device_manager_afda16d6654df9d6eddde47c5a3ae38ec}{\index{B\-T\-Device\-Manager@{B\-T\-Device\-Manager}!connect\-Selected\-Monitors@{connect\-Selected\-Monitors}}
+\index{connect\-Selected\-Monitors@{connect\-Selected\-Monitors}!BTDeviceManager@{B\-T\-Device\-Manager}}
+\subsubsection[{connect\-Selected\-Monitors}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) connect\-Selected\-Monitors 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_b_t_device_manager_afda16d6654df9d6eddde47c5a3ae38ec}
+This method connects the monitoring devices that have been selected from the various other views. It is used for the device poller to initiate the polling \hypertarget{interface_b_t_device_manager_a916adc15288fd7428a30954a57f0af0a}{\index{B\-T\-Device\-Manager@{B\-T\-Device\-Manager}!deselect\-Device\-Type\-:@{deselect\-Device\-Type\-:}}
+\index{deselect\-Device\-Type\-:@{deselect\-Device\-Type\-:}!BTDeviceManager@{B\-T\-Device\-Manager}}
+\subsubsection[{deselect\-Device\-Type\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) deselect\-Device\-Type\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Integer)}]{type}
+\end{DoxyParamCaption}
+}}\label{interface_b_t_device_manager_a916adc15288fd7428a30954a57f0af0a}
+This method is to be used by the tableviews so that individual devices can be deselected and the appropriate variables updated to reflect it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The device type to deselect. See \hyperlink{_device_types_8h_source}{Device\-Types.\-h} for details. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_b_t_device_manager_a84c51142e50c343ffa90c5bf9afee48b}{\index{B\-T\-Device\-Manager@{B\-T\-Device\-Manager}!device\-At\-Index\-:for\-Type\-:@{device\-At\-Index\-:for\-Type\-:}}
+\index{device\-At\-Index\-:for\-Type\-:@{device\-At\-Index\-:for\-Type\-:}!BTDeviceManager@{B\-T\-Device\-Manager}}
+\subsubsection[{device\-At\-Index\-:for\-Type\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id$<$ {\bf Device\-Common\-Info\-Interface} $>$) device\-At\-Index\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Integer)}]{index}
+\item[{forType:(N\-S\-Integer)}]{type}
+\end{DoxyParamCaption}
+}}\label{interface_b_t_device_manager_a84c51142e50c343ffa90c5bf9afee48b}
+This method is used by the tableview to get the devices that they need to query for their views.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index within the device types that are the same.\\
+\hline
+{\em type} & The device type that the search is restricted to performing.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The device that is selected. The \hyperlink{protocol_device_common_info_interface-p}{Device\-Common\-Info\-Interface} is the restrictor and all devices must conform to this protocol, otherwise the result is nil. 
+\end{DoxyReturn}
+\hypertarget{interface_b_t_device_manager_aee2928325606cb3f338a5ecb8ef35560}{\index{B\-T\-Device\-Manager@{B\-T\-Device\-Manager}!disconnect\-All\-Devices@{disconnect\-All\-Devices}}
+\index{disconnect\-All\-Devices@{disconnect\-All\-Devices}!BTDeviceManager@{B\-T\-Device\-Manager}}
+\subsubsection[{disconnect\-All\-Devices}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) disconnect\-All\-Devices 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_b_t_device_manager_aee2928325606cb3f338a5ecb8ef35560}
+This method is used to go through disconnecting every device after discovery. It is used when the viewcontrollers are being dismissed and the scanning is stopped. In order to discover all the characteristics needed for operation in other parts of the application, things like battery service, heart rate measurements etc must be discovered and that can only happen when the devices are connected. \hypertarget{interface_b_t_device_manager_ae310a606d4e735e7813319e366f67aa2}{\index{B\-T\-Device\-Manager@{B\-T\-Device\-Manager}!disconnect\-Selected\-Monitors@{disconnect\-Selected\-Monitors}}
+\index{disconnect\-Selected\-Monitors@{disconnect\-Selected\-Monitors}!BTDeviceManager@{B\-T\-Device\-Manager}}
+\subsubsection[{disconnect\-Selected\-Monitors}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) disconnect\-Selected\-Monitors 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_b_t_device_manager_ae310a606d4e735e7813319e366f67aa2}
+This method is for disconnecting the devices that are used for monitoring. Both this method and the connect Monitors are meant to keep the battery lasting longer by not keeping connectivity when not in use. \hypertarget{interface_b_t_device_manager_af88f5d1516142ed353cdcac2268dadfb}{\index{B\-T\-Device\-Manager@{B\-T\-Device\-Manager}!discovered\-Devices\-For\-Type\-:@{discovered\-Devices\-For\-Type\-:}}
+\index{discovered\-Devices\-For\-Type\-:@{discovered\-Devices\-For\-Type\-:}!BTDeviceManager@{B\-T\-Device\-Manager}}
+\subsubsection[{discovered\-Devices\-For\-Type\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Integer) discovered\-Devices\-For\-Type\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Integer)}]{type}
+\end{DoxyParamCaption}
+}}\label{interface_b_t_device_manager_af88f5d1516142ed353cdcac2268dadfb}
+This function gives the current count of the number of devices found in the discovery process based on the type of device it is looking to find. At this time there is H\-E\-A\-R\-T\-\_\-\-M\-O\-N\-I\-T\-O\-R and A\-C\-T\-I\-V\-I\-T\-Y\-\_\-\-M\-O\-N\-I\-T\-O\-R types. See \hyperlink{_device_types_8h_source}{Device\-Types.\-h} for more details.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The integer that designates whether a heart monitor or an activity monitor will be the attempt to discover.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of devices found. 
+\end{DoxyReturn}
+\hypertarget{interface_b_t_device_manager_af3f435a6fec885eca732034a12239504}{\index{B\-T\-Device\-Manager@{B\-T\-Device\-Manager}!select\-Device\-Type\-:at\-Index\-:@{select\-Device\-Type\-:at\-Index\-:}}
+\index{select\-Device\-Type\-:at\-Index\-:@{select\-Device\-Type\-:at\-Index\-:}!BTDeviceManager@{B\-T\-Device\-Manager}}
+\subsubsection[{select\-Device\-Type\-:at\-Index\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) select\-Device\-Type\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Integer)}]{type}
+\item[{atIndex:(N\-S\-Integer)}]{index}
+\end{DoxyParamCaption}
+}}\label{interface_b_t_device_manager_af3f435a6fec885eca732034a12239504}
+This method is to be used by the tableviews so that individual devices can be selected and the appropriate variables updated to reflect it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The device type to select. See \hyperlink{_device_types_8h_source}{Device\-Types.\-h} for details.\\
+\hline
+{\em index} & The index of the array of devices within a particular type. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_b_t_device_manager_aaca0fdc9335bbc7465e91ad0f5c4dbb2}{\index{B\-T\-Device\-Manager@{B\-T\-Device\-Manager}!selected\-Activity\-Monitor@{selected\-Activity\-Monitor}}
+\index{selected\-Activity\-Monitor@{selected\-Activity\-Monitor}!BTDeviceManager@{B\-T\-Device\-Manager}}
+\subsubsection[{selected\-Activity\-Monitor}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id$<$ {\bf Activity\-Monitor\-Protocol}, {\bf Device\-Common\-Info\-Interface} $>$) selected\-Activity\-Monitor 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_b_t_device_manager_aaca0fdc9335bbc7465e91ad0f5c4dbb2}
+This getter returns the current selected\-Activity\-Monitor. The reference conforms to the \hyperlink{protocol_activity_monitor_protocol-p}{Activity\-Monitor\-Protocol} and the \hyperlink{protocol_device_common_info_interface-p}{Device\-Common\-Info\-Interface} protocol.
+
+\begin{DoxyReturn}{Returns}
+the object reference for the activity monitor. A check for nil is necessary because it is possible to deselect the activity monitor. 
+\end{DoxyReturn}
+\hypertarget{interface_b_t_device_manager_a1c4ad74783cb71a008c926f2e5ec3835}{\index{B\-T\-Device\-Manager@{B\-T\-Device\-Manager}!selected\-Heart\-Monitor@{selected\-Heart\-Monitor}}
+\index{selected\-Heart\-Monitor@{selected\-Heart\-Monitor}!BTDeviceManager@{B\-T\-Device\-Manager}}
+\subsubsection[{selected\-Heart\-Monitor}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id$<$ {\bf Heart\-Monitor\-Protocol}, {\bf Device\-Common\-Info\-Interface} $>$) selected\-Heart\-Monitor 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_b_t_device_manager_a1c4ad74783cb71a008c926f2e5ec3835}
+This getter returns the current selected\-Heart\-Monitor. The reference conforms to the \hyperlink{protocol_heart_monitor_protocol-p}{Heart\-Monitor\-Protocol} and the \hyperlink{protocol_device_common_info_interface-p}{Device\-Common\-Info\-Interface} protocol.
+
+\begin{DoxyReturn}{Returns}
+the object reference for the heart monitor. A check for nil is necessary because it is possible to deselect the heart monitor. 
+\end{DoxyReturn}
+\hypertarget{interface_b_t_device_manager_a6d8e2982b9a3ad004563736f89d98cb1}{\index{B\-T\-Device\-Manager@{B\-T\-Device\-Manager}!set\-Selected\-Activity\-Monitor\-:@{set\-Selected\-Activity\-Monitor\-:}}
+\index{set\-Selected\-Activity\-Monitor\-:@{set\-Selected\-Activity\-Monitor\-:}!BTDeviceManager@{B\-T\-Device\-Manager}}
+\subsubsection[{set\-Selected\-Activity\-Monitor\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) set\-Selected\-Activity\-Monitor\-: 
+\begin{DoxyParamCaption}
+\item[{(id$<${\bf Activity\-Monitor\-Protocol}, {\bf Device\-Common\-Info\-Interface}$>$)}]{selected\-Activity\-Monitor}
+\end{DoxyParamCaption}
+}}\label{interface_b_t_device_manager_a6d8e2982b9a3ad004563736f89d98cb1}
+This setter updates the selected\-Activity\-Monitor as long as it conforms to the \hyperlink{protocol_activity_monitor_protocol-p}{Activity\-Monitor\-Protocol} and the \hyperlink{protocol_device_common_info_interface-p}{Device\-Common\-Info\-Interface}. It also notifies that delegate that the value has changed. \hypertarget{interface_b_t_device_manager_a005786995ec17c9a94e85a882bfd4896}{\index{B\-T\-Device\-Manager@{B\-T\-Device\-Manager}!set\-Selected\-Heart\-Monitor\-:@{set\-Selected\-Heart\-Monitor\-:}}
+\index{set\-Selected\-Heart\-Monitor\-:@{set\-Selected\-Heart\-Monitor\-:}!BTDeviceManager@{B\-T\-Device\-Manager}}
+\subsubsection[{set\-Selected\-Heart\-Monitor\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) set\-Selected\-Heart\-Monitor\-: 
+\begin{DoxyParamCaption}
+\item[{(id$<${\bf Heart\-Monitor\-Protocol}, {\bf Device\-Common\-Info\-Interface}$>$)}]{selected\-Heart\-Monitor}
+\end{DoxyParamCaption}
+}}\label{interface_b_t_device_manager_a005786995ec17c9a94e85a882bfd4896}
+This setter updates the selected\-Heart\-Monitor as long as it conforms to the \hyperlink{protocol_heart_monitor_protocol-p}{Heart\-Monitor\-Protocol} and the \hyperlink{protocol_device_common_info_interface-p}{Device\-Common\-Info\-Interface}. It also notifies that delegate that the value has changed. \hypertarget{interface_b_t_device_manager_a38ff364ec62dc4ab4aea65f2aebed98c}{\index{B\-T\-Device\-Manager@{B\-T\-Device\-Manager}!shared\-Manager@{shared\-Manager}}
+\index{shared\-Manager@{shared\-Manager}!BTDeviceManager@{B\-T\-Device\-Manager}}
+\subsubsection[{shared\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}+ (id) shared\-Manager 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_b_t_device_manager_a38ff364ec62dc4ab4aea65f2aebed98c}
+This is the preferred method of initialization. This object is treated as a singleton because nil objects and other conflicts will result from using more than one instance of a C\-B\-Central object, which is included in this object.
+
+\begin{DoxyReturn}{Returns}
+The shared instance of a \hyperlink{interface_b_t_device_manager}{B\-T\-Device\-Manager}. 
+\end{DoxyReturn}
+\hypertarget{interface_b_t_device_manager_a8ccfdb80e7396a787703df2e2145783b}{\index{B\-T\-Device\-Manager@{B\-T\-Device\-Manager}!start\-Scan\-For\-Type\-:@{start\-Scan\-For\-Type\-:}}
+\index{start\-Scan\-For\-Type\-:@{start\-Scan\-For\-Type\-:}!BTDeviceManager@{B\-T\-Device\-Manager}}
+\subsubsection[{start\-Scan\-For\-Type\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) start\-Scan\-For\-Type\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Integer)}]{type}
+\end{DoxyParamCaption}
+}}\label{interface_b_t_device_manager_a8ccfdb80e7396a787703df2e2145783b}
+This method starts the scanning process for a particular type of device. See \hyperlink{_device_types_8h_source}{Device\-Types.\-h} for values relating to the kind of device to scan.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The integer value representing the kind of services to scan and discover. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_b_t_device_manager_a77d4c5c16c2e82bed7e5f2f65bcd2dfb}{\index{B\-T\-Device\-Manager@{B\-T\-Device\-Manager}!stop\-Scan@{stop\-Scan}}
+\index{stop\-Scan@{stop\-Scan}!BTDeviceManager@{B\-T\-Device\-Manager}}
+\subsubsection[{stop\-Scan}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) stop\-Scan 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_b_t_device_manager_a77d4c5c16c2e82bed7e5f2f65bcd2dfb}
+This function allows remote shutdown of discovery process to conserve the battery. Its purpose is to allow the dismissal of selection viewcontrollers to shut the discovery because the devicemanager class is shared throughout the application. 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+B\-T\-Device\-Manager.\-h\item 
+B\-T\-Device\-Manager.\-m\end{DoxyCompactItemize}

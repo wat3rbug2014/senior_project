@@ -1,0 +1,91 @@
+\hypertarget{interface_personal_info}{\section{Personal\-Info Class Reference}
+\label{interface_personal_info}\index{Personal\-Info@{Personal\-Info}}
+}
+Inheritance diagram for Personal\-Info\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_personal_info}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{interface_personal_info_a837ce1e3fe6b67a415629e395ce9367e}{load\-Information}
+\item 
+(void) -\/ \hyperlink{interface_personal_info_a74efb2fadb7b9358f743830b49755567}{save\-Information}
+\item 
+(void) -\/ \hyperlink{interface_personal_info_ae2b7828f42d1577ed2200b05ceafff26}{dealloc}
+\item 
+(N\-S\-Integer) -\/ \hyperlink{interface_personal_info_a21553b6f3de4bdbd30eded3d18c44b0b}{calculate\-Age\-Using\-Date\-:}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_personal_info_a121bb1d64f2b72f302dc4ed1d67be9c5}{N\-S\-String $\ast$ {\bfseries first\-Name}}\label{interface_personal_info_a121bb1d64f2b72f302dc4ed1d67be9c5}
+
+\item 
+\hypertarget{interface_personal_info_ac22bfdc40d4d2e7364cd9b2e3b690faf}{N\-S\-String $\ast$ {\bfseries last\-Name}}\label{interface_personal_info_ac22bfdc40d4d2e7364cd9b2e3b690faf}
+
+\item 
+\hypertarget{interface_personal_info_a4ba682cdc1f6166765925040634eb5e6}{N\-S\-Date $\ast$ {\bfseries dob}}\label{interface_personal_info_a4ba682cdc1f6166765925040634eb5e6}
+
+\item 
+\hypertarget{interface_personal_info_a04b3f994e4c8710fa56c64116973e6a7}{N\-S\-Integer {\bfseries patient\-I\-D}}\label{interface_personal_info_a04b3f994e4c8710fa56c64116973e6a7}
+
+\item 
+\hypertarget{interface_personal_info_a2d8d93ba28e6ba9f25b703354004bebf}{N\-S\-User\-Defaults $\ast$ {\bfseries defaults}}\label{interface_personal_info_a2d8d93ba28e6ba9f25b703354004bebf}
+
+\item 
+\hypertarget{interface_personal_info_a14b1147d252ca7d5701b5531e6073f2c}{N\-S\-Dictionary $\ast$ {\bfseries personal\-Data}}\label{interface_personal_info_a14b1147d252ca7d5701b5531e6073f2c}
+
+\item 
+\hypertarget{interface_personal_info_a765c84fac14d1ed3720d06eaee948df0}{N\-S\-Integer {\bfseries age}}\label{interface_personal_info_a765c84fac14d1ed3720d06eaee948df0}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Method Documentation}
+\hypertarget{interface_personal_info_a21553b6f3de4bdbd30eded3d18c44b0b}{\index{Personal\-Info@{Personal\-Info}!calculate\-Age\-Using\-Date\-:@{calculate\-Age\-Using\-Date\-:}}
+\index{calculate\-Age\-Using\-Date\-:@{calculate\-Age\-Using\-Date\-:}!PersonalInfo@{Personal\-Info}}
+\subsubsection[{calculate\-Age\-Using\-Date\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Integer) calculate\-Age\-Using\-Date\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Date$\ast$)}]{current\-D\-O\-B}
+\end{DoxyParamCaption}
+}}\label{interface_personal_info_a21553b6f3de4bdbd30eded3d18c44b0b}
+This method calculates the ages using Date\-Components.
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\-D\-O\-B} & Todays date. It is left to allow changes based on what is passed and not just restricted to todays date.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An integer value express based on years. 
+\end{DoxyReturn}
+\hypertarget{interface_personal_info_ae2b7828f42d1577ed2200b05ceafff26}{\index{Personal\-Info@{Personal\-Info}!dealloc@{dealloc}}
+\index{dealloc@{dealloc}!PersonalInfo@{Personal\-Info}}
+\subsubsection[{dealloc}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) dealloc 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_personal_info_ae2b7828f42d1577ed2200b05ceafff26}
+This method is called as part of A\-R\-C. It has been added because the data is saved to the user defaults location before the memory is released so that changes are not lost. \hypertarget{interface_personal_info_a837ce1e3fe6b67a415629e395ce9367e}{\index{Personal\-Info@{Personal\-Info}!load\-Information@{load\-Information}}
+\index{load\-Information@{load\-Information}!PersonalInfo@{Personal\-Info}}
+\subsubsection[{load\-Information}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) load\-Information 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_personal_info_a837ce1e3fe6b67a415629e395ce9367e}
+Loads all the information from the application user defaults and stores them in local variables for quicker and easier access. \hypertarget{interface_personal_info_a74efb2fadb7b9358f743830b49755567}{\index{Personal\-Info@{Personal\-Info}!save\-Information@{save\-Information}}
+\index{save\-Information@{save\-Information}!PersonalInfo@{Personal\-Info}}
+\subsubsection[{save\-Information}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) save\-Information 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_personal_info_a74efb2fadb7b9358f743830b49755567}
+Save all the local variables into the user defaults for the application. 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Personal\-Info.\-h\item 
+Personal\-Info.\-m\end{DoxyCompactItemize}

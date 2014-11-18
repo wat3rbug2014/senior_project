@@ -1,0 +1,113 @@
+\hypertarget{interface_background_scheduler}{\section{Background\-Scheduler Class Reference}
+\label{interface_background_scheduler}\index{Background\-Scheduler@{Background\-Scheduler}}
+}
+
+
+{\ttfamily \#import $<$Back\-Ground\-Scheduler.\-h$>$}
+
+Inheritance diagram for Background\-Scheduler\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_background_scheduler}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{interface_background_scheduler_a50173200d1b7dfc44b1d2d2a49ca75be}{start\-Monitoring\-With\-Patient\-I\-D\-:}
+\item 
+(void) -\/ \hyperlink{interface_background_scheduler_afa9c1aaf67ac8d9f5fd17a43475777eb}{stop\-Monitoring}
+\item 
+(void) -\/ \hyperlink{interface_background_scheduler_a11390d5d6bb62b2c565ca9205d045b2a}{perform\-Scan}
+\item 
+\hypertarget{interface_background_scheduler_a393315828a032dece36a93c53ee203d0}{(U\-I\-Application $\ast$) -\/ {\bfseries app}}\label{interface_background_scheduler_a393315828a032dece36a93c53ee203d0}
+
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_background_scheduler_aea6a288ffb185db815ddaeaf58c2edcd}{\hyperlink{interface_b_t_device_manager}{B\-T\-Device\-Manager} $\ast$ {\bfseries device\-Manager}}\label{interface_background_scheduler_aea6a288ffb185db815ddaeaf58c2edcd}
+
+\item 
+\hypertarget{interface_background_scheduler_a028ff74a1865744e265eff45190a7752}{C\-L\-Location\-Manager $\ast$ {\bfseries location\-Manager}}\label{interface_background_scheduler_a028ff74a1865744e265eff45190a7752}
+
+\item 
+\hypertarget{interface_background_scheduler_a6dd785826954ce8d6adc2ad76284c458}{\hyperlink{interface_remote_d_b_connection_manager}{Remote\-D\-B\-Connection\-Manager} $\ast$ {\bfseries server\-Poller}}\label{interface_background_scheduler_a6dd785826954ce8d6adc2ad76284c458}
+
+\item 
+\hypertarget{interface_background_scheduler_a9f8103a5d35ba76fd32b5f0d3a2d5517}{\hyperlink{interface_device_poll_manager}{Device\-Poll\-Manager} $\ast$ {\bfseries device\-Poller}}\label{interface_background_scheduler_a9f8103a5d35ba76fd32b5f0d3a2d5517}
+
+\item 
+\hypertarget{interface_background_scheduler_a6cacd8a0d6d25475816490b39dcf35d3}{\hyperlink{interface_d_b_manager}{D\-B\-Manager} $\ast$ {\bfseries database}}\label{interface_background_scheduler_a6cacd8a0d6d25475816490b39dcf35d3}
+
+\item 
+\hypertarget{interface_background_scheduler_a3f2d5c8d892ff5c8155305ae6bc2da1a}{\hyperlink{interface_personal_info}{Personal\-Info} $\ast$ {\bfseries patient}}\label{interface_background_scheduler_a3f2d5c8d892ff5c8155305ae6bc2da1a}
+
+\item 
+\hypertarget{interface_background_scheduler_a5209bb2a1aa5fe8eeac8f89977252df7}{B\-O\-O\-L {\bfseries allow\-Monitoring}}\label{interface_background_scheduler_a5209bb2a1aa5fe8eeac8f89977252df7}
+
+\item 
+\hypertarget{interface_background_scheduler_a00aa9ed48dd7294c6d221c572c581095}{B\-O\-O\-L {\bfseries location\-Allowed}}\label{interface_background_scheduler_a00aa9ed48dd7294c6d221c572c581095}
+
+\item 
+\hypertarget{interface_background_scheduler_ab3abcae0c98a5c753ef26adba1cbf090}{B\-O\-O\-L {\bfseries big\-Location\-Changes}}\label{interface_background_scheduler_ab3abcae0c98a5c753ef26adba1cbf090}
+
+\item 
+\hypertarget{interface_background_scheduler_a73f120ac0977837ac4a4095ad96d01ec}{N\-S\-Run\-Loop $\ast$ {\bfseries run\-Loop}}\label{interface_background_scheduler_a73f120ac0977837ac4a4095ad96d01ec}
+
+\item 
+\hypertarget{interface_background_scheduler_ae2e25ad686446576c71a500b66f31e25}{N\-S\-Time\-Interval {\bfseries device\-Poll\-Interval}}\label{interface_background_scheduler_ae2e25ad686446576c71a500b66f31e25}
+
+\item 
+\hypertarget{interface_background_scheduler_a6a4ebd391d86c9779122136b6c4dfc1c}{N\-S\-Time\-Interval {\bfseries server\-Poll\-Interval}}\label{interface_background_scheduler_a6a4ebd391d86c9779122136b6c4dfc1c}
+
+\item 
+\hypertarget{interface_background_scheduler_a8c133b6375de7c3e0cda3ac605ad2029}{U\-I\-Application $\ast$ {\bfseries app}}\label{interface_background_scheduler_a8c133b6375de7c3e0cda3ac605ad2029}
+
+\item 
+\hypertarget{interface_background_scheduler_a9dee3016296e3a529451c25b426b8923}{N\-S\-Timer $\ast$ {\bfseries device\-Poll\-Timer}}\label{interface_background_scheduler_a9dee3016296e3a529451c25b426b8923}
+
+\item 
+\hypertarget{interface_background_scheduler_ab78e335cbdbd2c276c299380a982f0e4}{N\-S\-Timer $\ast$ {\bfseries server\-Poll\-Timer}}\label{interface_background_scheduler_ab78e335cbdbd2c276c299380a982f0e4}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This object is responsible for the coordination of the device poller, the database manager, and the process that pushes data to the remote server. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_background_scheduler_a11390d5d6bb62b2c565ca9205d045b2a}{\index{Background\-Scheduler@{Background\-Scheduler}!perform\-Scan@{perform\-Scan}}
+\index{perform\-Scan@{perform\-Scan}!BackgroundScheduler@{Background\-Scheduler}}
+\subsubsection[{perform\-Scan}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) perform\-Scan 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_background_scheduler_a11390d5d6bb62b2c565ca9205d045b2a}
+This method does the actual polling of the devices and updating the database. \hypertarget{interface_background_scheduler_a50173200d1b7dfc44b1d2d2a49ca75be}{\index{Background\-Scheduler@{Background\-Scheduler}!start\-Monitoring\-With\-Patient\-I\-D\-:@{start\-Monitoring\-With\-Patient\-I\-D\-:}}
+\index{start\-Monitoring\-With\-Patient\-I\-D\-:@{start\-Monitoring\-With\-Patient\-I\-D\-:}!BackgroundScheduler@{Background\-Scheduler}}
+\subsubsection[{start\-Monitoring\-With\-Patient\-I\-D\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) start\-Monitoring\-With\-Patient\-I\-D\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Integer)}]{identifier}
+\end{DoxyParamCaption}
+}}\label{interface_background_scheduler_a50173200d1b7dfc44b1d2d2a49ca75be}
+This methods starts the polling process. It checks the devices for updated information and passes them to the database for updates. It also performs network updates to the server based on what it finds in the local datbase.
+
+
+\begin{DoxyParams}{Parameters}
+{\em identifier} & The patient\-I\-D that will be used for polling. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_background_scheduler_afa9c1aaf67ac8d9f5fd17a43475777eb}{\index{Background\-Scheduler@{Background\-Scheduler}!stop\-Monitoring@{stop\-Monitoring}}
+\index{stop\-Monitoring@{stop\-Monitoring}!BackgroundScheduler@{Background\-Scheduler}}
+\subsubsection[{stop\-Monitoring}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) stop\-Monitoring 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_background_scheduler_afa9c1aaf67ac8d9f5fd17a43475777eb}
+This method stops the polling process. It kills the timers and does a final update to the remote server using all the data in the database. 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Back\-Ground\-Scheduler.\-h\item 
+Back\-Ground\-Scheduler.\-m\end{DoxyCompactItemize}

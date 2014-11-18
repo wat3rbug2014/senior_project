@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['saveinformation',['saveInformation',['../interface_personal_info.html#a74efb2fadb7b9358f743830b49755567',1,'PersonalInfo']]],
+  ['selectactivitymonitor_3a',['selectActivityMonitor:',['../interface_home_screen_v_c.html#a3b9db379f6432201f499008c3918fa5f',1,'HomeScreenVC']]],
+  ['selectdevicetype_3aatindex_3a',['selectDeviceType:atIndex:',['../interface_b_t_device_manager.html#af3f435a6fec885eca732034a12239504',1,'BTDeviceManager']]],
+  ['selectedactivitymonitor',['selectedActivityMonitor',['../interface_b_t_device_manager.html#aaca0fdc9335bbc7465e91ad0f5c4dbb2',1,'BTDeviceManager']]],
+  ['selectedheartmonitor',['selectedHeartMonitor',['../interface_b_t_device_manager.html#a1c4ad74783cb71a008c926f2e5ec3835',1,'BTDeviceManager']]],
+  ['selectheartmonitor_3a',['selectHeartMonitor:',['../interface_home_screen_v_c.html#a9cf7d44e5fa97a7f70e116ba0b4c6b2c',1,'HomeScreenVC']]],
+  ['sendrowtoserver',['sendRowToServer',['../interface_remote_d_b_connection_manager.html#aa7263ee167de6993f3c68d74f34d3b9e',1,'RemoteDBConnectionManager']]],
+  ['setcolorforbutton_3aisready_3a',['setColorForButton:isReady:',['../interface_home_screen_v_c.html#ac0077075c9e48561794e5e6818232bd9',1,'HomeScreenVC']]],
+  ['setselectedactivitymonitor_3a',['setSelectedActivityMonitor:',['../interface_b_t_device_manager.html#a6d8e2982b9a3ad004563736f89d98cb1',1,'BTDeviceManager']]],
+  ['setselectedheartmonitor_3a',['setSelectedHeartMonitor:',['../interface_b_t_device_manager.html#a005786995ec17c9a94e85a882bfd4896',1,'BTDeviceManager']]],
+  ['settype_3a',['setType:',['../protocol_device_common_info_interface-p.html#a1fa243ee7ba284b691c365bae4f9b463',1,'DeviceCommonInfoInterface-p']]],
+  ['sharedmanager',['sharedManager',['../interface_b_t_device_manager.html#a38ff364ec62dc4ab4aea65f2aebed98c',1,'BTDeviceManager']]],
+  ['shouldmonitor_3a',['shouldMonitor:',['../protocol_device_common_info_interface-p.html#a9d3d278049f74d785a57ed2aecf22e22',1,'DeviceCommonInfoInterface-p']]],
+  ['showgraph_3a',['showGraph:',['../interface_home_screen_v_c.html#a50a2ea69f594741ce8926b4a8f6382f0',1,'HomeScreenVC']]],
+  ['startmonitoringwithpatientid_3a',['startMonitoringWithPatientID:',['../interface_background_scheduler.html#a50173200d1b7dfc44b1d2d2a49ca75be',1,'BackgroundScheduler']]],
+  ['startscanfortype_3a',['startScanForType:',['../interface_b_t_device_manager.html#a8ccfdb80e7396a787703df2e2145783b',1,'BTDeviceManager']]],
+  ['stopmonitoring',['stopMonitoring',['../interface_background_scheduler.html#afa9c1aaf67ac8d9f5fd17a43475777eb',1,'BackgroundScheduler::stopMonitoring()'],['../interface_device_poll_manager.html#a4fe6160b06d23999e8939c88e900b232',1,'DevicePollManager::stopMonitoring()']]],
+  ['stopscan',['stopScan',['../interface_b_t_device_manager.html#a77d4c5c16c2e82bed7e5f2f65bcd2dfb',1,'BTDeviceManager']]]
+];

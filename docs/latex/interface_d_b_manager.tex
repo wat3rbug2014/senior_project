@@ -1,0 +1,224 @@
+\hypertarget{interface_d_b_manager}{\section{D\-B\-Manager Class Reference}
+\label{interface_d_b_manager}\index{D\-B\-Manager@{D\-B\-Manager}}
+}
+
+
+{\ttfamily \#import $<$D\-B\-Manager.\-h$>$}
+
+Inheritance diagram for D\-B\-Manager\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_d_b_manager}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) -\/ \hyperlink{interface_d_b_manager_a0b390c8eab2577c30b2012e14ae821fe}{init}
+\item 
+(instancetype) -\/ \hyperlink{interface_d_b_manager_a24ba5578b7bcfff67ad5fcffb6c05f7b}{init\-Withpatient\-I\-D\-:}
+\item 
+(void) -\/ \hyperlink{interface_d_b_manager_a2e49fe020ebf348c2768a4c4a3dcff00}{copy\-Database\-Into\-Documents\-Directory}
+\item 
+(\hyperlink{interface_local_d_b_result}{Local\-D\-B\-Result} $\ast$) -\/ \hyperlink{interface_d_b_manager_ad6723b4f6b2191eddbcc4bb9bd361fcb}{retrieve\-Row}
+\item 
+(B\-O\-O\-L) -\/ \hyperlink{interface_d_b_manager_a3c424eba24e9894922714f6154a6dc44}{is\-Database\-Empty}
+\item 
+(void) -\/ \hyperlink{interface_d_b_manager_a0c354ea19fc86923ba33e5dc32798ca8}{insert\-Data\-Into\-D\-B}
+\item 
+(void) -\/ \hyperlink{interface_d_b_manager_a28d37edd37bc78b35579d276b8abfd9b}{delete\-Row\-At\-Time\-Stamp\-:}
+\item 
+(B\-O\-O\-L) -\/ \hyperlink{interface_d_b_manager_ab93660b0ab1caac6cd83b9edc349ddee}{open\-Local\-D\-B\-With\-S\-Q\-L\-Query\-Is\-Successful\-:}
+\item 
+(void) -\/ \hyperlink{interface_d_b_manager_a768157b5a58c4e400ee1326fe804d2b8}{close\-Local\-D\-B\-Connection}
+\item 
+(void) -\/ \hyperlink{interface_d_b_manager_aa804a3f4200ce732321d814cf86dbd2b}{purge\-Database}
+\end{DoxyCompactItemize}
+\subsection*{Class Methods}
+\begin{DoxyCompactItemize}
+\item 
+(N\-S\-String $\ast$) + \hyperlink{interface_d_b_manager_a7c8d65202b11dbd5c926bc6a01c4259d}{time\-Stamp\-As\-String\-:}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_d_b_manager_a2da5077535faad528421bada70121866}{N\-S\-String $\ast$ {\bfseries documents\-Directory}}\label{interface_d_b_manager_a2da5077535faad528421bada70121866}
+
+\item 
+\hypertarget{interface_d_b_manager_a725c101d5daf6506b59e0f7e06993982}{N\-S\-String $\ast$ {\bfseries database\-Filename}}\label{interface_d_b_manager_a725c101d5daf6506b59e0f7e06993982}
+
+\item 
+\hypertarget{interface_d_b_manager_a7206acae059164df418a2dbfaa7fbb13}{N\-S\-Integer {\bfseries patient\-I\-D}}\label{interface_d_b_manager_a7206acae059164df418a2dbfaa7fbb13}
+
+\item 
+\hypertarget{interface_d_b_manager_a921cb5034e1b4f79c6db59a1ce3fd579}{B\-O\-O\-L {\bfseries more\-Rows\-To\-Retrieve}}\label{interface_d_b_manager_a921cb5034e1b4f79c6db59a1ce3fd579}
+
+\item 
+\hypertarget{interface_d_b_manager_aa3315763d817eb3c10dac39ee530e2a8}{sqlite3 $\ast$ {\bfseries database}}\label{interface_d_b_manager_aa3315763d817eb3c10dac39ee530e2a8}
+
+\item 
+\hypertarget{interface_d_b_manager_a7299e28bee3f75281496adcebb46010b}{N\-S\-Integer {\bfseries row\-Count}}\label{interface_d_b_manager_a7299e28bee3f75281496adcebb46010b}
+
+\item 
+\hypertarget{interface_d_b_manager_a15a4e85cdc292d83ee3d8b28e43c43bc}{N\-S\-String $\ast$ {\bfseries database\-Path}}\label{interface_d_b_manager_a15a4e85cdc292d83ee3d8b28e43c43bc}
+
+\item 
+\hypertarget{interface_d_b_manager_ae714f21433f7593c722b727d2ae9c66a}{sqlite3\-\_\-stmt $\ast$ {\bfseries sql\-Statement}}\label{interface_d_b_manager_ae714f21433f7593c722b727d2ae9c66a}
+
+\item 
+\hypertarget{interface_d_b_manager_ac89481f8c2c45def2b8edb2ba749df68}{N\-S\-Integer {\bfseries hrmeasurement}}\label{interface_d_b_manager_ac89481f8c2c45def2b8edb2ba749df68}
+
+\item 
+\hypertarget{interface_d_b_manager_a12dcee066d2cecde8507a6529df92521}{float {\bfseries latitude}}\label{interface_d_b_manager_a12dcee066d2cecde8507a6529df92521}
+
+\item 
+\hypertarget{interface_d_b_manager_aa881cd8f0940350240e3ae9a326e5563}{float {\bfseries longitude}}\label{interface_d_b_manager_aa881cd8f0940350240e3ae9a326e5563}
+
+\item 
+\hypertarget{interface_d_b_manager_aff07ccf2439a2df78a5375303d5272a7}{int {\bfseries activity\-Level}}\label{interface_d_b_manager_aff07ccf2439a2df78a5375303d5272a7}
+
+\item 
+\hypertarget{interface_d_b_manager_a0d952846514339beeb1ff00a89fd650e}{N\-S\-Integer {\bfseries age}}\label{interface_d_b_manager_a0d952846514339beeb1ff00a89fd650e}
+
+\item 
+\hypertarget{interface_d_b_manager_a62443c98d9fade6ab9906836bf146b72}{N\-S\-Date $\ast$ {\bfseries timestamp}}\label{interface_d_b_manager_a62443c98d9fade6ab9906836bf146b72}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class handles the local S\-Q\-L\-I\-T\-E3 database. All functions needed to use this database are enclosed in the class. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_d_b_manager_a768157b5a58c4e400ee1326fe804d2b8}{\index{D\-B\-Manager@{D\-B\-Manager}!close\-Local\-D\-B\-Connection@{close\-Local\-D\-B\-Connection}}
+\index{close\-Local\-D\-B\-Connection@{close\-Local\-D\-B\-Connection}!DBManager@{D\-B\-Manager}}
+\subsubsection[{close\-Local\-D\-B\-Connection}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) close\-Local\-D\-B\-Connection 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_d_b_manager_a768157b5a58c4e400ee1326fe804d2b8}
+This method is meant to be a private method. It is meant to finalize the database and close the database. All results from the query will be lost as memory is freed during finalization. \hypertarget{interface_d_b_manager_a2e49fe020ebf348c2768a4c4a3dcff00}{\index{D\-B\-Manager@{D\-B\-Manager}!copy\-Database\-Into\-Documents\-Directory@{copy\-Database\-Into\-Documents\-Directory}}
+\index{copy\-Database\-Into\-Documents\-Directory@{copy\-Database\-Into\-Documents\-Directory}!DBManager@{D\-B\-Manager}}
+\subsubsection[{copy\-Database\-Into\-Documents\-Directory}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) copy\-Database\-Into\-Documents\-Directory 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_d_b_manager_a2e49fe020ebf348c2768a4c4a3dcff00}
+This method is used for first time use of the application. It copies the master database template to the applications Documents directory for use with the application. W\-A\-R\-N\-I\-N\-G\-: do not use the origin for use as the database. \hypertarget{interface_d_b_manager_a28d37edd37bc78b35579d276b8abfd9b}{\index{D\-B\-Manager@{D\-B\-Manager}!delete\-Row\-At\-Time\-Stamp\-:@{delete\-Row\-At\-Time\-Stamp\-:}}
+\index{delete\-Row\-At\-Time\-Stamp\-:@{delete\-Row\-At\-Time\-Stamp\-:}!DBManager@{D\-B\-Manager}}
+\subsubsection[{delete\-Row\-At\-Time\-Stamp\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) delete\-Row\-At\-Time\-Stamp\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String$\ast$)}]{old\-Time\-Stamp}
+\end{DoxyParamCaption}
+}}\label{interface_d_b_manager_a28d37edd37bc78b35579d276b8abfd9b}
+This method is used in conjunction with the remote database updates. It is called to remove the row from the local database after a successful insert to the remote database. It is assumed that the patient\-I\-D was already added as it is part of the primary key for the table in this database.
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\-Time\-Stamp} & This is part of the primary key for the table and must be supplied, otherwise no record deletion happens. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_d_b_manager_a0b390c8eab2577c30b2012e14ae821fe}{\index{D\-B\-Manager@{D\-B\-Manager}!init@{init}}
+\index{init@{init}!DBManager@{D\-B\-Manager}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_d_b_manager_a0b390c8eab2577c30b2012e14ae821fe}
+This method initializes the database. It is noted, that the default patient\-I\-D is N\-O\-\_\-\-I\-D\-\_\-\-S\-E\-T. W\-A\-R\-N\-I\-N\-G\-: adding data to the database with no patient\-I\-D set will result erroneous results to this database and the remote database, should any updates occur. It is advised to the use the -\/(instancetype) init\-Withpatient\-I\-D\-: (N\-S\-Integer) current\-Patient method instead.
+
+\begin{DoxyReturn}{Returns}
+An instance of the database manager with no patient\-I\-D set. 
+\end{DoxyReturn}
+\hypertarget{interface_d_b_manager_a24ba5578b7bcfff67ad5fcffb6c05f7b}{\index{D\-B\-Manager@{D\-B\-Manager}!init\-Withpatient\-I\-D\-:@{init\-Withpatient\-I\-D\-:}}
+\index{init\-Withpatient\-I\-D\-:@{init\-Withpatient\-I\-D\-:}!DBManager@{D\-B\-Manager}}
+\subsubsection[{init\-Withpatient\-I\-D\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\-Withpatient\-I\-D\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Integer)}]{current\-Patient}
+\end{DoxyParamCaption}
+}}\label{interface_d_b_manager_a24ba5578b7bcfff67ad5fcffb6c05f7b}
+This method initializes the database and sets up the patient\-I\-D which will be used for almost every query to the database. the patient\-I\-D is part of the primary key for the table. The assumption is that the database is empty when patient\-I\-D is changed, otherwise queries will fail.
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\-Patient} & The patient\-I\-D that is to be used for the database.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An instance of the database manager with the patient\-I\-D set. 
+\end{DoxyReturn}
+\hypertarget{interface_d_b_manager_a0c354ea19fc86923ba33e5dc32798ca8}{\index{D\-B\-Manager@{D\-B\-Manager}!insert\-Data\-Into\-D\-B@{insert\-Data\-Into\-D\-B}}
+\index{insert\-Data\-Into\-D\-B@{insert\-Data\-Into\-D\-B}!DBManager@{D\-B\-Manager}}
+\subsubsection[{insert\-Data\-Into\-D\-B}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) insert\-Data\-Into\-D\-B 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_d_b_manager_a0c354ea19fc86923ba33e5dc32798ca8}
+This method updates the database by adding the current values for the database manager. In order to have new data to the database the timestamp, latitude, longitude, and heart rate variables must be updated first. Otherwise, the existing variables will be used and will result in an error if the timestamp is the same. Since the timestamp is part of the primary key for the database it must be unique in conjunction with the patient\-I\-D. This decision was made in an effort to keep database transactions and subsequent S\-Q\-L statements contained to this class for easier troubleshooting. \hypertarget{interface_d_b_manager_a3c424eba24e9894922714f6154a6dc44}{\index{D\-B\-Manager@{D\-B\-Manager}!is\-Database\-Empty@{is\-Database\-Empty}}
+\index{is\-Database\-Empty@{is\-Database\-Empty}!DBManager@{D\-B\-Manager}}
+\subsubsection[{is\-Database\-Empty}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) is\-Database\-Empty 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_d_b_manager_a3c424eba24e9894922714f6154a6dc44}
+This method performs a count of the table and return true if there are no more rows in the table to retrieve. It is used primarily for the network poll portion to determine that the local database has been flushed and there is no more data to transfer to the remote server.
+
+\begin{DoxyReturn}{Returns}
+Y\-E\-S if the database is empty. 
+\end{DoxyReturn}
+\hypertarget{interface_d_b_manager_ab93660b0ab1caac6cd83b9edc349ddee}{\index{D\-B\-Manager@{D\-B\-Manager}!open\-Local\-D\-B\-With\-S\-Q\-L\-Query\-Is\-Successful\-:@{open\-Local\-D\-B\-With\-S\-Q\-L\-Query\-Is\-Successful\-:}}
+\index{open\-Local\-D\-B\-With\-S\-Q\-L\-Query\-Is\-Successful\-:@{open\-Local\-D\-B\-With\-S\-Q\-L\-Query\-Is\-Successful\-:}!DBManager@{D\-B\-Manager}}
+\subsubsection[{open\-Local\-D\-B\-With\-S\-Q\-L\-Query\-Is\-Successful\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) open\-Local\-D\-B\-With\-S\-Q\-L\-Query\-Is\-Successful\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String$\ast$)}]{query}
+\end{DoxyParamCaption}
+}}\label{interface_d_b_manager_ab93660b0ab1caac6cd83b9edc349ddee}
+This method is used to open the database connection and prepare the database with the the S\-Q\-L statement provided. It is meant to be private to this class only. N\-O\-T\-E\-: since this database is S\-Q\-L\-I\-T\-E not all A\-C\-I\-D compliant functions are used. Furthermore some contraints, such as date have different syntaxes associated with them. Please see \href{https://www.sqlite.org/docs.html}{\tt https\-://www.\-sqlite.\-org/docs.\-html} for more details relating to S\-Q\-L\-I\-T\-E.
+
+
+\begin{DoxyParams}{Parameters}
+{\em query} & is the S\-Q\-L statement to use on the database.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Yes if the query is valid and the database is open. 
+\end{DoxyReturn}
+\hypertarget{interface_d_b_manager_aa804a3f4200ce732321d814cf86dbd2b}{\index{D\-B\-Manager@{D\-B\-Manager}!purge\-Database@{purge\-Database}}
+\index{purge\-Database@{purge\-Database}!DBManager@{D\-B\-Manager}}
+\subsubsection[{purge\-Database}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) purge\-Database 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_d_b_manager_aa804a3f4200ce732321d814cf86dbd2b}
+This method is used to clean out the database before use. It makes the assumption that the previous instance of this application did not crash and that all data was updated to the remote server. It is used as a safety mechanism so that faulty patient\-I\-D information is not used to update remote tables. \hypertarget{interface_d_b_manager_ad6723b4f6b2191eddbcc4bb9bd361fcb}{\index{D\-B\-Manager@{D\-B\-Manager}!retrieve\-Row@{retrieve\-Row}}
+\index{retrieve\-Row@{retrieve\-Row}!DBManager@{D\-B\-Manager}}
+\subsubsection[{retrieve\-Row}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Local\-D\-B\-Result} $\ast$) retrieve\-Row 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_d_b_manager_ad6723b4f6b2191eddbcc4bb9bd361fcb}
+This method returns the first row in a query for the items in the local database. It is used in conjuction with the network poller to push local data to the remote database. The data is comma separated with the following order of information\-:
+
+heart\-\_\-rate (integer), latitude (float), longitude (float), timestamp (See -\/(N\-S\-String$\ast$) time\-Stamp\-As\-String for output).
+
+\begin{DoxyReturn}{Returns}
+The string representation of the row returned. 
+\end{DoxyReturn}
+\hypertarget{interface_d_b_manager_a7c8d65202b11dbd5c926bc6a01c4259d}{\index{D\-B\-Manager@{D\-B\-Manager}!time\-Stamp\-As\-String\-:@{time\-Stamp\-As\-String\-:}}
+\index{time\-Stamp\-As\-String\-:@{time\-Stamp\-As\-String\-:}!DBManager@{D\-B\-Manager}}
+\subsubsection[{time\-Stamp\-As\-String\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (N\-S\-String $\ast$) time\-Stamp\-As\-String\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Date$\ast$)}]{selected\-Time}
+\end{DoxyParamCaption}
+}}\label{interface_d_b_manager_a7c8d65202b11dbd5c926bc6a01c4259d}
+This method takes the N\-S\-Date object stored in this class and converts it to a format that is useable to databases. The assumptions are that the date has been updated. This method is called only from this class.
+
+\begin{DoxyReturn}{Returns}
+The result string is a parsed date. An example is '1970-\/05-\/10 18\-:45\-:10'. That is May 10 1970 at 6\-:45 pm and 10 seconds. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+D\-B\-Manager.\-h\item 
+D\-B\-Manager.\-m\end{DoxyCompactItemize}
