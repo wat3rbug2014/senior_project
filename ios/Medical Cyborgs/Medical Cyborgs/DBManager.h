@@ -157,5 +157,12 @@
 -(void) closeLocalDBConnection;
 
 
+/**
+ * This method is used to clean out the database before use.  It makes the assumption that the previous
+ * instance of this application did not crash and that all data was updated to the remote server.
+ *  It is used as a safety mechanism so that faulty patientID information is not used to update
+ * remote tables.
+ */
+
 -(void) purgeDatabase;
 @end

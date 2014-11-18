@@ -41,6 +41,12 @@
 
 -(id) initWithDevicePoller: (DevicePollManager*) devicePoller;
 
+
+/**
+ * This method is used to update the activity level and heart rate on a timed
+ * interval.
+ */
+
 -(void) updateDisplay;
 
 @end

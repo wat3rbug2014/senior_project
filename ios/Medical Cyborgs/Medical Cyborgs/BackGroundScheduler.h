@@ -6,6 +6,11 @@
 //  Copyright (c) 2014 Douglas Gardiner. All rights reserved.
 //
 
+/** 
+ * This object is responsible for the coordination of the device poller, the
+ * database manager, and the process that pushes data to the remote server.
+ */
+
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 #import <UIKit/UIKit.h>
@@ -53,7 +58,7 @@
 
 
 /**
- *
+ * This method does the actual polling of the devices and updating the database.
  */
 
 -(void) performScan;

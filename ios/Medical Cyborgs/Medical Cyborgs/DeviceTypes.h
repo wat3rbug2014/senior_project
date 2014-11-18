@@ -22,13 +22,6 @@ typedef enum {
     HEART_AND_ACTIVITY_MONITOR = 3
 } DeviceType;
 
-typedef enum {
-    RESTING = 1,
-    WARM_UP = 2,
-    ENDURANCE = 3,
-    AEROBIC = 4,
-    ANAEROBIC = 5,
-    PEAK = 6
-} ActivityLevel;
+
 
 #endif

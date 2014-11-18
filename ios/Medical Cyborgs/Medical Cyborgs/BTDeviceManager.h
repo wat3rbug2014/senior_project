@@ -38,6 +38,7 @@
 @property NSTimer *waitForDevices;
 @property NSRunLoop *runLoop;
 @property (nonatomic, weak) id delegate;
+@property NSInteger discoveryCount;
 
 
 /**
@@ -150,10 +151,43 @@
 -(id<DeviceCommonInfoInterface>) monitorMatchingCBPeripheral: (CBPeripheral*) device;
 
 
+/**
+ * This getter returns the current selectedHeartMonitor.  The reference conforms to the
+ * HeartMonitorProtocol and the DeviceCommonInfoInterface protocol.
+ *
+ * @return the object reference for the heart monitor.  A check for nil is necessary because
+ * it is possible to deselect the heart monitor.
+ */
+
 -(id<HeartMonitorProtocol, DeviceCommonInfoInterface>) selectedHeartMonitor;
+
+
+/**
+ * This setter updates the selectedHeartMonitor as long as it conforms to the 
+ * HeartMonitorProtocol and the DeviceCommonInfoInterface.  It also notifies that delegate
+ * that the value has changed.
+ */
+
 -(void) setSelectedHeartMonitor: (id<HeartMonitorProtocol, DeviceCommonInfoInterface>) selectedHeartMonitor;
 
+
+/**
+ * This getter returns the current selectedActivityMonitor.  The reference conforms to the
+ * ActivityMonitorProtocol and the DeviceCommonInfoInterface protocol.
+ *
+ * @return the object reference for the activity monitor.  A check for nil is necessary because
+ * it is possible to deselect the activity monitor.
+ */
+
 -(id<ActivityMonitorProtocol, DeviceCommonInfoInterface>) selectedActivityMonitor;
+
+
+/**
+ * This setter updates the selectedActivityMonitor as long as it conforms to the
+ * ActivityMonitorProtocol and the DeviceCommonInfoInterface.  It also notifies that delegate
+ * that the value has changed.
+ */
+
 -(void) setSelectedActivityMonitor: (id<ActivityMonitorProtocol, DeviceCommonInfoInterface>) selectedActivityMonitor;
 
 @end

@@ -68,9 +68,10 @@
 -(void) didReceiveNotificationDeviceConnected;
 
 
+/**
+ * This method is used to tell the device poller to stop monitoring the selected monitors.
+ */
 
 -(void) stopMonitoring;
-
-
 
 @end

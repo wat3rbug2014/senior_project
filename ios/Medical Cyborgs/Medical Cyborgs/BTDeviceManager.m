@@ -25,6 +25,7 @@
 @synthesize delegate;
 @synthesize _selectedHeartMonitor;
 @synthesize _selectedActivityMonitor;
+@synthesize discoveryCount;
 
 static BTDeviceManager *sharedManager = nil;
 
@@ -42,6 +43,7 @@ static BTDeviceManager *sharedManager = nil;
             [services addObject:nil]; // fix this once discovered
         }
     }
+    discoveryCount = 0;
     NSLog(@"scanning for services");
     if (isActive) {
         [manager scanForPeripheralsWithServices:services options:nil];
@@ -124,11 +126,22 @@ static BTDeviceManager *sharedManager = nil;
         }
     }
     if (!readyToStopScan) {
+        discoveryCount++;
         NSLog(@"Waiting for devices to be fully discovered before disconnection");
         waitForDevices = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self
             selector:@selector(stopScan) userInfo:nil repeats:YES];
         runLoop = [NSRunLoop currentRunLoop];
         [runLoop addTimer:waitForDevices forMode:NSDefaultRunLoopMode];
+        if (discoveryCount == 5) {
+            discoveryCount = 0;
+            if ([self selectedActivityMonitor] != nil) {
+                [[[self selectedActivityMonitor] device] discoverServices:nil];
+            }
+            if ([self selectedHeartMonitor] != nil) {
+                [[[self selectedHeartMonitor] device] discoverServices:[NSArray arrayWithObject:
+                    [CBUUID UUIDWithString:POLARH7_SERV_UUID]]];
+            }
+        }
         return;
     } else {
         NSLog(@"all devices fully discovered");
