@@ -39,7 +39,7 @@
 
 /**
  * This method does a check to see if the the device is actually connected and returns a value of
- * TRUE if it is currently connected.  If the Device is in the any other state,
+ * TRUE if it is currently connected.  If the Device is in any other state,
  * the return value is FALSE.
  *
  * @return TRUE or FALSE value if the device is connected.
@@ -97,7 +97,7 @@
 
 /**
  * This method returns the actual CBPeripheral device for use with the device manager in order to manage
- * connectivity to the device.  This object is immutable and does not have hany write characteristics.
+ * connectivity to the device.  This object is immutable and does not have any write characteristics.
  */
 
 -(CBPeripheral*) device;
