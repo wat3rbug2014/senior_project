@@ -98,7 +98,7 @@
     
     [locationManager stopMonitoringSignificantLocationChanges];
     [runLoop cancelPerformSelectorsWithTarget:self];
-    [serverPoller flushDatabase];
+    [serverPoller pushDataToRemoteServer];
     [devicePollTimer invalidate];
     [serverPollTimer invalidate];
     [devicePoller stopMonitoring];

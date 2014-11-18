@@ -7,7 +7,6 @@
 //
 
 #import "DevicePollManager.h"
-#import "DummyData.h"
 #import "HeartMonitorProtocol.h"
 
 @implementation DevicePollManager

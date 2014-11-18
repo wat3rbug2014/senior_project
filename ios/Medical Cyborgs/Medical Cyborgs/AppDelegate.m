@@ -33,7 +33,7 @@
 
 - (void)applicationWillResignActive:(UIApplication *)application {
 
-    [[processScheduler serverPoller] flushDatabase];
+    [[processScheduler serverPoller] pushDataToRemoteServer];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
@@ -54,7 +54,7 @@
     
 
     [[processScheduler deviceManager]  disconnectSelectedMonitors];
-    [[processScheduler serverPoller] flushDatabase];
+    [[processScheduler serverPoller] pushDataToRemoteServer];
 }
 
 -(void) application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
