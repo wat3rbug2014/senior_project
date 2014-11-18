@@ -23,11 +23,12 @@ typedef enum {
 } DeviceType;
 
 typedef enum {
-    SLEEPING = 1,
-    TROUBLE_SLEEP = 2,
-    ACTIVE = 3,
-    EXERCISE = 4,
-    TRAVEL = 5
+    RESTING = 1,
+    WARM_UP = 2,
+    ENDURANCE = 3,
+    AEROBIC = 4,
+    ANAEROBIC = 5,
+    PEAK = 6
 } ActivityLevel;
 
 #endif

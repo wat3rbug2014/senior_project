@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GraphVC">
             <connections>
-                <outlet property="activityDisplay" destination="VKZ-RR-UHo" id="zzW-Hp-e0a"/>
-                <outlet property="heartRateDisplay" destination="cfo-7b-hZg" id="3BI-j2-MSF"/>
+                <outlet property="activityDisplay" destination="VKZ-RR-UHo" id="jH6-pt-ow6"/>
+                <outlet property="heartRateDisplay" destination="cfo-7b-hZg" id="ycj-HS-Pvq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

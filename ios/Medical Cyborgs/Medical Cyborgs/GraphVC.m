@@ -19,24 +19,23 @@
 @synthesize activityDisplay;
 @synthesize displayTimer;
 @synthesize runLoop;
+@synthesize heartMonitor;
+@synthesize activityMonitor;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = @"Measurements";
-        //[devicePoller addObserver:self forKeyPath:@"currentHeartRate" options:NSKeyValueObservingOptionNew context:nil];
     }
     return self;
 }
 
--(void) dealloc {
-    
-    //[self removeObserver:devicePoller forKeyPath:@"currentHeartRate"];
-}
-
 -(id) initWithDevicePoller:(DevicePollManager *) newDevicePoller {
     
+    if (newDevicePoller == nil) {
+        return nil;
+    }
     if (self = [self initWithNibName:@"GraphVC" bundle:nil]) {
         devicePoller = newDevicePoller;
     }
@@ -46,7 +45,6 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    [devicePoller pollDevicesForData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -57,10 +55,13 @@
 
 -(void) viewWillAppear:(BOOL)animated {
     
+    [devicePoller pollDevicesForData];
     NSTimeInterval displayUpdateTime = 1.0;
     displayTimer = [NSTimer scheduledTimerWithTimeInterval:displayUpdateTime target:self
         selector:@selector(updateDisplay) userInfo:nil repeats:YES];
     [runLoop addTimer:displayTimer forMode:NSDefaultRunLoopMode];
+    heartMonitor = [devicePoller heartMonitor];
+    activityMonitor = [devicePoller activityMonitor];
     [super viewWillAppear:animated];
 }
 
@@ -68,26 +69,17 @@
     
     [displayTimer invalidate];
     [runLoop cancelPerformSelector:@selector(updateDisplay) target:self argument:nil];
+    [devicePoller stopMonitoring];
     [super viewWillDisappear:animated];
 }
 
 -(void) updateDisplay {
     
-    [heartRateDisplay setText:[NSString stringWithFormat:@"%d", [[devicePoller heartMonitor] getHeartRate]]];
-    int activity = [devicePoller activityLevelBasedOnHeartRate:[[devicePoller heartMonitor] getHeartRate]];
-    NSLog(@"activity level is %d",activity);
-    switch (activity) {
-        case TRAVEL: [activityDisplay setText:@"Traveling"];
-            break;
-        case TROUBLE_SLEEP: [activityDisplay setText:@"Troubled sleep"];
-            break;
-        case ACTIVE: [activityDisplay setText:@"Active"];
-            break;
-        case EXERCISE: [activityDisplay setText:@"Exercising"];
-            break;
-        default: [activityDisplay setText:@"Sleeping"];
-            break;
-            
+    NSString *currentHeartRateStr = [NSString stringWithFormat:@"%d",[heartMonitor getHeartRate]];
+    NSLog(@"heart rate is %@", currentHeartRateStr);
+    [heartRateDisplay setText:currentHeartRateStr];
+    int activity = [DeviceConstantsAndStaticFunctions activityLevelBasedOnHeartRate:
+        [heartMonitor getHeartRate] andAge:[[devicePoller patientInfo] age]];
+    [activityDisplay setText:[DeviceConstantsAndStaticFunctions activityPhaseUsingActivityLevel:activity]];
     }
-}
 @end

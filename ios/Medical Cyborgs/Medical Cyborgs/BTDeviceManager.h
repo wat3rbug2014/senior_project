@@ -19,13 +19,14 @@
 #import "HeartMonitorProtocol.h"
 #import "ActivityMonitorProtocol.h"
 #import "DeviceConstantsAndStaticFunctions.h"
+#import "BTDeviceManagerDelegate.h"
 
 
 @interface BTDeviceManager : NSObject <CBCentralManagerDelegate>
 
 
-@property id<HeartMonitorProtocol, DeviceCommonInfoInterface> selectedHeartMonitor;
-@property id<ActivityMonitorProtocol, DeviceCommonInfoInterface> selectedActivityMonitor;
+@property id<HeartMonitorProtocol, DeviceCommonInfoInterface> _selectedHeartMonitor;
+@property id<ActivityMonitorProtocol, DeviceCommonInfoInterface> _selectedActivityMonitor;
 @property NSArray *heartDevices;
 @property NSArray *activityDevices;
 @property NSInteger selectedIndexForHeartMonitor;
@@ -36,7 +37,7 @@
 @property BOOL isActive;
 @property NSTimer *waitForDevices;
 @property NSRunLoop *runLoop;
-
+@property id delegate;
 
 
 /**
@@ -147,5 +148,12 @@
 
 
 -(id<DeviceCommonInfoInterface>) monitorMatchingCBPeripheral: (CBPeripheral*) device;
+
+
+-(id<HeartMonitorProtocol, DeviceCommonInfoInterface>) selectedHeartMonitor;
+-(void) setSelectedHeartMonitor: (id<HeartMonitorProtocol, DeviceCommonInfoInterface>) selectedHeartMonitor;
+
+-(id<ActivityMonitorProtocol, DeviceCommonInfoInterface>) selectedActivityMonitor;
+-(void) setSelectedActivityMonitor: (id<ActivityMonitorProtocol, DeviceCommonInfoInterface>) selectedActivityMonitor;
 
 @end

@@ -12,15 +12,18 @@
 #import <UIKit/UIKit.h>
 #import "BTDeviceManager.h"
 #import "DevicePollManager.h"
+#import "DeviceConstantsAndStaticFunctions.h"
 
 @interface GraphVC : UIViewController
 
 
 @property DevicePollManager *devicePoller;
-@property (retain) IBOutlet UILabel *heartRateDisplay;
-@property (retain) IBOutlet UILabel *activityDisplay;
+@property (retain, nonatomic) IBOutlet UILabel *heartRateDisplay;
+@property (retain, nonatomic) IBOutlet UILabel *activityDisplay;
 @property NSTimer *displayTimer;
 @property NSRunLoop *runLoop;
+@property id<HeartMonitorProtocol> heartMonitor;
+@property id<ActivityMonitorProtocol> activityMonitor;
 
 
 /**

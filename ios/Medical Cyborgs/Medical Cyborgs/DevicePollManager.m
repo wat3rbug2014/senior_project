@@ -32,16 +32,21 @@
     }
     if (self = [super init]) {
         deviceManager = newDeviceManager;
+        [deviceManager setDelegate:self];
         database = dataStore;
         patientID = [database patientID];
         ableToPoll = YES;
         batteryAlertGiven = NO;
         isHeartMonitorReady = NO;
         isActivityMonitorReady = NO;
-        heartMonitor = [[deviceManager heartDevices] objectAtIndex:[deviceManager selectedIndexForHeartMonitor]];
-        activityMonitor = [[deviceManager activityDevices] objectAtIndex:[deviceManager selectedIndexForActivityMonitor]];
+    
+        // setup notifications
+        
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveNotificationDeviceConnected) name: BTHeartConnected object:deviceManager];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveNotificationDeviceConnected) name: BTActivityConnected object:deviceManager];
+        
+        heartMonitor = [[deviceManager heartDevices] objectAtIndex:[deviceManager selectedIndexForHeartMonitor]];
+        activityMonitor = [[deviceManager activityDevices] objectAtIndex:[deviceManager selectedIndexForActivityMonitor]];
     }
     return self;
 }
@@ -49,6 +54,8 @@
 -(void) dealloc {
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [deviceManager removeObserver:self forKeyPath:@"selectedHeartMonitor"];
+    [deviceManager removeObserver:self forKeyPath:@"selectActivityMonitor"];
 }
 
 -(void) stopMonitoring {
@@ -82,7 +89,8 @@
     
     // check this
     
-    [database setActivityLevel:[self activityLevelBasedOnHeartRate:currentHeartRate]];
+    [database setActivityLevel:[DeviceConstantsAndStaticFunctions
+        activityLevelBasedOnHeartRate:currentHeartRate andAge:[patientInfo age]]];
     
     // end of check portion
     
@@ -109,7 +117,7 @@
     if ([deviceManager selectedIndexForActivityMonitor] == NONE_SELECTED) {
         return;
     } else {
-        activityMonitor = [deviceManager selectedActivityMonitor];
+        self.activityMonitor = [deviceManager selectedActivityMonitor];
         if ([activityMonitor isConnected]) {
             [self setIsActivityMonitorReady:YES];
             NSLog(@"activity monitor connected\nContinue polling");
@@ -118,24 +126,13 @@
     }
 }
 
--(int) activityLevelBasedOnHeartRate: (NSInteger) heartRate {
-    
-    int result = 0;
-    NSInteger mhr = 208 - ((NSInteger)(.7 * [database age]));
-    float percentOfMax = ((float)heartRate/ (float)mhr);
-    if (percentOfMax < 0.4) {
-        result =  SLEEPING;
-    }
-    if (percentOfMax >= 0.4 && percentOfMax < 0.5) {
-        result = TROUBLE_SLEEP;
-    }
-    if (percentOfMax >= 0.5 && percentOfMax < 0.6) {
-        result = TRAVEL;
-    }
-    if (percentOfMax >= 0.6) {
-        result = ACTIVE;
-    }
-    return result;
-}
+#pragma mark BTDeviceManagerDelegate methods
 
+
+-(void) deviceManagerDidUpdateMonitors {
+    
+    NSLog(@"Used delegate");
+    [self setActivityMonitor:[deviceManager selectedActivityMonitor]];
+    [self setHeartMonitor:[deviceManager selectedHeartMonitor]];
+}
 @end

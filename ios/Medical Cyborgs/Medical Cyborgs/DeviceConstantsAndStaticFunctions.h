@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DeviceTypes.h"
 
 @interface DeviceConstantsAndStaticFunctions : NSObject
 
@@ -22,4 +23,8 @@ extern NSString * const DEVICE_READ_VALUE;
 
 extern NSInteger NO_BATTERY_VALUE; 
 extern NSString * const BATTERY_LOW_NOTIFCATION_STR;
+
+
++(NSString*) activityPhaseUsingActivityLevel: (int) activity;
++(int) activityLevelBasedOnHeartRate: (NSInteger) heartRate andAge: (NSInteger) age;
 @end

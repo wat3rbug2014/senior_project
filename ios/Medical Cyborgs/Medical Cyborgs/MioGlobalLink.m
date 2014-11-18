@@ -148,7 +148,7 @@
 
 -(NSInteger)getActivityLevel {
     
-    return SLEEPING;
+    return RESTING;
 }
 
 #pragma mark CBPeripheralDelegate protocol methods

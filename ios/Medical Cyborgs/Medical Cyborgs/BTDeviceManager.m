@@ -12,8 +12,6 @@
 
 @implementation BTDeviceManager
 
-@synthesize selectedHeartMonitor;
-@synthesize selectedActivityMonitor;
 @synthesize heartDevices;
 @synthesize activityDevices;
 @synthesize selectedIndexForHeartMonitor;
@@ -24,6 +22,9 @@
 @synthesize isActive;
 @synthesize waitForDevices;
 @synthesize runLoop;
+@synthesize delegate;
+@synthesize _selectedHeartMonitor;
+@synthesize _selectedActivityMonitor;
 
 static BTDeviceManager *sharedManager = nil;
 
@@ -74,6 +75,32 @@ static BTDeviceManager *sharedManager = nil;
     manager = nil;
 }
 
+-(void) setSelectedActivityMonitor:(id<ActivityMonitorProtocol,DeviceCommonInfoInterface>) selectedActivityMonitor {
+    
+    _selectedActivityMonitor = selectedActivityMonitor;
+    if (delegate != nil && [delegate conformsToProtocol:@protocol(BTDeviceManagerDelegate)]) {
+        [delegate deviceManagerDidUpdateMonitors];
+    }
+}
+
+-(id<ActivityMonitorProtocol, DeviceCommonInfoInterface>) selectedActivityMonitor {
+    
+    return _selectedActivityMonitor;
+}
+
+-(void) setSelectedHeartMonitor:(id<HeartMonitorProtocol,DeviceCommonInfoInterface>) selectedHeartMonitor {
+    
+    _selectedHeartMonitor = selectedHeartMonitor;
+    if (delegate != nil && [delegate conformsToProtocol:@protocol(BTDeviceManagerDelegate)]) {
+        [delegate deviceManagerDidUpdateMonitors];
+    }
+}
+
+-(id<HeartMonitorProtocol, DeviceCommonInfoInterface>) selectedHeartMonitor {
+    
+    return  _selectedHeartMonitor;
+}
+
 -(NSInteger) discoveredDevicesForType:(NSInteger)type {
     
     if ((type & ACTIVITY_MONITOR) == HEART_MONITOR) {
@@ -116,22 +143,22 @@ static BTDeviceManager *sharedManager = nil;
 
 -(void) disconnectSelectedMonitors {
     
-    if (selectedHeartMonitor != nil) {
-        [manager cancelPeripheralConnection:[selectedHeartMonitor device]];
+    if (self.selectedHeartMonitor != nil) {
+        [manager cancelPeripheralConnection:[self.selectedHeartMonitor device]];
     }
-    if (selectedActivityMonitor != nil) {
-        [manager cancelPeripheralConnection:[selectedActivityMonitor device]];
+    if (self.selectedActivityMonitor != nil) {
+        [manager cancelPeripheralConnection:[self.selectedActivityMonitor device]];
     }
 }
 
 -(void)connectSelectedMonitors {
     
     [self setIsInDiscoveryMode:NO];
-    if (selectedActivityMonitor) {
-        [manager connectPeripheral:[selectedActivityMonitor device] options:nil];
+    if (self.selectedActivityMonitor) {
+        [manager connectPeripheral:[self.selectedActivityMonitor device] options:nil];
     }
-    if (selectedHeartMonitor) {
-        [manager connectPeripheral:[selectedHeartMonitor device] options:nil];
+    if (self.selectedHeartMonitor) {
+        [manager connectPeripheral:[self.selectedHeartMonitor device] options:nil];
     }
 }
 
@@ -169,13 +196,13 @@ static BTDeviceManager *sharedManager = nil;
     }
     if ((type & ACTIVITY_MONITOR) == ACTIVITY_MONITOR && index < [activityDevices count]) {
         [manager connectPeripheral:[[activityDevices objectAtIndex:index] device] options:nil];
-        selectedActivityMonitor = [activityDevices objectAtIndex:index];
+        self.selectedActivityMonitor = [activityDevices objectAtIndex:index];
         selectedIndexForActivityMonitor = index;
     }
     if ((type & HEART_MONITOR) == HEART_MONITOR && index < [heartDevices count]) {
         [manager connectPeripheral:[[heartDevices objectAtIndex:index] device] options:nil];
         selectedIndexForHeartMonitor = index;
-        selectedHeartMonitor = [heartDevices objectAtIndex:index];
+        self.selectedHeartMonitor = [heartDevices objectAtIndex:index];
     }
 }
 
@@ -184,10 +211,10 @@ static BTDeviceManager *sharedManager = nil;
 
     if ((type & HEART_MONITOR) == HEART_MONITOR) {
         selectedIndexForHeartMonitor = NONE_SELECTED;
-        selectedHeartMonitor = nil;
+        self.selectedHeartMonitor = nil;
     } else {
         selectedIndexForActivityMonitor = NONE_SELECTED;
-        selectedActivityMonitor = nil;
+        self.selectedActivityMonitor = nil;
     }
 }
 
@@ -203,6 +230,13 @@ static BTDeviceManager *sharedManager = nil;
     }
     return result;
 }
+
+
++(BOOL) automaticallyNotifiesObserversForKey:(NSString *)key {
+    
+    return YES;
+}
+
 #pragma mark CBCentralManagerDelegate methods
 
 

@@ -122,7 +122,7 @@ NSString * const FLEX_SERV_UUID = @"45C3";
 
 -(NSInteger)getActivityLevel {
     
-    return SLEEPING;
+    return RESTING;
 }
 
 #pragma mark CBPeripheralDelegate protocol methods

@@ -38,8 +38,10 @@
         bigLocationChanges = NO;
         NSInteger status = [CLLocationManager authorizationStatus];
         if (status == kCLAuthorizationStatusRestricted || status == kCLAuthorizationStatusDenied) {
+            NSLog(@"Location service denied");
             locationAllowed = NO;
         } else {
+            NSLog(@"Location service allowed");
             locationAllowed = YES;
         }
         if (locationAllowed) {
@@ -150,6 +152,7 @@
 
 -(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
     
+    NSLog(@"Show a log entry for failure for now");
     // not sure what to do at this moment.  Database will be using last recording
     // and I haven't done research on how to reset after error.
 }

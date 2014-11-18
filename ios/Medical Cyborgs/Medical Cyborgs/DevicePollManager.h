@@ -19,8 +19,10 @@
 #import "BTDeviceManager.h"
 #import "DBManager.h"
 #import "ActivityMonitorProtocol.h"
+#import "DeviceConstantsAndStaticFunctions.h"
+#import "BTDeviceManagerDelegate.h"
 
-@interface DevicePollManager : NSObject
+@interface DevicePollManager : NSObject <BTDeviceManagerDelegate>
 
 
 @property PersonalInfo *patientInfo;
@@ -65,9 +67,6 @@
 
 -(void) didReceiveNotificationDeviceConnected;
 
-
-
--(int) activityLevelBasedOnHeartRate: (NSInteger) heartRate;
 
 
 -(void) stopMonitoring;
