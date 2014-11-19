@@ -1,0 +1,119 @@
+\hypertarget{interface_device_poll_manager}{\section{Device\-Poll\-Manager Class Reference}
+\label{interface_device_poll_manager}\index{Device\-Poll\-Manager@{Device\-Poll\-Manager}}
+}
+
+
+{\ttfamily \#import $<$Device\-Poll\-Manager.\-h$>$}
+
+Inheritance diagram for Device\-Poll\-Manager\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.814070cm]{interface_device_poll_manager}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(id) -\/ \hyperlink{interface_device_poll_manager_ac1637206b4271575f8b2afd39375125b}{init\-With\-Data\-Store\-:and\-Devicemanager\-:}
+\item 
+(void) -\/ \hyperlink{interface_device_poll_manager_ac0c31de4251c9eac9b21594cc866f165}{poll\-Devices\-For\-Data}
+\item 
+(void) -\/ \hyperlink{interface_device_poll_manager_a91b7db2f338c98f0d653e8a33d95b736}{did\-Receive\-Notification\-Device\-Connected}
+\item 
+(void) -\/ \hyperlink{interface_device_poll_manager_a4fe6160b06d23999e8939c88e900b232}{stop\-Monitoring}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_device_poll_manager_ad710c38392bfc32d3509de470e0cfa8d}{C\-L\-Location\-Manager $\ast$ {\bfseries location\-Manager}}\label{interface_device_poll_manager_ad710c38392bfc32d3509de470e0cfa8d}
+
+\item 
+\hypertarget{interface_device_poll_manager_a0e9aad6cc4f5a99aff27b0a64ae76d19}{B\-O\-O\-L {\bfseries location\-Allowed}}\label{interface_device_poll_manager_a0e9aad6cc4f5a99aff27b0a64ae76d19}
+
+\item 
+\hypertarget{interface_device_poll_manager_a8186f40fc585c1bf30ebb8c6e05ca6d4}{B\-O\-O\-L {\bfseries big\-Location\-Changes}}\label{interface_device_poll_manager_a8186f40fc585c1bf30ebb8c6e05ca6d4}
+
+\item 
+\hypertarget{interface_device_poll_manager_a8739ffcaa2b1e02afc1864e338de148f}{\hyperlink{interface_personal_info}{Personal\-Info} $\ast$ {\bfseries patient\-Info}}\label{interface_device_poll_manager_a8739ffcaa2b1e02afc1864e338de148f}
+
+\item 
+\hypertarget{interface_device_poll_manager_a621e3962372201145248997e2eb87327}{N\-S\-Integer {\bfseries patient\-I\-D}}\label{interface_device_poll_manager_a621e3962372201145248997e2eb87327}
+
+\item 
+\hypertarget{interface_device_poll_manager_a813e014763804b71e247ca335fe91761}{\hyperlink{interface_b_t_device_manager}{B\-T\-Device\-Manager} $\ast$ {\bfseries device\-Manager}}\label{interface_device_poll_manager_a813e014763804b71e247ca335fe91761}
+
+\item 
+\hypertarget{interface_device_poll_manager_a5d06bcab588b72afdf5fce4c102afe91}{id$<$ \hyperlink{protocol_device_common_info_interface-p}{Device\-Common\-Info\-Interface}, \\*
+\hyperlink{protocol_heart_monitor_protocol-p}{Heart\-Monitor\-Protocol} $>$ {\bfseries heart\-Monitor}}\label{interface_device_poll_manager_a5d06bcab588b72afdf5fce4c102afe91}
+
+\item 
+\hypertarget{interface_device_poll_manager_a1e33e8f7da83c22dccb6c3b3b7d66069}{id$<$ \hyperlink{protocol_device_common_info_interface-p}{Device\-Common\-Info\-Interface}, \\*
+\hyperlink{protocol_activity_monitor_protocol-p}{Activity\-Monitor\-Protocol} $>$ {\bfseries activity\-Monitor}}\label{interface_device_poll_manager_a1e33e8f7da83c22dccb6c3b3b7d66069}
+
+\item 
+\hypertarget{interface_device_poll_manager_a66a02f95a478a42c7e45986317e3c6c1}{\hyperlink{interface_d_b_manager}{D\-B\-Manager} $\ast$ {\bfseries database}}\label{interface_device_poll_manager_a66a02f95a478a42c7e45986317e3c6c1}
+
+\item 
+\hypertarget{interface_device_poll_manager_a8d5b5ff2c336f0dd2cb2b9e088850072}{B\-O\-O\-L {\bfseries battery\-Alert\-Given}}\label{interface_device_poll_manager_a8d5b5ff2c336f0dd2cb2b9e088850072}
+
+\item 
+\hypertarget{interface_device_poll_manager_abe71cba97ae5b0faef77e70b78f2bef2}{B\-O\-O\-L {\bfseries able\-To\-Poll}}\label{interface_device_poll_manager_abe71cba97ae5b0faef77e70b78f2bef2}
+
+\item 
+\hypertarget{interface_device_poll_manager_a4735e7c0b634e8693ac8d33a0456d39f}{B\-O\-O\-L {\bfseries is\-Heart\-Monitor\-Ready}}\label{interface_device_poll_manager_a4735e7c0b634e8693ac8d33a0456d39f}
+
+\item 
+\hypertarget{interface_device_poll_manager_aeab69bf0530fcf7d3f1b01c785e17bd2}{B\-O\-O\-L {\bfseries is\-Activity\-Monitor\-Ready}}\label{interface_device_poll_manager_aeab69bf0530fcf7d3f1b01c785e17bd2}
+
+\item 
+\hypertarget{interface_device_poll_manager_a302b6434aa606031f78f721c9e40f0cf}{int {\bfseries current\-Heart\-Rate}}\label{interface_device_poll_manager_a302b6434aa606031f78f721c9e40f0cf}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class functions as the polling mechanism for the bluetooth devices. Its goes through each time the main method is called and retrieves the information from the devices and puts the data in the local data store. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_device_poll_manager_a91b7db2f338c98f0d653e8a33d95b736}{\index{Device\-Poll\-Manager@{Device\-Poll\-Manager}!did\-Receive\-Notification\-Device\-Connected@{did\-Receive\-Notification\-Device\-Connected}}
+\index{did\-Receive\-Notification\-Device\-Connected@{did\-Receive\-Notification\-Device\-Connected}!DevicePollManager@{Device\-Poll\-Manager}}
+\subsubsection[{did\-Receive\-Notification\-Device\-Connected}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) did\-Receive\-Notification\-Device\-Connected 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_device_poll_manager_a91b7db2f338c98f0d653e8a33d95b736}
+This method is used by the device manager to notify the poller that a device is connected. It is used to help signal the device poller that it can continue because all devices are connected.
+
+
+\begin{DoxyParams}{Parameters}
+{\em notification} & The notification that is used to update device status. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_device_poll_manager_ac1637206b4271575f8b2afd39375125b}{\index{Device\-Poll\-Manager@{Device\-Poll\-Manager}!init\-With\-Data\-Store\-:and\-Devicemanager\-:@{init\-With\-Data\-Store\-:and\-Devicemanager\-:}}
+\index{init\-With\-Data\-Store\-:and\-Devicemanager\-:@{init\-With\-Data\-Store\-:and\-Devicemanager\-:}!DevicePollManager@{Device\-Poll\-Manager}}
+\subsubsection[{init\-With\-Data\-Store\-:and\-Devicemanager\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id) init\-With\-Data\-Store\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf D\-B\-Manager}$\ast$)}]{data\-Store}
+\item[{andDevicemanager:({\bf B\-T\-Device\-Manager}$\ast$)}]{new\-Device\-Manager}
+\end{DoxyParamCaption}
+}}\label{interface_device_poll_manager_ac1637206b4271575f8b2afd39375125b}
+This is the preferred initialization method. The datastore and the two components are passed so that polling can happen imediately. W\-A\-R\-N\-I\-N\-G\-: This initialization method must be used if any polling is to occur. \hypertarget{interface_device_poll_manager_ac0c31de4251c9eac9b21594cc866f165}{\index{Device\-Poll\-Manager@{Device\-Poll\-Manager}!poll\-Devices\-For\-Data@{poll\-Devices\-For\-Data}}
+\index{poll\-Devices\-For\-Data@{poll\-Devices\-For\-Data}!DevicePollManager@{Device\-Poll\-Manager}}
+\subsubsection[{poll\-Devices\-For\-Data}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) poll\-Devices\-For\-Data 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_device_poll_manager_ac0c31de4251c9eac9b21594cc866f165}
+This method is used to get information from the devices. If the devices have not been added with the init\-With\-Data\-Store\-: heart\-Monitor\-: activity\-Monitor\-: no updates will occur. The appropriate data is pulled from the devices for monitoring. The battery level, if readable is also polled. If the battery is below 20\% a notification will be posted to the N\-S\-Notification\-Center. \hypertarget{interface_device_poll_manager_a4fe6160b06d23999e8939c88e900b232}{\index{Device\-Poll\-Manager@{Device\-Poll\-Manager}!stop\-Monitoring@{stop\-Monitoring}}
+\index{stop\-Monitoring@{stop\-Monitoring}!DevicePollManager@{Device\-Poll\-Manager}}
+\subsubsection[{stop\-Monitoring}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) stop\-Monitoring 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_device_poll_manager_a4fe6160b06d23999e8939c88e900b232}
+This method is used to tell the device poller to stop monitoring the selected monitors. 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/douglas/\-Documents/software/\-Senior Project/ios/\-Medical Cyborgs/\-Medical Cyborgs/Device\-Poll\-Manager.\-h\item 
+/\-Users/douglas/\-Documents/software/\-Senior Project/ios/\-Medical Cyborgs/\-Medical Cyborgs/Device\-Poll\-Manager.\-m\end{DoxyCompactItemize}

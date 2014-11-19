@@ -22,6 +22,9 @@
 @synthesize isActivityMonitorReady;
 @synthesize isHeartMonitorReady;
 @synthesize currentHeartRate;
+@synthesize locationAllowed;
+@synthesize locationManager;
+@synthesize bigLocationChanges;
 
 
 -(id) initWithDataStore:(DBManager *)dataStore andDevicemanager:(BTDeviceManager *)newDeviceManager {
@@ -38,6 +41,28 @@
         batteryAlertGiven = NO;
         isHeartMonitorReady = NO;
         isActivityMonitorReady = NO;
+        
+        // setup for location changes
+        
+        locationManager = nil;
+        bigLocationChanges = NO;
+        NSInteger status = [CLLocationManager authorizationStatus];
+        if (status == kCLAuthorizationStatusRestricted || status == kCLAuthorizationStatusDenied) {
+            NSLog(@"Location service denied");
+            locationAllowed = NO;
+        } else {
+            NSLog(@"Location service allowed");
+            locationAllowed = YES;
+        }
+        if (locationAllowed) {
+            locationManager = [[CLLocationManager alloc] init];
+            [locationManager setDelegate:self];
+            if (status == kCLAuthorizationStatusNotDetermined) {
+                [locationManager requestWhenInUseAuthorization];
+            } else {
+                bigLocationChanges = [CLLocationManager significantLocationChangeMonitoringAvailable];
+            }
+        }
     
         // setup notifications
         
@@ -134,4 +159,35 @@
     [self setActivityMonitor:[deviceManager selectedActivityMonitor]];
     [self setHeartMonitor:[deviceManager selectedHeartMonitor]];
 }
+
+#pragma mark CLLocationManagerDelegate methods
+
+
+-(void) locationManager:(CLLocationManager*) manager didChangeAuthorizationStatus:(CLAuthorizationStatus) status {
+    
+    if (status == kCLAuthorizationStatusRestricted || status == kCLAuthorizationStatusDenied) {
+        locationAllowed = NO;
+        if (locationManager != nil) {
+            locationManager = nil;
+        }
+    } else {
+        locationAllowed = YES;
+    }
+}
+
+-(void) locationManager: (CLLocationManager*) manager didUpdateLocations: (NSArray*) locations {
+    
+    NSLog(@"location update happened");
+    CLLocation *currentLocation = [locations objectAtIndex: [locations count] - 1];
+    [database setLongitude:[currentLocation coordinate].longitude];
+    [database setLatitude:[currentLocation coordinate].latitude];
+}
+
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    
+    NSLog(@"Show a log entry for failure for now");
+    // not sure what to do at this moment.  Database will be using last recording
+    // and I haven't done research on how to reset aft
+}
+
 @end

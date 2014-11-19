@@ -1,0 +1,67 @@
+\hypertarget{interface_patient_information_v_c}{\section{Patient\-Information\-V\-C Class Reference}
+\label{interface_patient_information_v_c}\index{Patient\-Information\-V\-C@{Patient\-Information\-V\-C}}
+}
+Inheritance diagram for Patient\-Information\-V\-C\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.308411cm]{interface_patient_information_v_c}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(id) -\/ \hyperlink{interface_patient_information_v_c_ab98d9f44b4ee1c4b3051c017ebdac5c5}{init\-With\-Personal\-Information\-:}
+\item 
+(void) -\/ \hyperlink{interface_patient_information_v_c_ab6fee07f4777f557711e819c9a4cf3a4}{update\-D\-O\-B}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_patient_information_v_c_a1836a8d8dc5e1a376109fb8b391c4038}{I\-B\-Outlet U\-I\-Text\-Field $\ast$ {\bfseries first\-Name\-Entry}}\label{interface_patient_information_v_c_a1836a8d8dc5e1a376109fb8b391c4038}
+
+\item 
+\hypertarget{interface_patient_information_v_c_a6523689959d35fa22fe3e01838ada93c}{I\-B\-Outlet U\-I\-Text\-Field $\ast$ {\bfseries last\-Name\-Entry}}\label{interface_patient_information_v_c_a6523689959d35fa22fe3e01838ada93c}
+
+\item 
+\hypertarget{interface_patient_information_v_c_a939dda6df517b4b5a4624928c77fe5b8}{I\-B\-Outlet U\-I\-Date\-Picker $\ast$ {\bfseries dob\-Selector}}\label{interface_patient_information_v_c_a939dda6df517b4b5a4624928c77fe5b8}
+
+\item 
+\hypertarget{interface_patient_information_v_c_afef82a462fd797cc833f72f3b33d9b3c}{\hyperlink{interface_personal_info}{Personal\-Info} $\ast$ {\bfseries patient\-Data}}\label{interface_patient_information_v_c_afef82a462fd797cc833f72f3b33d9b3c}
+
+\item 
+\hypertarget{interface_patient_information_v_c_a17cd9e90386e04e545017658bf34582e}{N\-S\-Mutable\-Data $\ast$ {\bfseries \-\_\-server\-Response\-Data}}\label{interface_patient_information_v_c_a17cd9e90386e04e545017658bf34582e}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Method Documentation}
+\hypertarget{interface_patient_information_v_c_ab98d9f44b4ee1c4b3051c017ebdac5c5}{\index{Patient\-Information\-V\-C@{Patient\-Information\-V\-C}!init\-With\-Personal\-Information\-:@{init\-With\-Personal\-Information\-:}}
+\index{init\-With\-Personal\-Information\-:@{init\-With\-Personal\-Information\-:}!PatientInformationVC@{Patient\-Information\-V\-C}}
+\subsubsection[{init\-With\-Personal\-Information\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id) init\-With\-Personal\-Information\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf Personal\-Info}$\ast$)}]{existing\-Patient\-Data}
+\end{DoxyParamCaption}
+}}\label{interface_patient_information_v_c_ab98d9f44b4ee1c4b3051c017ebdac5c5}
+This method creates a viewcontroller that has the personal information object. The object queries the device store user default settings and maintains the records. This information is needed for building the initial view with patient information.
+
+
+\begin{DoxyParams}{Parameters}
+{\em existing\-Patient\-Data} & is the object that contains the patient name, D\-O\-B, and I\-D necessary for the V\-C to function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A viewcontroller that will display the current patient information and allow editing. 
+\end{DoxyReturn}
+\hypertarget{interface_patient_information_v_c_ab6fee07f4777f557711e819c9a4cf3a4}{\index{Patient\-Information\-V\-C@{Patient\-Information\-V\-C}!update\-D\-O\-B@{update\-D\-O\-B}}
+\index{update\-D\-O\-B@{update\-D\-O\-B}!PatientInformationVC@{Patient\-Information\-V\-C}}
+\subsubsection[{update\-D\-O\-B}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) update\-D\-O\-B 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_patient_information_v_c_ab6fee07f4777f557711e819c9a4cf3a4}
+This method updates the patient information to reflect the date that is selected from the U\-I\-Date\-Picker object. 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/douglas/\-Documents/software/\-Senior Project/ios/\-Medical Cyborgs/\-Medical Cyborgs/Patient\-Information\-V\-C.\-h\item 
+/\-Users/douglas/\-Documents/software/\-Senior Project/ios/\-Medical Cyborgs/\-Medical Cyborgs/Patient\-Information\-V\-C.\-m\end{DoxyCompactItemize}

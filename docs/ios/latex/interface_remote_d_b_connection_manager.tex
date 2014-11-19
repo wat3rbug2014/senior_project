@@ -1,0 +1,107 @@
+\hypertarget{interface_remote_d_b_connection_manager}{\section{Remote\-D\-B\-Connection\-Manager Class Reference}
+\label{interface_remote_d_b_connection_manager}\index{Remote\-D\-B\-Connection\-Manager@{Remote\-D\-B\-Connection\-Manager}}
+}
+Inheritance diagram for Remote\-D\-B\-Connection\-Manager\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_remote_d_b_connection_manager}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(id) -\/ \hyperlink{interface_remote_d_b_connection_manager_a744cbe8cedf02655ce5a2311957059cb}{init\-With\-Database\-:}
+\item 
+(void) -\/ \hyperlink{interface_remote_d_b_connection_manager_a517a86ad693e383d664972123808b9fc}{push\-Data\-To\-Remote\-Server}
+\item 
+(void) -\/ \hyperlink{interface_remote_d_b_connection_manager_aa7263ee167de6993f3c68d74f34d3b9e}{send\-Row\-To\-Server}
+\item 
+(void) -\/ \hyperlink{interface_remote_d_b_connection_manager_a87140c7af270366183486e2f02dc6f5d}{remove\-Current\-Row\-In\-Local\-D\-B}
+\item 
+(N\-S\-String $\ast$) -\/ \hyperlink{interface_remote_d_b_connection_manager_a56943f27947c97c9c0d88bf3f89a73f6}{U\-R\-L\-Encoded\-String\-:}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_remote_d_b_connection_manager_aea31c73a0a3e36095f04688a9b51b594}{\hyperlink{interface_d_b_manager}{D\-B\-Manager} $\ast$ {\bfseries database}}\label{interface_remote_d_b_connection_manager_aea31c73a0a3e36095f04688a9b51b594}
+
+\item 
+\hypertarget{interface_remote_d_b_connection_manager_a984d4293c7de824df8ab8b7a8510c15e}{N\-S\-Integer {\bfseries patient\-I\-D}}\label{interface_remote_d_b_connection_manager_a984d4293c7de824df8ab8b7a8510c15e}
+
+\item 
+\hypertarget{interface_remote_d_b_connection_manager_a1cf642f7f159dedf3f805ae62f86f0ee}{\hyperlink{interface_local_d_b_result}{Local\-D\-B\-Result} $\ast$ {\bfseries current\-Row}}\label{interface_remote_d_b_connection_manager_a1cf642f7f159dedf3f805ae62f86f0ee}
+
+\item 
+\hypertarget{interface_remote_d_b_connection_manager_a6956166be867026a4ed5c9552c2fbc85}{N\-S\-Mutable\-Data $\ast$ {\bfseries \-\_\-server\-Response\-Data}}\label{interface_remote_d_b_connection_manager_a6956166be867026a4ed5c9552c2fbc85}
+
+\item 
+\hypertarget{interface_remote_d_b_connection_manager_aea06d1743882f6b59247e590cdd0513f}{N\-S\-Integer {\bfseries failed\-Attempts}}\label{interface_remote_d_b_connection_manager_aea06d1743882f6b59247e590cdd0513f}
+
+\item 
+\hypertarget{interface_remote_d_b_connection_manager_ad3cb931f4c5147c3595679f241a0bf48}{B\-O\-O\-L {\bfseries remote\-Unreachable}}\label{interface_remote_d_b_connection_manager_ad3cb931f4c5147c3595679f241a0bf48}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Method Documentation}
+\hypertarget{interface_remote_d_b_connection_manager_a744cbe8cedf02655ce5a2311957059cb}{\index{Remote\-D\-B\-Connection\-Manager@{Remote\-D\-B\-Connection\-Manager}!init\-With\-Database\-:@{init\-With\-Database\-:}}
+\index{init\-With\-Database\-:@{init\-With\-Database\-:}!RemoteDBConnectionManager@{Remote\-D\-B\-Connection\-Manager}}
+\subsubsection[{init\-With\-Database\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id) init\-With\-Database\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf D\-B\-Manager}$\ast$)}]{datastore}
+\end{DoxyParamCaption}
+}}\label{interface_remote_d_b_connection_manager_a744cbe8cedf02655ce5a2311957059cb}
+This method creates an instance using the database manager that is passed to it. This is the preferred method. If no database is given it will attempt to to open the database and assign it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em datastore} & The database manager that is to be the source of data to send to the server.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An instance of the remote server manager. 
+\end{DoxyReturn}
+\hypertarget{interface_remote_d_b_connection_manager_a517a86ad693e383d664972123808b9fc}{\index{Remote\-D\-B\-Connection\-Manager@{Remote\-D\-B\-Connection\-Manager}!push\-Data\-To\-Remote\-Server@{push\-Data\-To\-Remote\-Server}}
+\index{push\-Data\-To\-Remote\-Server@{push\-Data\-To\-Remote\-Server}!RemoteDBConnectionManager@{Remote\-D\-B\-Connection\-Manager}}
+\subsubsection[{push\-Data\-To\-Remote\-Server}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) push\-Data\-To\-Remote\-Server 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_remote_d_b_connection_manager_a517a86ad693e383d664972123808b9fc}
+This method is the wrapper method for the class. It checks to see if the remote is still reachable and that there is something to send to the server. If the server has been unreachable it ends. If the server is reachable and the database is empty it ends, otherwise it continues going through the database and pushing. \hypertarget{interface_remote_d_b_connection_manager_a87140c7af270366183486e2f02dc6f5d}{\index{Remote\-D\-B\-Connection\-Manager@{Remote\-D\-B\-Connection\-Manager}!remove\-Current\-Row\-In\-Local\-D\-B@{remove\-Current\-Row\-In\-Local\-D\-B}}
+\index{remove\-Current\-Row\-In\-Local\-D\-B@{remove\-Current\-Row\-In\-Local\-D\-B}!RemoteDBConnectionManager@{Remote\-D\-B\-Connection\-Manager}}
+\subsubsection[{remove\-Current\-Row\-In\-Local\-D\-B}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) remove\-Current\-Row\-In\-Local\-D\-B 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_remote_d_b_connection_manager_a87140c7af270366183486e2f02dc6f5d}
+This method removes the current row from the database. It is called after a successful push to the remote server. For our purposes, the local database essentially functions as a queue with an additional save state. In case of application crash or phone crash, etc the data is not lost and seemed easier to implement than a persistent data store. \hypertarget{interface_remote_d_b_connection_manager_aa7263ee167de6993f3c68d74f34d3b9e}{\index{Remote\-D\-B\-Connection\-Manager@{Remote\-D\-B\-Connection\-Manager}!send\-Row\-To\-Server@{send\-Row\-To\-Server}}
+\index{send\-Row\-To\-Server@{send\-Row\-To\-Server}!RemoteDBConnectionManager@{Remote\-D\-B\-Connection\-Manager}}
+\subsubsection[{send\-Row\-To\-Server}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) send\-Row\-To\-Server 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_remote_d_b_connection_manager_aa7263ee167de6993f3c68d74f34d3b9e}
+This method is the workhorse of the class. It retrieves the first first row from the database. Then it creates a U\-R\-L based on the data it retrieved. Then it makes a U\-R\-L request to the server. After that the N\-S\-U\-R\-L\-Connection delete methods handle the calls and continue the loop. \hypertarget{interface_remote_d_b_connection_manager_a56943f27947c97c9c0d88bf3f89a73f6}{\index{Remote\-D\-B\-Connection\-Manager@{Remote\-D\-B\-Connection\-Manager}!U\-R\-L\-Encoded\-String\-:@{U\-R\-L\-Encoded\-String\-:}}
+\index{U\-R\-L\-Encoded\-String\-:@{U\-R\-L\-Encoded\-String\-:}!RemoteDBConnectionManager@{Remote\-D\-B\-Connection\-Manager}}
+\subsubsection[{U\-R\-L\-Encoded\-String\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String $\ast$) U\-R\-L\-Encoded\-String\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String$\ast$)}]{utf\-String}
+\end{DoxyParamCaption}
+}}\label{interface_remote_d_b_connection_manager_a56943f27947c97c9c0d88bf3f89a73f6}
+This is probably a bad hack. This method is used to encode the string into a U\-R\-L suitable for the server. It does not escape the ? = \& \-\_\- -\/ / symbols. It has been put into place because the default apple method for url encoding a string with encoding does not encode \-:'s. Unfortunately the datetime response from the local database includes colons. Using the search and replace method appears to has some undefined behavior and places extra escape sequences where none are wanted or needed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em utf\-String} & The incoming string that will be utf8 encoded and then converted to a U\-R\-L.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A N\-S\-String that is a new U\-R\-L with \% encoding. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/douglas/\-Documents/software/\-Senior Project/ios/\-Medical Cyborgs/\-Medical Cyborgs/Remote\-D\-B\-Connection\-Manager.\-h\item 
+/\-Users/douglas/\-Documents/software/\-Senior Project/ios/\-Medical Cyborgs/\-Medical Cyborgs/Remote\-D\-B\-Connection\-Manager.\-m\end{DoxyCompactItemize}

@@ -70,13 +70,13 @@
     [displayTimer invalidate];
     [runLoop cancelPerformSelector:@selector(updateDisplay) target:self argument:nil];
     [devicePoller stopMonitoring];
+    [[devicePoller database] purgeDatabase];
     [super viewWillDisappear:animated];
 }
 
 -(void) updateDisplay {
     
     NSString *currentHeartRateStr = [NSString stringWithFormat:@"%d",[heartMonitor getHeartRate]];
-    NSLog(@"heart rate is %@", currentHeartRateStr);
     [heartRateDisplay setText:currentHeartRateStr];
     int activity = [DeviceConstantsAndStaticFunctions activityLevelBasedOnHeartRate:
         [heartMonitor getHeartRate] andAge:[[devicePoller patientInfo] age]];

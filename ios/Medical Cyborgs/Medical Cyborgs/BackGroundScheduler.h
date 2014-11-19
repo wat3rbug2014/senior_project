@@ -12,7 +12,6 @@
  */
 
 #import <Foundation/Foundation.h>
-#import <CoreLocation/CoreLocation.h>
 #import <UIKit/UIKit.h>
 #import "BTDeviceManager.h"
 #import "RemoteDBConnectionManager.h"
@@ -20,17 +19,15 @@
 #import "DBManager.h"
 #import "PersonalInfo.h"
 
-@interface BackgroundScheduler : NSObject <CLLocationManagerDelegate>
+@interface BackgroundScheduler : NSObject
 
 @property (strong) BTDeviceManager *deviceManager;
-@property (strong) CLLocationManager *locationManager;
+
 @property RemoteDBConnectionManager *serverPoller;
 @property DevicePollManager *devicePoller;
 @property DBManager *database;
 @property PersonalInfo *patient;
 @property BOOL allowMonitoring;
-@property BOOL locationAllowed;
-@property BOOL bigLocationChanges;
 @property NSRunLoop *runLoop;
 @property NSTimeInterval devicePollInterval;
 @property NSTimeInterval serverPollInterval;

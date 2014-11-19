@@ -1,0 +1,80 @@
+\hypertarget{interface_graph_v_c}{\section{Graph\-V\-C Class Reference}
+\label{interface_graph_v_c}\index{Graph\-V\-C@{Graph\-V\-C}}
+}
+
+
+{\ttfamily \#import $<$Graph\-V\-C.\-h$>$}
+
+Inheritance diagram for Graph\-V\-C\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_graph_v_c}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(id) -\/ \hyperlink{interface_graph_v_c_ad0a240dde98905eca43bb92db53e9478}{init\-With\-Device\-Poller\-:}
+\item 
+(void) -\/ \hyperlink{interface_graph_v_c_a7521f143474f68142628970e9f1d7706}{update\-Display}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_graph_v_c_a8a00c63cc6cab8b3c1cddaaacc9d12fc}{\hyperlink{interface_device_poll_manager}{Device\-Poll\-Manager} $\ast$ {\bfseries device\-Poller}}\label{interface_graph_v_c_a8a00c63cc6cab8b3c1cddaaacc9d12fc}
+
+\item 
+\hypertarget{interface_graph_v_c_ad434b1d838f58441c9d6499936ccd620}{I\-B\-Outlet U\-I\-Label $\ast$ {\bfseries heart\-Rate\-Display}}\label{interface_graph_v_c_ad434b1d838f58441c9d6499936ccd620}
+
+\item 
+\hypertarget{interface_graph_v_c_a75fd5eb6ebad27cbce29475d94459329}{I\-B\-Outlet U\-I\-Label $\ast$ {\bfseries activity\-Display}}\label{interface_graph_v_c_a75fd5eb6ebad27cbce29475d94459329}
+
+\item 
+\hypertarget{interface_graph_v_c_a5ef6730daa124f69087996078418db0d}{N\-S\-Timer $\ast$ {\bfseries display\-Timer}}\label{interface_graph_v_c_a5ef6730daa124f69087996078418db0d}
+
+\item 
+\hypertarget{interface_graph_v_c_aaeee6afe374009cd16e4a6a1d2270efa}{N\-S\-Run\-Loop $\ast$ {\bfseries run\-Loop}}\label{interface_graph_v_c_aaeee6afe374009cd16e4a6a1d2270efa}
+
+\item 
+\hypertarget{interface_graph_v_c_ab4c3c7d6990f1e3be550b443e2c7a532}{id$<$ \hyperlink{protocol_heart_monitor_protocol-p}{Heart\-Monitor\-Protocol} $>$ {\bfseries heart\-Monitor}}\label{interface_graph_v_c_ab4c3c7d6990f1e3be550b443e2c7a532}
+
+\item 
+\hypertarget{interface_graph_v_c_a0216f83efd648d18c90793fd67206ad8}{id$<$ \hyperlink{protocol_activity_monitor_protocol-p}{Activity\-Monitor\-Protocol} $>$ {\bfseries activity\-Monitor}}\label{interface_graph_v_c_a0216f83efd648d18c90793fd67206ad8}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This screen displays the output of the monitors in real time. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_graph_v_c_ad0a240dde98905eca43bb92db53e9478}{\index{Graph\-V\-C@{Graph\-V\-C}!init\-With\-Device\-Poller\-:@{init\-With\-Device\-Poller\-:}}
+\index{init\-With\-Device\-Poller\-:@{init\-With\-Device\-Poller\-:}!GraphVC@{Graph\-V\-C}}
+\subsubsection[{init\-With\-Device\-Poller\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id) init\-With\-Device\-Poller\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf Device\-Poll\-Manager}$\ast$)}]{device\-Poller}
+\end{DoxyParamCaption}
+}}\label{interface_graph_v_c_ad0a240dde98905eca43bb92db53e9478}
+Creates a device selection view controller. The purpose of the method is to create a standard initialization process for the subclasses of this class. All of the subclasses require a bluetooth device manager and need to be active to start building the view. The \hyperlink{interface_device_poll_manager}{Device\-Poll\-Manager} functions as the datasource for this viewcontroller.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\-Device\-Poll\-Manager} & the bluetooth device poller that will serve as the data source. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a view controller unless no device manager is given, then the result is nil. 
+\end{DoxyReturn}
+\hypertarget{interface_graph_v_c_a7521f143474f68142628970e9f1d7706}{\index{Graph\-V\-C@{Graph\-V\-C}!update\-Display@{update\-Display}}
+\index{update\-Display@{update\-Display}!GraphVC@{Graph\-V\-C}}
+\subsubsection[{update\-Display}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) update\-Display 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_graph_v_c_a7521f143474f68142628970e9f1d7706}
+This method is used to update the activity level and heart rate on a timed interval. 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/douglas/\-Documents/software/\-Senior Project/ios/\-Medical Cyborgs/\-Medical Cyborgs/Graph\-V\-C.\-h\item 
+/\-Users/douglas/\-Documents/software/\-Senior Project/ios/\-Medical Cyborgs/\-Medical Cyborgs/Graph\-V\-C.\-m\end{DoxyCompactItemize}

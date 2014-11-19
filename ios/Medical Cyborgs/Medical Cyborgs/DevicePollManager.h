@@ -13,6 +13,7 @@
  */
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 #import "DeviceCommonInfoInterface.h"
 #import "PersonalInfo.h"
 #import "HeartMonitorProtocol.h"
@@ -22,9 +23,11 @@
 #import "DeviceConstantsAndStaticFunctions.h"
 #import "BTDeviceManagerDelegate.h"
 
-@interface DevicePollManager : NSObject <BTDeviceManagerDelegate>
+@interface DevicePollManager : NSObject <BTDeviceManagerDelegate, CLLocationManagerDelegate>
 
-
+@property (strong) CLLocationManager *locationManager;
+@property BOOL locationAllowed;
+@property BOOL bigLocationChanges;
 @property PersonalInfo *patientInfo;
 @property NSInteger patientID;
 @property (retain) BTDeviceManager *deviceManager;
