@@ -9,7 +9,13 @@
 /**
  * This manager handles the overall connection and discovery of the bluetooth
  * devices.  It performs scanning, connectivity and management of the devices for
- * the selection view controllers.
+ * the selection view controllers.  This class is a singleton object because multiple
+ * instances cause problems with false posivitives for device connection and lost information
+ * based on OS level caching. 
+ * WARNING: Care must be take in assigning the delegate for this object. It is possible to 
+ * produce side affects to other objects that are using this manager if care is not taken
+ * when updating this instance variable since the delegate can only reference one controlling
+ * object.
  */
 
 #import <Foundation/Foundation.h>
@@ -37,7 +43,7 @@
 @property BOOL isActive;
 @property NSTimer *waitForDevices;
 @property NSRunLoop *runLoop;
-@property (nonatomic, weak) id delegate;
+@property (nonatomic, weak) id<BTDeviceManagerDelegate> delegate;
 @property NSInteger discoveryCount;
 
 
@@ -148,6 +154,20 @@
 -(id<DeviceCommonInfoInterface>) deviceAtIndex: (NSInteger) index forType: (NSInteger) type;
 
 
+/**
+ * This is a method that is to be used privately in this class.  It's purpose is to parse
+ * the list of devices that this manager knows about and return a device object that matches
+ * the CBPeripheral identifier.  Since the identifier is a name it is possible to have two
+ * duplicate names.  This is a change to CBPeripheral where the name takes precendence over
+ * the UUID of the device if it is known.
+ *
+ * @param device The CBPeripheral that is to be used for the search criteria.
+ *
+ * @return A device object that conforms to the CommonDeviceInfoInterface.  Additional
+ *          introspection will be needed if you wish to see if the device conforms to one of
+ *          the other protocols.
+ */
+
 -(id<DeviceCommonInfoInterface>) monitorMatchingCBPeripheral: (CBPeripheral*) device;
 
 
@@ -156,7 +176,7 @@
  * HeartMonitorProtocol and the DeviceCommonInfoInterface protocol.
  *
  * @return the object reference for the heart monitor.  A check for nil is necessary because
- * it is possible to deselect the heart monitor.
+ *          it is possible to deselect the heart monitor.
  */
 
 -(id<HeartMonitorProtocol, DeviceCommonInfoInterface>) selectedHeartMonitor;

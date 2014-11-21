@@ -96,10 +96,11 @@
 -(void) shouldMonitor:(BOOL)monitor {
     
     if (monitor) {
-        NSLog(@"turning heart rate on");
+        NSLog(@"%@ turning heart rate on", [device name]);
+        [device setNotifyValue:YES forCharacteristic:heartRateChar];
         [device readValueForCharacteristic:heartRateChar];
     } else {
-        NSLog(@"turning heart rate off");
+        NSLog(@"%@ turning heart rate off", [device name]);
         [device setNotifyValue:NO forCharacteristic:heartRateChar];
     }
 }
@@ -141,14 +142,6 @@
         NSLog(@"%@ not connected", [device name]);
     }
     return currentHeartRate;
-}
-
-#pragma mark ActivityMonitorProtocol methods
-
-
--(NSInteger)getActivityLevel {
-    
-    return RESTING;
 }
 
 #pragma mark CBPeripheralDelegate protocol methods

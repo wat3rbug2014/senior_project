@@ -285,6 +285,10 @@ static BTDeviceManager *sharedManager = nil;
         return;
     }
     id<DeviceCommonInfoInterface> newDevice = [MonitorCreationFactory createFromPeripheral:peripheral];
+    if (newDevice == nil) {
+        NSLog(@"Device %@ is not identified by factory method", [peripheral name]);
+        return;
+    }
     NSMutableArray *buffer = nil;
     if (([newDevice type] & HEART_MONITOR) == HEART_MONITOR) {
         buffer = [[NSMutableArray alloc] initWithArray:heartDevices];

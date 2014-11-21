@@ -7,12 +7,11 @@
 //
 
 /**
- * This class is for the Polar H7 wristband device.  Device specific UUIDs for services
- * and characteristics are here along with the execution path to obtain the desired data for the
- * application.  Service and Characteristic UUIDs are defined in this header instead of gobally in
- * an effort to reduce mental noise when reading the code.  The CBPeripheralDelegate is implemented
+ * This class is for the Polar H7 wristband device.  The CBPeripheralDelegate is implemented
  * so that the class can perform all the operations needed to maintain connection status and
- * retrieval of the data.
+ * retrieval of the data.  Data retrieveal is dependent on the device type so these methods
+ * are defined in this file to account for endianness and data type size as well as possible
+ * UUID differences.
  */
 
 #import <Foundation/Foundation.h>

@@ -8,8 +8,8 @@
 
 /**
  * This is a simple data class that is used to pass around from the
- * database to classes that are using it.  It was created to simply string 
- * manipulation.
+ * database to classes that are using it.  It was created to simplify 
+ * string manipulation.
  */
 
 #import <Foundation/Foundation.h>

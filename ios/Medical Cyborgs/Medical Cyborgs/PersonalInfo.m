@@ -18,6 +18,14 @@
 @synthesize defaults;
 
 
+NSString *const USER_DEFAULT_KEY = @"Medical Cyborgs User";
+NSString * const F_NAME = @"First Name";
+NSString * const L_NAME = @"Last Name";
+NSString * const DOB = @"DOB";
+NSString * const AGE = @"Age";
+
+NSInteger const NO_ID_SET = -1;
+
 -(id) init {
     
     if (self = [super init]) {

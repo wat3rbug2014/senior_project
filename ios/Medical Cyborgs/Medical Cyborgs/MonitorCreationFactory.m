@@ -5,7 +5,10 @@
 //  Created by Douglas Gardiner on 10/4/14.
 //  Copyright (c) 2014 Douglas Gardiner. All rights reserved.
 //
-
+/**
+ * This class is a device object factory to centralize creation and reduce
+ * dependency complexities as much as possible.
+ */
 #import "MonitorCreationFactory.h"
 #import "DeviceCommonInfoInterface.h"
 #import "FitBitFlex.h"
@@ -20,20 +23,15 @@
     
     id result = nil;
     
-    // gets rid of dummy items
-    
     if ([peripheral name] == nil) {
         return nil;
     }
     if ([[peripheral name] rangeOfString:@"Flex"].location != NSNotFound) {
-        NSLog(@"Making FitBit Flex object");
         result = [[FitBitFlex alloc] initWithPeripheral:peripheral];
     }
-    // The information for these devices is not known yet
-    
-//    if ([[peripheral name] rangeOfString:@"Flex"].location != NSNotFound) {
-//        result = [[WahooTickrX alloc] initWithPeripheral:peripheral];
-//    }
+    if ([[peripheral name] rangeOfString:@"TICKR"].location != NSNotFound) {
+        result = [[WahooTickrX alloc] initWithPeripheral:peripheral];
+    }
     if ([[peripheral name] rangeOfString:@"MIO"].location!= NSNotFound) {
         result = [[MioGlobalLink alloc] initWithPeripheral:peripheral];
     }

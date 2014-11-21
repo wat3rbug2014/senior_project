@@ -12,11 +12,6 @@
  * 3 attempts to contact the server before giving up.  It has a 15 second timeout interval
  * so there may be the need to do some better reachability checks if battery consumption
  * is too much.
- *
- * At this time I have not set this class up as a singleton and I am debating whether to do
- * that at this time.  The pros are that updates to this class have a universal effect.
- * The cons are that updates have a universal effect, which makes testing a troubleshooting
- * more difficult.
  */
 
 #import <Foundation/Foundation.h>

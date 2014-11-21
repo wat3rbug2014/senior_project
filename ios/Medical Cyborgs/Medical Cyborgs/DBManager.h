@@ -165,4 +165,5 @@
  */
 
 -(void) purgeDatabase;
+
 @end

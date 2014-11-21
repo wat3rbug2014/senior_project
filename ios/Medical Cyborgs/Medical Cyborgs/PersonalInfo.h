@@ -14,20 +14,23 @@
  */
 
 #import <Foundation/Foundation.h>
-#define USER_DEFAULT_KEY @"Medical Cyborgs User"
 
 /**
  * These constants are added as a way to use autocomplete
  * feature on XCode.
  */
 
-#define F_NAME @"First Name"
-#define L_NAME @"Last Name"
-#define DOB @"DOB"
-#define PATIENT_ID @"patientID"
-#define NO_ID_SET -1
-#define AGE @"Age"
 
+
+
+NSString * const USER_DEFAULT_KEY;
+NSString * const F_NAME;
+NSString * const L_NAME;
+NSString * const DOB;
+NSString * const PATIENT_ID;
+NSString * const AGE;
+
+extern NSInteger const NO_ID_SET;
 
 @interface PersonalInfo : NSObject
 
