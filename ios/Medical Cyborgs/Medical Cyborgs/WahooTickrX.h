@@ -30,5 +30,6 @@
 @property NSInteger currentHeartRate;
 @property (retain) CBService *heartRateService;
 @property (retain)CBCharacteristic *heartRateChar;
+@property (retain) NSString *deviceManufacturer;
 
 @end
