@@ -97,7 +97,6 @@
     
     if (monitor) {
         NSLog(@"%@ turning heart rate on", [device name]);
-        [device setNotifyValue:YES forCharacteristic:heartRateChar];
         [device readValueForCharacteristic:heartRateChar];
     } else {
         NSLog(@"%@ turning heart rate off", [device name]);

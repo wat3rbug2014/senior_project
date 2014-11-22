@@ -13,6 +13,7 @@
 #import "BTDeviceManager.h"
 #import "DevicePollManager.h"
 #import "DeviceConstantsAndStaticFunctions.h"
+#import "BTDeviceManagerDelegate.h"
 
 @interface GraphVC : UIViewController
 

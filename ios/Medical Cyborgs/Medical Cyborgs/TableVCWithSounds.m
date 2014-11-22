@@ -85,7 +85,6 @@
     
     if (self = [self initWithStyle:UITableViewStylePlain]) {
         self.deviceManager = newDeviceManager;
-        [deviceManager setDelegate:self];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTable:)
                 name:@"BTDeviceDiscovery" object:self.deviceManager];
     }
@@ -97,9 +96,5 @@
     [self.tableView reloadData];
 }
 
--(void) deviceManagerDidUpdateMonitors {
-    
-    
-}
 
 @end

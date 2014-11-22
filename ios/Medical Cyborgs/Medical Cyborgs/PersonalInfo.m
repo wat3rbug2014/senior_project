@@ -23,6 +23,7 @@ NSString * const F_NAME = @"First Name";
 NSString * const L_NAME = @"Last Name";
 NSString * const DOB = @"DOB";
 NSString * const AGE = @"Age";
+NSString * const PATIENT_ID = @"PatientID";
 
 NSInteger const NO_ID_SET = -1;
 

@@ -29,8 +29,6 @@
     if (newDeviceManager == nil) {
         return nil;
     }
-    // this may be a bad hack because I haven't defined self yet
-    
     if (self = [super initWithDeviceManager:newDeviceManager]) {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTable:)
                                                      name:DEVICE_DISCOVERED object:super.deviceManager];

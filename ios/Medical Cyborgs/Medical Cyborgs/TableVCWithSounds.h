@@ -8,17 +8,15 @@
 
 /**
  * This base class is a viewcontroller with sound implementation.  It allows
- * clicking sounds when a device is selected. It must be noted that to use the base
- * class delegate to the device manager.  The method deviceManagerDidUpdateMonitors must
- * be implemented because this class only contains the base signature.
+ * clicking sounds when a device is selected. 
  */
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import "BTDeviceManager.h"
-#import "BTDeviceManagerDelegate.h"
 
-@interface TableVCWithSounds : UITableViewController <BTDeviceManagerDelegate>
+
+@interface TableVCWithSounds : UITableViewController
 
 @property AVAudioPlayer *soundPlayer;
 @property BTDeviceManager *deviceManager;

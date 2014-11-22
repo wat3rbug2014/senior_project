@@ -93,7 +93,7 @@ static BTDeviceManager *sharedManager = nil;
 -(void) setSelectedHeartMonitor:(id<HeartMonitorProtocol,DeviceCommonInfoInterface>) selectedHeartMonitor {
     
     _selectedHeartMonitor = selectedHeartMonitor;
-    if (delegate != nil && [delegate conformsToProtocol:@protocol(BTDeviceManagerDelegate)]) {
+    if (delegate != nil && [delegate respondsToSelector:@selector(deviceManagerDidUpdateMonitors)]) {
         [delegate deviceManagerDidUpdateMonitors];
     }
 }

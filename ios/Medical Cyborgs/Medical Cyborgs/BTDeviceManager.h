@@ -43,7 +43,7 @@
 @property BOOL isActive;
 @property NSTimer *waitForDevices;
 @property NSRunLoop *runLoop;
-@property (nonatomic, weak) id<BTDeviceManagerDelegate> delegate;
+@property (nonatomic, weak) id delegate;
 @property NSInteger discoveryCount;
 
 

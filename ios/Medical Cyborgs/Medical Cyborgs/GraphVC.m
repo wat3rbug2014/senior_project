@@ -55,13 +55,13 @@
 
 -(void) viewWillAppear:(BOOL)animated {
     
+    heartMonitor = [devicePoller heartMonitor];
+    activityMonitor = [devicePoller activityMonitor];
     [devicePoller pollDevicesForData];
     NSTimeInterval displayUpdateTime = 1.0;
     displayTimer = [NSTimer scheduledTimerWithTimeInterval:displayUpdateTime target:self
         selector:@selector(updateDisplay) userInfo:nil repeats:YES];
     [runLoop addTimer:displayTimer forMode:NSDefaultRunLoopMode];
-    heartMonitor = [devicePoller heartMonitor];
-    activityMonitor = [devicePoller activityMonitor];
     [super viewWillAppear:animated];
 }
 
@@ -76,7 +76,7 @@
 
 -(void) updateDisplay {
     
-    NSString *currentHeartRateStr = [NSString stringWithFormat:@"%d",[heartMonitor getHeartRate]];
+    NSString *currentHeartRateStr = [NSString stringWithFormat:@"%ld",(long)[heartMonitor getHeartRate]];
     [heartRateDisplay setText:currentHeartRateStr];
     int activity = [DeviceConstantsAndStaticFunctions activityLevelBasedOnHeartRate:
         [heartMonitor getHeartRate] andAge:[[devicePoller patientInfo] age]];
