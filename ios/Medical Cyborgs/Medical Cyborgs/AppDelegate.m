@@ -59,6 +59,6 @@
 
 -(void) application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
     
-    [processScheduler performScan];
+    //[processScheduler performScan];
 }
 @end

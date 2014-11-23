@@ -50,7 +50,7 @@ NSString * const BATTERY_LOW_NOTIFCATION_STR = @"Battery Level Low";
     return result;
 }
 
-+(NSString*) activityPhraseUsingActivityLevel: (int) activity {
++(NSString*) activityPhraseUsing: (int) activity {
     
     NSString *result = nil;
     switch (activity) {

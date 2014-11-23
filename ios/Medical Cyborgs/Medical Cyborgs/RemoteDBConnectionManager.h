@@ -5,7 +5,8 @@
 //  Created by Douglas Gardiner on 10/13/14.
 //  Copyright (c) 2014 Douglas Gardiner. All rights reserved.
 //
-/* This class performs updates to the remote database.  It manages the connection
+/** 
+ * This class performs updates to the remote database.  It manages the connection
  * and updates the local database with the changes that have been made.  It is assumed
  * that address to the server and the name of the scripts in the DataConstants.h file
  * are correct.  NOTE:  Each time a request to push data to the server the manager makes
@@ -22,11 +23,50 @@
 
 @interface RemoteDBConnectionManager : NSObject <NSURLConnectionDelegate>
 
+
+/**
+ * The database manager that will be used to retrieve data and send to the remote server.
+ */
+
 @property DBManager *database;
+
+
+/**
+ * The patientID that is used for removing rows from the local database as they are sent.
+ * It is also used for the transmission of data to the remote server.
+ */
+
 @property NSInteger patientID;
+
+
+/**
+ * The first row selected from the database as a result of a SQL statement.  It contains
+ * the data needed for transmission to the server.
+ */
+
 @property (nonatomic) LocalDBResult* currentRow;
+
+
+/**
+ * The data buffer for the response from the server.  Used for determining the status
+ * message from the server.
+ */
+
 @property (retain) NSMutableData *_serverResponseData;
+
+
+/**
+ * The counter for the number of failed attempts.  The current limit is 3 times.
+ */
+
 @property NSInteger failedAttempts;
+
+
+/**
+ * The flag used to determine if any more attempts should be made to the server after
+ * the failedAttempts count has reached three times.
+ */
+
 @property BOOL remoteUnreachable;
 
 

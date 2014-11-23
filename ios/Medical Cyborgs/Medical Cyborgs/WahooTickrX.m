@@ -21,6 +21,9 @@
 @synthesize type;
 @synthesize deviceManufacturer;
 
+
+#pragma mark - DeviceCommonInfoInterface methods
+
 -(id) initWithPeripheral: (CBPeripheral*) peripheral {
     
     if (self = [super init]) {
@@ -112,7 +115,7 @@
     return result;
 }
 
-#pragma mark HeartMonitorProtocol methods
+#pragma mark - HeartMonitorProtocol methods
 
 
 -(NSInteger) getHeartRate {
@@ -139,7 +142,7 @@
 }
 
 
-#pragma mark CBPeripheralDelegate protocol methods
+#pragma mark - CBPeripheralDelegate methods
 
 
 -(void) peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error {

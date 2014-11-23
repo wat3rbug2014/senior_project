@@ -80,6 +80,6 @@
     [heartRateDisplay setText:currentHeartRateStr];
     int activity = [DeviceConstantsAndStaticFunctions activityLevelBasedOnHeartRate:
         [heartMonitor getHeartRate] andAge:[[devicePoller patientInfo] age]];
-    [activityDisplay setText:[DeviceConstantsAndStaticFunctions activityPhraseUsingActivityLevel:activity]];
+    [activityDisplay setText:[DeviceConstantsAndStaticFunctions activityPhraseUsing:activity]];
     }
 @end

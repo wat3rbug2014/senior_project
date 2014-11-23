@@ -101,6 +101,16 @@
     }
     NSLog(@"Device poller already has connected devices");
     
+    NSLog(@"Getting battery level info from devices");
+    
+    [heartMonitor discoverBatteryLevel];
+    //[activityMonitor discoverBatteryLevel];
+    if ([heartMonitor batteryLevel] < 20) {
+        // do something to get notification to screen.
+    }
+    if ([activityMonitor batteryLevel] < 20) {
+        
+    }
     NSLog(@"getting data from heart monitor");
     currentHeartRate = (int)[heartMonitor getHeartRate];
     
@@ -150,7 +160,12 @@
     }
 }
 
-#pragma mark BTDeviceManagerDelegate methods
+-(void) doBatteryLowNotificationFor:(id<DeviceCommonInfoInterface>)device {
+    
+    
+}
+
+#pragma mark - BTDeviceManagerDelegate methods
 
 
 -(void) deviceManagerDidUpdateMonitors {
@@ -160,7 +175,7 @@
     [self setHeartMonitor:[deviceManager selectedHeartMonitor]];
 }
 
-#pragma mark CLLocationManagerDelegate methods
+#pragma mark - CLLocationManagerDelegate methods
 
 
 -(void) locationManager:(CLLocationManager*) manager didChangeAuthorizationStatus:(CLAuthorizationStatus) status {

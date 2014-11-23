@@ -16,11 +16,51 @@
 
 @interface LocalDBResult : NSObject
 
+
+/**
+ * The patientID that is used by the database.
+ */
+
 @property NSInteger patientID;
+
+
+/**
+ * The heart rate of the patient as it was recorded by the database.
+ */
+
 @property NSInteger heartRate;
+
+
+/**
+ * The latitude of the patient that was recorded.  This value will not
+ * change much unless big changes happen.
+ */
+
 @property float latitude;
+
+
+/**
+ * The longitude of the patient that was recorded.  This value will not 
+ * change much unless big changes happen.
+ */
+
 @property float longitude;
+
+
+/**
+ * The timestamp this data was recorded in the database.  It has date and 
+ * time.  It follows the format of 'yyyy-mm-dd hh:mm:ss'.  The hours are expressed
+ * in military time from 0-23.
+ */
+
 @property NSString *timeStamp;
+
+
+/**
+ * An integer value of the activity level based on patient age and heart rate.
+ * See DeviceConstantsAndStaticFunctions for a description.
+ */
+
 @property NSInteger activityLevel;
 
 @end

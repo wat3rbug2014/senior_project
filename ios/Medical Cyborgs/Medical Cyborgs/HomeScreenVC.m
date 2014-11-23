@@ -33,7 +33,7 @@
 @synthesize settings;
 @synthesize scheduler;
 
-#pragma mark Standard UIViewController methods
+#pragma mark - UIViewController methods
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -57,7 +57,6 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkForUpdatedPatientID)
             name:@"PersonalInfoUpdated" object:settings];
         btDevices = [scheduler deviceManager];
-
     }
     return self;
 }
@@ -105,7 +104,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark HomeScreenVC custom methods
+#pragma mark - HomeScreenVC methods
 
 
 -(IBAction)alterPersonalSettings:(id)sender {

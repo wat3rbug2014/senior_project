@@ -24,7 +24,7 @@
 
 
 
-#pragma mark DeviceConnection protocol methods
+#pragma mark - DeviceCommonInfoInterface methods
 
 
 -(id) initWithPeripheral: (CBPeripheral*) peripheral {
@@ -117,7 +117,7 @@
 }
 
 
-#pragma mark HeartMonitorProtocol methods
+#pragma mark - HeartMonitorProtocol methods
 
 
 -(NSInteger) getHeartRate {
@@ -143,7 +143,7 @@
     return currentHeartRate;
 }
 
-#pragma mark CBPeripheralDelegate protocol methods
+#pragma mark - CBPeripheralDelegate methods
 
 
 -(void) peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error {

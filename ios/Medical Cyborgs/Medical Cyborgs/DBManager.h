@@ -17,19 +17,106 @@
 
 @interface DBManager : NSObject
 
+
+/**
+ * The directory where the SQLITE database will be stored.
+ */
+
 @property (nonatomic, strong) NSString *documentsDirectory;
+
+
+/**
+ * The actual database file name.
+ */
+
 @property (nonatomic, strong) NSString *databaseFilename;
+
+
+/**
+ * The patient ID.  This is used for every operation to the database since it is part
+ * or the primary key for the database.  It is also a primary key in the remote server
+ * patients table.
+ */
+
 @property NSInteger patientID;
+
+
+/**
+ * YES or NO value that there is data to push to remote server since this database is not empty.
+ */
+
 @property BOOL moreRowsToRetrieve;
+
+
+/**
+ * The SQLITE database reference.  Used for control of the database.
+ */
+
 @property sqlite3 *database;
+
+
+/**
+ * The last row count of the database.  Used for checking to see if there is a change in the size of
+ * the database.
+ */
+
 @property NSInteger rowCount;
+
+
+/**
+ * The relative path in the file system where the database resides.
+ */
+
 @property (nonatomic, strong) NSString *databasePath;
+
+
+/**
+ * The current SQL statement to be executed on the database.
+ */
+
 @property sqlite3_stmt *sqlStatement;
+
+
+/**
+ * The last heart rate measurment given to the database.
+ */
+
 @property NSInteger hrmeasurement;
+
+
+/**
+ * The last latitude measurement that was given to the database.
+ */
+
 @property float latitude;
+
+
+/**
+ * The last longitude measurement given to the database.
+ */
+
 @property float longitude;
+
+
+/**
+ * The activity level expressed as an integer.  See DeviceConstantsAndStaticFunctions.h 
+ * for the value.
+ */
+
 @property int activityLevel;
+
+
+/**
+ * The age that was calculated and given to the database.
+ */
+
 @property NSInteger age;
+
+
+/**
+ * The current timestamp given to the database.
+ */
+
 @property NSDate *timestamp;
 
 
@@ -114,6 +201,8 @@
  * This method takes the NSDate object stored in this class and converts it to a
  * format that is useable to databases.  The assumptions are that the date has been updated.
  * This method is called only from this class.
+ *
+ * @param selectedTime The NSDate given to convert to a string for insertion to the database.
  *
  * @return The result string is a parsed date.  An example is '1970-05-10 18:45:10'.  That is
  * May 10 1970 at 6:45 pm and 10 seconds.

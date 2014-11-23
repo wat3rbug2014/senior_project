@@ -21,10 +21,42 @@
 
 @interface PatientInformationVC : UIViewController <UITextFieldDelegate,NSURLConnectionDelegate, NSURLConnectionDataDelegate>
 
+
+
+/**
+ * The textfield for editing the first name of the patient.
+ */
+
+
 @property (retain, nonatomic) IBOutlet UITextField *firstNameEntry;
+
+
+/**
+ * The textfield for editing the last name of the patient.
+ */
+
 @property (retain, nonatomic) IBOutlet UITextField *lastNameEntry;
+
+
+/**
+ * The date picker for selecting the patients date of birth.
+ */
+
 @property (retain, nonatomic) IBOutlet UIDatePicker *dobSelector;
+
+
+/**
+ * The data object that stores the patient information needed by this application.
+ */
+
 @property (retain, strong) PersonalInfo *patientData;
+
+
+/**
+ * The data queue used for the network response to build the value of the returned patient ID
+ * as determined by the remote database.
+ */
+
 @property (retain) NSMutableData *_serverResponseData;
 
 

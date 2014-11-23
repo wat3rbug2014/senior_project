@@ -139,7 +139,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark UITextFieldViewDelegate methods
+#pragma mark - UITextFieldViewDelegate methods
 
 
 -(BOOL) textFieldShouldReturn:(UITextField *)textField {
@@ -202,7 +202,7 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"PersonalInfoUpdated" object:self];
 }
 
-#pragma mark Custom methods
+#pragma mark - PatientInformationVC methods
 
 
 -(void) updateDOB {

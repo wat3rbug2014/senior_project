@@ -29,7 +29,7 @@
  * for those classes.  This method is used by the MonitorCreationFactory as a standard for initializing
  * the device and providing all of the methods in this protocol.
  *
- * @param CBPeripheral is the device object that the CBCentralManager discovered.
+ * @param peripheral is the device object that the CBCentralManager discovered.
  * @return id<DeviceCommonInfoInterface> This object is any class that conforms to the 
  *          DeviceCommonInfoInterface protocol.
  */

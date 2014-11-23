@@ -21,18 +21,99 @@
 
 @interface BackgroundScheduler : NSObject
 
+
+
+/**
+ * The device manager used for controlling the device connectivity and discovery.
+ */
+
 @property (strong) BTDeviceManager *deviceManager;
 
+
+/**
+ * The manager of the remote server pushes.  It controlls connectivity to the 
+ * server and pushes thdata to it.
+ */
+
 @property RemoteDBConnectionManager *serverPoller;
+
+
+/**
+ * The object that controlls the polling of the devices and pushes the data to 
+ * the local database.
+ */
+
 @property DevicePollManager *devicePoller;
+
+
+/**
+ * The local database to store data from the devices during polling.
+ */
+
 @property DBManager *database;
+
+
+/**
+ * The patient data object.  It is used by the database for updates to the table and by
+ * the server poller for pushes to the server.
+ */
+
 @property PersonalInfo *patient;
+
+
+/**
+ * This flag is used by the scheduler to determine if the application is ready to monitor.
+ * It is not TRUE if the following conditions are not met.  Both the activity and the heart
+ * rate devices must have been selected and connected.  The location manager must be allowed
+ * to collection location updates.
+ */
+
 @property BOOL allowMonitoring;
+
+
+/**
+ * The run loop for which the polling is to be executed on.
+ */
+
 @property NSRunLoop *runLoop;
+
+
+/**
+ * The device polling interval.  Used for controlling the time between poll requests from the
+ * devices.  This is expressed in seconds and the default is 5 seconds.
+ */
+
 @property NSTimeInterval devicePollInterval;
+
+
+/**
+ * The server polling interval.  Used for controlling when the server will receive updates from
+ * the local database.  The default is 1 minute or 60 seconds.  It is express in seconds.
+ */
+
 @property NSTimeInterval serverPollInterval;
+
+/**
+ * The shared instance of the UIApplication.  It is used for determining the state of the application
+ * in order to execute the polling.
+ */
+
 @property (readonly) UIApplication *app;
+
+
+/**
+ * The timer used for the device poller.  The reference is stored so that it can be canceled outside
+ * of the method that invokes it.
+ */
+
 @property NSTimer *devicePollTimer;
+
+
+/**
+ * The timer used for the server poller.  The reference is stored so that it can be canceled outside
+ * of the method that invokes it.
+ */
+
 @property NSTimer *serverPollTimer;
 
 /**
@@ -59,6 +140,11 @@
  */
 
 -(void) performScan;
+
+/**
+ * This method returns the shared instance of the UIApplication.  It is placed here
+ * to make dependency more obvious.
+ */
 
 -(UIApplication*) app;
 

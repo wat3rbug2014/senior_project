@@ -250,7 +250,7 @@ static BTDeviceManager *sharedManager = nil;
     return YES;
 }
 
-#pragma mark CBCentralManagerDelegate methods
+#pragma mark - CBCentralManagerDelegate methods
 
 
 -(void) centralManagerDidUpdateState:(CBCentralManager *)central {

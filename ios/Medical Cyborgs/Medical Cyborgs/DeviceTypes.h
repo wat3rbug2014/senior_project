@@ -16,7 +16,7 @@
  */
 
 
-typedef enum {
+typedef enum _DeviceType {
     HEART_MONITOR = 1,
     ACTIVITY_MONITOR = 2,
     HEART_AND_ACTIVITY_MONITOR = 3

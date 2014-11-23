@@ -31,19 +31,116 @@
 @interface BTDeviceManager : NSObject <CBCentralManagerDelegate>
 
 
+/**
+ * The heart monitor that is currently selected.  The value may be nil when nothing is selected
+ * and is part of the design.  This variable should only be accessed using selectedHeartMonitor 
+ * and setSelectedHeartMonitor because the delegate is notified of any changes to this value.
+ */
+
 @property id<HeartMonitorProtocol, DeviceCommonInfoInterface> _selectedHeartMonitor;
+
+
+/**
+ * The activity monitor that is currently selected.  The value may be nil when nothing is selected
+ * and is part of the design. This variable should only be accessed using selectedActivityMonitor
+ * and setSelectedActivityMonitor because the delegate is notified of any changes to this value.
+ */
+
 @property id<ActivityMonitorProtocol, DeviceCommonInfoInterface> _selectedActivityMonitor;
+
+
+/**
+ * The array containing any devices that conform to the HeartMonitorProtocol.  It is used by the
+ * heart monitor selection view controller for listing possible devices to use.
+ */
+
 @property NSArray *heartDevices;
+
+
+/**
+ * The array containing any devices that conform to the ActivityMonitorProtocol.  It is used by the
+ * activity monitor selection view controller for listing possible devices to use.
+ */
+
 @property NSArray *activityDevices;
+
+
+/**
+ * The index of the heart monitor device that has been selected.  It is used by the heart monitor
+ * select view controller to indicate which one is selected.  If the value is -1, then no device 
+ * has been selected.
+ */
+
 @property NSInteger selectedIndexForHeartMonitor;
+
+
+/**
+ * The index of the activity monitor device that has been selected.  It is used by the activity monitor
+ * select view controller to indicate which one is selected.  If the value is -1, then no device
+ * has been selected.
+ */
+
 @property NSInteger selectedIndexForActivityMonitor;
+
+
+/**
+ * This flag indicates that the manager is in discovery mode and that addition scans must be performed
+ * to get the characteristics and services of the devices as they are discovered and connected.
+ */
+
 @property BOOL isInDiscoveryMode;
+
+
+/**
+ * The bluetooth connection manager that tracks the CBPeripherals.
+ */
+
 @property (retain) CBCentralManager *manager;
+
+
+/**
+ * This value indicates what services the manager should scan and connect.  For details see DeviceTypes.h
+ */
+
 @property NSInteger searchType;
+
+
+/**
+ * This flag is to see if bluetooth use is allowed.  The manager will not be able to perform any operations
+ * if the bluetooth service is off or not allowed by the user.
+ */
+
 @property BOOL isActive;
+
+/**
+ * The timer that is used when the request to stop scanning has been done, but the device that is selected 
+ * does not have full discovery done.
+ */
+
 @property NSTimer *waitForDevices;
+
+
+/**
+ * The runloop that is used to check for device discovery to see if all characteristics needed have been
+ * discovered.  The reference is stated so it can be canceld outside the method that calls it.
+ */
+
 @property NSRunLoop *runLoop;
+
+
+/**
+ * The delegate is the object that receives a call back whenever the selected heart monitor or activity monitor
+ * has changed.
+ */
+
 @property (nonatomic, weak) id delegate;
+
+
+/**
+ * The counter that is used for requesting a new discovery of the device.  The setting is 5 seconds, and then a 
+ * rediscovery of the device begins.
+ */
+
 @property NSInteger discoveryCount;
 
 
@@ -186,6 +283,8 @@
  * This setter updates the selectedHeartMonitor as long as it conforms to the 
  * HeartMonitorProtocol and the DeviceCommonInfoInterface.  It also notifies that delegate
  * that the value has changed.
+ *
+ * @param selectedHeartMonitor The heart mo0nitor that has been selected by the view controller.
  */
 
 -(void) setSelectedHeartMonitor: (id<HeartMonitorProtocol, DeviceCommonInfoInterface>) selectedHeartMonitor;
@@ -206,6 +305,8 @@
  * This setter updates the selectedActivityMonitor as long as it conforms to the
  * ActivityMonitorProtocol and the DeviceCommonInfoInterface.  It also notifies that delegate
  * that the value has changed.
+ *
+ * @param selectedActivityMonitor The activity monitor that has been selected by the view controller.
  */
 
 -(void) setSelectedActivityMonitor: (id<ActivityMonitorProtocol, DeviceCommonInfoInterface>) selectedActivityMonitor;

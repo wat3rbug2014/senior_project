@@ -19,7 +19,7 @@ NSString * const FLEX_SERV_UUID = @"45C3";
 @synthesize device;
 @synthesize deviceManufacturer;
 
-#pragma mark DeviceConnection protocol methods
+#pragma mark - DeviceCommonInfoInterface methods
 
 
 -(id) initWithPeripheral: (CBPeripheral*) peripheral {
@@ -117,7 +117,7 @@ NSString * const FLEX_SERV_UUID = @"45C3";
     return result;
 }
 
-#pragma mark ActivityMonitorProtocol methods
+#pragma mark - ActivityMonitorProtocol methods
 
 
 -(NSInteger)getActivityLevel {
@@ -125,7 +125,7 @@ NSString * const FLEX_SERV_UUID = @"45C3";
     return RESTING;
 }
 
-#pragma mark CBPeripheralDelegate protocol methods
+#pragma mark - CBPeripheralDelegate methods
 
 
 -(void) peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error {

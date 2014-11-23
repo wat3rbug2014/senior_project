@@ -18,7 +18,18 @@
 
 @interface TableVCWithSounds : UITableViewController
 
+
+/**
+ *
+ */
+
 @property AVAudioPlayer *soundPlayer;
+
+
+/**
+ *
+ */
+
 @property BTDeviceManager *deviceManager;
 
 /**

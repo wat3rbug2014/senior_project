@@ -34,12 +34,53 @@ extern NSInteger const NO_ID_SET;
 
 @interface PersonalInfo : NSObject
 
+
+/**
+ *
+ */
+
 @property NSString *firstName;
+
+
+/**
+ *
+ */
+
 @property NSString *lastName;
+
+
+/**
+ *
+ */
+
 @property NSDate *dob;
+
+
+/**
+ *
+ */
+
 @property NSInteger patientID;
+
+
+/**
+ *
+ */
+
 @property NSUserDefaults *defaults;
+
+
+/**
+ *
+ */
+
 @property NSDictionary *personalData;
+
+
+/**
+ *
+ */
+
 @property (readonly) NSInteger age;
 
 

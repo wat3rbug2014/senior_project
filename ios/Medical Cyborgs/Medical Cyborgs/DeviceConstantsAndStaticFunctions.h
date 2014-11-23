@@ -30,7 +30,12 @@ extern NSString * const DEVICE_READ_VALUE;
 extern NSInteger NO_BATTERY_VALUE; 
 extern NSString * const BATTERY_LOW_NOTIFCATION_STR;
 
-typedef enum {
+
+/**
+ * Enumeration values for activity level.  This is used by the database.
+ */
+
+typedef enum _ActivityLevel {
     RESTING = 1,
     WARM_UP = 2,
     ENDURANCE = 3,
@@ -63,6 +68,6 @@ typedef enum {
  * @return A string representation of the ActivityLevel enumeration.
  */
 
-+(NSString*) activityPhraseUsingActivityLevel: (int) activity;
++(NSString*) activityPhraseUsing: (int) activity;
 
 @end
