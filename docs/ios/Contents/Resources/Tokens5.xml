@@ -1,0 +1,721 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/DBManager.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/DBManager</TokenIdentifier>
+			<Abstract type="html">This class handles the local SQLITE3 database.  All functions needed to
+use this database are enclosed in the class.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+            
+			
+			<NodeRef refid="5"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DBManager/setDocumentsDirectory:</TokenIdentifier>
+			<Abstract type="html">The directory where the SQLITE database will be stored.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *documentsDirectory</Declaration>
+			
+			
+			<Anchor>//api/name/documentsDirectory</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DBManager/documentsDirectory</TokenIdentifier>
+			<Abstract type="html">The directory where the SQLITE database will be stored.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *documentsDirectory</Declaration>
+			
+			
+			<Anchor>//api/name/documentsDirectory</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DBManager/documentsDirectory</TokenIdentifier>
+			<Abstract type="html">The directory where the SQLITE database will be stored.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *documentsDirectory</Declaration>
+			
+			
+			<Anchor>//api/name/documentsDirectory</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DBManager/setDatabaseFilename:</TokenIdentifier>
+			<Abstract type="html">The actual database file name.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *databaseFilename</Declaration>
+			
+			
+			<Anchor>//api/name/databaseFilename</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DBManager/databaseFilename</TokenIdentifier>
+			<Abstract type="html">The actual database file name.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *databaseFilename</Declaration>
+			
+			
+			<Anchor>//api/name/databaseFilename</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DBManager/databaseFilename</TokenIdentifier>
+			<Abstract type="html">The actual database file name.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *databaseFilename</Declaration>
+			
+			
+			<Anchor>//api/name/databaseFilename</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DBManager/setPatientID:</TokenIdentifier>
+			<Abstract type="html">The patient ID.  This is used for every operation to the database since it is part
+or the primary key for the database.  It is also a primary key in the remote server
+patients table.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger patientID</Declaration>
+			
+			
+			<Anchor>//api/name/patientID</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DBManager/patientID</TokenIdentifier>
+			<Abstract type="html">The patient ID.  This is used for every operation to the database since it is part
+or the primary key for the database.  It is also a primary key in the remote server
+patients table.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger patientID</Declaration>
+			
+			
+			<Anchor>//api/name/patientID</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DBManager/patientID</TokenIdentifier>
+			<Abstract type="html">The patient ID.  This is used for every operation to the database since it is part
+or the primary key for the database.  It is also a primary key in the remote server
+patients table.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger patientID</Declaration>
+			
+			
+			<Anchor>//api/name/patientID</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DBManager/setMoreRowsToRetrieve:</TokenIdentifier>
+			<Abstract type="html">YES or NO value that there is data to push to remote server since this database is not empty.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>@property BOOL moreRowsToRetrieve</Declaration>
+			
+			
+			<Anchor>//api/name/moreRowsToRetrieve</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DBManager/moreRowsToRetrieve</TokenIdentifier>
+			<Abstract type="html">YES or NO value that there is data to push to remote server since this database is not empty.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>@property BOOL moreRowsToRetrieve</Declaration>
+			
+			
+			<Anchor>//api/name/moreRowsToRetrieve</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DBManager/moreRowsToRetrieve</TokenIdentifier>
+			<Abstract type="html">YES or NO value that there is data to push to remote server since this database is not empty.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>@property BOOL moreRowsToRetrieve</Declaration>
+			
+			
+			<Anchor>//api/name/moreRowsToRetrieve</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DBManager/setDatabase:</TokenIdentifier>
+			<Abstract type="html">The SQLITE database reference.  Used for control of the database.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>@property sqlite3 *database</Declaration>
+			
+			
+			<Anchor>//api/name/database</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DBManager/database</TokenIdentifier>
+			<Abstract type="html">The SQLITE database reference.  Used for control of the database.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>@property sqlite3 *database</Declaration>
+			
+			
+			<Anchor>//api/name/database</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DBManager/database</TokenIdentifier>
+			<Abstract type="html">The SQLITE database reference.  Used for control of the database.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>@property sqlite3 *database</Declaration>
+			
+			
+			<Anchor>//api/name/database</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DBManager/setRowCount:</TokenIdentifier>
+			<Abstract type="html">The last row count of the database.  Used for checking to see if there is a change in the size of
+the database.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger rowCount</Declaration>
+			
+			
+			<Anchor>//api/name/rowCount</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DBManager/rowCount</TokenIdentifier>
+			<Abstract type="html">The last row count of the database.  Used for checking to see if there is a change in the size of
+the database.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger rowCount</Declaration>
+			
+			
+			<Anchor>//api/name/rowCount</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DBManager/rowCount</TokenIdentifier>
+			<Abstract type="html">The last row count of the database.  Used for checking to see if there is a change in the size of
+the database.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger rowCount</Declaration>
+			
+			
+			<Anchor>//api/name/rowCount</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DBManager/setDatabasePath:</TokenIdentifier>
+			<Abstract type="html">The relative path in the file system where the database resides.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *databasePath</Declaration>
+			
+			
+			<Anchor>//api/name/databasePath</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DBManager/databasePath</TokenIdentifier>
+			<Abstract type="html">The relative path in the file system where the database resides.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *databasePath</Declaration>
+			
+			
+			<Anchor>//api/name/databasePath</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DBManager/databasePath</TokenIdentifier>
+			<Abstract type="html">The relative path in the file system where the database resides.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *databasePath</Declaration>
+			
+			
+			<Anchor>//api/name/databasePath</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DBManager/setSqlStatement:</TokenIdentifier>
+			<Abstract type="html">The current SQL statement to be executed on the database.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>@property sqlite3_stmt *sqlStatement</Declaration>
+			
+			
+			<Anchor>//api/name/sqlStatement</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DBManager/sqlStatement</TokenIdentifier>
+			<Abstract type="html">The current SQL statement to be executed on the database.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>@property sqlite3_stmt *sqlStatement</Declaration>
+			
+			
+			<Anchor>//api/name/sqlStatement</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DBManager/sqlStatement</TokenIdentifier>
+			<Abstract type="html">The current SQL statement to be executed on the database.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>@property sqlite3_stmt *sqlStatement</Declaration>
+			
+			
+			<Anchor>//api/name/sqlStatement</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DBManager/setHrmeasurement:</TokenIdentifier>
+			<Abstract type="html">The last heart rate measurment given to the database.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger hrmeasurement</Declaration>
+			
+			
+			<Anchor>//api/name/hrmeasurement</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DBManager/hrmeasurement</TokenIdentifier>
+			<Abstract type="html">The last heart rate measurment given to the database.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger hrmeasurement</Declaration>
+			
+			
+			<Anchor>//api/name/hrmeasurement</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DBManager/hrmeasurement</TokenIdentifier>
+			<Abstract type="html">The last heart rate measurment given to the database.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger hrmeasurement</Declaration>
+			
+			
+			<Anchor>//api/name/hrmeasurement</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DBManager/setLatitude:</TokenIdentifier>
+			<Abstract type="html">The last latitude measurement that was given to the database.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>@property float latitude</Declaration>
+			
+			
+			<Anchor>//api/name/latitude</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DBManager/latitude</TokenIdentifier>
+			<Abstract type="html">The last latitude measurement that was given to the database.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>@property float latitude</Declaration>
+			
+			
+			<Anchor>//api/name/latitude</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DBManager/latitude</TokenIdentifier>
+			<Abstract type="html">The last latitude measurement that was given to the database.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>@property float latitude</Declaration>
+			
+			
+			<Anchor>//api/name/latitude</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DBManager/setLongitude:</TokenIdentifier>
+			<Abstract type="html">The last longitude measurement given to the database.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>@property float longitude</Declaration>
+			
+			
+			<Anchor>//api/name/longitude</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DBManager/longitude</TokenIdentifier>
+			<Abstract type="html">The last longitude measurement given to the database.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>@property float longitude</Declaration>
+			
+			
+			<Anchor>//api/name/longitude</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DBManager/longitude</TokenIdentifier>
+			<Abstract type="html">The last longitude measurement given to the database.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>@property float longitude</Declaration>
+			
+			
+			<Anchor>//api/name/longitude</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DBManager/setActivityLevel:</TokenIdentifier>
+			<Abstract type="html">The activity level expressed as an integer.  See DeviceConstantsAndStaticFunctions.h
+for the value.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>@property int activityLevel</Declaration>
+			
+			
+			<Anchor>//api/name/activityLevel</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DBManager/activityLevel</TokenIdentifier>
+			<Abstract type="html">The activity level expressed as an integer.  See DeviceConstantsAndStaticFunctions.h
+for the value.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>@property int activityLevel</Declaration>
+			
+			
+			<Anchor>//api/name/activityLevel</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DBManager/activityLevel</TokenIdentifier>
+			<Abstract type="html">The activity level expressed as an integer.  See DeviceConstantsAndStaticFunctions.h
+for the value.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>@property int activityLevel</Declaration>
+			
+			
+			<Anchor>//api/name/activityLevel</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DBManager/setAge:</TokenIdentifier>
+			<Abstract type="html">The age that was calculated and given to the database.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger age</Declaration>
+			
+			
+			<Anchor>//api/name/age</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DBManager/age</TokenIdentifier>
+			<Abstract type="html">The age that was calculated and given to the database.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger age</Declaration>
+			
+			
+			<Anchor>//api/name/age</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DBManager/age</TokenIdentifier>
+			<Abstract type="html">The age that was calculated and given to the database.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger age</Declaration>
+			
+			
+			<Anchor>//api/name/age</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DBManager/setTimestamp:</TokenIdentifier>
+			<Abstract type="html">The current timestamp given to the database.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>@property NSDate *timestamp</Declaration>
+			
+			
+			<Anchor>//api/name/timestamp</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DBManager/timestamp</TokenIdentifier>
+			<Abstract type="html">The current timestamp given to the database.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>@property NSDate *timestamp</Declaration>
+			
+			
+			<Anchor>//api/name/timestamp</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DBManager/timestamp</TokenIdentifier>
+			<Abstract type="html">The current timestamp given to the database.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>@property NSDate *timestamp</Declaration>
+			
+			
+			<Anchor>//api/name/timestamp</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DBManager/init</TokenIdentifier>
+			<Abstract type="html">This method initializes the database.  It is noted, that the default patientID is
+NOIDSET.  WARNING: adding data to the database with no patientID set will result
+erroneous results to this database and the remote database, should any updates occur.
+It is advised to the use the -(instancetype) initWithpatientID: (NSInteger) currentPatient
+method instead.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)init</Declaration>
+			
+			<ReturnValue><Abstract type="html">An instance of the database manager with no patientID set.</Abstract></ReturnValue>
+			<Anchor>//api/name/init</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DBManager/initWithpatientID:</TokenIdentifier>
+			<Abstract type="html">This method initializes the database and sets up the patientID which will be used
+for almost every query to the database.  the patientID is part of the primary key
+for the table.  The assumption is that the database is empty when patientID is changed,
+otherwise queries will fail.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithpatientID:(NSInteger)currentPatient</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>currentPatient</Name>
+					<Abstract type="html">The patientID that is to be used for the database.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of the database manager with the patientID set.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithpatientID:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DBManager/copyDatabaseIntoDocumentsDirectory</TokenIdentifier>
+			<Abstract type="html">This method is used for first time use of the application.  It copies the master database
+template to the applications Documents directory for use with the application.  WARNING:
+do not use the origin for use as the database.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>- (void)copyDatabaseIntoDocumentsDirectory</Declaration>
+			
+			
+			<Anchor>//api/name/copyDatabaseIntoDocumentsDirectory</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DBManager/retrieveRow</TokenIdentifier>
+			<Abstract type="html">This method returns the first row in a query for the items in the local database.  It is
+used in conjuction with the network poller to push local data to the remote database.  The
+data is comma separated with the following order of information:</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>- (LocalDBResult *)retrieveRow</Declaration>
+			
+			<ReturnValue><Abstract type="html">The string representation of the row returned.</Abstract></ReturnValue>
+			<Anchor>//api/name/retrieveRow</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DBManager/isDatabaseEmpty</TokenIdentifier>
+			<Abstract type="html">This method performs a count of the table and return true if there are no more rows in
+the table to retrieve.  It is used primarily for the network poll portion to determine
+that the local database has been flushed and there is no more data to transfer to the
+remote server.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isDatabaseEmpty</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the database is empty.</Abstract></ReturnValue>
+			<Anchor>//api/name/isDatabaseEmpty</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DBManager/insertDataIntoDB</TokenIdentifier>
+			<Abstract type="html">This method updates the database by adding the current values for the database manager.
+In order to have new data to the database the timestamp, latitude, longitude, and heart rate
+variables must be updated first.  Otherwise, the existing variables will be used and will
+result in an error if the timestamp is the same.  Since the timestamp  is part of the primary
+key for the database it must be unique in conjunction with the patientID.  This decision
+was made in an effort to keep database transactions and subsequent SQL statements contained
+to this class for easier troubleshooting.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>- (void)insertDataIntoDB</Declaration>
+			
+			
+			<Anchor>//api/name/insertDataIntoDB</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/DBManager/timeStampAsString:</TokenIdentifier>
+			<Abstract type="html">This method takes the NSDate object stored in this class and converts it to a
+format that is useable to databases.  The assumptions are that the date has been updated.
+This method is called only from this class.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)timeStampAsString:(NSDate *)selectedTime</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>selectedTime</Name>
+					<Abstract type="html">The NSDate given to convert to a string for insertion to the database.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The result string is a parsed date.  An example is &apos;1970-05-10 18:45:10&apos;.  That is
+May 10 1970 at 6:45 pm and 10 seconds.</Abstract></ReturnValue>
+			<Anchor>//api/name/timeStampAsString:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DBManager/deleteRowAtTimeStamp:</TokenIdentifier>
+			<Abstract type="html">This method is used in conjunction with the remote database updates.  It is called to remove the
+row from the local database after a successful insert to the remote database.  It is assumed that
+the patientID was already added as it is part of the primary key for the table in this database.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>- (void)deleteRowAtTimeStamp:(NSString *)oldTimeStamp</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>oldTimeStamp</Name>
+					<Abstract type="html">This is part of the primary key for the table and must be supplied, otherwise
+no record deletion happens.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/deleteRowAtTimeStamp:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DBManager/openLocalDBWithSQLQueryIsSuccessful:</TokenIdentifier>
+			<Abstract type="html">This method is used to open the database connection and prepare the database with the
+the SQL statement provided.  It is meant to be private to this class only.  NOTE: since this
+database is SQLITE not all ACID compliant functions are used.  Furthermore some contraints, such
+as date have different syntaxes associated with them.  Please see https://www.sqlite.org/docs.html
+for more details relating to SQLITE.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)openLocalDBWithSQLQueryIsSuccessful:(NSString *)query</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>query</Name>
+					<Abstract type="html">is the SQL statement to use on the database.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Yes if the query is valid and the database is open.</Abstract></ReturnValue>
+			<Anchor>//api/name/openLocalDBWithSQLQueryIsSuccessful:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DBManager/closeLocalDBConnection</TokenIdentifier>
+			<Abstract type="html">This method is meant to be a private method.  It is meant to finalize the database and close the
+database.  All results from the query will be lost as memory is freed during finalization.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>- (void)closeLocalDBConnection</Declaration>
+			
+			
+			<Anchor>//api/name/closeLocalDBConnection</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DBManager/purgeDatabase</TokenIdentifier>
+			<Abstract type="html">This method is used to clean out the database before use.  It makes the assumption that the previous
+instance of this application did not crash and that all data was updated to the remote server.
+It is used as a safety mechanism so that faulty patientID information is not used to update
+remote tables.</Abstract>
+			<DeclaredIn>DBManager.h</DeclaredIn>
+			
+			<Declaration>- (void)purgeDatabase</Declaration>
+			
+			
+			<Anchor>//api/name/purgeDatabase</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

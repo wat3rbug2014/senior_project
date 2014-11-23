@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/DeviceConstantsAndStaticFunctions.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/DeviceConstantsAndStaticFunctions</TokenIdentifier>
+			<Abstract type="html">This is a collection constants that are used throughout the application
+or static functions which can used in several places, but do not show
+any obvious affinity to a class.</Abstract>
+			<DeclaredIn>DeviceConstantsAndStaticFunctions.h</DeclaredIn>
+            
+			
+			<NodeRef refid="6"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/DeviceConstantsAndStaticFunctions/activityLevelBasedOnHeartRate:andAge:</TokenIdentifier>
+			<Abstract type="html">This method does a calculation of activity level based on the current heart rate and
+the patients ages.  The result is defined as an ActivityLevel enumeration.</Abstract>
+			<DeclaredIn>DeviceConstantsAndStaticFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (int)activityLevelBasedOnHeartRate:(NSInteger)heartRate andAge:(NSInteger)age</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>heartRate</Name>
+					<Abstract type="html">The current heart rate.</Abstract>
+				</Parameter><Parameter>
+					<Name>age</Name>
+					<Abstract type="html">The age of the patient.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An integer value that correlates with the ActivityLevel enumeration.</Abstract></ReturnValue>
+			<Anchor>//api/name/activityLevelBasedOnHeartRate:andAge:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/DeviceConstantsAndStaticFunctions/activityPhraseUsing:</TokenIdentifier>
+			<Abstract type="html">This method takes the enumeration integer and returns a string value of the activity
+level.</Abstract>
+			<DeclaredIn>DeviceConstantsAndStaticFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)activityPhraseUsing:(int)activity</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>activity</Name>
+					<Abstract type="html">An integer that is an ActivityLevel enumeration value.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A string representation of the ActivityLevel enumeration.</Abstract></ReturnValue>
+			<Anchor>//api/name/activityPhraseUsing:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

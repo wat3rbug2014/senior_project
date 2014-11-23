@@ -1,0 +1,1199 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>DevicePollManager Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Medical Cyborgs </a></h1>
+				<a id="developerHome" href="../index.html">UHCL</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">DevicePollManager Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/ableToPoll">&nbsp;&nbsp;&nbsp;&nbsp;ableToPoll</option>
+	
+	<option value="//api/name/activityMonitor">&nbsp;&nbsp;&nbsp;&nbsp;activityMonitor</option>
+	
+	<option value="//api/name/batteryAlertGiven">&nbsp;&nbsp;&nbsp;&nbsp;batteryAlertGiven</option>
+	
+	<option value="//api/name/bigLocationChanges">&nbsp;&nbsp;&nbsp;&nbsp;bigLocationChanges</option>
+	
+	<option value="//api/name/currentHeartRate">&nbsp;&nbsp;&nbsp;&nbsp;currentHeartRate</option>
+	
+	<option value="//api/name/database">&nbsp;&nbsp;&nbsp;&nbsp;database</option>
+	
+	<option value="//api/name/deviceManager">&nbsp;&nbsp;&nbsp;&nbsp;deviceManager</option>
+	
+	<option value="//api/name/heartMonitor">&nbsp;&nbsp;&nbsp;&nbsp;heartMonitor</option>
+	
+	<option value="//api/name/isActivityMonitorReady">&nbsp;&nbsp;&nbsp;&nbsp;isActivityMonitorReady</option>
+	
+	<option value="//api/name/isHeartMonitorReady">&nbsp;&nbsp;&nbsp;&nbsp;isHeartMonitorReady</option>
+	
+	<option value="//api/name/locationAllowed">&nbsp;&nbsp;&nbsp;&nbsp;locationAllowed</option>
+	
+	<option value="//api/name/locationManager">&nbsp;&nbsp;&nbsp;&nbsp;locationManager</option>
+	
+	<option value="//api/name/patientID">&nbsp;&nbsp;&nbsp;&nbsp;patientID</option>
+	
+	<option value="//api/name/patientInfo">&nbsp;&nbsp;&nbsp;&nbsp;patientInfo</option>
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/didReceiveNotificationDeviceConnected">&nbsp;&nbsp;&nbsp;&nbsp;- didReceiveNotificationDeviceConnected</option>
+	
+	<option value="//api/name/doBatteryLowNotificationFor:">&nbsp;&nbsp;&nbsp;&nbsp;- doBatteryLowNotificationFor:</option>
+	
+	<option value="//api/name/initWithDataStore:andDevicemanager:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithDataStore:andDevicemanager:</option>
+	
+	<option value="//api/name/pollDevicesForData">&nbsp;&nbsp;&nbsp;&nbsp;- pollDevicesForData</option>
+	
+	<option value="//api/name/stopMonitoring">&nbsp;&nbsp;&nbsp;&nbsp;- stopMonitoring</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/ableToPoll">ableToPoll</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/activityMonitor">activityMonitor</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/batteryAlertGiven">batteryAlertGiven</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/bigLocationChanges">bigLocationChanges</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/currentHeartRate">currentHeartRate</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/database">database</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deviceManager">deviceManager</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/heartMonitor">heartMonitor</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isActivityMonitorReady">isActivityMonitorReady</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isHeartMonitorReady">isHeartMonitorReady</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/locationAllowed">locationAllowed</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/locationManager">locationManager</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/patientID">patientID</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/patientInfo">patientInfo</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/didReceiveNotificationDeviceConnected">didReceiveNotificationDeviceConnected</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/doBatteryLowNotificationFor:">doBatteryLowNotificationFor:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithDataStore:andDevicemanager:">initWithDataStore:andDevicemanager:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/pollDevicesForData">pollDevicesForData</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stopMonitoring">stopMonitoring</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="DevicePollManager Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">DevicePollManager Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value"><a href="../Protocols/BTDeviceManagerDelegate.html">BTDeviceManagerDelegate</a><br />CLLocationManagerDelegate</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">DevicePollManager.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This class functions as the polling mechanism for the bluetooth devices.  Its
+goes through each time the main method is called and retrieves the information
+from the devices and puts the data in the local data store.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/locationManager">&nbsp;&nbsp;locationManager</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/locationAllowed">&nbsp;&nbsp;locationAllowed</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/bigLocationChanges">&nbsp;&nbsp;bigLocationChanges</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/patientInfo">&nbsp;&nbsp;patientInfo</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/patientID">&nbsp;&nbsp;patientID</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deviceManager">&nbsp;&nbsp;deviceManager</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/heartMonitor">&nbsp;&nbsp;heartMonitor</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/activityMonitor">&nbsp;&nbsp;activityMonitor</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/database">&nbsp;&nbsp;database</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/batteryAlertGiven">&nbsp;&nbsp;batteryAlertGiven</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/ableToPoll">&nbsp;&nbsp;ableToPoll</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isHeartMonitorReady">&nbsp;&nbsp;isHeartMonitorReady</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isActivityMonitorReady">&nbsp;&nbsp;isActivityMonitorReady</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/currentHeartRate">&nbsp;&nbsp;currentHeartRate</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithDataStore:andDevicemanager:">&ndash;&nbsp;initWithDataStore:andDevicemanager:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/pollDevicesForData">&ndash;&nbsp;pollDevicesForData</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/didReceiveNotificationDeviceConnected">&ndash;&nbsp;didReceiveNotificationDeviceConnected</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/stopMonitoring">&ndash;&nbsp;stopMonitoring</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/doBatteryLowNotificationFor:">&ndash;&nbsp;doBatteryLowNotificationFor:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/ableToPoll" title="ableToPoll"></a>
+	<h3 class="subsubtitle method-title">ableToPoll</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This flag determines whether polling will continue.  This can be FALSE when the following
+conditions exist.  Either of the devices is not connected.  The devices has not been fully
+discovered.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property BOOL ableToPoll</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DevicePollManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/activityMonitor" title="activityMonitor"></a>
+	<h3 class="subsubtitle method-title">activityMonitor</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The activity monitor that was selected.  The reference is used for code brevity.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property id&lt;DeviceCommonInfoInterface,ActivityMonitorProtocol&gt; activityMonitor</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DevicePollManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/batteryAlertGiven" title="batteryAlertGiven"></a>
+	<h3 class="subsubtitle method-title">batteryAlertGiven</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This flag is set once a low battery indication has happened.  The default for the
+battery alert is 20% of battery left on one of the devices.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property BOOL batteryAlertGiven</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DevicePollManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/bigLocationChanges" title="bigLocationChanges"></a>
+	<h3 class="subsubtitle method-title">bigLocationChanges</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The flag that is used to see if big location changes are allowed.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property BOOL bigLocationChanges</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DevicePollManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/currentHeartRate" title="currentHeartRate"></a>
+	<h3 class="subsubtitle method-title">currentHeartRate</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The current heart rate.  It will be 0 if no heart rate has been detected, or it will stay
+at the last value if the heart rate monitor is lost.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property int currentHeartRate</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DevicePollManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/database" title="database"></a>
+	<h3 class="subsubtitle method-title">database</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The local database that will be used for storage of the data retrieved from the
+devices during polling.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property DBManager *database</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DevicePollManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/deviceManager" title="deviceManager"></a>
+	<h3 class="subsubtitle method-title">deviceManager</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The device manager which controls connectivity to the devices.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (retain) BTDeviceManager *deviceManager</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DevicePollManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/heartMonitor" title="heartMonitor"></a>
+	<h3 class="subsubtitle method-title">heartMonitor</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The heart monitor that was selected.  This reference is used for code brevity.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property id&lt;DeviceCommonInfoInterface,HeartMonitorProtocol&gt; heartMonitor</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DevicePollManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isActivityMonitorReady" title="isActivityMonitorReady"></a>
+	<h3 class="subsubtitle method-title">isActivityMonitorReady</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This flag is set when the activity monitor is connected and fully discovered.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property BOOL isActivityMonitorReady</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DevicePollManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isHeartMonitorReady" title="isHeartMonitorReady"></a>
+	<h3 class="subsubtitle method-title">isHeartMonitorReady</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This flag is set when the heart monitor is connected and fully discovered.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property BOOL isHeartMonitorReady</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DevicePollManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/locationAllowed" title="locationAllowed"></a>
+	<h3 class="subsubtitle method-title">locationAllowed</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The flag that is used for checking to see if any location checks are allowed by the
+user.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property BOOL locationAllowed</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DevicePollManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/locationManager" title="locationManager"></a>
+	<h3 class="subsubtitle method-title">locationManager</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The location manager used for tracking the location of the patient for large updates.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (strong) CLLocationManager *locationManager</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DevicePollManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/patientID" title="patientID"></a>
+	<h3 class="subsubtitle method-title">patientID</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The patientID is used for the device poller to insert into the <a href="#//api/name/database">database</a>.  This
+reference is used for code brevity.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property NSInteger patientID</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DevicePollManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/patientInfo" title="patientInfo"></a>
+	<h3 class="subsubtitle method-title">patientInfo</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The patient information that is locally stored by the application.  It is in the
+NSUserDefaults so that application restores will not require any remote connection.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property PersonalInfo *patientInfo</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DevicePollManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/didReceiveNotificationDeviceConnected" title="didReceiveNotificationDeviceConnected"></a>
+	<h3 class="subsubtitle method-title">didReceiveNotificationDeviceConnected</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method is used by the device manager to notify the poller that a device is connected.
+It is used to help signal the device poller that it can continue because all devices are
+connected.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)didReceiveNotificationDeviceConnected</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DevicePollManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/doBatteryLowNotificationFor:" title="doBatteryLowNotificationFor:"></a>
+	<h3 class="subsubtitle method-title">doBatteryLowNotificationFor:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method pushes notifications that the battery is low for one of the devices.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)doBatteryLowNotificationFor:(id&lt;DeviceCommonInfoInterface&gt;)<em>device</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>device</em></dt>
+			<dd><p>The bluetooth device that is low on battery.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DevicePollManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithDataStore:andDevicemanager:" title="initWithDataStore:andDevicemanager:"></a>
+	<h3 class="subsubtitle method-title">initWithDataStore:andDevicemanager:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This is the preferred initialization method.  The datastore and the two components are passed
+so that polling can happen imediately. WARNING:  This initialization method must be used if any
+polling is to occur.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initWithDataStore:(DBManager *)<em>dataStore</em> andDevicemanager:(BTDeviceManager *)<em>newDeviceManager</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>dataStore</em></dt>
+			<dd><p>The <a href="#//api/name/database">database</a> manager that will be used for local storage of the data.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>newDeviceManager</em></dt>
+			<dd><p>The device manager that is to maintain the connectivity of the devices.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An instance of the device poller which contains everything that is needed to run.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DevicePollManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/pollDevicesForData" title="pollDevicesForData"></a>
+	<h3 class="subsubtitle method-title">pollDevicesForData</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method is used to get information from the devices. If the devices have not been added with the
+initWithDataStore: heartMonitor: activityMonitor: no updates will occur.  The appropriate data is
+pulled from the devices for monitoring.  The battery level, if readable is also polled.  If the
+battery is below 20% a notification will be posted to the NSNotificationCenter.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)pollDevicesForData</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DevicePollManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/stopMonitoring" title="stopMonitoring"></a>
+	<h3 class="subsubtitle method-title">stopMonitoring</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method is used to tell the device poller to stop monitoring the selected monitors.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)stopMonitoring</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DevicePollManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+                    
+                    
+                    
+                    
+
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2014 UHCL. All rights reserved. (Last updated: 2014-11-22)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

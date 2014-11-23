@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ActivityMonitorSelectVC.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ActivityMonitorSelectVC</TokenIdentifier>
+			<Abstract type="html">This screen allows for selection and discovery of bluetooth devices that
+conform to the activity monitoring services.</Abstract>
+			<DeclaredIn>ActivityMonitorSelectVC.h</DeclaredIn>
+            
+			
+			<NodeRef refid="1"/>
+		</Token>
+		
+		
+        
+        
+	</File>
+</Tokens>

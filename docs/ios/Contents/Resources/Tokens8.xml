@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/FitBitFlex.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/FitBitFlex</TokenIdentifier>
+			<Abstract type="html">This class is for the FitBit Flex wristband device.  Device specific UUIDs for services
+and characteristics are here along with the execution path to obtain the desired data for the
+application.  Service and Characteristic UUIDs are defined in this header instead of gobally in
+an effort to reduce mental noise when reading the code.  The CBPeripheralDelegate is implemented
+so that the class can perform all the operations needed to maintain connection status and
+retrieval of the data.</Abstract>
+			<DeclaredIn>FitBitFlex.h</DeclaredIn>
+            
+			
+			<NodeRef refid="8"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FitBitFlex/setType:</TokenIdentifier>
+			<Abstract type="html">The device type as an enum of DeviceType.  See DeviceTypes.h for details.</Abstract>
+			<DeclaredIn>FitBitFlex.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger type</Declaration>
+			
+			
+			<Anchor>//api/name/type</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FitBitFlex/type</TokenIdentifier>
+			<Abstract type="html">The device type as an enum of DeviceType.  See DeviceTypes.h for details.</Abstract>
+			<DeclaredIn>FitBitFlex.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger type</Declaration>
+			
+			
+			<Anchor>//api/name/type</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/FitBitFlex/type</TokenIdentifier>
+			<Abstract type="html">The device type as an enum of DeviceType.  See DeviceTypes.h for details.</Abstract>
+			<DeclaredIn>FitBitFlex.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger type</Declaration>
+			
+			
+			<Anchor>//api/name/type</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FitBitFlex/setBatteryService:</TokenIdentifier>
+			<Abstract type="html">The CBService reference for use in detecting the battery level of the device.</Abstract>
+			<DeclaredIn>FitBitFlex.h</DeclaredIn>
+			
+			<Declaration>@property (retain) CBService *batteryService</Declaration>
+			
+			
+			<Anchor>//api/name/batteryService</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FitBitFlex/batteryService</TokenIdentifier>
+			<Abstract type="html">The CBService reference for use in detecting the battery level of the device.</Abstract>
+			<DeclaredIn>FitBitFlex.h</DeclaredIn>
+			
+			<Declaration>@property (retain) CBService *batteryService</Declaration>
+			
+			
+			<Anchor>//api/name/batteryService</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/FitBitFlex/batteryService</TokenIdentifier>
+			<Abstract type="html">The CBService reference for use in detecting the battery level of the device.</Abstract>
+			<DeclaredIn>FitBitFlex.h</DeclaredIn>
+			
+			<Declaration>@property (retain) CBService *batteryService</Declaration>
+			
+			
+			<Anchor>//api/name/batteryService</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FitBitFlex/setBatteryLvlChar:</TokenIdentifier>
+			<Abstract type="html">The CBCharacteristic reference for use in reading the battery level of the device.</Abstract>
+			<DeclaredIn>FitBitFlex.h</DeclaredIn>
+			
+			<Declaration>@property (retain) CBCharacteristic *batteryLvlChar</Declaration>
+			
+			
+			<Anchor>//api/name/batteryLvlChar</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FitBitFlex/batteryLvlChar</TokenIdentifier>
+			<Abstract type="html">The CBCharacteristic reference for use in reading the battery level of the device.</Abstract>
+			<DeclaredIn>FitBitFlex.h</DeclaredIn>
+			
+			<Declaration>@property (retain) CBCharacteristic *batteryLvlChar</Declaration>
+			
+			
+			<Anchor>//api/name/batteryLvlChar</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/FitBitFlex/batteryLvlChar</TokenIdentifier>
+			<Abstract type="html">The CBCharacteristic reference for use in reading the battery level of the device.</Abstract>
+			<DeclaredIn>FitBitFlex.h</DeclaredIn>
+			
+			<Declaration>@property (retain) CBCharacteristic *batteryLvlChar</Declaration>
+			
+			
+			<Anchor>//api/name/batteryLvlChar</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FitBitFlex/setBatteryLevel:</TokenIdentifier>
+			<Abstract type="html">The last known integer value of the battery percentage.  The default is 0 if the battery level is not
+read.</Abstract>
+			<DeclaredIn>FitBitFlex.h</DeclaredIn>
+			
+			<Declaration>@property int batteryLevel</Declaration>
+			
+			
+			<Anchor>//api/name/batteryLevel</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FitBitFlex/batteryLevel</TokenIdentifier>
+			<Abstract type="html">The last known integer value of the battery percentage.  The default is 0 if the battery level is not
+read.</Abstract>
+			<DeclaredIn>FitBitFlex.h</DeclaredIn>
+			
+			<Declaration>@property int batteryLevel</Declaration>
+			
+			
+			<Anchor>//api/name/batteryLevel</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/FitBitFlex/batteryLevel</TokenIdentifier>
+			<Abstract type="html">The last known integer value of the battery percentage.  The default is 0 if the battery level is not
+read.</Abstract>
+			<DeclaredIn>FitBitFlex.h</DeclaredIn>
+			
+			<Declaration>@property int batteryLevel</Declaration>
+			
+			
+			<Anchor>//api/name/batteryLevel</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FitBitFlex/setDevice:</TokenIdentifier>
+			<Abstract type="html">The CBPeripheral device that was discovered and used with this class.</Abstract>
+			<DeclaredIn>FitBitFlex.h</DeclaredIn>
+			
+			<Declaration>@property (retain) CBPeripheral *device</Declaration>
+			
+			
+			<Anchor>//api/name/device</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FitBitFlex/device</TokenIdentifier>
+			<Abstract type="html">The CBPeripheral device that was discovered and used with this class.</Abstract>
+			<DeclaredIn>FitBitFlex.h</DeclaredIn>
+			
+			<Declaration>@property (retain) CBPeripheral *device</Declaration>
+			
+			
+			<Anchor>//api/name/device</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/FitBitFlex/device</TokenIdentifier>
+			<Abstract type="html">The CBPeripheral device that was discovered and used with this class.</Abstract>
+			<DeclaredIn>FitBitFlex.h</DeclaredIn>
+			
+			<Declaration>@property (retain) CBPeripheral *device</Declaration>
+			
+			
+			<Anchor>//api/name/device</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FitBitFlex/setDeviceManufacturer:</TokenIdentifier>
+			<Abstract type="html">The NSString value of the manufacturer as read from the device.</Abstract>
+			<DeclaredIn>FitBitFlex.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSString *deviceManufacturer</Declaration>
+			
+			
+			<Anchor>//api/name/deviceManufacturer</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FitBitFlex/deviceManufacturer</TokenIdentifier>
+			<Abstract type="html">The NSString value of the manufacturer as read from the device.</Abstract>
+			<DeclaredIn>FitBitFlex.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSString *deviceManufacturer</Declaration>
+			
+			
+			<Anchor>//api/name/deviceManufacturer</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/FitBitFlex/deviceManufacturer</TokenIdentifier>
+			<Abstract type="html">The NSString value of the manufacturer as read from the device.</Abstract>
+			<DeclaredIn>FitBitFlex.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSString *deviceManufacturer</Declaration>
+			
+			
+			<Anchor>//api/name/deviceManufacturer</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

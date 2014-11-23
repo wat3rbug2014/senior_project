@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/LocalDBResult.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/LocalDBResult</TokenIdentifier>
+			<Abstract type="html">This is a simple data class that is used to pass around from the
+database to classes that are using it.  It was created to simplify
+string manipulation.</Abstract>
+			<DeclaredIn>LocalDBResult.h</DeclaredIn>
+            
+			
+			<NodeRef refid="12"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/LocalDBResult/setPatientID:</TokenIdentifier>
+			<Abstract type="html">The patientID that is used by the database.</Abstract>
+			<DeclaredIn>LocalDBResult.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger patientID</Declaration>
+			
+			
+			<Anchor>//api/name/patientID</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/LocalDBResult/patientID</TokenIdentifier>
+			<Abstract type="html">The patientID that is used by the database.</Abstract>
+			<DeclaredIn>LocalDBResult.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger patientID</Declaration>
+			
+			
+			<Anchor>//api/name/patientID</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/LocalDBResult/patientID</TokenIdentifier>
+			<Abstract type="html">The patientID that is used by the database.</Abstract>
+			<DeclaredIn>LocalDBResult.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger patientID</Declaration>
+			
+			
+			<Anchor>//api/name/patientID</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/LocalDBResult/setHeartRate:</TokenIdentifier>
+			<Abstract type="html">The heart rate of the patient as it was recorded by the database.</Abstract>
+			<DeclaredIn>LocalDBResult.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger heartRate</Declaration>
+			
+			
+			<Anchor>//api/name/heartRate</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/LocalDBResult/heartRate</TokenIdentifier>
+			<Abstract type="html">The heart rate of the patient as it was recorded by the database.</Abstract>
+			<DeclaredIn>LocalDBResult.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger heartRate</Declaration>
+			
+			
+			<Anchor>//api/name/heartRate</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/LocalDBResult/heartRate</TokenIdentifier>
+			<Abstract type="html">The heart rate of the patient as it was recorded by the database.</Abstract>
+			<DeclaredIn>LocalDBResult.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger heartRate</Declaration>
+			
+			
+			<Anchor>//api/name/heartRate</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/LocalDBResult/setLatitude:</TokenIdentifier>
+			<Abstract type="html">The latitude of the patient that was recorded.  This value will not
+change much unless big changes happen.</Abstract>
+			<DeclaredIn>LocalDBResult.h</DeclaredIn>
+			
+			<Declaration>@property float latitude</Declaration>
+			
+			
+			<Anchor>//api/name/latitude</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/LocalDBResult/latitude</TokenIdentifier>
+			<Abstract type="html">The latitude of the patient that was recorded.  This value will not
+change much unless big changes happen.</Abstract>
+			<DeclaredIn>LocalDBResult.h</DeclaredIn>
+			
+			<Declaration>@property float latitude</Declaration>
+			
+			
+			<Anchor>//api/name/latitude</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/LocalDBResult/latitude</TokenIdentifier>
+			<Abstract type="html">The latitude of the patient that was recorded.  This value will not
+change much unless big changes happen.</Abstract>
+			<DeclaredIn>LocalDBResult.h</DeclaredIn>
+			
+			<Declaration>@property float latitude</Declaration>
+			
+			
+			<Anchor>//api/name/latitude</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/LocalDBResult/setLongitude:</TokenIdentifier>
+			<Abstract type="html">The longitude of the patient that was recorded.  This value will not
+change much unless big changes happen.</Abstract>
+			<DeclaredIn>LocalDBResult.h</DeclaredIn>
+			
+			<Declaration>@property float longitude</Declaration>
+			
+			
+			<Anchor>//api/name/longitude</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/LocalDBResult/longitude</TokenIdentifier>
+			<Abstract type="html">The longitude of the patient that was recorded.  This value will not
+change much unless big changes happen.</Abstract>
+			<DeclaredIn>LocalDBResult.h</DeclaredIn>
+			
+			<Declaration>@property float longitude</Declaration>
+			
+			
+			<Anchor>//api/name/longitude</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/LocalDBResult/longitude</TokenIdentifier>
+			<Abstract type="html">The longitude of the patient that was recorded.  This value will not
+change much unless big changes happen.</Abstract>
+			<DeclaredIn>LocalDBResult.h</DeclaredIn>
+			
+			<Declaration>@property float longitude</Declaration>
+			
+			
+			<Anchor>//api/name/longitude</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/LocalDBResult/setTimeStamp:</TokenIdentifier>
+			<Abstract type="html">The timestamp this data was recorded in the database.  It has date and
+time.  It follows the format of &apos;yyyy-mm-dd hh:mm:ss&apos;.  The hours are expressed
+in military time from 0-23.</Abstract>
+			<DeclaredIn>LocalDBResult.h</DeclaredIn>
+			
+			<Declaration>@property NSString *timeStamp</Declaration>
+			
+			
+			<Anchor>//api/name/timeStamp</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/LocalDBResult/timeStamp</TokenIdentifier>
+			<Abstract type="html">The timestamp this data was recorded in the database.  It has date and
+time.  It follows the format of &apos;yyyy-mm-dd hh:mm:ss&apos;.  The hours are expressed
+in military time from 0-23.</Abstract>
+			<DeclaredIn>LocalDBResult.h</DeclaredIn>
+			
+			<Declaration>@property NSString *timeStamp</Declaration>
+			
+			
+			<Anchor>//api/name/timeStamp</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/LocalDBResult/timeStamp</TokenIdentifier>
+			<Abstract type="html">The timestamp this data was recorded in the database.  It has date and
+time.  It follows the format of &apos;yyyy-mm-dd hh:mm:ss&apos;.  The hours are expressed
+in military time from 0-23.</Abstract>
+			<DeclaredIn>LocalDBResult.h</DeclaredIn>
+			
+			<Declaration>@property NSString *timeStamp</Declaration>
+			
+			
+			<Anchor>//api/name/timeStamp</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/LocalDBResult/setActivityLevel:</TokenIdentifier>
+			<Abstract type="html">An integer value of the activity level based on patient age and heart rate.
+See DeviceConstantsAndStaticFunctions for a description.</Abstract>
+			<DeclaredIn>LocalDBResult.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger activityLevel</Declaration>
+			
+			
+			<Anchor>//api/name/activityLevel</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/LocalDBResult/activityLevel</TokenIdentifier>
+			<Abstract type="html">An integer value of the activity level based on patient age and heart rate.
+See DeviceConstantsAndStaticFunctions for a description.</Abstract>
+			<DeclaredIn>LocalDBResult.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger activityLevel</Declaration>
+			
+			
+			<Anchor>//api/name/activityLevel</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/LocalDBResult/activityLevel</TokenIdentifier>
+			<Abstract type="html">An integer value of the activity level based on patient age and heart rate.
+See DeviceConstantsAndStaticFunctions for a description.</Abstract>
+			<DeclaredIn>LocalDBResult.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger activityLevel</Declaration>
+			
+			
+			<Anchor>//api/name/activityLevel</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

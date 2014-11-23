@@ -98,14 +98,8 @@
     [peripheral setDelegate:self];
     
     // start discovery of services
-    
-    // fix this so name and temp guage will be checked
-    
-    CBUUID *tempSrvID = [CBUUID UUIDWithString:TEMP_SENSOR_SERVICE];
-    CBUUID *txPwrID = [CBUUID UUIDWithString:TX_PWR_SERVICE];
-    CBUUID *tiTmpSrvID = [CBUUID UUIDWithString:TI_TMP_SERVICE];
 
-    [peripheral discoverServices:[NSArray arrayWithObjects: txPwrID, tempSrvID, tiTmpSrvID, nil]];
+    [peripheral discoverServices:nil];
     [peripheral readRSSI];
 
 }
@@ -132,10 +126,7 @@
     NSLog(@"Discovered services");
     for (CBService *service in [peripheral services]) {
         NSLog(@"Service: %@", service.UUID);
-        CBUUID *tmpOn = [CBUUID UUIDWithString:TI_TMP_CHARACTERISTIC_ON_OFF];
-        CBUUID *tmpChar = [CBUUID UUIDWithString:TI_TMP_CHARACTERISTIC_TMP];
-        NSArray *characteristics = [NSArray arrayWithObjects:tmpChar, tmpOn, nil];
-        [peripheral discoverCharacteristics: characteristics forService:service];
+        [peripheral discoverCharacteristics: nil forService:service];
     }
 }
 

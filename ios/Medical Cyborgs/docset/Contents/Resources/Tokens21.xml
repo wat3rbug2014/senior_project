@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/ActivityMonitorProtocol.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/ActivityMonitorProtocol</TokenIdentifier>
+			<Abstract type="html">This protocol is designed to be used on all activity monitor devices.
+The methods enclosed ensure uniform operation with the application, irrespective
+of the specific device.  It is used for polling so that all modifications are to the
+specific device and do not have cascading effects to the other devices.</Abstract>
+			<DeclaredIn>ActivityMonitorProtocol.h</DeclaredIn>
+            
+			
+			<NodeRef refid="21"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ActivityMonitorProtocol/getActivityLevel</TokenIdentifier>
+			<Abstract type="html">This methods get an activity level.  The result is defined in the DeviceTypes.h file.</Abstract>
+			<DeclaredIn>ActivityMonitorProtocol.h</DeclaredIn>
+			
+			<Declaration>- (NSInteger)getActivityLevel</Declaration>
+			
+			<ReturnValue><Abstract type="html">An integer value that corresponds with the activity level constants in DeviceTypes.h</Abstract></ReturnValue>
+			<Anchor>//api/name/getActivityLevel</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

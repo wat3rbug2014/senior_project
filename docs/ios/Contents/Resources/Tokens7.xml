@@ -1,0 +1,628 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/DevicePollManager.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/DevicePollManager</TokenIdentifier>
+			<Abstract type="html">This class functions as the polling mechanism for the bluetooth devices.  Its
+goes through each time the main method is called and retrieves the information
+from the devices and puts the data in the local data store.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+            
+			
+			<NodeRef refid="7"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DevicePollManager/setLocationManager:</TokenIdentifier>
+			<Abstract type="html">The location manager used for tracking the location of the patient for large updates.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property (strong) CLLocationManager *locationManager</Declaration>
+			
+			
+			<Anchor>//api/name/locationManager</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DevicePollManager/locationManager</TokenIdentifier>
+			<Abstract type="html">The location manager used for tracking the location of the patient for large updates.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property (strong) CLLocationManager *locationManager</Declaration>
+			
+			
+			<Anchor>//api/name/locationManager</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DevicePollManager/locationManager</TokenIdentifier>
+			<Abstract type="html">The location manager used for tracking the location of the patient for large updates.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property (strong) CLLocationManager *locationManager</Declaration>
+			
+			
+			<Anchor>//api/name/locationManager</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DevicePollManager/setLocationAllowed:</TokenIdentifier>
+			<Abstract type="html">The flag that is used for checking to see if any location checks are allowed by the
+user.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property BOOL locationAllowed</Declaration>
+			
+			
+			<Anchor>//api/name/locationAllowed</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DevicePollManager/locationAllowed</TokenIdentifier>
+			<Abstract type="html">The flag that is used for checking to see if any location checks are allowed by the
+user.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property BOOL locationAllowed</Declaration>
+			
+			
+			<Anchor>//api/name/locationAllowed</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DevicePollManager/locationAllowed</TokenIdentifier>
+			<Abstract type="html">The flag that is used for checking to see if any location checks are allowed by the
+user.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property BOOL locationAllowed</Declaration>
+			
+			
+			<Anchor>//api/name/locationAllowed</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DevicePollManager/setBigLocationChanges:</TokenIdentifier>
+			<Abstract type="html">The flag that is used to see if big location changes are allowed.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property BOOL bigLocationChanges</Declaration>
+			
+			
+			<Anchor>//api/name/bigLocationChanges</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DevicePollManager/bigLocationChanges</TokenIdentifier>
+			<Abstract type="html">The flag that is used to see if big location changes are allowed.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property BOOL bigLocationChanges</Declaration>
+			
+			
+			<Anchor>//api/name/bigLocationChanges</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DevicePollManager/bigLocationChanges</TokenIdentifier>
+			<Abstract type="html">The flag that is used to see if big location changes are allowed.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property BOOL bigLocationChanges</Declaration>
+			
+			
+			<Anchor>//api/name/bigLocationChanges</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DevicePollManager/setPatientInfo:</TokenIdentifier>
+			<Abstract type="html">The patient information that is locally stored by the application.  It is in the
+NSUserDefaults so that application restores will not require any remote connection.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property PersonalInfo *patientInfo</Declaration>
+			
+			
+			<Anchor>//api/name/patientInfo</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DevicePollManager/patientInfo</TokenIdentifier>
+			<Abstract type="html">The patient information that is locally stored by the application.  It is in the
+NSUserDefaults so that application restores will not require any remote connection.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property PersonalInfo *patientInfo</Declaration>
+			
+			
+			<Anchor>//api/name/patientInfo</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DevicePollManager/patientInfo</TokenIdentifier>
+			<Abstract type="html">The patient information that is locally stored by the application.  It is in the
+NSUserDefaults so that application restores will not require any remote connection.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property PersonalInfo *patientInfo</Declaration>
+			
+			
+			<Anchor>//api/name/patientInfo</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DevicePollManager/setPatientID:</TokenIdentifier>
+			<Abstract type="html">The patientID is used for the device poller to insert into the database.  This
+reference is used for code brevity.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger patientID</Declaration>
+			
+			
+			<Anchor>//api/name/patientID</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DevicePollManager/patientID</TokenIdentifier>
+			<Abstract type="html">The patientID is used for the device poller to insert into the database.  This
+reference is used for code brevity.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger patientID</Declaration>
+			
+			
+			<Anchor>//api/name/patientID</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DevicePollManager/patientID</TokenIdentifier>
+			<Abstract type="html">The patientID is used for the device poller to insert into the database.  This
+reference is used for code brevity.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger patientID</Declaration>
+			
+			
+			<Anchor>//api/name/patientID</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DevicePollManager/setDeviceManager:</TokenIdentifier>
+			<Abstract type="html">The device manager which controls connectivity to the devices.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property (retain) BTDeviceManager *deviceManager</Declaration>
+			
+			
+			<Anchor>//api/name/deviceManager</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DevicePollManager/deviceManager</TokenIdentifier>
+			<Abstract type="html">The device manager which controls connectivity to the devices.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property (retain) BTDeviceManager *deviceManager</Declaration>
+			
+			
+			<Anchor>//api/name/deviceManager</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DevicePollManager/deviceManager</TokenIdentifier>
+			<Abstract type="html">The device manager which controls connectivity to the devices.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property (retain) BTDeviceManager *deviceManager</Declaration>
+			
+			
+			<Anchor>//api/name/deviceManager</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DevicePollManager/setHeartMonitor:</TokenIdentifier>
+			<Abstract type="html">The heart monitor that was selected.  This reference is used for code brevity.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property id&lt;DeviceCommonInfoInterface,HeartMonitorProtocol&gt; heartMonitor</Declaration>
+			
+			
+			<Anchor>//api/name/heartMonitor</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DevicePollManager/heartMonitor</TokenIdentifier>
+			<Abstract type="html">The heart monitor that was selected.  This reference is used for code brevity.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property id&lt;DeviceCommonInfoInterface,HeartMonitorProtocol&gt; heartMonitor</Declaration>
+			
+			
+			<Anchor>//api/name/heartMonitor</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DevicePollManager/heartMonitor</TokenIdentifier>
+			<Abstract type="html">The heart monitor that was selected.  This reference is used for code brevity.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property id&lt;DeviceCommonInfoInterface,HeartMonitorProtocol&gt; heartMonitor</Declaration>
+			
+			
+			<Anchor>//api/name/heartMonitor</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DevicePollManager/setActivityMonitor:</TokenIdentifier>
+			<Abstract type="html">The activity monitor that was selected.  The reference is used for code brevity.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property id&lt;DeviceCommonInfoInterface,ActivityMonitorProtocol&gt; activityMonitor</Declaration>
+			
+			
+			<Anchor>//api/name/activityMonitor</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DevicePollManager/activityMonitor</TokenIdentifier>
+			<Abstract type="html">The activity monitor that was selected.  The reference is used for code brevity.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property id&lt;DeviceCommonInfoInterface,ActivityMonitorProtocol&gt; activityMonitor</Declaration>
+			
+			
+			<Anchor>//api/name/activityMonitor</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DevicePollManager/activityMonitor</TokenIdentifier>
+			<Abstract type="html">The activity monitor that was selected.  The reference is used for code brevity.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property id&lt;DeviceCommonInfoInterface,ActivityMonitorProtocol&gt; activityMonitor</Declaration>
+			
+			
+			<Anchor>//api/name/activityMonitor</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DevicePollManager/setDatabase:</TokenIdentifier>
+			<Abstract type="html">The local database that will be used for storage of the data retrieved from the
+devices during polling.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property DBManager *database</Declaration>
+			
+			
+			<Anchor>//api/name/database</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DevicePollManager/database</TokenIdentifier>
+			<Abstract type="html">The local database that will be used for storage of the data retrieved from the
+devices during polling.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property DBManager *database</Declaration>
+			
+			
+			<Anchor>//api/name/database</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DevicePollManager/database</TokenIdentifier>
+			<Abstract type="html">The local database that will be used for storage of the data retrieved from the
+devices during polling.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property DBManager *database</Declaration>
+			
+			
+			<Anchor>//api/name/database</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DevicePollManager/setBatteryAlertGiven:</TokenIdentifier>
+			<Abstract type="html">This flag is set once a low battery indication has happened.  The default for the
+battery alert is 20% of battery left on one of the devices.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property BOOL batteryAlertGiven</Declaration>
+			
+			
+			<Anchor>//api/name/batteryAlertGiven</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DevicePollManager/batteryAlertGiven</TokenIdentifier>
+			<Abstract type="html">This flag is set once a low battery indication has happened.  The default for the
+battery alert is 20% of battery left on one of the devices.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property BOOL batteryAlertGiven</Declaration>
+			
+			
+			<Anchor>//api/name/batteryAlertGiven</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DevicePollManager/batteryAlertGiven</TokenIdentifier>
+			<Abstract type="html">This flag is set once a low battery indication has happened.  The default for the
+battery alert is 20% of battery left on one of the devices.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property BOOL batteryAlertGiven</Declaration>
+			
+			
+			<Anchor>//api/name/batteryAlertGiven</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DevicePollManager/setAbleToPoll:</TokenIdentifier>
+			<Abstract type="html">This flag determines whether polling will continue.  This can be FALSE when the following
+conditions exist.  Either of the devices is not connected.  The devices has not been fully
+discovered.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property BOOL ableToPoll</Declaration>
+			
+			
+			<Anchor>//api/name/ableToPoll</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DevicePollManager/ableToPoll</TokenIdentifier>
+			<Abstract type="html">This flag determines whether polling will continue.  This can be FALSE when the following
+conditions exist.  Either of the devices is not connected.  The devices has not been fully
+discovered.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property BOOL ableToPoll</Declaration>
+			
+			
+			<Anchor>//api/name/ableToPoll</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DevicePollManager/ableToPoll</TokenIdentifier>
+			<Abstract type="html">This flag determines whether polling will continue.  This can be FALSE when the following
+conditions exist.  Either of the devices is not connected.  The devices has not been fully
+discovered.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property BOOL ableToPoll</Declaration>
+			
+			
+			<Anchor>//api/name/ableToPoll</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DevicePollManager/setIsHeartMonitorReady:</TokenIdentifier>
+			<Abstract type="html">This flag is set when the heart monitor is connected and fully discovered.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property BOOL isHeartMonitorReady</Declaration>
+			
+			
+			<Anchor>//api/name/isHeartMonitorReady</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DevicePollManager/isHeartMonitorReady</TokenIdentifier>
+			<Abstract type="html">This flag is set when the heart monitor is connected and fully discovered.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property BOOL isHeartMonitorReady</Declaration>
+			
+			
+			<Anchor>//api/name/isHeartMonitorReady</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DevicePollManager/isHeartMonitorReady</TokenIdentifier>
+			<Abstract type="html">This flag is set when the heart monitor is connected and fully discovered.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property BOOL isHeartMonitorReady</Declaration>
+			
+			
+			<Anchor>//api/name/isHeartMonitorReady</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DevicePollManager/setIsActivityMonitorReady:</TokenIdentifier>
+			<Abstract type="html">This flag is set when the activity monitor is connected and fully discovered.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property BOOL isActivityMonitorReady</Declaration>
+			
+			
+			<Anchor>//api/name/isActivityMonitorReady</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DevicePollManager/isActivityMonitorReady</TokenIdentifier>
+			<Abstract type="html">This flag is set when the activity monitor is connected and fully discovered.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property BOOL isActivityMonitorReady</Declaration>
+			
+			
+			<Anchor>//api/name/isActivityMonitorReady</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DevicePollManager/isActivityMonitorReady</TokenIdentifier>
+			<Abstract type="html">This flag is set when the activity monitor is connected and fully discovered.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property BOOL isActivityMonitorReady</Declaration>
+			
+			
+			<Anchor>//api/name/isActivityMonitorReady</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DevicePollManager/setCurrentHeartRate:</TokenIdentifier>
+			<Abstract type="html">The current heart rate.  It will be 0 if no heart rate has been detected, or it will stay
+at the last value if the heart rate monitor is lost.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property int currentHeartRate</Declaration>
+			
+			
+			<Anchor>//api/name/currentHeartRate</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DevicePollManager/currentHeartRate</TokenIdentifier>
+			<Abstract type="html">The current heart rate.  It will be 0 if no heart rate has been detected, or it will stay
+at the last value if the heart rate monitor is lost.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property int currentHeartRate</Declaration>
+			
+			
+			<Anchor>//api/name/currentHeartRate</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DevicePollManager/currentHeartRate</TokenIdentifier>
+			<Abstract type="html">The current heart rate.  It will be 0 if no heart rate has been detected, or it will stay
+at the last value if the heart rate monitor is lost.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property int currentHeartRate</Declaration>
+			
+			
+			<Anchor>//api/name/currentHeartRate</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DevicePollManager/initWithDataStore:andDevicemanager:</TokenIdentifier>
+			<Abstract type="html">This is the preferred initialization method.  The datastore and the two components are passed
+so that polling can happen imediately. WARNING:  This initialization method must be used if any
+polling is to occur.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>- (id)initWithDataStore:(DBManager *)dataStore andDevicemanager:(BTDeviceManager *)newDeviceManager</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>dataStore</Name>
+					<Abstract type="html">The database manager that will be used for local storage of the data.</Abstract>
+				</Parameter><Parameter>
+					<Name>newDeviceManager</Name>
+					<Abstract type="html">The device manager that is to maintain the connectivity of the devices.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of the device poller which contains everything that is needed to run.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithDataStore:andDevicemanager:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DevicePollManager/pollDevicesForData</TokenIdentifier>
+			<Abstract type="html">This method is used to get information from the devices. If the devices have not been added with the
+initWithDataStore: heartMonitor: activityMonitor: no updates will occur.  The appropriate data is
+pulled from the devices for monitoring.  The battery level, if readable is also polled.  If the
+battery is below 20% a notification will be posted to the NSNotificationCenter.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>- (void)pollDevicesForData</Declaration>
+			
+			
+			<Anchor>//api/name/pollDevicesForData</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DevicePollManager/didReceiveNotificationDeviceConnected</TokenIdentifier>
+			<Abstract type="html">This method is used by the device manager to notify the poller that a device is connected.
+It is used to help signal the device poller that it can continue because all devices are
+connected.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>- (void)didReceiveNotificationDeviceConnected</Declaration>
+			
+			
+			<Anchor>//api/name/didReceiveNotificationDeviceConnected</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DevicePollManager/stopMonitoring</TokenIdentifier>
+			<Abstract type="html">This method is used to tell the device poller to stop monitoring the selected monitors.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>- (void)stopMonitoring</Declaration>
+			
+			
+			<Anchor>//api/name/stopMonitoring</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DevicePollManager/doBatteryLowNotificationFor:</TokenIdentifier>
+			<Abstract type="html">This method pushes notifications that the battery is low for one of the devices.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>- (void)doBatteryLowNotificationFor:(id&lt;DeviceCommonInfoInterface&gt;)device</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>device</Name>
+					<Abstract type="html">The bluetooth device that is low on battery.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/doBatteryLowNotificationFor:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

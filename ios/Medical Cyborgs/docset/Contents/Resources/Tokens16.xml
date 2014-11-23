@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/PersonalInfo.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/PersonalInfo</TokenIdentifier>
+			<Abstract type="html">These constants are added as a way to use autocomplete
+feature on XCode.</Abstract>
+			<DeclaredIn>PersonalInfo.h</DeclaredIn>
+            
+			
+			<NodeRef refid="16"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PersonalInfo/setFirstName:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PersonalInfo.h</DeclaredIn>
+			
+			<Declaration>@property NSString *firstName</Declaration>
+			
+			
+			<Anchor>//api/name/firstName</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PersonalInfo/firstName</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PersonalInfo.h</DeclaredIn>
+			
+			<Declaration>@property NSString *firstName</Declaration>
+			
+			
+			<Anchor>//api/name/firstName</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PersonalInfo/firstName</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PersonalInfo.h</DeclaredIn>
+			
+			<Declaration>@property NSString *firstName</Declaration>
+			
+			
+			<Anchor>//api/name/firstName</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PersonalInfo/setLastName:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PersonalInfo.h</DeclaredIn>
+			
+			<Declaration>@property NSString *lastName</Declaration>
+			
+			
+			<Anchor>//api/name/lastName</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PersonalInfo/lastName</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PersonalInfo.h</DeclaredIn>
+			
+			<Declaration>@property NSString *lastName</Declaration>
+			
+			
+			<Anchor>//api/name/lastName</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PersonalInfo/lastName</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PersonalInfo.h</DeclaredIn>
+			
+			<Declaration>@property NSString *lastName</Declaration>
+			
+			
+			<Anchor>//api/name/lastName</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PersonalInfo/setDob:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PersonalInfo.h</DeclaredIn>
+			
+			<Declaration>@property NSDate *dob</Declaration>
+			
+			
+			<Anchor>//api/name/dob</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PersonalInfo/dob</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PersonalInfo.h</DeclaredIn>
+			
+			<Declaration>@property NSDate *dob</Declaration>
+			
+			
+			<Anchor>//api/name/dob</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PersonalInfo/dob</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PersonalInfo.h</DeclaredIn>
+			
+			<Declaration>@property NSDate *dob</Declaration>
+			
+			
+			<Anchor>//api/name/dob</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PersonalInfo/setPatientID:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PersonalInfo.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger patientID</Declaration>
+			
+			
+			<Anchor>//api/name/patientID</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PersonalInfo/patientID</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PersonalInfo.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger patientID</Declaration>
+			
+			
+			<Anchor>//api/name/patientID</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PersonalInfo/patientID</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PersonalInfo.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger patientID</Declaration>
+			
+			
+			<Anchor>//api/name/patientID</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PersonalInfo/setDefaults:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PersonalInfo.h</DeclaredIn>
+			
+			<Declaration>@property NSUserDefaults *defaults</Declaration>
+			
+			
+			<Anchor>//api/name/defaults</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PersonalInfo/defaults</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PersonalInfo.h</DeclaredIn>
+			
+			<Declaration>@property NSUserDefaults *defaults</Declaration>
+			
+			
+			<Anchor>//api/name/defaults</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PersonalInfo/defaults</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PersonalInfo.h</DeclaredIn>
+			
+			<Declaration>@property NSUserDefaults *defaults</Declaration>
+			
+			
+			<Anchor>//api/name/defaults</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PersonalInfo/setPersonalData:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PersonalInfo.h</DeclaredIn>
+			
+			<Declaration>@property NSDictionary *personalData</Declaration>
+			
+			
+			<Anchor>//api/name/personalData</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PersonalInfo/personalData</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PersonalInfo.h</DeclaredIn>
+			
+			<Declaration>@property NSDictionary *personalData</Declaration>
+			
+			
+			<Anchor>//api/name/personalData</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PersonalInfo/personalData</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PersonalInfo.h</DeclaredIn>
+			
+			<Declaration>@property NSDictionary *personalData</Declaration>
+			
+			
+			<Anchor>//api/name/personalData</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PersonalInfo/setAge:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PersonalInfo.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSInteger age</Declaration>
+			
+			
+			<Anchor>//api/name/age</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PersonalInfo/age</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PersonalInfo.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSInteger age</Declaration>
+			
+			
+			<Anchor>//api/name/age</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PersonalInfo/age</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>PersonalInfo.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSInteger age</Declaration>
+			
+			
+			<Anchor>//api/name/age</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PersonalInfo/loadInformation</TokenIdentifier>
+			<Abstract type="html">Loads all the information from the application user defaults and stores them in
+local variables for quicker and easier access.</Abstract>
+			<DeclaredIn>PersonalInfo.h</DeclaredIn>
+			
+			<Declaration>- (void)loadInformation</Declaration>
+			
+			
+			<Anchor>//api/name/loadInformation</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PersonalInfo/saveInformation</TokenIdentifier>
+			<Abstract type="html">Save all the local variables into the user defaults for the application.</Abstract>
+			<DeclaredIn>PersonalInfo.h</DeclaredIn>
+			
+			<Declaration>- (void)saveInformation</Declaration>
+			
+			
+			<Anchor>//api/name/saveInformation</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PersonalInfo/dealloc</TokenIdentifier>
+			<Abstract type="html">This method is called as part of ARC.  It has been added because the data is saved
+to the user defaults location before the memory is released so that changes are not
+lost.</Abstract>
+			<DeclaredIn>PersonalInfo.h</DeclaredIn>
+			
+			<Declaration>- (void)dealloc</Declaration>
+			
+			
+			<Anchor>//api/name/dealloc</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PersonalInfo/calculateAgeUsingDate:</TokenIdentifier>
+			<Abstract type="html">This method calculates the ages using DateComponents.</Abstract>
+			<DeclaredIn>PersonalInfo.h</DeclaredIn>
+			
+			<Declaration>- (NSInteger)calculateAgeUsingDate:(NSDate *)currentDOB</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>currentDOB</Name>
+					<Abstract type="html">Todays date.  It is left to allow changes based on what is passed
+and not just restricted to todays date.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An integer value express based on years.</Abstract></ReturnValue>
+			<Anchor>//api/name/calculateAgeUsingDate:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

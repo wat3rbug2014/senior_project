@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/BTDeviceManagerDelegate.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/BTDeviceManagerDelegate</TokenIdentifier>
+			<Abstract type="html">The protocol is used for delegate of the BTDeviceManager for callback
+to notifiy the delegate that changes have been made to selected monitors.</Abstract>
+			<DeclaredIn>BTDeviceManagerDelegate.h</DeclaredIn>
+            
+			
+			<NodeRef refid="22"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/BTDeviceManagerDelegate/deviceManagerDidUpdateMonitors</TokenIdentifier>
+			<Abstract type="html">This method is called by the BTDeviceManager after the selectedHeartMonitor
+or the selectActivityMonitor references have changed.</Abstract>
+			<DeclaredIn>BTDeviceManagerDelegate.h</DeclaredIn>
+			
+			<Declaration>- (void)deviceManagerDidUpdateMonitors</Declaration>
+			
+			
+			<Anchor>//api/name/deviceManagerDidUpdateMonitors</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

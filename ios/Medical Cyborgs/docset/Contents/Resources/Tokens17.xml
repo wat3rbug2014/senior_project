@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/PolarH7.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/PolarH7</TokenIdentifier>
+			<Abstract type="html">This class is for the Polar H7 wristband device.  The CBPeripheralDelegate is implemented
+so that the class can perform all the operations needed to maintain connection status and
+retrieval of the data.  Data retrieveal is dependent on the device type so these methods
+are defined in this file to account for endianness and data type size as well as possible
+UUID differences.</Abstract>
+			<DeclaredIn>PolarH7.h</DeclaredIn>
+            
+			
+			<NodeRef refid="17"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PolarH7/setType:</TokenIdentifier>
+			<Abstract type="html">The device type as an enum of DeviceType.  See DeviceTypes.h for details.</Abstract>
+			<DeclaredIn>PolarH7.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger type</Declaration>
+			
+			
+			<Anchor>//api/name/type</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PolarH7/type</TokenIdentifier>
+			<Abstract type="html">The device type as an enum of DeviceType.  See DeviceTypes.h for details.</Abstract>
+			<DeclaredIn>PolarH7.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger type</Declaration>
+			
+			
+			<Anchor>//api/name/type</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PolarH7/type</TokenIdentifier>
+			<Abstract type="html">The device type as an enum of DeviceType.  See DeviceTypes.h for details.</Abstract>
+			<DeclaredIn>PolarH7.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger type</Declaration>
+			
+			
+			<Anchor>//api/name/type</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PolarH7/setBatteryService:</TokenIdentifier>
+			<Abstract type="html">The CBService reference for use in detecting the battery level of the device.</Abstract>
+			<DeclaredIn>PolarH7.h</DeclaredIn>
+			
+			<Declaration>@property (retain) CBService *batteryService</Declaration>
+			
+			
+			<Anchor>//api/name/batteryService</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PolarH7/batteryService</TokenIdentifier>
+			<Abstract type="html">The CBService reference for use in detecting the battery level of the device.</Abstract>
+			<DeclaredIn>PolarH7.h</DeclaredIn>
+			
+			<Declaration>@property (retain) CBService *batteryService</Declaration>
+			
+			
+			<Anchor>//api/name/batteryService</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PolarH7/batteryService</TokenIdentifier>
+			<Abstract type="html">The CBService reference for use in detecting the battery level of the device.</Abstract>
+			<DeclaredIn>PolarH7.h</DeclaredIn>
+			
+			<Declaration>@property (retain) CBService *batteryService</Declaration>
+			
+			
+			<Anchor>//api/name/batteryService</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PolarH7/setBatteryLvlChar:</TokenIdentifier>
+			<Abstract type="html">The CBCharacteristic reference for use in reading the battery level of the device.</Abstract>
+			<DeclaredIn>PolarH7.h</DeclaredIn>
+			
+			<Declaration>@property (retain) CBCharacteristic *batteryLvlChar</Declaration>
+			
+			
+			<Anchor>//api/name/batteryLvlChar</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PolarH7/batteryLvlChar</TokenIdentifier>
+			<Abstract type="html">The CBCharacteristic reference for use in reading the battery level of the device.</Abstract>
+			<DeclaredIn>PolarH7.h</DeclaredIn>
+			
+			<Declaration>@property (retain) CBCharacteristic *batteryLvlChar</Declaration>
+			
+			
+			<Anchor>//api/name/batteryLvlChar</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PolarH7/batteryLvlChar</TokenIdentifier>
+			<Abstract type="html">The CBCharacteristic reference for use in reading the battery level of the device.</Abstract>
+			<DeclaredIn>PolarH7.h</DeclaredIn>
+			
+			<Declaration>@property (retain) CBCharacteristic *batteryLvlChar</Declaration>
+			
+			
+			<Anchor>//api/name/batteryLvlChar</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PolarH7/setHeartRateService:</TokenIdentifier>
+			<Abstract type="html">The CBService reference for use in reading the heart rate detected by the device.</Abstract>
+			<DeclaredIn>PolarH7.h</DeclaredIn>
+			
+			<Declaration>@property (retain) CBService *heartRateService</Declaration>
+			
+			
+			<Anchor>//api/name/heartRateService</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PolarH7/heartRateService</TokenIdentifier>
+			<Abstract type="html">The CBService reference for use in reading the heart rate detected by the device.</Abstract>
+			<DeclaredIn>PolarH7.h</DeclaredIn>
+			
+			<Declaration>@property (retain) CBService *heartRateService</Declaration>
+			
+			
+			<Anchor>//api/name/heartRateService</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PolarH7/heartRateService</TokenIdentifier>
+			<Abstract type="html">The CBService reference for use in reading the heart rate detected by the device.</Abstract>
+			<DeclaredIn>PolarH7.h</DeclaredIn>
+			
+			<Declaration>@property (retain) CBService *heartRateService</Declaration>
+			
+			
+			<Anchor>//api/name/heartRateService</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PolarH7/setHeartRateChar:</TokenIdentifier>
+			<Abstract type="html">The CBCharacteristic reference for use in reading the heart rate value from the device.</Abstract>
+			<DeclaredIn>PolarH7.h</DeclaredIn>
+			
+			<Declaration>@property (retain) CBCharacteristic *heartRateChar</Declaration>
+			
+			
+			<Anchor>//api/name/heartRateChar</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PolarH7/heartRateChar</TokenIdentifier>
+			<Abstract type="html">The CBCharacteristic reference for use in reading the heart rate value from the device.</Abstract>
+			<DeclaredIn>PolarH7.h</DeclaredIn>
+			
+			<Declaration>@property (retain) CBCharacteristic *heartRateChar</Declaration>
+			
+			
+			<Anchor>//api/name/heartRateChar</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PolarH7/heartRateChar</TokenIdentifier>
+			<Abstract type="html">The CBCharacteristic reference for use in reading the heart rate value from the device.</Abstract>
+			<DeclaredIn>PolarH7.h</DeclaredIn>
+			
+			<Declaration>@property (retain) CBCharacteristic *heartRateChar</Declaration>
+			
+			
+			<Anchor>//api/name/heartRateChar</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PolarH7/setBatteryLevel:</TokenIdentifier>
+			<Abstract type="html">The last known integer value of the battery percentage.  The default is 0 if the battery level is not
+read.</Abstract>
+			<DeclaredIn>PolarH7.h</DeclaredIn>
+			
+			<Declaration>@property int batteryLevel</Declaration>
+			
+			
+			<Anchor>//api/name/batteryLevel</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PolarH7/batteryLevel</TokenIdentifier>
+			<Abstract type="html">The last known integer value of the battery percentage.  The default is 0 if the battery level is not
+read.</Abstract>
+			<DeclaredIn>PolarH7.h</DeclaredIn>
+			
+			<Declaration>@property int batteryLevel</Declaration>
+			
+			
+			<Anchor>//api/name/batteryLevel</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PolarH7/batteryLevel</TokenIdentifier>
+			<Abstract type="html">The last known integer value of the battery percentage.  The default is 0 if the battery level is not
+read.</Abstract>
+			<DeclaredIn>PolarH7.h</DeclaredIn>
+			
+			<Declaration>@property int batteryLevel</Declaration>
+			
+			
+			<Anchor>//api/name/batteryLevel</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PolarH7/setDevice:</TokenIdentifier>
+			<Abstract type="html">The CBPeripheral device that was discovered and used with this class.</Abstract>
+			<DeclaredIn>PolarH7.h</DeclaredIn>
+			
+			<Declaration>@property (retain) CBPeripheral *device</Declaration>
+			
+			
+			<Anchor>//api/name/device</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PolarH7/device</TokenIdentifier>
+			<Abstract type="html">The CBPeripheral device that was discovered and used with this class.</Abstract>
+			<DeclaredIn>PolarH7.h</DeclaredIn>
+			
+			<Declaration>@property (retain) CBPeripheral *device</Declaration>
+			
+			
+			<Anchor>//api/name/device</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PolarH7/device</TokenIdentifier>
+			<Abstract type="html">The CBPeripheral device that was discovered and used with this class.</Abstract>
+			<DeclaredIn>PolarH7.h</DeclaredIn>
+			
+			<Declaration>@property (retain) CBPeripheral *device</Declaration>
+			
+			
+			<Anchor>//api/name/device</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PolarH7/setDeviceManufacturer:</TokenIdentifier>
+			<Abstract type="html">The NSString value of the manufacturer as read from the device.</Abstract>
+			<DeclaredIn>PolarH7.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSString *deviceManufacturer</Declaration>
+			
+			
+			<Anchor>//api/name/deviceManufacturer</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PolarH7/deviceManufacturer</TokenIdentifier>
+			<Abstract type="html">The NSString value of the manufacturer as read from the device.</Abstract>
+			<DeclaredIn>PolarH7.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSString *deviceManufacturer</Declaration>
+			
+			
+			<Anchor>//api/name/deviceManufacturer</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PolarH7/deviceManufacturer</TokenIdentifier>
+			<Abstract type="html">The NSString value of the manufacturer as read from the device.</Abstract>
+			<DeclaredIn>PolarH7.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSString *deviceManufacturer</Declaration>
+			
+			
+			<Anchor>//api/name/deviceManufacturer</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PolarH7/setCurrentHeartRate:</TokenIdentifier>
+			<Abstract type="html">The value of the last heart rate that was read.  Default is 0 if the heart rate has not been acquired.</Abstract>
+			<DeclaredIn>PolarH7.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger currentHeartRate</Declaration>
+			
+			
+			<Anchor>//api/name/currentHeartRate</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PolarH7/currentHeartRate</TokenIdentifier>
+			<Abstract type="html">The value of the last heart rate that was read.  Default is 0 if the heart rate has not been acquired.</Abstract>
+			<DeclaredIn>PolarH7.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger currentHeartRate</Declaration>
+			
+			
+			<Anchor>//api/name/currentHeartRate</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PolarH7/currentHeartRate</TokenIdentifier>
+			<Abstract type="html">The value of the last heart rate that was read.  Default is 0 if the heart rate has not been acquired.</Abstract>
+			<DeclaredIn>PolarH7.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger currentHeartRate</Declaration>
+			
+			
+			<Anchor>//api/name/currentHeartRate</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

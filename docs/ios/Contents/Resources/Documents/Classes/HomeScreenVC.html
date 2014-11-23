@@ -1,0 +1,1364 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>HomeScreenVC Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Medical Cyborgs </a></h1>
+				<a id="developerHome" href="../index.html">UHCL</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">HomeScreenVC Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/activityButton">&nbsp;&nbsp;&nbsp;&nbsp;activityButton</option>
+	
+	<option value="//api/name/btDevices">&nbsp;&nbsp;&nbsp;&nbsp;btDevices</option>
+	
+	<option value="//api/name/devicePoller">&nbsp;&nbsp;&nbsp;&nbsp;devicePoller</option>
+	
+	<option value="//api/name/graphButton">&nbsp;&nbsp;&nbsp;&nbsp;graphButton</option>
+	
+	<option value="//api/name/heartRateButton">&nbsp;&nbsp;&nbsp;&nbsp;heartRateButton</option>
+	
+	<option value="//api/name/isMonitoring">&nbsp;&nbsp;&nbsp;&nbsp;isMonitoring</option>
+	
+	<option value="//api/name/patientInfo">&nbsp;&nbsp;&nbsp;&nbsp;patientInfo</option>
+	
+	<option value="//api/name/personalInfoButton">&nbsp;&nbsp;&nbsp;&nbsp;personalInfoButton</option>
+	
+	<option value="//api/name/scheduler">&nbsp;&nbsp;&nbsp;&nbsp;scheduler</option>
+	
+	<option value="//api/name/serverPoller">&nbsp;&nbsp;&nbsp;&nbsp;serverPoller</option>
+	
+	<option value="//api/name/settings">&nbsp;&nbsp;&nbsp;&nbsp;settings</option>
+	
+	<option value="//api/name/toggleRunButton">&nbsp;&nbsp;&nbsp;&nbsp;toggleRunButton</option>
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/alterPersonalSettings:">&nbsp;&nbsp;&nbsp;&nbsp;- alterPersonalSettings:</option>
+	
+	<option value="//api/name/checkForUpdatedPatientID">&nbsp;&nbsp;&nbsp;&nbsp;- checkForUpdatedPatientID</option>
+	
+	<option value="//api/name/initWithBackgroundScheduler:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithBackgroundScheduler:</option>
+	
+	<option value="//api/name/pollFailed:">&nbsp;&nbsp;&nbsp;&nbsp;- pollFailed:</option>
+	
+	<option value="//api/name/selectActivityMonitor:">&nbsp;&nbsp;&nbsp;&nbsp;- selectActivityMonitor:</option>
+	
+	<option value="//api/name/selectHeartMonitor:">&nbsp;&nbsp;&nbsp;&nbsp;- selectHeartMonitor:</option>
+	
+	<option value="//api/name/setColorForButton:isReady:">&nbsp;&nbsp;&nbsp;&nbsp;- setColorForButton:isReady:</option>
+	
+	<option value="//api/name/showGraph:">&nbsp;&nbsp;&nbsp;&nbsp;- showGraph:</option>
+	
+	<option value="//api/name/toggleMonitoring:">&nbsp;&nbsp;&nbsp;&nbsp;- toggleMonitoring:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/activityButton">activityButton</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/btDevices">btDevices</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/devicePoller">devicePoller</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/graphButton">graphButton</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/heartRateButton">heartRateButton</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isMonitoring">isMonitoring</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/patientInfo">patientInfo</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/personalInfoButton">personalInfoButton</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/scheduler">scheduler</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/serverPoller">serverPoller</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/settings">settings</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/toggleRunButton">toggleRunButton</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/alterPersonalSettings:">alterPersonalSettings:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/checkForUpdatedPatientID">checkForUpdatedPatientID</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithBackgroundScheduler:">initWithBackgroundScheduler:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/pollFailed:">pollFailed:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/selectActivityMonitor:">selectActivityMonitor:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/selectHeartMonitor:">selectHeartMonitor:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setColorForButton:isReady:">setColorForButton:isReady:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/showGraph:">showGraph:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/toggleMonitoring:">toggleMonitoring:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="HomeScreenVC Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">HomeScreenVC Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">UIViewController</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">HomeScreenVC.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This is the first screen you see when the application starts. It
+provides buttons to navigate through device selection, patient
+information setup and toggle the monitoring for the application.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/heartRateButton">&nbsp;&nbsp;heartRateButton</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/activityButton">&nbsp;&nbsp;activityButton</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/graphButton">&nbsp;&nbsp;graphButton</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/toggleRunButton">&nbsp;&nbsp;toggleRunButton</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/personalInfoButton">&nbsp;&nbsp;personalInfoButton</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isMonitoring">&nbsp;&nbsp;isMonitoring</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/settings">&nbsp;&nbsp;settings</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/btDevices">&nbsp;&nbsp;btDevices</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/patientInfo">&nbsp;&nbsp;patientInfo</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/devicePoller">&nbsp;&nbsp;devicePoller</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/serverPoller">&nbsp;&nbsp;serverPoller</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/scheduler">&nbsp;&nbsp;scheduler</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithBackgroundScheduler:">&ndash;&nbsp;initWithBackgroundScheduler:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/alterPersonalSettings:">&ndash;&nbsp;alterPersonalSettings:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/selectActivityMonitor:">&ndash;&nbsp;selectActivityMonitor:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/selectHeartMonitor:">&ndash;&nbsp;selectHeartMonitor:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setColorForButton:isReady:">&ndash;&nbsp;setColorForButton:isReady:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/showGraph:">&ndash;&nbsp;showGraph:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/toggleMonitoring:">&ndash;&nbsp;toggleMonitoring:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/checkForUpdatedPatientID">&ndash;&nbsp;checkForUpdatedPatientID</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/pollFailed:">&ndash;&nbsp;pollFailed:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/activityButton" title="activityButton"></a>
+	<h3 class="subsubtitle method-title">activityButton</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The UIButton for going to the viewcontroller that provides selection for the
+activity device to use.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (retain, nonatomic) IBOutlet UIButton *activityButton</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HomeScreenVC.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/btDevices" title="btDevices"></a>
+	<h3 class="subsubtitle method-title">btDevices</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The blue tooth device manager.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (retain) BTDeviceManager *btDevices</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HomeScreenVC.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/devicePoller" title="devicePoller"></a>
+	<h3 class="subsubtitle method-title">devicePoller</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The polling that gets information from the devices and places it in the database.  This is used
+by the <a href="../Classes/GraphVC.html">GraphVC</a> for observing the heart rate and activity for verification.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (retain) DevicePollManager *devicePoller</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HomeScreenVC.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/graphButton" title="graphButton"></a>
+	<h3 class="subsubtitle method-title">graphButton</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The UIButton for going to the viewcontroller a display of the heart rate and
+activity so that verification of the devices operation can be done.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (retain, nonatomic) IBOutlet UIButton *graphButton</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HomeScreenVC.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/heartRateButton" title="heartRateButton"></a>
+	<h3 class="subsubtitle method-title">heartRateButton</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The UIButton for going to the viewcontroller that provides selection for the
+heart rate device to use.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (retain, nonatomic) IBOutlet UIButton *heartRateButton</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HomeScreenVC.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isMonitoring" title="isMonitoring"></a>
+	<h3 class="subsubtitle method-title">isMonitoring</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A BOOL to verify the state the application is in, whether it is currently monitoring, or
+not.  It is used to toggling the color of the run button as well as starting and stopping
+the background <a href="#//api/name/scheduler">scheduler</a> tasks.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property BOOL isMonitoring</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HomeScreenVC.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/patientInfo" title="patientInfo"></a>
+	<h3 class="subsubtitle method-title">patientInfo</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The object that updates the patient information in local storage for application restarts.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (retain) PersonalInfo *patientInfo</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HomeScreenVC.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/personalInfoButton" title="personalInfoButton"></a>
+	<h3 class="subsubtitle method-title">personalInfoButton</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The UIButton for going to the viewcontroller that provides input for the patient
+identifcation in the system.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (retain, nonatomic) IBOutlet UIButton *personalInfoButton</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HomeScreenVC.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/scheduler" title="scheduler"></a>
+	<h3 class="subsubtitle method-title">scheduler</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The background scheduler that is used for monitoring the patient and passing the data
+to the local database and eventually to the remote server.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property BackgroundScheduler *scheduler</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HomeScreenVC.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/serverPoller" title="serverPoller"></a>
+	<h3 class="subsubtitle method-title">serverPoller</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The poller that retrieves data from the local database nad pushes it to the server.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (retain) RemoteDBConnectionManager *serverPoller</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HomeScreenVC.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/settings" title="settings"></a>
+	<h3 class="subsubtitle method-title">settings</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The view controller for the patient identifcation editing.  A reference is kept for
+updates to the buttons so that color changes relate properly to database updates.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property PatientInformationVC *settings</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HomeScreenVC.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/toggleRunButton" title="toggleRunButton"></a>
+	<h3 class="subsubtitle method-title">toggleRunButton</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The UIButton for toggling the tracking of the patients activity and heart rates
+along with location.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (retain, nonatomic) IBOutlet UIButton *toggleRunButton</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HomeScreenVC.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/alterPersonalSettings:" title="alterPersonalSettings:"></a>
+	<h3 class="subsubtitle method-title">alterPersonalSettings:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method sets up the UIViewController to display the personal <a href="#//api/name/settings">settings</a> page.
+It is a standard IBAction style of method with the signature of (id) sender
+and a void return value noted as IBAction for use in the interface builder.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (IBAction)alterPersonalSettings:(id)<em>sender</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>sender</em></dt>
+			<dd><p>is not used.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HomeScreenVC.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/checkForUpdatedPatientID" title="checkForUpdatedPatientID"></a>
+	<h3 class="subsubtitle method-title">checkForUpdatedPatientID</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method checks to see if the patientID has been updated.  It is used because
+of the network delay and the delay for the userdefaults on synchronization.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)checkForUpdatedPatientID</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HomeScreenVC.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithBackgroundScheduler:" title="initWithBackgroundScheduler:"></a>
+	<h3 class="subsubtitle method-title">initWithBackgroundScheduler:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This is the preferred method of initialization of the object.  The <a href="#//api/name/scheduler">scheduler</a>
+has all the necessary information for the homescreen to pass on to the other view controllers
+and to allow monitoring control.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initWithBackgroundScheduler:(BackgroundScheduler *)<em>scheduler</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>scheduler</em></dt>
+			<dd><p>The background <a href="#//api/name/scheduler">scheduler</a> that has all the necessary information.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The Home screen of the application with the necessary controllers to perform operation.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HomeScreenVC.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/pollFailed:" title="pollFailed:"></a>
+	<h3 class="subsubtitle method-title">pollFailed:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method is called when a notification is given by the device poller.  It determines
+how the UI is to respond to the event.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)pollFailed:(NSNotification *)<em>notification</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>notification</em></dt>
+			<dd><p>The notification that is passed to it.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HomeScreenVC.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/selectActivityMonitor:" title="selectActivityMonitor:"></a>
+	<h3 class="subsubtitle method-title">selectActivityMonitor:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method sets up the UIViewController to display the activity monitor selection
+page. It is a standard IBAction style of method with the signature of (id) sender
+and a void return value noted as IBAction for use in the interface builder.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (IBAction)selectActivityMonitor:(id)<em>sender</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>sender</em></dt>
+			<dd><p>is not used.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HomeScreenVC.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/selectHeartMonitor:" title="selectHeartMonitor:"></a>
+	<h3 class="subsubtitle method-title">selectHeartMonitor:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method sets up the UIViewController to display the heart monitor selection
+page. It is a standard IBAction style of method with the signature of (id) sender
+and a void return value noted as IBAction for use in the interface builder.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (IBAction)selectHeartMonitor:(id)<em>sender</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>sender</em></dt>
+			<dd><p>is not used.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HomeScreenVC.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setColorForButton:isReady:" title="setColorForButton:isReady:"></a>
+	<h3 class="subsubtitle method-title">setColorForButton:isReady:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method changes the color of the button based on whether that function
+has been configured for use.  If the function is not ready the button will
+get a red hue, otherwise it will get a green hue.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setColorForButton:(UIButton *)<em>button</em> isReady:(BOOL)<em>ready</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>button</em></dt>
+			<dd><p>The UIButton that will be modified for the color change.  If none
+provided no change takes place.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>ready</em></dt>
+			<dd><p>The ready state.  The default is NO.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HomeScreenVC.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/showGraph:" title="showGraph:"></a>
+	<h3 class="subsubtitle method-title">showGraph:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method sets up the UIViewController to display the graph page.  This page
+will only display if the other devices are connected.  Its purpose is to show
+real time collection of data. It is a standard IBAction style of method with the
+signature of (id) sender and a void return value noted as IBAction for use in the
+interface builder.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (IBAction)showGraph:(id)<em>sender</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>sender</em></dt>
+			<dd><p>is not used.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HomeScreenVC.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/toggleMonitoring:" title="toggleMonitoring:"></a>
+	<h3 class="subsubtitle method-title">toggleMonitoring:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method starts and stops the actual monitoring process.  It does the setup and
+tear down of the backgroun thread that pulls information from the devices at certain
+intervals and uploads to the remote database at other intervals. It is a standard
+IBAction style of method with the signature of (id) sender and a void return value
+noted as IBAction for use in the interface builder.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (IBAction)toggleMonitoring:(id)<em>sender</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>sender</em></dt>
+			<dd><p>is not used.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HomeScreenVC.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+                    
+                    
+                    
+                    
+
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2014 UHCL. All rights reserved. (Last updated: 2014-11-22)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

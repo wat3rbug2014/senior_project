@@ -1,0 +1,1037 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>BackgroundScheduler Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Medical Cyborgs </a></h1>
+				<a id="developerHome" href="../index.html">UHCL</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">BackgroundScheduler Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/allowMonitoring">&nbsp;&nbsp;&nbsp;&nbsp;allowMonitoring</option>
+	
+	<option value="//api/name/app">&nbsp;&nbsp;&nbsp;&nbsp;app</option>
+	
+	<option value="//api/name/database">&nbsp;&nbsp;&nbsp;&nbsp;database</option>
+	
+	<option value="//api/name/deviceManager">&nbsp;&nbsp;&nbsp;&nbsp;deviceManager</option>
+	
+	<option value="//api/name/devicePollInterval">&nbsp;&nbsp;&nbsp;&nbsp;devicePollInterval</option>
+	
+	<option value="//api/name/devicePollTimer">&nbsp;&nbsp;&nbsp;&nbsp;devicePollTimer</option>
+	
+	<option value="//api/name/devicePoller">&nbsp;&nbsp;&nbsp;&nbsp;devicePoller</option>
+	
+	<option value="//api/name/patient">&nbsp;&nbsp;&nbsp;&nbsp;patient</option>
+	
+	<option value="//api/name/runLoop">&nbsp;&nbsp;&nbsp;&nbsp;runLoop</option>
+	
+	<option value="//api/name/serverPollInterval">&nbsp;&nbsp;&nbsp;&nbsp;serverPollInterval</option>
+	
+	<option value="//api/name/serverPollTimer">&nbsp;&nbsp;&nbsp;&nbsp;serverPollTimer</option>
+	
+	<option value="//api/name/serverPoller">&nbsp;&nbsp;&nbsp;&nbsp;serverPoller</option>
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/app">&nbsp;&nbsp;&nbsp;&nbsp;- app</option>
+	
+	<option value="//api/name/performScan">&nbsp;&nbsp;&nbsp;&nbsp;- performScan</option>
+	
+	<option value="//api/name/startMonitoringWithPatientID:">&nbsp;&nbsp;&nbsp;&nbsp;- startMonitoringWithPatientID:</option>
+	
+	<option value="//api/name/stopMonitoring">&nbsp;&nbsp;&nbsp;&nbsp;- stopMonitoring</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/allowMonitoring">allowMonitoring</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/app">app</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/database">database</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deviceManager">deviceManager</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/devicePollInterval">devicePollInterval</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/devicePollTimer">devicePollTimer</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/devicePoller">devicePoller</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/patient">patient</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/runLoop">runLoop</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/serverPollInterval">serverPollInterval</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/serverPollTimer">serverPollTimer</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/serverPoller">serverPoller</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/app">app</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/performScan">performScan</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startMonitoringWithPatientID:">startMonitoringWithPatientID:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stopMonitoring">stopMonitoring</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="BackgroundScheduler Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">BackgroundScheduler Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">BackGroundScheduler.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This object is responsible for the coordination of the device poller, the
+<a href="#//api/name/database">database</a> manager, and the process that pushes data to the remote server.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deviceManager">&nbsp;&nbsp;deviceManager</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/serverPoller">&nbsp;&nbsp;serverPoller</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/devicePoller">&nbsp;&nbsp;devicePoller</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/database">&nbsp;&nbsp;database</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/patient">&nbsp;&nbsp;patient</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/allowMonitoring">&nbsp;&nbsp;allowMonitoring</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/runLoop">&nbsp;&nbsp;runLoop</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/devicePollInterval">&nbsp;&nbsp;devicePollInterval</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/serverPollInterval">&nbsp;&nbsp;serverPollInterval</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/app">&nbsp;&nbsp;app</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/devicePollTimer">&nbsp;&nbsp;devicePollTimer</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/serverPollTimer">&nbsp;&nbsp;serverPollTimer</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/startMonitoringWithPatientID:">&ndash;&nbsp;startMonitoringWithPatientID:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/stopMonitoring">&ndash;&nbsp;stopMonitoring</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/performScan">&ndash;&nbsp;performScan</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/app">&ndash;&nbsp;app</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/allowMonitoring" title="allowMonitoring"></a>
+	<h3 class="subsubtitle method-title">allowMonitoring</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This flag is used by the scheduler to determine if the application is ready to monitor.
+It is not TRUE if the following conditions are not met.  Both the activity and the heart
+rate devices must have been selected and connected.  The location manager must be allowed
+to collection location updates.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property BOOL allowMonitoring</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BackGroundScheduler.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/app" title="app"></a>
+	<h3 class="subsubtitle method-title">app</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The shared instance of the UIApplication.  It is used for determining the state of the application
+in order to execute the polling.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (readonly) UIApplication *app</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BackGroundScheduler.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/database" title="database"></a>
+	<h3 class="subsubtitle method-title">database</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The local database to store data from the devices during polling.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property DBManager *database</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BackGroundScheduler.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/deviceManager" title="deviceManager"></a>
+	<h3 class="subsubtitle method-title">deviceManager</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The device manager used for controlling the device connectivity and discovery.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (strong) BTDeviceManager *deviceManager</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BackGroundScheduler.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/devicePollInterval" title="devicePollInterval"></a>
+	<h3 class="subsubtitle method-title">devicePollInterval</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The device polling interval.  Used for controlling the time between poll requests from the
+devices.  This is expressed in seconds and the default is 5 seconds.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property NSTimeInterval devicePollInterval</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BackGroundScheduler.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/devicePollTimer" title="devicePollTimer"></a>
+	<h3 class="subsubtitle method-title">devicePollTimer</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The timer used for the device poller.  The reference is stored so that it can be canceled outside
+of the method that invokes it.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property NSTimer *devicePollTimer</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BackGroundScheduler.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/devicePoller" title="devicePoller"></a>
+	<h3 class="subsubtitle method-title">devicePoller</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The object that controlls the polling of the devices and pushes the data to
+the local <a href="#//api/name/database">database</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property DevicePollManager *devicePoller</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BackGroundScheduler.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/patient" title="patient"></a>
+	<h3 class="subsubtitle method-title">patient</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The patient data object.  It is used by the <a href="#//api/name/database">database</a> for updates to the table and by
+the server poller for pushes to the server.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property PersonalInfo *patient</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BackGroundScheduler.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/runLoop" title="runLoop"></a>
+	<h3 class="subsubtitle method-title">runLoop</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The run loop for which the polling is to be executed on.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property NSRunLoop *runLoop</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BackGroundScheduler.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/serverPollInterval" title="serverPollInterval"></a>
+	<h3 class="subsubtitle method-title">serverPollInterval</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The server polling interval.  Used for controlling when the server will receive updates from
+the local <a href="#//api/name/database">database</a>.  The default is 1 minute or 60 seconds.  It is express in seconds.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property NSTimeInterval serverPollInterval</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BackGroundScheduler.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/serverPollTimer" title="serverPollTimer"></a>
+	<h3 class="subsubtitle method-title">serverPollTimer</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The timer used for the server poller.  The reference is stored so that it can be canceled outside
+of the method that invokes it.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property NSTimer *serverPollTimer</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BackGroundScheduler.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/serverPoller" title="serverPoller"></a>
+	<h3 class="subsubtitle method-title">serverPoller</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The manager of the remote server pushes.  It controlls connectivity to the
+server and pushes thdata to it.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property RemoteDBConnectionManager *serverPoller</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BackGroundScheduler.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/app" title="app"></a>
+	<h3 class="subsubtitle method-title">app</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method returns the shared instance of the UIApplication.  It is placed here
+to make dependency more obvious.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (UIApplication *)app</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BackGroundScheduler.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/performScan" title="performScan"></a>
+	<h3 class="subsubtitle method-title">performScan</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method does the actual polling of the devices and updating the <a href="#//api/name/database">database</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)performScan</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BackGroundScheduler.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/startMonitoringWithPatientID:" title="startMonitoringWithPatientID:"></a>
+	<h3 class="subsubtitle method-title">startMonitoringWithPatientID:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This methods starts the polling process.  It checks the devices for updated
+information and passes them to the <a href="#//api/name/database">database</a> for updates.  It also performs
+network updates to the server based on what it finds in the local datbase.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)startMonitoringWithPatientID:(NSInteger)<em>identifier</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>identifier</em></dt>
+			<dd><p>The patientID that will be used for polling.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BackGroundScheduler.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/stopMonitoring" title="stopMonitoring"></a>
+	<h3 class="subsubtitle method-title">stopMonitoring</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method stops the polling process.  It kills the timers and does a final update
+to the remote server using all the data in the <a href="#//api/name/database">database</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)stopMonitoring</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BackGroundScheduler.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+                    
+                    
+                    
+                    
+
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2014 UHCL. All rights reserved. (Last updated: 2014-11-22)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

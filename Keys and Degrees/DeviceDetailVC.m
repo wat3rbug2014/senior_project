@@ -28,7 +28,7 @@
     
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.useSounds = true;
+        self.useSounds = false;
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didGetResponseFromDevice)
                                                      name:@"BTMonitoringUpdate" object:btManager];
     }

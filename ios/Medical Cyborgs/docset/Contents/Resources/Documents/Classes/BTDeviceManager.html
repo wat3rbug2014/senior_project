@@ -1,0 +1,1802 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>BTDeviceManager Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Medical Cyborgs </a></h1>
+				<a id="developerHome" href="../index.html">UHCL</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">BTDeviceManager Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/_selectedActivityMonitor">&nbsp;&nbsp;&nbsp;&nbsp;_selectedActivityMonitor</option>
+	
+	<option value="//api/name/_selectedHeartMonitor">&nbsp;&nbsp;&nbsp;&nbsp;_selectedHeartMonitor</option>
+	
+	<option value="//api/name/activityDevices">&nbsp;&nbsp;&nbsp;&nbsp;activityDevices</option>
+	
+	<option value="//api/name/delegate">&nbsp;&nbsp;&nbsp;&nbsp;delegate</option>
+	
+	<option value="//api/name/discoveryCount">&nbsp;&nbsp;&nbsp;&nbsp;discoveryCount</option>
+	
+	<option value="//api/name/heartDevices">&nbsp;&nbsp;&nbsp;&nbsp;heartDevices</option>
+	
+	<option value="//api/name/isActive">&nbsp;&nbsp;&nbsp;&nbsp;isActive</option>
+	
+	<option value="//api/name/isInDiscoveryMode">&nbsp;&nbsp;&nbsp;&nbsp;isInDiscoveryMode</option>
+	
+	<option value="//api/name/manager">&nbsp;&nbsp;&nbsp;&nbsp;manager</option>
+	
+	<option value="//api/name/runLoop">&nbsp;&nbsp;&nbsp;&nbsp;runLoop</option>
+	
+	<option value="//api/name/searchType">&nbsp;&nbsp;&nbsp;&nbsp;searchType</option>
+	
+	<option value="//api/name/selectedIndexForActivityMonitor">&nbsp;&nbsp;&nbsp;&nbsp;selectedIndexForActivityMonitor</option>
+	
+	<option value="//api/name/selectedIndexForHeartMonitor">&nbsp;&nbsp;&nbsp;&nbsp;selectedIndexForHeartMonitor</option>
+	
+	<option value="//api/name/waitForDevices">&nbsp;&nbsp;&nbsp;&nbsp;waitForDevices</option>
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/sharedManager">&nbsp;&nbsp;&nbsp;&nbsp;+ sharedManager</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/connectSelectedMonitors">&nbsp;&nbsp;&nbsp;&nbsp;- connectSelectedMonitors</option>
+	
+	<option value="//api/name/deselectDeviceType:">&nbsp;&nbsp;&nbsp;&nbsp;- deselectDeviceType:</option>
+	
+	<option value="//api/name/deviceAtIndex:forType:">&nbsp;&nbsp;&nbsp;&nbsp;- deviceAtIndex:forType:</option>
+	
+	<option value="//api/name/disconnectAllDevices">&nbsp;&nbsp;&nbsp;&nbsp;- disconnectAllDevices</option>
+	
+	<option value="//api/name/disconnectSelectedMonitors">&nbsp;&nbsp;&nbsp;&nbsp;- disconnectSelectedMonitors</option>
+	
+	<option value="//api/name/discoveredDevicesForType:">&nbsp;&nbsp;&nbsp;&nbsp;- discoveredDevicesForType:</option>
+	
+	<option value="//api/name/monitorMatchingCBPeripheral:">&nbsp;&nbsp;&nbsp;&nbsp;- monitorMatchingCBPeripheral:</option>
+	
+	<option value="//api/name/selectDeviceType:atIndex:">&nbsp;&nbsp;&nbsp;&nbsp;- selectDeviceType:atIndex:</option>
+	
+	<option value="//api/name/selectedActivityMonitor">&nbsp;&nbsp;&nbsp;&nbsp;- selectedActivityMonitor</option>
+	
+	<option value="//api/name/selectedHeartMonitor">&nbsp;&nbsp;&nbsp;&nbsp;- selectedHeartMonitor</option>
+	
+	<option value="//api/name/setSelectedActivityMonitor:">&nbsp;&nbsp;&nbsp;&nbsp;- setSelectedActivityMonitor:</option>
+	
+	<option value="//api/name/setSelectedHeartMonitor:">&nbsp;&nbsp;&nbsp;&nbsp;- setSelectedHeartMonitor:</option>
+	
+	<option value="//api/name/startScanForType:">&nbsp;&nbsp;&nbsp;&nbsp;- startScanForType:</option>
+	
+	<option value="//api/name/stopScan">&nbsp;&nbsp;&nbsp;&nbsp;- stopScan</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_selectedActivityMonitor">_selectedActivityMonitor</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_selectedHeartMonitor">_selectedHeartMonitor</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/activityDevices">activityDevices</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/delegate">delegate</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/discoveryCount">discoveryCount</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/heartDevices">heartDevices</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isActive">isActive</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isInDiscoveryMode">isInDiscoveryMode</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/manager">manager</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/runLoop">runLoop</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/searchType">searchType</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/selectedIndexForActivityMonitor">selectedIndexForActivityMonitor</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/selectedIndexForHeartMonitor">selectedIndexForHeartMonitor</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/waitForDevices">waitForDevices</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sharedManager">sharedManager</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/connectSelectedMonitors">connectSelectedMonitors</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deselectDeviceType:">deselectDeviceType:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deviceAtIndex:forType:">deviceAtIndex:forType:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/disconnectAllDevices">disconnectAllDevices</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/disconnectSelectedMonitors">disconnectSelectedMonitors</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/discoveredDevicesForType:">discoveredDevicesForType:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/monitorMatchingCBPeripheral:">monitorMatchingCBPeripheral:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/selectDeviceType:atIndex:">selectDeviceType:atIndex:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/selectedActivityMonitor">selectedActivityMonitor</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/selectedHeartMonitor">selectedHeartMonitor</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setSelectedActivityMonitor:">setSelectedActivityMonitor:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setSelectedHeartMonitor:">setSelectedHeartMonitor:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startScanForType:">startScanForType:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stopScan">stopScan</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="BTDeviceManager Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">BTDeviceManager Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value">CBCentralManagerDelegate</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">BTDeviceManager.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This <a href="#//api/name/manager">manager</a> handles the overall connection and discovery of the bluetooth
+devices.  It performs scanning, connectivity and management of the devices for
+the selection view controllers.  This class is a singleton object because multiple
+instances cause problems with false posivitives for device connection and lost information
+based on OS level caching.
+WARNING: Care must be take in assigning the <a href="#//api/name/delegate">delegate</a> for this object. It is possible to
+produce side affects to other objects that are using this <a href="#//api/name/manager">manager</a> if care is not taken
+when updating this instance variable since the <a href="#//api/name/delegate">delegate</a> can only reference one controlling
+object.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_selectedHeartMonitor">&nbsp;&nbsp;_selectedHeartMonitor</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_selectedActivityMonitor">&nbsp;&nbsp;_selectedActivityMonitor</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/heartDevices">&nbsp;&nbsp;heartDevices</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/activityDevices">&nbsp;&nbsp;activityDevices</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/selectedIndexForHeartMonitor">&nbsp;&nbsp;selectedIndexForHeartMonitor</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/selectedIndexForActivityMonitor">&nbsp;&nbsp;selectedIndexForActivityMonitor</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isInDiscoveryMode">&nbsp;&nbsp;isInDiscoveryMode</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/manager">&nbsp;&nbsp;manager</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/searchType">&nbsp;&nbsp;searchType</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isActive">&nbsp;&nbsp;isActive</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/waitForDevices">&nbsp;&nbsp;waitForDevices</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/runLoop">&nbsp;&nbsp;runLoop</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/delegate">&nbsp;&nbsp;delegate</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/discoveryCount">&nbsp;&nbsp;discoveryCount</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/startScanForType:">&ndash;&nbsp;startScanForType:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sharedManager">+&nbsp;sharedManager</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/discoveredDevicesForType:">&ndash;&nbsp;discoveredDevicesForType:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/stopScan">&ndash;&nbsp;stopScan</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/disconnectSelectedMonitors">&ndash;&nbsp;disconnectSelectedMonitors</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/connectSelectedMonitors">&ndash;&nbsp;connectSelectedMonitors</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/disconnectAllDevices">&ndash;&nbsp;disconnectAllDevices</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/selectDeviceType:atIndex:">&ndash;&nbsp;selectDeviceType:atIndex:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deselectDeviceType:">&ndash;&nbsp;deselectDeviceType:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deviceAtIndex:forType:">&ndash;&nbsp;deviceAtIndex:forType:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/monitorMatchingCBPeripheral:">&ndash;&nbsp;monitorMatchingCBPeripheral:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/selectedHeartMonitor">&ndash;&nbsp;selectedHeartMonitor</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setSelectedHeartMonitor:">&ndash;&nbsp;setSelectedHeartMonitor:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/selectedActivityMonitor">&ndash;&nbsp;selectedActivityMonitor</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setSelectedActivityMonitor:">&ndash;&nbsp;setSelectedActivityMonitor:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/_selectedActivityMonitor" title="_selectedActivityMonitor"></a>
+	<h3 class="subsubtitle method-title">_selectedActivityMonitor</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The activity monitor that is currently selected.  The value may be nil when nothing is selected
+and is part of the design. This variable should only be accessed using <a href="#//api/name/selectedActivityMonitor">selectedActivityMonitor</a>
+and setSelectedActivityMonitor because the <a href="#//api/name/delegate">delegate</a> is notified of any changes to this value.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property id&lt;ActivityMonitorProtocol,DeviceCommonInfoInterface&gt; _selectedActivityMonitor</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BTDeviceManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_selectedHeartMonitor" title="_selectedHeartMonitor"></a>
+	<h3 class="subsubtitle method-title">_selectedHeartMonitor</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The heart monitor that is currently selected.  The value may be nil when nothing is selected
+and is part of the design.  This variable should only be accessed using <a href="#//api/name/selectedHeartMonitor">selectedHeartMonitor</a>
+and setSelectedHeartMonitor because the <a href="#//api/name/delegate">delegate</a> is notified of any changes to this value.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property id&lt;HeartMonitorProtocol,DeviceCommonInfoInterface&gt; _selectedHeartMonitor</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BTDeviceManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/activityDevices" title="activityDevices"></a>
+	<h3 class="subsubtitle method-title">activityDevices</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The array containing any devices that conform to the <a href="../Protocols/ActivityMonitorProtocol.html">ActivityMonitorProtocol</a>.  It is used by the
+activity monitor selection view controller for listing possible devices to use.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property NSArray *activityDevices</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BTDeviceManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/delegate" title="delegate"></a>
+	<h3 class="subsubtitle method-title">delegate</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The delegate is the object that receives a call back whenever the selected heart monitor or activity monitor
+has changed.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) id delegate</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BTDeviceManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/discoveryCount" title="discoveryCount"></a>
+	<h3 class="subsubtitle method-title">discoveryCount</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The counter that is used for requesting a new discovery of the device.  The setting is 5 seconds, and then a
+rediscovery of the device begins.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property NSInteger discoveryCount</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BTDeviceManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/heartDevices" title="heartDevices"></a>
+	<h3 class="subsubtitle method-title">heartDevices</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The array containing any devices that conform to the <a href="../Protocols/HeartMonitorProtocol.html">HeartMonitorProtocol</a>.  It is used by the
+heart monitor selection view controller for listing possible devices to use.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property NSArray *heartDevices</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BTDeviceManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isActive" title="isActive"></a>
+	<h3 class="subsubtitle method-title">isActive</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This flag is to see if bluetooth use is allowed.  The <a href="#//api/name/manager">manager</a> will not be able to perform any operations
+if the bluetooth service is off or not allowed by the user.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property BOOL isActive</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BTDeviceManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isInDiscoveryMode" title="isInDiscoveryMode"></a>
+	<h3 class="subsubtitle method-title">isInDiscoveryMode</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This flag indicates that the <a href="#//api/name/manager">manager</a> is in discovery mode and that addition scans must be performed
+to get the characteristics and services of the devices as they are discovered and connected.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property BOOL isInDiscoveryMode</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BTDeviceManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/manager" title="manager"></a>
+	<h3 class="subsubtitle method-title">manager</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The bluetooth connection manager that tracks the CBPeripherals.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (retain) CBCentralManager *manager</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BTDeviceManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/runLoop" title="runLoop"></a>
+	<h3 class="subsubtitle method-title">runLoop</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The runloop that is used to check for device discovery to see if all characteristics needed have been
+discovered.  The reference is stated so it can be canceld outside the method that calls it.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property NSRunLoop *runLoop</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BTDeviceManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/searchType" title="searchType"></a>
+	<h3 class="subsubtitle method-title">searchType</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This value indicates what services the <a href="#//api/name/manager">manager</a> should scan and connect.  For details see DeviceTypes.h</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property NSInteger searchType</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BTDeviceManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/selectedIndexForActivityMonitor" title="selectedIndexForActivityMonitor"></a>
+	<h3 class="subsubtitle method-title">selectedIndexForActivityMonitor</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The index of the activity monitor device that has been selected.  It is used by the activity monitor
+select view controller to indicate which one is selected.  If the value is -1, then no device
+has been selected.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property NSInteger selectedIndexForActivityMonitor</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BTDeviceManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/selectedIndexForHeartMonitor" title="selectedIndexForHeartMonitor"></a>
+	<h3 class="subsubtitle method-title">selectedIndexForHeartMonitor</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The index of the heart monitor device that has been selected.  It is used by the heart monitor
+select view controller to indicate which one is selected.  If the value is -1, then no device
+has been selected.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property NSInteger selectedIndexForHeartMonitor</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BTDeviceManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/waitForDevices" title="waitForDevices"></a>
+	<h3 class="subsubtitle method-title">waitForDevices</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The timer that is used when the request to stop scanning has been done, but the device that is selected
+does not have full discovery done.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property NSTimer *waitForDevices</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BTDeviceManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/sharedManager" title="sharedManager"></a>
+	<h3 class="subsubtitle method-title">sharedManager</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This is the preferred method of initialization.  This object is treated as a singleton
+because nil objects and other conflicts will result from using more than one instance of
+a CBCentral object, which is included in this object.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)sharedManager</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The shared instance of a BTDeviceManager.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BTDeviceManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/connectSelectedMonitors" title="connectSelectedMonitors"></a>
+	<h3 class="subsubtitle method-title">connectSelectedMonitors</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method connects the monitoring devices that have been selected from the various other views.
+It is used for the device poller to initiate the polling</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)connectSelectedMonitors</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BTDeviceManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/deselectDeviceType:" title="deselectDeviceType:"></a>
+	<h3 class="subsubtitle method-title">deselectDeviceType:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method is to be used by the tableviews so that individual devices can be deselected and the appropriate
+variables updated to reflect it.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)deselectDeviceType:(NSInteger)<em>type</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>type</em></dt>
+			<dd><p>The device type to deselect.  See DeviceTypes.h for details.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BTDeviceManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/deviceAtIndex:forType:" title="deviceAtIndex:forType:"></a>
+	<h3 class="subsubtitle method-title">deviceAtIndex:forType:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method is used by the tableview to get the devices that they need to query for their
+views.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id&lt;DeviceCommonInfoInterface&gt;)deviceAtIndex:(NSInteger)<em>index</em> forType:(NSInteger)<em>type</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>index</em></dt>
+			<dd><p>The index within the device types that are the same.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>type</em></dt>
+			<dd><p>The device type that the search is restricted to performing.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The device that is selected.  The <a href="../Protocols/DeviceCommonInfoInterface.html">DeviceCommonInfoInterface</a> is the
+restrictor and all devices must conform to this protocol, otherwise the result is
+nil.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BTDeviceManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/disconnectAllDevices" title="disconnectAllDevices"></a>
+	<h3 class="subsubtitle method-title">disconnectAllDevices</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method is used to go through disconnecting every device after discovery.  It is used when the viewcontrollers
+are being dismissed and the scanning is stopped.  In order to discover all the characteristics needed for
+operation in other parts of the application, things like battery service, heart rate measurements etc must be
+discovered and that can only happen when the devices are connected.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)disconnectAllDevices</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BTDeviceManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/disconnectSelectedMonitors" title="disconnectSelectedMonitors"></a>
+	<h3 class="subsubtitle method-title">disconnectSelectedMonitors</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method is for disconnecting the devices that are used for monitoring.  Both this method and the
+connect Monitors are meant to keep the battery lasting longer by not keeping connectivity when not in use.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)disconnectSelectedMonitors</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BTDeviceManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/discoveredDevicesForType:" title="discoveredDevicesForType:"></a>
+	<h3 class="subsubtitle method-title">discoveredDevicesForType:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This function gives the current count of the number of devices found in the
+discovery process based on the type of device it is looking to find.  At this
+time there is HEART_MONITOR and ACTIVITY_MONITOR types.  See DeviceTypes.h for more
+details.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSInteger)discoveredDevicesForType:(NSInteger)<em>type</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>type</em></dt>
+			<dd><p>The integer that designates whether a heart monitor or an activity monitor
+will be the attempt to discover.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The number of devices found.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BTDeviceManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/monitorMatchingCBPeripheral:" title="monitorMatchingCBPeripheral:"></a>
+	<h3 class="subsubtitle method-title">monitorMatchingCBPeripheral:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This is a method that is to be used privately in this class.  It&rsquo;s purpose is to parse
+the list of devices that this <a href="#//api/name/manager">manager</a> knows about and return a device object that matches
+the CBPeripheral identifier.  Since the identifier is a name it is possible to have two
+duplicate names.  This is a change to CBPeripheral where the name takes precendence over
+the UUID of the device if it is known.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id&lt;DeviceCommonInfoInterface&gt;)monitorMatchingCBPeripheral:(CBPeripheral *)<em>device</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>device</em></dt>
+			<dd><p>The CBPeripheral that is to be used for the search criteria.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A device object that conforms to the CommonDeviceInfoInterface.  Additional
+introspection will be needed if you wish to see if the device conforms to one of
+the other protocols.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BTDeviceManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/selectDeviceType:atIndex:" title="selectDeviceType:atIndex:"></a>
+	<h3 class="subsubtitle method-title">selectDeviceType:atIndex:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method is to be used by the tableviews so that individual devices can be selected and the appropriate
+variables updated to reflect it.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)selectDeviceType:(NSInteger)<em>type</em> atIndex:(NSInteger)<em>index</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>type</em></dt>
+			<dd><p>The device type to select.  See DeviceTypes.h for details.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>index</em></dt>
+			<dd><p>The index of the array of devices within a particular type.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BTDeviceManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/selectedActivityMonitor" title="selectedActivityMonitor"></a>
+	<h3 class="subsubtitle method-title">selectedActivityMonitor</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This getter returns the current selectedActivityMonitor.  The reference conforms to the
+<a href="../Protocols/ActivityMonitorProtocol.html">ActivityMonitorProtocol</a> and the <a href="../Protocols/DeviceCommonInfoInterface.html">DeviceCommonInfoInterface</a> protocol.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id&lt;ActivityMonitorProtocol,DeviceCommonInfoInterface&gt;)selectedActivityMonitor</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>the object reference for the activity monitor.  A check for nil is necessary because
+it is possible to deselect the activity monitor.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BTDeviceManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/selectedHeartMonitor" title="selectedHeartMonitor"></a>
+	<h3 class="subsubtitle method-title">selectedHeartMonitor</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This getter returns the current selectedHeartMonitor.  The reference conforms to the
+<a href="../Protocols/HeartMonitorProtocol.html">HeartMonitorProtocol</a> and the <a href="../Protocols/DeviceCommonInfoInterface.html">DeviceCommonInfoInterface</a> protocol.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id&lt;HeartMonitorProtocol,DeviceCommonInfoInterface&gt;)selectedHeartMonitor</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>the object reference for the heart monitor.  A check for nil is necessary because
+it is possible to deselect the heart monitor.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BTDeviceManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setSelectedActivityMonitor:" title="setSelectedActivityMonitor:"></a>
+	<h3 class="subsubtitle method-title">setSelectedActivityMonitor:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This setter updates the <a href="#//api/name/selectedActivityMonitor">selectedActivityMonitor</a> as long as it conforms to the
+<a href="../Protocols/ActivityMonitorProtocol.html">ActivityMonitorProtocol</a> and the <a href="../Protocols/DeviceCommonInfoInterface.html">DeviceCommonInfoInterface</a>.  It also notifies that <a href="#//api/name/delegate">delegate</a>
+that the value has changed.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setSelectedActivityMonitor:(id&lt;ActivityMonitorProtocol,DeviceCommonInfoInterface&gt;)<em>selectedActivityMonitor</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>selectedActivityMonitor</em></dt>
+			<dd><p>The activity monitor that has been selected by the view controller.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BTDeviceManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setSelectedHeartMonitor:" title="setSelectedHeartMonitor:"></a>
+	<h3 class="subsubtitle method-title">setSelectedHeartMonitor:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This setter updates the <a href="#//api/name/selectedHeartMonitor">selectedHeartMonitor</a> as long as it conforms to the
+<a href="../Protocols/HeartMonitorProtocol.html">HeartMonitorProtocol</a> and the <a href="../Protocols/DeviceCommonInfoInterface.html">DeviceCommonInfoInterface</a>.  It also notifies that <a href="#//api/name/delegate">delegate</a>
+that the value has changed.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setSelectedHeartMonitor:(id&lt;HeartMonitorProtocol,DeviceCommonInfoInterface&gt;)<em>selectedHeartMonitor</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>selectedHeartMonitor</em></dt>
+			<dd><p>The heart mo0nitor that has been selected by the view controller.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BTDeviceManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/startScanForType:" title="startScanForType:"></a>
+	<h3 class="subsubtitle method-title">startScanForType:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method starts the scanning process for a particular type of device. See
+DeviceTypes.h for values relating to the kind of device to scan.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)startScanForType:(NSInteger)<em>type</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>type</em></dt>
+			<dd><p>The integer value representing the kind of services to scan and discover.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BTDeviceManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/stopScan" title="stopScan"></a>
+	<h3 class="subsubtitle method-title">stopScan</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This function allows remote shutdown of discovery process to conserve the battery.  Its purpose is to allow
+the dismissal of selection viewcontrollers to shut the discovery because the device<a href="#//api/name/manager">manager</a> class is shared
+throughout the application.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)stopScan</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BTDeviceManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+                    
+                    
+                    
+                    
+
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2014 UHCL. All rights reserved. (Last updated: 2014-11-22)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

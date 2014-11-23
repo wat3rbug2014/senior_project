@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/BackgroundScheduler.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/BackgroundScheduler</TokenIdentifier>
+			<Abstract type="html">This object is responsible for the coordination of the device poller, the
+database manager, and the process that pushes data to the remote server.</Abstract>
+			<DeclaredIn>BackGroundScheduler.h</DeclaredIn>
+            
+			
+			<NodeRef refid="4"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BackgroundScheduler/setDeviceManager:</TokenIdentifier>
+			<Abstract type="html">The device manager used for controlling the device connectivity and discovery.</Abstract>
+			<DeclaredIn>BackGroundScheduler.h</DeclaredIn>
+			
+			<Declaration>@property (strong) BTDeviceManager *deviceManager</Declaration>
+			
+			
+			<Anchor>//api/name/deviceManager</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BackgroundScheduler/deviceManager</TokenIdentifier>
+			<Abstract type="html">The device manager used for controlling the device connectivity and discovery.</Abstract>
+			<DeclaredIn>BackGroundScheduler.h</DeclaredIn>
+			
+			<Declaration>@property (strong) BTDeviceManager *deviceManager</Declaration>
+			
+			
+			<Anchor>//api/name/deviceManager</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BackgroundScheduler/deviceManager</TokenIdentifier>
+			<Abstract type="html">The device manager used for controlling the device connectivity and discovery.</Abstract>
+			<DeclaredIn>BackGroundScheduler.h</DeclaredIn>
+			
+			<Declaration>@property (strong) BTDeviceManager *deviceManager</Declaration>
+			
+			
+			<Anchor>//api/name/deviceManager</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BackgroundScheduler/setServerPoller:</TokenIdentifier>
+			<Abstract type="html">The manager of the remote server pushes.  It controlls connectivity to the
+server and pushes thdata to it.</Abstract>
+			<DeclaredIn>BackGroundScheduler.h</DeclaredIn>
+			
+			<Declaration>@property RemoteDBConnectionManager *serverPoller</Declaration>
+			
+			
+			<Anchor>//api/name/serverPoller</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BackgroundScheduler/serverPoller</TokenIdentifier>
+			<Abstract type="html">The manager of the remote server pushes.  It controlls connectivity to the
+server and pushes thdata to it.</Abstract>
+			<DeclaredIn>BackGroundScheduler.h</DeclaredIn>
+			
+			<Declaration>@property RemoteDBConnectionManager *serverPoller</Declaration>
+			
+			
+			<Anchor>//api/name/serverPoller</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BackgroundScheduler/serverPoller</TokenIdentifier>
+			<Abstract type="html">The manager of the remote server pushes.  It controlls connectivity to the
+server and pushes thdata to it.</Abstract>
+			<DeclaredIn>BackGroundScheduler.h</DeclaredIn>
+			
+			<Declaration>@property RemoteDBConnectionManager *serverPoller</Declaration>
+			
+			
+			<Anchor>//api/name/serverPoller</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BackgroundScheduler/setDevicePoller:</TokenIdentifier>
+			<Abstract type="html">The object that controlls the polling of the devices and pushes the data to
+the local database.</Abstract>
+			<DeclaredIn>BackGroundScheduler.h</DeclaredIn>
+			
+			<Declaration>@property DevicePollManager *devicePoller</Declaration>
+			
+			
+			<Anchor>//api/name/devicePoller</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BackgroundScheduler/devicePoller</TokenIdentifier>
+			<Abstract type="html">The object that controlls the polling of the devices and pushes the data to
+the local database.</Abstract>
+			<DeclaredIn>BackGroundScheduler.h</DeclaredIn>
+			
+			<Declaration>@property DevicePollManager *devicePoller</Declaration>
+			
+			
+			<Anchor>//api/name/devicePoller</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BackgroundScheduler/devicePoller</TokenIdentifier>
+			<Abstract type="html">The object that controlls the polling of the devices and pushes the data to
+the local database.</Abstract>
+			<DeclaredIn>BackGroundScheduler.h</DeclaredIn>
+			
+			<Declaration>@property DevicePollManager *devicePoller</Declaration>
+			
+			
+			<Anchor>//api/name/devicePoller</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BackgroundScheduler/setDatabase:</TokenIdentifier>
+			<Abstract type="html">The local database to store data from the devices during polling.</Abstract>
+			<DeclaredIn>BackGroundScheduler.h</DeclaredIn>
+			
+			<Declaration>@property DBManager *database</Declaration>
+			
+			
+			<Anchor>//api/name/database</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BackgroundScheduler/database</TokenIdentifier>
+			<Abstract type="html">The local database to store data from the devices during polling.</Abstract>
+			<DeclaredIn>BackGroundScheduler.h</DeclaredIn>
+			
+			<Declaration>@property DBManager *database</Declaration>
+			
+			
+			<Anchor>//api/name/database</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BackgroundScheduler/database</TokenIdentifier>
+			<Abstract type="html">The local database to store data from the devices during polling.</Abstract>
+			<DeclaredIn>BackGroundScheduler.h</DeclaredIn>
+			
+			<Declaration>@property DBManager *database</Declaration>
+			
+			
+			<Anchor>//api/name/database</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BackgroundScheduler/setPatient:</TokenIdentifier>
+			<Abstract type="html">The patient data object.  It is used by the database for updates to the table and by
+the server poller for pushes to the server.</Abstract>
+			<DeclaredIn>BackGroundScheduler.h</DeclaredIn>
+			
+			<Declaration>@property PersonalInfo *patient</Declaration>
+			
+			
+			<Anchor>//api/name/patient</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BackgroundScheduler/patient</TokenIdentifier>
+			<Abstract type="html">The patient data object.  It is used by the database for updates to the table and by
+the server poller for pushes to the server.</Abstract>
+			<DeclaredIn>BackGroundScheduler.h</DeclaredIn>
+			
+			<Declaration>@property PersonalInfo *patient</Declaration>
+			
+			
+			<Anchor>//api/name/patient</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BackgroundScheduler/patient</TokenIdentifier>
+			<Abstract type="html">The patient data object.  It is used by the database for updates to the table and by
+the server poller for pushes to the server.</Abstract>
+			<DeclaredIn>BackGroundScheduler.h</DeclaredIn>
+			
+			<Declaration>@property PersonalInfo *patient</Declaration>
+			
+			
+			<Anchor>//api/name/patient</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BackgroundScheduler/setAllowMonitoring:</TokenIdentifier>
+			<Abstract type="html">This flag is used by the scheduler to determine if the application is ready to monitor.
+It is not TRUE if the following conditions are not met.  Both the activity and the heart
+rate devices must have been selected and connected.  The location manager must be allowed
+to collection location updates.</Abstract>
+			<DeclaredIn>BackGroundScheduler.h</DeclaredIn>
+			
+			<Declaration>@property BOOL allowMonitoring</Declaration>
+			
+			
+			<Anchor>//api/name/allowMonitoring</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BackgroundScheduler/allowMonitoring</TokenIdentifier>
+			<Abstract type="html">This flag is used by the scheduler to determine if the application is ready to monitor.
+It is not TRUE if the following conditions are not met.  Both the activity and the heart
+rate devices must have been selected and connected.  The location manager must be allowed
+to collection location updates.</Abstract>
+			<DeclaredIn>BackGroundScheduler.h</DeclaredIn>
+			
+			<Declaration>@property BOOL allowMonitoring</Declaration>
+			
+			
+			<Anchor>//api/name/allowMonitoring</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BackgroundScheduler/allowMonitoring</TokenIdentifier>
+			<Abstract type="html">This flag is used by the scheduler to determine if the application is ready to monitor.
+It is not TRUE if the following conditions are not met.  Both the activity and the heart
+rate devices must have been selected and connected.  The location manager must be allowed
+to collection location updates.</Abstract>
+			<DeclaredIn>BackGroundScheduler.h</DeclaredIn>
+			
+			<Declaration>@property BOOL allowMonitoring</Declaration>
+			
+			
+			<Anchor>//api/name/allowMonitoring</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BackgroundScheduler/setRunLoop:</TokenIdentifier>
+			<Abstract type="html">The run loop for which the polling is to be executed on.</Abstract>
+			<DeclaredIn>BackGroundScheduler.h</DeclaredIn>
+			
+			<Declaration>@property NSRunLoop *runLoop</Declaration>
+			
+			
+			<Anchor>//api/name/runLoop</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BackgroundScheduler/runLoop</TokenIdentifier>
+			<Abstract type="html">The run loop for which the polling is to be executed on.</Abstract>
+			<DeclaredIn>BackGroundScheduler.h</DeclaredIn>
+			
+			<Declaration>@property NSRunLoop *runLoop</Declaration>
+			
+			
+			<Anchor>//api/name/runLoop</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BackgroundScheduler/runLoop</TokenIdentifier>
+			<Abstract type="html">The run loop for which the polling is to be executed on.</Abstract>
+			<DeclaredIn>BackGroundScheduler.h</DeclaredIn>
+			
+			<Declaration>@property NSRunLoop *runLoop</Declaration>
+			
+			
+			<Anchor>//api/name/runLoop</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BackgroundScheduler/setDevicePollInterval:</TokenIdentifier>
+			<Abstract type="html">The device polling interval.  Used for controlling the time between poll requests from the
+devices.  This is expressed in seconds and the default is 5 seconds.</Abstract>
+			<DeclaredIn>BackGroundScheduler.h</DeclaredIn>
+			
+			<Declaration>@property NSTimeInterval devicePollInterval</Declaration>
+			
+			
+			<Anchor>//api/name/devicePollInterval</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BackgroundScheduler/devicePollInterval</TokenIdentifier>
+			<Abstract type="html">The device polling interval.  Used for controlling the time between poll requests from the
+devices.  This is expressed in seconds and the default is 5 seconds.</Abstract>
+			<DeclaredIn>BackGroundScheduler.h</DeclaredIn>
+			
+			<Declaration>@property NSTimeInterval devicePollInterval</Declaration>
+			
+			
+			<Anchor>//api/name/devicePollInterval</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BackgroundScheduler/devicePollInterval</TokenIdentifier>
+			<Abstract type="html">The device polling interval.  Used for controlling the time between poll requests from the
+devices.  This is expressed in seconds and the default is 5 seconds.</Abstract>
+			<DeclaredIn>BackGroundScheduler.h</DeclaredIn>
+			
+			<Declaration>@property NSTimeInterval devicePollInterval</Declaration>
+			
+			
+			<Anchor>//api/name/devicePollInterval</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BackgroundScheduler/setServerPollInterval:</TokenIdentifier>
+			<Abstract type="html">The server polling interval.  Used for controlling when the server will receive updates from
+the local database.  The default is 1 minute or 60 seconds.  It is express in seconds.</Abstract>
+			<DeclaredIn>BackGroundScheduler.h</DeclaredIn>
+			
+			<Declaration>@property NSTimeInterval serverPollInterval</Declaration>
+			
+			
+			<Anchor>//api/name/serverPollInterval</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BackgroundScheduler/serverPollInterval</TokenIdentifier>
+			<Abstract type="html">The server polling interval.  Used for controlling when the server will receive updates from
+the local database.  The default is 1 minute or 60 seconds.  It is express in seconds.</Abstract>
+			<DeclaredIn>BackGroundScheduler.h</DeclaredIn>
+			
+			<Declaration>@property NSTimeInterval serverPollInterval</Declaration>
+			
+			
+			<Anchor>//api/name/serverPollInterval</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BackgroundScheduler/serverPollInterval</TokenIdentifier>
+			<Abstract type="html">The server polling interval.  Used for controlling when the server will receive updates from
+the local database.  The default is 1 minute or 60 seconds.  It is express in seconds.</Abstract>
+			<DeclaredIn>BackGroundScheduler.h</DeclaredIn>
+			
+			<Declaration>@property NSTimeInterval serverPollInterval</Declaration>
+			
+			
+			<Anchor>//api/name/serverPollInterval</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BackgroundScheduler/setApp:</TokenIdentifier>
+			<Abstract type="html">The shared instance of the UIApplication.  It is used for determining the state of the application
+in order to execute the polling.</Abstract>
+			<DeclaredIn>BackGroundScheduler.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) UIApplication *app</Declaration>
+			
+			
+			<Anchor>//api/name/app</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BackgroundScheduler/app</TokenIdentifier>
+			<Abstract type="html">The shared instance of the UIApplication.  It is used for determining the state of the application
+in order to execute the polling.</Abstract>
+			<DeclaredIn>BackGroundScheduler.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) UIApplication *app</Declaration>
+			
+			
+			<Anchor>//api/name/app</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BackgroundScheduler/app</TokenIdentifier>
+			<Abstract type="html">The shared instance of the UIApplication.  It is used for determining the state of the application
+in order to execute the polling.</Abstract>
+			<DeclaredIn>BackGroundScheduler.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) UIApplication *app</Declaration>
+			
+			
+			<Anchor>//api/name/app</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BackgroundScheduler/setDevicePollTimer:</TokenIdentifier>
+			<Abstract type="html">The timer used for the device poller.  The reference is stored so that it can be canceled outside
+of the method that invokes it.</Abstract>
+			<DeclaredIn>BackGroundScheduler.h</DeclaredIn>
+			
+			<Declaration>@property NSTimer *devicePollTimer</Declaration>
+			
+			
+			<Anchor>//api/name/devicePollTimer</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BackgroundScheduler/devicePollTimer</TokenIdentifier>
+			<Abstract type="html">The timer used for the device poller.  The reference is stored so that it can be canceled outside
+of the method that invokes it.</Abstract>
+			<DeclaredIn>BackGroundScheduler.h</DeclaredIn>
+			
+			<Declaration>@property NSTimer *devicePollTimer</Declaration>
+			
+			
+			<Anchor>//api/name/devicePollTimer</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BackgroundScheduler/devicePollTimer</TokenIdentifier>
+			<Abstract type="html">The timer used for the device poller.  The reference is stored so that it can be canceled outside
+of the method that invokes it.</Abstract>
+			<DeclaredIn>BackGroundScheduler.h</DeclaredIn>
+			
+			<Declaration>@property NSTimer *devicePollTimer</Declaration>
+			
+			
+			<Anchor>//api/name/devicePollTimer</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BackgroundScheduler/setServerPollTimer:</TokenIdentifier>
+			<Abstract type="html">The timer used for the server poller.  The reference is stored so that it can be canceled outside
+of the method that invokes it.</Abstract>
+			<DeclaredIn>BackGroundScheduler.h</DeclaredIn>
+			
+			<Declaration>@property NSTimer *serverPollTimer</Declaration>
+			
+			
+			<Anchor>//api/name/serverPollTimer</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BackgroundScheduler/serverPollTimer</TokenIdentifier>
+			<Abstract type="html">The timer used for the server poller.  The reference is stored so that it can be canceled outside
+of the method that invokes it.</Abstract>
+			<DeclaredIn>BackGroundScheduler.h</DeclaredIn>
+			
+			<Declaration>@property NSTimer *serverPollTimer</Declaration>
+			
+			
+			<Anchor>//api/name/serverPollTimer</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BackgroundScheduler/serverPollTimer</TokenIdentifier>
+			<Abstract type="html">The timer used for the server poller.  The reference is stored so that it can be canceled outside
+of the method that invokes it.</Abstract>
+			<DeclaredIn>BackGroundScheduler.h</DeclaredIn>
+			
+			<Declaration>@property NSTimer *serverPollTimer</Declaration>
+			
+			
+			<Anchor>//api/name/serverPollTimer</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BackgroundScheduler/startMonitoringWithPatientID:</TokenIdentifier>
+			<Abstract type="html">This methods starts the polling process.  It checks the devices for updated
+information and passes them to the database for updates.  It also performs
+network updates to the server based on what it finds in the local datbase.</Abstract>
+			<DeclaredIn>BackGroundScheduler.h</DeclaredIn>
+			
+			<Declaration>- (void)startMonitoringWithPatientID:(NSInteger)identifier</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>identifier</Name>
+					<Abstract type="html">The patientID that will be used for polling.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/startMonitoringWithPatientID:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BackgroundScheduler/stopMonitoring</TokenIdentifier>
+			<Abstract type="html">This method stops the polling process.  It kills the timers and does a final update
+to the remote server using all the data in the database.</Abstract>
+			<DeclaredIn>BackGroundScheduler.h</DeclaredIn>
+			
+			<Declaration>- (void)stopMonitoring</Declaration>
+			
+			
+			<Anchor>//api/name/stopMonitoring</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BackgroundScheduler/performScan</TokenIdentifier>
+			<Abstract type="html">This method does the actual polling of the devices and updating the database.</Abstract>
+			<DeclaredIn>BackGroundScheduler.h</DeclaredIn>
+			
+			<Declaration>- (void)performScan</Declaration>
+			
+			
+			<Anchor>//api/name/performScan</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BackgroundScheduler/app</TokenIdentifier>
+			<Abstract type="html">This method returns the shared instance of the UIApplication.  It is placed here
+to make dependency more obvious.</Abstract>
+			<DeclaredIn>BackGroundScheduler.h</DeclaredIn>
+			
+			<Declaration>- (UIApplication *)app</Declaration>
+			
+			
+			<Anchor>//api/name/app</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

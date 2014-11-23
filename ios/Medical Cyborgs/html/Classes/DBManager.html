@@ -1,0 +1,1553 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>DBManager Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Medical Cyborgs </a></h1>
+				<a id="developerHome" href="../index.html">UHCL</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">DBManager Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/activityLevel">&nbsp;&nbsp;&nbsp;&nbsp;activityLevel</option>
+	
+	<option value="//api/name/age">&nbsp;&nbsp;&nbsp;&nbsp;age</option>
+	
+	<option value="//api/name/database">&nbsp;&nbsp;&nbsp;&nbsp;database</option>
+	
+	<option value="//api/name/databaseFilename">&nbsp;&nbsp;&nbsp;&nbsp;databaseFilename</option>
+	
+	<option value="//api/name/databasePath">&nbsp;&nbsp;&nbsp;&nbsp;databasePath</option>
+	
+	<option value="//api/name/documentsDirectory">&nbsp;&nbsp;&nbsp;&nbsp;documentsDirectory</option>
+	
+	<option value="//api/name/hrmeasurement">&nbsp;&nbsp;&nbsp;&nbsp;hrmeasurement</option>
+	
+	<option value="//api/name/latitude">&nbsp;&nbsp;&nbsp;&nbsp;latitude</option>
+	
+	<option value="//api/name/longitude">&nbsp;&nbsp;&nbsp;&nbsp;longitude</option>
+	
+	<option value="//api/name/moreRowsToRetrieve">&nbsp;&nbsp;&nbsp;&nbsp;moreRowsToRetrieve</option>
+	
+	<option value="//api/name/patientID">&nbsp;&nbsp;&nbsp;&nbsp;patientID</option>
+	
+	<option value="//api/name/rowCount">&nbsp;&nbsp;&nbsp;&nbsp;rowCount</option>
+	
+	<option value="//api/name/sqlStatement">&nbsp;&nbsp;&nbsp;&nbsp;sqlStatement</option>
+	
+	<option value="//api/name/timestamp">&nbsp;&nbsp;&nbsp;&nbsp;timestamp</option>
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/timeStampAsString:">&nbsp;&nbsp;&nbsp;&nbsp;+ timeStampAsString:</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/closeLocalDBConnection">&nbsp;&nbsp;&nbsp;&nbsp;- closeLocalDBConnection</option>
+	
+	<option value="//api/name/copyDatabaseIntoDocumentsDirectory">&nbsp;&nbsp;&nbsp;&nbsp;- copyDatabaseIntoDocumentsDirectory</option>
+	
+	<option value="//api/name/deleteRowAtTimeStamp:">&nbsp;&nbsp;&nbsp;&nbsp;- deleteRowAtTimeStamp:</option>
+	
+	<option value="//api/name/init">&nbsp;&nbsp;&nbsp;&nbsp;- init</option>
+	
+	<option value="//api/name/initWithpatientID:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithpatientID:</option>
+	
+	<option value="//api/name/insertDataIntoDB">&nbsp;&nbsp;&nbsp;&nbsp;- insertDataIntoDB</option>
+	
+	<option value="//api/name/isDatabaseEmpty">&nbsp;&nbsp;&nbsp;&nbsp;- isDatabaseEmpty</option>
+	
+	<option value="//api/name/openLocalDBWithSQLQueryIsSuccessful:">&nbsp;&nbsp;&nbsp;&nbsp;- openLocalDBWithSQLQueryIsSuccessful:</option>
+	
+	<option value="//api/name/purgeDatabase">&nbsp;&nbsp;&nbsp;&nbsp;- purgeDatabase</option>
+	
+	<option value="//api/name/retrieveRow">&nbsp;&nbsp;&nbsp;&nbsp;- retrieveRow</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/activityLevel">activityLevel</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/age">age</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/database">database</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/databaseFilename">databaseFilename</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/databasePath">databasePath</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentsDirectory">documentsDirectory</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hrmeasurement">hrmeasurement</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/latitude">latitude</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/longitude">longitude</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/moreRowsToRetrieve">moreRowsToRetrieve</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/patientID">patientID</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/rowCount">rowCount</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sqlStatement">sqlStatement</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/timestamp">timestamp</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/timeStampAsString:">timeStampAsString:</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/closeLocalDBConnection">closeLocalDBConnection</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/copyDatabaseIntoDocumentsDirectory">copyDatabaseIntoDocumentsDirectory</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteRowAtTimeStamp:">deleteRowAtTimeStamp:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/init">init</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithpatientID:">initWithpatientID:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/insertDataIntoDB">insertDataIntoDB</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isDatabaseEmpty">isDatabaseEmpty</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/openLocalDBWithSQLQueryIsSuccessful:">openLocalDBWithSQLQueryIsSuccessful:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/purgeDatabase">purgeDatabase</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/retrieveRow">retrieveRow</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="DBManager Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">DBManager Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">DBManager.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This class handles the local SQLITE3 <a href="#//api/name/database">database</a>.  All functions needed to
+use this <a href="#//api/name/database">database</a> are enclosed in the class.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/documentsDirectory">&nbsp;&nbsp;documentsDirectory</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/databaseFilename">&nbsp;&nbsp;databaseFilename</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/patientID">&nbsp;&nbsp;patientID</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/moreRowsToRetrieve">&nbsp;&nbsp;moreRowsToRetrieve</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/database">&nbsp;&nbsp;database</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/rowCount">&nbsp;&nbsp;rowCount</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/databasePath">&nbsp;&nbsp;databasePath</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sqlStatement">&nbsp;&nbsp;sqlStatement</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/hrmeasurement">&nbsp;&nbsp;hrmeasurement</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/latitude">&nbsp;&nbsp;latitude</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/longitude">&nbsp;&nbsp;longitude</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/activityLevel">&nbsp;&nbsp;activityLevel</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/age">&nbsp;&nbsp;age</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/timestamp">&nbsp;&nbsp;timestamp</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithpatientID:">&ndash;&nbsp;initWithpatientID:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/copyDatabaseIntoDocumentsDirectory">&ndash;&nbsp;copyDatabaseIntoDocumentsDirectory</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/retrieveRow">&ndash;&nbsp;retrieveRow</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isDatabaseEmpty">&ndash;&nbsp;isDatabaseEmpty</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/insertDataIntoDB">&ndash;&nbsp;insertDataIntoDB</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/timeStampAsString:">+&nbsp;timeStampAsString:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deleteRowAtTimeStamp:">&ndash;&nbsp;deleteRowAtTimeStamp:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/openLocalDBWithSQLQueryIsSuccessful:">&ndash;&nbsp;openLocalDBWithSQLQueryIsSuccessful:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/closeLocalDBConnection">&ndash;&nbsp;closeLocalDBConnection</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/purgeDatabase">&ndash;&nbsp;purgeDatabase</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/activityLevel" title="activityLevel"></a>
+	<h3 class="subsubtitle method-title">activityLevel</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The activity level expressed as an integer.  See <a href="../Classes/DeviceConstantsAndStaticFunctions.html">DeviceConstantsAndStaticFunctions</a>.h
+for the value.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property int activityLevel</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DBManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/age" title="age"></a>
+	<h3 class="subsubtitle method-title">age</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The age that was calculated and given to the <a href="#//api/name/database">database</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property NSInteger age</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DBManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/database" title="database"></a>
+	<h3 class="subsubtitle method-title">database</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The SQLITE database reference.  Used for control of the database.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property sqlite3 *database</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DBManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/databaseFilename" title="databaseFilename"></a>
+	<h3 class="subsubtitle method-title">databaseFilename</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The actual <a href="#//api/name/database">database</a> file name.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *databaseFilename</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DBManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/databasePath" title="databasePath"></a>
+	<h3 class="subsubtitle method-title">databasePath</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The relative path in the file system where the <a href="#//api/name/database">database</a> resides.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *databasePath</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DBManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/documentsDirectory" title="documentsDirectory"></a>
+	<h3 class="subsubtitle method-title">documentsDirectory</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The directory where the SQLITE <a href="#//api/name/database">database</a> will be stored.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *documentsDirectory</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DBManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/hrmeasurement" title="hrmeasurement"></a>
+	<h3 class="subsubtitle method-title">hrmeasurement</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The last heart rate measurment given to the <a href="#//api/name/database">database</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property NSInteger hrmeasurement</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DBManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/latitude" title="latitude"></a>
+	<h3 class="subsubtitle method-title">latitude</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The last latitude measurement that was given to the <a href="#//api/name/database">database</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property float latitude</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DBManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/longitude" title="longitude"></a>
+	<h3 class="subsubtitle method-title">longitude</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The last longitude measurement given to the <a href="#//api/name/database">database</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property float longitude</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DBManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/moreRowsToRetrieve" title="moreRowsToRetrieve"></a>
+	<h3 class="subsubtitle method-title">moreRowsToRetrieve</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>YES or NO value that there is data to push to remote server since this <a href="#//api/name/database">database</a> is not empty.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property BOOL moreRowsToRetrieve</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DBManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/patientID" title="patientID"></a>
+	<h3 class="subsubtitle method-title">patientID</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The patient ID.  This is used for every operation to the <a href="#//api/name/database">database</a> since it is part
+or the primary key for the <a href="#//api/name/database">database</a>.  It is also a primary key in the remote server
+patients table.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property NSInteger patientID</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DBManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/rowCount" title="rowCount"></a>
+	<h3 class="subsubtitle method-title">rowCount</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The last row count of the <a href="#//api/name/database">database</a>.  Used for checking to see if there is a change in the size of
+the <a href="#//api/name/database">database</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property NSInteger rowCount</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DBManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sqlStatement" title="sqlStatement"></a>
+	<h3 class="subsubtitle method-title">sqlStatement</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The current SQL statement to be executed on the <a href="#//api/name/database">database</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property sqlite3_stmt *sqlStatement</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DBManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/timestamp" title="timestamp"></a>
+	<h3 class="subsubtitle method-title">timestamp</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The current timestamp given to the <a href="#//api/name/database">database</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property NSDate *timestamp</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DBManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/timeStampAsString:" title="timeStampAsString:"></a>
+	<h3 class="subsubtitle method-title">timeStampAsString:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method takes the NSDate object stored in this class and converts it to a
+format that is useable to databases.  The assumptions are that the date has been updated.
+This method is called only from this class.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)timeStampAsString:(NSDate *)<em>selectedTime</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>selectedTime</em></dt>
+			<dd><p>The NSDate given to convert to a string for insertion to the <a href="#//api/name/database">database</a>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The result string is a parsed date.  An example is &lsquo;1970-05-10 18:45:10&rsquo;.  That is
+May 10 1970 at 6:45 pm and 10 seconds.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DBManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/closeLocalDBConnection" title="closeLocalDBConnection"></a>
+	<h3 class="subsubtitle method-title">closeLocalDBConnection</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method is meant to be a private method.  It is meant to finalize the <a href="#//api/name/database">database</a> and close the
+<a href="#//api/name/database">database</a>.  All results from the query will be lost as memory is freed during finalization.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)closeLocalDBConnection</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DBManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/copyDatabaseIntoDocumentsDirectory" title="copyDatabaseIntoDocumentsDirectory"></a>
+	<h3 class="subsubtitle method-title">copyDatabaseIntoDocumentsDirectory</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method is used for first time use of the application.  It copies the master <a href="#//api/name/database">database</a>
+template to the applications Documents directory for use with the application.  WARNING:
+do not use the origin for use as the <a href="#//api/name/database">database</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)copyDatabaseIntoDocumentsDirectory</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DBManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/deleteRowAtTimeStamp:" title="deleteRowAtTimeStamp:"></a>
+	<h3 class="subsubtitle method-title">deleteRowAtTimeStamp:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method is used in conjunction with the remote <a href="#//api/name/database">database</a> updates.  It is called to remove the
+row from the local <a href="#//api/name/database">database</a> after a successful insert to the remote <a href="#//api/name/database">database</a>.  It is assumed that
+the <a href="#//api/name/patientID">patientID</a> was already added as it is part of the primary key for the table in this <a href="#//api/name/database">database</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)deleteRowAtTimeStamp:(NSString *)<em>oldTimeStamp</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>oldTimeStamp</em></dt>
+			<dd><p>This is part of the primary key for the table and must be supplied, otherwise
+no record deletion happens.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DBManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="subsubtitle method-title">init</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method initializes the <a href="#//api/name/database">database</a>.  It is noted, that the default <a href="#//api/name/patientID">patientID</a> is
+NO_ID_SET.  WARNING: adding data to the <a href="#//api/name/database">database</a> with no <a href="#//api/name/patientID">patientID</a> set will result
+erroneous results to this <a href="#//api/name/database">database</a> and the remote <a href="#//api/name/database">database</a>, should any updates occur.
+It is advised to the use the -(instancetype) <a href="#//api/name/initWithpatientID:">initWithpatientID:</a> (NSInteger) currentPatient
+method instead.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An instance of the <a href="#//api/name/database">database</a> manager with no <a href="#//api/name/patientID">patientID</a> set.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DBManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithpatientID:" title="initWithpatientID:"></a>
+	<h3 class="subsubtitle method-title">initWithpatientID:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method initializes the <a href="#//api/name/database">database</a> and sets up the <a href="#//api/name/patientID">patientID</a> which will be used
+for almost every query to the <a href="#//api/name/database">database</a>.  the <a href="#//api/name/patientID">patientID</a> is part of the primary key
+for the table.  The assumption is that the <a href="#//api/name/database">database</a> is empty when <a href="#//api/name/patientID">patientID</a> is changed,
+otherwise queries will fail.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (instancetype)initWithpatientID:(NSInteger)<em>currentPatient</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>currentPatient</em></dt>
+			<dd><p>The <a href="#//api/name/patientID">patientID</a> that is to be used for the <a href="#//api/name/database">database</a>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An instance of the <a href="#//api/name/database">database</a> manager with the <a href="#//api/name/patientID">patientID</a> set.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DBManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/insertDataIntoDB" title="insertDataIntoDB"></a>
+	<h3 class="subsubtitle method-title">insertDataIntoDB</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method updates the <a href="#//api/name/database">database</a> by adding the current values for the <a href="#//api/name/database">database</a> manager.
+In order to have new data to the <a href="#//api/name/database">database</a> the <a href="#//api/name/timestamp">timestamp</a>, <a href="#//api/name/latitude">latitude</a>, <a href="#//api/name/longitude">longitude</a>, and heart rate
+variables must be updated first.  Otherwise, the existing variables will be used and will
+result in an error if the <a href="#//api/name/timestamp">timestamp</a> is the same.  Since the <a href="#//api/name/timestamp">timestamp</a>  is part of the primary
+key for the <a href="#//api/name/database">database</a> it must be unique in conjunction with the <a href="#//api/name/patientID">patientID</a>.  This decision
+was made in an effort to keep <a href="#//api/name/database">database</a> transactions and subsequent SQL statements contained
+to this class for easier troubleshooting.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)insertDataIntoDB</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DBManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isDatabaseEmpty" title="isDatabaseEmpty"></a>
+	<h3 class="subsubtitle method-title">isDatabaseEmpty</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method performs a count of the table and return true if there are no more rows in
+the table to retrieve.  It is used primarily for the network poll portion to determine
+that the local <a href="#//api/name/database">database</a> has been flushed and there is no more data to transfer to the
+remote server.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)isDatabaseEmpty</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the <a href="#//api/name/database">database</a> is empty.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DBManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/openLocalDBWithSQLQueryIsSuccessful:" title="openLocalDBWithSQLQueryIsSuccessful:"></a>
+	<h3 class="subsubtitle method-title">openLocalDBWithSQLQueryIsSuccessful:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method is used to open the database connection and prepare the database with the
+the SQL statement provided.  It is meant to be private to this class only.  NOTE: since this
+database is SQLITE not all ACID compliant functions are used.  Furthermore some contraints, such
+as date have different syntaxes associated with them.  Please see <a href="https://www.sqlite.org/docs.html">https://www.sqlite.org/docs.html</a>
+for more details relating to SQLITE.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)openLocalDBWithSQLQueryIsSuccessful:(NSString *)<em>query</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>query</em></dt>
+			<dd><p>is the SQL statement to use on the <a href="#//api/name/database">database</a>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Yes if the query is valid and the <a href="#//api/name/database">database</a> is open.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DBManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/purgeDatabase" title="purgeDatabase"></a>
+	<h3 class="subsubtitle method-title">purgeDatabase</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method is used to clean out the <a href="#//api/name/database">database</a> before use.  It makes the assumption that the previous
+instance of this application did not crash and that all data was updated to the remote server.
+It is used as a safety mechanism so that faulty <a href="#//api/name/patientID">patientID</a> information is not used to update
+remote tables.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)purgeDatabase</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DBManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/retrieveRow" title="retrieveRow"></a>
+	<h3 class="subsubtitle method-title">retrieveRow</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method returns the first row in a query for the items in the local <a href="#//api/name/database">database</a>.  It is
+used in conjuction with the network poller to push local data to the remote <a href="#//api/name/database">database</a>.  The
+data is comma separated with the following order of information:</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (LocalDBResult *)retrieveRow</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The string representation of the row returned.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>heart_rate (integer), <a href="#//api/name/latitude">latitude</a> (float), <a href="#//api/name/longitude">longitude</a> (float), <a href="#//api/name/timestamp">timestamp</a>
+(See -(NSString*) timeStampAsString for output).</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DBManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+                    
+                    
+                    
+                    
+
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2014 UHCL. All rights reserved. (Last updated: 2014-11-22)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>
