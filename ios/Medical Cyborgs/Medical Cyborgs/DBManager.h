@@ -107,13 +107,6 @@
 
 
 /**
- * The age that was calculated and given to the database.
- */
-
-@property NSInteger age;
-
-
-/**
  * The current timestamp given to the database.
  */
 

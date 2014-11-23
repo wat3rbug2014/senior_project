@@ -25,7 +25,7 @@
 @synthesize sqlStatement;
 @synthesize rowCount;
 @synthesize activityLevel;
-@synthesize age;
+
 
 -(instancetype)init {
     
@@ -70,7 +70,7 @@
 
 -(void)insertDataIntoDB {
     
-    assert(age != 0);
+    //assert(age != 0);
     assert(patientID != NO_ID_SET);
     NSString *insertStatement = [NSString stringWithFormat:@"INSERT INTO MEASUREMENTS (patientID, longitude, latitude, heart_rate, time_measurement, activity_level) VALUES (%d, %f, %f, %d, '%@', %d)", (int)patientID, longitude, latitude, (int)hrmeasurement, [DBManager timeStampAsString:timestamp], activityLevel];
     NSLog(@"SQL: %@", insertStatement);
