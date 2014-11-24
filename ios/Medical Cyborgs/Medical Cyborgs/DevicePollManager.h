@@ -13,6 +13,7 @@
  */
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "DeviceCommonInfoInterface.h"
 #import "PersonalInfo.h"
@@ -111,7 +112,7 @@
 
 
 /**
- * This flag is set when the heart monitor is connected and fully discovered.
+ * This flag is set when the heart monitor is connected and activity monitor are fully discovered.
  */
 
 @property BOOL isHeartMonitorReady;
@@ -130,7 +131,7 @@
  */
 
 @property int currentHeartRate;
-
+ 
 
 /**
  * This is the preferred initialization method.  The datastore and the two components are passed

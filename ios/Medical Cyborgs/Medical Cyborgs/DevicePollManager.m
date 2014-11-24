@@ -37,37 +37,17 @@
         [deviceManager setDelegate:self];
         database = dataStore;
         patientID = [database patientID];
-        ableToPoll = YES;
+        ableToPoll = NO;
         batteryAlertGiven = NO;
         isHeartMonitorReady = NO;
         isActivityMonitorReady = NO;
-        
-        // setup for location changes
-        
-        locationManager = nil;
-        bigLocationChanges = NO;
-        NSInteger status = [CLLocationManager authorizationStatus];
-        if (status == kCLAuthorizationStatusRestricted || status == kCLAuthorizationStatusDenied) {
-            NSLog(@"Location service denied");
-            locationAllowed = NO;
-        } else {
-            NSLog(@"Location service allowed");
-            locationAllowed = YES;
-        }
-        if (locationAllowed) {
-            locationManager = [[CLLocationManager alloc] init];
-            [locationManager setDelegate:self];
-            if (status == kCLAuthorizationStatusNotDetermined) {
-                [locationManager requestWhenInUseAuthorization];
-            } else {
-                bigLocationChanges = [CLLocationManager significantLocationChangeMonitoringAvailable];
-            }
-        }
     
         // setup notifications
         
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveNotificationDeviceConnected) name: BTHeartConnected object:deviceManager];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveNotificationDeviceConnected) name: BTActivityConnected object:deviceManager];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveNotificationDeviceConnected)
+                                                     name: BTHeartConnected object:deviceManager];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveNotificationDeviceConnected)
+                                                     name: BTActivityConnected object:deviceManager];
         
         heartMonitor = [[deviceManager heartDevices] objectAtIndex:[deviceManager selectedIndexForHeartMonitor]];
         activityMonitor = [[deviceManager activityDevices] objectAtIndex:[deviceManager selectedIndexForActivityMonitor]];
@@ -80,16 +60,21 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [deviceManager removeObserver:self forKeyPath:@"selectedHeartMonitor"];
     [deviceManager removeObserver:self forKeyPath:@"selectActivityMonitor"];
+    locationManager = nil;
 }
 
 -(void) stopMonitoring {
     
+    ableToPoll = NO;
+    //[locationManager stopMonitoringSignificantLocationChanges];
+    [locationManager stopUpdatingLocation];
     //[deviceManager disconnectSelectedMonitors];
 }
 -(void) pollDevicesForData {
     
     NSLog(@"verifying input before poll");
     if ([self patientID] == NO_ID_SET) {
+        ableToPoll = NO;
         NSLog(@"No patient ID\nPolling stopped");
         return;
     }
@@ -100,7 +85,21 @@
         return;
     }
     NSLog(@"Device poller already has connected devices");
-    
+
+    if (!ableToPoll) {
+        NSLog(@"Setting up location services");
+        locationManager = [[CLLocationManager alloc] init];
+        [locationManager setDelegate:self];
+        [locationManager requestAlwaysAuthorization];
+        [locationManager startUpdatingLocation];
+        //[locationManager startMonitoringSignificantLocationChanges];
+        ableToPoll = YES;
+    }
+    if (bigLocationChanges) {
+        NSLog(@"Location changes allowed");
+    } else {
+        NSLog(@"Location changes NOT allowed");
+    }
     NSLog(@"Getting battery level info from devices");
     
     [heartMonitor discoverBatteryLevel];
@@ -180,20 +179,30 @@
 
 -(void) locationManager:(CLLocationManager*) manager didChangeAuthorizationStatus:(CLAuthorizationStatus) status {
     
+    
+    // NOTE The constants seem invalid
+    
+    NSLog(@"Authorization status changed");
     if (status == kCLAuthorizationStatusRestricted || status == kCLAuthorizationStatusDenied) {
         locationAllowed = NO;
-        if (locationManager != nil) {
-            locationManager = nil;
-        }
+        NSLog(@"Authorization NOT allowed");
     } else {
-        locationAllowed = YES;
+        if ( status == kCLAuthorizationStatusAuthorizedAlways) {
+            locationAllowed = YES;
+            NSLog(@"Location allowed ALWAYS");
+        } else if (status == kCLAuthorizationStatusAuthorizedWhenInUse) {
+            NSLog(@"Location allowed IN USE");
+        } else {
+             NSLog(@"authorization unknown");
+        }
     }
 }
 
 -(void) locationManager: (CLLocationManager*) manager didUpdateLocations: (NSArray*) locations {
     
     NSLog(@"location update happened");
-    CLLocation *currentLocation = [locations objectAtIndex: [locations count] - 1];
+    CLLocation *currentLocation = [locations lastObject];
+    NSLog(@"Location: %@", currentLocation);
     [database setLongitude:[currentLocation coordinate].longitude];
     [database setLatitude:[currentLocation coordinate].latitude];
 }
