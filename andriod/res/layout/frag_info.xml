@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/Button_FitBit_Auth_or_Info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Authorize FitBit Account" />
+
+    <Button
+        android:id="@+id/Button_Jawbone_Auth_or_Info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Button_FitBit_Auth_or_Info"
+        android:layout_centerHorizontal="true"
+        android:text="Authorize Jawbone Account" />
+
+</RelativeLayout>

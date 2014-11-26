@@ -15,17 +15,13 @@ public class ActivityFitBitAuth extends Activity {
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.fitbitauth);
 		
 		m_Button_FitBitWeb = (Button)findViewById(R.id.Button_AuthFitBit);
 		m_Button_FitBitWeb.setOnClickListener( new View.OnClickListener() {
-			
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				
 				// Opens fitbit authorization page
 				Intent intnet = new Intent("com.medicalcyborgs.seniorproject2014.FITBITWEB");
 				startActivity(intnet);
@@ -37,18 +33,10 @@ public class ActivityFitBitAuth extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				
 				// Submit Code
 				OAuthFitBit.submitAuthCode(m_TextEntry_AuthCode.getText().toString() );
-				
-				// TODO: cont.
-				
-				//Intent intnet = new Intent("com.medicalcyborgs.seniorproject2014.FITBITWEB");
-				//startActivity(intnet);
 			}
 		});
-		
 		m_TextEntry_AuthCode = (EditText)findViewById(R.id.TextEntry_AuthCode);
 	}
 }

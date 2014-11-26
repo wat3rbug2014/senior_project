@@ -5,10 +5,9 @@ import android.content.Intent;
 import android.os.Bundle;
 
 public class ActivitySplash extends Activity {
-
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.splash);
 		
@@ -16,7 +15,7 @@ public class ActivitySplash extends Activity {
 		Thread timer = new Thread() {
 			public void run() {
 				try {
-					sleep(0500);
+					sleep(1000);
 				} catch( InterruptedException e) {
 					e.printStackTrace();
 				} finally {
@@ -27,14 +26,12 @@ public class ActivitySplash extends Activity {
 		};
 		timer.start();
 	}
-
+	
 	@Override
 	protected void onPause() {
-		// TODO Auto-generated method stub
 		super.onPause();
 		
 		// Close Splash screen
 		finish();
 	}
-	
 }

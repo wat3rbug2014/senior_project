@@ -2,35 +2,40 @@ package com.medicalcyborgs.seniorproject2014;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 public class ActivityFitBitWeb extends Activity {
 
-	private String m_sAuthURL;
 	WebView m_WebView;
+	boolean b = true; // FIXME
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_fitbit);
-
+		setContentView(R.layout.activity_fitbitwebauth);
 		m_WebView = (WebView) findViewById(R.id.webview1);
 		
 		// Catch callback n' stuff
-		WebViewClient FitBitWebViewClient = new WebViewClient()
-		{
+		WebViewClient FitBitWebViewClient = new WebViewClient() {
 			@Override
-			public boolean shouldOverrideUrlLoading(WebView  view, String  url)
-			{
-				m_sAuthURL = url;
+			public void onPageFinished(WebView view, String url) {
+				// TODO Auto-generated method stub
+				super.onPageFinished(view, url);
 				
-				// Check for FitBit Callback
-				if( url.contains("fitbit") ) {
-					// Now we have the
-					//OAuth_FitBit.enterAuthCode("", url);
+				// Remove GUI elements
+				if( b )
+				{
+					((ViewGroup)findViewById(R.id.ProgressBar_FitBitWebAuth).getParent()).removeView(findViewById(R.id.ProgressBar_FitBitWebAuth));
+					((ViewGroup)findViewById(R.id.TextView_FitBitWebAuth).getParent()).removeView(findViewById(R.id.TextView_FitBitWebAuth));
+					findViewById(R.id.webview1).setVisibility(0); // TODO
+					b = false;
 				}
-				
+			}
+			
+			@Override
+			public boolean shouldOverrideUrlLoading(WebView  view, String  url) {
 				return super.shouldOverrideUrlLoading(view, url);
 			}
 		};
