@@ -64,6 +64,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+
 #pragma mark - UITableViewDataSource methods
 
 
@@ -74,7 +75,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return [super numberOfSectionsInTableView:tableView];
+    return [[super.deviceManager activityDevices] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
