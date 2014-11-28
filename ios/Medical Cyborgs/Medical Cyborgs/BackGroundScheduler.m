@@ -36,9 +36,6 @@
         patient = [[PersonalInfo alloc] init];
         deviceManager = [BTDeviceManager sharedManager];
         database = [[DBManager alloc] initWithpatientID:[patient patientID]];
-        if ([patient dob] != nil) {
-            [database setAge:[patient age]];
-        }
         devicePoller = [[DevicePollManager alloc] initWithDataStore:database andDevicemanager:deviceManager];
         serverPoller = [[RemoteDBConnectionManager alloc] initWithDatabase:database];
         allowMonitoring = NO;
