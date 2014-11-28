@@ -15,6 +15,7 @@
 #import "PolarH7.h"
 #import "WahooTickrX.h"
 #import "MioGlobalLink.h"
+#import "JawboneUP24.h"
 
 @implementation MonitorCreationFactory
 
@@ -37,6 +38,9 @@
     }
     if ([[peripheral name] rangeOfString:@"Polar H7"].location != NSNotFound) {
         result = [[PolarH7 alloc] initWithPeripheral:peripheral];
+    }
+    if ([[peripheral name] rangeOfString:@"UP24"].location != NSNotFound) {
+        result = [[JawboneUP24 alloc] initWithPeripheral:peripheral];
     }
     return result;
 }
