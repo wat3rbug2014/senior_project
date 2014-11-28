@@ -66,9 +66,9 @@
 -(void) stopMonitoring {
     
     ableToPoll = NO;
-    //[locationManager stopMonitoringSignificantLocationChanges];
-    [locationManager stopUpdatingLocation];
-    //[deviceManager disconnectSelectedMonitors];
+    [locationManager stopMonitoringSignificantLocationChanges];
+    //[locationManager stopUpdatingLocation];
+    [deviceManager disconnectSelectedMonitors];
 }
 -(void) pollDevicesForData {
     
@@ -91,8 +91,8 @@
         locationManager = [[CLLocationManager alloc] init];
         [locationManager setDelegate:self];
         [locationManager requestAlwaysAuthorization];
-        [locationManager startUpdatingLocation];
-        //[locationManager startMonitoringSignificantLocationChanges];
+        //[locationManager startUpdatingLocation];
+        [locationManager startMonitoringSignificantLocationChanges];
         ableToPoll = YES;
     }
     if (bigLocationChanges) {
