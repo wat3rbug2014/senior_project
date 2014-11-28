@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -70,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -97,9 +98,10 @@ Inheritance diagram for &lt;DeviceCommonInfoInterface&gt;:</div>
   <img src="protocol_device_common_info_interface-p.png" usemap="#&lt;DeviceCommonInfoInterface&gt;_map" alt=""/>
   <map id="&lt;DeviceCommonInfoInterface&gt;_map" name="&lt;DeviceCommonInfoInterface&gt;_map">
 <area href="interface_fit_bit_flex.html" alt="FitBitFlex" shape="rect" coords="0,112,185,136"/>
-<area href="interface_mio_global_link.html" alt="MioGlobalLink" shape="rect" coords="195,112,380,136"/>
-<area href="interface_polar_h7.html" alt="PolarH7" shape="rect" coords="390,112,575,136"/>
-<area href="interface_wahoo_tickr_x.html" alt="WahooTickrX" shape="rect" coords="585,112,770,136"/>
+<area href="interface_jawbone_u_p24.html" alt="JawboneUP24" shape="rect" coords="195,112,380,136"/>
+<area href="interface_mio_global_link.html" alt="MioGlobalLink" shape="rect" coords="390,112,575,136"/>
+<area href="interface_polar_h7.html" alt="PolarH7" shape="rect" coords="585,112,770,136"/>
+<area href="interface_wahoo_tickr_x.html" alt="WahooTickrX" shape="rect" coords="780,112,965,136"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -279,7 +281,7 @@ Instance Methods</h2></td></tr>
 <p>This initialization method creates the desired device based on the CBPeripheral that is discovered. It is common to all types of devices and will bypass use of the standard init method for those classes. This method is used by the <a class="el" href="interface_monitor_creation_factory.html">MonitorCreationFactory</a> as a standard for initializing the device and providing all of the methods in this protocol.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">CBPeripheral</td><td>is the device object that the CBCentralManager discovered. </td></tr>
+    <tr><td class="paramname">peripheral</td><td>is the device object that the CBCentralManager discovered. </td></tr>
   </table>
   </dd>
 </dl>
@@ -455,7 +457,7 @@ Instance Methods</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 18 2014 18:18:03 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 28 2014 12:19:08 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

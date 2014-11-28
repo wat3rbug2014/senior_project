@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -70,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -101,34 +102,155 @@ Inheritance diagram for LocalDBResult:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a5cdd651e87ce4b0e2ed296fd1a54f271"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5cdd651e87ce4b0e2ed296fd1a54f271"></a>
-NSInteger&#160;</td><td class="memItemRight" valign="bottom"><b>patientID</b></td></tr>
+<tr class="memitem:a5cdd651e87ce4b0e2ed296fd1a54f271"><td class="memItemLeft" align="right" valign="top">NSInteger&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_local_d_b_result.html#a5cdd651e87ce4b0e2ed296fd1a54f271">patientID</a></td></tr>
 <tr class="separator:a5cdd651e87ce4b0e2ed296fd1a54f271"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59bb8d9536b92e3bbd6c244d13771ccc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a59bb8d9536b92e3bbd6c244d13771ccc"></a>
-NSInteger&#160;</td><td class="memItemRight" valign="bottom"><b>heartRate</b></td></tr>
+<tr class="memitem:a59bb8d9536b92e3bbd6c244d13771ccc"><td class="memItemLeft" align="right" valign="top">NSInteger&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_local_d_b_result.html#a59bb8d9536b92e3bbd6c244d13771ccc">heartRate</a></td></tr>
 <tr class="separator:a59bb8d9536b92e3bbd6c244d13771ccc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55f83e49659fb4d15db30117f90dcea7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a55f83e49659fb4d15db30117f90dcea7"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>latitude</b></td></tr>
+<tr class="memitem:a55f83e49659fb4d15db30117f90dcea7"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_local_d_b_result.html#a55f83e49659fb4d15db30117f90dcea7">latitude</a></td></tr>
 <tr class="separator:a55f83e49659fb4d15db30117f90dcea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae50e0676b6cac4cad3e565c5caa117b2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae50e0676b6cac4cad3e565c5caa117b2"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>longitude</b></td></tr>
+<tr class="memitem:ae50e0676b6cac4cad3e565c5caa117b2"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_local_d_b_result.html#ae50e0676b6cac4cad3e565c5caa117b2">longitude</a></td></tr>
 <tr class="separator:ae50e0676b6cac4cad3e565c5caa117b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7538fcbcfd150e5353d3d4e531bef2bc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7538fcbcfd150e5353d3d4e531bef2bc"></a>
-NSString *&#160;</td><td class="memItemRight" valign="bottom"><b>timeStamp</b></td></tr>
+<tr class="memitem:a7538fcbcfd150e5353d3d4e531bef2bc"><td class="memItemLeft" align="right" valign="top">NSString *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_local_d_b_result.html#a7538fcbcfd150e5353d3d4e531bef2bc">timeStamp</a></td></tr>
 <tr class="separator:a7538fcbcfd150e5353d3d4e531bef2bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10d275e102bd14b0a071b5572fbf62d3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a10d275e102bd14b0a071b5572fbf62d3"></a>
-NSInteger&#160;</td><td class="memItemRight" valign="bottom"><b>activityLevel</b></td></tr>
+<tr class="memitem:a10d275e102bd14b0a071b5572fbf62d3"><td class="memItemLeft" align="right" valign="top">NSInteger&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_local_d_b_result.html#a10d275e102bd14b0a071b5572fbf62d3">activityLevel</a></td></tr>
 <tr class="separator:a10d275e102bd14b0a071b5572fbf62d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This is a simple data class that is used to pass around from the database to classes that are using it. It was created to simply string manipulation. </p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+<div class="textblock"><p>This is a simple data class that is used to pass around from the database to classes that are using it. It was created to simplify string manipulation. </p>
+</div><h2 class="groupheader">Property Documentation</h2>
+<a class="anchor" id="a10d275e102bd14b0a071b5572fbf62d3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSInteger) activityLevel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>An integer value of the activity level based on patient age and heart rate. See <a class="el" href="class_device_constants_and_static_functions.html">DeviceConstantsAndStaticFunctions</a> for a description. </p>
+
+</div>
+</div>
+<a class="anchor" id="a59bb8d9536b92e3bbd6c244d13771ccc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSInteger) heartRate</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The heart rate of the patient as it was recorded by the database. </p>
+
+</div>
+</div>
+<a class="anchor" id="a55f83e49659fb4d15db30117f90dcea7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (float) latitude</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The latitude of the patient that was recorded. This value will not change much unless big changes happen. </p>
+
+</div>
+</div>
+<a class="anchor" id="ae50e0676b6cac4cad3e565c5caa117b2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (float) longitude</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The longitude of the patient that was recorded. This value will not change much unless big changes happen. </p>
+
+</div>
+</div>
+<a class="anchor" id="a5cdd651e87ce4b0e2ed296fd1a54f271"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSInteger) patientID</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The patientID that is used by the database. </p>
+
+</div>
+</div>
+<a class="anchor" id="a7538fcbcfd150e5353d3d4e531bef2bc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSString*) timeStamp</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The timestamp this data was recorded in the database. It has date and time. It follows the format of 'yyyy-mm-dd hh:mm:ss'. The hours are expressed in military time from 0-23. </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>/Users/douglas/Documents/software/Senior Project/ios/Medical Cyborgs/Medical Cyborgs/<a class="el" href="_local_d_b_result_8h_source.html">LocalDBResult.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 18 2014 18:18:03 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 28 2014 12:19:08 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

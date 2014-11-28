@@ -10,26 +10,41 @@ Inheritance diagram for Fit\-Bit\-Flex\-:\begin{figure}[H]
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{interface_fit_bit_flex_ac539ad853d5729137679c3293cba75f5}{C\-B\-Peripheral $\ast$ {\bfseries device}}\label{interface_fit_bit_flex_ac539ad853d5729137679c3293cba75f5}
-
+N\-S\-Integer \hyperlink{interface_fit_bit_flex_a77895e42698dfb9e32ea3511dd68aa3e}{type}
 \item 
-\hypertarget{interface_fit_bit_flex_af23b05b17587b9810d93909f279cca75}{C\-B\-Service $\ast$ {\bfseries battery\-Service}}\label{interface_fit_bit_flex_af23b05b17587b9810d93909f279cca75}
-
+C\-B\-Service $\ast$ \hyperlink{interface_fit_bit_flex_af23b05b17587b9810d93909f279cca75}{battery\-Service}
 \item 
-\hypertarget{interface_fit_bit_flex_a0d5ca990dbff1852b3d8a07faa91234b}{C\-B\-Characteristic $\ast$ {\bfseries battery\-Lvl\-Char}}\label{interface_fit_bit_flex_a0d5ca990dbff1852b3d8a07faa91234b}
-
+C\-B\-Characteristic $\ast$ \hyperlink{interface_fit_bit_flex_a0d5ca990dbff1852b3d8a07faa91234b}{battery\-Lvl\-Char}
 \item 
-\hypertarget{interface_fit_bit_flex_a6141ecb075c9553d179dc5210d2c4952}{int {\bfseries battery\-Level}}\label{interface_fit_bit_flex_a6141ecb075c9553d179dc5210d2c4952}
-
+int \hyperlink{interface_fit_bit_flex_a6141ecb075c9553d179dc5210d2c4952}{battery\-Level}
 \item 
-\hypertarget{interface_fit_bit_flex_a77895e42698dfb9e32ea3511dd68aa3e}{N\-S\-Integer {\bfseries type}}\label{interface_fit_bit_flex_a77895e42698dfb9e32ea3511dd68aa3e}
-
+C\-B\-Peripheral $\ast$ \hyperlink{interface_fit_bit_flex_ac539ad853d5729137679c3293cba75f5}{device}
 \item 
-\hypertarget{interface_fit_bit_flex_a3b4fca544836750998946aab4d4c8a3d}{N\-S\-String $\ast$ {\bfseries device\-Manufacturer}}\label{interface_fit_bit_flex_a3b4fca544836750998946aab4d4c8a3d}
-
+N\-S\-String $\ast$ \hyperlink{interface_fit_bit_flex_a3b4fca544836750998946aab4d4c8a3d}{device\-Manufacturer}
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
+
+\subsection{Property Documentation}
+\hypertarget{interface_fit_bit_flex_a6141ecb075c9553d179dc5210d2c4952}{\index{Fit\-Bit\-Flex@{Fit\-Bit\-Flex}!battery\-Level@{battery\-Level}}
+\index{battery\-Level@{battery\-Level}!FitBitFlex@{Fit\-Bit\-Flex}}
+\subsubsection[{battery\-Level}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (int) battery\-Level\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}}}\label{interface_fit_bit_flex_a6141ecb075c9553d179dc5210d2c4952}
+The last known integer value of the battery percentage. The default is 0 if the battery level is not read. \hypertarget{interface_fit_bit_flex_a0d5ca990dbff1852b3d8a07faa91234b}{\index{Fit\-Bit\-Flex@{Fit\-Bit\-Flex}!battery\-Lvl\-Char@{battery\-Lvl\-Char}}
+\index{battery\-Lvl\-Char@{battery\-Lvl\-Char}!FitBitFlex@{Fit\-Bit\-Flex}}
+\subsubsection[{battery\-Lvl\-Char}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (C\-B\-Characteristic$\ast$) battery\-Lvl\-Char\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}, {\ttfamily [retain]}}}\label{interface_fit_bit_flex_a0d5ca990dbff1852b3d8a07faa91234b}
+The C\-B\-Characteristic reference for use in reading the battery level of the device. \hypertarget{interface_fit_bit_flex_af23b05b17587b9810d93909f279cca75}{\index{Fit\-Bit\-Flex@{Fit\-Bit\-Flex}!battery\-Service@{battery\-Service}}
+\index{battery\-Service@{battery\-Service}!FitBitFlex@{Fit\-Bit\-Flex}}
+\subsubsection[{battery\-Service}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (C\-B\-Service$\ast$) battery\-Service\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}, {\ttfamily [retain]}}}\label{interface_fit_bit_flex_af23b05b17587b9810d93909f279cca75}
+The C\-B\-Service reference for use in detecting the battery level of the device. \hypertarget{interface_fit_bit_flex_ac539ad853d5729137679c3293cba75f5}{\index{Fit\-Bit\-Flex@{Fit\-Bit\-Flex}!device@{device}}
+\index{device@{device}!FitBitFlex@{Fit\-Bit\-Flex}}
+\subsubsection[{device}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (C\-B\-Peripheral$\ast$) device\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}, {\ttfamily [retain]}}}\label{interface_fit_bit_flex_ac539ad853d5729137679c3293cba75f5}
+The C\-B\-Peripheral device that was discovered and used with this class. \hypertarget{interface_fit_bit_flex_a3b4fca544836750998946aab4d4c8a3d}{\index{Fit\-Bit\-Flex@{Fit\-Bit\-Flex}!device\-Manufacturer@{device\-Manufacturer}}
+\index{device\-Manufacturer@{device\-Manufacturer}!FitBitFlex@{Fit\-Bit\-Flex}}
+\subsubsection[{device\-Manufacturer}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) device\-Manufacturer\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}, {\ttfamily [retain]}}}\label{interface_fit_bit_flex_a3b4fca544836750998946aab4d4c8a3d}
+The N\-S\-String value of the manufacturer as read from the device. \hypertarget{interface_fit_bit_flex_a77895e42698dfb9e32ea3511dd68aa3e}{\index{Fit\-Bit\-Flex@{Fit\-Bit\-Flex}!type@{type}}
+\index{type@{type}!FitBitFlex@{Fit\-Bit\-Flex}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Integer) type\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}}}\label{interface_fit_bit_flex_a77895e42698dfb9e32ea3511dd68aa3e}
+The device type as an enum of Device\-Type. See \hyperlink{_device_types_8h_source}{Device\-Types.\-h} for details. 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 

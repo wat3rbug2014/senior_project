@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -70,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -88,6 +89,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">AppDelegate Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#import &lt;<a class="el" href="_app_delegate_8h_source.html">AppDelegate.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for AppDelegate:</div>
 <div class="dyncontent">
@@ -99,23 +102,86 @@ Inheritance diagram for AppDelegate:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:acf48ac24125e688cac1a85445cd7fac2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acf48ac24125e688cac1a85445cd7fac2"></a>
-UIWindow *&#160;</td><td class="memItemRight" valign="bottom"><b>window</b></td></tr>
+<tr class="memitem:acf48ac24125e688cac1a85445cd7fac2"><td class="memItemLeft" align="right" valign="top">UIWindow *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_app_delegate.html#acf48ac24125e688cac1a85445cd7fac2">window</a></td></tr>
 <tr class="separator:acf48ac24125e688cac1a85445cd7fac2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7774bb6fd8b636a6d6b15f91f2809a91"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7774bb6fd8b636a6d6b15f91f2809a91"></a>
-<a class="el" href="interface_background_scheduler.html">BackgroundScheduler</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>processScheduler</b></td></tr>
+<tr class="memitem:a7774bb6fd8b636a6d6b15f91f2809a91"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_background_scheduler.html">BackgroundScheduler</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_app_delegate.html#a7774bb6fd8b636a6d6b15f91f2809a91">processScheduler</a></td></tr>
 <tr class="separator:a7774bb6fd8b636a6d6b15f91f2809a91"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22a5a481802e14bae7bd6cbffd141c65"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a22a5a481802e14bae7bd6cbffd141c65"></a>
-<a class="el" href="interface_home_screen_v_c.html">HomeScreenVC</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>homeScreen</b></td></tr>
+<tr class="memitem:a22a5a481802e14bae7bd6cbffd141c65"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_home_screen_v_c.html">HomeScreenVC</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_app_delegate.html#a22a5a481802e14bae7bd6cbffd141c65">homeScreen</a></td></tr>
 <tr class="separator:a22a5a481802e14bae7bd6cbffd141c65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The starting point of the Objective-C code for the application. </p>
+</div><h2 class="groupheader">Property Documentation</h2>
+<a class="anchor" id="a22a5a481802e14bae7bd6cbffd141c65"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (<a class="el" href="interface_home_screen_v_c.html">HomeScreenVC</a>*) homeScreen</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The startinv view of the application. It is passed to the window once the application starts. </p>
+
+</div>
+</div>
+<a class="anchor" id="a7774bb6fd8b636a6d6b15f91f2809a91"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (<a class="el" href="interface_background_scheduler.html">BackgroundScheduler</a>*) processScheduler</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The background scheduler that is used for monitoring the state of the application. </p>
+
+</div>
+</div>
+<a class="anchor" id="acf48ac24125e688cac1a85445cd7fac2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (UIWindow*) window</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The first view of the application once it starts. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>/Users/douglas/Documents/software/Senior Project/ios/Medical Cyborgs/Medical Cyborgs/<a class="el" href="_app_delegate_8h_source.html">AppDelegate.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 18 2014 18:18:03 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 28 2014 12:19:08 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

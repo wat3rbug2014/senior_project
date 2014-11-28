@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -67,7 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -104,56 +105,93 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
 <div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="interface_home_screen_v_c.html">   23</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_home_screen_v_c.html">HomeScreenVC</a> : UIViewController</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">@property</span> (retain, nonatomic) IBOutlet UIButton *heartRateButton;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">@property</span> (retain, nonatomic) IBOutlet UIButton *activityButton;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">@property</span> (retain, nonatomic) IBOutlet UIButton *graphButton;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">@property</span> (retain, nonatomic) IBOutlet UIButton *toggleRunButton;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">@property</span> (retain, nonatomic) IBOutlet UIButton *personalInfoButton;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">@property</span> BOOL isMonitoring;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">@property</span> <a class="code" href="interface_patient_information_v_c.html">PatientInformationVC</a> *settings;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">@property</span> (retain) <a class="code" href="interface_b_t_device_manager.html">BTDeviceManager</a> *btDevices;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">@property</span> (retain) <a class="code" href="interface_personal_info.html">PersonalInfo</a> *patientInfo;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">@property</span> (retain) <a class="code" href="interface_device_poll_manager.html">DevicePollManager</a> *devicePoller;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">@property</span> (retain) <a class="code" href="interface_remote_d_b_connection_manager.html">RemoteDBConnectionManager</a> *serverPoller;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">@property</span> <a class="code" href="interface_background_scheduler.html">BackgroundScheduler</a> *scheduler;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;-(id) initWithBackgroundScheduler: (<a class="code" href="interface_background_scheduler.html">BackgroundScheduler</a>*) scheduler;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;-(IBAction)alterPersonalSettings:(<span class="keywordtype">id</span>)sender;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="interface_home_screen_v_c.html#af710ad88b755f5ac91d32478a385af6f">   32</a></span>&#160;<span class="keyword">@property</span> (retain, nonatomic) IBOutlet UIButton *<a class="code" href="interface_home_screen_v_c.html#af710ad88b755f5ac91d32478a385af6f">heartRateButton</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="interface_home_screen_v_c.html#aaf7bc9fa4c07923d2df10b9dc6977c02">   40</a></span>&#160;<span class="keyword">@property</span> (retain, nonatomic) IBOutlet UIButton *<a class="code" href="interface_home_screen_v_c.html#aaf7bc9fa4c07923d2df10b9dc6977c02">activityButton</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="interface_home_screen_v_c.html#a1e29323a37c594f0e641d1f660605721">   48</a></span>&#160;<span class="keyword">@property</span> (retain, nonatomic) IBOutlet UIButton *<a class="code" href="interface_home_screen_v_c.html#a1e29323a37c594f0e641d1f660605721">graphButton</a>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;-(IBAction)selectActivityMonitor:(<span class="keywordtype">id</span>)sender;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;-(IBAction)selectHeartMonitor:(<span class="keywordtype">id</span>)sender;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;-(void) setColorForButton:(UIButton*) button isReady: (BOOL) ready;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;-(IBAction)showGraph:(<span class="keywordtype">id</span>)sender;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;-(IBAction)toggleMonitoring:(<span class="keywordtype">id</span>)sender;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="interface_home_screen_v_c.html#aad6f8311d7f241d28c255af76fea1c4b">   56</a></span>&#160;<span class="keyword">@property</span> (retain, nonatomic) IBOutlet UIButton *<a class="code" href="interface_home_screen_v_c.html#aad6f8311d7f241d28c255af76fea1c4b">toggleRunButton</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="interface_home_screen_v_c.html#a8324fe604c4a1dae3d45f9b6fb63d80f">   64</a></span>&#160;<span class="keyword">@property</span> (retain, nonatomic) IBOutlet UIButton *<a class="code" href="interface_home_screen_v_c.html#a8324fe604c4a1dae3d45f9b6fb63d80f">personalInfoButton</a>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="interface_home_screen_v_c.html#afa80d36d3ba21b19c0aea885cc76f811">   73</a></span>&#160;<span class="keyword">@property</span> BOOL <a class="code" href="interface_home_screen_v_c.html#afa80d36d3ba21b19c0aea885cc76f811">isMonitoring</a>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="interface_home_screen_v_c.html#a89f03faa7fe6fba12a8d17dead120a0c">   81</a></span>&#160;<span class="keyword">@property</span> <a class="code" href="interface_patient_information_v_c.html">PatientInformationVC</a> *<a class="code" href="interface_home_screen_v_c.html#a89f03faa7fe6fba12a8d17dead120a0c">settings</a>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="interface_home_screen_v_c.html#a2d29b010a455bf37937421fac3bfde81">   88</a></span>&#160;<span class="keyword">@property</span> (retain) <a class="code" href="interface_b_t_device_manager.html">BTDeviceManager</a> *<a class="code" href="interface_home_screen_v_c.html#a2d29b010a455bf37937421fac3bfde81">btDevices</a>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="interface_home_screen_v_c.html#a18a3276c68060f2a0fdd9fbfd32416ab">   95</a></span>&#160;<span class="keyword">@property</span> (retain) <a class="code" href="interface_personal_info.html">PersonalInfo</a> *<a class="code" href="interface_home_screen_v_c.html#a18a3276c68060f2a0fdd9fbfd32416ab">patientInfo</a>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="interface_home_screen_v_c.html#a2a965b7384a780e031c9cb85d18aeeb1">  103</a></span>&#160;<span class="keyword">@property</span> (retain) <a class="code" href="interface_device_poll_manager.html">DevicePollManager</a> *<a class="code" href="interface_home_screen_v_c.html#a2a965b7384a780e031c9cb85d18aeeb1">devicePoller</a>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="interface_home_screen_v_c.html#acf743bf5899a89cff1321f785b9a48e5">  110</a></span>&#160;<span class="keyword">@property</span> (retain) <a class="code" href="interface_remote_d_b_connection_manager.html">RemoteDBConnectionManager</a> *<a class="code" href="interface_home_screen_v_c.html#acf743bf5899a89cff1321f785b9a48e5">serverPoller</a>;</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;-(void) <a class="code" href="interface_home_screen_v_c.html#a83dbe8e2e8729282f47e1ffaf30b07f4">checkForUpdatedPatientID</a>;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;-(void) pollFailed: (NSNotification*) notification;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="keyword">@end</span></div>
-<div class="ttc" id="interface_device_poll_manager_html"><div class="ttname"><a href="interface_device_poll_manager.html">DevicePollManager</a></div><div class="ttdef"><b>Definition:</b> DevicePollManager.h:26</div></div>
-<div class="ttc" id="interface_personal_info_html"><div class="ttname"><a href="interface_personal_info.html">PersonalInfo</a></div><div class="ttdef"><b>Definition:</b> PersonalInfo.h:32</div></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="interface_home_screen_v_c.html#a9b110975a1b591e149fc83c768312673">  118</a></span>&#160;<span class="keyword">@property</span> <a class="code" href="interface_background_scheduler.html">BackgroundScheduler</a> *<a class="code" href="interface_home_screen_v_c.html#a9b110975a1b591e149fc83c768312673">scheduler</a>;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;-(id) initWithBackgroundScheduler: (<a class="code" href="interface_background_scheduler.html">BackgroundScheduler</a>*) scheduler;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;-(IBAction)alterPersonalSettings:(<span class="keywordtype">id</span>)sender;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;-(IBAction)selectActivityMonitor:(<span class="keywordtype">id</span>)sender;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;-(IBAction)selectHeartMonitor:(<span class="keywordtype">id</span>)sender;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;-(void) setColorForButton:(UIButton*) button isReady: (BOOL) ready;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;-(IBAction)showGraph:(<span class="keywordtype">id</span>)sender;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;-(IBAction)toggleMonitoring:(<span class="keywordtype">id</span>)sender;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;-(void) <a class="code" href="interface_home_screen_v_c.html#a83dbe8e2e8729282f47e1ffaf30b07f4">checkForUpdatedPatientID</a>;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;-(void) pollFailed:(NSNotification*) notification;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="keyword">@end</span></div>
+<div class="ttc" id="interface_home_screen_v_c_html_a8324fe604c4a1dae3d45f9b6fb63d80f"><div class="ttname"><a href="interface_home_screen_v_c.html#a8324fe604c4a1dae3d45f9b6fb63d80f">HomeScreenVC::personalInfoButton</a></div><div class="ttdeci">IBOutlet UIButton * personalInfoButton</div><div class="ttdef"><b>Definition:</b> HomeScreenVC.h:64</div></div>
+<div class="ttc" id="interface_device_poll_manager_html"><div class="ttname"><a href="interface_device_poll_manager.html">DevicePollManager</a></div><div class="ttdef"><b>Definition:</b> DevicePollManager.h:27</div></div>
+<div class="ttc" id="interface_personal_info_html"><div class="ttname"><a href="interface_personal_info.html">PersonalInfo</a></div><div class="ttdef"><b>Definition:</b> PersonalInfo.h:35</div></div>
 <div class="ttc" id="interface_home_screen_v_c_html"><div class="ttname"><a href="interface_home_screen_v_c.html">HomeScreenVC</a></div><div class="ttdef"><b>Definition:</b> HomeScreenVC.h:23</div></div>
-<div class="ttc" id="interface_home_screen_v_c_html_a83dbe8e2e8729282f47e1ffaf30b07f4"><div class="ttname"><a href="interface_home_screen_v_c.html#a83dbe8e2e8729282f47e1ffaf30b07f4">-[HomeScreenVC checkForUpdatedPatientID]</a></div><div class="ttdeci">void checkForUpdatedPatientID()</div><div class="ttdef"><b>Definition:</b> HomeScreenVC.m:181</div></div>
-<div class="ttc" id="interface_remote_d_b_connection_manager_html"><div class="ttname"><a href="interface_remote_d_b_connection_manager.html">RemoteDBConnectionManager</a></div><div class="ttdef"><b>Definition:</b> RemoteDBConnectionManager.h:28</div></div>
+<div class="ttc" id="interface_home_screen_v_c_html_a83dbe8e2e8729282f47e1ffaf30b07f4"><div class="ttname"><a href="interface_home_screen_v_c.html#a83dbe8e2e8729282f47e1ffaf30b07f4">-[HomeScreenVC checkForUpdatedPatientID]</a></div><div class="ttdeci">void checkForUpdatedPatientID()</div><div class="ttdef"><b>Definition:</b> HomeScreenVC.m:180</div></div>
+<div class="ttc" id="interface_home_screen_v_c_html_a2a965b7384a780e031c9cb85d18aeeb1"><div class="ttname"><a href="interface_home_screen_v_c.html#a2a965b7384a780e031c9cb85d18aeeb1">HomeScreenVC::devicePoller</a></div><div class="ttdeci">DevicePollManager * devicePoller</div><div class="ttdef"><b>Definition:</b> HomeScreenVC.h:103</div></div>
+<div class="ttc" id="interface_home_screen_v_c_html_aad6f8311d7f241d28c255af76fea1c4b"><div class="ttname"><a href="interface_home_screen_v_c.html#aad6f8311d7f241d28c255af76fea1c4b">HomeScreenVC::toggleRunButton</a></div><div class="ttdeci">IBOutlet UIButton * toggleRunButton</div><div class="ttdef"><b>Definition:</b> HomeScreenVC.h:56</div></div>
+<div class="ttc" id="interface_home_screen_v_c_html_a2d29b010a455bf37937421fac3bfde81"><div class="ttname"><a href="interface_home_screen_v_c.html#a2d29b010a455bf37937421fac3bfde81">HomeScreenVC::btDevices</a></div><div class="ttdeci">BTDeviceManager * btDevices</div><div class="ttdef"><b>Definition:</b> HomeScreenVC.h:88</div></div>
+<div class="ttc" id="interface_home_screen_v_c_html_aaf7bc9fa4c07923d2df10b9dc6977c02"><div class="ttname"><a href="interface_home_screen_v_c.html#aaf7bc9fa4c07923d2df10b9dc6977c02">HomeScreenVC::activityButton</a></div><div class="ttdeci">IBOutlet UIButton * activityButton</div><div class="ttdef"><b>Definition:</b> HomeScreenVC.h:40</div></div>
+<div class="ttc" id="interface_home_screen_v_c_html_acf743bf5899a89cff1321f785b9a48e5"><div class="ttname"><a href="interface_home_screen_v_c.html#acf743bf5899a89cff1321f785b9a48e5">HomeScreenVC::serverPoller</a></div><div class="ttdeci">RemoteDBConnectionManager * serverPoller</div><div class="ttdef"><b>Definition:</b> HomeScreenVC.h:110</div></div>
+<div class="ttc" id="interface_remote_d_b_connection_manager_html"><div class="ttname"><a href="interface_remote_d_b_connection_manager.html">RemoteDBConnectionManager</a></div><div class="ttdef"><b>Definition:</b> RemoteDBConnectionManager.h:24</div></div>
 <div class="ttc" id="interface_background_scheduler_html"><div class="ttname"><a href="interface_background_scheduler.html">BackgroundScheduler</a></div><div class="ttdef"><b>Definition:</b> BackGroundScheduler.h:22</div></div>
+<div class="ttc" id="interface_home_screen_v_c_html_af710ad88b755f5ac91d32478a385af6f"><div class="ttname"><a href="interface_home_screen_v_c.html#af710ad88b755f5ac91d32478a385af6f">HomeScreenVC::heartRateButton</a></div><div class="ttdeci">IBOutlet UIButton * heartRateButton</div><div class="ttdef"><b>Definition:</b> HomeScreenVC.h:32</div></div>
 <div class="ttc" id="interface_patient_information_v_c_html"><div class="ttname"><a href="interface_patient_information_v_c.html">PatientInformationVC</a></div><div class="ttdef"><b>Definition:</b> PatientInformationVC.h:22</div></div>
-<div class="ttc" id="interface_b_t_device_manager_html"><div class="ttname"><a href="interface_b_t_device_manager.html">BTDeviceManager</a></div><div class="ttdef"><b>Definition:</b> BTDeviceManager.h:25</div></div>
+<div class="ttc" id="interface_home_screen_v_c_html_a18a3276c68060f2a0fdd9fbfd32416ab"><div class="ttname"><a href="interface_home_screen_v_c.html#a18a3276c68060f2a0fdd9fbfd32416ab">HomeScreenVC::patientInfo</a></div><div class="ttdeci">PersonalInfo * patientInfo</div><div class="ttdef"><b>Definition:</b> HomeScreenVC.h:95</div></div>
+<div class="ttc" id="interface_home_screen_v_c_html_a1e29323a37c594f0e641d1f660605721"><div class="ttname"><a href="interface_home_screen_v_c.html#a1e29323a37c594f0e641d1f660605721">HomeScreenVC::graphButton</a></div><div class="ttdeci">IBOutlet UIButton * graphButton</div><div class="ttdef"><b>Definition:</b> HomeScreenVC.h:48</div></div>
+<div class="ttc" id="interface_home_screen_v_c_html_a9b110975a1b591e149fc83c768312673"><div class="ttname"><a href="interface_home_screen_v_c.html#a9b110975a1b591e149fc83c768312673">HomeScreenVC::scheduler</a></div><div class="ttdeci">BackgroundScheduler * scheduler</div><div class="ttdef"><b>Definition:</b> HomeScreenVC.h:118</div></div>
+<div class="ttc" id="interface_home_screen_v_c_html_a89f03faa7fe6fba12a8d17dead120a0c"><div class="ttname"><a href="interface_home_screen_v_c.html#a89f03faa7fe6fba12a8d17dead120a0c">HomeScreenVC::settings</a></div><div class="ttdeci">PatientInformationVC * settings</div><div class="ttdef"><b>Definition:</b> HomeScreenVC.h:81</div></div>
+<div class="ttc" id="interface_home_screen_v_c_html_afa80d36d3ba21b19c0aea885cc76f811"><div class="ttname"><a href="interface_home_screen_v_c.html#afa80d36d3ba21b19c0aea885cc76f811">HomeScreenVC::isMonitoring</a></div><div class="ttdeci">BOOL isMonitoring</div><div class="ttdef"><b>Definition:</b> HomeScreenVC.h:73</div></div>
+<div class="ttc" id="interface_b_t_device_manager_html"><div class="ttname"><a href="interface_b_t_device_manager.html">BTDeviceManager</a></div><div class="ttdef"><b>Definition:</b> BTDeviceManager.h:31</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 18 2014 18:18:03 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 28 2014 12:19:08 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

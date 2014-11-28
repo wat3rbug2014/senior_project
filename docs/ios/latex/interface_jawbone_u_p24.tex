@@ -1,0 +1,52 @@
+\hypertarget{interface_jawbone_u_p24}{\section{Jawbone\-U\-P24 Class Reference}
+\label{interface_jawbone_u_p24}\index{Jawbone\-U\-P24@{Jawbone\-U\-P24}}
+}
+Inheritance diagram for Jawbone\-U\-P24\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.901554cm]{interface_jawbone_u_p24}
+\end{center}
+\end{figure}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+N\-S\-Integer \hyperlink{interface_jawbone_u_p24_abd2f3cf19e5f5feeef6be3cf2193acce}{type}
+\item 
+C\-B\-Service $\ast$ \hyperlink{interface_jawbone_u_p24_a60f0270de3139d5219544969cce08293}{battery\-Service}
+\item 
+C\-B\-Characteristic $\ast$ \hyperlink{interface_jawbone_u_p24_ac0feafa5d2a26db099b3328df1cc85e1}{battery\-Lvl\-Char}
+\item 
+int \hyperlink{interface_jawbone_u_p24_a7c1af9ec44bfb9a3fafcf6d3ba1a3dc9}{battery\-Level}
+\item 
+C\-B\-Peripheral $\ast$ \hyperlink{interface_jawbone_u_p24_a9ed19c4b26f90dfbf9523ba2b7dbf6e0}{device}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_jawbone_u_p24_af3f464123aa078ff318eecfba7bbcaf4}{device\-Manufacturer}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Property Documentation}
+\hypertarget{interface_jawbone_u_p24_a7c1af9ec44bfb9a3fafcf6d3ba1a3dc9}{\index{Jawbone\-U\-P24@{Jawbone\-U\-P24}!battery\-Level@{battery\-Level}}
+\index{battery\-Level@{battery\-Level}!JawboneUP24@{Jawbone\-U\-P24}}
+\subsubsection[{battery\-Level}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (int) battery\-Level\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}}}\label{interface_jawbone_u_p24_a7c1af9ec44bfb9a3fafcf6d3ba1a3dc9}
+The last known integer value of the battery percentage. The default is 0 if the battery level is not read. \hypertarget{interface_jawbone_u_p24_ac0feafa5d2a26db099b3328df1cc85e1}{\index{Jawbone\-U\-P24@{Jawbone\-U\-P24}!battery\-Lvl\-Char@{battery\-Lvl\-Char}}
+\index{battery\-Lvl\-Char@{battery\-Lvl\-Char}!JawboneUP24@{Jawbone\-U\-P24}}
+\subsubsection[{battery\-Lvl\-Char}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (C\-B\-Characteristic$\ast$) battery\-Lvl\-Char\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}, {\ttfamily [retain]}}}\label{interface_jawbone_u_p24_ac0feafa5d2a26db099b3328df1cc85e1}
+The C\-B\-Characteristic reference for use in reading the battery level of the device. \hypertarget{interface_jawbone_u_p24_a60f0270de3139d5219544969cce08293}{\index{Jawbone\-U\-P24@{Jawbone\-U\-P24}!battery\-Service@{battery\-Service}}
+\index{battery\-Service@{battery\-Service}!JawboneUP24@{Jawbone\-U\-P24}}
+\subsubsection[{battery\-Service}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (C\-B\-Service$\ast$) battery\-Service\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}, {\ttfamily [retain]}}}\label{interface_jawbone_u_p24_a60f0270de3139d5219544969cce08293}
+The C\-B\-Service reference for use in detecting the battery level of the device. \hypertarget{interface_jawbone_u_p24_a9ed19c4b26f90dfbf9523ba2b7dbf6e0}{\index{Jawbone\-U\-P24@{Jawbone\-U\-P24}!device@{device}}
+\index{device@{device}!JawboneUP24@{Jawbone\-U\-P24}}
+\subsubsection[{device}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (C\-B\-Peripheral$\ast$) device\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}, {\ttfamily [retain]}}}\label{interface_jawbone_u_p24_a9ed19c4b26f90dfbf9523ba2b7dbf6e0}
+The C\-B\-Peripheral device that was discovered and used with this class. \hypertarget{interface_jawbone_u_p24_af3f464123aa078ff318eecfba7bbcaf4}{\index{Jawbone\-U\-P24@{Jawbone\-U\-P24}!device\-Manufacturer@{device\-Manufacturer}}
+\index{device\-Manufacturer@{device\-Manufacturer}!JawboneUP24@{Jawbone\-U\-P24}}
+\subsubsection[{device\-Manufacturer}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) device\-Manufacturer\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}, {\ttfamily [retain]}}}\label{interface_jawbone_u_p24_af3f464123aa078ff318eecfba7bbcaf4}
+The N\-S\-String value of the manufacturer as read from the device. \hypertarget{interface_jawbone_u_p24_abd2f3cf19e5f5feeef6be3cf2193acce}{\index{Jawbone\-U\-P24@{Jawbone\-U\-P24}!type@{type}}
+\index{type@{type}!JawboneUP24@{Jawbone\-U\-P24}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Integer) type\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}}}\label{interface_jawbone_u_p24_abd2f3cf19e5f5feeef6be3cf2193acce}
+The device type as an enum of Device\-Type. See \hyperlink{_device_types_8h_source}{Device\-Types.\-h} for details. 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/douglas/\-Documents/software/\-Senior Project/ios/\-Medical Cyborgs/\-Medical Cyborgs/Jawbone\-U\-P24.\-h\item 
+/\-Users/douglas/\-Documents/software/\-Senior Project/ios/\-Medical Cyborgs/\-Medical Cyborgs/Jawbone\-U\-P24.\-m\end{DoxyCompactItemize}

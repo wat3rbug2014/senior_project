@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -70,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -102,8 +103,7 @@ Inheritance diagram for HomeScreenVC:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Instance Methods</h2></td></tr>
-<tr class="memitem:aba4765dac13e0c3829c52a23d6c6b773"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aba4765dac13e0c3829c52a23d6c6b773"></a>
-(id)&#160;</td><td class="memItemRight" valign="bottom">- <b>initWithBackgroundScheduler:</b></td></tr>
+<tr class="memitem:aba4765dac13e0c3829c52a23d6c6b773"><td class="memItemLeft" align="right" valign="top">(id)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_home_screen_v_c.html#aba4765dac13e0c3829c52a23d6c6b773">initWithBackgroundScheduler:</a></td></tr>
 <tr class="separator:aba4765dac13e0c3829c52a23d6c6b773"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a98314cf71cd518e63b9ce589b35f02"><td class="memItemLeft" align="right" valign="top">(IBAction)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_home_screen_v_c.html#a8a98314cf71cd518e63b9ce589b35f02">alterPersonalSettings:</a></td></tr>
 <tr class="separator:a8a98314cf71cd518e63b9ce589b35f02"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -124,41 +124,29 @@ Instance Methods</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:af710ad88b755f5ac91d32478a385af6f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af710ad88b755f5ac91d32478a385af6f"></a>
-IBOutlet UIButton *&#160;</td><td class="memItemRight" valign="bottom"><b>heartRateButton</b></td></tr>
+<tr class="memitem:af710ad88b755f5ac91d32478a385af6f"><td class="memItemLeft" align="right" valign="top">IBOutlet UIButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_home_screen_v_c.html#af710ad88b755f5ac91d32478a385af6f">heartRateButton</a></td></tr>
 <tr class="separator:af710ad88b755f5ac91d32478a385af6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf7bc9fa4c07923d2df10b9dc6977c02"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaf7bc9fa4c07923d2df10b9dc6977c02"></a>
-IBOutlet UIButton *&#160;</td><td class="memItemRight" valign="bottom"><b>activityButton</b></td></tr>
+<tr class="memitem:aaf7bc9fa4c07923d2df10b9dc6977c02"><td class="memItemLeft" align="right" valign="top">IBOutlet UIButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_home_screen_v_c.html#aaf7bc9fa4c07923d2df10b9dc6977c02">activityButton</a></td></tr>
 <tr class="separator:aaf7bc9fa4c07923d2df10b9dc6977c02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e29323a37c594f0e641d1f660605721"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1e29323a37c594f0e641d1f660605721"></a>
-IBOutlet UIButton *&#160;</td><td class="memItemRight" valign="bottom"><b>graphButton</b></td></tr>
+<tr class="memitem:a1e29323a37c594f0e641d1f660605721"><td class="memItemLeft" align="right" valign="top">IBOutlet UIButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_home_screen_v_c.html#a1e29323a37c594f0e641d1f660605721">graphButton</a></td></tr>
 <tr class="separator:a1e29323a37c594f0e641d1f660605721"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad6f8311d7f241d28c255af76fea1c4b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aad6f8311d7f241d28c255af76fea1c4b"></a>
-IBOutlet UIButton *&#160;</td><td class="memItemRight" valign="bottom"><b>toggleRunButton</b></td></tr>
+<tr class="memitem:aad6f8311d7f241d28c255af76fea1c4b"><td class="memItemLeft" align="right" valign="top">IBOutlet UIButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_home_screen_v_c.html#aad6f8311d7f241d28c255af76fea1c4b">toggleRunButton</a></td></tr>
 <tr class="separator:aad6f8311d7f241d28c255af76fea1c4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8324fe604c4a1dae3d45f9b6fb63d80f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8324fe604c4a1dae3d45f9b6fb63d80f"></a>
-IBOutlet UIButton *&#160;</td><td class="memItemRight" valign="bottom"><b>personalInfoButton</b></td></tr>
+<tr class="memitem:a8324fe604c4a1dae3d45f9b6fb63d80f"><td class="memItemLeft" align="right" valign="top">IBOutlet UIButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_home_screen_v_c.html#a8324fe604c4a1dae3d45f9b6fb63d80f">personalInfoButton</a></td></tr>
 <tr class="separator:a8324fe604c4a1dae3d45f9b6fb63d80f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa80d36d3ba21b19c0aea885cc76f811"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afa80d36d3ba21b19c0aea885cc76f811"></a>
-BOOL&#160;</td><td class="memItemRight" valign="bottom"><b>isMonitoring</b></td></tr>
+<tr class="memitem:afa80d36d3ba21b19c0aea885cc76f811"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_home_screen_v_c.html#afa80d36d3ba21b19c0aea885cc76f811">isMonitoring</a></td></tr>
 <tr class="separator:afa80d36d3ba21b19c0aea885cc76f811"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89f03faa7fe6fba12a8d17dead120a0c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a89f03faa7fe6fba12a8d17dead120a0c"></a>
-<a class="el" href="interface_patient_information_v_c.html">PatientInformationVC</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>settings</b></td></tr>
+<tr class="memitem:a89f03faa7fe6fba12a8d17dead120a0c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_patient_information_v_c.html">PatientInformationVC</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_home_screen_v_c.html#a89f03faa7fe6fba12a8d17dead120a0c">settings</a></td></tr>
 <tr class="separator:a89f03faa7fe6fba12a8d17dead120a0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d29b010a455bf37937421fac3bfde81"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2d29b010a455bf37937421fac3bfde81"></a>
-<a class="el" href="interface_b_t_device_manager.html">BTDeviceManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>btDevices</b></td></tr>
+<tr class="memitem:a2d29b010a455bf37937421fac3bfde81"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_b_t_device_manager.html">BTDeviceManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_home_screen_v_c.html#a2d29b010a455bf37937421fac3bfde81">btDevices</a></td></tr>
 <tr class="separator:a2d29b010a455bf37937421fac3bfde81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18a3276c68060f2a0fdd9fbfd32416ab"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a18a3276c68060f2a0fdd9fbfd32416ab"></a>
-<a class="el" href="interface_personal_info.html">PersonalInfo</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>patientInfo</b></td></tr>
+<tr class="memitem:a18a3276c68060f2a0fdd9fbfd32416ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_personal_info.html">PersonalInfo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_home_screen_v_c.html#a18a3276c68060f2a0fdd9fbfd32416ab">patientInfo</a></td></tr>
 <tr class="separator:a18a3276c68060f2a0fdd9fbfd32416ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a965b7384a780e031c9cb85d18aeeb1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2a965b7384a780e031c9cb85d18aeeb1"></a>
-<a class="el" href="interface_device_poll_manager.html">DevicePollManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>devicePoller</b></td></tr>
+<tr class="memitem:a2a965b7384a780e031c9cb85d18aeeb1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_device_poll_manager.html">DevicePollManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_home_screen_v_c.html#a2a965b7384a780e031c9cb85d18aeeb1">devicePoller</a></td></tr>
 <tr class="separator:a2a965b7384a780e031c9cb85d18aeeb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf743bf5899a89cff1321f785b9a48e5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acf743bf5899a89cff1321f785b9a48e5"></a>
-<a class="el" href="interface_remote_d_b_connection_manager.html">RemoteDBConnectionManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>serverPoller</b></td></tr>
+<tr class="memitem:acf743bf5899a89cff1321f785b9a48e5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_remote_d_b_connection_manager.html">RemoteDBConnectionManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_home_screen_v_c.html#acf743bf5899a89cff1321f785b9a48e5">serverPoller</a></td></tr>
 <tr class="separator:acf743bf5899a89cff1321f785b9a48e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b110975a1b591e149fc83c768312673"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9b110975a1b591e149fc83c768312673"></a>
-<a class="el" href="interface_background_scheduler.html">BackgroundScheduler</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>scheduler</b></td></tr>
+<tr class="memitem:a9b110975a1b591e149fc83c768312673"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_background_scheduler.html">BackgroundScheduler</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_home_screen_v_c.html#a9b110975a1b591e149fc83c768312673">scheduler</a></td></tr>
 <tr class="separator:a9b110975a1b591e149fc83c768312673"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -203,6 +191,30 @@ BOOL&#160;</td><td class="memItemRight" valign="bottom"><b>isMonitoring</b></td>
 
 </div>
 </div>
+<a class="anchor" id="aba4765dac13e0c3829c52a23d6c6b773"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (id) initWithBackgroundScheduler: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="interface_background_scheduler.html">BackgroundScheduler</a>*)&#160;</td>
+          <td class="paramname"><em>scheduler</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This is the preferred method of initialization of the object. The scheduler has all the necessary information for the homescreen to pass on to the other view controllers and to allow monitoring control.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scheduler</td><td>The background scheduler that has all the necessary information.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The Home screen of the application with the necessary controllers to perform operation. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a379c482616bb7911c6e9fc71cf9eb2a0"></a>
 <div class="memitem">
 <div class="memproto">
@@ -216,7 +228,13 @@ BOOL&#160;</td><td class="memItemRight" valign="bottom"><b>isMonitoring</b></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This method is called when a notification is given by the device poller. It determines how the UI is to respond to the event. </p>
+<p>This method is called when a notification is given by the device poller. It determines how the UI is to respond to the event.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">notification</td><td>The notification that is passed to it. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -346,6 +364,259 @@ BOOL&#160;</td><td class="memItemRight" valign="bottom"><b>isMonitoring</b></td>
 
 </div>
 </div>
+<h2 class="groupheader">Property Documentation</h2>
+<a class="anchor" id="aaf7bc9fa4c07923d2df10b9dc6977c02"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (IBOutlet UIButton*) activityButton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">retain</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The UIButton for going to the viewcontroller that provides selection for the activity device to use. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2d29b010a455bf37937421fac3bfde81"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (<a class="el" href="interface_b_t_device_manager.html">BTDeviceManager</a>*) btDevices</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span><span class="mlabel">retain</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The blue tooth device manager. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2a965b7384a780e031c9cb85d18aeeb1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (<a class="el" href="interface_device_poll_manager.html">DevicePollManager</a>*) devicePoller</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span><span class="mlabel">retain</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The polling that gets information from the devices and places it in the database. This is used by the <a class="el" href="interface_graph_v_c.html">GraphVC</a> for observing the heart rate and activity for verification. </p>
+
+</div>
+</div>
+<a class="anchor" id="a1e29323a37c594f0e641d1f660605721"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (IBOutlet UIButton*) graphButton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">retain</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The UIButton for going to the viewcontroller a display of the heart rate and activity so that verification of the devices operation can be done. </p>
+
+</div>
+</div>
+<a class="anchor" id="af710ad88b755f5ac91d32478a385af6f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (IBOutlet UIButton*) heartRateButton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">retain</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The UIButton for going to the viewcontroller that provides selection for the heart rate device to use. </p>
+
+</div>
+</div>
+<a class="anchor" id="afa80d36d3ba21b19c0aea885cc76f811"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) isMonitoring</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>A BOOL to verify the state the application is in, whether it is currently monitoring, or not. It is used to toggling the color of the run button as well as starting and stopping the background scheduler tasks. </p>
+
+</div>
+</div>
+<a class="anchor" id="a18a3276c68060f2a0fdd9fbfd32416ab"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (<a class="el" href="interface_personal_info.html">PersonalInfo</a>*) patientInfo</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span><span class="mlabel">retain</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The object that updates the patient information in local storage for application restarts. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8324fe604c4a1dae3d45f9b6fb63d80f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (IBOutlet UIButton*) personalInfoButton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">retain</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The UIButton for going to the viewcontroller that provides input for the patient identifcation in the system. </p>
+
+</div>
+</div>
+<a class="anchor" id="a9b110975a1b591e149fc83c768312673"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (<a class="el" href="interface_background_scheduler.html">BackgroundScheduler</a>*) scheduler</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The background scheduler that is used for monitoring the patient and passing the data to the local database and eventually to the remote server. </p>
+
+</div>
+</div>
+<a class="anchor" id="acf743bf5899a89cff1321f785b9a48e5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (<a class="el" href="interface_remote_d_b_connection_manager.html">RemoteDBConnectionManager</a>*) serverPoller</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span><span class="mlabel">retain</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The poller that retrieves data from the local database nad pushes it to the server. </p>
+
+</div>
+</div>
+<a class="anchor" id="a89f03faa7fe6fba12a8d17dead120a0c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (<a class="el" href="interface_patient_information_v_c.html">PatientInformationVC</a>*) settings</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The view controller for the patient identifcation editing. A reference is kept for updates to the buttons so that color changes relate properly to database updates. </p>
+
+</div>
+</div>
+<a class="anchor" id="aad6f8311d7f241d28c255af76fea1c4b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (IBOutlet UIButton*) toggleRunButton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">retain</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The UIButton for toggling the tracking of the patients activity and heart rates along with location. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/Users/douglas/Documents/software/Senior Project/ios/Medical Cyborgs/Medical Cyborgs/<a class="el" href="_home_screen_v_c_8h_source.html">HomeScreenVC.h</a></li>
 <li>/Users/douglas/Documents/software/Senior Project/ios/Medical Cyborgs/Medical Cyborgs/HomeScreenVC.m</li>
@@ -353,7 +624,7 @@ BOOL&#160;</td><td class="memItemRight" valign="bottom"><b>isMonitoring</b></td>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 18 2014 18:18:03 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 28 2014 12:19:08 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

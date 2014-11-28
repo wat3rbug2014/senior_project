@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -67,7 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -93,35 +94,55 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//  Created by Douglas Gardiner on 11/1/14.</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//  Copyright (c) 2014 Douglas Gardiner. All rights reserved.</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#import &lt;Foundation/Foundation.h&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#import &quot;HeartMonitorProtocol.h&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#import &quot;ActivityMonitorProtocol.h&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#import &quot;DeviceCommonInfoInterface.h&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="interface_mio_global_link.html">   14</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_mio_global_link.html">MioGlobalLink</a> : NSObject &lt;<a class="code" href="protocol_device_common_info_interface-p.html">DeviceCommonInfoInterface</a>, <a class="code" href="protocol_heart_monitor_protocol-p.html">HeartMonitorProtocol</a>&gt;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">@property</span> NSInteger <a class="code" href="protocol_device_common_info_interface-p.html#a2817a747a1ab2cf6f199b1cebe86bd83">type</a>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">@property</span> (retain) CBService *batteryService;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">@property</span> (retain) CBCharacteristic *batteryLvlChar;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">@property</span> (retain) CBService *heartRateService;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">@property</span> (retain) CBCharacteristic *heartRateChar;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">@property</span> <span class="keywordtype">int</span> <a class="code" href="protocol_device_common_info_interface-p.html#a54b8e239d2d0470be0d906b11b7f3850">batteryLevel</a>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">@property</span> (retain) CBPeripheral *<a class="code" href="protocol_device_common_info_interface-p.html#a60acee2f42fa42a04ba3585e08d75f8e">device</a>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">@property</span> (retain) NSString *deviceManufacturer;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">@property</span> NSInteger currentHeartRate;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">@end</span></div>
-<div class="ttc" id="protocol_device_common_info_interface-p_html_a2817a747a1ab2cf6f199b1cebe86bd83"><div class="ttname"><a href="protocol_device_common_info_interface-p.html#a2817a747a1ab2cf6f199b1cebe86bd83">-[DeviceCommonInfoInterface-p type]</a></div><div class="ttdeci">NSInteger type()</div></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"></span><span class="preprocessor">#import &lt;Foundation/Foundation.h&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#import &quot;HeartMonitorProtocol.h&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#import &quot;ActivityMonitorProtocol.h&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#import &quot;DeviceCommonInfoInterface.h&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="interface_mio_global_link.html">   22</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_mio_global_link.html">MioGlobalLink</a> : NSObject &lt;<a class="code" href="protocol_device_common_info_interface-p.html">DeviceCommonInfoInterface</a>, <a class="code" href="protocol_heart_monitor_protocol-p.html">HeartMonitorProtocol</a>&gt;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="interface_mio_global_link.html#a82edb3dd6e24af3fb2ed9061e2c2b21f">   28</a></span>&#160;<span class="keyword">@property</span> NSInteger <a class="code" href="interface_mio_global_link.html#a82edb3dd6e24af3fb2ed9061e2c2b21f">type</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="interface_mio_global_link.html#a6615e890d11dfb95046f5f229f789f8e">   35</a></span>&#160;<span class="keyword">@property</span> (retain) CBService *<a class="code" href="interface_mio_global_link.html#a6615e890d11dfb95046f5f229f789f8e">batteryService</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="interface_mio_global_link.html#a77ed04d9593004c08ec49e1620cd79a0">   42</a></span>&#160;<span class="keyword">@property</span> (retain) CBCharacteristic *<a class="code" href="interface_mio_global_link.html#a77ed04d9593004c08ec49e1620cd79a0">batteryLvlChar</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="interface_mio_global_link.html#af59bfad40ad67f8cc419f3242f04500b">   48</a></span>&#160;<span class="keyword">@property</span> (retain) CBService *<a class="code" href="interface_mio_global_link.html#af59bfad40ad67f8cc419f3242f04500b">heartRateService</a>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="interface_mio_global_link.html#a6d0625aca6d7b1638753cb5e321e9632">   55</a></span>&#160;<span class="keyword">@property</span> (retain) CBCharacteristic *<a class="code" href="interface_mio_global_link.html#a6d0625aca6d7b1638753cb5e321e9632">heartRateChar</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="interface_mio_global_link.html#a7f0add9d273f0d51eb4b3c73f3eb167d">   63</a></span>&#160;<span class="keyword">@property</span> <span class="keywordtype">int</span> <a class="code" href="interface_mio_global_link.html#a7f0add9d273f0d51eb4b3c73f3eb167d">batteryLevel</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="interface_mio_global_link.html#a8d4650fecd6a5f86366446e862be7f21">   70</a></span>&#160;<span class="keyword">@property</span> (retain) CBPeripheral *<a class="code" href="protocol_device_common_info_interface-p.html#a60acee2f42fa42a04ba3585e08d75f8e">device</a>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="interface_mio_global_link.html#a5d67ddaf6d5941b85f93196a95630b9d">   77</a></span>&#160;<span class="keyword">@property</span> (retain) NSString *<a class="code" href="interface_mio_global_link.html#a5d67ddaf6d5941b85f93196a95630b9d">deviceManufacturer</a>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="interface_mio_global_link.html#acb64fafbafbb75c3e6f2c382841f9f06">   84</a></span>&#160;<span class="keyword">@property</span> NSInteger <a class="code" href="interface_mio_global_link.html#acb64fafbafbb75c3e6f2c382841f9f06">currentHeartRate</a>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">@end</span></div>
+<div class="ttc" id="interface_mio_global_link_html_af59bfad40ad67f8cc419f3242f04500b"><div class="ttname"><a href="interface_mio_global_link.html#af59bfad40ad67f8cc419f3242f04500b">MioGlobalLink::heartRateService</a></div><div class="ttdeci">CBService * heartRateService</div><div class="ttdef"><b>Definition:</b> MioGlobalLink.h:48</div></div>
 <div class="ttc" id="protocol_device_common_info_interface-p_html_a60acee2f42fa42a04ba3585e08d75f8e"><div class="ttname"><a href="protocol_device_common_info_interface-p.html#a60acee2f42fa42a04ba3585e08d75f8e">-[DeviceCommonInfoInterface-p device]</a></div><div class="ttdeci">CBPeripheral * device()</div></div>
+<div class="ttc" id="interface_mio_global_link_html_a6615e890d11dfb95046f5f229f789f8e"><div class="ttname"><a href="interface_mio_global_link.html#a6615e890d11dfb95046f5f229f789f8e">MioGlobalLink::batteryService</a></div><div class="ttdeci">CBService * batteryService</div><div class="ttdef"><b>Definition:</b> MioGlobalLink.h:35</div></div>
 <div class="ttc" id="protocol_device_common_info_interface-p_html"><div class="ttname"><a href="protocol_device_common_info_interface-p.html">DeviceCommonInfoInterface-p</a></div><div class="ttdef"><b>Definition:</b> DeviceCommonInfoInterface.h:21</div></div>
-<div class="ttc" id="interface_mio_global_link_html"><div class="ttname"><a href="interface_mio_global_link.html">MioGlobalLink</a></div><div class="ttdef"><b>Definition:</b> MioGlobalLink.h:14</div></div>
-<div class="ttc" id="protocol_device_common_info_interface-p_html_a54b8e239d2d0470be0d906b11b7f3850"><div class="ttname"><a href="protocol_device_common_info_interface-p.html#a54b8e239d2d0470be0d906b11b7f3850">-[DeviceCommonInfoInterface-p batteryLevel]</a></div><div class="ttdeci">int batteryLevel()</div></div>
+<div class="ttc" id="interface_mio_global_link_html_a82edb3dd6e24af3fb2ed9061e2c2b21f"><div class="ttname"><a href="interface_mio_global_link.html#a82edb3dd6e24af3fb2ed9061e2c2b21f">MioGlobalLink::type</a></div><div class="ttdeci">NSInteger type</div><div class="ttdef"><b>Definition:</b> MioGlobalLink.h:28</div></div>
+<div class="ttc" id="interface_mio_global_link_html"><div class="ttname"><a href="interface_mio_global_link.html">MioGlobalLink</a></div><div class="ttdef"><b>Definition:</b> MioGlobalLink.h:22</div></div>
+<div class="ttc" id="interface_mio_global_link_html_a77ed04d9593004c08ec49e1620cd79a0"><div class="ttname"><a href="interface_mio_global_link.html#a77ed04d9593004c08ec49e1620cd79a0">MioGlobalLink::batteryLvlChar</a></div><div class="ttdeci">CBCharacteristic * batteryLvlChar</div><div class="ttdef"><b>Definition:</b> MioGlobalLink.h:42</div></div>
+<div class="ttc" id="interface_mio_global_link_html_a6d0625aca6d7b1638753cb5e321e9632"><div class="ttname"><a href="interface_mio_global_link.html#a6d0625aca6d7b1638753cb5e321e9632">MioGlobalLink::heartRateChar</a></div><div class="ttdeci">CBCharacteristic * heartRateChar</div><div class="ttdef"><b>Definition:</b> MioGlobalLink.h:55</div></div>
+<div class="ttc" id="interface_mio_global_link_html_a5d67ddaf6d5941b85f93196a95630b9d"><div class="ttname"><a href="interface_mio_global_link.html#a5d67ddaf6d5941b85f93196a95630b9d">MioGlobalLink::deviceManufacturer</a></div><div class="ttdeci">NSString * deviceManufacturer</div><div class="ttdef"><b>Definition:</b> MioGlobalLink.h:77</div></div>
+<div class="ttc" id="interface_mio_global_link_html_a7f0add9d273f0d51eb4b3c73f3eb167d"><div class="ttname"><a href="interface_mio_global_link.html#a7f0add9d273f0d51eb4b3c73f3eb167d">MioGlobalLink::batteryLevel</a></div><div class="ttdeci">int batteryLevel</div><div class="ttdef"><b>Definition:</b> MioGlobalLink.h:63</div></div>
+<div class="ttc" id="interface_mio_global_link_html_acb64fafbafbb75c3e6f2c382841f9f06"><div class="ttname"><a href="interface_mio_global_link.html#acb64fafbafbb75c3e6f2c382841f9f06">MioGlobalLink::currentHeartRate</a></div><div class="ttdeci">NSInteger currentHeartRate</div><div class="ttdef"><b>Definition:</b> MioGlobalLink.h:84</div></div>
 <div class="ttc" id="protocol_heart_monitor_protocol-p_html"><div class="ttname"><a href="protocol_heart_monitor_protocol-p.html">HeartMonitorProtocol-p</a></div><div class="ttdef"><b>Definition:</b> HeartMonitorProtocol.h:18</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 18 2014 18:18:03 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 28 2014 12:19:08 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

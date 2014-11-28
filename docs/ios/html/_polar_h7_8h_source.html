@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -67,7 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -94,37 +95,58 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//  Copyright (c) 2014 Douglas Gardiner. All rights reserved.</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#import &lt;Foundation/Foundation.h&gt;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#import &lt;CoreBluetooth/CoreBluetooth.h&gt;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#import &quot;DeviceCommonInfoInterface.h&quot;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#import &quot;DeviceTypes.h&quot;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#import &quot;HeartMonitorProtocol.h&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#import &lt;Foundation/Foundation.h&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#import &lt;CoreBluetooth/CoreBluetooth.h&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#import &quot;DeviceCommonInfoInterface.h&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#import &quot;DeviceTypes.h&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#import &quot;HeartMonitorProtocol.h&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="interface_polar_h7.html">   26</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_polar_h7.html">PolarH7</a> : NSObject &lt;<a class="code" href="protocol_device_common_info_interface-p.html">DeviceCommonInfoInterface</a>, <a class="code" href="protocol_heart_monitor_protocol-p.html">HeartMonitorProtocol</a>&gt;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">@property</span> NSInteger <a class="code" href="protocol_device_common_info_interface-p.html#a2817a747a1ab2cf6f199b1cebe86bd83">type</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">@property</span> (retain) CBService *batteryService;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">@property</span> (retain) CBCharacteristic *batteryLvlChar;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">@property</span> (retain) CBService *heartRateService;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">@property</span> (retain) CBCharacteristic *heartRateChar;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">@property</span> <span class="keywordtype">int</span> <a class="code" href="protocol_device_common_info_interface-p.html#a54b8e239d2d0470be0d906b11b7f3850">batteryLevel</a>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">@property</span> (retain) CBPeripheral *<a class="code" href="protocol_device_common_info_interface-p.html#a60acee2f42fa42a04ba3585e08d75f8e">device</a>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">@property</span> (retain) NSString *deviceManufacturer;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">@property</span> NSInteger currentHeartRate;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">@end</span></div>
-<div class="ttc" id="protocol_device_common_info_interface-p_html_a2817a747a1ab2cf6f199b1cebe86bd83"><div class="ttname"><a href="protocol_device_common_info_interface-p.html#a2817a747a1ab2cf6f199b1cebe86bd83">-[DeviceCommonInfoInterface-p type]</a></div><div class="ttdeci">NSInteger type()</div></div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="interface_polar_h7.html">   25</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_polar_h7.html">PolarH7</a> : NSObject &lt;<a class="code" href="protocol_device_common_info_interface-p.html">DeviceCommonInfoInterface</a>, <a class="code" href="protocol_heart_monitor_protocol-p.html">HeartMonitorProtocol</a>&gt;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="interface_polar_h7.html#a3819e12cc9802bca0611683cdeaf5775">   31</a></span>&#160;<span class="keyword">@property</span> NSInteger <a class="code" href="interface_polar_h7.html#a3819e12cc9802bca0611683cdeaf5775">type</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="interface_polar_h7.html#a53721638b179d9373c6a3e17f6ffb3c9">   38</a></span>&#160;<span class="keyword">@property</span> (retain) CBService *<a class="code" href="interface_polar_h7.html#a53721638b179d9373c6a3e17f6ffb3c9">batteryService</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="interface_polar_h7.html#a477f7039b2dd7cdcd96519b19cb72581">   45</a></span>&#160;<span class="keyword">@property</span> (retain) CBCharacteristic *<a class="code" href="interface_polar_h7.html#a477f7039b2dd7cdcd96519b19cb72581">batteryLvlChar</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="interface_polar_h7.html#a18e69a928d7c29c7db4c6ca05b840064">   51</a></span>&#160;<span class="keyword">@property</span> (retain) CBService *<a class="code" href="interface_polar_h7.html#a18e69a928d7c29c7db4c6ca05b840064">heartRateService</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="interface_polar_h7.html#a64ceb31db248ce9151f0ee1d97d97e6c">   58</a></span>&#160;<span class="keyword">@property</span> (retain) CBCharacteristic *<a class="code" href="interface_polar_h7.html#a64ceb31db248ce9151f0ee1d97d97e6c">heartRateChar</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="interface_polar_h7.html#a333bcccf6282727ccd5e159a66fb6376">   66</a></span>&#160;<span class="keyword">@property</span> <span class="keywordtype">int</span> <a class="code" href="interface_polar_h7.html#a333bcccf6282727ccd5e159a66fb6376">batteryLevel</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="interface_polar_h7.html#a8ac64bcce44c2cff369e6edf4e58329d">   73</a></span>&#160;<span class="keyword">@property</span> (retain) CBPeripheral *<a class="code" href="protocol_device_common_info_interface-p.html#a60acee2f42fa42a04ba3585e08d75f8e">device</a>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="interface_polar_h7.html#ad654b125b8f042a6c2407ad4840ac401">   80</a></span>&#160;<span class="keyword">@property</span> (retain) NSString *<a class="code" href="interface_polar_h7.html#ad654b125b8f042a6c2407ad4840ac401">deviceManufacturer</a>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="interface_polar_h7.html#a1d4ad05750f8373bdf15aad8f9e2cb6d">   87</a></span>&#160;<span class="keyword">@property</span> NSInteger <a class="code" href="interface_polar_h7.html#a1d4ad05750f8373bdf15aad8f9e2cb6d">currentHeartRate</a>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keyword">@end</span></div>
+<div class="ttc" id="interface_polar_h7_html_a1d4ad05750f8373bdf15aad8f9e2cb6d"><div class="ttname"><a href="interface_polar_h7.html#a1d4ad05750f8373bdf15aad8f9e2cb6d">PolarH7::currentHeartRate</a></div><div class="ttdeci">NSInteger currentHeartRate</div><div class="ttdef"><b>Definition:</b> PolarH7.h:87</div></div>
+<div class="ttc" id="interface_polar_h7_html_a477f7039b2dd7cdcd96519b19cb72581"><div class="ttname"><a href="interface_polar_h7.html#a477f7039b2dd7cdcd96519b19cb72581">PolarH7::batteryLvlChar</a></div><div class="ttdeci">CBCharacteristic * batteryLvlChar</div><div class="ttdef"><b>Definition:</b> PolarH7.h:45</div></div>
 <div class="ttc" id="protocol_device_common_info_interface-p_html_a60acee2f42fa42a04ba3585e08d75f8e"><div class="ttname"><a href="protocol_device_common_info_interface-p.html#a60acee2f42fa42a04ba3585e08d75f8e">-[DeviceCommonInfoInterface-p device]</a></div><div class="ttdeci">CBPeripheral * device()</div></div>
-<div class="ttc" id="interface_polar_h7_html"><div class="ttname"><a href="interface_polar_h7.html">PolarH7</a></div><div class="ttdef"><b>Definition:</b> PolarH7.h:26</div></div>
+<div class="ttc" id="interface_polar_h7_html_a3819e12cc9802bca0611683cdeaf5775"><div class="ttname"><a href="interface_polar_h7.html#a3819e12cc9802bca0611683cdeaf5775">PolarH7::type</a></div><div class="ttdeci">NSInteger type</div><div class="ttdef"><b>Definition:</b> PolarH7.h:31</div></div>
+<div class="ttc" id="interface_polar_h7_html"><div class="ttname"><a href="interface_polar_h7.html">PolarH7</a></div><div class="ttdef"><b>Definition:</b> PolarH7.h:25</div></div>
 <div class="ttc" id="protocol_device_common_info_interface-p_html"><div class="ttname"><a href="protocol_device_common_info_interface-p.html">DeviceCommonInfoInterface-p</a></div><div class="ttdef"><b>Definition:</b> DeviceCommonInfoInterface.h:21</div></div>
-<div class="ttc" id="protocol_device_common_info_interface-p_html_a54b8e239d2d0470be0d906b11b7f3850"><div class="ttname"><a href="protocol_device_common_info_interface-p.html#a54b8e239d2d0470be0d906b11b7f3850">-[DeviceCommonInfoInterface-p batteryLevel]</a></div><div class="ttdeci">int batteryLevel()</div></div>
+<div class="ttc" id="interface_polar_h7_html_a18e69a928d7c29c7db4c6ca05b840064"><div class="ttname"><a href="interface_polar_h7.html#a18e69a928d7c29c7db4c6ca05b840064">PolarH7::heartRateService</a></div><div class="ttdeci">CBService * heartRateService</div><div class="ttdef"><b>Definition:</b> PolarH7.h:51</div></div>
+<div class="ttc" id="interface_polar_h7_html_ad654b125b8f042a6c2407ad4840ac401"><div class="ttname"><a href="interface_polar_h7.html#ad654b125b8f042a6c2407ad4840ac401">PolarH7::deviceManufacturer</a></div><div class="ttdeci">NSString * deviceManufacturer</div><div class="ttdef"><b>Definition:</b> PolarH7.h:80</div></div>
+<div class="ttc" id="interface_polar_h7_html_a53721638b179d9373c6a3e17f6ffb3c9"><div class="ttname"><a href="interface_polar_h7.html#a53721638b179d9373c6a3e17f6ffb3c9">PolarH7::batteryService</a></div><div class="ttdeci">CBService * batteryService</div><div class="ttdef"><b>Definition:</b> PolarH7.h:38</div></div>
+<div class="ttc" id="interface_polar_h7_html_a333bcccf6282727ccd5e159a66fb6376"><div class="ttname"><a href="interface_polar_h7.html#a333bcccf6282727ccd5e159a66fb6376">PolarH7::batteryLevel</a></div><div class="ttdeci">int batteryLevel</div><div class="ttdef"><b>Definition:</b> PolarH7.h:66</div></div>
+<div class="ttc" id="interface_polar_h7_html_a64ceb31db248ce9151f0ee1d97d97e6c"><div class="ttname"><a href="interface_polar_h7.html#a64ceb31db248ce9151f0ee1d97d97e6c">PolarH7::heartRateChar</a></div><div class="ttdeci">CBCharacteristic * heartRateChar</div><div class="ttdef"><b>Definition:</b> PolarH7.h:58</div></div>
 <div class="ttc" id="protocol_heart_monitor_protocol-p_html"><div class="ttname"><a href="protocol_heart_monitor_protocol-p.html">HeartMonitorProtocol-p</a></div><div class="ttdef"><b>Definition:</b> HeartMonitorProtocol.h:18</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 18 2014 18:18:03 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 28 2014 12:19:08 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

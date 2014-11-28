@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -67,7 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -101,26 +102,48 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
 <div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="interface_wahoo_tickr_x.html">   23</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_wahoo_tickr_x.html">WahooTickrX</a> : NSObject &lt;<a class="code" href="protocol_device_common_info_interface-p.html">DeviceCommonInfoInterface</a>, <a class="code" href="protocol_heart_monitor_protocol-p.html">HeartMonitorProtocol</a>&gt;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">@property</span> NSInteger <a class="code" href="protocol_device_common_info_interface-p.html#a2817a747a1ab2cf6f199b1cebe86bd83">type</a>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">@property</span> (readonly) NSInteger <a class="code" href="protocol_device_common_info_interface-p.html#a54b8e239d2d0470be0d906b11b7f3850">batteryLevel</a>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">@property</span> (retain) CBPeripheral *<a class="code" href="protocol_device_common_info_interface-p.html#a60acee2f42fa42a04ba3585e08d75f8e">device</a>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">@property</span> (retain) CBService *batteryService;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">@property</span> (retain) CBCharacteristic *batteryLvlChar;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">@property</span> NSInteger currentHeartRate;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">@property</span> (retain) CBService *heartRateService;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">@property</span> (retain)CBCharacteristic *heartRateChar;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">@end</span></div>
-<div class="ttc" id="protocol_device_common_info_interface-p_html_a2817a747a1ab2cf6f199b1cebe86bd83"><div class="ttname"><a href="protocol_device_common_info_interface-p.html#a2817a747a1ab2cf6f199b1cebe86bd83">-[DeviceCommonInfoInterface-p type]</a></div><div class="ttdeci">NSInteger type()</div></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="interface_wahoo_tickr_x.html#a96e73fccf071a4f3406e51a833a4756a">   29</a></span>&#160;<span class="keyword">@property</span> NSInteger <a class="code" href="interface_wahoo_tickr_x.html#a96e73fccf071a4f3406e51a833a4756a">type</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="interface_wahoo_tickr_x.html#a4dc92d682d3e9734886c0356bdb86bbf">   36</a></span>&#160;<span class="keyword">@property</span> (retain) CBService *<a class="code" href="interface_wahoo_tickr_x.html#a4dc92d682d3e9734886c0356bdb86bbf">batteryService</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="interface_wahoo_tickr_x.html#a664a0a704cfea55c60ddf4dbcad3bf35">   43</a></span>&#160;<span class="keyword">@property</span> (retain) CBCharacteristic *<a class="code" href="interface_wahoo_tickr_x.html#a664a0a704cfea55c60ddf4dbcad3bf35">batteryLvlChar</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="interface_wahoo_tickr_x.html#ae712f8d6cd74c8fb0b1093f45e7ee6e3">   49</a></span>&#160;<span class="keyword">@property</span> (retain) CBService *<a class="code" href="interface_wahoo_tickr_x.html#ae712f8d6cd74c8fb0b1093f45e7ee6e3">heartRateService</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="interface_wahoo_tickr_x.html#a8d2500c6e9eb3493393631b3bad7f7e7">   56</a></span>&#160;<span class="keyword">@property</span> (retain) CBCharacteristic *<a class="code" href="interface_wahoo_tickr_x.html#a8d2500c6e9eb3493393631b3bad7f7e7">heartRateChar</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="interface_wahoo_tickr_x.html#a95ae53406af5abb3d47d51d0f60c228b">   64</a></span>&#160;<span class="keyword">@property</span> <span class="keywordtype">int</span> <a class="code" href="interface_wahoo_tickr_x.html#a95ae53406af5abb3d47d51d0f60c228b">batteryLevel</a>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="interface_wahoo_tickr_x.html#a1150e7cbd797825676de42644f16bb93">   71</a></span>&#160;<span class="keyword">@property</span> (retain) CBPeripheral *<a class="code" href="protocol_device_common_info_interface-p.html#a60acee2f42fa42a04ba3585e08d75f8e">device</a>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="interface_wahoo_tickr_x.html#ad669444b5987b9b1c69f3f74ad21e7eb">   78</a></span>&#160;<span class="keyword">@property</span> (retain) NSString *<a class="code" href="interface_wahoo_tickr_x.html#ad669444b5987b9b1c69f3f74ad21e7eb">deviceManufacturer</a>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="interface_wahoo_tickr_x.html#a83d9f36650e71b239075074c551a0185">   85</a></span>&#160;<span class="keyword">@property</span> NSInteger <a class="code" href="interface_wahoo_tickr_x.html#a83d9f36650e71b239075074c551a0185">currentHeartRate</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword">@end</span></div>
+<div class="ttc" id="interface_wahoo_tickr_x_html_a83d9f36650e71b239075074c551a0185"><div class="ttname"><a href="interface_wahoo_tickr_x.html#a83d9f36650e71b239075074c551a0185">WahooTickrX::currentHeartRate</a></div><div class="ttdeci">NSInteger currentHeartRate</div><div class="ttdef"><b>Definition:</b> WahooTickrX.h:85</div></div>
+<div class="ttc" id="interface_wahoo_tickr_x_html_a4dc92d682d3e9734886c0356bdb86bbf"><div class="ttname"><a href="interface_wahoo_tickr_x.html#a4dc92d682d3e9734886c0356bdb86bbf">WahooTickrX::batteryService</a></div><div class="ttdeci">CBService * batteryService</div><div class="ttdef"><b>Definition:</b> WahooTickrX.h:36</div></div>
+<div class="ttc" id="interface_wahoo_tickr_x_html_ad669444b5987b9b1c69f3f74ad21e7eb"><div class="ttname"><a href="interface_wahoo_tickr_x.html#ad669444b5987b9b1c69f3f74ad21e7eb">WahooTickrX::deviceManufacturer</a></div><div class="ttdeci">NSString * deviceManufacturer</div><div class="ttdef"><b>Definition:</b> WahooTickrX.h:78</div></div>
 <div class="ttc" id="protocol_device_common_info_interface-p_html_a60acee2f42fa42a04ba3585e08d75f8e"><div class="ttname"><a href="protocol_device_common_info_interface-p.html#a60acee2f42fa42a04ba3585e08d75f8e">-[DeviceCommonInfoInterface-p device]</a></div><div class="ttdeci">CBPeripheral * device()</div></div>
 <div class="ttc" id="protocol_device_common_info_interface-p_html"><div class="ttname"><a href="protocol_device_common_info_interface-p.html">DeviceCommonInfoInterface-p</a></div><div class="ttdef"><b>Definition:</b> DeviceCommonInfoInterface.h:21</div></div>
+<div class="ttc" id="interface_wahoo_tickr_x_html_a664a0a704cfea55c60ddf4dbcad3bf35"><div class="ttname"><a href="interface_wahoo_tickr_x.html#a664a0a704cfea55c60ddf4dbcad3bf35">WahooTickrX::batteryLvlChar</a></div><div class="ttdeci">CBCharacteristic * batteryLvlChar</div><div class="ttdef"><b>Definition:</b> WahooTickrX.h:43</div></div>
+<div class="ttc" id="interface_wahoo_tickr_x_html_a96e73fccf071a4f3406e51a833a4756a"><div class="ttname"><a href="interface_wahoo_tickr_x.html#a96e73fccf071a4f3406e51a833a4756a">WahooTickrX::type</a></div><div class="ttdeci">NSInteger type</div><div class="ttdef"><b>Definition:</b> WahooTickrX.h:29</div></div>
 <div class="ttc" id="interface_wahoo_tickr_x_html"><div class="ttname"><a href="interface_wahoo_tickr_x.html">WahooTickrX</a></div><div class="ttdef"><b>Definition:</b> WahooTickrX.h:23</div></div>
-<div class="ttc" id="protocol_device_common_info_interface-p_html_a54b8e239d2d0470be0d906b11b7f3850"><div class="ttname"><a href="protocol_device_common_info_interface-p.html#a54b8e239d2d0470be0d906b11b7f3850">-[DeviceCommonInfoInterface-p batteryLevel]</a></div><div class="ttdeci">int batteryLevel()</div></div>
+<div class="ttc" id="interface_wahoo_tickr_x_html_a8d2500c6e9eb3493393631b3bad7f7e7"><div class="ttname"><a href="interface_wahoo_tickr_x.html#a8d2500c6e9eb3493393631b3bad7f7e7">WahooTickrX::heartRateChar</a></div><div class="ttdeci">CBCharacteristic * heartRateChar</div><div class="ttdef"><b>Definition:</b> WahooTickrX.h:56</div></div>
+<div class="ttc" id="interface_wahoo_tickr_x_html_a95ae53406af5abb3d47d51d0f60c228b"><div class="ttname"><a href="interface_wahoo_tickr_x.html#a95ae53406af5abb3d47d51d0f60c228b">WahooTickrX::batteryLevel</a></div><div class="ttdeci">int batteryLevel</div><div class="ttdef"><b>Definition:</b> WahooTickrX.h:64</div></div>
+<div class="ttc" id="interface_wahoo_tickr_x_html_ae712f8d6cd74c8fb0b1093f45e7ee6e3"><div class="ttname"><a href="interface_wahoo_tickr_x.html#ae712f8d6cd74c8fb0b1093f45e7ee6e3">WahooTickrX::heartRateService</a></div><div class="ttdeci">CBService * heartRateService</div><div class="ttdef"><b>Definition:</b> WahooTickrX.h:49</div></div>
 <div class="ttc" id="protocol_heart_monitor_protocol-p_html"><div class="ttname"><a href="protocol_heart_monitor_protocol-p.html">HeartMonitorProtocol-p</a></div><div class="ttdef"><b>Definition:</b> HeartMonitorProtocol.h:18</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 18 2014 18:18:03 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 28 2014 12:19:08 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

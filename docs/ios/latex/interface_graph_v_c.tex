@@ -21,26 +21,19 @@ Inheritance diagram for Graph\-V\-C\-:\begin{figure}[H]
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{interface_graph_v_c_a8a00c63cc6cab8b3c1cddaaacc9d12fc}{\hyperlink{interface_device_poll_manager}{Device\-Poll\-Manager} $\ast$ {\bfseries device\-Poller}}\label{interface_graph_v_c_a8a00c63cc6cab8b3c1cddaaacc9d12fc}
-
+\hyperlink{interface_device_poll_manager}{Device\-Poll\-Manager} $\ast$ \hyperlink{interface_graph_v_c_a8a00c63cc6cab8b3c1cddaaacc9d12fc}{device\-Poller}
 \item 
-\hypertarget{interface_graph_v_c_ad434b1d838f58441c9d6499936ccd620}{I\-B\-Outlet U\-I\-Label $\ast$ {\bfseries heart\-Rate\-Display}}\label{interface_graph_v_c_ad434b1d838f58441c9d6499936ccd620}
-
+I\-B\-Outlet U\-I\-Label $\ast$ \hyperlink{interface_graph_v_c_ad434b1d838f58441c9d6499936ccd620}{heart\-Rate\-Display}
 \item 
-\hypertarget{interface_graph_v_c_a75fd5eb6ebad27cbce29475d94459329}{I\-B\-Outlet U\-I\-Label $\ast$ {\bfseries activity\-Display}}\label{interface_graph_v_c_a75fd5eb6ebad27cbce29475d94459329}
-
+I\-B\-Outlet U\-I\-Label $\ast$ \hyperlink{interface_graph_v_c_a75fd5eb6ebad27cbce29475d94459329}{activity\-Display}
 \item 
-\hypertarget{interface_graph_v_c_a5ef6730daa124f69087996078418db0d}{N\-S\-Timer $\ast$ {\bfseries display\-Timer}}\label{interface_graph_v_c_a5ef6730daa124f69087996078418db0d}
-
+N\-S\-Timer $\ast$ \hyperlink{interface_graph_v_c_a5ef6730daa124f69087996078418db0d}{display\-Timer}
 \item 
-\hypertarget{interface_graph_v_c_aaeee6afe374009cd16e4a6a1d2270efa}{N\-S\-Run\-Loop $\ast$ {\bfseries run\-Loop}}\label{interface_graph_v_c_aaeee6afe374009cd16e4a6a1d2270efa}
-
+N\-S\-Run\-Loop $\ast$ \hyperlink{interface_graph_v_c_aaeee6afe374009cd16e4a6a1d2270efa}{run\-Loop}
 \item 
-\hypertarget{interface_graph_v_c_ab4c3c7d6990f1e3be550b443e2c7a532}{id$<$ \hyperlink{protocol_heart_monitor_protocol-p}{Heart\-Monitor\-Protocol} $>$ {\bfseries heart\-Monitor}}\label{interface_graph_v_c_ab4c3c7d6990f1e3be550b443e2c7a532}
-
+id$<$ \hyperlink{protocol_heart_monitor_protocol-p}{Heart\-Monitor\-Protocol} $>$ \hyperlink{interface_graph_v_c_ab4c3c7d6990f1e3be550b443e2c7a532}{heart\-Monitor}
 \item 
-\hypertarget{interface_graph_v_c_a0216f83efd648d18c90793fd67206ad8}{id$<$ \hyperlink{protocol_activity_monitor_protocol-p}{Activity\-Monitor\-Protocol} $>$ {\bfseries activity\-Monitor}}\label{interface_graph_v_c_a0216f83efd648d18c90793fd67206ad8}
-
+id$<$ \hyperlink{protocol_activity_monitor_protocol-p}{Activity\-Monitor\-Protocol} $>$ \hyperlink{interface_graph_v_c_a0216f83efd648d18c90793fd67206ad8}{activity\-Monitor}
 \end{DoxyCompactItemize}
 
 
@@ -59,7 +52,7 @@ Creates a device selection view controller. The purpose of the method is to crea
 
 
 \begin{DoxyParams}{Parameters}
-{\em new\-Device\-Poll\-Manager} & the bluetooth device poller that will serve as the data source. \\
+{\em device\-Poller} & the bluetooth device poller that will serve as the data source. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -73,6 +66,30 @@ Returns a view controller unless no device manager is given, then the result is 
 \end{DoxyParamCaption}
 }}\label{interface_graph_v_c_a7521f143474f68142628970e9f1d7706}
 This method is used to update the activity level and heart rate on a timed interval. 
+
+\subsection{Property Documentation}
+\hypertarget{interface_graph_v_c_a75fd5eb6ebad27cbce29475d94459329}{\index{Graph\-V\-C@{Graph\-V\-C}!activity\-Display@{activity\-Display}}
+\index{activity\-Display@{activity\-Display}!GraphVC@{Graph\-V\-C}}
+\subsubsection[{activity\-Display}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (I\-B\-Outlet U\-I\-Label$\ast$) activity\-Display\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [retain]}}}\label{interface_graph_v_c_a75fd5eb6ebad27cbce29475d94459329}
+The label that shows a string representation of the value that is calculated based on the age of the patient and the current heart rate. \hypertarget{interface_graph_v_c_a0216f83efd648d18c90793fd67206ad8}{\index{Graph\-V\-C@{Graph\-V\-C}!activity\-Monitor@{activity\-Monitor}}
+\index{activity\-Monitor@{activity\-Monitor}!GraphVC@{Graph\-V\-C}}
+\subsubsection[{activity\-Monitor}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id$<${\bf Activity\-Monitor\-Protocol}$>$) activity\-Monitor\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}}}\label{interface_graph_v_c_a0216f83efd648d18c90793fd67206ad8}
+The local instance of the selected\-Activity\-Monitor from the device poller. It is made so that the code is easier to read. \hypertarget{interface_graph_v_c_a8a00c63cc6cab8b3c1cddaaacc9d12fc}{\index{Graph\-V\-C@{Graph\-V\-C}!device\-Poller@{device\-Poller}}
+\index{device\-Poller@{device\-Poller}!GraphVC@{Graph\-V\-C}}
+\subsubsection[{device\-Poller}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Device\-Poll\-Manager}$\ast$) device\-Poller\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}}}\label{interface_graph_v_c_a8a00c63cc6cab8b3c1cddaaacc9d12fc}
+The device poller that will be used for getting data from the devices for display by the view controller. \hypertarget{interface_graph_v_c_a5ef6730daa124f69087996078418db0d}{\index{Graph\-V\-C@{Graph\-V\-C}!display\-Timer@{display\-Timer}}
+\index{display\-Timer@{display\-Timer}!GraphVC@{Graph\-V\-C}}
+\subsubsection[{display\-Timer}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Timer$\ast$) display\-Timer\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}}}\label{interface_graph_v_c_a5ef6730daa124f69087996078418db0d}
+The timer that calls for the device poller to get information. It is set for 1 second. \hypertarget{interface_graph_v_c_ab4c3c7d6990f1e3be550b443e2c7a532}{\index{Graph\-V\-C@{Graph\-V\-C}!heart\-Monitor@{heart\-Monitor}}
+\index{heart\-Monitor@{heart\-Monitor}!GraphVC@{Graph\-V\-C}}
+\subsubsection[{heart\-Monitor}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id$<${\bf Heart\-Monitor\-Protocol}$>$) heart\-Monitor\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}}}\label{interface_graph_v_c_ab4c3c7d6990f1e3be550b443e2c7a532}
+The local instance of the selected\-Heart\-Monitor from the device poller. It is made so that the code is easier to read. \hypertarget{interface_graph_v_c_ad434b1d838f58441c9d6499936ccd620}{\index{Graph\-V\-C@{Graph\-V\-C}!heart\-Rate\-Display@{heart\-Rate\-Display}}
+\index{heart\-Rate\-Display@{heart\-Rate\-Display}!GraphVC@{Graph\-V\-C}}
+\subsubsection[{heart\-Rate\-Display}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (I\-B\-Outlet U\-I\-Label$\ast$) heart\-Rate\-Display\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [retain]}}}\label{interface_graph_v_c_ad434b1d838f58441c9d6499936ccd620}
+The display that shows the current heart rate. It defaults to 0 when the view first appears and does not update until a new heart rate has been received. \hypertarget{interface_graph_v_c_aaeee6afe374009cd16e4a6a1d2270efa}{\index{Graph\-V\-C@{Graph\-V\-C}!run\-Loop@{run\-Loop}}
+\index{run\-Loop@{run\-Loop}!GraphVC@{Graph\-V\-C}}
+\subsubsection[{run\-Loop}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Run\-Loop$\ast$) run\-Loop\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}}}\label{interface_graph_v_c_aaeee6afe374009cd16e4a6a1d2270efa}
+The run loop that the device poller uses. It it reference so that view\-Will\-Appear can activate it and view\-Will\-Disappear can cancel the runloop. 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 

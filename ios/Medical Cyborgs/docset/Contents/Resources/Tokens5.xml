@@ -458,42 +458,6 @@ for the value.</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DBManager/setAge:</TokenIdentifier>
-			<Abstract type="html">The age that was calculated and given to the database.</Abstract>
-			<DeclaredIn>DBManager.h</DeclaredIn>
-			
-			<Declaration>@property NSInteger age</Declaration>
-			
-			
-			<Anchor>//api/name/age</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DBManager/age</TokenIdentifier>
-			<Abstract type="html">The age that was calculated and given to the database.</Abstract>
-			<DeclaredIn>DBManager.h</DeclaredIn>
-			
-			<Declaration>@property NSInteger age</Declaration>
-			
-			
-			<Anchor>//api/name/age</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DBManager/age</TokenIdentifier>
-			<Abstract type="html">The age that was calculated and given to the database.</Abstract>
-			<DeclaredIn>DBManager.h</DeclaredIn>
-			
-			<Declaration>@property NSInteger age</Declaration>
-			
-			
-			<Anchor>//api/name/age</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/DBManager/setTimestamp:</TokenIdentifier>
 			<Abstract type="html">The current timestamp given to the database.</Abstract>
 			<DeclaredIn>DBManager.h</DeclaredIn>

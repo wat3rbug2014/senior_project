@@ -1,6 +1,7 @@
 var searchData=
 [
   ['init',['init',['../interface_d_b_manager.html#a0b390c8eab2577c30b2012e14ae821fe',1,'DBManager']]],
+  ['initwithbackgroundscheduler_3a',['initWithBackgroundScheduler:',['../interface_home_screen_v_c.html#aba4765dac13e0c3829c52a23d6c6b773',1,'HomeScreenVC']]],
   ['initwithdatabase_3a',['initWithDatabase:',['../interface_remote_d_b_connection_manager.html#a744cbe8cedf02655ce5a2311957059cb',1,'RemoteDBConnectionManager']]],
   ['initwithdatastore_3aanddevicemanager_3a',['initWithDataStore:andDevicemanager:',['../interface_device_poll_manager.html#ac1637206b4271575f8b2afd39375125b',1,'DevicePollManager']]],
   ['initwithdevicemanager_3a',['initWithDeviceManager:',['../interface_table_v_c_with_sounds.html#adc0912c1502c5b3e18871081eb87e732',1,'TableVCWithSounds']]],

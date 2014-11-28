@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -70,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -101,23 +102,17 @@ Inheritance diagram for FitBitFlex:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:ac539ad853d5729137679c3293cba75f5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac539ad853d5729137679c3293cba75f5"></a>
-CBPeripheral *&#160;</td><td class="memItemRight" valign="bottom"><b>device</b></td></tr>
-<tr class="separator:ac539ad853d5729137679c3293cba75f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af23b05b17587b9810d93909f279cca75"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af23b05b17587b9810d93909f279cca75"></a>
-CBService *&#160;</td><td class="memItemRight" valign="bottom"><b>batteryService</b></td></tr>
-<tr class="separator:af23b05b17587b9810d93909f279cca75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d5ca990dbff1852b3d8a07faa91234b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0d5ca990dbff1852b3d8a07faa91234b"></a>
-CBCharacteristic *&#160;</td><td class="memItemRight" valign="bottom"><b>batteryLvlChar</b></td></tr>
-<tr class="separator:a0d5ca990dbff1852b3d8a07faa91234b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6141ecb075c9553d179dc5210d2c4952"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6141ecb075c9553d179dc5210d2c4952"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>batteryLevel</b></td></tr>
-<tr class="separator:a6141ecb075c9553d179dc5210d2c4952"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77895e42698dfb9e32ea3511dd68aa3e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a77895e42698dfb9e32ea3511dd68aa3e"></a>
-NSInteger&#160;</td><td class="memItemRight" valign="bottom"><b>type</b></td></tr>
+<tr class="memitem:a77895e42698dfb9e32ea3511dd68aa3e"><td class="memItemLeft" align="right" valign="top">NSInteger&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_fit_bit_flex.html#a77895e42698dfb9e32ea3511dd68aa3e">type</a></td></tr>
 <tr class="separator:a77895e42698dfb9e32ea3511dd68aa3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b4fca544836750998946aab4d4c8a3d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3b4fca544836750998946aab4d4c8a3d"></a>
-NSString *&#160;</td><td class="memItemRight" valign="bottom"><b>deviceManufacturer</b></td></tr>
+<tr class="memitem:af23b05b17587b9810d93909f279cca75"><td class="memItemLeft" align="right" valign="top">CBService *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_fit_bit_flex.html#af23b05b17587b9810d93909f279cca75">batteryService</a></td></tr>
+<tr class="separator:af23b05b17587b9810d93909f279cca75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d5ca990dbff1852b3d8a07faa91234b"><td class="memItemLeft" align="right" valign="top">CBCharacteristic *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_fit_bit_flex.html#a0d5ca990dbff1852b3d8a07faa91234b">batteryLvlChar</a></td></tr>
+<tr class="separator:a0d5ca990dbff1852b3d8a07faa91234b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6141ecb075c9553d179dc5210d2c4952"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_fit_bit_flex.html#a6141ecb075c9553d179dc5210d2c4952">batteryLevel</a></td></tr>
+<tr class="separator:a6141ecb075c9553d179dc5210d2c4952"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac539ad853d5729137679c3293cba75f5"><td class="memItemLeft" align="right" valign="top">CBPeripheral *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_fit_bit_flex.html#ac539ad853d5729137679c3293cba75f5">device</a></td></tr>
+<tr class="separator:ac539ad853d5729137679c3293cba75f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b4fca544836750998946aab4d4c8a3d"><td class="memItemLeft" align="right" valign="top">NSString *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_fit_bit_flex.html#a3b4fca544836750998946aab4d4c8a3d">deviceManufacturer</a></td></tr>
 <tr class="separator:a3b4fca544836750998946aab4d4c8a3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
@@ -151,6 +146,133 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a3c4e5219c201426d8c1bffa0856a4e3c inherit pub_methods_protocol_activity_monitor_protocol-p"><td class="memItemLeft" align="right" valign="top">(NSInteger)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_activity_monitor_protocol-p.html#a3c4e5219c201426d8c1bffa0856a4e3c">getActivityLevel</a></td></tr>
 <tr class="separator:a3c4e5219c201426d8c1bffa0856a4e3c inherit pub_methods_protocol_activity_monitor_protocol-p"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Property Documentation</h2>
+<a class="anchor" id="a6141ecb075c9553d179dc5210d2c4952"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (int) batteryLevel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The last known integer value of the battery percentage. The default is 0 if the battery level is not read. </p>
+
+</div>
+</div>
+<a class="anchor" id="a0d5ca990dbff1852b3d8a07faa91234b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (CBCharacteristic*) batteryLvlChar</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span><span class="mlabel">retain</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The CBCharacteristic reference for use in reading the battery level of the device. </p>
+
+</div>
+</div>
+<a class="anchor" id="af23b05b17587b9810d93909f279cca75"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (CBService*) batteryService</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span><span class="mlabel">retain</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The CBService reference for use in detecting the battery level of the device. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac539ad853d5729137679c3293cba75f5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (CBPeripheral*) device</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span><span class="mlabel">retain</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The CBPeripheral device that was discovered and used with this class. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3b4fca544836750998946aab4d4c8a3d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSString*) deviceManufacturer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span><span class="mlabel">retain</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The NSString value of the manufacturer as read from the device. </p>
+
+</div>
+</div>
+<a class="anchor" id="a77895e42698dfb9e32ea3511dd68aa3e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSInteger) type</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The device type as an enum of DeviceType. See <a class="el" href="_device_types_8h_source.html">DeviceTypes.h</a> for details. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/Users/douglas/Documents/software/Senior Project/ios/Medical Cyborgs/Medical Cyborgs/<a class="el" href="_fit_bit_flex_8h_source.html">FitBitFlex.h</a></li>
 <li>/Users/douglas/Documents/software/Senior Project/ios/Medical Cyborgs/Medical Cyborgs/FitBitFlex.m</li>
@@ -158,7 +280,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 18 2014 18:18:03 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 28 2014 12:19:08 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

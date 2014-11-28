@@ -433,7 +433,7 @@ discovered.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/DevicePollManager/setIsHeartMonitorReady:</TokenIdentifier>
-			<Abstract type="html">This flag is set when the heart monitor is connected and fully discovered.</Abstract>
+			<Abstract type="html">This flag is set when the heart monitor is connected and activity monitor are fully discovered.</Abstract>
 			<DeclaredIn>DevicePollManager.h</DeclaredIn>
 			
 			<Declaration>@property BOOL isHeartMonitorReady</Declaration>
@@ -445,7 +445,7 @@ discovered.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/DevicePollManager/isHeartMonitorReady</TokenIdentifier>
-			<Abstract type="html">This flag is set when the heart monitor is connected and fully discovered.</Abstract>
+			<Abstract type="html">This flag is set when the heart monitor is connected and activity monitor are fully discovered.</Abstract>
 			<DeclaredIn>DevicePollManager.h</DeclaredIn>
 			
 			<Declaration>@property BOOL isHeartMonitorReady</Declaration>
@@ -457,7 +457,7 @@ discovered.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/DevicePollManager/isHeartMonitorReady</TokenIdentifier>
-			<Abstract type="html">This flag is set when the heart monitor is connected and fully discovered.</Abstract>
+			<Abstract type="html">This flag is set when the heart monitor is connected and activity monitor are fully discovered.</Abstract>
 			<DeclaredIn>DevicePollManager.h</DeclaredIn>
 			
 			<Declaration>@property BOOL isHeartMonitorReady</Declaration>

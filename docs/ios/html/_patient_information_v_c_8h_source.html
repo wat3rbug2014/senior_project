@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -67,7 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -104,25 +105,40 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
 <div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="interface_patient_information_v_c.html">   22</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_patient_information_v_c.html">PatientInformationVC</a> : UIViewController &lt;UITextFieldDelegate,NSURLConnectionDelegate, NSURLConnectionDataDelegate&gt;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">@property</span> (retain, nonatomic) IBOutlet UITextField *firstNameEntry;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">@property</span> (retain, nonatomic) IBOutlet UITextField *lastNameEntry;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">@property</span> (retain, nonatomic) IBOutlet UIDatePicker *dobSelector;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">@property</span> (retain, strong) <a class="code" href="interface_personal_info.html">PersonalInfo</a> *patientData;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">@property</span> (retain) NSMutableData *_serverResponseData;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;-(id) initWithPersonalInformation:(<a class="code" href="interface_personal_info.html">PersonalInfo</a>*) existingPatientData;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;-(void) <a class="code" href="interface_patient_information_v_c.html#ab6fee07f4777f557711e819c9a4cf3a4">updateDOB</a>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">@end</span></div>
-<div class="ttc" id="interface_personal_info_html"><div class="ttname"><a href="interface_personal_info.html">PersonalInfo</a></div><div class="ttdef"><b>Definition:</b> PersonalInfo.h:32</div></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="interface_patient_information_v_c.html#a1836a8d8dc5e1a376109fb8b391c4038">   31</a></span>&#160;<span class="keyword">@property</span> (retain, nonatomic) IBOutlet UITextField *<a class="code" href="interface_patient_information_v_c.html#a1836a8d8dc5e1a376109fb8b391c4038">firstNameEntry</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="interface_patient_information_v_c.html#a6523689959d35fa22fe3e01838ada93c">   38</a></span>&#160;<span class="keyword">@property</span> (retain, nonatomic) IBOutlet UITextField *<a class="code" href="interface_patient_information_v_c.html#a6523689959d35fa22fe3e01838ada93c">lastNameEntry</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="interface_patient_information_v_c.html#a939dda6df517b4b5a4624928c77fe5b8">   45</a></span>&#160;<span class="keyword">@property</span> (retain, nonatomic) IBOutlet UIDatePicker *<a class="code" href="interface_patient_information_v_c.html#a939dda6df517b4b5a4624928c77fe5b8">dobSelector</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="interface_patient_information_v_c.html#afef82a462fd797cc833f72f3b33d9b3c">   52</a></span>&#160;<span class="keyword">@property</span> (retain, strong) <a class="code" href="interface_personal_info.html">PersonalInfo</a> *<a class="code" href="interface_patient_information_v_c.html#afef82a462fd797cc833f72f3b33d9b3c">patientData</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="interface_patient_information_v_c.html#a17cd9e90386e04e545017658bf34582e">   60</a></span>&#160;<span class="keyword">@property</span> (retain) NSMutableData *<a class="code" href="interface_patient_information_v_c.html#a17cd9e90386e04e545017658bf34582e">_serverResponseData</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;-(id) initWithPersonalInformation:(<a class="code" href="interface_personal_info.html">PersonalInfo</a>*) existingPatientData;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;-(void) <a class="code" href="interface_patient_information_v_c.html#ab6fee07f4777f557711e819c9a4cf3a4">updateDOB</a>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">@end</span></div>
+<div class="ttc" id="interface_personal_info_html"><div class="ttname"><a href="interface_personal_info.html">PersonalInfo</a></div><div class="ttdef"><b>Definition:</b> PersonalInfo.h:35</div></div>
+<div class="ttc" id="interface_patient_information_v_c_html_a939dda6df517b4b5a4624928c77fe5b8"><div class="ttname"><a href="interface_patient_information_v_c.html#a939dda6df517b4b5a4624928c77fe5b8">PatientInformationVC::dobSelector</a></div><div class="ttdeci">IBOutlet UIDatePicker * dobSelector</div><div class="ttdef"><b>Definition:</b> PatientInformationVC.h:45</div></div>
+<div class="ttc" id="interface_patient_information_v_c_html_a1836a8d8dc5e1a376109fb8b391c4038"><div class="ttname"><a href="interface_patient_information_v_c.html#a1836a8d8dc5e1a376109fb8b391c4038">PatientInformationVC::firstNameEntry</a></div><div class="ttdeci">IBOutlet UITextField * firstNameEntry</div><div class="ttdef"><b>Definition:</b> PatientInformationVC.h:31</div></div>
+<div class="ttc" id="interface_patient_information_v_c_html_afef82a462fd797cc833f72f3b33d9b3c"><div class="ttname"><a href="interface_patient_information_v_c.html#afef82a462fd797cc833f72f3b33d9b3c">PatientInformationVC::patientData</a></div><div class="ttdeci">PersonalInfo * patientData</div><div class="ttdef"><b>Definition:</b> PatientInformationVC.h:52</div></div>
 <div class="ttc" id="interface_patient_information_v_c_html"><div class="ttname"><a href="interface_patient_information_v_c.html">PatientInformationVC</a></div><div class="ttdef"><b>Definition:</b> PatientInformationVC.h:22</div></div>
 <div class="ttc" id="interface_patient_information_v_c_html_ab6fee07f4777f557711e819c9a4cf3a4"><div class="ttname"><a href="interface_patient_information_v_c.html#ab6fee07f4777f557711e819c9a4cf3a4">-[PatientInformationVC updateDOB]</a></div><div class="ttdeci">void updateDOB()</div><div class="ttdef"><b>Definition:</b> PatientInformationVC.m:208</div></div>
+<div class="ttc" id="interface_patient_information_v_c_html_a17cd9e90386e04e545017658bf34582e"><div class="ttname"><a href="interface_patient_information_v_c.html#a17cd9e90386e04e545017658bf34582e">PatientInformationVC::_serverResponseData</a></div><div class="ttdeci">NSMutableData * _serverResponseData</div><div class="ttdef"><b>Definition:</b> PatientInformationVC.h:60</div></div>
+<div class="ttc" id="interface_patient_information_v_c_html_a6523689959d35fa22fe3e01838ada93c"><div class="ttname"><a href="interface_patient_information_v_c.html#a6523689959d35fa22fe3e01838ada93c">PatientInformationVC::lastNameEntry</a></div><div class="ttdeci">IBOutlet UITextField * lastNameEntry</div><div class="ttdef"><b>Definition:</b> PatientInformationVC.h:38</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 18 2014 18:18:03 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 28 2014 12:19:08 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -67,7 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -93,59 +94,62 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//  Created by Douglas Gardiner on 10/13/14.</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//  Copyright (c) 2014 Douglas Gardiner. All rights reserved.</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/* This class performs updates to the remote database.  It manages the connection</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * and updates the local database with the changes that have been made.  It is assumed</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> * that address to the server and the name of the scripts in the DataConstants.h file</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * are correct.  NOTE:  Each time a request to push data to the server the manager makes</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> * 3 attempts to contact the server before giving up.  It has a 15 second timeout interval</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * so there may be the need to do some better reachability checks if battery consumption</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * is too much.</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * At this time I have not set this class up as a singleton and I am debating whether to do</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * that at this time.  The pros are that updates to this class have a universal effect.</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * The cons are that updates have a universal effect, which makes testing a troubleshooting</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * more difficult.</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#import &lt;Foundation/Foundation.h&gt;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#import &lt;UIKit/UIKit.h&gt;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#import &quot;PersonalInfo.h&quot;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#import &quot;DBManager.h&quot;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#import &quot;LocalDBResult.h&quot;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="interface_remote_d_b_connection_manager.html">   28</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_remote_d_b_connection_manager.html">RemoteDBConnectionManager</a> : NSObject &lt;NSURLConnectionDelegate&gt;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">@property</span> <a class="code" href="interface_d_b_manager.html">DBManager</a> *database;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">@property</span> NSInteger patientID;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">@property</span> (nonatomic) <a class="code" href="interface_local_d_b_result.html">LocalDBResult</a>* currentRow;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">@property</span> (retain) NSMutableData *_serverResponseData;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">@property</span> NSInteger failedAttempts;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">@property</span> BOOL remoteUnreachable;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;-(id) initWithDatabase: (<a class="code" href="interface_d_b_manager.html">DBManager</a>*) datastore;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;-(void) <a class="code" href="interface_remote_d_b_connection_manager.html#a517a86ad693e383d664972123808b9fc">pushDataToRemoteServer</a>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;-(void) <a class="code" href="interface_remote_d_b_connection_manager.html#aa7263ee167de6993f3c68d74f34d3b9e">sendRowToServer</a>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;-(void) <a class="code" href="interface_remote_d_b_connection_manager.html#a87140c7af270366183486e2f02dc6f5d">removeCurrentRowInLocalDB</a>;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;-(NSString*) URLEncodedString: (NSString*) utfString;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span><span class="preprocessor">#import &lt;Foundation/Foundation.h&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#import &lt;UIKit/UIKit.h&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#import &quot;PersonalInfo.h&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#import &quot;DBManager.h&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#import &quot;LocalDBResult.h&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="interface_remote_d_b_connection_manager.html">   24</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_remote_d_b_connection_manager.html">RemoteDBConnectionManager</a> : NSObject &lt;NSURLConnectionDelegate&gt;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="interface_remote_d_b_connection_manager.html#aea31c73a0a3e36095f04688a9b51b594">   31</a></span>&#160;<span class="keyword">@property</span> <a class="code" href="interface_d_b_manager.html">DBManager</a> *<a class="code" href="interface_remote_d_b_connection_manager.html#aea31c73a0a3e36095f04688a9b51b594">database</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="interface_remote_d_b_connection_manager.html#a984d4293c7de824df8ab8b7a8510c15e">   39</a></span>&#160;<span class="keyword">@property</span> NSInteger <a class="code" href="interface_remote_d_b_connection_manager.html#a984d4293c7de824df8ab8b7a8510c15e">patientID</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="interface_remote_d_b_connection_manager.html#a1cf642f7f159dedf3f805ae62f86f0ee">   47</a></span>&#160;<span class="keyword">@property</span> (nonatomic) <a class="code" href="interface_local_d_b_result.html">LocalDBResult</a>* <a class="code" href="interface_remote_d_b_connection_manager.html#a1cf642f7f159dedf3f805ae62f86f0ee">currentRow</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="interface_remote_d_b_connection_manager.html#a6956166be867026a4ed5c9552c2fbc85">   55</a></span>&#160;<span class="keyword">@property</span> (retain) NSMutableData *<a class="code" href="interface_remote_d_b_connection_manager.html#a6956166be867026a4ed5c9552c2fbc85">_serverResponseData</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="interface_remote_d_b_connection_manager.html#aea06d1743882f6b59247e590cdd0513f">   62</a></span>&#160;<span class="keyword">@property</span> NSInteger <a class="code" href="interface_remote_d_b_connection_manager.html#aea06d1743882f6b59247e590cdd0513f">failedAttempts</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="interface_remote_d_b_connection_manager.html#ad3cb931f4c5147c3595679f241a0bf48">   70</a></span>&#160;<span class="keyword">@property</span> BOOL <a class="code" href="interface_remote_d_b_connection_manager.html#ad3cb931f4c5147c3595679f241a0bf48">remoteUnreachable</a>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;-(id) initWithDatabase: (<a class="code" href="interface_d_b_manager.html">DBManager</a>*) datastore;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;-(void) <a class="code" href="interface_remote_d_b_connection_manager.html#a517a86ad693e383d664972123808b9fc">pushDataToRemoteServer</a>;</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;-(void) <a class="code" href="interface_remote_d_b_connection_manager.html#aa7263ee167de6993f3c68d74f34d3b9e">sendRowToServer</a>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;-(void) <a class="code" href="interface_remote_d_b_connection_manager.html#a87140c7af270366183486e2f02dc6f5d">removeCurrentRowInLocalDB</a>;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;-(NSString*) URLEncodedString: (NSString*) utfString;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="keyword">@end</span></div>
+<div class="ttc" id="interface_remote_d_b_connection_manager_html_aea06d1743882f6b59247e590cdd0513f"><div class="ttname"><a href="interface_remote_d_b_connection_manager.html#aea06d1743882f6b59247e590cdd0513f">RemoteDBConnectionManager::failedAttempts</a></div><div class="ttdeci">NSInteger failedAttempts</div><div class="ttdef"><b>Definition:</b> RemoteDBConnectionManager.h:62</div></div>
+<div class="ttc" id="interface_remote_d_b_connection_manager_html_aea31c73a0a3e36095f04688a9b51b594"><div class="ttname"><a href="interface_remote_d_b_connection_manager.html#aea31c73a0a3e36095f04688a9b51b594">RemoteDBConnectionManager::database</a></div><div class="ttdeci">DBManager * database</div><div class="ttdef"><b>Definition:</b> RemoteDBConnectionManager.h:31</div></div>
 <div class="ttc" id="interface_remote_d_b_connection_manager_html_a517a86ad693e383d664972123808b9fc"><div class="ttname"><a href="interface_remote_d_b_connection_manager.html#a517a86ad693e383d664972123808b9fc">-[RemoteDBConnectionManager pushDataToRemoteServer]</a></div><div class="ttdeci">void pushDataToRemoteServer()</div><div class="ttdef"><b>Definition:</b> RemoteDBConnectionManager.m:42</div></div>
 <div class="ttc" id="interface_d_b_manager_html"><div class="ttname"><a href="interface_d_b_manager.html">DBManager</a></div><div class="ttdef"><b>Definition:</b> DBManager.h:18</div></div>
+<div class="ttc" id="interface_remote_d_b_connection_manager_html_ad3cb931f4c5147c3595679f241a0bf48"><div class="ttname"><a href="interface_remote_d_b_connection_manager.html#ad3cb931f4c5147c3595679f241a0bf48">RemoteDBConnectionManager::remoteUnreachable</a></div><div class="ttdeci">BOOL remoteUnreachable</div><div class="ttdef"><b>Definition:</b> RemoteDBConnectionManager.h:70</div></div>
+<div class="ttc" id="interface_remote_d_b_connection_manager_html_a984d4293c7de824df8ab8b7a8510c15e"><div class="ttname"><a href="interface_remote_d_b_connection_manager.html#a984d4293c7de824df8ab8b7a8510c15e">RemoteDBConnectionManager::patientID</a></div><div class="ttdeci">NSInteger patientID</div><div class="ttdef"><b>Definition:</b> RemoteDBConnectionManager.h:39</div></div>
 <div class="ttc" id="interface_remote_d_b_connection_manager_html_a87140c7af270366183486e2f02dc6f5d"><div class="ttname"><a href="interface_remote_d_b_connection_manager.html#a87140c7af270366183486e2f02dc6f5d">-[RemoteDBConnectionManager removeCurrentRowInLocalDB]</a></div><div class="ttdeci">void removeCurrentRowInLocalDB()</div><div class="ttdef"><b>Definition:</b> RemoteDBConnectionManager.m:93</div></div>
-<div class="ttc" id="interface_remote_d_b_connection_manager_html"><div class="ttname"><a href="interface_remote_d_b_connection_manager.html">RemoteDBConnectionManager</a></div><div class="ttdef"><b>Definition:</b> RemoteDBConnectionManager.h:28</div></div>
+<div class="ttc" id="interface_remote_d_b_connection_manager_html_a1cf642f7f159dedf3f805ae62f86f0ee"><div class="ttname"><a href="interface_remote_d_b_connection_manager.html#a1cf642f7f159dedf3f805ae62f86f0ee">RemoteDBConnectionManager::currentRow</a></div><div class="ttdeci">LocalDBResult * currentRow</div><div class="ttdef"><b>Definition:</b> RemoteDBConnectionManager.h:47</div></div>
+<div class="ttc" id="interface_remote_d_b_connection_manager_html"><div class="ttname"><a href="interface_remote_d_b_connection_manager.html">RemoteDBConnectionManager</a></div><div class="ttdef"><b>Definition:</b> RemoteDBConnectionManager.h:24</div></div>
 <div class="ttc" id="interface_local_d_b_result_html"><div class="ttname"><a href="interface_local_d_b_result.html">LocalDBResult</a></div><div class="ttdef"><b>Definition:</b> LocalDBResult.h:17</div></div>
+<div class="ttc" id="interface_remote_d_b_connection_manager_html_a6956166be867026a4ed5c9552c2fbc85"><div class="ttname"><a href="interface_remote_d_b_connection_manager.html#a6956166be867026a4ed5c9552c2fbc85">RemoteDBConnectionManager::_serverResponseData</a></div><div class="ttdeci">NSMutableData * _serverResponseData</div><div class="ttdef"><b>Definition:</b> RemoteDBConnectionManager.h:55</div></div>
 <div class="ttc" id="interface_remote_d_b_connection_manager_html_aa7263ee167de6993f3c68d74f34d3b9e"><div class="ttname"><a href="interface_remote_d_b_connection_manager.html#aa7263ee167de6993f3c68d74f34d3b9e">-[RemoteDBConnectionManager sendRowToServer]</a></div><div class="ttdeci">void sendRowToServer()</div><div class="ttdef"><b>Definition:</b> RemoteDBConnectionManager.m:61</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 18 2014 18:18:03 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 28 2014 12:19:08 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

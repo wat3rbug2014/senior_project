@@ -1,6 +1,10 @@
 \hypertarget{interface_app_delegate}{\section{App\-Delegate Class Reference}
 \label{interface_app_delegate}\index{App\-Delegate@{App\-Delegate}}
 }
+
+
+{\ttfamily \#import $<$App\-Delegate.\-h$>$}
+
 Inheritance diagram for App\-Delegate\-:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,16 +14,28 @@ Inheritance diagram for App\-Delegate\-:\begin{figure}[H]
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{interface_app_delegate_acf48ac24125e688cac1a85445cd7fac2}{U\-I\-Window $\ast$ {\bfseries window}}\label{interface_app_delegate_acf48ac24125e688cac1a85445cd7fac2}
-
+U\-I\-Window $\ast$ \hyperlink{interface_app_delegate_acf48ac24125e688cac1a85445cd7fac2}{window}
 \item 
-\hypertarget{interface_app_delegate_a7774bb6fd8b636a6d6b15f91f2809a91}{\hyperlink{interface_background_scheduler}{Background\-Scheduler} $\ast$ {\bfseries process\-Scheduler}}\label{interface_app_delegate_a7774bb6fd8b636a6d6b15f91f2809a91}
-
+\hyperlink{interface_background_scheduler}{Background\-Scheduler} $\ast$ \hyperlink{interface_app_delegate_a7774bb6fd8b636a6d6b15f91f2809a91}{process\-Scheduler}
 \item 
-\hypertarget{interface_app_delegate_a22a5a481802e14bae7bd6cbffd141c65}{\hyperlink{interface_home_screen_v_c}{Home\-Screen\-V\-C} $\ast$ {\bfseries home\-Screen}}\label{interface_app_delegate_a22a5a481802e14bae7bd6cbffd141c65}
-
+\hyperlink{interface_home_screen_v_c}{Home\-Screen\-V\-C} $\ast$ \hyperlink{interface_app_delegate_a22a5a481802e14bae7bd6cbffd141c65}{home\-Screen}
 \end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+The starting point of the Objective-\/\-C code for the application. 
+
+\subsection{Property Documentation}
+\hypertarget{interface_app_delegate_a22a5a481802e14bae7bd6cbffd141c65}{\index{App\-Delegate@{App\-Delegate}!home\-Screen@{home\-Screen}}
+\index{home\-Screen@{home\-Screen}!AppDelegate@{App\-Delegate}}
+\subsubsection[{home\-Screen}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Home\-Screen\-V\-C}$\ast$) home\-Screen\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}, {\ttfamily [strong]}}}\label{interface_app_delegate_a22a5a481802e14bae7bd6cbffd141c65}
+The startinv view of the application. It is passed to the window once the application starts. \hypertarget{interface_app_delegate_a7774bb6fd8b636a6d6b15f91f2809a91}{\index{App\-Delegate@{App\-Delegate}!process\-Scheduler@{process\-Scheduler}}
+\index{process\-Scheduler@{process\-Scheduler}!AppDelegate@{App\-Delegate}}
+\subsubsection[{process\-Scheduler}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Background\-Scheduler}$\ast$) process\-Scheduler\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_app_delegate_a7774bb6fd8b636a6d6b15f91f2809a91}
+The background scheduler that is used for monitoring the state of the application. \hypertarget{interface_app_delegate_acf48ac24125e688cac1a85445cd7fac2}{\index{App\-Delegate@{App\-Delegate}!window@{window}}
+\index{window@{window}!AppDelegate@{App\-Delegate}}
+\subsubsection[{window}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (U\-I\-Window$\ast$) window\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_app_delegate_acf48ac24125e688cac1a85445cd7fac2}
+The first view of the application once it starts. 
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
 \item 

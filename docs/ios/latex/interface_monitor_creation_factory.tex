@@ -29,8 +29,10 @@ N\-O\-T\-E\-: In order to add more devices to this application the following mus
 \item The class must at a minimum follow and implement the methods in the \hyperlink{protocol_device_common_info_interface-p}{Device\-Common\-Info\-Interface} protocol.
 \item If the device does heart monitoring it must use the methods in the \hyperlink{protocol_heart_monitor_protocol-p}{Heart\-Monitor\-Protocol}.
 \item If the device does activity monitoring it must use the methods in the \hyperlink{protocol_activity_monitor_protocol-p}{Activity\-Monitor\-Protocol}.
-\item The +(id$<$\-Device\-Common\-Info\-Interface$>$) create\-From\-Peripheral\-: (C\-B\-Peripheral$\ast$) peripheral must be updated 
+\item The +(id$<$\-Device\-Common\-Info\-Interface$>$) create\-From\-Peripheral\-: (C\-B\-Peripheral$\ast$) peripheral must be updated
 \end{DoxyEnumerate}
+
+This class is a device object factory to centralize creation and reduce dependency complexities as much as possible. 
 
 \subsection{Method Documentation}
 \hypertarget{interface_monitor_creation_factory_abe947f8b7d9f30a4438112bbdea8dda1}{\index{Monitor\-Creation\-Factory@{Monitor\-Creation\-Factory}!create\-From\-Peripheral\-:@{create\-From\-Peripheral\-:}}

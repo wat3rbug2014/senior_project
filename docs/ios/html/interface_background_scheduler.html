@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -70,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -108,52 +109,55 @@ Instance Methods</h2></td></tr>
 <tr class="separator:afa9c1aaf67ac8d9f5fd17a43475777eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11390d5d6bb62b2c565ca9205d045b2a"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_background_scheduler.html#a11390d5d6bb62b2c565ca9205d045b2a">performScan</a></td></tr>
 <tr class="separator:a11390d5d6bb62b2c565ca9205d045b2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a393315828a032dece36a93c53ee203d0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a393315828a032dece36a93c53ee203d0"></a>
-(UIApplication *)&#160;</td><td class="memItemRight" valign="bottom">- <b>app</b></td></tr>
+<tr class="memitem:a393315828a032dece36a93c53ee203d0"><td class="memItemLeft" align="right" valign="top">(UIApplication *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_background_scheduler.html#a393315828a032dece36a93c53ee203d0">app</a></td></tr>
 <tr class="separator:a393315828a032dece36a93c53ee203d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:aea6a288ffb185db815ddaeaf58c2edcd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aea6a288ffb185db815ddaeaf58c2edcd"></a>
-<a class="el" href="interface_b_t_device_manager.html">BTDeviceManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>deviceManager</b></td></tr>
+<tr class="memitem:aea6a288ffb185db815ddaeaf58c2edcd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_b_t_device_manager.html">BTDeviceManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_background_scheduler.html#aea6a288ffb185db815ddaeaf58c2edcd">deviceManager</a></td></tr>
 <tr class="separator:aea6a288ffb185db815ddaeaf58c2edcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6dd785826954ce8d6adc2ad76284c458"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6dd785826954ce8d6adc2ad76284c458"></a>
-<a class="el" href="interface_remote_d_b_connection_manager.html">RemoteDBConnectionManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>serverPoller</b></td></tr>
+<tr class="memitem:a6dd785826954ce8d6adc2ad76284c458"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_remote_d_b_connection_manager.html">RemoteDBConnectionManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_background_scheduler.html#a6dd785826954ce8d6adc2ad76284c458">serverPoller</a></td></tr>
 <tr class="separator:a6dd785826954ce8d6adc2ad76284c458"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f8103a5d35ba76fd32b5f0d3a2d5517"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9f8103a5d35ba76fd32b5f0d3a2d5517"></a>
-<a class="el" href="interface_device_poll_manager.html">DevicePollManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>devicePoller</b></td></tr>
+<tr class="memitem:a9f8103a5d35ba76fd32b5f0d3a2d5517"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_device_poll_manager.html">DevicePollManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_background_scheduler.html#a9f8103a5d35ba76fd32b5f0d3a2d5517">devicePoller</a></td></tr>
 <tr class="separator:a9f8103a5d35ba76fd32b5f0d3a2d5517"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6cacd8a0d6d25475816490b39dcf35d3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6cacd8a0d6d25475816490b39dcf35d3"></a>
-<a class="el" href="interface_d_b_manager.html">DBManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>database</b></td></tr>
+<tr class="memitem:a6cacd8a0d6d25475816490b39dcf35d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_d_b_manager.html">DBManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_background_scheduler.html#a6cacd8a0d6d25475816490b39dcf35d3">database</a></td></tr>
 <tr class="separator:a6cacd8a0d6d25475816490b39dcf35d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f2d5c8d892ff5c8155305ae6bc2da1a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3f2d5c8d892ff5c8155305ae6bc2da1a"></a>
-<a class="el" href="interface_personal_info.html">PersonalInfo</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>patient</b></td></tr>
+<tr class="memitem:a3f2d5c8d892ff5c8155305ae6bc2da1a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_personal_info.html">PersonalInfo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_background_scheduler.html#a3f2d5c8d892ff5c8155305ae6bc2da1a">patient</a></td></tr>
 <tr class="separator:a3f2d5c8d892ff5c8155305ae6bc2da1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5209bb2a1aa5fe8eeac8f89977252df7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5209bb2a1aa5fe8eeac8f89977252df7"></a>
-BOOL&#160;</td><td class="memItemRight" valign="bottom"><b>allowMonitoring</b></td></tr>
+<tr class="memitem:a5209bb2a1aa5fe8eeac8f89977252df7"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_background_scheduler.html#a5209bb2a1aa5fe8eeac8f89977252df7">allowMonitoring</a></td></tr>
 <tr class="separator:a5209bb2a1aa5fe8eeac8f89977252df7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73f120ac0977837ac4a4095ad96d01ec"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a73f120ac0977837ac4a4095ad96d01ec"></a>
-NSRunLoop *&#160;</td><td class="memItemRight" valign="bottom"><b>runLoop</b></td></tr>
+<tr class="memitem:a73f120ac0977837ac4a4095ad96d01ec"><td class="memItemLeft" align="right" valign="top">NSRunLoop *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_background_scheduler.html#a73f120ac0977837ac4a4095ad96d01ec">runLoop</a></td></tr>
 <tr class="separator:a73f120ac0977837ac4a4095ad96d01ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2e25ad686446576c71a500b66f31e25"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae2e25ad686446576c71a500b66f31e25"></a>
-NSTimeInterval&#160;</td><td class="memItemRight" valign="bottom"><b>devicePollInterval</b></td></tr>
+<tr class="memitem:ae2e25ad686446576c71a500b66f31e25"><td class="memItemLeft" align="right" valign="top">NSTimeInterval&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_background_scheduler.html#ae2e25ad686446576c71a500b66f31e25">devicePollInterval</a></td></tr>
 <tr class="separator:ae2e25ad686446576c71a500b66f31e25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a4ebd391d86c9779122136b6c4dfc1c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6a4ebd391d86c9779122136b6c4dfc1c"></a>
-NSTimeInterval&#160;</td><td class="memItemRight" valign="bottom"><b>serverPollInterval</b></td></tr>
+<tr class="memitem:a6a4ebd391d86c9779122136b6c4dfc1c"><td class="memItemLeft" align="right" valign="top">NSTimeInterval&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_background_scheduler.html#a6a4ebd391d86c9779122136b6c4dfc1c">serverPollInterval</a></td></tr>
 <tr class="separator:a6a4ebd391d86c9779122136b6c4dfc1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c133b6375de7c3e0cda3ac605ad2029"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8c133b6375de7c3e0cda3ac605ad2029"></a>
-UIApplication *&#160;</td><td class="memItemRight" valign="bottom"><b>app</b></td></tr>
+<tr class="memitem:a8c133b6375de7c3e0cda3ac605ad2029"><td class="memItemLeft" align="right" valign="top">UIApplication *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_background_scheduler.html#a8c133b6375de7c3e0cda3ac605ad2029">app</a></td></tr>
 <tr class="separator:a8c133b6375de7c3e0cda3ac605ad2029"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9dee3016296e3a529451c25b426b8923"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9dee3016296e3a529451c25b426b8923"></a>
-NSTimer *&#160;</td><td class="memItemRight" valign="bottom"><b>devicePollTimer</b></td></tr>
+<tr class="memitem:a9dee3016296e3a529451c25b426b8923"><td class="memItemLeft" align="right" valign="top">NSTimer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_background_scheduler.html#a9dee3016296e3a529451c25b426b8923">devicePollTimer</a></td></tr>
 <tr class="separator:a9dee3016296e3a529451c25b426b8923"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab78e335cbdbd2c276c299380a982f0e4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab78e335cbdbd2c276c299380a982f0e4"></a>
-NSTimer *&#160;</td><td class="memItemRight" valign="bottom"><b>serverPollTimer</b></td></tr>
+<tr class="memitem:ab78e335cbdbd2c276c299380a982f0e4"><td class="memItemLeft" align="right" valign="top">NSTimer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_background_scheduler.html#ab78e335cbdbd2c276c299380a982f0e4">serverPollTimer</a></td></tr>
 <tr class="separator:ab78e335cbdbd2c276c299380a982f0e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This object is responsible for the coordination of the device poller, the database manager, and the process that pushes data to the remote server. </p>
 </div><h2 class="groupheader">Method Documentation</h2>
+<a class="anchor" id="a393315828a032dece36a93c53ee203d0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (UIApplication*) app </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This method returns the shared instance of the UIApplication. It is placed here to make dependency more obvious. </p>
+
+</div>
+</div>
 <a class="anchor" id="a11390d5d6bb62b2c565ca9205d045b2a"></a>
 <div class="memitem">
 <div class="memproto">
@@ -209,6 +213,259 @@ NSTimer *&#160;</td><td class="memItemRight" valign="bottom"><b>serverPollTimer<
 
 </div>
 </div>
+<h2 class="groupheader">Property Documentation</h2>
+<a class="anchor" id="a5209bb2a1aa5fe8eeac8f89977252df7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) allowMonitoring</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>This flag is used by the scheduler to determine if the application is ready to monitor. It is not TRUE if the following conditions are not met. Both the activity and the heart rate devices must have been selected and connected. The location manager must be allowed to collection location updates. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8c133b6375de7c3e0cda3ac605ad2029"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (UIApplication *) app</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">atomic</span><span class="mlabel">assign</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The shared instance of the UIApplication. It is used for determining the state of the application in order to execute the polling. </p>
+
+</div>
+</div>
+<a class="anchor" id="a6cacd8a0d6d25475816490b39dcf35d3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (<a class="el" href="interface_d_b_manager.html">DBManager</a>*) database</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The local database to store data from the devices during polling. </p>
+
+</div>
+</div>
+<a class="anchor" id="aea6a288ffb185db815ddaeaf58c2edcd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (<a class="el" href="interface_b_t_device_manager.html">BTDeviceManager</a>*) deviceManager</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The device manager used for controlling the device connectivity and discovery. </p>
+
+</div>
+</div>
+<a class="anchor" id="a9f8103a5d35ba76fd32b5f0d3a2d5517"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (<a class="el" href="interface_device_poll_manager.html">DevicePollManager</a>*) devicePoller</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The object that controlls the polling of the devices and pushes the data to the local database. </p>
+
+</div>
+</div>
+<a class="anchor" id="ae2e25ad686446576c71a500b66f31e25"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSTimeInterval) devicePollInterval</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The device polling interval. Used for controlling the time between poll requests from the devices. This is expressed in seconds and the default is 5 seconds. </p>
+
+</div>
+</div>
+<a class="anchor" id="a9dee3016296e3a529451c25b426b8923"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSTimer*) devicePollTimer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The timer used for the device poller. The reference is stored so that it can be canceled outside of the method that invokes it. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3f2d5c8d892ff5c8155305ae6bc2da1a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (<a class="el" href="interface_personal_info.html">PersonalInfo</a>*) patient</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The patient data object. It is used by the database for updates to the table and by the server poller for pushes to the server. </p>
+
+</div>
+</div>
+<a class="anchor" id="a73f120ac0977837ac4a4095ad96d01ec"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSRunLoop*) runLoop</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The run loop for which the polling is to be executed on. </p>
+
+</div>
+</div>
+<a class="anchor" id="a6dd785826954ce8d6adc2ad76284c458"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (<a class="el" href="interface_remote_d_b_connection_manager.html">RemoteDBConnectionManager</a>*) serverPoller</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The manager of the remote server pushes. It controlls connectivity to the server and pushes thdata to it. </p>
+
+</div>
+</div>
+<a class="anchor" id="a6a4ebd391d86c9779122136b6c4dfc1c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSTimeInterval) serverPollInterval</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The server polling interval. Used for controlling when the server will receive updates from the local database. The default is 1 minute or 60 seconds. It is express in seconds. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab78e335cbdbd2c276c299380a982f0e4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSTimer*) serverPollTimer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The timer used for the server poller. The reference is stored so that it can be canceled outside of the method that invokes it. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/Users/douglas/Documents/software/Senior Project/ios/Medical Cyborgs/Medical Cyborgs/<a class="el" href="_back_ground_scheduler_8h_source.html">BackGroundScheduler.h</a></li>
 <li>/Users/douglas/Documents/software/Senior Project/ios/Medical Cyborgs/Medical Cyborgs/BackGroundScheduler.m</li>
@@ -216,7 +473,7 @@ NSTimer *&#160;</td><td class="memItemRight" valign="bottom"><b>serverPollTimer<
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 18 2014 18:18:03 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 28 2014 12:19:08 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

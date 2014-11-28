@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -70,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -131,47 +132,31 @@ Class Methods</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a2da5077535faad528421bada70121866"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2da5077535faad528421bada70121866"></a>
-NSString *&#160;</td><td class="memItemRight" valign="bottom"><b>documentsDirectory</b></td></tr>
+<tr class="memitem:a2da5077535faad528421bada70121866"><td class="memItemLeft" align="right" valign="top">NSString *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_d_b_manager.html#a2da5077535faad528421bada70121866">documentsDirectory</a></td></tr>
 <tr class="separator:a2da5077535faad528421bada70121866"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a725c101d5daf6506b59e0f7e06993982"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a725c101d5daf6506b59e0f7e06993982"></a>
-NSString *&#160;</td><td class="memItemRight" valign="bottom"><b>databaseFilename</b></td></tr>
+<tr class="memitem:a725c101d5daf6506b59e0f7e06993982"><td class="memItemLeft" align="right" valign="top">NSString *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_d_b_manager.html#a725c101d5daf6506b59e0f7e06993982">databaseFilename</a></td></tr>
 <tr class="separator:a725c101d5daf6506b59e0f7e06993982"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7206acae059164df418a2dbfaa7fbb13"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7206acae059164df418a2dbfaa7fbb13"></a>
-NSInteger&#160;</td><td class="memItemRight" valign="bottom"><b>patientID</b></td></tr>
+<tr class="memitem:a7206acae059164df418a2dbfaa7fbb13"><td class="memItemLeft" align="right" valign="top">NSInteger&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_d_b_manager.html#a7206acae059164df418a2dbfaa7fbb13">patientID</a></td></tr>
 <tr class="separator:a7206acae059164df418a2dbfaa7fbb13"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a921cb5034e1b4f79c6db59a1ce3fd579"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a921cb5034e1b4f79c6db59a1ce3fd579"></a>
-BOOL&#160;</td><td class="memItemRight" valign="bottom"><b>moreRowsToRetrieve</b></td></tr>
+<tr class="memitem:a921cb5034e1b4f79c6db59a1ce3fd579"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_d_b_manager.html#a921cb5034e1b4f79c6db59a1ce3fd579">moreRowsToRetrieve</a></td></tr>
 <tr class="separator:a921cb5034e1b4f79c6db59a1ce3fd579"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3315763d817eb3c10dac39ee530e2a8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa3315763d817eb3c10dac39ee530e2a8"></a>
-sqlite3 *&#160;</td><td class="memItemRight" valign="bottom"><b>database</b></td></tr>
+<tr class="memitem:aa3315763d817eb3c10dac39ee530e2a8"><td class="memItemLeft" align="right" valign="top">sqlite3 *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_d_b_manager.html#aa3315763d817eb3c10dac39ee530e2a8">database</a></td></tr>
 <tr class="separator:aa3315763d817eb3c10dac39ee530e2a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7299e28bee3f75281496adcebb46010b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7299e28bee3f75281496adcebb46010b"></a>
-NSInteger&#160;</td><td class="memItemRight" valign="bottom"><b>rowCount</b></td></tr>
+<tr class="memitem:a7299e28bee3f75281496adcebb46010b"><td class="memItemLeft" align="right" valign="top">NSInteger&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_d_b_manager.html#a7299e28bee3f75281496adcebb46010b">rowCount</a></td></tr>
 <tr class="separator:a7299e28bee3f75281496adcebb46010b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15a4e85cdc292d83ee3d8b28e43c43bc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a15a4e85cdc292d83ee3d8b28e43c43bc"></a>
-NSString *&#160;</td><td class="memItemRight" valign="bottom"><b>databasePath</b></td></tr>
+<tr class="memitem:a15a4e85cdc292d83ee3d8b28e43c43bc"><td class="memItemLeft" align="right" valign="top">NSString *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_d_b_manager.html#a15a4e85cdc292d83ee3d8b28e43c43bc">databasePath</a></td></tr>
 <tr class="separator:a15a4e85cdc292d83ee3d8b28e43c43bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae714f21433f7593c722b727d2ae9c66a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae714f21433f7593c722b727d2ae9c66a"></a>
-sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><b>sqlStatement</b></td></tr>
+<tr class="memitem:ae714f21433f7593c722b727d2ae9c66a"><td class="memItemLeft" align="right" valign="top">sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_d_b_manager.html#ae714f21433f7593c722b727d2ae9c66a">sqlStatement</a></td></tr>
 <tr class="separator:ae714f21433f7593c722b727d2ae9c66a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac89481f8c2c45def2b8edb2ba749df68"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac89481f8c2c45def2b8edb2ba749df68"></a>
-NSInteger&#160;</td><td class="memItemRight" valign="bottom"><b>hrmeasurement</b></td></tr>
+<tr class="memitem:ac89481f8c2c45def2b8edb2ba749df68"><td class="memItemLeft" align="right" valign="top">NSInteger&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_d_b_manager.html#ac89481f8c2c45def2b8edb2ba749df68">hrmeasurement</a></td></tr>
 <tr class="separator:ac89481f8c2c45def2b8edb2ba749df68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12dcee066d2cecde8507a6529df92521"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a12dcee066d2cecde8507a6529df92521"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>latitude</b></td></tr>
+<tr class="memitem:a12dcee066d2cecde8507a6529df92521"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_d_b_manager.html#a12dcee066d2cecde8507a6529df92521">latitude</a></td></tr>
 <tr class="separator:a12dcee066d2cecde8507a6529df92521"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa881cd8f0940350240e3ae9a326e5563"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa881cd8f0940350240e3ae9a326e5563"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>longitude</b></td></tr>
+<tr class="memitem:aa881cd8f0940350240e3ae9a326e5563"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_d_b_manager.html#aa881cd8f0940350240e3ae9a326e5563">longitude</a></td></tr>
 <tr class="separator:aa881cd8f0940350240e3ae9a326e5563"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff07ccf2439a2df78a5375303d5272a7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aff07ccf2439a2df78a5375303d5272a7"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>activityLevel</b></td></tr>
+<tr class="memitem:aff07ccf2439a2df78a5375303d5272a7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_d_b_manager.html#aff07ccf2439a2df78a5375303d5272a7">activityLevel</a></td></tr>
 <tr class="separator:aff07ccf2439a2df78a5375303d5272a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d952846514339beeb1ff00a89fd650e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0d952846514339beeb1ff00a89fd650e"></a>
-NSInteger&#160;</td><td class="memItemRight" valign="bottom"><b>age</b></td></tr>
-<tr class="separator:a0d952846514339beeb1ff00a89fd650e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62443c98d9fade6ab9906836bf146b72"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a62443c98d9fade6ab9906836bf146b72"></a>
-NSDate *&#160;</td><td class="memItemRight" valign="bottom"><b>timestamp</b></td></tr>
+<tr class="memitem:a62443c98d9fade6ab9906836bf146b72"><td class="memItemLeft" align="right" valign="top">NSDate *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_d_b_manager.html#a62443c98d9fade6ab9906836bf146b72">timestamp</a></td></tr>
 <tr class="separator:a62443c98d9fade6ab9906836bf146b72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -378,7 +363,287 @@ NSDate *&#160;</td><td class="memItemRight" valign="bottom"><b>timestamp</b></td
       </table>
 </div><div class="memdoc">
 <p>This method takes the NSDate object stored in this class and converts it to a format that is useable to databases. The assumptions are that the date has been updated. This method is called only from this class.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">selectedTime</td><td>The NSDate given to convert to a string for insertion to the database.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Returns</dt><dd>The result string is a parsed date. An example is '1970-05-10 18:45:10'. That is May 10 1970 at 6:45 pm and 10 seconds. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Property Documentation</h2>
+<a class="anchor" id="aff07ccf2439a2df78a5375303d5272a7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (int) activityLevel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The activity level expressed as an integer. See <a class="el" href="_device_constants_and_static_functions_8h_source.html">DeviceConstantsAndStaticFunctions.h</a> for the value. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa3315763d817eb3c10dac39ee530e2a8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (sqlite3*) database</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The SQLITE database reference. Used for control of the database. </p>
+
+</div>
+</div>
+<a class="anchor" id="a725c101d5daf6506b59e0f7e06993982"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSString*) databaseFilename</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The actual database file name. </p>
+
+</div>
+</div>
+<a class="anchor" id="a15a4e85cdc292d83ee3d8b28e43c43bc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSString*) databasePath</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The relative path in the file system where the database resides. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2da5077535faad528421bada70121866"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSString*) documentsDirectory</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The directory where the SQLITE database will be stored. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac89481f8c2c45def2b8edb2ba749df68"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSInteger) hrmeasurement</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The last heart rate measurment given to the database. </p>
+
+</div>
+</div>
+<a class="anchor" id="a12dcee066d2cecde8507a6529df92521"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (float) latitude</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The last latitude measurement that was given to the database. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa881cd8f0940350240e3ae9a326e5563"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (float) longitude</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The last longitude measurement given to the database. </p>
+
+</div>
+</div>
+<a class="anchor" id="a921cb5034e1b4f79c6db59a1ce3fd579"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) moreRowsToRetrieve</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>YES or NO value that there is data to push to remote server since this database is not empty. </p>
+
+</div>
+</div>
+<a class="anchor" id="a7206acae059164df418a2dbfaa7fbb13"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSInteger) patientID</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The patient ID. This is used for every operation to the database since it is part or the primary key for the database. It is also a primary key in the remote server patients table. </p>
+
+</div>
+</div>
+<a class="anchor" id="a7299e28bee3f75281496adcebb46010b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSInteger) rowCount</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The last row count of the database. Used for checking to see if there is a change in the size of the database. </p>
+
+</div>
+</div>
+<a class="anchor" id="ae714f21433f7593c722b727d2ae9c66a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (sqlite3_stmt*) sqlStatement</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The current SQL statement to be executed on the database. </p>
+
+</div>
+</div>
+<a class="anchor" id="a62443c98d9fade6ab9906836bf146b72"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSDate*) timestamp</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The current timestamp given to the database. </p>
 
 </div>
 </div>
@@ -389,7 +654,7 @@ NSDate *&#160;</td><td class="memItemRight" valign="bottom"><b>timestamp</b></td
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 18 2014 18:18:03 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 28 2014 12:19:08 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

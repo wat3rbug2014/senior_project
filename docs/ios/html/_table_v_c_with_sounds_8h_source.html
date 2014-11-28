@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -67,7 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -98,33 +99,37 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#import &lt;AVFoundation/AVFoundation.h&gt;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#import &quot;BTDeviceManager.h&quot;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="interface_table_v_c_with_sounds.html">   18</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_table_v_c_with_sounds.html">TableVCWithSounds</a> : UITableViewController</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">@property</span> AVAudioPlayer *soundPlayer;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">@property</span> <a class="code" href="interface_b_t_device_manager.html">BTDeviceManager</a> *deviceManager;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;-(void) <a class="code" href="interface_table_v_c_with_sounds.html#ad6f4138cb1ce20398ff2b004a1d72143">playViewChangeSound</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="interface_table_v_c_with_sounds.html">   19</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_table_v_c_with_sounds.html">TableVCWithSounds</a> : UITableViewController</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">@property</span> AVAudioPlayer *soundPlayer;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;-(void) <a class="code" href="interface_table_v_c_with_sounds.html#abca3853865cb3bc0baf5a12b6f6e3a47">playClickSound</a>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;-(void) playSoundWithFile: (NSURL*) soundFile;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;-(id) initWithDeviceManager: (<a class="code" href="interface_b_t_device_manager.html">BTDeviceManager</a>*) newDeviceManager;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;-(void) updateTable:(NSNotification*) notification;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">@property</span> <a class="code" href="interface_b_t_device_manager.html">BTDeviceManager</a> *deviceManager;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;-(void) <a class="code" href="interface_table_v_c_with_sounds.html#ad6f4138cb1ce20398ff2b004a1d72143">playViewChangeSound</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;-(void) <a class="code" href="interface_table_v_c_with_sounds.html#abca3853865cb3bc0baf5a12b6f6e3a47">playClickSound</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;-(void) playSoundWithFile: (NSURL*) soundFile;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;-(id) initWithDeviceManager: (<a class="code" href="interface_b_t_device_manager.html">BTDeviceManager</a>*) newDeviceManager;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;-(void) updateTable:(NSNotification*) notification;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">@end</span></div>
 <div class="ttc" id="interface_table_v_c_with_sounds_html_ad6f4138cb1ce20398ff2b004a1d72143"><div class="ttname"><a href="interface_table_v_c_with_sounds.html#ad6f4138cb1ce20398ff2b004a1d72143">-[TableVCWithSounds playViewChangeSound]</a></div><div class="ttdeci">void playViewChangeSound()</div><div class="ttdef"><b>Definition:</b> TableVCWithSounds.m:49</div></div>
-<div class="ttc" id="interface_table_v_c_with_sounds_html"><div class="ttname"><a href="interface_table_v_c_with_sounds.html">TableVCWithSounds</a></div><div class="ttdef"><b>Definition:</b> TableVCWithSounds.h:18</div></div>
+<div class="ttc" id="interface_table_v_c_with_sounds_html"><div class="ttname"><a href="interface_table_v_c_with_sounds.html">TableVCWithSounds</a></div><div class="ttdef"><b>Definition:</b> TableVCWithSounds.h:19</div></div>
 <div class="ttc" id="interface_table_v_c_with_sounds_html_abca3853865cb3bc0baf5a12b6f6e3a47"><div class="ttname"><a href="interface_table_v_c_with_sounds.html#abca3853865cb3bc0baf5a12b6f6e3a47">-[TableVCWithSounds playClickSound]</a></div><div class="ttdeci">void playClickSound()</div><div class="ttdef"><b>Definition:</b> TableVCWithSounds.m:56</div></div>
-<div class="ttc" id="interface_b_t_device_manager_html"><div class="ttname"><a href="interface_b_t_device_manager.html">BTDeviceManager</a></div><div class="ttdef"><b>Definition:</b> BTDeviceManager.h:25</div></div>
+<div class="ttc" id="interface_b_t_device_manager_html"><div class="ttname"><a href="interface_b_t_device_manager.html">BTDeviceManager</a></div><div class="ttdef"><b>Definition:</b> BTDeviceManager.h:31</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 18 2014 18:18:03 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 28 2014 12:19:08 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -70,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -121,8 +122,7 @@ Instance Methods</h2></td></tr>
 <tr class="separator:a916adc15288fd7428a30954a57f0af0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84c51142e50c343ffa90c5bf9afee48b"><td class="memItemLeft" align="right" valign="top">(id&lt; <a class="el" href="protocol_device_common_info_interface-p.html">DeviceCommonInfoInterface</a> &gt;)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_b_t_device_manager.html#a84c51142e50c343ffa90c5bf9afee48b">deviceAtIndex:forType:</a></td></tr>
 <tr class="separator:a84c51142e50c343ffa90c5bf9afee48b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af11257d463445c307cd38c9e284c6826"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af11257d463445c307cd38c9e284c6826"></a>
-(id&lt; <a class="el" href="protocol_device_common_info_interface-p.html">DeviceCommonInfoInterface</a> &gt;)&#160;</td><td class="memItemRight" valign="bottom">- <b>monitorMatchingCBPeripheral:</b></td></tr>
+<tr class="memitem:af11257d463445c307cd38c9e284c6826"><td class="memItemLeft" align="right" valign="top">(id&lt; <a class="el" href="protocol_device_common_info_interface-p.html">DeviceCommonInfoInterface</a> &gt;)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_b_t_device_manager.html#af11257d463445c307cd38c9e284c6826">monitorMatchingCBPeripheral:</a></td></tr>
 <tr class="separator:af11257d463445c307cd38c9e284c6826"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c4ad74783cb71a008c926f2e5ec3835"><td class="memItemLeft" align="right" valign="top">(id&lt; <a class="el" href="protocol_heart_monitor_protocol-p.html">HeartMonitorProtocol</a>, <br class="typebreak"/>
 <a class="el" href="protocol_device_common_info_interface-p.html">DeviceCommonInfoInterface</a> &gt;)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_b_t_device_manager.html#a1c4ad74783cb71a008c926f2e5ec3835">selectedHeartMonitor</a></td></tr>
@@ -142,53 +142,39 @@ Class Methods</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:ab303b2617a6391db56c3b61f217f9b6b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab303b2617a6391db56c3b61f217f9b6b"></a>
-id&lt; <a class="el" href="protocol_heart_monitor_protocol-p.html">HeartMonitorProtocol</a>, <br class="typebreak"/>
-<a class="el" href="protocol_device_common_info_interface-p.html">DeviceCommonInfoInterface</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_selectedHeartMonitor</b></td></tr>
+<tr class="memitem:ab303b2617a6391db56c3b61f217f9b6b"><td class="memItemLeft" align="right" valign="top">id&lt; <a class="el" href="protocol_heart_monitor_protocol-p.html">HeartMonitorProtocol</a>, <br class="typebreak"/>
+<a class="el" href="protocol_device_common_info_interface-p.html">DeviceCommonInfoInterface</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_b_t_device_manager.html#ab303b2617a6391db56c3b61f217f9b6b">_selectedHeartMonitor</a></td></tr>
 <tr class="separator:ab303b2617a6391db56c3b61f217f9b6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53a05cc87797350638a2b82c337eb854"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a53a05cc87797350638a2b82c337eb854"></a>
-id&lt; <a class="el" href="protocol_activity_monitor_protocol-p.html">ActivityMonitorProtocol</a>, <br class="typebreak"/>
-<a class="el" href="protocol_device_common_info_interface-p.html">DeviceCommonInfoInterface</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_selectedActivityMonitor</b></td></tr>
+<tr class="memitem:a53a05cc87797350638a2b82c337eb854"><td class="memItemLeft" align="right" valign="top">id&lt; <a class="el" href="protocol_activity_monitor_protocol-p.html">ActivityMonitorProtocol</a>, <br class="typebreak"/>
+<a class="el" href="protocol_device_common_info_interface-p.html">DeviceCommonInfoInterface</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_b_t_device_manager.html#a53a05cc87797350638a2b82c337eb854">_selectedActivityMonitor</a></td></tr>
 <tr class="separator:a53a05cc87797350638a2b82c337eb854"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76ffd5887aa2d8c8ea20df2384851d41"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a76ffd5887aa2d8c8ea20df2384851d41"></a>
-NSArray *&#160;</td><td class="memItemRight" valign="bottom"><b>heartDevices</b></td></tr>
+<tr class="memitem:a76ffd5887aa2d8c8ea20df2384851d41"><td class="memItemLeft" align="right" valign="top">NSArray *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_b_t_device_manager.html#a76ffd5887aa2d8c8ea20df2384851d41">heartDevices</a></td></tr>
 <tr class="separator:a76ffd5887aa2d8c8ea20df2384851d41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f6f577bb25b7dcd8b3857d6497bff4e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8f6f577bb25b7dcd8b3857d6497bff4e"></a>
-NSArray *&#160;</td><td class="memItemRight" valign="bottom"><b>activityDevices</b></td></tr>
+<tr class="memitem:a8f6f577bb25b7dcd8b3857d6497bff4e"><td class="memItemLeft" align="right" valign="top">NSArray *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_b_t_device_manager.html#a8f6f577bb25b7dcd8b3857d6497bff4e">activityDevices</a></td></tr>
 <tr class="separator:a8f6f577bb25b7dcd8b3857d6497bff4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98add70110c91e4266481e312d96afbf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a98add70110c91e4266481e312d96afbf"></a>
-NSInteger&#160;</td><td class="memItemRight" valign="bottom"><b>selectedIndexForHeartMonitor</b></td></tr>
+<tr class="memitem:a98add70110c91e4266481e312d96afbf"><td class="memItemLeft" align="right" valign="top">NSInteger&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_b_t_device_manager.html#a98add70110c91e4266481e312d96afbf">selectedIndexForHeartMonitor</a></td></tr>
 <tr class="separator:a98add70110c91e4266481e312d96afbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e47d59f0a40f8d96f4fea826be853d1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8e47d59f0a40f8d96f4fea826be853d1"></a>
-NSInteger&#160;</td><td class="memItemRight" valign="bottom"><b>selectedIndexForActivityMonitor</b></td></tr>
+<tr class="memitem:a8e47d59f0a40f8d96f4fea826be853d1"><td class="memItemLeft" align="right" valign="top">NSInteger&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_b_t_device_manager.html#a8e47d59f0a40f8d96f4fea826be853d1">selectedIndexForActivityMonitor</a></td></tr>
 <tr class="separator:a8e47d59f0a40f8d96f4fea826be853d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15cc71749368c5de76624c5c4e4f7b3c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a15cc71749368c5de76624c5c4e4f7b3c"></a>
-BOOL&#160;</td><td class="memItemRight" valign="bottom"><b>isInDiscoveryMode</b></td></tr>
+<tr class="memitem:a15cc71749368c5de76624c5c4e4f7b3c"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_b_t_device_manager.html#a15cc71749368c5de76624c5c4e4f7b3c">isInDiscoveryMode</a></td></tr>
 <tr class="separator:a15cc71749368c5de76624c5c4e4f7b3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61d03c41c000f28ce50e88bd9b8f6be9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a61d03c41c000f28ce50e88bd9b8f6be9"></a>
-CBCentralManager *&#160;</td><td class="memItemRight" valign="bottom"><b>manager</b></td></tr>
+<tr class="memitem:a61d03c41c000f28ce50e88bd9b8f6be9"><td class="memItemLeft" align="right" valign="top">CBCentralManager *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_b_t_device_manager.html#a61d03c41c000f28ce50e88bd9b8f6be9">manager</a></td></tr>
 <tr class="separator:a61d03c41c000f28ce50e88bd9b8f6be9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a610db66209e9d142e5451ceedc3c6a36"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a610db66209e9d142e5451ceedc3c6a36"></a>
-NSInteger&#160;</td><td class="memItemRight" valign="bottom"><b>searchType</b></td></tr>
+<tr class="memitem:a610db66209e9d142e5451ceedc3c6a36"><td class="memItemLeft" align="right" valign="top">NSInteger&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_b_t_device_manager.html#a610db66209e9d142e5451ceedc3c6a36">searchType</a></td></tr>
 <tr class="separator:a610db66209e9d142e5451ceedc3c6a36"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0864f241d9fc14f03e5f8e2b4dd0667a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0864f241d9fc14f03e5f8e2b4dd0667a"></a>
-BOOL&#160;</td><td class="memItemRight" valign="bottom"><b>isActive</b></td></tr>
+<tr class="memitem:a0864f241d9fc14f03e5f8e2b4dd0667a"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_b_t_device_manager.html#a0864f241d9fc14f03e5f8e2b4dd0667a">isActive</a></td></tr>
 <tr class="separator:a0864f241d9fc14f03e5f8e2b4dd0667a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad4f780b6477ad7d37f6e85f3f40f1c0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aad4f780b6477ad7d37f6e85f3f40f1c0"></a>
-NSTimer *&#160;</td><td class="memItemRight" valign="bottom"><b>waitForDevices</b></td></tr>
+<tr class="memitem:aad4f780b6477ad7d37f6e85f3f40f1c0"><td class="memItemLeft" align="right" valign="top">NSTimer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_b_t_device_manager.html#aad4f780b6477ad7d37f6e85f3f40f1c0">waitForDevices</a></td></tr>
 <tr class="separator:aad4f780b6477ad7d37f6e85f3f40f1c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f3ce5cb472e8f042d4b427518d0ffea"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2f3ce5cb472e8f042d4b427518d0ffea"></a>
-NSRunLoop *&#160;</td><td class="memItemRight" valign="bottom"><b>runLoop</b></td></tr>
+<tr class="memitem:a2f3ce5cb472e8f042d4b427518d0ffea"><td class="memItemLeft" align="right" valign="top">NSRunLoop *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_b_t_device_manager.html#a2f3ce5cb472e8f042d4b427518d0ffea">runLoop</a></td></tr>
 <tr class="separator:a2f3ce5cb472e8f042d4b427518d0ffea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53dc4023fb9a5873cd8f7a82489d25c0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a53dc4023fb9a5873cd8f7a82489d25c0"></a>
-id&#160;</td><td class="memItemRight" valign="bottom"><b>delegate</b></td></tr>
+<tr class="memitem:a53dc4023fb9a5873cd8f7a82489d25c0"><td class="memItemLeft" align="right" valign="top">id&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_b_t_device_manager.html#a53dc4023fb9a5873cd8f7a82489d25c0">delegate</a></td></tr>
 <tr class="separator:a53dc4023fb9a5873cd8f7a82489d25c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac70dac2c693cf191a05a606d7cea9763"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac70dac2c693cf191a05a606d7cea9763"></a>
-NSInteger&#160;</td><td class="memItemRight" valign="bottom"><b>discoveryCount</b></td></tr>
+<tr class="memitem:ac70dac2c693cf191a05a606d7cea9763"><td class="memItemLeft" align="right" valign="top">NSInteger&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_b_t_device_manager.html#ac70dac2c693cf191a05a606d7cea9763">discoveryCount</a></td></tr>
 <tr class="separator:ac70dac2c693cf191a05a606d7cea9763"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This manager handles the overall connection and discovery of the bluetooth devices. It performs scanning, connectivity and management of the devices for the selection view controllers. </p>
+<div class="textblock"><p>This manager handles the overall connection and discovery of the bluetooth devices. It performs scanning, connectivity and management of the devices for the selection view controllers. This class is a singleton object because multiple instances cause problems with false posivitives for device connection and lost information based on OS level caching. WARNING: Care must be take in assigning the delegate for this object. It is possible to produce side affects to other objects that are using this manager if care is not taken when updating this instance variable since the delegate can only reference one controlling object. </p>
 </div><h2 class="groupheader">Method Documentation</h2>
 <a class="anchor" id="afda16d6654df9d6eddde47c5a3ae38ec"></a>
 <div class="memitem">
@@ -320,6 +306,30 @@ NSInteger&#160;</td><td class="memItemRight" valign="bottom"><b>discoveryCount</
 
 </div>
 </div>
+<a class="anchor" id="af11257d463445c307cd38c9e284c6826"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (id&lt; <a class="el" href="protocol_device_common_info_interface-p.html">DeviceCommonInfoInterface</a> &gt;) monitorMatchingCBPeripheral: </td>
+          <td></td>
+          <td class="paramtype">(CBPeripheral*)&#160;</td>
+          <td class="paramname"><em>device</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This is a method that is to be used privately in this class. It's purpose is to parse the list of devices that this manager knows about and return a device object that matches the CBPeripheral identifier. Since the identifier is a name it is possible to have two duplicate names. This is a change to CBPeripheral where the name takes precendence over the UUID of the device if it is known.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device</td><td>The CBPeripheral that is to be used for the search criteria.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A device object that conforms to the CommonDeviceInfoInterface. Additional introspection will be needed if you wish to see if the device conforms to one of the other protocols. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="af3f435a6fec885eca732034a12239504"></a>
 <div class="memitem">
 <div class="memproto">
@@ -401,7 +411,13 @@ NSInteger&#160;</td><td class="memItemRight" valign="bottom"><b>discoveryCount</
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This setter updates the selectedActivityMonitor as long as it conforms to the <a class="el" href="protocol_activity_monitor_protocol-p.html">ActivityMonitorProtocol</a> and the <a class="el" href="protocol_device_common_info_interface-p.html">DeviceCommonInfoInterface</a>. It also notifies that delegate that the value has changed. </p>
+<p>This setter updates the selectedActivityMonitor as long as it conforms to the <a class="el" href="protocol_activity_monitor_protocol-p.html">ActivityMonitorProtocol</a> and the <a class="el" href="protocol_device_common_info_interface-p.html">DeviceCommonInfoInterface</a>. It also notifies that delegate that the value has changed.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">selectedActivityMonitor</td><td>The activity monitor that has been selected by the view controller. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -418,7 +434,13 @@ NSInteger&#160;</td><td class="memItemRight" valign="bottom"><b>discoveryCount</
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This setter updates the selectedHeartMonitor as long as it conforms to the <a class="el" href="protocol_heart_monitor_protocol-p.html">HeartMonitorProtocol</a> and the <a class="el" href="protocol_device_common_info_interface-p.html">DeviceCommonInfoInterface</a>. It also notifies that delegate that the value has changed. </p>
+<p>This setter updates the selectedHeartMonitor as long as it conforms to the <a class="el" href="protocol_heart_monitor_protocol-p.html">HeartMonitorProtocol</a> and the <a class="el" href="protocol_device_common_info_interface-p.html">DeviceCommonInfoInterface</a>. It also notifies that delegate that the value has changed.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">selectedHeartMonitor</td><td>The heart mo0nitor that has been selected by the view controller. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -478,6 +500,301 @@ NSInteger&#160;</td><td class="memItemRight" valign="bottom"><b>discoveryCount</
 
 </div>
 </div>
+<h2 class="groupheader">Property Documentation</h2>
+<a class="anchor" id="a53a05cc87797350638a2b82c337eb854"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (id&lt;<a class="el" href="protocol_activity_monitor_protocol-p.html">ActivityMonitorProtocol</a>, <a class="el" href="protocol_device_common_info_interface-p.html">DeviceCommonInfoInterface</a>&gt;) _selectedActivityMonitor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The activity monitor that is currently selected. The value may be nil when nothing is selected and is part of the design. This variable should only be accessed using selectedActivityMonitor and setSelectedActivityMonitor because the delegate is notified of any changes to this value. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab303b2617a6391db56c3b61f217f9b6b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (id&lt;<a class="el" href="protocol_heart_monitor_protocol-p.html">HeartMonitorProtocol</a>, <a class="el" href="protocol_device_common_info_interface-p.html">DeviceCommonInfoInterface</a>&gt;) _selectedHeartMonitor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The heart monitor that is currently selected. The value may be nil when nothing is selected and is part of the design. This variable should only be accessed using selectedHeartMonitor and setSelectedHeartMonitor because the delegate is notified of any changes to this value. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8f6f577bb25b7dcd8b3857d6497bff4e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSArray*) activityDevices</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The array containing any devices that conform to the <a class="el" href="protocol_activity_monitor_protocol-p.html">ActivityMonitorProtocol</a>. It is used by the activity monitor selection view controller for listing possible devices to use. </p>
+
+</div>
+</div>
+<a class="anchor" id="a53dc4023fb9a5873cd8f7a82489d25c0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (id) delegate</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">weak</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The delegate is the object that receives a call back whenever the selected heart monitor or activity monitor has changed. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac70dac2c693cf191a05a606d7cea9763"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSInteger) discoveryCount</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The counter that is used for requesting a new discovery of the device. The setting is 5 seconds, and then a rediscovery of the device begins. </p>
+
+</div>
+</div>
+<a class="anchor" id="a76ffd5887aa2d8c8ea20df2384851d41"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSArray*) heartDevices</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The array containing any devices that conform to the <a class="el" href="protocol_heart_monitor_protocol-p.html">HeartMonitorProtocol</a>. It is used by the heart monitor selection view controller for listing possible devices to use. </p>
+
+</div>
+</div>
+<a class="anchor" id="a0864f241d9fc14f03e5f8e2b4dd0667a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) isActive</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>This flag is to see if bluetooth use is allowed. The manager will not be able to perform any operations if the bluetooth service is off or not allowed by the user. </p>
+
+</div>
+</div>
+<a class="anchor" id="a15cc71749368c5de76624c5c4e4f7b3c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) isInDiscoveryMode</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>This flag indicates that the manager is in discovery mode and that addition scans must be performed to get the characteristics and services of the devices as they are discovered and connected. </p>
+
+</div>
+</div>
+<a class="anchor" id="a61d03c41c000f28ce50e88bd9b8f6be9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (CBCentralManager*) manager</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span><span class="mlabel">retain</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The bluetooth connection manager that tracks the CBPeripherals. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2f3ce5cb472e8f042d4b427518d0ffea"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSRunLoop*) runLoop</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The runloop that is used to check for device discovery to see if all characteristics needed have been discovered. The reference is stated so it can be canceld outside the method that calls it. </p>
+
+</div>
+</div>
+<a class="anchor" id="a610db66209e9d142e5451ceedc3c6a36"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSInteger) searchType</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>This value indicates what services the manager should scan and connect. For details see <a class="el" href="_device_types_8h_source.html">DeviceTypes.h</a> </p>
+
+</div>
+</div>
+<a class="anchor" id="a8e47d59f0a40f8d96f4fea826be853d1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSInteger) selectedIndexForActivityMonitor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The index of the activity monitor device that has been selected. It is used by the activity monitor select view controller to indicate which one is selected. If the value is -1, then no device has been selected. </p>
+
+</div>
+</div>
+<a class="anchor" id="a98add70110c91e4266481e312d96afbf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSInteger) selectedIndexForHeartMonitor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The index of the heart monitor device that has been selected. It is used by the heart monitor select view controller to indicate which one is selected. If the value is -1, then no device has been selected. </p>
+
+</div>
+</div>
+<a class="anchor" id="aad4f780b6477ad7d37f6e85f3f40f1c0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSTimer*) waitForDevices</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The timer that is used when the request to stop scanning has been done, but the device that is selected does not have full discovery done. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/Users/douglas/Documents/software/Senior Project/ios/Medical Cyborgs/Medical Cyborgs/<a class="el" href="_b_t_device_manager_8h_source.html">BTDeviceManager.h</a></li>
 <li>/Users/douglas/Documents/software/Senior Project/ios/Medical Cyborgs/Medical Cyborgs/BTDeviceManager.m</li>
@@ -485,7 +802,7 @@ NSInteger&#160;</td><td class="memItemRight" valign="bottom"><b>discoveryCount</
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 18 2014 18:18:03 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 28 2014 12:19:08 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

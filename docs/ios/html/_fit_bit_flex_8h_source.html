@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -67,7 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -104,24 +105,40 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
 <div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="interface_fit_bit_flex.html">   26</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_fit_bit_flex.html">FitBitFlex</a> : NSObject &lt;<a class="code" href="protocol_device_common_info_interface-p.html">DeviceCommonInfoInterface</a>, <a class="code" href="protocol_activity_monitor_protocol-p.html">ActivityMonitorProtocol</a>&gt;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">@property</span> (retain, strong) CBPeripheral *<a class="code" href="protocol_device_common_info_interface-p.html#a60acee2f42fa42a04ba3585e08d75f8e">device</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">@property</span> (retain) CBService *batteryService;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">@property</span> (retain) CBCharacteristic *batteryLvlChar;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">@property</span> <span class="keywordtype">int</span> <a class="code" href="protocol_device_common_info_interface-p.html#a54b8e239d2d0470be0d906b11b7f3850">batteryLevel</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">@property</span> NSInteger <a class="code" href="protocol_device_common_info_interface-p.html#a2817a747a1ab2cf6f199b1cebe86bd83">type</a>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">@property</span> (retain) NSString *deviceManufacturer;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="interface_fit_bit_flex.html#a77895e42698dfb9e32ea3511dd68aa3e">   33</a></span>&#160;<span class="keyword">@property</span> NSInteger <a class="code" href="interface_fit_bit_flex.html#a77895e42698dfb9e32ea3511dd68aa3e">type</a>;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">@end</span></div>
-<div class="ttc" id="protocol_device_common_info_interface-p_html_a2817a747a1ab2cf6f199b1cebe86bd83"><div class="ttname"><a href="protocol_device_common_info_interface-p.html#a2817a747a1ab2cf6f199b1cebe86bd83">-[DeviceCommonInfoInterface-p type]</a></div><div class="ttdeci">NSInteger type()</div></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="interface_fit_bit_flex.html#af23b05b17587b9810d93909f279cca75">   40</a></span>&#160;<span class="keyword">@property</span> (retain) CBService *<a class="code" href="interface_fit_bit_flex.html#af23b05b17587b9810d93909f279cca75">batteryService</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="interface_fit_bit_flex.html#a0d5ca990dbff1852b3d8a07faa91234b">   47</a></span>&#160;<span class="keyword">@property</span> (retain) CBCharacteristic *<a class="code" href="interface_fit_bit_flex.html#a0d5ca990dbff1852b3d8a07faa91234b">batteryLvlChar</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="interface_fit_bit_flex.html#a6141ecb075c9553d179dc5210d2c4952">   55</a></span>&#160;<span class="keyword">@property</span> <span class="keywordtype">int</span> <a class="code" href="interface_fit_bit_flex.html#a6141ecb075c9553d179dc5210d2c4952">batteryLevel</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="interface_fit_bit_flex.html#ac539ad853d5729137679c3293cba75f5">   62</a></span>&#160;<span class="keyword">@property</span> (retain) CBPeripheral *<a class="code" href="protocol_device_common_info_interface-p.html#a60acee2f42fa42a04ba3585e08d75f8e">device</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="interface_fit_bit_flex.html#a3b4fca544836750998946aab4d4c8a3d">   69</a></span>&#160;<span class="keyword">@property</span> (retain) NSString *<a class="code" href="interface_fit_bit_flex.html#a3b4fca544836750998946aab4d4c8a3d">deviceManufacturer</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">@end</span></div>
+<div class="ttc" id="interface_fit_bit_flex_html_a3b4fca544836750998946aab4d4c8a3d"><div class="ttname"><a href="interface_fit_bit_flex.html#a3b4fca544836750998946aab4d4c8a3d">FitBitFlex::deviceManufacturer</a></div><div class="ttdeci">NSString * deviceManufacturer</div><div class="ttdef"><b>Definition:</b> FitBitFlex.h:69</div></div>
+<div class="ttc" id="interface_fit_bit_flex_html_a0d5ca990dbff1852b3d8a07faa91234b"><div class="ttname"><a href="interface_fit_bit_flex.html#a0d5ca990dbff1852b3d8a07faa91234b">FitBitFlex::batteryLvlChar</a></div><div class="ttdeci">CBCharacteristic * batteryLvlChar</div><div class="ttdef"><b>Definition:</b> FitBitFlex.h:47</div></div>
 <div class="ttc" id="protocol_activity_monitor_protocol-p_html"><div class="ttname"><a href="protocol_activity_monitor_protocol-p.html">ActivityMonitorProtocol-p</a></div><div class="ttdef"><b>Definition:</b> ActivityMonitorProtocol.h:20</div></div>
 <div class="ttc" id="protocol_device_common_info_interface-p_html_a60acee2f42fa42a04ba3585e08d75f8e"><div class="ttname"><a href="protocol_device_common_info_interface-p.html#a60acee2f42fa42a04ba3585e08d75f8e">-[DeviceCommonInfoInterface-p device]</a></div><div class="ttdeci">CBPeripheral * device()</div></div>
+<div class="ttc" id="interface_fit_bit_flex_html_a77895e42698dfb9e32ea3511dd68aa3e"><div class="ttname"><a href="interface_fit_bit_flex.html#a77895e42698dfb9e32ea3511dd68aa3e">FitBitFlex::type</a></div><div class="ttdeci">NSInteger type</div><div class="ttdef"><b>Definition:</b> FitBitFlex.h:33</div></div>
 <div class="ttc" id="protocol_device_common_info_interface-p_html"><div class="ttname"><a href="protocol_device_common_info_interface-p.html">DeviceCommonInfoInterface-p</a></div><div class="ttdef"><b>Definition:</b> DeviceCommonInfoInterface.h:21</div></div>
+<div class="ttc" id="interface_fit_bit_flex_html_a6141ecb075c9553d179dc5210d2c4952"><div class="ttname"><a href="interface_fit_bit_flex.html#a6141ecb075c9553d179dc5210d2c4952">FitBitFlex::batteryLevel</a></div><div class="ttdeci">int batteryLevel</div><div class="ttdef"><b>Definition:</b> FitBitFlex.h:55</div></div>
 <div class="ttc" id="interface_fit_bit_flex_html"><div class="ttname"><a href="interface_fit_bit_flex.html">FitBitFlex</a></div><div class="ttdef"><b>Definition:</b> FitBitFlex.h:26</div></div>
-<div class="ttc" id="protocol_device_common_info_interface-p_html_a54b8e239d2d0470be0d906b11b7f3850"><div class="ttname"><a href="protocol_device_common_info_interface-p.html#a54b8e239d2d0470be0d906b11b7f3850">-[DeviceCommonInfoInterface-p batteryLevel]</a></div><div class="ttdeci">int batteryLevel()</div></div>
+<div class="ttc" id="interface_fit_bit_flex_html_af23b05b17587b9810d93909f279cca75"><div class="ttname"><a href="interface_fit_bit_flex.html#af23b05b17587b9810d93909f279cca75">FitBitFlex::batteryService</a></div><div class="ttdeci">CBService * batteryService</div><div class="ttdef"><b>Definition:</b> FitBitFlex.h:40</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 18 2014 18:18:03 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 28 2014 12:19:08 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

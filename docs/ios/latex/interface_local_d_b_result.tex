@@ -14,28 +14,43 @@ Inheritance diagram for Local\-D\-B\-Result\-:\begin{figure}[H]
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{interface_local_d_b_result_a5cdd651e87ce4b0e2ed296fd1a54f271}{N\-S\-Integer {\bfseries patient\-I\-D}}\label{interface_local_d_b_result_a5cdd651e87ce4b0e2ed296fd1a54f271}
-
+N\-S\-Integer \hyperlink{interface_local_d_b_result_a5cdd651e87ce4b0e2ed296fd1a54f271}{patient\-I\-D}
 \item 
-\hypertarget{interface_local_d_b_result_a59bb8d9536b92e3bbd6c244d13771ccc}{N\-S\-Integer {\bfseries heart\-Rate}}\label{interface_local_d_b_result_a59bb8d9536b92e3bbd6c244d13771ccc}
-
+N\-S\-Integer \hyperlink{interface_local_d_b_result_a59bb8d9536b92e3bbd6c244d13771ccc}{heart\-Rate}
 \item 
-\hypertarget{interface_local_d_b_result_a55f83e49659fb4d15db30117f90dcea7}{float {\bfseries latitude}}\label{interface_local_d_b_result_a55f83e49659fb4d15db30117f90dcea7}
-
+float \hyperlink{interface_local_d_b_result_a55f83e49659fb4d15db30117f90dcea7}{latitude}
 \item 
-\hypertarget{interface_local_d_b_result_ae50e0676b6cac4cad3e565c5caa117b2}{float {\bfseries longitude}}\label{interface_local_d_b_result_ae50e0676b6cac4cad3e565c5caa117b2}
-
+float \hyperlink{interface_local_d_b_result_ae50e0676b6cac4cad3e565c5caa117b2}{longitude}
 \item 
-\hypertarget{interface_local_d_b_result_a7538fcbcfd150e5353d3d4e531bef2bc}{N\-S\-String $\ast$ {\bfseries time\-Stamp}}\label{interface_local_d_b_result_a7538fcbcfd150e5353d3d4e531bef2bc}
-
+N\-S\-String $\ast$ \hyperlink{interface_local_d_b_result_a7538fcbcfd150e5353d3d4e531bef2bc}{time\-Stamp}
 \item 
-\hypertarget{interface_local_d_b_result_a10d275e102bd14b0a071b5572fbf62d3}{N\-S\-Integer {\bfseries activity\-Level}}\label{interface_local_d_b_result_a10d275e102bd14b0a071b5572fbf62d3}
-
+N\-S\-Integer \hyperlink{interface_local_d_b_result_a10d275e102bd14b0a071b5572fbf62d3}{activity\-Level}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-This is a simple data class that is used to pass around from the database to classes that are using it. It was created to simply string manipulation. 
+This is a simple data class that is used to pass around from the database to classes that are using it. It was created to simplify string manipulation. 
+
+\subsection{Property Documentation}
+\hypertarget{interface_local_d_b_result_a10d275e102bd14b0a071b5572fbf62d3}{\index{Local\-D\-B\-Result@{Local\-D\-B\-Result}!activity\-Level@{activity\-Level}}
+\index{activity\-Level@{activity\-Level}!LocalDBResult@{Local\-D\-B\-Result}}
+\subsubsection[{activity\-Level}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Integer) activity\-Level\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}}}\label{interface_local_d_b_result_a10d275e102bd14b0a071b5572fbf62d3}
+An integer value of the activity level based on patient age and heart rate. See \hyperlink{class_device_constants_and_static_functions}{Device\-Constants\-And\-Static\-Functions} for a description. \hypertarget{interface_local_d_b_result_a59bb8d9536b92e3bbd6c244d13771ccc}{\index{Local\-D\-B\-Result@{Local\-D\-B\-Result}!heart\-Rate@{heart\-Rate}}
+\index{heart\-Rate@{heart\-Rate}!LocalDBResult@{Local\-D\-B\-Result}}
+\subsubsection[{heart\-Rate}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Integer) heart\-Rate\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}}}\label{interface_local_d_b_result_a59bb8d9536b92e3bbd6c244d13771ccc}
+The heart rate of the patient as it was recorded by the database. \hypertarget{interface_local_d_b_result_a55f83e49659fb4d15db30117f90dcea7}{\index{Local\-D\-B\-Result@{Local\-D\-B\-Result}!latitude@{latitude}}
+\index{latitude@{latitude}!LocalDBResult@{Local\-D\-B\-Result}}
+\subsubsection[{latitude}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (float) latitude\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}}}\label{interface_local_d_b_result_a55f83e49659fb4d15db30117f90dcea7}
+The latitude of the patient that was recorded. This value will not change much unless big changes happen. \hypertarget{interface_local_d_b_result_ae50e0676b6cac4cad3e565c5caa117b2}{\index{Local\-D\-B\-Result@{Local\-D\-B\-Result}!longitude@{longitude}}
+\index{longitude@{longitude}!LocalDBResult@{Local\-D\-B\-Result}}
+\subsubsection[{longitude}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (float) longitude\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}}}\label{interface_local_d_b_result_ae50e0676b6cac4cad3e565c5caa117b2}
+The longitude of the patient that was recorded. This value will not change much unless big changes happen. \hypertarget{interface_local_d_b_result_a5cdd651e87ce4b0e2ed296fd1a54f271}{\index{Local\-D\-B\-Result@{Local\-D\-B\-Result}!patient\-I\-D@{patient\-I\-D}}
+\index{patient\-I\-D@{patient\-I\-D}!LocalDBResult@{Local\-D\-B\-Result}}
+\subsubsection[{patient\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Integer) patient\-I\-D\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}}}\label{interface_local_d_b_result_a5cdd651e87ce4b0e2ed296fd1a54f271}
+The patient\-I\-D that is used by the database. \hypertarget{interface_local_d_b_result_a7538fcbcfd150e5353d3d4e531bef2bc}{\index{Local\-D\-B\-Result@{Local\-D\-B\-Result}!time\-Stamp@{time\-Stamp}}
+\index{time\-Stamp@{time\-Stamp}!LocalDBResult@{Local\-D\-B\-Result}}
+\subsubsection[{time\-Stamp}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) time\-Stamp\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}}}\label{interface_local_d_b_result_a7538fcbcfd150e5353d3d4e531bef2bc}
+The timestamp this data was recorded in the database. It has date and time. It follows the format of 'yyyy-\/mm-\/dd hh\-:mm\-:ss'. The hours are expressed in military time from 0-\/23. 
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
 \item 

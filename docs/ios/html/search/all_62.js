@@ -1,7 +1,12 @@
 var searchData=
 [
   ['backgroundscheduler',['BackgroundScheduler',['../interface_background_scheduler.html',1,'']]],
-  ['batterylevel',['batteryLevel',['../protocol_device_common_info_interface-p.html#a54b8e239d2d0470be0d906b11b7f3850',1,'DeviceCommonInfoInterface-p']]],
+  ['batteryalertgiven',['batteryAlertGiven',['../interface_device_poll_manager.html#a8d5b5ff2c336f0dd2cb2b9e088850072',1,'DevicePollManager']]],
+  ['batterylevel',['batteryLevel',['../interface_fit_bit_flex.html#a6141ecb075c9553d179dc5210d2c4952',1,'FitBitFlex::batteryLevel()'],['../interface_jawbone_u_p24.html#a7c1af9ec44bfb9a3fafcf6d3ba1a3dc9',1,'JawboneUP24::batteryLevel()'],['../interface_mio_global_link.html#a7f0add9d273f0d51eb4b3c73f3eb167d',1,'MioGlobalLink::batteryLevel()'],['../interface_polar_h7.html#a333bcccf6282727ccd5e159a66fb6376',1,'PolarH7::batteryLevel()'],['../interface_wahoo_tickr_x.html#a95ae53406af5abb3d47d51d0f60c228b',1,'WahooTickrX::batteryLevel()'],['../protocol_device_common_info_interface-p.html#a54b8e239d2d0470be0d906b11b7f3850',1,'DeviceCommonInfoInterface-p::batteryLevel()']]],
+  ['batterylvlchar',['batteryLvlChar',['../interface_fit_bit_flex.html#a0d5ca990dbff1852b3d8a07faa91234b',1,'FitBitFlex::batteryLvlChar()'],['../interface_jawbone_u_p24.html#ac0feafa5d2a26db099b3328df1cc85e1',1,'JawboneUP24::batteryLvlChar()'],['../interface_mio_global_link.html#a77ed04d9593004c08ec49e1620cd79a0',1,'MioGlobalLink::batteryLvlChar()'],['../interface_polar_h7.html#a477f7039b2dd7cdcd96519b19cb72581',1,'PolarH7::batteryLvlChar()'],['../interface_wahoo_tickr_x.html#a664a0a704cfea55c60ddf4dbcad3bf35',1,'WahooTickrX::batteryLvlChar()']]],
+  ['batteryservice',['batteryService',['../interface_fit_bit_flex.html#af23b05b17587b9810d93909f279cca75',1,'FitBitFlex::batteryService()'],['../interface_jawbone_u_p24.html#a60f0270de3139d5219544969cce08293',1,'JawboneUP24::batteryService()'],['../interface_mio_global_link.html#a6615e890d11dfb95046f5f229f789f8e',1,'MioGlobalLink::batteryService()'],['../interface_polar_h7.html#a53721638b179d9373c6a3e17f6ffb3c9',1,'PolarH7::batteryService()'],['../interface_wahoo_tickr_x.html#a4dc92d682d3e9734886c0356bdb86bbf',1,'WahooTickrX::batteryService()']]],
+  ['biglocationchanges',['bigLocationChanges',['../interface_device_poll_manager.html#a8186f40fc585c1bf30ebb8c6e05ca6d4',1,'DevicePollManager']]],
   ['btdevicemanager',['BTDeviceManager',['../interface_b_t_device_manager.html',1,'']]],
-  ['btdevicemanagerdelegate_2dp',['BTDeviceManagerDelegate-p',['../protocol_b_t_device_manager_delegate-p.html',1,'']]]
+  ['btdevicemanagerdelegate_2dp',['BTDeviceManagerDelegate-p',['../protocol_b_t_device_manager_delegate-p.html',1,'']]],
+  ['btdevices',['btDevices',['../interface_home_screen_v_c.html#a2d29b010a455bf37937421fac3bfde81',1,'HomeScreenVC']]]
 ];

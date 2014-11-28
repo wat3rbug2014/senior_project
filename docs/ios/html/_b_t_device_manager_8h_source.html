@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -67,7 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -94,90 +95,132 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//  Copyright (c) 2014 Douglas Gardiner. All rights reserved.</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#import &lt;Foundation/Foundation.h&gt;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#import &lt;CoreBluetooth/CoreBluetooth.h&gt;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#import &quot;DeviceTypes.h&quot;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#import &quot;DeviceCommonInfoInterface.h&quot;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#import &quot;HeartMonitorProtocol.h&quot;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#import &quot;ActivityMonitorProtocol.h&quot;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#import &quot;DeviceConstantsAndStaticFunctions.h&quot;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#import &quot;BTDeviceManagerDelegate.h&quot;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="interface_b_t_device_manager.html">   25</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_b_t_device_manager.html">BTDeviceManager</a> : NSObject &lt;CBCentralManagerDelegate&gt;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">@property</span> id&lt;HeartMonitorProtocol, DeviceCommonInfoInterface&gt; _selectedHeartMonitor;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">@property</span> id&lt;ActivityMonitorProtocol, DeviceCommonInfoInterface&gt; _selectedActivityMonitor;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">@property</span> NSArray *heartDevices;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">@property</span> NSArray *activityDevices;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">@property</span> NSInteger selectedIndexForHeartMonitor;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">@property</span> NSInteger selectedIndexForActivityMonitor;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">@property</span> BOOL isInDiscoveryMode;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">@property</span> (retain) CBCentralManager *manager;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">@property</span> NSInteger searchType;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">@property</span> BOOL isActive;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">@property</span> NSTimer *waitForDevices;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">@property</span> NSRunLoop *runLoop;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">@property</span> (nonatomic, weak) <span class="keywordtype">id</span> delegate;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">@property</span> NSInteger discoveryCount;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#import &lt;Foundation/Foundation.h&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#import &lt;CoreBluetooth/CoreBluetooth.h&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#import &quot;DeviceTypes.h&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#import &quot;DeviceCommonInfoInterface.h&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#import &quot;HeartMonitorProtocol.h&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#import &quot;ActivityMonitorProtocol.h&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#import &quot;DeviceConstantsAndStaticFunctions.h&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#import &quot;BTDeviceManagerDelegate.h&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="interface_b_t_device_manager.html">   31</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_b_t_device_manager.html">BTDeviceManager</a> : NSObject &lt;CBCentralManagerDelegate&gt;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="interface_b_t_device_manager.html#ab303b2617a6391db56c3b61f217f9b6b">   40</a></span>&#160;<span class="keyword">@property</span> id&lt;HeartMonitorProtocol, DeviceCommonInfoInterface&gt; <a class="code" href="interface_b_t_device_manager.html#ab303b2617a6391db56c3b61f217f9b6b">_selectedHeartMonitor</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;-(void) startScanForType: (NSInteger) type;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;+(id) <a class="code" href="interface_b_t_device_manager.html#a38ff364ec62dc4ab4aea65f2aebed98c">sharedManager</a>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;-(NSInteger) discoveredDevicesForType: (NSInteger) type;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;-(void) <a class="code" href="interface_b_t_device_manager.html#a77d4c5c16c2e82bed7e5f2f65bcd2dfb">stopScan</a>;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;-(void) <a class="code" href="interface_b_t_device_manager.html#ae310a606d4e735e7813319e366f67aa2">disconnectSelectedMonitors</a>;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;-(void) <a class="code" href="interface_b_t_device_manager.html#afda16d6654df9d6eddde47c5a3ae38ec">connectSelectedMonitors</a>;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;-(void) <a class="code" href="interface_b_t_device_manager.html#aee2928325606cb3f338a5ecb8ef35560">disconnectAllDevices</a>;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;-(void) selectDeviceType: (NSInteger) type atIndex:(NSInteger) index;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;-(void) deselectDeviceType: (NSInteger) type;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;-(id&lt;DeviceCommonInfoInterface&gt;) deviceAtIndex: (NSInteger) index forType: (NSInteger) type;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;-(id&lt;DeviceCommonInfoInterface&gt;) monitorMatchingCBPeripheral: (CBPeripheral*) device;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;-(id&lt;HeartMonitorProtocol, DeviceCommonInfoInterface&gt;) <a class="code" href="interface_b_t_device_manager.html#a1c4ad74783cb71a008c926f2e5ec3835">selectedHeartMonitor</a>;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;-(void) setSelectedHeartMonitor: (id&lt;HeartMonitorProtocol, DeviceCommonInfoInterface&gt;) <a class="code" href="interface_b_t_device_manager.html#a1c4ad74783cb71a008c926f2e5ec3835">selectedHeartMonitor</a>;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;-(id&lt;ActivityMonitorProtocol, DeviceCommonInfoInterface&gt;) <a class="code" href="interface_b_t_device_manager.html#aaca0fdc9335bbc7465e91ad0f5c4dbb2">selectedActivityMonitor</a>;</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;-(void) setSelectedActivityMonitor: (id&lt;ActivityMonitorProtocol, DeviceCommonInfoInterface&gt;) <a class="code" href="interface_b_t_device_manager.html#aaca0fdc9335bbc7465e91ad0f5c4dbb2">selectedActivityMonitor</a>;</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="interface_b_t_device_manager.html#a53a05cc87797350638a2b82c337eb854">   49</a></span>&#160;<span class="keyword">@property</span> id&lt;ActivityMonitorProtocol, DeviceCommonInfoInterface&gt; <a class="code" href="interface_b_t_device_manager.html#a53a05cc87797350638a2b82c337eb854">_selectedActivityMonitor</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="interface_b_t_device_manager.html#a76ffd5887aa2d8c8ea20df2384851d41">   57</a></span>&#160;<span class="keyword">@property</span> NSArray *<a class="code" href="interface_b_t_device_manager.html#a76ffd5887aa2d8c8ea20df2384851d41">heartDevices</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="interface_b_t_device_manager.html#a8f6f577bb25b7dcd8b3857d6497bff4e">   65</a></span>&#160;<span class="keyword">@property</span> NSArray *<a class="code" href="interface_b_t_device_manager.html#a8f6f577bb25b7dcd8b3857d6497bff4e">activityDevices</a>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="interface_b_t_device_manager.html#a98add70110c91e4266481e312d96afbf">   74</a></span>&#160;<span class="keyword">@property</span> NSInteger <a class="code" href="interface_b_t_device_manager.html#a98add70110c91e4266481e312d96afbf">selectedIndexForHeartMonitor</a>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="interface_b_t_device_manager.html#a8e47d59f0a40f8d96f4fea826be853d1">   83</a></span>&#160;<span class="keyword">@property</span> NSInteger <a class="code" href="interface_b_t_device_manager.html#a8e47d59f0a40f8d96f4fea826be853d1">selectedIndexForActivityMonitor</a>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="interface_b_t_device_manager.html#a15cc71749368c5de76624c5c4e4f7b3c">   91</a></span>&#160;<span class="keyword">@property</span> BOOL <a class="code" href="interface_b_t_device_manager.html#a15cc71749368c5de76624c5c4e4f7b3c">isInDiscoveryMode</a>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="interface_b_t_device_manager.html#a61d03c41c000f28ce50e88bd9b8f6be9">   98</a></span>&#160;<span class="keyword">@property</span> (retain) CBCentralManager *<a class="code" href="interface_b_t_device_manager.html#a61d03c41c000f28ce50e88bd9b8f6be9">manager</a>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="interface_b_t_device_manager.html#a610db66209e9d142e5451ceedc3c6a36">  105</a></span>&#160;<span class="keyword">@property</span> NSInteger <a class="code" href="interface_b_t_device_manager.html#a610db66209e9d142e5451ceedc3c6a36">searchType</a>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="interface_b_t_device_manager.html#a0864f241d9fc14f03e5f8e2b4dd0667a">  113</a></span>&#160;<span class="keyword">@property</span> BOOL <a class="code" href="interface_b_t_device_manager.html#a0864f241d9fc14f03e5f8e2b4dd0667a">isActive</a>;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="interface_b_t_device_manager.html#aad4f780b6477ad7d37f6e85f3f40f1c0">  120</a></span>&#160;<span class="keyword">@property</span> NSTimer *<a class="code" href="interface_b_t_device_manager.html#aad4f780b6477ad7d37f6e85f3f40f1c0">waitForDevices</a>;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
+<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="interface_b_t_device_manager.html#a2f3ce5cb472e8f042d4b427518d0ffea">  128</a></span>&#160;<span class="keyword">@property</span> NSRunLoop *<a class="code" href="interface_b_t_device_manager.html#a2f3ce5cb472e8f042d4b427518d0ffea">runLoop</a>;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
+<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="interface_b_t_device_manager.html#a53dc4023fb9a5873cd8f7a82489d25c0">  136</a></span>&#160;<span class="keyword">@property</span> (nonatomic, weak) <span class="keywordtype">id</span> <a class="code" href="interface_b_t_device_manager.html#a53dc4023fb9a5873cd8f7a82489d25c0">delegate</a>;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
+<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="interface_b_t_device_manager.html#ac70dac2c693cf191a05a606d7cea9763">  144</a></span>&#160;<span class="keyword">@property</span> NSInteger <a class="code" href="interface_b_t_device_manager.html#ac70dac2c693cf191a05a606d7cea9763">discoveryCount</a>;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;-(void) startScanForType: (NSInteger) type;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;+(id) <a class="code" href="interface_b_t_device_manager.html#a38ff364ec62dc4ab4aea65f2aebed98c">sharedManager</a>;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;-(NSInteger) discoveredDevicesForType: (NSInteger) type;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;-(void) <a class="code" href="interface_b_t_device_manager.html#a77d4c5c16c2e82bed7e5f2f65bcd2dfb">stopScan</a>;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;-(void) <a class="code" href="interface_b_t_device_manager.html#ae310a606d4e735e7813319e366f67aa2">disconnectSelectedMonitors</a>;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;-(void) <a class="code" href="interface_b_t_device_manager.html#afda16d6654df9d6eddde47c5a3ae38ec">connectSelectedMonitors</a>;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;-(void) <a class="code" href="interface_b_t_device_manager.html#aee2928325606cb3f338a5ecb8ef35560">disconnectAllDevices</a>;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;-(void) selectDeviceType: (NSInteger) type atIndex:(NSInteger) index;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;-(void) deselectDeviceType: (NSInteger) type;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;-(id&lt;<a class="code" href="protocol_device_common_info_interface-p.html">DeviceCommonInfoInterface</a>&gt;) deviceAtIndex: (NSInteger) index forType: (NSInteger) type;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;-(id&lt;<a class="code" href="protocol_device_common_info_interface-p.html">DeviceCommonInfoInterface</a>&gt;) monitorMatchingCBPeripheral: (CBPeripheral*) device;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;-(id&lt;<a class="code" href="protocol_heart_monitor_protocol-p.html">HeartMonitorProtocol</a>, <a class="code" href="protocol_device_common_info_interface-p.html">DeviceCommonInfoInterface</a>&gt;) <a class="code" href="interface_b_t_device_manager.html#a1c4ad74783cb71a008c926f2e5ec3835">selectedHeartMonitor</a>;</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;-(void) setSelectedHeartMonitor: (<span class="keywordtype">id</span>&lt;<a class="code" href="protocol_heart_monitor_protocol-p.html">HeartMonitorProtocol</a>, <a class="code" href="protocol_device_common_info_interface-p.html">DeviceCommonInfoInterface</a>&gt;) selectedHeartMonitor;</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;-(id&lt;<a class="code" href="protocol_activity_monitor_protocol-p.html">ActivityMonitorProtocol</a>, <a class="code" href="protocol_device_common_info_interface-p.html">DeviceCommonInfoInterface</a>&gt;) <a class="code" href="interface_b_t_device_manager.html#aaca0fdc9335bbc7465e91ad0f5c4dbb2">selectedActivityMonitor</a>;</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;-(void) setSelectedActivityMonitor: (<span class="keywordtype">id</span>&lt;<a class="code" href="protocol_activity_monitor_protocol-p.html">ActivityMonitorProtocol</a>, <a class="code" href="protocol_device_common_info_interface-p.html">DeviceCommonInfoInterface</a>&gt;) selectedActivityMonitor;</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;<span class="keyword">@end</span></div>
+<div class="ttc" id="protocol_activity_monitor_protocol-p_html"><div class="ttname"><a href="protocol_activity_monitor_protocol-p.html">ActivityMonitorProtocol-p</a></div><div class="ttdef"><b>Definition:</b> ActivityMonitorProtocol.h:20</div></div>
+<div class="ttc" id="interface_b_t_device_manager_html_ab303b2617a6391db56c3b61f217f9b6b"><div class="ttname"><a href="interface_b_t_device_manager.html#ab303b2617a6391db56c3b61f217f9b6b">BTDeviceManager::_selectedHeartMonitor</a></div><div class="ttdeci">id&lt; HeartMonitorProtocol, DeviceCommonInfoInterface &gt; _selectedHeartMonitor</div><div class="ttdef"><b>Definition:</b> BTDeviceManager.h:40</div></div>
 <div class="ttc" id="interface_b_t_device_manager_html_aaca0fdc9335bbc7465e91ad0f5c4dbb2"><div class="ttname"><a href="interface_b_t_device_manager.html#aaca0fdc9335bbc7465e91ad0f5c4dbb2">-[BTDeviceManager selectedActivityMonitor]</a></div><div class="ttdeci">id&lt; ActivityMonitorProtocol, DeviceCommonInfoInterface &gt; selectedActivityMonitor()</div><div class="ttdef"><b>Definition:</b> BTDeviceManager.m:88</div></div>
 <div class="ttc" id="interface_b_t_device_manager_html_a1c4ad74783cb71a008c926f2e5ec3835"><div class="ttname"><a href="interface_b_t_device_manager.html#a1c4ad74783cb71a008c926f2e5ec3835">-[BTDeviceManager selectedHeartMonitor]</a></div><div class="ttdeci">id&lt; HeartMonitorProtocol, DeviceCommonInfoInterface &gt; selectedHeartMonitor()</div><div class="ttdef"><b>Definition:</b> BTDeviceManager.m:101</div></div>
 <div class="ttc" id="interface_b_t_device_manager_html_aee2928325606cb3f338a5ecb8ef35560"><div class="ttname"><a href="interface_b_t_device_manager.html#aee2928325606cb3f338a5ecb8ef35560">-[BTDeviceManager disconnectAllDevices]</a></div><div class="ttdeci">void disconnectAllDevices()</div><div class="ttdef"><b>Definition:</b> BTDeviceManager.m:178</div></div>
+<div class="ttc" id="interface_b_t_device_manager_html_a0864f241d9fc14f03e5f8e2b4dd0667a"><div class="ttname"><a href="interface_b_t_device_manager.html#a0864f241d9fc14f03e5f8e2b4dd0667a">BTDeviceManager::isActive</a></div><div class="ttdeci">BOOL isActive</div><div class="ttdef"><b>Definition:</b> BTDeviceManager.h:113</div></div>
+<div class="ttc" id="interface_b_t_device_manager_html_a8f6f577bb25b7dcd8b3857d6497bff4e"><div class="ttname"><a href="interface_b_t_device_manager.html#a8f6f577bb25b7dcd8b3857d6497bff4e">BTDeviceManager::activityDevices</a></div><div class="ttdeci">NSArray * activityDevices</div><div class="ttdef"><b>Definition:</b> BTDeviceManager.h:65</div></div>
+<div class="ttc" id="interface_b_t_device_manager_html_a98add70110c91e4266481e312d96afbf"><div class="ttname"><a href="interface_b_t_device_manager.html#a98add70110c91e4266481e312d96afbf">BTDeviceManager::selectedIndexForHeartMonitor</a></div><div class="ttdeci">NSInteger selectedIndexForHeartMonitor</div><div class="ttdef"><b>Definition:</b> BTDeviceManager.h:74</div></div>
+<div class="ttc" id="interface_b_t_device_manager_html_a76ffd5887aa2d8c8ea20df2384851d41"><div class="ttname"><a href="interface_b_t_device_manager.html#a76ffd5887aa2d8c8ea20df2384851d41">BTDeviceManager::heartDevices</a></div><div class="ttdeci">NSArray * heartDevices</div><div class="ttdef"><b>Definition:</b> BTDeviceManager.h:57</div></div>
+<div class="ttc" id="interface_b_t_device_manager_html_aad4f780b6477ad7d37f6e85f3f40f1c0"><div class="ttname"><a href="interface_b_t_device_manager.html#aad4f780b6477ad7d37f6e85f3f40f1c0">BTDeviceManager::waitForDevices</a></div><div class="ttdeci">NSTimer * waitForDevices</div><div class="ttdef"><b>Definition:</b> BTDeviceManager.h:120</div></div>
+<div class="ttc" id="protocol_device_common_info_interface-p_html"><div class="ttname"><a href="protocol_device_common_info_interface-p.html">DeviceCommonInfoInterface-p</a></div><div class="ttdef"><b>Definition:</b> DeviceCommonInfoInterface.h:21</div></div>
+<div class="ttc" id="interface_b_t_device_manager_html_a61d03c41c000f28ce50e88bd9b8f6be9"><div class="ttname"><a href="interface_b_t_device_manager.html#a61d03c41c000f28ce50e88bd9b8f6be9">BTDeviceManager::manager</a></div><div class="ttdeci">CBCentralManager * manager</div><div class="ttdef"><b>Definition:</b> BTDeviceManager.h:98</div></div>
+<div class="ttc" id="interface_b_t_device_manager_html_a53a05cc87797350638a2b82c337eb854"><div class="ttname"><a href="interface_b_t_device_manager.html#a53a05cc87797350638a2b82c337eb854">BTDeviceManager::_selectedActivityMonitor</a></div><div class="ttdeci">id&lt; ActivityMonitorProtocol, DeviceCommonInfoInterface &gt; _selectedActivityMonitor</div><div class="ttdef"><b>Definition:</b> BTDeviceManager.h:49</div></div>
 <div class="ttc" id="interface_b_t_device_manager_html_ae310a606d4e735e7813319e366f67aa2"><div class="ttname"><a href="interface_b_t_device_manager.html#ae310a606d4e735e7813319e366f67aa2">-[BTDeviceManager disconnectSelectedMonitors]</a></div><div class="ttdeci">void disconnectSelectedMonitors()</div><div class="ttdef"><b>Definition:</b> BTDeviceManager.m:157</div></div>
+<div class="ttc" id="interface_b_t_device_manager_html_a8e47d59f0a40f8d96f4fea826be853d1"><div class="ttname"><a href="interface_b_t_device_manager.html#a8e47d59f0a40f8d96f4fea826be853d1">BTDeviceManager::selectedIndexForActivityMonitor</a></div><div class="ttdeci">NSInteger selectedIndexForActivityMonitor</div><div class="ttdef"><b>Definition:</b> BTDeviceManager.h:83</div></div>
 <div class="ttc" id="interface_b_t_device_manager_html_a38ff364ec62dc4ab4aea65f2aebed98c"><div class="ttname"><a href="interface_b_t_device_manager.html#a38ff364ec62dc4ab4aea65f2aebed98c">+[BTDeviceManager sharedManager]</a></div><div class="ttdeci">id sharedManager()</div><div class="ttdef"><b>Definition:</b> BTDeviceManager.m:53</div></div>
+<div class="ttc" id="interface_b_t_device_manager_html_a2f3ce5cb472e8f042d4b427518d0ffea"><div class="ttname"><a href="interface_b_t_device_manager.html#a2f3ce5cb472e8f042d4b427518d0ffea">BTDeviceManager::runLoop</a></div><div class="ttdeci">NSRunLoop * runLoop</div><div class="ttdef"><b>Definition:</b> BTDeviceManager.h:128</div></div>
+<div class="ttc" id="interface_b_t_device_manager_html_a15cc71749368c5de76624c5c4e4f7b3c"><div class="ttname"><a href="interface_b_t_device_manager.html#a15cc71749368c5de76624c5c4e4f7b3c">BTDeviceManager::isInDiscoveryMode</a></div><div class="ttdeci">BOOL isInDiscoveryMode</div><div class="ttdef"><b>Definition:</b> BTDeviceManager.h:91</div></div>
 <div class="ttc" id="interface_b_t_device_manager_html_afda16d6654df9d6eddde47c5a3ae38ec"><div class="ttname"><a href="interface_b_t_device_manager.html#afda16d6654df9d6eddde47c5a3ae38ec">-[BTDeviceManager connectSelectedMonitors]</a></div><div class="ttdeci">void connectSelectedMonitors()</div><div class="ttdef"><b>Definition:</b> BTDeviceManager.m:167</div></div>
 <div class="ttc" id="interface_b_t_device_manager_html_a77d4c5c16c2e82bed7e5f2f65bcd2dfb"><div class="ttname"><a href="interface_b_t_device_manager.html#a77d4c5c16c2e82bed7e5f2f65bcd2dfb">-[BTDeviceManager stopScan]</a></div><div class="ttdeci">void stopScan()</div><div class="ttdef"><b>Definition:</b> BTDeviceManager.m:115</div></div>
-<div class="ttc" id="interface_b_t_device_manager_html"><div class="ttname"><a href="interface_b_t_device_manager.html">BTDeviceManager</a></div><div class="ttdef"><b>Definition:</b> BTDeviceManager.h:25</div></div>
+<div class="ttc" id="interface_b_t_device_manager_html_ac70dac2c693cf191a05a606d7cea9763"><div class="ttname"><a href="interface_b_t_device_manager.html#ac70dac2c693cf191a05a606d7cea9763">BTDeviceManager::discoveryCount</a></div><div class="ttdeci">NSInteger discoveryCount</div><div class="ttdef"><b>Definition:</b> BTDeviceManager.h:144</div></div>
+<div class="ttc" id="interface_b_t_device_manager_html_a610db66209e9d142e5451ceedc3c6a36"><div class="ttname"><a href="interface_b_t_device_manager.html#a610db66209e9d142e5451ceedc3c6a36">BTDeviceManager::searchType</a></div><div class="ttdeci">NSInteger searchType</div><div class="ttdef"><b>Definition:</b> BTDeviceManager.h:105</div></div>
+<div class="ttc" id="interface_b_t_device_manager_html_a53dc4023fb9a5873cd8f7a82489d25c0"><div class="ttname"><a href="interface_b_t_device_manager.html#a53dc4023fb9a5873cd8f7a82489d25c0">BTDeviceManager::delegate</a></div><div class="ttdeci">id delegate</div><div class="ttdef"><b>Definition:</b> BTDeviceManager.h:136</div></div>
+<div class="ttc" id="protocol_heart_monitor_protocol-p_html"><div class="ttname"><a href="protocol_heart_monitor_protocol-p.html">HeartMonitorProtocol-p</a></div><div class="ttdef"><b>Definition:</b> HeartMonitorProtocol.h:18</div></div>
+<div class="ttc" id="interface_b_t_device_manager_html"><div class="ttname"><a href="interface_b_t_device_manager.html">BTDeviceManager</a></div><div class="ttdef"><b>Definition:</b> BTDeviceManager.h:31</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 18 2014 18:18:03 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 28 2014 12:19:08 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

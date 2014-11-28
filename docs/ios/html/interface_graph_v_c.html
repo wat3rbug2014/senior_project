@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -70,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -109,26 +110,19 @@ Instance Methods</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a8a00c63cc6cab8b3c1cddaaacc9d12fc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8a00c63cc6cab8b3c1cddaaacc9d12fc"></a>
-<a class="el" href="interface_device_poll_manager.html">DevicePollManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>devicePoller</b></td></tr>
+<tr class="memitem:a8a00c63cc6cab8b3c1cddaaacc9d12fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_device_poll_manager.html">DevicePollManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_graph_v_c.html#a8a00c63cc6cab8b3c1cddaaacc9d12fc">devicePoller</a></td></tr>
 <tr class="separator:a8a00c63cc6cab8b3c1cddaaacc9d12fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad434b1d838f58441c9d6499936ccd620"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad434b1d838f58441c9d6499936ccd620"></a>
-IBOutlet UILabel *&#160;</td><td class="memItemRight" valign="bottom"><b>heartRateDisplay</b></td></tr>
+<tr class="memitem:ad434b1d838f58441c9d6499936ccd620"><td class="memItemLeft" align="right" valign="top">IBOutlet UILabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_graph_v_c.html#ad434b1d838f58441c9d6499936ccd620">heartRateDisplay</a></td></tr>
 <tr class="separator:ad434b1d838f58441c9d6499936ccd620"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75fd5eb6ebad27cbce29475d94459329"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a75fd5eb6ebad27cbce29475d94459329"></a>
-IBOutlet UILabel *&#160;</td><td class="memItemRight" valign="bottom"><b>activityDisplay</b></td></tr>
+<tr class="memitem:a75fd5eb6ebad27cbce29475d94459329"><td class="memItemLeft" align="right" valign="top">IBOutlet UILabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_graph_v_c.html#a75fd5eb6ebad27cbce29475d94459329">activityDisplay</a></td></tr>
 <tr class="separator:a75fd5eb6ebad27cbce29475d94459329"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ef6730daa124f69087996078418db0d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5ef6730daa124f69087996078418db0d"></a>
-NSTimer *&#160;</td><td class="memItemRight" valign="bottom"><b>displayTimer</b></td></tr>
+<tr class="memitem:a5ef6730daa124f69087996078418db0d"><td class="memItemLeft" align="right" valign="top">NSTimer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_graph_v_c.html#a5ef6730daa124f69087996078418db0d">displayTimer</a></td></tr>
 <tr class="separator:a5ef6730daa124f69087996078418db0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaeee6afe374009cd16e4a6a1d2270efa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaeee6afe374009cd16e4a6a1d2270efa"></a>
-NSRunLoop *&#160;</td><td class="memItemRight" valign="bottom"><b>runLoop</b></td></tr>
+<tr class="memitem:aaeee6afe374009cd16e4a6a1d2270efa"><td class="memItemLeft" align="right" valign="top">NSRunLoop *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_graph_v_c.html#aaeee6afe374009cd16e4a6a1d2270efa">runLoop</a></td></tr>
 <tr class="separator:aaeee6afe374009cd16e4a6a1d2270efa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4c3c7d6990f1e3be550b443e2c7a532"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab4c3c7d6990f1e3be550b443e2c7a532"></a>
-id&lt; <a class="el" href="protocol_heart_monitor_protocol-p.html">HeartMonitorProtocol</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>heartMonitor</b></td></tr>
+<tr class="memitem:ab4c3c7d6990f1e3be550b443e2c7a532"><td class="memItemLeft" align="right" valign="top">id&lt; <a class="el" href="protocol_heart_monitor_protocol-p.html">HeartMonitorProtocol</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_graph_v_c.html#ab4c3c7d6990f1e3be550b443e2c7a532">heartMonitor</a></td></tr>
 <tr class="separator:ab4c3c7d6990f1e3be550b443e2c7a532"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0216f83efd648d18c90793fd67206ad8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0216f83efd648d18c90793fd67206ad8"></a>
-id&lt; <a class="el" href="protocol_activity_monitor_protocol-p.html">ActivityMonitorProtocol</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>activityMonitor</b></td></tr>
+<tr class="memitem:a0216f83efd648d18c90793fd67206ad8"><td class="memItemLeft" align="right" valign="top">id&lt; <a class="el" href="protocol_activity_monitor_protocol-p.html">ActivityMonitorProtocol</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_graph_v_c.html#a0216f83efd648d18c90793fd67206ad8">activityMonitor</a></td></tr>
 <tr class="separator:a0216f83efd648d18c90793fd67206ad8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -150,7 +144,7 @@ id&lt; <a class="el" href="protocol_activity_monitor_protocol-p.html">ActivityMo
 <p>Creates a device selection view controller. The purpose of the method is to create a standard initialization process for the subclasses of this class. All of the subclasses require a bluetooth device manager and need to be active to start building the view. The <a class="el" href="interface_device_poll_manager.html">DevicePollManager</a> functions as the datasource for this viewcontroller.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">newDevicePollManager</td><td>the bluetooth device poller that will serve as the data source. </td></tr>
+    <tr><td class="paramname">devicePoller</td><td>the bluetooth device poller that will serve as the data source. </td></tr>
   </table>
   </dd>
 </dl>
@@ -174,6 +168,154 @@ id&lt; <a class="el" href="protocol_activity_monitor_protocol-p.html">ActivityMo
 
 </div>
 </div>
+<h2 class="groupheader">Property Documentation</h2>
+<a class="anchor" id="a75fd5eb6ebad27cbce29475d94459329"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (IBOutlet UILabel*) activityDisplay</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">retain</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The label that shows a string representation of the value that is calculated based on the age of the patient and the current heart rate. </p>
+
+</div>
+</div>
+<a class="anchor" id="a0216f83efd648d18c90793fd67206ad8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (id&lt;<a class="el" href="protocol_activity_monitor_protocol-p.html">ActivityMonitorProtocol</a>&gt;) activityMonitor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The local instance of the selectedActivityMonitor from the device poller. It is made so that the code is easier to read. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8a00c63cc6cab8b3c1cddaaacc9d12fc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (<a class="el" href="interface_device_poll_manager.html">DevicePollManager</a>*) devicePoller</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The device poller that will be used for getting data from the devices for display by the view controller. </p>
+
+</div>
+</div>
+<a class="anchor" id="a5ef6730daa124f69087996078418db0d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSTimer*) displayTimer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The timer that calls for the device poller to get information. It is set for 1 second. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab4c3c7d6990f1e3be550b443e2c7a532"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (id&lt;<a class="el" href="protocol_heart_monitor_protocol-p.html">HeartMonitorProtocol</a>&gt;) heartMonitor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The local instance of the selectedHeartMonitor from the device poller. It is made so that the code is easier to read. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad434b1d838f58441c9d6499936ccd620"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (IBOutlet UILabel*) heartRateDisplay</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">retain</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The display that shows the current heart rate. It defaults to 0 when the view first appears and does not update until a new heart rate has been received. </p>
+
+</div>
+</div>
+<a class="anchor" id="aaeee6afe374009cd16e4a6a1d2270efa"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSRunLoop*) runLoop</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The run loop that the device poller uses. It it reference so that viewWillAppear can activate it and viewWillDisappear can cancel the runloop. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/Users/douglas/Documents/software/Senior Project/ios/Medical Cyborgs/Medical Cyborgs/<a class="el" href="_graph_v_c_8h_source.html">GraphVC.h</a></li>
 <li>/Users/douglas/Documents/software/Senior Project/ios/Medical Cyborgs/Medical Cyborgs/GraphVC.m</li>
@@ -181,7 +323,7 @@ id&lt; <a class="el" href="protocol_activity_monitor_protocol-p.html">ActivityMo
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 18 2014 18:18:03 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 28 2014 12:19:08 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

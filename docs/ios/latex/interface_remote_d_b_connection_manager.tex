@@ -1,6 +1,10 @@
 \hypertarget{interface_remote_d_b_connection_manager}{\section{Remote\-D\-B\-Connection\-Manager Class Reference}
 \label{interface_remote_d_b_connection_manager}\index{Remote\-D\-B\-Connection\-Manager@{Remote\-D\-B\-Connection\-Manager}}
 }
+
+
+{\ttfamily \#import $<$Remote\-D\-B\-Connection\-Manager.\-h$>$}
+
 Inheritance diagram for Remote\-D\-B\-Connection\-Manager\-:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,25 +27,22 @@ Inheritance diagram for Remote\-D\-B\-Connection\-Manager\-:\begin{figure}[H]
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{interface_remote_d_b_connection_manager_aea31c73a0a3e36095f04688a9b51b594}{\hyperlink{interface_d_b_manager}{D\-B\-Manager} $\ast$ {\bfseries database}}\label{interface_remote_d_b_connection_manager_aea31c73a0a3e36095f04688a9b51b594}
-
+\hyperlink{interface_d_b_manager}{D\-B\-Manager} $\ast$ \hyperlink{interface_remote_d_b_connection_manager_aea31c73a0a3e36095f04688a9b51b594}{database}
 \item 
-\hypertarget{interface_remote_d_b_connection_manager_a984d4293c7de824df8ab8b7a8510c15e}{N\-S\-Integer {\bfseries patient\-I\-D}}\label{interface_remote_d_b_connection_manager_a984d4293c7de824df8ab8b7a8510c15e}
-
+N\-S\-Integer \hyperlink{interface_remote_d_b_connection_manager_a984d4293c7de824df8ab8b7a8510c15e}{patient\-I\-D}
 \item 
-\hypertarget{interface_remote_d_b_connection_manager_a1cf642f7f159dedf3f805ae62f86f0ee}{\hyperlink{interface_local_d_b_result}{Local\-D\-B\-Result} $\ast$ {\bfseries current\-Row}}\label{interface_remote_d_b_connection_manager_a1cf642f7f159dedf3f805ae62f86f0ee}
-
+\hyperlink{interface_local_d_b_result}{Local\-D\-B\-Result} $\ast$ \hyperlink{interface_remote_d_b_connection_manager_a1cf642f7f159dedf3f805ae62f86f0ee}{current\-Row}
 \item 
-\hypertarget{interface_remote_d_b_connection_manager_a6956166be867026a4ed5c9552c2fbc85}{N\-S\-Mutable\-Data $\ast$ {\bfseries \-\_\-server\-Response\-Data}}\label{interface_remote_d_b_connection_manager_a6956166be867026a4ed5c9552c2fbc85}
-
+N\-S\-Mutable\-Data $\ast$ \hyperlink{interface_remote_d_b_connection_manager_a6956166be867026a4ed5c9552c2fbc85}{\-\_\-server\-Response\-Data}
 \item 
-\hypertarget{interface_remote_d_b_connection_manager_aea06d1743882f6b59247e590cdd0513f}{N\-S\-Integer {\bfseries failed\-Attempts}}\label{interface_remote_d_b_connection_manager_aea06d1743882f6b59247e590cdd0513f}
-
+N\-S\-Integer \hyperlink{interface_remote_d_b_connection_manager_aea06d1743882f6b59247e590cdd0513f}{failed\-Attempts}
 \item 
-\hypertarget{interface_remote_d_b_connection_manager_ad3cb931f4c5147c3595679f241a0bf48}{B\-O\-O\-L {\bfseries remote\-Unreachable}}\label{interface_remote_d_b_connection_manager_ad3cb931f4c5147c3595679f241a0bf48}
-
+B\-O\-O\-L \hyperlink{interface_remote_d_b_connection_manager_ad3cb931f4c5147c3595679f241a0bf48}{remote\-Unreachable}
 \end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+This class performs updates to the remote database. It manages the connection and updates the local database with the changes that have been made. It is assumed that address to the server and the name of the scripts in the Data\-Constants.\-h file are correct. N\-O\-T\-E\-: Each time a request to push data to the server the manager makes 3 attempts to contact the server before giving up. It has a 15 second timeout interval so there may be the need to do some better reachability checks if battery consumption is too much. 
 
 \subsection{Method Documentation}
 \hypertarget{interface_remote_d_b_connection_manager_a744cbe8cedf02655ce5a2311957059cb}{\index{Remote\-D\-B\-Connection\-Manager@{Remote\-D\-B\-Connection\-Manager}!init\-With\-Database\-:@{init\-With\-Database\-:}}
@@ -100,6 +101,27 @@ This is probably a bad hack. This method is used to encode the string into a U\-
 A N\-S\-String that is a new U\-R\-L with \% encoding. 
 \end{DoxyReturn}
 
+
+\subsection{Property Documentation}
+\hypertarget{interface_remote_d_b_connection_manager_a6956166be867026a4ed5c9552c2fbc85}{\index{Remote\-D\-B\-Connection\-Manager@{Remote\-D\-B\-Connection\-Manager}!\-\_\-server\-Response\-Data@{\-\_\-server\-Response\-Data}}
+\index{\-\_\-server\-Response\-Data@{\-\_\-server\-Response\-Data}!RemoteDBConnectionManager@{Remote\-D\-B\-Connection\-Manager}}
+\subsubsection[{\-\_\-server\-Response\-Data}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Mutable\-Data$\ast$) \-\_\-server\-Response\-Data\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}, {\ttfamily [retain]}}}\label{interface_remote_d_b_connection_manager_a6956166be867026a4ed5c9552c2fbc85}
+The data buffer for the response from the server. Used for determining the status message from the server. \hypertarget{interface_remote_d_b_connection_manager_a1cf642f7f159dedf3f805ae62f86f0ee}{\index{Remote\-D\-B\-Connection\-Manager@{Remote\-D\-B\-Connection\-Manager}!current\-Row@{current\-Row}}
+\index{current\-Row@{current\-Row}!RemoteDBConnectionManager@{Remote\-D\-B\-Connection\-Manager}}
+\subsubsection[{current\-Row}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Local\-D\-B\-Result}$\ast$) current\-Row\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_remote_d_b_connection_manager_a1cf642f7f159dedf3f805ae62f86f0ee}
+The first row selected from the database as a result of a S\-Q\-L statement. It contains the data needed for transmission to the server. \hypertarget{interface_remote_d_b_connection_manager_aea31c73a0a3e36095f04688a9b51b594}{\index{Remote\-D\-B\-Connection\-Manager@{Remote\-D\-B\-Connection\-Manager}!database@{database}}
+\index{database@{database}!RemoteDBConnectionManager@{Remote\-D\-B\-Connection\-Manager}}
+\subsubsection[{database}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf D\-B\-Manager}$\ast$) database\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}}}\label{interface_remote_d_b_connection_manager_aea31c73a0a3e36095f04688a9b51b594}
+The database manager that will be used to retrieve data and send to the remote server. \hypertarget{interface_remote_d_b_connection_manager_aea06d1743882f6b59247e590cdd0513f}{\index{Remote\-D\-B\-Connection\-Manager@{Remote\-D\-B\-Connection\-Manager}!failed\-Attempts@{failed\-Attempts}}
+\index{failed\-Attempts@{failed\-Attempts}!RemoteDBConnectionManager@{Remote\-D\-B\-Connection\-Manager}}
+\subsubsection[{failed\-Attempts}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Integer) failed\-Attempts\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}}}\label{interface_remote_d_b_connection_manager_aea06d1743882f6b59247e590cdd0513f}
+The counter for the number of failed attempts. The current limit is 3 times. \hypertarget{interface_remote_d_b_connection_manager_a984d4293c7de824df8ab8b7a8510c15e}{\index{Remote\-D\-B\-Connection\-Manager@{Remote\-D\-B\-Connection\-Manager}!patient\-I\-D@{patient\-I\-D}}
+\index{patient\-I\-D@{patient\-I\-D}!RemoteDBConnectionManager@{Remote\-D\-B\-Connection\-Manager}}
+\subsubsection[{patient\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Integer) patient\-I\-D\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}}}\label{interface_remote_d_b_connection_manager_a984d4293c7de824df8ab8b7a8510c15e}
+The patient\-I\-D that is used for removing rows from the local database as they are sent. It is also used for the transmission of data to the remote server. \hypertarget{interface_remote_d_b_connection_manager_ad3cb931f4c5147c3595679f241a0bf48}{\index{Remote\-D\-B\-Connection\-Manager@{Remote\-D\-B\-Connection\-Manager}!remote\-Unreachable@{remote\-Unreachable}}
+\index{remote\-Unreachable@{remote\-Unreachable}!RemoteDBConnectionManager@{Remote\-D\-B\-Connection\-Manager}}
+\subsubsection[{remote\-Unreachable}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) remote\-Unreachable\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}}}\label{interface_remote_d_b_connection_manager_ad3cb931f4c5147c3595679f241a0bf48}
+The flag used to determine if any more attempts should be made to the server after the failed\-Attempts count has reached three times. 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 

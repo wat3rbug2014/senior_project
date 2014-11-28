@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -67,7 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -95,46 +96,59 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#import &lt;Foundation/Foundation.h&gt;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#define USER_DEFAULT_KEY @&quot;Medical Cyborgs User&quot;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#define F_NAME @&quot;First Name&quot;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define L_NAME @&quot;Last Name&quot;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define DOB @&quot;DOB&quot;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define PATIENT_ID @&quot;patientID&quot;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define NO_ID_SET -1</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define AGE @&quot;Age&quot;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="interface_personal_info.html">   32</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_personal_info.html">PersonalInfo</a> : NSObject</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">@property</span> NSString *firstName;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">@property</span> NSString *lastName;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">@property</span> NSDate *dob;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">@property</span> NSInteger patientID;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">@property</span> NSUserDefaults *defaults;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">@property</span> NSDictionary *personalData;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">@property</span> (readonly) NSInteger age;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;-(void) <a class="code" href="interface_personal_info.html#a837ce1e3fe6b67a415629e395ce9367e">loadInformation</a>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;NSString * <span class="keyword">const</span> USER_DEFAULT_KEY;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;NSString * <span class="keyword">const</span> F_NAME;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;NSString * <span class="keyword">const</span> L_NAME;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;NSString * <span class="keyword">const</span> DOB;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;NSString * <span class="keyword">const</span> PATIENT_ID;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;NSString * <span class="keyword">const</span> AGE;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">extern</span> NSInteger <span class="keyword">const</span> NO_ID_SET;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="interface_personal_info.html">   35</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_personal_info.html">PersonalInfo</a> : NSObject</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">@property</span> NSString *firstName;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">@property</span> NSString *lastName;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;-(void) <a class="code" href="interface_personal_info.html#a74efb2fadb7b9358f743830b49755567">saveInformation</a>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;-(void) <a class="code" href="interface_personal_info.html#ae2b7828f42d1577ed2200b05ceafff26">dealloc</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">@property</span> NSDate *dob;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">@property</span> NSInteger patientID;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;-(NSInteger) calculateAgeUsingDate: (NSDate*) currentDOB;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">@end</span></div>
-<div class="ttc" id="interface_personal_info_html"><div class="ttname"><a href="interface_personal_info.html">PersonalInfo</a></div><div class="ttdef"><b>Definition:</b> PersonalInfo.h:32</div></div>
-<div class="ttc" id="interface_personal_info_html_a74efb2fadb7b9358f743830b49755567"><div class="ttname"><a href="interface_personal_info.html#a74efb2fadb7b9358f743830b49755567">-[PersonalInfo saveInformation]</a></div><div class="ttdeci">void saveInformation()</div><div class="ttdef"><b>Definition:</b> PersonalInfo.m:52</div></div>
-<div class="ttc" id="interface_personal_info_html_ae2b7828f42d1577ed2200b05ceafff26"><div class="ttname"><a href="interface_personal_info.html#ae2b7828f42d1577ed2200b05ceafff26">-[PersonalInfo dealloc]</a></div><div class="ttdeci">void dealloc()</div><div class="ttdef"><b>Definition:</b> PersonalInfo.m:31</div></div>
-<div class="ttc" id="interface_personal_info_html_a837ce1e3fe6b67a415629e395ce9367e"><div class="ttname"><a href="interface_personal_info.html#a837ce1e3fe6b67a415629e395ce9367e">-[PersonalInfo loadInformation]</a></div><div class="ttdeci">void loadInformation()</div><div class="ttdef"><b>Definition:</b> PersonalInfo.m:41</div></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">@property</span> NSUserDefaults *defaults;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">@property</span> NSDictionary *personalData;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword">@property</span> (readonly) NSInteger age;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;-(void) <a class="code" href="interface_personal_info.html#a837ce1e3fe6b67a415629e395ce9367e">loadInformation</a>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;-(void) <a class="code" href="interface_personal_info.html#a74efb2fadb7b9358f743830b49755567">saveInformation</a>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;-(void) <a class="code" href="interface_personal_info.html#ae2b7828f42d1577ed2200b05ceafff26">dealloc</a>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;-(NSInteger) calculateAgeUsingDate: (NSDate*) currentDOB;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="keyword">@end</span></div>
+<div class="ttc" id="interface_personal_info_html"><div class="ttname"><a href="interface_personal_info.html">PersonalInfo</a></div><div class="ttdef"><b>Definition:</b> PersonalInfo.h:35</div></div>
+<div class="ttc" id="interface_personal_info_html_a74efb2fadb7b9358f743830b49755567"><div class="ttname"><a href="interface_personal_info.html#a74efb2fadb7b9358f743830b49755567">-[PersonalInfo saveInformation]</a></div><div class="ttdeci">void saveInformation()</div><div class="ttdef"><b>Definition:</b> PersonalInfo.m:61</div></div>
+<div class="ttc" id="interface_personal_info_html_ae2b7828f42d1577ed2200b05ceafff26"><div class="ttname"><a href="interface_personal_info.html#ae2b7828f42d1577ed2200b05ceafff26">-[PersonalInfo dealloc]</a></div><div class="ttdeci">void dealloc()</div><div class="ttdef"><b>Definition:</b> PersonalInfo.m:40</div></div>
+<div class="ttc" id="interface_personal_info_html_a837ce1e3fe6b67a415629e395ce9367e"><div class="ttname"><a href="interface_personal_info.html#a837ce1e3fe6b67a415629e395ce9367e">-[PersonalInfo loadInformation]</a></div><div class="ttdeci">void loadInformation()</div><div class="ttdef"><b>Definition:</b> PersonalInfo.m:50</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 18 2014 18:18:03 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 28 2014 12:19:08 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

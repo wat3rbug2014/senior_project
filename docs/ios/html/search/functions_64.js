@@ -11,5 +11,6 @@ var searchData=
   ['disconnectselectedmonitors',['disconnectSelectedMonitors',['../interface_b_t_device_manager.html#ae310a606d4e735e7813319e366f67aa2',1,'BTDeviceManager']]],
   ['discoverbatterylevel',['discoverBatteryLevel',['../protocol_device_common_info_interface-p.html#a3e95f2da7a5916c8bb6d9b6b76fac3e7',1,'DeviceCommonInfoInterface-p']]],
   ['discovereddevicesfortype_3a',['discoveredDevicesForType:',['../interface_b_t_device_manager.html#af88f5d1516142ed353cdcac2268dadfb',1,'BTDeviceManager']]],
-  ['discoverycomplete',['discoveryComplete',['../protocol_device_common_info_interface-p.html#a83c3e03ff34cc8b954743a76d77facea',1,'DeviceCommonInfoInterface-p']]]
+  ['discoverycomplete',['discoveryComplete',['../protocol_device_common_info_interface-p.html#a83c3e03ff34cc8b954743a76d77facea',1,'DeviceCommonInfoInterface-p']]],
+  ['dobatterylownotificationfor_3a',['doBatteryLowNotificationFor:',['../interface_device_poll_manager.html#aa0e15e54081df4d481de96cde113f2b8',1,'DevicePollManager']]]
 ];

@@ -31,6 +31,7 @@
 						<NodeRef refid="18"/>
 						<NodeRef refid="19"/>
 						<NodeRef refid="20"/>
+						<NodeRef refid="21"/>
 						
 					</Subnodes>
 				</Node>
@@ -41,10 +42,10 @@
 					<Name>Protocols</Name>
 					<Path>index.html</Path>
 					<Subnodes>
-						<NodeRef refid="21"/>
 						<NodeRef refid="22"/>
 						<NodeRef refid="23"/>
 						<NodeRef refid="24"/>
+						<NodeRef refid="25"/>
 						
 					</Subnodes>
 				</Node>
@@ -358,6 +359,33 @@
             
         </Node>
 		<Node id="12" type="file" documentType="reference">
+            <Name>JawboneUP24</Name>
+            <Path>Classes/JawboneUP24.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/JawboneUP24.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/JawboneUP24.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/JawboneUP24.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="13" type="file" documentType="reference">
             <Name>LocalDBResult</Name>
             <Path>Classes/LocalDBResult.html</Path>
             
@@ -384,7 +412,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="13" type="file" documentType="reference">
+		<Node id="14" type="file" documentType="reference">
             <Name>MioGlobalLink</Name>
             <Path>Classes/MioGlobalLink.html</Path>
             
@@ -411,7 +439,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="14" type="file" documentType="reference">
+		<Node id="15" type="file" documentType="reference">
             <Name>MonitorCreationFactory</Name>
             <Path>Classes/MonitorCreationFactory.html</Path>
             
@@ -438,7 +466,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="15" type="file" documentType="reference">
+		<Node id="16" type="file" documentType="reference">
             <Name>PatientInformationVC</Name>
             <Path>Classes/PatientInformationVC.html</Path>
             
@@ -471,7 +499,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="16" type="file" documentType="reference">
+		<Node id="17" type="file" documentType="reference">
             <Name>PersonalInfo</Name>
             <Path>Classes/PersonalInfo.html</Path>
             
@@ -504,7 +532,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="17" type="file" documentType="reference">
+		<Node id="18" type="file" documentType="reference">
             <Name>PolarH7</Name>
             <Path>Classes/PolarH7.html</Path>
             
@@ -531,7 +559,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="18" type="file" documentType="reference">
+		<Node id="19" type="file" documentType="reference">
             <Name>RemoteDBConnectionManager</Name>
             <Path>Classes/RemoteDBConnectionManager.html</Path>
             
@@ -564,7 +592,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="19" type="file" documentType="reference">
+		<Node id="20" type="file" documentType="reference">
             <Name>TableVCWithSounds</Name>
             <Path>Classes/TableVCWithSounds.html</Path>
             
@@ -597,7 +625,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="20" type="file" documentType="reference">
+		<Node id="21" type="file" documentType="reference">
             <Name>WahooTickrX</Name>
             <Path>Classes/WahooTickrX.html</Path>
             
@@ -626,7 +654,7 @@
         </Node>
 		
 		
-        <Node id="21" type="file" documentType="reference">
+        <Node id="22" type="file" documentType="reference">
             <Name>ActivityMonitorProtocol</Name>
             <Path>Protocols/ActivityMonitorProtocol.html</Path>
             
@@ -653,7 +681,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="22" type="file" documentType="reference">
+		<Node id="23" type="file" documentType="reference">
             <Name>BTDeviceManagerDelegate</Name>
             <Path>Protocols/BTDeviceManagerDelegate.html</Path>
             
@@ -680,7 +708,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="23" type="file" documentType="reference">
+		<Node id="24" type="file" documentType="reference">
             <Name>DeviceCommonInfoInterface</Name>
             <Path>Protocols/DeviceCommonInfoInterface.html</Path>
             
@@ -707,7 +735,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="24" type="file" documentType="reference">
+		<Node id="25" type="file" documentType="reference">
             <Name>HeartMonitorProtocol</Name>
             <Path>Protocols/HeartMonitorProtocol.html</Path>
             

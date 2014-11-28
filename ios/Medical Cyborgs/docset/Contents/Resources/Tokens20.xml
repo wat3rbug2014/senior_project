@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/WahooTickrX.html">
+	<File path="Classes/TableVCWithSounds.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/WahooTickrX</TokenIdentifier>
-			<Abstract type="html">This class is for the Wahoo Tickr X chest device.  Device specific UUIDs for services
-and characteristics are here along with the execution path to obtain the desired data for the
-application.  Service and Characteristic UUIDs are defined in this header instead of gobally in
-an effort to reduce mental noise when reading the code.  The CBPeripheralDelegate is implemented
-so that the class can perform all the operations needed to maintain connection status and
-retrieval of the data.</Abstract>
-			<DeclaredIn>WahooTickrX.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/TableVCWithSounds</TokenIdentifier>
+			<Abstract type="html">This base class is a viewcontroller with sound implementation.  It allows
+clicking sounds when a device is selected.</Abstract>
+			<DeclaredIn>TableVCWithSounds.h</DeclaredIn>
             
 			
 			<NodeRef refid="20"/>
@@ -18,329 +14,161 @@ retrieval of the data.</Abstract>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WahooTickrX/setType:</TokenIdentifier>
-			<Abstract type="html">The device type as an enum of DeviceType.  See DeviceTypes.h for details.</Abstract>
-			<DeclaredIn>WahooTickrX.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/TableVCWithSounds/setSoundPlayer:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>TableVCWithSounds.h</DeclaredIn>
 			
-			<Declaration>@property NSInteger type</Declaration>
+			<Declaration>@property AVAudioPlayer *soundPlayer</Declaration>
 			
 			
-			<Anchor>//api/name/type</Anchor>
+			<Anchor>//api/name/soundPlayer</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WahooTickrX/type</TokenIdentifier>
-			<Abstract type="html">The device type as an enum of DeviceType.  See DeviceTypes.h for details.</Abstract>
-			<DeclaredIn>WahooTickrX.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/TableVCWithSounds/soundPlayer</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>TableVCWithSounds.h</DeclaredIn>
 			
-			<Declaration>@property NSInteger type</Declaration>
+			<Declaration>@property AVAudioPlayer *soundPlayer</Declaration>
 			
 			
-			<Anchor>//api/name/type</Anchor>
+			<Anchor>//api/name/soundPlayer</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/WahooTickrX/type</TokenIdentifier>
-			<Abstract type="html">The device type as an enum of DeviceType.  See DeviceTypes.h for details.</Abstract>
-			<DeclaredIn>WahooTickrX.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/TableVCWithSounds/soundPlayer</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>TableVCWithSounds.h</DeclaredIn>
 			
-			<Declaration>@property NSInteger type</Declaration>
+			<Declaration>@property AVAudioPlayer *soundPlayer</Declaration>
 			
 			
-			<Anchor>//api/name/type</Anchor>
+			<Anchor>//api/name/soundPlayer</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WahooTickrX/setBatteryService:</TokenIdentifier>
-			<Abstract type="html">The CBService reference for use in detecting the battery level of the device.</Abstract>
-			<DeclaredIn>WahooTickrX.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/TableVCWithSounds/setDeviceManager:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>TableVCWithSounds.h</DeclaredIn>
 			
-			<Declaration>@property (retain) CBService *batteryService</Declaration>
+			<Declaration>@property BTDeviceManager *deviceManager</Declaration>
 			
 			
-			<Anchor>//api/name/batteryService</Anchor>
+			<Anchor>//api/name/deviceManager</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WahooTickrX/batteryService</TokenIdentifier>
-			<Abstract type="html">The CBService reference for use in detecting the battery level of the device.</Abstract>
-			<DeclaredIn>WahooTickrX.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/TableVCWithSounds/deviceManager</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>TableVCWithSounds.h</DeclaredIn>
 			
-			<Declaration>@property (retain) CBService *batteryService</Declaration>
+			<Declaration>@property BTDeviceManager *deviceManager</Declaration>
 			
 			
-			<Anchor>//api/name/batteryService</Anchor>
+			<Anchor>//api/name/deviceManager</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/WahooTickrX/batteryService</TokenIdentifier>
-			<Abstract type="html">The CBService reference for use in detecting the battery level of the device.</Abstract>
-			<DeclaredIn>WahooTickrX.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/TableVCWithSounds/deviceManager</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>TableVCWithSounds.h</DeclaredIn>
 			
-			<Declaration>@property (retain) CBService *batteryService</Declaration>
+			<Declaration>@property BTDeviceManager *deviceManager</Declaration>
 			
 			
-			<Anchor>//api/name/batteryService</Anchor>
+			<Anchor>//api/name/deviceManager</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WahooTickrX/setBatteryLvlChar:</TokenIdentifier>
-			<Abstract type="html">The CBCharacteristic reference for use in reading the battery level of the device.</Abstract>
-			<DeclaredIn>WahooTickrX.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/TableVCWithSounds/playViewChangeSound</TokenIdentifier>
+			<Abstract type="html">This method is used for audio cue that a view is about to be displayed.</Abstract>
+			<DeclaredIn>TableVCWithSounds.h</DeclaredIn>
 			
-			<Declaration>@property (retain) CBCharacteristic *batteryLvlChar</Declaration>
+			<Declaration>- (void)playViewChangeSound</Declaration>
 			
 			
-			<Anchor>//api/name/batteryLvlChar</Anchor>
+			<Anchor>//api/name/playViewChangeSound</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WahooTickrX/batteryLvlChar</TokenIdentifier>
-			<Abstract type="html">The CBCharacteristic reference for use in reading the battery level of the device.</Abstract>
-			<DeclaredIn>WahooTickrX.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/TableVCWithSounds/playClickSound</TokenIdentifier>
+			<Abstract type="html">This method is used to sound the audio cue that the monitoring button has been selected.</Abstract>
+			<DeclaredIn>TableVCWithSounds.h</DeclaredIn>
 			
-			<Declaration>@property (retain) CBCharacteristic *batteryLvlChar</Declaration>
+			<Declaration>- (void)playClickSound</Declaration>
 			
 			
-			<Anchor>//api/name/batteryLvlChar</Anchor>
+			<Anchor>//api/name/playClickSound</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/WahooTickrX/batteryLvlChar</TokenIdentifier>
-			<Abstract type="html">The CBCharacteristic reference for use in reading the battery level of the device.</Abstract>
-			<DeclaredIn>WahooTickrX.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/TableVCWithSounds/playSoundWithFile:</TokenIdentifier>
+			<Abstract type="html">This method is the base method that the others use for playing the audio file.  It does
+the setup of the audio player and uses the file passed to it for playback.</Abstract>
+			<DeclaredIn>TableVCWithSounds.h</DeclaredIn>
 			
-			<Declaration>@property (retain) CBCharacteristic *batteryLvlChar</Declaration>
+			<Declaration>- (void)playSoundWithFile:(NSURL *)soundFile</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>soundFile</Name>
+					<Abstract type="html">The NSURL of the file to be played.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/batteryLvlChar</Anchor>
+			<Anchor>//api/name/playSoundWithFile:</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WahooTickrX/setHeartRateService:</TokenIdentifier>
-			<Abstract type="html">The CBService reference for use in reading the heart rate detected by the device.</Abstract>
-			<DeclaredIn>WahooTickrX.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/TableVCWithSounds/initWithDeviceManager:</TokenIdentifier>
+			<Abstract type="html">Creates a device selection view controller.  The purpose of the method
+is to create a standard initialization process for the subclasses of this
+class.  All of the subclasses require a bluetooth device manager and need
+to be active to start building the view.  The BTDeviceManager functions
+as the datasource for this tableviewcontroller and all the subclasses.</Abstract>
+			<DeclaredIn>TableVCWithSounds.h</DeclaredIn>
 			
-			<Declaration>@property (retain) CBService *heartRateService</Declaration>
-			
-			
-			<Anchor>//api/name/heartRateService</Anchor>
+			<Declaration>- (id)initWithDeviceManager:(BTDeviceManager *)newDeviceManager</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>newDeviceManager</Name>
+					<Abstract type="html">the bluetooth device manager that will serve as the
+data source.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Returns a view controller unless no device manager is given, then
+the result is nil.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithDeviceManager:</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WahooTickrX/heartRateService</TokenIdentifier>
-			<Abstract type="html">The CBService reference for use in reading the heart rate detected by the device.</Abstract>
-			<DeclaredIn>WahooTickrX.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/TableVCWithSounds/updateTable:</TokenIdentifier>
+			<Abstract type="html">This function is the default method that is called when the device manager
+discovers a device. Its intent is to allow the tableview to update since the
+count of devices has changed and information is available. A table reload is
+used because the number of items to be discovered is very small and the overhead
+is small.  Otherwise it is recommended to just reload the section and choose the
+type of animation.</Abstract>
+			<DeclaredIn>TableVCWithSounds.h</DeclaredIn>
 			
-			<Declaration>@property (retain) CBService *heartRateService</Declaration>
+			<Declaration>- (void)updateTable:(NSNotification *)notification</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>notification</Name>
+					<Abstract type="html">A NSNotification object, not used at this time.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/heartRateService</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/WahooTickrX/heartRateService</TokenIdentifier>
-			<Abstract type="html">The CBService reference for use in reading the heart rate detected by the device.</Abstract>
-			<DeclaredIn>WahooTickrX.h</DeclaredIn>
-			
-			<Declaration>@property (retain) CBService *heartRateService</Declaration>
-			
-			
-			<Anchor>//api/name/heartRateService</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WahooTickrX/setHeartRateChar:</TokenIdentifier>
-			<Abstract type="html">The CBCharacteristic reference for use in reading the heart rate value from the device.</Abstract>
-			<DeclaredIn>WahooTickrX.h</DeclaredIn>
-			
-			<Declaration>@property (retain) CBCharacteristic *heartRateChar</Declaration>
-			
-			
-			<Anchor>//api/name/heartRateChar</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WahooTickrX/heartRateChar</TokenIdentifier>
-			<Abstract type="html">The CBCharacteristic reference for use in reading the heart rate value from the device.</Abstract>
-			<DeclaredIn>WahooTickrX.h</DeclaredIn>
-			
-			<Declaration>@property (retain) CBCharacteristic *heartRateChar</Declaration>
-			
-			
-			<Anchor>//api/name/heartRateChar</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/WahooTickrX/heartRateChar</TokenIdentifier>
-			<Abstract type="html">The CBCharacteristic reference for use in reading the heart rate value from the device.</Abstract>
-			<DeclaredIn>WahooTickrX.h</DeclaredIn>
-			
-			<Declaration>@property (retain) CBCharacteristic *heartRateChar</Declaration>
-			
-			
-			<Anchor>//api/name/heartRateChar</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WahooTickrX/setBatteryLevel:</TokenIdentifier>
-			<Abstract type="html">The last known integer value of the battery percentage.  The default is 0 if the battery level is not
-read.</Abstract>
-			<DeclaredIn>WahooTickrX.h</DeclaredIn>
-			
-			<Declaration>@property int batteryLevel</Declaration>
-			
-			
-			<Anchor>//api/name/batteryLevel</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WahooTickrX/batteryLevel</TokenIdentifier>
-			<Abstract type="html">The last known integer value of the battery percentage.  The default is 0 if the battery level is not
-read.</Abstract>
-			<DeclaredIn>WahooTickrX.h</DeclaredIn>
-			
-			<Declaration>@property int batteryLevel</Declaration>
-			
-			
-			<Anchor>//api/name/batteryLevel</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/WahooTickrX/batteryLevel</TokenIdentifier>
-			<Abstract type="html">The last known integer value of the battery percentage.  The default is 0 if the battery level is not
-read.</Abstract>
-			<DeclaredIn>WahooTickrX.h</DeclaredIn>
-			
-			<Declaration>@property int batteryLevel</Declaration>
-			
-			
-			<Anchor>//api/name/batteryLevel</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WahooTickrX/setDevice:</TokenIdentifier>
-			<Abstract type="html">The CBPeripheral device that was discovered and used with this class.</Abstract>
-			<DeclaredIn>WahooTickrX.h</DeclaredIn>
-			
-			<Declaration>@property (retain) CBPeripheral *device</Declaration>
-			
-			
-			<Anchor>//api/name/device</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WahooTickrX/device</TokenIdentifier>
-			<Abstract type="html">The CBPeripheral device that was discovered and used with this class.</Abstract>
-			<DeclaredIn>WahooTickrX.h</DeclaredIn>
-			
-			<Declaration>@property (retain) CBPeripheral *device</Declaration>
-			
-			
-			<Anchor>//api/name/device</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/WahooTickrX/device</TokenIdentifier>
-			<Abstract type="html">The CBPeripheral device that was discovered and used with this class.</Abstract>
-			<DeclaredIn>WahooTickrX.h</DeclaredIn>
-			
-			<Declaration>@property (retain) CBPeripheral *device</Declaration>
-			
-			
-			<Anchor>//api/name/device</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WahooTickrX/setDeviceManufacturer:</TokenIdentifier>
-			<Abstract type="html">The NSString value of the manufacturer as read from the device.</Abstract>
-			<DeclaredIn>WahooTickrX.h</DeclaredIn>
-			
-			<Declaration>@property (retain) NSString *deviceManufacturer</Declaration>
-			
-			
-			<Anchor>//api/name/deviceManufacturer</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WahooTickrX/deviceManufacturer</TokenIdentifier>
-			<Abstract type="html">The NSString value of the manufacturer as read from the device.</Abstract>
-			<DeclaredIn>WahooTickrX.h</DeclaredIn>
-			
-			<Declaration>@property (retain) NSString *deviceManufacturer</Declaration>
-			
-			
-			<Anchor>//api/name/deviceManufacturer</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/WahooTickrX/deviceManufacturer</TokenIdentifier>
-			<Abstract type="html">The NSString value of the manufacturer as read from the device.</Abstract>
-			<DeclaredIn>WahooTickrX.h</DeclaredIn>
-			
-			<Declaration>@property (retain) NSString *deviceManufacturer</Declaration>
-			
-			
-			<Anchor>//api/name/deviceManufacturer</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WahooTickrX/setCurrentHeartRate:</TokenIdentifier>
-			<Abstract type="html">The value of the last heart rate that was read.  Default is 0 if the heart rate has not been acquired.</Abstract>
-			<DeclaredIn>WahooTickrX.h</DeclaredIn>
-			
-			<Declaration>@property NSInteger currentHeartRate</Declaration>
-			
-			
-			<Anchor>//api/name/currentHeartRate</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WahooTickrX/currentHeartRate</TokenIdentifier>
-			<Abstract type="html">The value of the last heart rate that was read.  Default is 0 if the heart rate has not been acquired.</Abstract>
-			<DeclaredIn>WahooTickrX.h</DeclaredIn>
-			
-			<Declaration>@property NSInteger currentHeartRate</Declaration>
-			
-			
-			<Anchor>//api/name/currentHeartRate</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/WahooTickrX/currentHeartRate</TokenIdentifier>
-			<Abstract type="html">The value of the last heart rate that was read.  Default is 0 if the heart rate has not been acquired.</Abstract>
-			<DeclaredIn>WahooTickrX.h</DeclaredIn>
-			
-			<Declaration>@property NSInteger currentHeartRate</Declaration>
-			
-			
-			<Anchor>//api/name/currentHeartRate</Anchor>
+			<Anchor>//api/name/updateTable:</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		

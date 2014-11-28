@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -69,6 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="functions.html"><span>All</span></a></li>
       <li class="current"><a href="functions_func.html"><span>Functions</span></a></li>
+      <li><a href="functions_prop.html"><span>Properties</span></a></li>
     </ul>
   </div>
   <div id="navrow4" class="tabs3">
@@ -96,7 +98,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -111,6 +113,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h3><a class="anchor" id="index_a"></a>- a -</h3><ul>
 <li>alterPersonalSettings:
 : <a class="el" href="interface_home_screen_v_c.html#a8a98314cf71cd518e63b9ce589b35f02">HomeScreenVC</a>
+</li>
+<li>app
+: <a class="el" href="interface_background_scheduler.html#a393315828a032dece36a93c53ee203d0">BackgroundScheduler</a>
 </li>
 </ul>
 
@@ -181,6 +186,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>discoveryComplete
 : <a class="el" href="protocol_device_common_info_interface-p.html#a83c3e03ff34cc8b954743a76d77facea">&lt;DeviceCommonInfoInterface&gt;</a>
 </li>
+<li>doBatteryLowNotificationFor:
+: <a class="el" href="interface_device_poll_manager.html#aa0e15e54081df4d481de96cde113f2b8">DevicePollManager</a>
+</li>
 </ul>
 
 
@@ -200,6 +208,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
 <li>init
 : <a class="el" href="interface_d_b_manager.html#a0b390c8eab2577c30b2012e14ae821fe">DBManager</a>
+</li>
+<li>initWithBackgroundScheduler:
+: <a class="el" href="interface_home_screen_v_c.html#aba4765dac13e0c3829c52a23d6c6b773">HomeScreenVC</a>
 </li>
 <li>initWithDatabase:
 : <a class="el" href="interface_remote_d_b_connection_manager.html#a744cbe8cedf02655ce5a2311957059cb">RemoteDBConnectionManager</a>
@@ -244,6 +255,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h3><a class="anchor" id="index_m"></a>- m -</h3><ul>
 <li>manufacturer
 : <a class="el" href="protocol_device_common_info_interface-p.html#a4fa63c9f7fe49ddaa32bd40159bc7a8c">&lt;DeviceCommonInfoInterface&gt;</a>
+</li>
+<li>monitorMatchingCBPeripheral:
+: <a class="el" href="interface_b_t_device_manager.html#af11257d463445c307cd38c9e284c6826">BTDeviceManager</a>
 </li>
 </ul>
 
@@ -389,7 +403,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 18 2014 18:18:04 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 28 2014 12:19:09 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

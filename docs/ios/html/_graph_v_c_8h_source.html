@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -67,7 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -97,32 +98,52 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#import &quot;BTDeviceManager.h&quot;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#import &quot;DevicePollManager.h&quot;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#import &quot;DeviceConstantsAndStaticFunctions.h&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="interface_graph_v_c.html">   17</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_graph_v_c.html">GraphVC</a> : UIViewController</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#import &quot;BTDeviceManagerDelegate.h&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="interface_graph_v_c.html">   18</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_graph_v_c.html">GraphVC</a> : UIViewController</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">@property</span> <a class="code" href="interface_device_poll_manager.html">DevicePollManager</a> *devicePoller;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">@property</span> (retain, nonatomic) IBOutlet UILabel *heartRateDisplay;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">@property</span> (retain, nonatomic) IBOutlet UILabel *activityDisplay;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">@property</span> NSTimer *displayTimer;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">@property</span> NSRunLoop *runLoop;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">@property</span> id&lt;HeartMonitorProtocol&gt; heartMonitor;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">@property</span> id&lt;ActivityMonitorProtocol&gt; activityMonitor;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="interface_graph_v_c.html#a8a00c63cc6cab8b3c1cddaaacc9d12fc">   26</a></span>&#160;<span class="keyword">@property</span> <a class="code" href="interface_device_poll_manager.html">DevicePollManager</a> *<a class="code" href="interface_graph_v_c.html#a8a00c63cc6cab8b3c1cddaaacc9d12fc">devicePoller</a>;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;-(id) initWithDevicePoller: (<a class="code" href="interface_device_poll_manager.html">DevicePollManager</a>*) devicePoller;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="interface_graph_v_c.html#ad434b1d838f58441c9d6499936ccd620">   34</a></span>&#160;<span class="keyword">@property</span> (retain, nonatomic) IBOutlet UILabel *<a class="code" href="interface_graph_v_c.html#ad434b1d838f58441c9d6499936ccd620">heartRateDisplay</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="interface_graph_v_c.html#a75fd5eb6ebad27cbce29475d94459329">   42</a></span>&#160;<span class="keyword">@property</span> (retain, nonatomic) IBOutlet UILabel *<a class="code" href="interface_graph_v_c.html#a75fd5eb6ebad27cbce29475d94459329">activityDisplay</a>;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;-(void) <a class="code" href="interface_graph_v_c.html#a7521f143474f68142628970e9f1d7706">updateDisplay</a>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="interface_graph_v_c.html#a5ef6730daa124f69087996078418db0d">   49</a></span>&#160;<span class="keyword">@property</span> NSTimer *<a class="code" href="interface_graph_v_c.html#a5ef6730daa124f69087996078418db0d">displayTimer</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">@end</span></div>
-<div class="ttc" id="interface_device_poll_manager_html"><div class="ttname"><a href="interface_device_poll_manager.html">DevicePollManager</a></div><div class="ttdef"><b>Definition:</b> DevicePollManager.h:26</div></div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="interface_graph_v_c.html#aaeee6afe374009cd16e4a6a1d2270efa">   57</a></span>&#160;<span class="keyword">@property</span> NSRunLoop *<a class="code" href="interface_graph_v_c.html#aaeee6afe374009cd16e4a6a1d2270efa">runLoop</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="interface_graph_v_c.html#ab4c3c7d6990f1e3be550b443e2c7a532">   65</a></span>&#160;<span class="keyword">@property</span> id&lt;HeartMonitorProtocol&gt; <a class="code" href="interface_graph_v_c.html#ab4c3c7d6990f1e3be550b443e2c7a532">heartMonitor</a>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="interface_graph_v_c.html#a0216f83efd648d18c90793fd67206ad8">   73</a></span>&#160;<span class="keyword">@property</span> id&lt;ActivityMonitorProtocol&gt; <a class="code" href="interface_graph_v_c.html#a0216f83efd648d18c90793fd67206ad8">activityMonitor</a>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;-(id) initWithDevicePoller: (<a class="code" href="interface_device_poll_manager.html">DevicePollManager</a>*) devicePoller;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;-(void) <a class="code" href="interface_graph_v_c.html#a7521f143474f68142628970e9f1d7706">updateDisplay</a>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="keyword">@end</span></div>
+<div class="ttc" id="interface_device_poll_manager_html"><div class="ttname"><a href="interface_device_poll_manager.html">DevicePollManager</a></div><div class="ttdef"><b>Definition:</b> DevicePollManager.h:27</div></div>
+<div class="ttc" id="interface_graph_v_c_html_a5ef6730daa124f69087996078418db0d"><div class="ttname"><a href="interface_graph_v_c.html#a5ef6730daa124f69087996078418db0d">GraphVC::displayTimer</a></div><div class="ttdeci">NSTimer * displayTimer</div><div class="ttdef"><b>Definition:</b> GraphVC.h:49</div></div>
 <div class="ttc" id="interface_graph_v_c_html_a7521f143474f68142628970e9f1d7706"><div class="ttname"><a href="interface_graph_v_c.html#a7521f143474f68142628970e9f1d7706">-[GraphVC updateDisplay]</a></div><div class="ttdeci">void updateDisplay()</div><div class="ttdef"><b>Definition:</b> GraphVC.m:77</div></div>
-<div class="ttc" id="interface_graph_v_c_html"><div class="ttname"><a href="interface_graph_v_c.html">GraphVC</a></div><div class="ttdef"><b>Definition:</b> GraphVC.h:17</div></div>
+<div class="ttc" id="interface_graph_v_c_html_ab4c3c7d6990f1e3be550b443e2c7a532"><div class="ttname"><a href="interface_graph_v_c.html#ab4c3c7d6990f1e3be550b443e2c7a532">GraphVC::heartMonitor</a></div><div class="ttdeci">id&lt; HeartMonitorProtocol &gt; heartMonitor</div><div class="ttdef"><b>Definition:</b> GraphVC.h:65</div></div>
+<div class="ttc" id="interface_graph_v_c_html_a75fd5eb6ebad27cbce29475d94459329"><div class="ttname"><a href="interface_graph_v_c.html#a75fd5eb6ebad27cbce29475d94459329">GraphVC::activityDisplay</a></div><div class="ttdeci">IBOutlet UILabel * activityDisplay</div><div class="ttdef"><b>Definition:</b> GraphVC.h:42</div></div>
+<div class="ttc" id="interface_graph_v_c_html_a0216f83efd648d18c90793fd67206ad8"><div class="ttname"><a href="interface_graph_v_c.html#a0216f83efd648d18c90793fd67206ad8">GraphVC::activityMonitor</a></div><div class="ttdeci">id&lt; ActivityMonitorProtocol &gt; activityMonitor</div><div class="ttdef"><b>Definition:</b> GraphVC.h:73</div></div>
+<div class="ttc" id="interface_graph_v_c_html_aaeee6afe374009cd16e4a6a1d2270efa"><div class="ttname"><a href="interface_graph_v_c.html#aaeee6afe374009cd16e4a6a1d2270efa">GraphVC::runLoop</a></div><div class="ttdeci">NSRunLoop * runLoop</div><div class="ttdef"><b>Definition:</b> GraphVC.h:57</div></div>
+<div class="ttc" id="interface_graph_v_c_html"><div class="ttname"><a href="interface_graph_v_c.html">GraphVC</a></div><div class="ttdef"><b>Definition:</b> GraphVC.h:18</div></div>
+<div class="ttc" id="interface_graph_v_c_html_a8a00c63cc6cab8b3c1cddaaacc9d12fc"><div class="ttname"><a href="interface_graph_v_c.html#a8a00c63cc6cab8b3c1cddaaacc9d12fc">GraphVC::devicePoller</a></div><div class="ttdeci">DevicePollManager * devicePoller</div><div class="ttdef"><b>Definition:</b> GraphVC.h:26</div></div>
+<div class="ttc" id="interface_graph_v_c_html_ad434b1d838f58441c9d6499936ccd620"><div class="ttname"><a href="interface_graph_v_c.html#ad434b1d838f58441c9d6499936ccd620">GraphVC::heartRateDisplay</a></div><div class="ttdeci">IBOutlet UILabel * heartRateDisplay</div><div class="ttdef"><b>Definition:</b> GraphVC.h:34</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 18 2014 18:18:03 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 28 2014 12:19:08 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>
