@@ -8,7 +8,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:scrollbars="vertical"
     android:visibility="visible"
-    tools:context="com.medicalcyborgs.seniorproject2014.ActivityHome" >
+    tools:context="com.medicalcyborgs.seniorproject2014.ActivityFragHome" >
 
     <Button
         android:id="@+id/Button04"
@@ -44,7 +44,7 @@
         android:text="Personal Information" />
 
     <Button
-        android:id="@+id/Button01"
+        android:id="@+id/Button_JawboneAuth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/Button_AuthFitBit"

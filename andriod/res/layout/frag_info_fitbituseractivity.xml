@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <ListView
+        android:id="@+id/ListView_Simple2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:visibility="visible" >
+
+    </ListView>
+
+    <ProgressBar
+        android:id="@+id/ProgressBar_FitBitActivity"
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_width="32dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/TextView_FitBitActivity"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/TextView_FitBitActivity" />
+
+    <TextView
+        android:id="@+id/TextView_FitBitActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="Downloading Activity Data . ."
+        android:textSize="24dp" />
+    
+</RelativeLayout>

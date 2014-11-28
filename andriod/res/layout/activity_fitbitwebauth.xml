@@ -6,7 +6,7 @@
     android:layout_height="match_parent" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/TextView_FitBitWebAuth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -18,14 +18,15 @@
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView1" />
+        android:layout_alignParentTop="true"
+        android:visibility="gone" />
 
     <ProgressBar
-        android:id="@+id/progressBar1"
+        android:id="@+id/ProgressBar_FitBitWebAuth"
         style="?android:attr/progressBarStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/textView1" />
+        android:layout_toRightOf="@+id/TextView_FitBitWebAuth" />
 
 </RelativeLayout>
