@@ -70,4 +70,14 @@ NSString * const BATTERY_LOW_NOTIFCATION_STR = @"Battery Level Low";
     }
     return result;
 }
+
++(NSData*) getPDUFromMessage: (NSData*) message {
+    
+    NSUInteger size = [message length];
+    NSUInteger pduSize = size - 8;
+    NSData *result = [[NSData alloc] initWithData:[message subdataWithRange:NSMakeRange(5, pduSize)]];
+    NSLog(@"original message: %@",message);
+    NSLog(@"new message: %@", result);
+    return result;
+}
 @end

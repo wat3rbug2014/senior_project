@@ -70,4 +70,16 @@ typedef enum _ActivityLevel {
 
 +(NSString*) activityPhraseUsing: (int) activity;
 
+
+/**
+ * This method removes the preamble, CRC and access address from the message to return the raw
+ * data.  The assumption is that the message passed is from a Bluetooth Smart device, since Bluetooth
+ * Smart differs slightly from bluetooth 4.0. There is no assumption about endianness from the data.
+ *
+ * @param message  The original message received from the peripheral.
+ *
+ * @return The NSData object of the PDU from the message only.
+ */
+
++(NSData*) getPDUFromMessage: (NSData*) message;
 @end
