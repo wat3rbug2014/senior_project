@@ -61,6 +61,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void) unCheckPreviousCellForTableView:(UITableView *)tableView {
+    
+    if ([super.deviceManager selectedIndexForHeartMonitor] != NONE_SELECTED) {
+        NSIndexPath *oldPath = [NSIndexPath indexPathForRow:[super.deviceManager selectedIndexForHeartMonitor] inSection:0];
+        UITableViewCell *oldCell = [tableView cellForRowAtIndexPath:oldPath];
+        [oldCell setAccessoryType:UITableViewCellAccessoryNone];
+    }
+}
+
 #pragma mark - UITableViewDataSource methods
 
 

@@ -64,6 +64,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void) unCheckPreviousCellForTableView:(UITableView *)tableView {
+    
+    if ([super.deviceManager selectedIndexForActivityMonitor] != NONE_SELECTED) {
+        NSIndexPath *oldPath = [NSIndexPath indexPathForRow:[super.deviceManager selectedIndexForActivityMonitor] inSection:0];
+        UITableViewCell *oldCell = [tableView cellForRowAtIndexPath:oldPath];
+        [oldCell setAccessoryType:UITableViewCellAccessoryNone];
+    }
+}
 
 #pragma mark - UITableViewDataSource methods
 
@@ -131,19 +139,20 @@
     // deselect the device
     
     if ([super.deviceManager selectedIndexForActivityMonitor] == indexPath.row) {
+        [self unCheckPreviousCellForTableView:tableView];
         [super.deviceManager deselectDeviceType:ACTIVITY_MONITOR];
-        [[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryNone];
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
-        
     } else {
         
         // select the device
         
+        [self unCheckPreviousCellForTableView:tableView];
         [super.deviceManager setSelectedIndexForActivityMonitor:indexPath.row];
         [[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryCheckmark];
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
     [self playClickSound];
 }
+
 
 @end

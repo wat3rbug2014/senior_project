@@ -17,4 +17,14 @@
 
 @interface HeartMonitorSelectVC : TableVCWithSounds
 
+
+/**
+ * This method unchecks the previous cell if one is selected so that duplicate
+ * selection does not display.
+ *
+ * @param tableView The tableview that contains the cells for updating.
+ */
+
+-(void) unCheckPreviousCellForTableView: (UITableView*) tableView;
+
 @end
