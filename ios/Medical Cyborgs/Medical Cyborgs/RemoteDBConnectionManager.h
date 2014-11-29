@@ -21,7 +21,7 @@
 #import "DBManager.h"
 #import "LocalDBResult.h"
 
-@interface RemoteDBConnectionManager : NSObject <NSURLConnectionDelegate>
+@interface RemoteDBConnectionManager : NSObject <NSURLSessionDelegate>
 
 
 /**

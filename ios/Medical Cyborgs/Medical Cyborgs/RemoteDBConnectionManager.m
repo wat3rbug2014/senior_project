@@ -84,10 +84,34 @@
     
     // go to server and add row of data
     
+    // setup config for background process of requests
+    
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    [config setNetworkServiceType:NSURLNetworkServiceTypeBackground];
+    [config setTimeoutIntervalForRequest:15.0];
+    [config setAllowsCellularAccess:YES];
+    [config setHTTPMaximumConnectionsPerHost:1];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:config delegate:self delegateQueue:nil];
+
     NSURLRequest *request = [NSURLRequest requestWithURL:databaseUrl
         cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:15.0];
-    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:NO];
-    [connection start];
+    NSURLSessionUploadTask *uploadData = [session uploadTaskWithRequest:request fromFile:databaseUrl
+        completionHandler:^(NSData* data, NSURLResponse *response, NSError *error){
+        
+            NSString *patientIDResponseString = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
+            NSLog(@"raw data is %@", patientIDResponseString);
+            NSInteger receivedInt = [patientIDResponseString integerValue];
+            NSLog(@"Data is now %d", (int)receivedInt);
+                                                          
+            // this should check for value to resend or not
+                                                          
+            if (![database isDatabaseEmpty]) {
+                remoteUnreachable = NO;
+                failedAttempts = 0;
+                [self removeCurrentRowInLocalDB];
+            }
+        }];
+    [uploadData resume];
 }
 
 -(void) removeCurrentRowInLocalDB {
@@ -127,53 +151,5 @@
     }
     return output;
 }
-
-#pragma NSURLConnectDataDelegate methods
-
-
--(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-    
-    NSLog(@"couldn't reach: see %@", error);
-    failedAttempts++;
-    if (failedAttempts < 3) {
-        [self sendRowToServer];
-    } else {
-        remoteUnreachable = YES;
-    }
-}
-
--(void) connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-    
-    _serverResponseData = [[NSMutableData alloc] init];
-    NSLog(@"got a response");
-}
-
--(void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-    
-    [_serverResponseData appendData:data];
-    NSLog(@"got data %d bytes", (int)[_serverResponseData length]);
-}
-
--(void) connectionDidFinishLoading:(NSURLConnection *)connection {
-    
-    /**
-     * WARNING:  The expected response from the server is just UTF8 text representing the integer value of
-     * the patient of the success code.  If this should change, this method needs to be altered to parse the information
-     * correctly.
-     */
-    
-    NSString *patientIDResponseString = [[NSString alloc] initWithData: _serverResponseData encoding: NSUTF8StringEncoding];
-    NSLog(@"raw data is %@", patientIDResponseString); // starbucks login found one time
-    NSInteger receivedInt = [patientIDResponseString integerValue];
-    NSLog(@"Data is now %d", (int)receivedInt);
-    if (![database isDatabaseEmpty]) {
-        remoteUnreachable = NO;
-        failedAttempts = 0;
-        [self removeCurrentRowInLocalDB];
-    }
-    
-}
-
-
 
 @end
