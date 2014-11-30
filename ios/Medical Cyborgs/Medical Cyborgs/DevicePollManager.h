@@ -43,13 +43,6 @@
 
 
 /**
- * The flag that is used to see if big location changes are allowed.
- */
-
-@property BOOL bigLocationChanges;
-
-
-/**
  * The patient information that is locally stored by the application.  It is in the
  * NSUserDefaults so that application restores will not require any remote connection.
  */

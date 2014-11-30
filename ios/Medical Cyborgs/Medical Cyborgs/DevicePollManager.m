@@ -24,7 +24,6 @@
 @synthesize currentHeartRate;
 @synthesize locationAllowed;
 @synthesize locationManager;
-@synthesize bigLocationChanges;
 
 
 -(id) initWithDataStore:(DBManager *)dataStore andDevicemanager:(BTDeviceManager *)newDeviceManager {
@@ -67,8 +66,7 @@
     
     ableToPoll = NO;
     [locationManager stopMonitoringSignificantLocationChanges];
-    //[locationManager stopUpdatingLocation];
-    [deviceManager disconnectSelectedMonitors];
+    //[deviceManager disconnectSelectedMonitors];
 }
 -(void) pollDevicesForData {
     
@@ -94,11 +92,6 @@
         //[locationManager startUpdatingLocation];
         [locationManager startMonitoringSignificantLocationChanges];
         ableToPoll = YES;
-    }
-    if (bigLocationChanges) {
-        NSLog(@"Location changes allowed");
-    } else {
-        NSLog(@"Location changes NOT allowed");
     }
     NSLog(@"Getting battery level info from devices");
     
