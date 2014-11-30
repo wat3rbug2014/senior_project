@@ -77,10 +77,6 @@
             NSLog(@"%@ discovering battery stuff", [device name]);
             [device discoverServices:nil];
         } else {
-            
-            // battery services already discovered, just need to be read
-            
-            NSLog(@"%@ battery already discovered", [device name]);
             [device readValueForCharacteristic:batteryLvlChar];
         }
     } else {
