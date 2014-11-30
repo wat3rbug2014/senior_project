@@ -46,12 +46,17 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     
-    UIApplication *app = [UIApplication sharedApplication];
-    [app setApplicationIconBadgeNumber:0];
+
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    UIApplication *app = [UIApplication sharedApplication];
+    if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]) {
+        [app registerUserNotificationSettings:[UIUserNotificationSettings
+            settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeSound categories:nil]];
+    }
+    [app setApplicationIconBadgeNumber:0];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
@@ -59,10 +64,17 @@
 
     [[processScheduler deviceManager]  disconnectSelectedMonitors];
     [[processScheduler serverPoller] pushDataToRemoteServer];
+    UIApplication *app = [UIApplication sharedApplication];
+    if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]) {
+        [app registerUserNotificationSettings:[UIUserNotificationSettings
+            settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeSound categories:nil]];
+    }
+    [app setApplicationIconBadgeNumber:0];
 }
 
 -(void) application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
     
-    //[processScheduler performScan];
+    // I think this needs rework to check to see if monitoring is happening so that we can disregard or turn off devices.
+    completionHandler(UIBackgroundFetchResultNewData);
 }
 @end

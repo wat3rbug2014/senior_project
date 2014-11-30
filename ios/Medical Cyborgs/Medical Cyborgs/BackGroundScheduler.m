@@ -85,7 +85,6 @@
     if ([app applicationState] == UIApplicationStateBackground) {
         NSLog(@"Background mode");
     } else {
-        NSLog(@"Foreground mode");
         devicePollTimer = [NSTimer scheduledTimerWithTimeInterval:devicePollInterval target:devicePoller
             selector:@selector(pollDevicesForData) userInfo:nil repeats:YES];
         serverPollTimer = [NSTimer scheduledTimerWithTimeInterval:serverPollInterval target:serverPoller

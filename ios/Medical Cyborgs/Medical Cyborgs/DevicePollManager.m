@@ -99,12 +99,16 @@
     }
     NSLog(@"Getting battery level info from devices");
     
+    /* There is a bug in battery section.  It does not detect low battery if I add portion
+      to disregard NO_BATTERY_VALUE.
+     */
+    
     [heartMonitor discoverBatteryLevel];
     [activityMonitor discoverBatteryLevel];
     if ([heartMonitor batteryLevel] < 20) {
         [self doBatteryLowNotificationFor:heartMonitor];
     }
-    if ([activityMonitor batteryLevel] < 20) {
+    if ([activityMonitor batteryLevel] != NO_BATTERY_VALUE && [activityMonitor batteryLevel] < 20) {
         [self doBatteryLowNotificationFor:activityMonitor];
     }
     NSLog(@"getting data from heart monitor");
@@ -116,14 +120,8 @@
     NSLog(@"storing data in database");
     
     [database setHrmeasurement:currentHeartRate];
-    
-    // check this
-    
     [database setActivityLevel:[DeviceConstantsAndStaticFunctions
         activityLevelBasedOnHeartRate:currentHeartRate andAge:[patientInfo age]]];
-    
-    // end of check portion
-    
     [database setTimestamp:[NSDate date]];
     [database insertDataIntoDB];
     
@@ -169,7 +167,13 @@
     UILocalNotification *batteryNotification = [[UILocalNotification alloc] init];
     [batteryNotification setSoundName:UILocalNotificationDefaultSoundName];
     [batteryNotification setApplicationIconBadgeNumber:1];
-    [batteryNotification setAlertBody:[NSString stringWithFormat:@"%@ has low battery", [device name]]];
+    NSString *name;
+    if ([device name] == nil) {
+        name = @"Monitoring device";
+    } else {
+        name = [device name];
+    }
+    [batteryNotification setAlertBody:[NSString stringWithFormat:@"%@ has low battery", name]];
     if (!lowBatteryNotified) {
         [[self app] presentLocalNotificationNow:batteryNotification];
     }

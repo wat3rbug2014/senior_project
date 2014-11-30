@@ -26,7 +26,6 @@
 @synthesize rowCount;
 @synthesize activityLevel;
 
-
 -(instancetype)init {
     
     NSString *dbFilename = @"project.sql";
