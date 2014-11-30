@@ -13,6 +13,24 @@ conform to the activity monitoring services.</Abstract>
 		</Token>
 		
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ActivityMonitorSelectVC/unCheckPreviousCellForTableView:</TokenIdentifier>
+			<Abstract type="html">This method unchecks the previous cell if one is selected so that duplicate
+selection does not display.</Abstract>
+			<DeclaredIn>ActivityMonitorSelectVC.h</DeclaredIn>
+			
+			<Declaration>- (void)unCheckPreviousCellForTableView:(UITableView *)tableView</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>tableView</Name>
+					<Abstract type="html">The tableview that contains the cells for updating.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/unCheckPreviousCellForTableView:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
         
         
 	</File>

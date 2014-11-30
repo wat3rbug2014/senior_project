@@ -61,6 +61,28 @@
             <Name>ActivityMonitorSelectVC</Name>
             <Path>Classes/ActivityMonitorSelectVC.html</Path>
             
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/ActivityMonitorSelectVC.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/ActivityMonitorSelectVC.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/ActivityMonitorSelectVC.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
         </Node>
 		<Node id="2" type="file" documentType="reference">
             <Name>AppDelegate</Name>
@@ -323,6 +345,28 @@
 		<Node id="10" type="file" documentType="reference">
             <Name>HeartMonitorSelectVC</Name>
             <Path>Classes/HeartMonitorSelectVC.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/HeartMonitorSelectVC.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/HeartMonitorSelectVC.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/HeartMonitorSelectVC.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
             
         </Node>
 		<Node id="11" type="file" documentType="reference">

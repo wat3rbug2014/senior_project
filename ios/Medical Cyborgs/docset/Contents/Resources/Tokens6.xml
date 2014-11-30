@@ -53,6 +53,25 @@ level.</Abstract>
             <NodeRef refid="6"/>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/DeviceConstantsAndStaticFunctions/getPDUFromMessage:</TokenIdentifier>
+			<Abstract type="html">This method removes the preamble, CRC and access address from the message to return the raw
+data.  The assumption is that the message passed is from a Bluetooth Smart device, since Bluetooth
+Smart differs slightly from bluetooth 4.0. There is no assumption about endianness from the data.</Abstract>
+			<DeclaredIn>DeviceConstantsAndStaticFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (NSData *)getPDUFromMessage:(NSData *)message</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>message</Name>
+					<Abstract type="html">The original message received from the peripheral.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The NSData object of the PDU from the message only.</Abstract></ReturnValue>
+			<Anchor>//api/name/getPDUFromMessage:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
         
         
 	</File>

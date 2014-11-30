@@ -45,8 +45,6 @@
 	
 	<option value="//api/name/batteryAlertGiven">&nbsp;&nbsp;&nbsp;&nbsp;batteryAlertGiven</option>
 	
-	<option value="//api/name/bigLocationChanges">&nbsp;&nbsp;&nbsp;&nbsp;bigLocationChanges</option>
-	
 	<option value="//api/name/currentHeartRate">&nbsp;&nbsp;&nbsp;&nbsp;currentHeartRate</option>
 	
 	<option value="//api/name/database">&nbsp;&nbsp;&nbsp;&nbsp;database</option>
@@ -63,6 +61,8 @@
 	
 	<option value="//api/name/locationManager">&nbsp;&nbsp;&nbsp;&nbsp;locationManager</option>
 	
+	<option value="//api/name/lowBatteryNotified">&nbsp;&nbsp;&nbsp;&nbsp;lowBatteryNotified</option>
+	
 	<option value="//api/name/patientID">&nbsp;&nbsp;&nbsp;&nbsp;patientID</option>
 	
 	<option value="//api/name/patientInfo">&nbsp;&nbsp;&nbsp;&nbsp;patientInfo</option>
@@ -73,6 +73,8 @@
 	
 	
 	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/app">&nbsp;&nbsp;&nbsp;&nbsp;- app</option>
 	
 	<option value="//api/name/didReceiveNotificationDeviceConnected">&nbsp;&nbsp;&nbsp;&nbsp;- didReceiveNotificationDeviceConnected</option>
 	
@@ -114,8 +116,6 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/batteryAlertGiven">batteryAlertGiven</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/bigLocationChanges">bigLocationChanges</a></span></li>
-	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/currentHeartRate">currentHeartRate</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/database">database</a></span></li>
@@ -132,6 +132,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/locationManager">locationManager</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/lowBatteryNotified">lowBatteryNotified</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/patientID">patientID</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/patientInfo">patientInfo</a></span></li>
@@ -143,6 +145,8 @@
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/app">app</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/didReceiveNotificationDeviceConnected">didReceiveNotificationDeviceConnected</a></span></li>
 	
@@ -214,6 +218,18 @@ from the devices and puts the data in the local data store.</p>
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
+		<code><a href="#//api/name/app">&ndash;&nbsp;app</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/lowBatteryNotified">&nbsp;&nbsp;lowBatteryNotified</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/locationManager">&nbsp;&nbsp;locationManager</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
@@ -221,12 +237,6 @@ from the devices and puts the data in the local data store.</p>
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/locationAllowed">&nbsp;&nbsp;locationAllowed</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/bigLocationChanges">&nbsp;&nbsp;bigLocationChanges</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -427,42 +437,6 @@ battery alert is 20% of battery left on one of the devices.</p>
     
 
 	<div class="method-subsection method-declaration"><code>@property BOOL batteryAlertGiven</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">DevicePollManager.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/bigLocationChanges" title="bigLocationChanges"></a>
-	<h3 class="subsubtitle method-title">bigLocationChanges</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>The flag that is used to see if big location changes are allowed.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property BOOL bigLocationChanges</code></div>
 
     
 	
@@ -778,6 +752,42 @@ user.</p>
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/lowBatteryNotified" title="lowBatteryNotified"></a>
+	<h3 class="subsubtitle method-title">lowBatteryNotified</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>flag to represent that the low battery notification has been done.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property BOOL lowBatteryNotified</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DevicePollManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/patientID" title="patientID"></a>
 	<h3 class="subsubtitle method-title">patientID</h3>
 	
@@ -860,6 +870,42 @@ NSUserDefaults so that application restores will not require any remote connecti
 					<div class="section section-methods">
 						<a title="Instance Methods" name="instance_methods"></a>
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/app" title="app"></a>
+	<h3 class="subsubtitle method-title">app</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method returns the shared instance of the application.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (UIApplication *)app</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DevicePollManager.h</code><br />
+	</div>				
+	
+	
+</div>
 						
 						<div class="section-method">
 	<a name="//api/name/didReceiveNotificationDeviceConnected" title="didReceiveNotificationDeviceConnected"></a>
@@ -1096,7 +1142,7 @@ battery is below 20% a notification will be posted to the NSNotificationCenter.<
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2014 UHCL. All rights reserved. (Last updated: 2014-11-28)</span><br />
+						<p><span class="copyright">&copy; 2014 UHCL. All rights reserved. (Last updated: 2014-11-29)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

@@ -15,6 +15,54 @@ from the devices and puts the data in the local data store.</Abstract>
 		
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DevicePollManager/app</TokenIdentifier>
+			<Abstract type="html">This method returns the shared instance of the application.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>- (UIApplication *)app</Declaration>
+			
+			
+			<Anchor>//api/name/app</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DevicePollManager/setLowBatteryNotified:</TokenIdentifier>
+			<Abstract type="html">flag to represent that the low battery notification has been done.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property BOOL lowBatteryNotified</Declaration>
+			
+			
+			<Anchor>//api/name/lowBatteryNotified</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DevicePollManager/lowBatteryNotified</TokenIdentifier>
+			<Abstract type="html">flag to represent that the low battery notification has been done.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property BOOL lowBatteryNotified</Declaration>
+			
+			
+			<Anchor>//api/name/lowBatteryNotified</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DevicePollManager/lowBatteryNotified</TokenIdentifier>
+			<Abstract type="html">flag to represent that the low battery notification has been done.</Abstract>
+			<DeclaredIn>DevicePollManager.h</DeclaredIn>
+			
+			<Declaration>@property BOOL lowBatteryNotified</Declaration>
+			
+			
+			<Anchor>//api/name/lowBatteryNotified</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/DevicePollManager/setLocationManager:</TokenIdentifier>
 			<Abstract type="html">The location manager used for tracking the location of the patient for large updates.</Abstract>
 			<DeclaredIn>DevicePollManager.h</DeclaredIn>
@@ -86,42 +134,6 @@ user.</Abstract>
 			
 			
 			<Anchor>//api/name/locationAllowed</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DevicePollManager/setBigLocationChanges:</TokenIdentifier>
-			<Abstract type="html">The flag that is used to see if big location changes are allowed.</Abstract>
-			<DeclaredIn>DevicePollManager.h</DeclaredIn>
-			
-			<Declaration>@property BOOL bigLocationChanges</Declaration>
-			
-			
-			<Anchor>//api/name/bigLocationChanges</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DevicePollManager/bigLocationChanges</TokenIdentifier>
-			<Abstract type="html">The flag that is used to see if big location changes are allowed.</Abstract>
-			<DeclaredIn>DevicePollManager.h</DeclaredIn>
-			
-			<Declaration>@property BOOL bigLocationChanges</Declaration>
-			
-			
-			<Anchor>//api/name/bigLocationChanges</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DevicePollManager/bigLocationChanges</TokenIdentifier>
-			<Abstract type="html">The flag that is used to see if big location changes are allowed.</Abstract>
-			<DeclaredIn>DevicePollManager.h</DeclaredIn>
-			
-			<Declaration>@property BOOL bigLocationChanges</Declaration>
-			
-			
-			<Anchor>//api/name/bigLocationChanges</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		

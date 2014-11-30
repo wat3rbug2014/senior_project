@@ -13,6 +13,24 @@ that perform heart monitoring functions.</Abstract>
 		</Token>
 		
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/HeartMonitorSelectVC/unCheckPreviousCellForTableView:</TokenIdentifier>
+			<Abstract type="html">This method unchecks the previous cell if one is selected so that duplicate
+selection does not display.</Abstract>
+			<DeclaredIn>HeartMonitorSelectVC.h</DeclaredIn>
+			
+			<Declaration>- (void)unCheckPreviousCellForTableView:(UITableView *)tableView</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>tableView</Name>
+					<Abstract type="html">The tableview that contains the cells for updating.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/unCheckPreviousCellForTableView:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
         
         
 	</File>
