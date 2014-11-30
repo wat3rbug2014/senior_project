@@ -24,7 +24,12 @@
 @synthesize currentHeartRate;
 @synthesize locationAllowed;
 @synthesize locationManager;
+@synthesize lowBatteryNotified;
 
+-(UIApplication*) app {
+    
+    return [UIApplication sharedApplication];
+}
 
 -(id) initWithDataStore:(DBManager *)dataStore andDevicemanager:(BTDeviceManager *)newDeviceManager {
     
@@ -40,7 +45,7 @@
         batteryAlertGiven = NO;
         isHeartMonitorReady = NO;
         isActivityMonitorReady = NO;
-    
+        lowBatteryNotified = NO;
         // setup notifications
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveNotificationDeviceConnected)
@@ -78,7 +83,7 @@
     }
     [database setPatientID:patientID];
     if (![heartMonitor isConnected]) {
-        NSLog(@"Device poller attempt to connect to devices");
+        NSLog(@"Device poller attempt to heart monitor");
         [deviceManager connectSelectedMonitors];
         return;
     }
@@ -89,19 +94,18 @@
         locationManager = [[CLLocationManager alloc] init];
         [locationManager setDelegate:self];
         [locationManager requestAlwaysAuthorization];
-        //[locationManager startUpdatingLocation];
         [locationManager startMonitoringSignificantLocationChanges];
         ableToPoll = YES;
     }
     NSLog(@"Getting battery level info from devices");
     
     [heartMonitor discoverBatteryLevel];
-    //[activityMonitor discoverBatteryLevel];
+    [activityMonitor discoverBatteryLevel];
     if ([heartMonitor batteryLevel] < 20) {
-        // do something to get notification to screen.
+        [self doBatteryLowNotificationFor:heartMonitor];
     }
     if ([activityMonitor batteryLevel] < 20) {
-        
+        [self doBatteryLowNotificationFor:activityMonitor];
     }
     NSLog(@"getting data from heart monitor");
     currentHeartRate = (int)[heartMonitor getHeartRate];
@@ -154,7 +158,22 @@
 
 -(void) doBatteryLowNotificationFor:(id<DeviceCommonInfoInterface>)device {
     
-    
+    UIApplication *app = [self app];
+    if ([app applicationState] != UIApplicationStateBackground) {
+        return;
+    }
+    if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]) {
+        [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings
+            settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeSound categories:nil]];
+    }
+    UILocalNotification *batteryNotification = [[UILocalNotification alloc] init];
+    [batteryNotification setSoundName:UILocalNotificationDefaultSoundName];
+    [batteryNotification setApplicationIconBadgeNumber:1];
+    [batteryNotification setAlertBody:[NSString stringWithFormat:@"%@ has low battery", [device name]]];
+    if (!lowBatteryNotified) {
+        [[self app] presentLocalNotificationNow:batteryNotification];
+    }
+    lowBatteryNotified = YES;
 }
 
 #pragma mark - BTDeviceManagerDelegate methods

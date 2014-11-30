@@ -28,6 +28,19 @@
 
 
 /**
+ * This method returns the shared instance of the application.
+ */
+
+-(UIApplication*) app;
+
+/**
+ * flag to represent that the low battery notification has been done.
+ */
+
+@property BOOL lowBatteryNotified;
+
+
+/**
  * The location manager used for tracking the location of the patient for large updates.
  */
 

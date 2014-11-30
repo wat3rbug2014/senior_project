@@ -28,6 +28,8 @@
     self.window.rootViewController = navCon;
     [self.window makeKeyAndVisible];
     [application setMinimumBackgroundFetchInterval:5.0];
+    UIApplication *app = [UIApplication sharedApplication];
+    [app setApplicationIconBadgeNumber:0];
     return YES;
 }
 
@@ -43,7 +45,9 @@
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    
+    UIApplication *app = [UIApplication sharedApplication];
+    [app setApplicationIconBadgeNumber:0];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
