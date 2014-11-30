@@ -156,9 +156,9 @@
     if ([patientInfo patientID] == NO_ID_SET) {
         return;
     }
-//    if ([btDevices selectedIndexForActivityMonitor] == NONE_SELECTED) {
-//        return;
-//    }
+    if ([btDevices selectedIndexForActivityMonitor] == NONE_SELECTED) {
+        return;
+    }
     if ([btDevices selectedIndexForHeartMonitor] == NONE_SELECTED) {
         return;
     }
@@ -173,8 +173,10 @@
         NSLog(@"started running");
         [scheduler startMonitoringWithPatientID:[patientInfo patientID]];
     } else {
+        [toggleRunButton setTitle:@"Start" forState:UIControlStateNormal];
         [scheduler stopMonitoring];
     }
+    [[scheduler devicePoller] setLowBatteryNotified:NO];
 }
 
 -(void) checkForUpdatedPatientID {
