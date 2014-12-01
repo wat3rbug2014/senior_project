@@ -29,7 +29,9 @@
     [self.window makeKeyAndVisible];
     [application setMinimumBackgroundFetchInterval:5.0];
     UIApplication *app = [UIApplication sharedApplication];
-    [app setApplicationIconBadgeNumber:0];
+    UIUserNotificationType types = UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+    [app registerUserNotificationSettings:settings];
     return YES;
 }
 
