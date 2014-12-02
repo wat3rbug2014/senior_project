@@ -104,6 +104,8 @@ Inheritance diagram for DevicePollManager:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Instance Methods</h2></td></tr>
+<tr class="memitem:a896832635ddcf3d3d1f60cd856f0dd96"><td class="memItemLeft" align="right" valign="top">(UIApplication *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_device_poll_manager.html#a896832635ddcf3d3d1f60cd856f0dd96">app</a></td></tr>
+<tr class="separator:a896832635ddcf3d3d1f60cd856f0dd96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1637206b4271575f8b2afd39375125b"><td class="memItemLeft" align="right" valign="top">(id)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_device_poll_manager.html#ac1637206b4271575f8b2afd39375125b">initWithDataStore:andDevicemanager:</a></td></tr>
 <tr class="separator:ac1637206b4271575f8b2afd39375125b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0c31de4251c9eac9b21594cc866f165"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_device_poll_manager.html#ac0c31de4251c9eac9b21594cc866f165">pollDevicesForData</a></td></tr>
@@ -120,12 +122,12 @@ Instance Methods</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
+<tr class="memitem:a265079b7aa0e9cc69818fb49835bd175"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_device_poll_manager.html#a265079b7aa0e9cc69818fb49835bd175">lowBatteryNotified</a></td></tr>
+<tr class="separator:a265079b7aa0e9cc69818fb49835bd175"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad710c38392bfc32d3509de470e0cfa8d"><td class="memItemLeft" align="right" valign="top">CLLocationManager *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_device_poll_manager.html#ad710c38392bfc32d3509de470e0cfa8d">locationManager</a></td></tr>
 <tr class="separator:ad710c38392bfc32d3509de470e0cfa8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e9aad6cc4f5a99aff27b0a64ae76d19"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_device_poll_manager.html#a0e9aad6cc4f5a99aff27b0a64ae76d19">locationAllowed</a></td></tr>
 <tr class="separator:a0e9aad6cc4f5a99aff27b0a64ae76d19"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8186f40fc585c1bf30ebb8c6e05ca6d4"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_device_poll_manager.html#a8186f40fc585c1bf30ebb8c6e05ca6d4">bigLocationChanges</a></td></tr>
-<tr class="separator:a8186f40fc585c1bf30ebb8c6e05ca6d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8739ffcaa2b1e02afc1864e338de148f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_personal_info.html">PersonalInfo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_device_poll_manager.html#a8739ffcaa2b1e02afc1864e338de148f">patientInfo</a></td></tr>
 <tr class="separator:a8739ffcaa2b1e02afc1864e338de148f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a621e3962372201145248997e2eb87327"><td class="memItemLeft" align="right" valign="top">NSInteger&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_device_poll_manager.html#a621e3962372201145248997e2eb87327">patientID</a></td></tr>
@@ -154,6 +156,22 @@ Properties</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class functions as the polling mechanism for the bluetooth devices. Its goes through each time the main method is called and retrieves the information from the devices and puts the data in the local data store. </p>
 </div><h2 class="groupheader">Method Documentation</h2>
+<a class="anchor" id="a896832635ddcf3d3d1f60cd856f0dd96"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (UIApplication *) app </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This method returns the shared instance of the application. </p>
+
+</div>
+</div>
 <a class="anchor" id="a91b7db2f338c98f0d653e8a33d95b736"></a>
 <div class="memitem">
 <div class="memproto">
@@ -321,27 +339,6 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>This flag is set once a low battery indication has happened. The default for the battery alert is 20% of battery left on one of the devices. </p>
-
-</div>
-</div>
-<a class="anchor" id="a8186f40fc585c1bf30ebb8c6e05ca6d4"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (BOOL) bigLocationChanges</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>The flag that is used to see if big location changes are allowed. </p>
 
 </div>
 </div>
@@ -513,6 +510,27 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a265079b7aa0e9cc69818fb49835bd175"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) lowBatteryNotified</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>flag to represent that the low battery notification has been done. </p>
+
+</div>
+</div>
 <a class="anchor" id="a621e3962372201145248997e2eb87327"></a>
 <div class="memitem">
 <div class="memproto">
@@ -562,7 +580,7 @@ Properties</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 28 2014 12:19:08 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 2 2014 16:13:12 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

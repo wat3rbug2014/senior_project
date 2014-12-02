@@ -14,6 +14,8 @@ Inheritance diagram for Device\-Poll\-Manager\-:\begin{figure}[H]
 \subsection*{Instance Methods}
 \begin{DoxyCompactItemize}
 \item 
+(U\-I\-Application $\ast$) -\/ \hyperlink{interface_device_poll_manager_a896832635ddcf3d3d1f60cd856f0dd96}{app}
+\item 
 (id) -\/ \hyperlink{interface_device_poll_manager_ac1637206b4271575f8b2afd39375125b}{init\-With\-Data\-Store\-:and\-Devicemanager\-:}
 \item 
 (void) -\/ \hyperlink{interface_device_poll_manager_ac0c31de4251c9eac9b21594cc866f165}{poll\-Devices\-For\-Data}
@@ -27,11 +29,11 @@ Inheritance diagram for Device\-Poll\-Manager\-:\begin{figure}[H]
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
+B\-O\-O\-L \hyperlink{interface_device_poll_manager_a265079b7aa0e9cc69818fb49835bd175}{low\-Battery\-Notified}
+\item 
 C\-L\-Location\-Manager $\ast$ \hyperlink{interface_device_poll_manager_ad710c38392bfc32d3509de470e0cfa8d}{location\-Manager}
 \item 
 B\-O\-O\-L \hyperlink{interface_device_poll_manager_a0e9aad6cc4f5a99aff27b0a64ae76d19}{location\-Allowed}
-\item 
-B\-O\-O\-L \hyperlink{interface_device_poll_manager_a8186f40fc585c1bf30ebb8c6e05ca6d4}{big\-Location\-Changes}
 \item 
 \hyperlink{interface_personal_info}{Personal\-Info} $\ast$ \hyperlink{interface_device_poll_manager_a8739ffcaa2b1e02afc1864e338de148f}{patient\-Info}
 \item 
@@ -63,7 +65,14 @@ int \hyperlink{interface_device_poll_manager_a302b6434aa606031f78f721c9e40f0cf}{
 This class functions as the polling mechanism for the bluetooth devices. Its goes through each time the main method is called and retrieves the information from the devices and puts the data in the local data store. 
 
 \subsection{Method Documentation}
-\hypertarget{interface_device_poll_manager_a91b7db2f338c98f0d653e8a33d95b736}{\index{Device\-Poll\-Manager@{Device\-Poll\-Manager}!did\-Receive\-Notification\-Device\-Connected@{did\-Receive\-Notification\-Device\-Connected}}
+\hypertarget{interface_device_poll_manager_a896832635ddcf3d3d1f60cd856f0dd96}{\index{Device\-Poll\-Manager@{Device\-Poll\-Manager}!app@{app}}
+\index{app@{app}!DevicePollManager@{Device\-Poll\-Manager}}
+\subsubsection[{app}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (U\-I\-Application $\ast$) app 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_device_poll_manager_a896832635ddcf3d3d1f60cd856f0dd96}
+This method returns the shared instance of the application. \hypertarget{interface_device_poll_manager_a91b7db2f338c98f0d653e8a33d95b736}{\index{Device\-Poll\-Manager@{Device\-Poll\-Manager}!did\-Receive\-Notification\-Device\-Connected@{did\-Receive\-Notification\-Device\-Connected}}
 \index{did\-Receive\-Notification\-Device\-Connected@{did\-Receive\-Notification\-Device\-Connected}!DevicePollManager@{Device\-Poll\-Manager}}
 \subsubsection[{did\-Receive\-Notification\-Device\-Connected}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) did\-Receive\-Notification\-Device\-Connected 
 \begin{DoxyParamCaption}
@@ -130,10 +139,7 @@ This flag determines whether polling will continue. This can be F\-A\-L\-S\-E wh
 The activity monitor that was selected. The reference is used for code brevity. \hypertarget{interface_device_poll_manager_a8d5b5ff2c336f0dd2cb2b9e088850072}{\index{Device\-Poll\-Manager@{Device\-Poll\-Manager}!battery\-Alert\-Given@{battery\-Alert\-Given}}
 \index{battery\-Alert\-Given@{battery\-Alert\-Given}!DevicePollManager@{Device\-Poll\-Manager}}
 \subsubsection[{battery\-Alert\-Given}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) battery\-Alert\-Given\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}}}\label{interface_device_poll_manager_a8d5b5ff2c336f0dd2cb2b9e088850072}
-This flag is set once a low battery indication has happened. The default for the battery alert is 20\% of battery left on one of the devices. \hypertarget{interface_device_poll_manager_a8186f40fc585c1bf30ebb8c6e05ca6d4}{\index{Device\-Poll\-Manager@{Device\-Poll\-Manager}!big\-Location\-Changes@{big\-Location\-Changes}}
-\index{big\-Location\-Changes@{big\-Location\-Changes}!DevicePollManager@{Device\-Poll\-Manager}}
-\subsubsection[{big\-Location\-Changes}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) big\-Location\-Changes\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}}}\label{interface_device_poll_manager_a8186f40fc585c1bf30ebb8c6e05ca6d4}
-The flag that is used to see if big location changes are allowed. \hypertarget{interface_device_poll_manager_a302b6434aa606031f78f721c9e40f0cf}{\index{Device\-Poll\-Manager@{Device\-Poll\-Manager}!current\-Heart\-Rate@{current\-Heart\-Rate}}
+This flag is set once a low battery indication has happened. The default for the battery alert is 20\% of battery left on one of the devices. \hypertarget{interface_device_poll_manager_a302b6434aa606031f78f721c9e40f0cf}{\index{Device\-Poll\-Manager@{Device\-Poll\-Manager}!current\-Heart\-Rate@{current\-Heart\-Rate}}
 \index{current\-Heart\-Rate@{current\-Heart\-Rate}!DevicePollManager@{Device\-Poll\-Manager}}
 \subsubsection[{current\-Heart\-Rate}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (int) current\-Heart\-Rate\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}}}\label{interface_device_poll_manager_a302b6434aa606031f78f721c9e40f0cf}
 The current heart rate. It will be 0 if no heart rate has been detected, or it will stay at the last value if the heart rate monitor is lost. \hypertarget{interface_device_poll_manager_a66a02f95a478a42c7e45986317e3c6c1}{\index{Device\-Poll\-Manager@{Device\-Poll\-Manager}!database@{database}}
@@ -157,7 +163,10 @@ This flag is set when the heart monitor is connected and activity monitor are fu
 The flag that is used for checking to see if any location checks are allowed by the user. \hypertarget{interface_device_poll_manager_ad710c38392bfc32d3509de470e0cfa8d}{\index{Device\-Poll\-Manager@{Device\-Poll\-Manager}!location\-Manager@{location\-Manager}}
 \index{location\-Manager@{location\-Manager}!DevicePollManager@{Device\-Poll\-Manager}}
 \subsubsection[{location\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (C\-L\-Location\-Manager$\ast$) location\-Manager\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}, {\ttfamily [strong]}}}\label{interface_device_poll_manager_ad710c38392bfc32d3509de470e0cfa8d}
-The location manager used for tracking the location of the patient for large updates. \hypertarget{interface_device_poll_manager_a621e3962372201145248997e2eb87327}{\index{Device\-Poll\-Manager@{Device\-Poll\-Manager}!patient\-I\-D@{patient\-I\-D}}
+The location manager used for tracking the location of the patient for large updates. \hypertarget{interface_device_poll_manager_a265079b7aa0e9cc69818fb49835bd175}{\index{Device\-Poll\-Manager@{Device\-Poll\-Manager}!low\-Battery\-Notified@{low\-Battery\-Notified}}
+\index{low\-Battery\-Notified@{low\-Battery\-Notified}!DevicePollManager@{Device\-Poll\-Manager}}
+\subsubsection[{low\-Battery\-Notified}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) low\-Battery\-Notified\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}}}\label{interface_device_poll_manager_a265079b7aa0e9cc69818fb49835bd175}
+flag to represent that the low battery notification has been done. \hypertarget{interface_device_poll_manager_a621e3962372201145248997e2eb87327}{\index{Device\-Poll\-Manager@{Device\-Poll\-Manager}!patient\-I\-D@{patient\-I\-D}}
 \index{patient\-I\-D@{patient\-I\-D}!DevicePollManager@{Device\-Poll\-Manager}}
 \subsubsection[{patient\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Integer) patient\-I\-D\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}}}\label{interface_device_poll_manager_a621e3962372201145248997e2eb87327}
 The patient\-I\-D is used for the device poller to insert into the database. This reference is used for code brevity. \hypertarget{interface_device_poll_manager_a8739ffcaa2b1e02afc1864e338de148f}{\index{Device\-Poll\-Manager@{Device\-Poll\-Manager}!patient\-Info@{patient\-Info}}

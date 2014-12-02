@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/MonitorCreationFactory.html">
+	<File path="Classes/PatientInformationVC.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/MonitorCreationFactory</TokenIdentifier>
-			<Abstract type="html">This class is a factory.  The purpose is to use polymorphic behavior in the creation
-of the device classes without the calling class having to know the details.  The setup
-details are in the createFromPeripheral method.</Abstract>
-			<DeclaredIn>MonitorCreationFactory.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PatientInformationVC</TokenIdentifier>
+			<Abstract type="html">This class is the view controller that is used to update the patient information
+It updates the database and the PersonalInfo that is stored as standard defaults.</Abstract>
+			<DeclaredIn>PatientInformationVC.h</DeclaredIn>
             
 			
 			<NodeRef refid="15"/>
@@ -15,27 +14,218 @@ details are in the createFromPeripheral method.</Abstract>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/MonitorCreationFactory/createFromPeripheral:</TokenIdentifier>
-			<Abstract type="html">Creates a device object based on the peripheral supplied.  There are a few assumptions.
-The first assumption is that there is a class for the type of device to be created.  The
-second assumption is that this method properly identifies the type of device that fits the class
-and finally that the class is in the import section above this comment.  This method does NOT
-always produce an object and so a check to see if the return is nil is needed.  This is to
-prevent the false positives sometimes created from the scanning process.</Abstract>
-			<DeclaredIn>MonitorCreationFactory.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PatientInformationVC/setFirstNameEntry:</TokenIdentifier>
+			<Abstract type="html">The textfield for editing the first name of the patient.</Abstract>
+			<DeclaredIn>PatientInformationVC.h</DeclaredIn>
 			
-			<Declaration>+ (id&lt;DeviceCommonInfoInterface&gt;)createFromPeripheral:(CBPeripheral *)peripheral</Declaration>
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *firstNameEntry</Declaration>
+			
+			
+			<Anchor>//api/name/firstNameEntry</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PatientInformationVC/firstNameEntry</TokenIdentifier>
+			<Abstract type="html">The textfield for editing the first name of the patient.</Abstract>
+			<DeclaredIn>PatientInformationVC.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *firstNameEntry</Declaration>
+			
+			
+			<Anchor>//api/name/firstNameEntry</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PatientInformationVC/firstNameEntry</TokenIdentifier>
+			<Abstract type="html">The textfield for editing the first name of the patient.</Abstract>
+			<DeclaredIn>PatientInformationVC.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *firstNameEntry</Declaration>
+			
+			
+			<Anchor>//api/name/firstNameEntry</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PatientInformationVC/setLastNameEntry:</TokenIdentifier>
+			<Abstract type="html">The textfield for editing the last name of the patient.</Abstract>
+			<DeclaredIn>PatientInformationVC.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *lastNameEntry</Declaration>
+			
+			
+			<Anchor>//api/name/lastNameEntry</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PatientInformationVC/lastNameEntry</TokenIdentifier>
+			<Abstract type="html">The textfield for editing the last name of the patient.</Abstract>
+			<DeclaredIn>PatientInformationVC.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *lastNameEntry</Declaration>
+			
+			
+			<Anchor>//api/name/lastNameEntry</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PatientInformationVC/lastNameEntry</TokenIdentifier>
+			<Abstract type="html">The textfield for editing the last name of the patient.</Abstract>
+			<DeclaredIn>PatientInformationVC.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *lastNameEntry</Declaration>
+			
+			
+			<Anchor>//api/name/lastNameEntry</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PatientInformationVC/setDobSelector:</TokenIdentifier>
+			<Abstract type="html">The date picker for selecting the patients date of birth.</Abstract>
+			<DeclaredIn>PatientInformationVC.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UIDatePicker *dobSelector</Declaration>
+			
+			
+			<Anchor>//api/name/dobSelector</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PatientInformationVC/dobSelector</TokenIdentifier>
+			<Abstract type="html">The date picker for selecting the patients date of birth.</Abstract>
+			<DeclaredIn>PatientInformationVC.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UIDatePicker *dobSelector</Declaration>
+			
+			
+			<Anchor>//api/name/dobSelector</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PatientInformationVC/dobSelector</TokenIdentifier>
+			<Abstract type="html">The date picker for selecting the patients date of birth.</Abstract>
+			<DeclaredIn>PatientInformationVC.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UIDatePicker *dobSelector</Declaration>
+			
+			
+			<Anchor>//api/name/dobSelector</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PatientInformationVC/setPatientData:</TokenIdentifier>
+			<Abstract type="html">The data object that stores the patient information needed by this application.</Abstract>
+			<DeclaredIn>PatientInformationVC.h</DeclaredIn>
+			
+			<Declaration>@property (retain, strong) PersonalInfo *patientData</Declaration>
+			
+			
+			<Anchor>//api/name/patientData</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PatientInformationVC/patientData</TokenIdentifier>
+			<Abstract type="html">The data object that stores the patient information needed by this application.</Abstract>
+			<DeclaredIn>PatientInformationVC.h</DeclaredIn>
+			
+			<Declaration>@property (retain, strong) PersonalInfo *patientData</Declaration>
+			
+			
+			<Anchor>//api/name/patientData</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PatientInformationVC/patientData</TokenIdentifier>
+			<Abstract type="html">The data object that stores the patient information needed by this application.</Abstract>
+			<DeclaredIn>PatientInformationVC.h</DeclaredIn>
+			
+			<Declaration>@property (retain, strong) PersonalInfo *patientData</Declaration>
+			
+			
+			<Anchor>//api/name/patientData</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PatientInformationVC/set_serverResponseData:</TokenIdentifier>
+			<Abstract type="html">The data queue used for the network response to build the value of the returned patient ID
+as determined by the remote database.</Abstract>
+			<DeclaredIn>PatientInformationVC.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSMutableData *_serverResponseData</Declaration>
+			
+			
+			<Anchor>//api/name/_serverResponseData</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PatientInformationVC/_serverResponseData</TokenIdentifier>
+			<Abstract type="html">The data queue used for the network response to build the value of the returned patient ID
+as determined by the remote database.</Abstract>
+			<DeclaredIn>PatientInformationVC.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSMutableData *_serverResponseData</Declaration>
+			
+			
+			<Anchor>//api/name/_serverResponseData</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PatientInformationVC/_serverResponseData</TokenIdentifier>
+			<Abstract type="html">The data queue used for the network response to build the value of the returned patient ID
+as determined by the remote database.</Abstract>
+			<DeclaredIn>PatientInformationVC.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSMutableData *_serverResponseData</Declaration>
+			
+			
+			<Anchor>//api/name/_serverResponseData</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PatientInformationVC/initWithPersonalInformation:</TokenIdentifier>
+			<Abstract type="html">This method creates a viewcontroller that has the personal information object.  The object queries
+the device store user default settings and maintains the records.  This information is needed
+for building the initial view with patient information.</Abstract>
+			<DeclaredIn>PatientInformationVC.h</DeclaredIn>
+			
+			<Declaration>- (id)initWithPersonalInformation:(PersonalInfo *)existingPatientData</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>peripheral</Name>
-					<Abstract type="html">is the device bluetooth device peripheral object that is passed from the device
-manager.</Abstract>
+					<Name>existingPatientData</Name>
+					<Abstract type="html">is the object that contains the patient name, DOB, and ID necessary
+for the VC to function.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">The return is an object of the class that fits in the DeviceCommonInfoInterface protocol.
-All devices must follow the protocol for proper utilization and to prevent runtime crashes.
-The return value must be checked for nil cases.</Abstract></ReturnValue>
-			<Anchor>//api/name/createFromPeripheral:</Anchor>
+			<ReturnValue><Abstract type="html">A viewcontroller that will display the current patient information and allow editing.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithPersonalInformation:</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PatientInformationVC/updateDOB</TokenIdentifier>
+			<Abstract type="html">This method updates the patient information  to reflect the date that is
+selected from the UIDatePicker object.</Abstract>
+			<DeclaredIn>PatientInformationVC.h</DeclaredIn>
+			
+			<Declaration>- (void)updateDOB</Declaration>
+			
+			
+			<Anchor>//api/name/updateDOB</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		

@@ -15,8 +15,12 @@
 #import "LocalDBResult.h"
 #import "PersonalInfo.h"
 
+typedef BOOL(^DatabaseLock)(void);
+
 @interface DBManager : NSObject
 
+
+@property (nonatomic) DatabaseLock databaseLocked;
 
 /**
  * The directory where the SQLITE database will be stored.

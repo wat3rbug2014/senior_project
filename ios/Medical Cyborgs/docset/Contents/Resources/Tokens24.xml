@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/DeviceCommonInfoInterface.html">
+	<File path="Protocols/HeartMonitorProtocol.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/DeviceCommonInfoInterface</TokenIdentifier>
-			<Abstract type="html">This protocol is created to make an API for the devices so that similar operations can be performed.
-All of the devices are CBPeripheral devices.  They have different UUIDs for their services and differing
-characteristics, so their interactions are different.  This API is an attempt to hide the complexity
-for the sake of brevity in the code and to make things more readable elsewhere.  Device specific
-operations are done in the class files associated with the devices.</Abstract>
-			<DeclaredIn>DeviceCommonInfoInterface.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/HeartMonitorProtocol</TokenIdentifier>
+			<Abstract type="html">This protocol is designed to be used on all heart rate monitor devices.
+The methods enclosed ensure uniform operation with the application, irrespective
+of the specific device.  It is used for polling so that all modifications are to the
+specific device and do not have cascading effects to the other devices.</Abstract>
+			<DeclaredIn>HeartMonitorProtocol.h</DeclaredIn>
             
 			
 			<NodeRef refid="24"/>
@@ -17,176 +16,15 @@ operations are done in the class files associated with the devices.</Abstract>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DeviceCommonInfoInterface/initWithPeripheral:</TokenIdentifier>
-			<Abstract type="html">This initialization method creates the desired device based on the CBPeripheral that is discovered.
-It is common to all types of devices and will bypass use of the standard init method
-for those classes.  This method is used by the MonitorCreationFactory as a standard for initializing
-the device and providing all of the methods in this protocol.</Abstract>
-			<DeclaredIn>DeviceCommonInfoInterface.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/HeartMonitorProtocol/getHeartRate</TokenIdentifier>
+			<Abstract type="html">This method gets the current heart rate value from the monitor that utilizes this
+protocol.</Abstract>
+			<DeclaredIn>HeartMonitorProtocol.h</DeclaredIn>
 			
-			<Declaration>- (id&lt;DeviceCommonInfoInterface&gt;)initWithPeripheral:(CBPeripheral *)peripheral</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>peripheral</Name>
-					<Abstract type="html">is the device object that the CBCentralManager discovered.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">id&lt;DeviceCommonInfoInterface&gt; This object is any class that conforms to the
-DeviceCommonInfoInterface protocol.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithPeripheral:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DeviceCommonInfoInterface/isConnected</TokenIdentifier>
-			<Abstract type="html">This method does a check to see if the the device is actually connected and returns a value of
-TRUE if it is currently connected.  If the Device is in any other state,
-the return value is FALSE.</Abstract>
-			<DeclaredIn>DeviceCommonInfoInterface.h</DeclaredIn>
+			<Declaration>- (NSInteger)getHeartRate</Declaration>
 			
-			<Declaration>- (BOOL)isConnected</Declaration>
-			
-			<ReturnValue><Abstract type="html">TRUE or FALSE value if the device is connected.</Abstract></ReturnValue>
-			<Anchor>//api/name/isConnected</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DeviceCommonInfoInterface/batteryLevel</TokenIdentifier>
-			<Abstract type="html">This method retrieves the battery level as expressed as a percent integer.  It assumed that a
-updateBatteryLevel call was made, otherwise the last known value is returned.</Abstract>
-			<DeclaredIn>DeviceCommonInfoInterface.h</DeclaredIn>
-			
-			<Declaration>- (int)batteryLevel</Declaration>
-			
-			<ReturnValue><Abstract type="html">NSInteger value from 0 to 100 expressing the percent of charge. 0 is default for unread
-or unreadable battery level characteristic.</Abstract></ReturnValue>
-			<Anchor>//api/name/batteryLevel</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DeviceCommonInfoInterface/discoverBatteryLevel</TokenIdentifier>
-			<Abstract type="html">This method forces the device to read and broadcast the battery level.</Abstract>
-			<DeclaredIn>DeviceCommonInfoInterface.h</DeclaredIn>
-			
-			<Declaration>- (void)discoverBatteryLevel</Declaration>
-			
-			
-			<Anchor>//api/name/discoverBatteryLevel</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DeviceCommonInfoInterface/type</TokenIdentifier>
-			<Abstract type="html">This method returns the device type.  It is used for a shallow query of the object so that it can be placed in
-correct array of the bluetooth manager.  See DeviceTypes.h for the values.</Abstract>
-			<DeclaredIn>DeviceCommonInfoInterface.h</DeclaredIn>
-			
-			<Declaration>- (NSInteger)type</Declaration>
-			
-			<ReturnValue><Abstract type="html">Returns an NSInteger that fits within the confines of the DeviceTypes.h file.</Abstract></ReturnValue>
-			<Anchor>//api/name/type</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DeviceCommonInfoInterface/setType:</TokenIdentifier>
-			<Abstract type="html">This sets the device type so that the device can be easily placed in the desired array of the controller.</Abstract>
-			<DeclaredIn>DeviceCommonInfoInterface.h</DeclaredIn>
-			
-			<Declaration>- (void)setType:(NSInteger)type</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>type</Name>
-					<Abstract type="html">is the NSInteger defined from the DeviceTypes.h file.  This field is used to help determine
-if a device belongs in the heart monitors array or the activity monitors array.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setType:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DeviceCommonInfoInterface/name</TokenIdentifier>
-			<Abstract type="html">Returns the device name of the CBPeripheral that is in the class of the object.  Created for easy reading
-and consist access.</Abstract>
-			<DeclaredIn>DeviceCommonInfoInterface.h</DeclaredIn>
-			
-			<Declaration>- (NSString *)name</Declaration>
-			
-			<ReturnValue><Abstract type="html">an NSString of the device name.
-  </Abstract></ReturnValue>
-			<Anchor>//api/name/name</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DeviceCommonInfoInterface/device</TokenIdentifier>
-			<Abstract type="html">This method returns the actual CBPeripheral device for use with the device manager in order to manage
-connectivity to the device.  This object is immutable and does not have any write characteristics.</Abstract>
-			<DeclaredIn>DeviceCommonInfoInterface.h</DeclaredIn>
-			
-			<Declaration>- (CBPeripheral *)device</Declaration>
-			
-			
-			<Anchor>//api/name/device</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DeviceCommonInfoInterface/getTableInformation</TokenIdentifier>
-			<Abstract type="html">This method forces queries of the device in order to get the applicable data for this device.</Abstract>
-			<DeclaredIn>DeviceCommonInfoInterface.h</DeclaredIn>
-			
-			<Declaration>- (void)getTableInformation</Declaration>
-			
-			
-			<Anchor>//api/name/getTableInformation</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DeviceCommonInfoInterface/shouldMonitor:</TokenIdentifier>
-			<Abstract type="html">This method is used to toggle monitoring because the devices can have setup and teardown procedures.</Abstract>
-			<DeclaredIn>DeviceCommonInfoInterface.h</DeclaredIn>
-			
-			<Declaration>- (void)shouldMonitor:(BOOL)monitor</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>monitor</Name>
-					<Abstract type="html">The state to decide whether to start monitoring or not.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/shouldMonitor:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DeviceCommonInfoInterface/discoveryComplete</TokenIdentifier>
-			<Abstract type="html">This method is used to prevent premature interruption of discovery scan.</Abstract>
-			<DeclaredIn>DeviceCommonInfoInterface.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)discoveryComplete</Declaration>
-			
-			<ReturnValue><Abstract type="html">YES if all of the services for this device have been discovered.</Abstract></ReturnValue>
-			<Anchor>//api/name/discoveryComplete</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DeviceCommonInfoInterface/manufacturer</TokenIdentifier>
-			<Abstract type="html">This method is used to fill in details in the discovery view table.  It is optional.</Abstract>
-			<DeclaredIn>DeviceCommonInfoInterface.h</DeclaredIn>
-			
-			<Declaration>- (NSString *)manufacturer</Declaration>
-			
-			<ReturnValue><Abstract type="html">This NSString value that the device broadcast for the manufacturer name in the
-Device Information characteristic.  Not all devices have this information.
-  </Abstract></ReturnValue>
-			<Anchor>//api/name/manufacturer</Anchor>
+			<ReturnValue><Abstract type="html">An integer of the currently record heart rate from the heart rate monitor.</Abstract></ReturnValue>
+			<Anchor>//api/name/getHeartRate</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		

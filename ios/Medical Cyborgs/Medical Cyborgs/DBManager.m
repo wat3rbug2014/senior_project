@@ -26,6 +26,8 @@
 @synthesize rowCount;
 @synthesize activityLevel;
 
+
+
 -(instancetype)init {
     
     NSString *dbFilename = @"project.sql";
@@ -36,6 +38,12 @@
         databaseFilename = dbFilename;
         [self copyDatabaseIntoDocumentsDirectory];
         databasePath = [self.documentsDirectory stringByAppendingPathComponent:self.databaseFilename];
+        _databaseLocked = ^{
+            
+            BOOL result = YES;
+            int dbHandler = sqlite3
+            return result;
+        };
     }
     return self;
 }
@@ -117,8 +125,8 @@
     NSString *deleteStatement = [NSString stringWithFormat:
         @"DELETE FROM MEASUREMENTS WHERE patientID = '%d' AND time_measurement = '%@'",
         (int)patientID, oldTimeStamp];
-    //NSString *deleteStatement = @"DELETE FROM MEASUREMENTS WHERE patientID = 0";
     NSLog(@"SQL: %@", deleteStatement);
+    
     if ([self openLocalDBWithSQLQueryIsSuccessful:deleteStatement]) {
         if (sqlite3_step(sqlStatement) == SQLITE_DONE) {
             NSLog(@"delete execute successful");

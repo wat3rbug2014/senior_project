@@ -46,6 +46,7 @@
         isHeartMonitorReady = NO;
         isActivityMonitorReady = NO;
         lowBatteryNotified = NO;
+        
         // setup notifications
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveNotificationDeviceConnected)

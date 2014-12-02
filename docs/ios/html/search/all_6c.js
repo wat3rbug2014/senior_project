@@ -6,5 +6,6 @@ var searchData=
   ['localdbresult',['LocalDBResult',['../interface_local_d_b_result.html',1,'']]],
   ['locationallowed',['locationAllowed',['../interface_device_poll_manager.html#a0e9aad6cc4f5a99aff27b0a64ae76d19',1,'DevicePollManager']]],
   ['locationmanager',['locationManager',['../interface_device_poll_manager.html#ad710c38392bfc32d3509de470e0cfa8d',1,'DevicePollManager']]],
-  ['longitude',['longitude',['../interface_d_b_manager.html#aa881cd8f0940350240e3ae9a326e5563',1,'DBManager::longitude()'],['../interface_local_d_b_result.html#ae50e0676b6cac4cad3e565c5caa117b2',1,'LocalDBResult::longitude()']]]
+  ['longitude',['longitude',['../interface_d_b_manager.html#aa881cd8f0940350240e3ae9a326e5563',1,'DBManager::longitude()'],['../interface_local_d_b_result.html#ae50e0676b6cac4cad3e565c5caa117b2',1,'LocalDBResult::longitude()']]],
+  ['lowbatterynotified',['lowBatteryNotified',['../interface_device_poll_manager.html#a265079b7aa0e9cc69818fb49835bd175',1,'DevicePollManager']]]
 ];
