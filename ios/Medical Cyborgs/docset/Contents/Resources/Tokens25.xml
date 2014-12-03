@@ -1,7 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="">
+	<File path="Protocols/HeartMonitorProtocol.html">
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/HeartMonitorProtocol</TokenIdentifier>
+			<Abstract type="html">This protocol is designed to be used on all heart rate monitor devices.
+The methods enclosed ensure uniform operation with the application, irrespective
+of the specific device.  It is used for polling so that all modifications are to the
+specific device and do not have cascading effects to the other devices.</Abstract>
+			<DeclaredIn>HeartMonitorProtocol.h</DeclaredIn>
+            
+			
+			<NodeRef refid="25"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/HeartMonitorProtocol/getHeartRate</TokenIdentifier>
+			<Abstract type="html">This method gets the current heart rate value from the monitor that utilizes this
+protocol.</Abstract>
+			<DeclaredIn>HeartMonitorProtocol.h</DeclaredIn>
+			
+			<Declaration>- (NSInteger)getHeartRate</Declaration>
+			
+			<ReturnValue><Abstract type="html">An integer of the currently record heart rate from the heart rate monitor.</Abstract></ReturnValue>
+			<Anchor>//api/name/getHeartRate</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
 		
         
         

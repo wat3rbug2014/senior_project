@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/HeartMonitorSelectVC.html">
+	<File path="Classes/GraphVC.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/HeartMonitorSelectVC</TokenIdentifier>
-			<Abstract type="html">This screen does the device selection for devices that have been discovered
-that perform heart monitoring functions.</Abstract>
-			<DeclaredIn>HeartMonitorSelectVC.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/GraphVC</TokenIdentifier>
+			<Abstract type="html">This screen displays the output of the monitors in real time.</Abstract>
+			<DeclaredIn>GraphVC.h</DeclaredIn>
             
 			
 			<NodeRef refid="9"/>
@@ -14,20 +13,308 @@ that perform heart monitoring functions.</Abstract>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/HeartMonitorSelectVC/unCheckPreviousCellForTableView:</TokenIdentifier>
-			<Abstract type="html">This method unchecks the previous cell if one is selected so that duplicate
-selection does not display.</Abstract>
-			<DeclaredIn>HeartMonitorSelectVC.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/GraphVC/setDevicePoller:</TokenIdentifier>
+			<Abstract type="html">The device poller that will be used for getting data from the devices for
+display by the view controller.</Abstract>
+			<DeclaredIn>GraphVC.h</DeclaredIn>
 			
-			<Declaration>- (void)unCheckPreviousCellForTableView:(UITableView *)tableView</Declaration>
+			<Declaration>@property DevicePollManager *devicePoller</Declaration>
+			
+			
+			<Anchor>//api/name/devicePoller</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GraphVC/devicePoller</TokenIdentifier>
+			<Abstract type="html">The device poller that will be used for getting data from the devices for
+display by the view controller.</Abstract>
+			<DeclaredIn>GraphVC.h</DeclaredIn>
+			
+			<Declaration>@property DevicePollManager *devicePoller</Declaration>
+			
+			
+			<Anchor>//api/name/devicePoller</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GraphVC/devicePoller</TokenIdentifier>
+			<Abstract type="html">The device poller that will be used for getting data from the devices for
+display by the view controller.</Abstract>
+			<DeclaredIn>GraphVC.h</DeclaredIn>
+			
+			<Declaration>@property DevicePollManager *devicePoller</Declaration>
+			
+			
+			<Anchor>//api/name/devicePoller</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GraphVC/setHeartRateDisplay:</TokenIdentifier>
+			<Abstract type="html">The display that shows the current heart rate.  It defaults to 0 when the view first appears
+and does not update until a new heart rate has been received.</Abstract>
+			<DeclaredIn>GraphVC.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *heartRateDisplay</Declaration>
+			
+			
+			<Anchor>//api/name/heartRateDisplay</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GraphVC/heartRateDisplay</TokenIdentifier>
+			<Abstract type="html">The display that shows the current heart rate.  It defaults to 0 when the view first appears
+and does not update until a new heart rate has been received.</Abstract>
+			<DeclaredIn>GraphVC.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *heartRateDisplay</Declaration>
+			
+			
+			<Anchor>//api/name/heartRateDisplay</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GraphVC/heartRateDisplay</TokenIdentifier>
+			<Abstract type="html">The display that shows the current heart rate.  It defaults to 0 when the view first appears
+and does not update until a new heart rate has been received.</Abstract>
+			<DeclaredIn>GraphVC.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *heartRateDisplay</Declaration>
+			
+			
+			<Anchor>//api/name/heartRateDisplay</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GraphVC/setActivityDisplay:</TokenIdentifier>
+			<Abstract type="html">The label that shows a string representation of the value that is calculated based on the
+age of the patient and the current heart rate.</Abstract>
+			<DeclaredIn>GraphVC.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *activityDisplay</Declaration>
+			
+			
+			<Anchor>//api/name/activityDisplay</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GraphVC/activityDisplay</TokenIdentifier>
+			<Abstract type="html">The label that shows a string representation of the value that is calculated based on the
+age of the patient and the current heart rate.</Abstract>
+			<DeclaredIn>GraphVC.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *activityDisplay</Declaration>
+			
+			
+			<Anchor>//api/name/activityDisplay</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GraphVC/activityDisplay</TokenIdentifier>
+			<Abstract type="html">The label that shows a string representation of the value that is calculated based on the
+age of the patient and the current heart rate.</Abstract>
+			<DeclaredIn>GraphVC.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *activityDisplay</Declaration>
+			
+			
+			<Anchor>//api/name/activityDisplay</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GraphVC/setDisplayTimer:</TokenIdentifier>
+			<Abstract type="html">The timer that calls for the device poller to get information.  It is set for 1 second.</Abstract>
+			<DeclaredIn>GraphVC.h</DeclaredIn>
+			
+			<Declaration>@property NSTimer *displayTimer</Declaration>
+			
+			
+			<Anchor>//api/name/displayTimer</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GraphVC/displayTimer</TokenIdentifier>
+			<Abstract type="html">The timer that calls for the device poller to get information.  It is set for 1 second.</Abstract>
+			<DeclaredIn>GraphVC.h</DeclaredIn>
+			
+			<Declaration>@property NSTimer *displayTimer</Declaration>
+			
+			
+			<Anchor>//api/name/displayTimer</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GraphVC/displayTimer</TokenIdentifier>
+			<Abstract type="html">The timer that calls for the device poller to get information.  It is set for 1 second.</Abstract>
+			<DeclaredIn>GraphVC.h</DeclaredIn>
+			
+			<Declaration>@property NSTimer *displayTimer</Declaration>
+			
+			
+			<Anchor>//api/name/displayTimer</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GraphVC/setRunLoop:</TokenIdentifier>
+			<Abstract type="html">The run loop that the device poller uses.  It it reference so that viewWillAppear
+can activate it and viewWillDisappear can cancel the runloop.</Abstract>
+			<DeclaredIn>GraphVC.h</DeclaredIn>
+			
+			<Declaration>@property NSRunLoop *runLoop</Declaration>
+			
+			
+			<Anchor>//api/name/runLoop</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GraphVC/runLoop</TokenIdentifier>
+			<Abstract type="html">The run loop that the device poller uses.  It it reference so that viewWillAppear
+can activate it and viewWillDisappear can cancel the runloop.</Abstract>
+			<DeclaredIn>GraphVC.h</DeclaredIn>
+			
+			<Declaration>@property NSRunLoop *runLoop</Declaration>
+			
+			
+			<Anchor>//api/name/runLoop</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GraphVC/runLoop</TokenIdentifier>
+			<Abstract type="html">The run loop that the device poller uses.  It it reference so that viewWillAppear
+can activate it and viewWillDisappear can cancel the runloop.</Abstract>
+			<DeclaredIn>GraphVC.h</DeclaredIn>
+			
+			<Declaration>@property NSRunLoop *runLoop</Declaration>
+			
+			
+			<Anchor>//api/name/runLoop</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GraphVC/setHeartMonitor:</TokenIdentifier>
+			<Abstract type="html">The local instance of the selectedHeartMonitor from the device poller.  It is made so
+that the code is easier to read.</Abstract>
+			<DeclaredIn>GraphVC.h</DeclaredIn>
+			
+			<Declaration>@property id&lt;HeartMonitorProtocol&gt; heartMonitor</Declaration>
+			
+			
+			<Anchor>//api/name/heartMonitor</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GraphVC/heartMonitor</TokenIdentifier>
+			<Abstract type="html">The local instance of the selectedHeartMonitor from the device poller.  It is made so
+that the code is easier to read.</Abstract>
+			<DeclaredIn>GraphVC.h</DeclaredIn>
+			
+			<Declaration>@property id&lt;HeartMonitorProtocol&gt; heartMonitor</Declaration>
+			
+			
+			<Anchor>//api/name/heartMonitor</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GraphVC/heartMonitor</TokenIdentifier>
+			<Abstract type="html">The local instance of the selectedHeartMonitor from the device poller.  It is made so
+that the code is easier to read.</Abstract>
+			<DeclaredIn>GraphVC.h</DeclaredIn>
+			
+			<Declaration>@property id&lt;HeartMonitorProtocol&gt; heartMonitor</Declaration>
+			
+			
+			<Anchor>//api/name/heartMonitor</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GraphVC/setActivityMonitor:</TokenIdentifier>
+			<Abstract type="html">The local instance of the selectedActivityMonitor from the device poller.  It is made so
+that the code is easier to read.</Abstract>
+			<DeclaredIn>GraphVC.h</DeclaredIn>
+			
+			<Declaration>@property id&lt;ActivityMonitorProtocol&gt; activityMonitor</Declaration>
+			
+			
+			<Anchor>//api/name/activityMonitor</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GraphVC/activityMonitor</TokenIdentifier>
+			<Abstract type="html">The local instance of the selectedActivityMonitor from the device poller.  It is made so
+that the code is easier to read.</Abstract>
+			<DeclaredIn>GraphVC.h</DeclaredIn>
+			
+			<Declaration>@property id&lt;ActivityMonitorProtocol&gt; activityMonitor</Declaration>
+			
+			
+			<Anchor>//api/name/activityMonitor</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/GraphVC/activityMonitor</TokenIdentifier>
+			<Abstract type="html">The local instance of the selectedActivityMonitor from the device poller.  It is made so
+that the code is easier to read.</Abstract>
+			<DeclaredIn>GraphVC.h</DeclaredIn>
+			
+			<Declaration>@property id&lt;ActivityMonitorProtocol&gt; activityMonitor</Declaration>
+			
+			
+			<Anchor>//api/name/activityMonitor</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GraphVC/initWithDevicePoller:</TokenIdentifier>
+			<Abstract type="html">Creates a device selection view controller.  The purpose of the method
+is to create a standard initialization process for the subclasses of this
+class.  All of the subclasses require a bluetooth device manager and need
+to be active to start building the view.  The DevicePollManager functions
+as the datasource for this viewcontroller.</Abstract>
+			<DeclaredIn>GraphVC.h</DeclaredIn>
+			
+			<Declaration>- (id)initWithDevicePoller:(DevicePollManager *)devicePoller</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>tableView</Name>
-					<Abstract type="html">The tableview that contains the cells for updating.</Abstract>
+					<Name>devicePoller</Name>
+					<Abstract type="html">the bluetooth device poller that will serve as the
+data source.</Abstract>
 				</Parameter>
 			</Parameters>
+			<ReturnValue><Abstract type="html">Returns a view controller unless no device manager is given, then
+the result is nil.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithDevicePoller:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GraphVC/updateDisplay</TokenIdentifier>
+			<Abstract type="html">This method is used to update the activity level and heart rate on a timed
+interval.</Abstract>
+			<DeclaredIn>GraphVC.h</DeclaredIn>
 			
-			<Anchor>//api/name/unCheckPreviousCellForTableView:</Anchor>
+			<Declaration>- (void)updateDisplay</Declaration>
+			
+			
+			<Anchor>//api/name/updateDisplay</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		

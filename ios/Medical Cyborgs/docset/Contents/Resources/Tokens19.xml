@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/TableVCWithSounds.html">
+	<File path="Classes/RemoteDBConnectionManager.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/TableVCWithSounds</TokenIdentifier>
-			<Abstract type="html">This base class is a viewcontroller with sound implementation.  It allows
-clicking sounds when a device is selected.</Abstract>
-			<DeclaredIn>TableVCWithSounds.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/RemoteDBConnectionManager</TokenIdentifier>
+			<Abstract type="html">This class performs updates to the remote database.  It manages the connection
+and updates the local database with the changes that have been made.  It is assumed
+that address to the server and the name of the scripts in the DataConstants.h file
+are correct.  NOTE:  Each time a request to push data to the server the manager makes
+3 attempts to contact the server before giving up.  It has a 15 second timeout interval
+so there may be the need to do some better reachability checks if battery consumption
+is too much.</Abstract>
+			<DeclaredIn>RemoteDBConnectionManager.h</DeclaredIn>
             
 			
 			<NodeRef refid="19"/>
@@ -14,161 +19,318 @@ clicking sounds when a device is selected.</Abstract>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/TableVCWithSounds/setSoundPlayer:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>TableVCWithSounds.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/RemoteDBConnectionManager/setDatabase:</TokenIdentifier>
+			<Abstract type="html">The database manager that will be used to retrieve data and send to the remote server.</Abstract>
+			<DeclaredIn>RemoteDBConnectionManager.h</DeclaredIn>
 			
-			<Declaration>@property AVAudioPlayer *soundPlayer</Declaration>
+			<Declaration>@property DBManager *database</Declaration>
 			
 			
-			<Anchor>//api/name/soundPlayer</Anchor>
+			<Anchor>//api/name/database</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/TableVCWithSounds/soundPlayer</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>TableVCWithSounds.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/RemoteDBConnectionManager/database</TokenIdentifier>
+			<Abstract type="html">The database manager that will be used to retrieve data and send to the remote server.</Abstract>
+			<DeclaredIn>RemoteDBConnectionManager.h</DeclaredIn>
 			
-			<Declaration>@property AVAudioPlayer *soundPlayer</Declaration>
+			<Declaration>@property DBManager *database</Declaration>
 			
 			
-			<Anchor>//api/name/soundPlayer</Anchor>
+			<Anchor>//api/name/database</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/TableVCWithSounds/soundPlayer</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>TableVCWithSounds.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/RemoteDBConnectionManager/database</TokenIdentifier>
+			<Abstract type="html">The database manager that will be used to retrieve data and send to the remote server.</Abstract>
+			<DeclaredIn>RemoteDBConnectionManager.h</DeclaredIn>
 			
-			<Declaration>@property AVAudioPlayer *soundPlayer</Declaration>
+			<Declaration>@property DBManager *database</Declaration>
 			
 			
-			<Anchor>//api/name/soundPlayer</Anchor>
+			<Anchor>//api/name/database</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/TableVCWithSounds/setDeviceManager:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>TableVCWithSounds.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/RemoteDBConnectionManager/setPatientID:</TokenIdentifier>
+			<Abstract type="html">The patientID that is used for removing rows from the local database as they are sent.
+It is also used for the transmission of data to the remote server.</Abstract>
+			<DeclaredIn>RemoteDBConnectionManager.h</DeclaredIn>
 			
-			<Declaration>@property BTDeviceManager *deviceManager</Declaration>
+			<Declaration>@property NSInteger patientID</Declaration>
 			
 			
-			<Anchor>//api/name/deviceManager</Anchor>
+			<Anchor>//api/name/patientID</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/TableVCWithSounds/deviceManager</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>TableVCWithSounds.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/RemoteDBConnectionManager/patientID</TokenIdentifier>
+			<Abstract type="html">The patientID that is used for removing rows from the local database as they are sent.
+It is also used for the transmission of data to the remote server.</Abstract>
+			<DeclaredIn>RemoteDBConnectionManager.h</DeclaredIn>
 			
-			<Declaration>@property BTDeviceManager *deviceManager</Declaration>
+			<Declaration>@property NSInteger patientID</Declaration>
 			
 			
-			<Anchor>//api/name/deviceManager</Anchor>
+			<Anchor>//api/name/patientID</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/TableVCWithSounds/deviceManager</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>TableVCWithSounds.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/RemoteDBConnectionManager/patientID</TokenIdentifier>
+			<Abstract type="html">The patientID that is used for removing rows from the local database as they are sent.
+It is also used for the transmission of data to the remote server.</Abstract>
+			<DeclaredIn>RemoteDBConnectionManager.h</DeclaredIn>
 			
-			<Declaration>@property BTDeviceManager *deviceManager</Declaration>
+			<Declaration>@property NSInteger patientID</Declaration>
 			
 			
-			<Anchor>//api/name/deviceManager</Anchor>
+			<Anchor>//api/name/patientID</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/TableVCWithSounds/playViewChangeSound</TokenIdentifier>
-			<Abstract type="html">This method is used for audio cue that a view is about to be displayed.</Abstract>
-			<DeclaredIn>TableVCWithSounds.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/RemoteDBConnectionManager/setCurrentRow:</TokenIdentifier>
+			<Abstract type="html">The first row selected from the database as a result of a SQL statement.  It contains
+the data needed for transmission to the server.</Abstract>
+			<DeclaredIn>RemoteDBConnectionManager.h</DeclaredIn>
 			
-			<Declaration>- (void)playViewChangeSound</Declaration>
+			<Declaration>@property (nonatomic) LocalDBResult *currentRow</Declaration>
 			
 			
-			<Anchor>//api/name/playViewChangeSound</Anchor>
+			<Anchor>//api/name/currentRow</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/TableVCWithSounds/playClickSound</TokenIdentifier>
-			<Abstract type="html">This method is used to sound the audio cue that the monitoring button has been selected.</Abstract>
-			<DeclaredIn>TableVCWithSounds.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/RemoteDBConnectionManager/currentRow</TokenIdentifier>
+			<Abstract type="html">The first row selected from the database as a result of a SQL statement.  It contains
+the data needed for transmission to the server.</Abstract>
+			<DeclaredIn>RemoteDBConnectionManager.h</DeclaredIn>
 			
-			<Declaration>- (void)playClickSound</Declaration>
+			<Declaration>@property (nonatomic) LocalDBResult *currentRow</Declaration>
 			
 			
-			<Anchor>//api/name/playClickSound</Anchor>
+			<Anchor>//api/name/currentRow</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/TableVCWithSounds/playSoundWithFile:</TokenIdentifier>
-			<Abstract type="html">This method is the base method that the others use for playing the audio file.  It does
-the setup of the audio player and uses the file passed to it for playback.</Abstract>
-			<DeclaredIn>TableVCWithSounds.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/RemoteDBConnectionManager/currentRow</TokenIdentifier>
+			<Abstract type="html">The first row selected from the database as a result of a SQL statement.  It contains
+the data needed for transmission to the server.</Abstract>
+			<DeclaredIn>RemoteDBConnectionManager.h</DeclaredIn>
 			
-			<Declaration>- (void)playSoundWithFile:(NSURL *)soundFile</Declaration>
+			<Declaration>@property (nonatomic) LocalDBResult *currentRow</Declaration>
+			
+			
+			<Anchor>//api/name/currentRow</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RemoteDBConnectionManager/set_serverResponseData:</TokenIdentifier>
+			<Abstract type="html">The data buffer for the response from the server.  Used for determining the status
+message from the server.</Abstract>
+			<DeclaredIn>RemoteDBConnectionManager.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSMutableData *_serverResponseData</Declaration>
+			
+			
+			<Anchor>//api/name/_serverResponseData</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RemoteDBConnectionManager/_serverResponseData</TokenIdentifier>
+			<Abstract type="html">The data buffer for the response from the server.  Used for determining the status
+message from the server.</Abstract>
+			<DeclaredIn>RemoteDBConnectionManager.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSMutableData *_serverResponseData</Declaration>
+			
+			
+			<Anchor>//api/name/_serverResponseData</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/RemoteDBConnectionManager/_serverResponseData</TokenIdentifier>
+			<Abstract type="html">The data buffer for the response from the server.  Used for determining the status
+message from the server.</Abstract>
+			<DeclaredIn>RemoteDBConnectionManager.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSMutableData *_serverResponseData</Declaration>
+			
+			
+			<Anchor>//api/name/_serverResponseData</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RemoteDBConnectionManager/setFailedAttempts:</TokenIdentifier>
+			<Abstract type="html">The counter for the number of failed attempts.  The current limit is 3 times.</Abstract>
+			<DeclaredIn>RemoteDBConnectionManager.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger failedAttempts</Declaration>
+			
+			
+			<Anchor>//api/name/failedAttempts</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RemoteDBConnectionManager/failedAttempts</TokenIdentifier>
+			<Abstract type="html">The counter for the number of failed attempts.  The current limit is 3 times.</Abstract>
+			<DeclaredIn>RemoteDBConnectionManager.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger failedAttempts</Declaration>
+			
+			
+			<Anchor>//api/name/failedAttempts</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/RemoteDBConnectionManager/failedAttempts</TokenIdentifier>
+			<Abstract type="html">The counter for the number of failed attempts.  The current limit is 3 times.</Abstract>
+			<DeclaredIn>RemoteDBConnectionManager.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger failedAttempts</Declaration>
+			
+			
+			<Anchor>//api/name/failedAttempts</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RemoteDBConnectionManager/setRemoteUnreachable:</TokenIdentifier>
+			<Abstract type="html">The flag used to determine if any more attempts should be made to the server after
+the failedAttempts count has reached three times.</Abstract>
+			<DeclaredIn>RemoteDBConnectionManager.h</DeclaredIn>
+			
+			<Declaration>@property BOOL remoteUnreachable</Declaration>
+			
+			
+			<Anchor>//api/name/remoteUnreachable</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RemoteDBConnectionManager/remoteUnreachable</TokenIdentifier>
+			<Abstract type="html">The flag used to determine if any more attempts should be made to the server after
+the failedAttempts count has reached three times.</Abstract>
+			<DeclaredIn>RemoteDBConnectionManager.h</DeclaredIn>
+			
+			<Declaration>@property BOOL remoteUnreachable</Declaration>
+			
+			
+			<Anchor>//api/name/remoteUnreachable</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/RemoteDBConnectionManager/remoteUnreachable</TokenIdentifier>
+			<Abstract type="html">The flag used to determine if any more attempts should be made to the server after
+the failedAttempts count has reached three times.</Abstract>
+			<DeclaredIn>RemoteDBConnectionManager.h</DeclaredIn>
+			
+			<Declaration>@property BOOL remoteUnreachable</Declaration>
+			
+			
+			<Anchor>//api/name/remoteUnreachable</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RemoteDBConnectionManager/initWithDatabase:</TokenIdentifier>
+			<Abstract type="html">This method creates an instance using the database manager that is passed to it.
+This is the preferred method.  If no database is given it will attempt to to
+open the database and assign it.</Abstract>
+			<DeclaredIn>RemoteDBConnectionManager.h</DeclaredIn>
+			
+			<Declaration>- (id)initWithDatabase:(DBManager *)datastore</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>soundFile</Name>
-					<Abstract type="html">The NSURL of the file to be played.</Abstract>
+					<Name>datastore</Name>
+					<Abstract type="html">The database manager that is to be the source of data to send to
+the server.</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/playSoundWithFile:</Anchor>
+			<ReturnValue><Abstract type="html">An instance of the remote server manager.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithDatabase:</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/TableVCWithSounds/initWithDeviceManager:</TokenIdentifier>
-			<Abstract type="html">Creates a device selection view controller.  The purpose of the method
-is to create a standard initialization process for the subclasses of this
-class.  All of the subclasses require a bluetooth device manager and need
-to be active to start building the view.  The BTDeviceManager functions
-as the datasource for this tableviewcontroller and all the subclasses.</Abstract>
-			<DeclaredIn>TableVCWithSounds.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/RemoteDBConnectionManager/pushDataToRemoteServer</TokenIdentifier>
+			<Abstract type="html">This method is the wrapper method for the class.  It checks to see if the remote is
+still reachable and that there is something to send to the server.  If the server
+has been unreachable it ends.  If the server is reachable and the database is empty
+it ends, otherwise it continues going through the database and pushing.</Abstract>
+			<DeclaredIn>RemoteDBConnectionManager.h</DeclaredIn>
 			
-			<Declaration>- (id)initWithDeviceManager:(BTDeviceManager *)newDeviceManager</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>newDeviceManager</Name>
-					<Abstract type="html">the bluetooth device manager that will serve as the
-data source.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Returns a view controller unless no device manager is given, then
-the result is nil.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithDeviceManager:</Anchor>
+			<Declaration>- (void)pushDataToRemoteServer</Declaration>
+			
+			
+			<Anchor>//api/name/pushDataToRemoteServer</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/TableVCWithSounds/updateTable:</TokenIdentifier>
-			<Abstract type="html">This function is the default method that is called when the device manager
-discovers a device. Its intent is to allow the tableview to update since the
-count of devices has changed and information is available. A table reload is
-used because the number of items to be discovered is very small and the overhead
-is small.  Otherwise it is recommended to just reload the section and choose the
-type of animation.</Abstract>
-			<DeclaredIn>TableVCWithSounds.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/RemoteDBConnectionManager/sendRowToServer</TokenIdentifier>
+			<Abstract type="html">This method is the workhorse of the class. It retrieves the first first row from the
+database.  Then it creates a URL based on the data it retrieved.  Then it makes a
+URL request to the server.  After that the NSURLConnection delete methods handle the
+calls and continue the loop.</Abstract>
+			<DeclaredIn>RemoteDBConnectionManager.h</DeclaredIn>
 			
-			<Declaration>- (void)updateTable:(NSNotification *)notification</Declaration>
+			<Declaration>- (void)sendRowToServer</Declaration>
+			
+			
+			<Anchor>//api/name/sendRowToServer</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RemoteDBConnectionManager/removeCurrentRowInLocalDB</TokenIdentifier>
+			<Abstract type="html">This method removes the current row from the database.  It is called after a successful
+push to the remote server.  For our purposes, the local database essentially functions
+as a queue with an additional save state.  In case of application crash or phone crash,
+etc the data is not lost and seemed easier to implement than a persistent data store.</Abstract>
+			<DeclaredIn>RemoteDBConnectionManager.h</DeclaredIn>
+			
+			<Declaration>- (void)removeCurrentRowInLocalDB</Declaration>
+			
+			
+			<Anchor>//api/name/removeCurrentRowInLocalDB</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RemoteDBConnectionManager/URLEncodedString:</TokenIdentifier>
+			<Abstract type="html">This is probably a bad hack.  This method is used to encode the string
+into a URL suitable for the server.  It does not escape the ? = &amp;amp; _ - / symbols.
+It has been put into place because the default apple method for url encoding
+a string with %encoding does not encode :&apos;s.  Unfortunately the datetime response
+from the local database includes colons.  Using the search and replace method
+appears to has some undefined behavior and places extra escape sequences where none
+are wanted or needed.</Abstract>
+			<DeclaredIn>RemoteDBConnectionManager.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)URLEncodedString:(NSString *)utfString</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>notification</Name>
-					<Abstract type="html">A NSNotification object, not used at this time.</Abstract>
+					<Name>utfString</Name>
+					<Abstract type="html">The incoming string that will be utf8 encoded and then converted to a URL.</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/updateTable:</Anchor>
+			<ReturnValue><Abstract type="html">A NSString that is a new URL with % encoding.</Abstract></ReturnValue>
+			<Anchor>//api/name/URLEncodedString:</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		

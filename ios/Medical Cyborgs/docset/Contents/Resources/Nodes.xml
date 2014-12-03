@@ -31,6 +31,7 @@
 						<NodeRef refid="18"/>
 						<NodeRef refid="19"/>
 						<NodeRef refid="20"/>
+						<NodeRef refid="21"/>
 						
 					</Subnodes>
 				</Node>
@@ -41,24 +42,15 @@
 					<Name>Protocols</Name>
 					<Path>index.html</Path>
 					<Subnodes>
-						<NodeRef refid="21"/>
 						<NodeRef refid="22"/>
 						<NodeRef refid="23"/>
 						<NodeRef refid="24"/>
+						<NodeRef refid="25"/>
 						
 					</Subnodes>
 				</Node>
 				
                 
-                
-                <Node>
-                    <Name>Blocks</Name>
-                    <Path>index.html</Path>
-                    <Subnodes>
-                        <NodeRef refid="25"/>
-                        
-                    </Subnodes>
-                </Node>
                 
 			</Subnodes>
         </Node>
@@ -192,6 +184,45 @@
             
         </Node>
 		<Node id="5" type="file" documentType="reference">
+            <Name>DBManager</Name>
+            <Path>Classes/DBManager.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/DBManager.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/DBManager.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/DBManager.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/DBManager.html</Path>
+                    <Name>Class Methods</Name>
+                    <Anchor>class_methods</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/DBManager.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="6" type="file" documentType="reference">
             <Name>DeviceConstantsAndStaticFunctions</Name>
             <Path>Classes/DeviceConstantsAndStaticFunctions.html</Path>
             
@@ -218,7 +249,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="6" type="file" documentType="reference">
+		<Node id="7" type="file" documentType="reference">
             <Name>DevicePollManager</Name>
             <Path>Classes/DevicePollManager.html</Path>
             
@@ -251,7 +282,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="7" type="file" documentType="reference">
+		<Node id="8" type="file" documentType="reference">
             <Name>FitBitFlex</Name>
             <Path>Classes/FitBitFlex.html</Path>
             
@@ -278,7 +309,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="8" type="file" documentType="reference">
+		<Node id="9" type="file" documentType="reference">
             <Name>GraphVC</Name>
             <Path>Classes/GraphVC.html</Path>
             
@@ -311,7 +342,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="9" type="file" documentType="reference">
+		<Node id="10" type="file" documentType="reference">
             <Name>HeartMonitorSelectVC</Name>
             <Path>Classes/HeartMonitorSelectVC.html</Path>
             
@@ -338,7 +369,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="10" type="file" documentType="reference">
+		<Node id="11" type="file" documentType="reference">
             <Name>HomeScreenVC</Name>
             <Path>Classes/HomeScreenVC.html</Path>
             
@@ -371,7 +402,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="11" type="file" documentType="reference">
+		<Node id="12" type="file" documentType="reference">
             <Name>JawboneUP24</Name>
             <Path>Classes/JawboneUP24.html</Path>
             
@@ -398,7 +429,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="12" type="file" documentType="reference">
+		<Node id="13" type="file" documentType="reference">
             <Name>LocalDBResult</Name>
             <Path>Classes/LocalDBResult.html</Path>
             
@@ -425,7 +456,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="13" type="file" documentType="reference">
+		<Node id="14" type="file" documentType="reference">
             <Name>MioGlobalLink</Name>
             <Path>Classes/MioGlobalLink.html</Path>
             
@@ -452,7 +483,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="14" type="file" documentType="reference">
+		<Node id="15" type="file" documentType="reference">
             <Name>MonitorCreationFactory</Name>
             <Path>Classes/MonitorCreationFactory.html</Path>
             
@@ -479,7 +510,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="15" type="file" documentType="reference">
+		<Node id="16" type="file" documentType="reference">
             <Name>PatientInformationVC</Name>
             <Path>Classes/PatientInformationVC.html</Path>
             
@@ -512,7 +543,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="16" type="file" documentType="reference">
+		<Node id="17" type="file" documentType="reference">
             <Name>PersonalInfo</Name>
             <Path>Classes/PersonalInfo.html</Path>
             
@@ -545,7 +576,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="17" type="file" documentType="reference">
+		<Node id="18" type="file" documentType="reference">
             <Name>PolarH7</Name>
             <Path>Classes/PolarH7.html</Path>
             
@@ -572,7 +603,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="18" type="file" documentType="reference">
+		<Node id="19" type="file" documentType="reference">
             <Name>RemoteDBConnectionManager</Name>
             <Path>Classes/RemoteDBConnectionManager.html</Path>
             
@@ -605,7 +636,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="19" type="file" documentType="reference">
+		<Node id="20" type="file" documentType="reference">
             <Name>TableVCWithSounds</Name>
             <Path>Classes/TableVCWithSounds.html</Path>
             
@@ -638,7 +669,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="20" type="file" documentType="reference">
+		<Node id="21" type="file" documentType="reference">
             <Name>WahooTickrX</Name>
             <Path>Classes/WahooTickrX.html</Path>
             
@@ -667,7 +698,7 @@
         </Node>
 		
 		
-        <Node id="21" type="file" documentType="reference">
+        <Node id="22" type="file" documentType="reference">
             <Name>ActivityMonitorProtocol</Name>
             <Path>Protocols/ActivityMonitorProtocol.html</Path>
             
@@ -694,7 +725,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="22" type="file" documentType="reference">
+		<Node id="23" type="file" documentType="reference">
             <Name>BTDeviceManagerDelegate</Name>
             <Path>Protocols/BTDeviceManagerDelegate.html</Path>
             
@@ -721,7 +752,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="23" type="file" documentType="reference">
+		<Node id="24" type="file" documentType="reference">
             <Name>DeviceCommonInfoInterface</Name>
             <Path>Protocols/DeviceCommonInfoInterface.html</Path>
             
@@ -748,7 +779,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="24" type="file" documentType="reference">
+		<Node id="25" type="file" documentType="reference">
             <Name>HeartMonitorProtocol</Name>
             <Path>Protocols/HeartMonitorProtocol.html</Path>
             
@@ -777,11 +808,6 @@
         </Node>
 		
         
-        <Node id="25" type="file" documentType="reference">
-            <Name>DatabaseLock</Name>
-            <Path>Blocks/DatabaseLock.html</Path>
-            
-        </Node>
         
 	</Library>
 </DocSetNodes>

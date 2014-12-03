@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/PersonalInfo.html">
+	<File path="Classes/PatientInformationVC.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/PersonalInfo</TokenIdentifier>
-			<Abstract type="html">These constants are added as a way to use autocomplete
-feature on XCode.</Abstract>
-			<DeclaredIn>PersonalInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/PatientInformationVC</TokenIdentifier>
+			<Abstract type="html">This class is the view controller that is used to update the patient information
+It updates the database and the PersonalInfo that is stored as standard defaults.</Abstract>
+			<DeclaredIn>PatientInformationVC.h</DeclaredIn>
             
 			
 			<NodeRef refid="16"/>
@@ -14,311 +14,218 @@ feature on XCode.</Abstract>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PersonalInfo/setFirstName:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>PersonalInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PatientInformationVC/setFirstNameEntry:</TokenIdentifier>
+			<Abstract type="html">The textfield for editing the first name of the patient.</Abstract>
+			<DeclaredIn>PatientInformationVC.h</DeclaredIn>
 			
-			<Declaration>@property NSString *firstName</Declaration>
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *firstNameEntry</Declaration>
 			
 			
-			<Anchor>//api/name/firstName</Anchor>
+			<Anchor>//api/name/firstNameEntry</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PersonalInfo/firstName</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>PersonalInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PatientInformationVC/firstNameEntry</TokenIdentifier>
+			<Abstract type="html">The textfield for editing the first name of the patient.</Abstract>
+			<DeclaredIn>PatientInformationVC.h</DeclaredIn>
 			
-			<Declaration>@property NSString *firstName</Declaration>
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *firstNameEntry</Declaration>
 			
 			
-			<Anchor>//api/name/firstName</Anchor>
+			<Anchor>//api/name/firstNameEntry</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PersonalInfo/firstName</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>PersonalInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PatientInformationVC/firstNameEntry</TokenIdentifier>
+			<Abstract type="html">The textfield for editing the first name of the patient.</Abstract>
+			<DeclaredIn>PatientInformationVC.h</DeclaredIn>
 			
-			<Declaration>@property NSString *firstName</Declaration>
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *firstNameEntry</Declaration>
 			
 			
-			<Anchor>//api/name/firstName</Anchor>
+			<Anchor>//api/name/firstNameEntry</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PersonalInfo/setLastName:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>PersonalInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PatientInformationVC/setLastNameEntry:</TokenIdentifier>
+			<Abstract type="html">The textfield for editing the last name of the patient.</Abstract>
+			<DeclaredIn>PatientInformationVC.h</DeclaredIn>
 			
-			<Declaration>@property NSString *lastName</Declaration>
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *lastNameEntry</Declaration>
 			
 			
-			<Anchor>//api/name/lastName</Anchor>
+			<Anchor>//api/name/lastNameEntry</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PersonalInfo/lastName</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>PersonalInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PatientInformationVC/lastNameEntry</TokenIdentifier>
+			<Abstract type="html">The textfield for editing the last name of the patient.</Abstract>
+			<DeclaredIn>PatientInformationVC.h</DeclaredIn>
 			
-			<Declaration>@property NSString *lastName</Declaration>
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *lastNameEntry</Declaration>
 			
 			
-			<Anchor>//api/name/lastName</Anchor>
+			<Anchor>//api/name/lastNameEntry</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PersonalInfo/lastName</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>PersonalInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PatientInformationVC/lastNameEntry</TokenIdentifier>
+			<Abstract type="html">The textfield for editing the last name of the patient.</Abstract>
+			<DeclaredIn>PatientInformationVC.h</DeclaredIn>
 			
-			<Declaration>@property NSString *lastName</Declaration>
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *lastNameEntry</Declaration>
 			
 			
-			<Anchor>//api/name/lastName</Anchor>
+			<Anchor>//api/name/lastNameEntry</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PersonalInfo/setDob:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>PersonalInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PatientInformationVC/setDobSelector:</TokenIdentifier>
+			<Abstract type="html">The date picker for selecting the patients date of birth.</Abstract>
+			<DeclaredIn>PatientInformationVC.h</DeclaredIn>
 			
-			<Declaration>@property NSDate *dob</Declaration>
+			<Declaration>@property (retain, nonatomic) IBOutlet UIDatePicker *dobSelector</Declaration>
 			
 			
-			<Anchor>//api/name/dob</Anchor>
+			<Anchor>//api/name/dobSelector</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PersonalInfo/dob</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>PersonalInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PatientInformationVC/dobSelector</TokenIdentifier>
+			<Abstract type="html">The date picker for selecting the patients date of birth.</Abstract>
+			<DeclaredIn>PatientInformationVC.h</DeclaredIn>
 			
-			<Declaration>@property NSDate *dob</Declaration>
+			<Declaration>@property (retain, nonatomic) IBOutlet UIDatePicker *dobSelector</Declaration>
 			
 			
-			<Anchor>//api/name/dob</Anchor>
+			<Anchor>//api/name/dobSelector</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PersonalInfo/dob</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>PersonalInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PatientInformationVC/dobSelector</TokenIdentifier>
+			<Abstract type="html">The date picker for selecting the patients date of birth.</Abstract>
+			<DeclaredIn>PatientInformationVC.h</DeclaredIn>
 			
-			<Declaration>@property NSDate *dob</Declaration>
+			<Declaration>@property (retain, nonatomic) IBOutlet UIDatePicker *dobSelector</Declaration>
 			
 			
-			<Anchor>//api/name/dob</Anchor>
+			<Anchor>//api/name/dobSelector</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PersonalInfo/setPatientID:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>PersonalInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PatientInformationVC/setPatientData:</TokenIdentifier>
+			<Abstract type="html">The data object that stores the patient information needed by this application.</Abstract>
+			<DeclaredIn>PatientInformationVC.h</DeclaredIn>
 			
-			<Declaration>@property NSInteger patientID</Declaration>
+			<Declaration>@property (retain, strong) PersonalInfo *patientData</Declaration>
 			
 			
-			<Anchor>//api/name/patientID</Anchor>
+			<Anchor>//api/name/patientData</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PersonalInfo/patientID</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>PersonalInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PatientInformationVC/patientData</TokenIdentifier>
+			<Abstract type="html">The data object that stores the patient information needed by this application.</Abstract>
+			<DeclaredIn>PatientInformationVC.h</DeclaredIn>
 			
-			<Declaration>@property NSInteger patientID</Declaration>
+			<Declaration>@property (retain, strong) PersonalInfo *patientData</Declaration>
 			
 			
-			<Anchor>//api/name/patientID</Anchor>
+			<Anchor>//api/name/patientData</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PersonalInfo/patientID</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>PersonalInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PatientInformationVC/patientData</TokenIdentifier>
+			<Abstract type="html">The data object that stores the patient information needed by this application.</Abstract>
+			<DeclaredIn>PatientInformationVC.h</DeclaredIn>
 			
-			<Declaration>@property NSInteger patientID</Declaration>
+			<Declaration>@property (retain, strong) PersonalInfo *patientData</Declaration>
 			
 			
-			<Anchor>//api/name/patientID</Anchor>
+			<Anchor>//api/name/patientData</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PersonalInfo/setDefaults:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>PersonalInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PatientInformationVC/set_serverResponseData:</TokenIdentifier>
+			<Abstract type="html">The data queue used for the network response to build the value of the returned patient ID
+as determined by the remote database.</Abstract>
+			<DeclaredIn>PatientInformationVC.h</DeclaredIn>
 			
-			<Declaration>@property NSUserDefaults *defaults</Declaration>
+			<Declaration>@property (retain) NSMutableData *_serverResponseData</Declaration>
 			
 			
-			<Anchor>//api/name/defaults</Anchor>
+			<Anchor>//api/name/_serverResponseData</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PersonalInfo/defaults</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>PersonalInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PatientInformationVC/_serverResponseData</TokenIdentifier>
+			<Abstract type="html">The data queue used for the network response to build the value of the returned patient ID
+as determined by the remote database.</Abstract>
+			<DeclaredIn>PatientInformationVC.h</DeclaredIn>
 			
-			<Declaration>@property NSUserDefaults *defaults</Declaration>
+			<Declaration>@property (retain) NSMutableData *_serverResponseData</Declaration>
 			
 			
-			<Anchor>//api/name/defaults</Anchor>
+			<Anchor>//api/name/_serverResponseData</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PersonalInfo/defaults</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>PersonalInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/PatientInformationVC/_serverResponseData</TokenIdentifier>
+			<Abstract type="html">The data queue used for the network response to build the value of the returned patient ID
+as determined by the remote database.</Abstract>
+			<DeclaredIn>PatientInformationVC.h</DeclaredIn>
 			
-			<Declaration>@property NSUserDefaults *defaults</Declaration>
+			<Declaration>@property (retain) NSMutableData *_serverResponseData</Declaration>
 			
 			
-			<Anchor>//api/name/defaults</Anchor>
+			<Anchor>//api/name/_serverResponseData</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PersonalInfo/setPersonalData:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>PersonalInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/PatientInformationVC/initWithPersonalInformation:</TokenIdentifier>
+			<Abstract type="html">This method creates a viewcontroller that has the personal information object.  The object queries
+the device store user default settings and maintains the records.  This information is needed
+for building the initial view with patient information.</Abstract>
+			<DeclaredIn>PatientInformationVC.h</DeclaredIn>
 			
-			<Declaration>@property NSDictionary *personalData</Declaration>
-			
-			
-			<Anchor>//api/name/personalData</Anchor>
-            <NodeRef refid="16"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PersonalInfo/personalData</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>PersonalInfo.h</DeclaredIn>
-			
-			<Declaration>@property NSDictionary *personalData</Declaration>
-			
-			
-			<Anchor>//api/name/personalData</Anchor>
-            <NodeRef refid="16"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PersonalInfo/personalData</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>PersonalInfo.h</DeclaredIn>
-			
-			<Declaration>@property NSDictionary *personalData</Declaration>
-			
-			
-			<Anchor>//api/name/personalData</Anchor>
-            <NodeRef refid="16"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PersonalInfo/setAge:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>PersonalInfo.h</DeclaredIn>
-			
-			<Declaration>@property (readonly) NSInteger age</Declaration>
-			
-			
-			<Anchor>//api/name/age</Anchor>
-            <NodeRef refid="16"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PersonalInfo/age</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>PersonalInfo.h</DeclaredIn>
-			
-			<Declaration>@property (readonly) NSInteger age</Declaration>
-			
-			
-			<Anchor>//api/name/age</Anchor>
-            <NodeRef refid="16"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/PersonalInfo/age</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>PersonalInfo.h</DeclaredIn>
-			
-			<Declaration>@property (readonly) NSInteger age</Declaration>
-			
-			
-			<Anchor>//api/name/age</Anchor>
-            <NodeRef refid="16"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PersonalInfo/loadInformation</TokenIdentifier>
-			<Abstract type="html">Loads all the information from the application user defaults and stores them in
-local variables for quicker and easier access.</Abstract>
-			<DeclaredIn>PersonalInfo.h</DeclaredIn>
-			
-			<Declaration>- (void)loadInformation</Declaration>
-			
-			
-			<Anchor>//api/name/loadInformation</Anchor>
-            <NodeRef refid="16"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PersonalInfo/saveInformation</TokenIdentifier>
-			<Abstract type="html">Save all the local variables into the user defaults for the application.</Abstract>
-			<DeclaredIn>PersonalInfo.h</DeclaredIn>
-			
-			<Declaration>- (void)saveInformation</Declaration>
-			
-			
-			<Anchor>//api/name/saveInformation</Anchor>
-            <NodeRef refid="16"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PersonalInfo/dealloc</TokenIdentifier>
-			<Abstract type="html">This method is called as part of ARC.  It has been added because the data is saved
-to the user defaults location before the memory is released so that changes are not
-lost.</Abstract>
-			<DeclaredIn>PersonalInfo.h</DeclaredIn>
-			
-			<Declaration>- (void)dealloc</Declaration>
-			
-			
-			<Anchor>//api/name/dealloc</Anchor>
-            <NodeRef refid="16"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/PersonalInfo/calculateAgeUsingDate:</TokenIdentifier>
-			<Abstract type="html">This method calculates the ages using DateComponents.</Abstract>
-			<DeclaredIn>PersonalInfo.h</DeclaredIn>
-			
-			<Declaration>- (NSInteger)calculateAgeUsingDate:(NSDate *)currentDOB</Declaration>
+			<Declaration>- (id)initWithPersonalInformation:(PersonalInfo *)existingPatientData</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>currentDOB</Name>
-					<Abstract type="html">Todays date.  It is left to allow changes based on what is passed
-and not just restricted to todays date.</Abstract>
+					<Name>existingPatientData</Name>
+					<Abstract type="html">is the object that contains the patient name, DOB, and ID necessary
+for the VC to function.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">An integer value express based on years.</Abstract></ReturnValue>
-			<Anchor>//api/name/calculateAgeUsingDate:</Anchor>
+			<ReturnValue><Abstract type="html">A viewcontroller that will display the current patient information and allow editing.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithPersonalInformation:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PatientInformationVC/updateDOB</TokenIdentifier>
+			<Abstract type="html">This method updates the patient information  to reflect the date that is
+selected from the UIDatePicker object.</Abstract>
+			<DeclaredIn>PatientInformationVC.h</DeclaredIn>
+			
+			<Declaration>- (void)updateDOB</Declaration>
+			
+			
+			<Anchor>//api/name/updateDOB</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		

@@ -99,113 +99,110 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#import &quot;LocalDBResult.h&quot;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#import &quot;PersonalInfo.h&quot;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">typedef</span> BOOL(^DatabaseLock)(void);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="interface_d_b_manager.html">   20</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_d_b_manager.html">DBManager</a> : NSObject</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="interface_d_b_manager.html">   19</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_d_b_manager.html">DBManager</a> : NSObject</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">@property</span> (nonatomic) DatabaseLock databaseLocked;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="interface_d_b_manager.html#a2da5077535faad528421bada70121866">   29</a></span>&#160;<span class="keyword">@property</span> (nonatomic, strong) NSString *<a class="code" href="interface_d_b_manager.html#a2da5077535faad528421bada70121866">documentsDirectory</a>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="interface_d_b_manager.html#a725c101d5daf6506b59e0f7e06993982">   36</a></span>&#160;<span class="keyword">@property</span> (nonatomic, strong) NSString *<a class="code" href="interface_d_b_manager.html#a725c101d5daf6506b59e0f7e06993982">databaseFilename</a>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="interface_d_b_manager.html#a7206acae059164df418a2dbfaa7fbb13">   45</a></span>&#160;<span class="keyword">@property</span> NSInteger <a class="code" href="interface_d_b_manager.html#a7206acae059164df418a2dbfaa7fbb13">patientID</a>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="interface_d_b_manager.html#a921cb5034e1b4f79c6db59a1ce3fd579">   52</a></span>&#160;<span class="keyword">@property</span> BOOL <a class="code" href="interface_d_b_manager.html#a921cb5034e1b4f79c6db59a1ce3fd579">moreRowsToRetrieve</a>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="interface_d_b_manager.html#aa3315763d817eb3c10dac39ee530e2a8">   59</a></span>&#160;<span class="keyword">@property</span> sqlite3 *<a class="code" href="interface_d_b_manager.html#aa3315763d817eb3c10dac39ee530e2a8">database</a>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="interface_d_b_manager.html#a7299e28bee3f75281496adcebb46010b">   67</a></span>&#160;<span class="keyword">@property</span> NSInteger <a class="code" href="interface_d_b_manager.html#a7299e28bee3f75281496adcebb46010b">rowCount</a>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="interface_d_b_manager.html#a15a4e85cdc292d83ee3d8b28e43c43bc">   74</a></span>&#160;<span class="keyword">@property</span> (nonatomic, strong) NSString *<a class="code" href="interface_d_b_manager.html#a15a4e85cdc292d83ee3d8b28e43c43bc">databasePath</a>;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="interface_d_b_manager.html#ae714f21433f7593c722b727d2ae9c66a">   81</a></span>&#160;<span class="keyword">@property</span> sqlite3_stmt *<a class="code" href="interface_d_b_manager.html#ae714f21433f7593c722b727d2ae9c66a">sqlStatement</a>;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="interface_d_b_manager.html#ac89481f8c2c45def2b8edb2ba749df68">   88</a></span>&#160;<span class="keyword">@property</span> NSInteger <a class="code" href="interface_d_b_manager.html#ac89481f8c2c45def2b8edb2ba749df68">hrmeasurement</a>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
-<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="interface_d_b_manager.html#a12dcee066d2cecde8507a6529df92521">   95</a></span>&#160;<span class="keyword">@property</span> <span class="keywordtype">float</span> <a class="code" href="interface_d_b_manager.html#a12dcee066d2cecde8507a6529df92521">latitude</a>;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
-<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="interface_d_b_manager.html#aa881cd8f0940350240e3ae9a326e5563">  102</a></span>&#160;<span class="keyword">@property</span> <span class="keywordtype">float</span> <a class="code" href="interface_d_b_manager.html#aa881cd8f0940350240e3ae9a326e5563">longitude</a>;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
-<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="interface_d_b_manager.html#aff07ccf2439a2df78a5375303d5272a7">  110</a></span>&#160;<span class="keyword">@property</span> <span class="keywordtype">int</span> <a class="code" href="interface_d_b_manager.html#aff07ccf2439a2df78a5375303d5272a7">activityLevel</a>;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
-<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="interface_d_b_manager.html#a62443c98d9fade6ab9906836bf146b72">  117</a></span>&#160;<span class="keyword">@property</span> NSDate *<a class="code" href="interface_d_b_manager.html#a62443c98d9fade6ab9906836bf146b72">timestamp</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="interface_d_b_manager.html#a2da5077535faad528421bada70121866">   26</a></span>&#160;<span class="keyword">@property</span> (nonatomic, strong) NSString *<a class="code" href="interface_d_b_manager.html#a2da5077535faad528421bada70121866">documentsDirectory</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="interface_d_b_manager.html#a725c101d5daf6506b59e0f7e06993982">   33</a></span>&#160;<span class="keyword">@property</span> (nonatomic, strong) NSString *<a class="code" href="interface_d_b_manager.html#a725c101d5daf6506b59e0f7e06993982">databaseFilename</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="interface_d_b_manager.html#a7206acae059164df418a2dbfaa7fbb13">   42</a></span>&#160;<span class="keyword">@property</span> NSInteger <a class="code" href="interface_d_b_manager.html#a7206acae059164df418a2dbfaa7fbb13">patientID</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="interface_d_b_manager.html#a921cb5034e1b4f79c6db59a1ce3fd579">   49</a></span>&#160;<span class="keyword">@property</span> BOOL <a class="code" href="interface_d_b_manager.html#a921cb5034e1b4f79c6db59a1ce3fd579">moreRowsToRetrieve</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="interface_d_b_manager.html#aa3315763d817eb3c10dac39ee530e2a8">   56</a></span>&#160;<span class="keyword">@property</span> sqlite3 *<a class="code" href="interface_d_b_manager.html#aa3315763d817eb3c10dac39ee530e2a8">database</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="interface_d_b_manager.html#a7299e28bee3f75281496adcebb46010b">   64</a></span>&#160;<span class="keyword">@property</span> NSInteger <a class="code" href="interface_d_b_manager.html#a7299e28bee3f75281496adcebb46010b">rowCount</a>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="interface_d_b_manager.html#a15a4e85cdc292d83ee3d8b28e43c43bc">   71</a></span>&#160;<span class="keyword">@property</span> (nonatomic, strong) NSString *<a class="code" href="interface_d_b_manager.html#a15a4e85cdc292d83ee3d8b28e43c43bc">databasePath</a>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="interface_d_b_manager.html#ae714f21433f7593c722b727d2ae9c66a">   78</a></span>&#160;<span class="keyword">@property</span> sqlite3_stmt *<a class="code" href="interface_d_b_manager.html#ae714f21433f7593c722b727d2ae9c66a">sqlStatement</a>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="interface_d_b_manager.html#ac89481f8c2c45def2b8edb2ba749df68">   85</a></span>&#160;<span class="keyword">@property</span> NSInteger <a class="code" href="interface_d_b_manager.html#ac89481f8c2c45def2b8edb2ba749df68">hrmeasurement</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="interface_d_b_manager.html#a12dcee066d2cecde8507a6529df92521">   92</a></span>&#160;<span class="keyword">@property</span> <span class="keywordtype">float</span> <a class="code" href="interface_d_b_manager.html#a12dcee066d2cecde8507a6529df92521">latitude</a>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="interface_d_b_manager.html#aa881cd8f0940350240e3ae9a326e5563">   99</a></span>&#160;<span class="keyword">@property</span> <span class="keywordtype">float</span> <a class="code" href="interface_d_b_manager.html#aa881cd8f0940350240e3ae9a326e5563">longitude</a>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="interface_d_b_manager.html#aff07ccf2439a2df78a5375303d5272a7">  107</a></span>&#160;<span class="keyword">@property</span> <span class="keywordtype">int</span> <a class="code" href="interface_d_b_manager.html#aff07ccf2439a2df78a5375303d5272a7">activityLevel</a>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="interface_d_b_manager.html#a62443c98d9fade6ab9906836bf146b72">  114</a></span>&#160;<span class="keyword">@property</span> NSDate *<a class="code" href="interface_d_b_manager.html#a62443c98d9fade6ab9906836bf146b72">timestamp</a>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;-(instancetype) <a class="code" href="interface_d_b_manager.html#a0b390c8eab2577c30b2012e14ae821fe">init</a>;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;-(instancetype) initWithpatientID: (NSInteger) currentPatient;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;-(void)<a class="code" href="interface_d_b_manager.html#a2e49fe020ebf348c2768a4c4a3dcff00">copyDatabaseIntoDocumentsDirectory</a>;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;-(<a class="code" href="interface_local_d_b_result.html">LocalDBResult</a>*) <a class="code" href="interface_d_b_manager.html#ad6723b4f6b2191eddbcc4bb9bd361fcb">retrieveRow</a>;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;-(BOOL) <a class="code" href="interface_d_b_manager.html#a3c424eba24e9894922714f6154a6dc44">isDatabaseEmpty</a>;</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;-(void) <a class="code" href="interface_d_b_manager.html#a0c354ea19fc86923ba33e5dc32798ca8">insertDataIntoDB</a>;</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;+(NSString*) timeStampAsString: (NSDate*) selectedTime;</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;-(void) deleteRowAtTimeStamp: (NSString*) oldTimeStamp;</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;-(BOOL) openLocalDBWithSQLQueryIsSuccessful: (NSString*) query;</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;-(void) <a class="code" href="interface_d_b_manager.html#a768157b5a58c4e400ee1326fe804d2b8">closeLocalDBConnection</a>;</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;-(void) <a class="code" href="interface_d_b_manager.html#aa804a3f4200ce732321d814cf86dbd2b">purgeDatabase</a>;</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;<span class="keyword">@end</span></div>
-<div class="ttc" id="interface_d_b_manager_html_a7206acae059164df418a2dbfaa7fbb13"><div class="ttname"><a href="interface_d_b_manager.html#a7206acae059164df418a2dbfaa7fbb13">DBManager::patientID</a></div><div class="ttdeci">NSInteger patientID</div><div class="ttdef"><b>Definition:</b> DBManager.h:45</div></div>
-<div class="ttc" id="interface_d_b_manager_html_a12dcee066d2cecde8507a6529df92521"><div class="ttname"><a href="interface_d_b_manager.html#a12dcee066d2cecde8507a6529df92521">DBManager::latitude</a></div><div class="ttdeci">float latitude</div><div class="ttdef"><b>Definition:</b> DBManager.h:95</div></div>
-<div class="ttc" id="interface_d_b_manager_html_ad6723b4f6b2191eddbcc4bb9bd361fcb"><div class="ttname"><a href="interface_d_b_manager.html#ad6723b4f6b2191eddbcc4bb9bd361fcb">-[DBManager retrieveRow]</a></div><div class="ttdeci">LocalDBResult * retrieveRow()</div><div class="ttdef"><b>Definition:</b> DBManager.m:96</div></div>
-<div class="ttc" id="interface_d_b_manager_html_a768157b5a58c4e400ee1326fe804d2b8"><div class="ttname"><a href="interface_d_b_manager.html#a768157b5a58c4e400ee1326fe804d2b8">-[DBManager closeLocalDBConnection]</a></div><div class="ttdeci">void closeLocalDBConnection()</div><div class="ttdef"><b>Definition:</b> DBManager.m:208</div></div>
-<div class="ttc" id="interface_d_b_manager_html_aa3315763d817eb3c10dac39ee530e2a8"><div class="ttname"><a href="interface_d_b_manager.html#aa3315763d817eb3c10dac39ee530e2a8">DBManager::database</a></div><div class="ttdeci">sqlite3 * database</div><div class="ttdef"><b>Definition:</b> DBManager.h:59</div></div>
-<div class="ttc" id="interface_d_b_manager_html_a921cb5034e1b4f79c6db59a1ce3fd579"><div class="ttname"><a href="interface_d_b_manager.html#a921cb5034e1b4f79c6db59a1ce3fd579">DBManager::moreRowsToRetrieve</a></div><div class="ttdeci">BOOL moreRowsToRetrieve</div><div class="ttdef"><b>Definition:</b> DBManager.h:52</div></div>
-<div class="ttc" id="interface_d_b_manager_html_ae714f21433f7593c722b727d2ae9c66a"><div class="ttname"><a href="interface_d_b_manager.html#ae714f21433f7593c722b727d2ae9c66a">DBManager::sqlStatement</a></div><div class="ttdeci">sqlite3_stmt * sqlStatement</div><div class="ttdef"><b>Definition:</b> DBManager.h:81</div></div>
-<div class="ttc" id="interface_d_b_manager_html_a0c354ea19fc86923ba33e5dc32798ca8"><div class="ttname"><a href="interface_d_b_manager.html#a0c354ea19fc86923ba33e5dc32798ca8">-[DBManager insertDataIntoDB]</a></div><div class="ttdeci">void insertDataIntoDB()</div><div class="ttdef"><b>Definition:</b> DBManager.m:78</div></div>
-<div class="ttc" id="interface_d_b_manager_html_a15a4e85cdc292d83ee3d8b28e43c43bc"><div class="ttname"><a href="interface_d_b_manager.html#a15a4e85cdc292d83ee3d8b28e43c43bc">DBManager::databasePath</a></div><div class="ttdeci">NSString * databasePath</div><div class="ttdef"><b>Definition:</b> DBManager.h:74</div></div>
-<div class="ttc" id="interface_d_b_manager_html_a3c424eba24e9894922714f6154a6dc44"><div class="ttname"><a href="interface_d_b_manager.html#a3c424eba24e9894922714f6154a6dc44">-[DBManager isDatabaseEmpty]</a></div><div class="ttdeci">BOOL isDatabaseEmpty()</div><div class="ttdef"><b>Definition:</b> DBManager.m:142</div></div>
-<div class="ttc" id="interface_d_b_manager_html"><div class="ttname"><a href="interface_d_b_manager.html">DBManager</a></div><div class="ttdef"><b>Definition:</b> DBManager.h:20</div></div>
-<div class="ttc" id="interface_d_b_manager_html_aff07ccf2439a2df78a5375303d5272a7"><div class="ttname"><a href="interface_d_b_manager.html#aff07ccf2439a2df78a5375303d5272a7">DBManager::activityLevel</a></div><div class="ttdeci">int activityLevel</div><div class="ttdef"><b>Definition:</b> DBManager.h:110</div></div>
-<div class="ttc" id="interface_d_b_manager_html_aa881cd8f0940350240e3ae9a326e5563"><div class="ttname"><a href="interface_d_b_manager.html#aa881cd8f0940350240e3ae9a326e5563">DBManager::longitude</a></div><div class="ttdeci">float longitude</div><div class="ttdef"><b>Definition:</b> DBManager.h:102</div></div>
-<div class="ttc" id="interface_d_b_manager_html_a62443c98d9fade6ab9906836bf146b72"><div class="ttname"><a href="interface_d_b_manager.html#a62443c98d9fade6ab9906836bf146b72">DBManager::timestamp</a></div><div class="ttdeci">NSDate * timestamp</div><div class="ttdef"><b>Definition:</b> DBManager.h:117</div></div>
-<div class="ttc" id="interface_d_b_manager_html_aa804a3f4200ce732321d814cf86dbd2b"><div class="ttname"><a href="interface_d_b_manager.html#aa804a3f4200ce732321d814cf86dbd2b">-[DBManager purgeDatabase]</a></div><div class="ttdeci">void purgeDatabase()</div><div class="ttdef"><b>Definition:</b> DBManager.m:214</div></div>
-<div class="ttc" id="interface_d_b_manager_html_a2da5077535faad528421bada70121866"><div class="ttname"><a href="interface_d_b_manager.html#a2da5077535faad528421bada70121866">DBManager::documentsDirectory</a></div><div class="ttdeci">NSString * documentsDirectory</div><div class="ttdef"><b>Definition:</b> DBManager.h:29</div></div>
-<div class="ttc" id="interface_d_b_manager_html_a7299e28bee3f75281496adcebb46010b"><div class="ttname"><a href="interface_d_b_manager.html#a7299e28bee3f75281496adcebb46010b">DBManager::rowCount</a></div><div class="ttdeci">NSInteger rowCount</div><div class="ttdef"><b>Definition:</b> DBManager.h:67</div></div>
-<div class="ttc" id="interface_d_b_manager_html_ac89481f8c2c45def2b8edb2ba749df68"><div class="ttname"><a href="interface_d_b_manager.html#ac89481f8c2c45def2b8edb2ba749df68">DBManager::hrmeasurement</a></div><div class="ttdeci">NSInteger hrmeasurement</div><div class="ttdef"><b>Definition:</b> DBManager.h:88</div></div>
-<div class="ttc" id="interface_d_b_manager_html_a2e49fe020ebf348c2768a4c4a3dcff00"><div class="ttname"><a href="interface_d_b_manager.html#a2e49fe020ebf348c2768a4c4a3dcff00">-[DBManager copyDatabaseIntoDocumentsDirectory]</a></div><div class="ttdeci">void copyDatabaseIntoDocumentsDirectory()</div><div class="ttdef"><b>Definition:</b> DBManager.m:60</div></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;-(instancetype) <a class="code" href="interface_d_b_manager.html#a0b390c8eab2577c30b2012e14ae821fe">init</a>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;-(instancetype) initWithpatientID: (NSInteger) currentPatient;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;-(void)<a class="code" href="interface_d_b_manager.html#a2e49fe020ebf348c2768a4c4a3dcff00">copyDatabaseIntoDocumentsDirectory</a>;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;-(<a class="code" href="interface_local_d_b_result.html">LocalDBResult</a>*) <a class="code" href="interface_d_b_manager.html#ad6723b4f6b2191eddbcc4bb9bd361fcb">retrieveRow</a>;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;-(BOOL) <a class="code" href="interface_d_b_manager.html#a3c424eba24e9894922714f6154a6dc44">isDatabaseEmpty</a>;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;-(void) <a class="code" href="interface_d_b_manager.html#a0c354ea19fc86923ba33e5dc32798ca8">insertDataIntoDB</a>;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;+(NSString*) timeStampAsString: (NSDate*) selectedTime;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;-(void) deleteRowAtTimeStamp: (NSString*) oldTimeStamp;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;-(BOOL) openLocalDBWithSQLQueryIsSuccessful: (NSString*) query;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;-(void) <a class="code" href="interface_d_b_manager.html#a768157b5a58c4e400ee1326fe804d2b8">closeLocalDBConnection</a>;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;-(void) <a class="code" href="interface_d_b_manager.html#aa804a3f4200ce732321d814cf86dbd2b">purgeDatabase</a>;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;<span class="keyword">@end</span></div>
+<div class="ttc" id="interface_d_b_manager_html_a7206acae059164df418a2dbfaa7fbb13"><div class="ttname"><a href="interface_d_b_manager.html#a7206acae059164df418a2dbfaa7fbb13">DBManager::patientID</a></div><div class="ttdeci">NSInteger patientID</div><div class="ttdef"><b>Definition:</b> DBManager.h:42</div></div>
+<div class="ttc" id="interface_d_b_manager_html_a12dcee066d2cecde8507a6529df92521"><div class="ttname"><a href="interface_d_b_manager.html#a12dcee066d2cecde8507a6529df92521">DBManager::latitude</a></div><div class="ttdeci">float latitude</div><div class="ttdef"><b>Definition:</b> DBManager.h:92</div></div>
+<div class="ttc" id="interface_d_b_manager_html_ad6723b4f6b2191eddbcc4bb9bd361fcb"><div class="ttname"><a href="interface_d_b_manager.html#ad6723b4f6b2191eddbcc4bb9bd361fcb">-[DBManager retrieveRow]</a></div><div class="ttdeci">LocalDBResult * retrieveRow()</div><div class="ttdef"><b>Definition:</b> DBManager.m:90</div></div>
+<div class="ttc" id="interface_d_b_manager_html_a768157b5a58c4e400ee1326fe804d2b8"><div class="ttname"><a href="interface_d_b_manager.html#a768157b5a58c4e400ee1326fe804d2b8">-[DBManager closeLocalDBConnection]</a></div><div class="ttdeci">void closeLocalDBConnection()</div><div class="ttdef"><b>Definition:</b> DBManager.m:202</div></div>
+<div class="ttc" id="interface_d_b_manager_html_aa3315763d817eb3c10dac39ee530e2a8"><div class="ttname"><a href="interface_d_b_manager.html#aa3315763d817eb3c10dac39ee530e2a8">DBManager::database</a></div><div class="ttdeci">sqlite3 * database</div><div class="ttdef"><b>Definition:</b> DBManager.h:56</div></div>
+<div class="ttc" id="interface_d_b_manager_html_a921cb5034e1b4f79c6db59a1ce3fd579"><div class="ttname"><a href="interface_d_b_manager.html#a921cb5034e1b4f79c6db59a1ce3fd579">DBManager::moreRowsToRetrieve</a></div><div class="ttdeci">BOOL moreRowsToRetrieve</div><div class="ttdef"><b>Definition:</b> DBManager.h:49</div></div>
+<div class="ttc" id="interface_d_b_manager_html_ae714f21433f7593c722b727d2ae9c66a"><div class="ttname"><a href="interface_d_b_manager.html#ae714f21433f7593c722b727d2ae9c66a">DBManager::sqlStatement</a></div><div class="ttdeci">sqlite3_stmt * sqlStatement</div><div class="ttdef"><b>Definition:</b> DBManager.h:78</div></div>
+<div class="ttc" id="interface_d_b_manager_html_a0c354ea19fc86923ba33e5dc32798ca8"><div class="ttname"><a href="interface_d_b_manager.html#a0c354ea19fc86923ba33e5dc32798ca8">-[DBManager insertDataIntoDB]</a></div><div class="ttdeci">void insertDataIntoDB()</div><div class="ttdef"><b>Definition:</b> DBManager.m:72</div></div>
+<div class="ttc" id="interface_d_b_manager_html_a15a4e85cdc292d83ee3d8b28e43c43bc"><div class="ttname"><a href="interface_d_b_manager.html#a15a4e85cdc292d83ee3d8b28e43c43bc">DBManager::databasePath</a></div><div class="ttdeci">NSString * databasePath</div><div class="ttdef"><b>Definition:</b> DBManager.h:71</div></div>
+<div class="ttc" id="interface_d_b_manager_html_a3c424eba24e9894922714f6154a6dc44"><div class="ttname"><a href="interface_d_b_manager.html#a3c424eba24e9894922714f6154a6dc44">-[DBManager isDatabaseEmpty]</a></div><div class="ttdeci">BOOL isDatabaseEmpty()</div><div class="ttdef"><b>Definition:</b> DBManager.m:136</div></div>
+<div class="ttc" id="interface_d_b_manager_html"><div class="ttname"><a href="interface_d_b_manager.html">DBManager</a></div><div class="ttdef"><b>Definition:</b> DBManager.h:19</div></div>
+<div class="ttc" id="interface_d_b_manager_html_aff07ccf2439a2df78a5375303d5272a7"><div class="ttname"><a href="interface_d_b_manager.html#aff07ccf2439a2df78a5375303d5272a7">DBManager::activityLevel</a></div><div class="ttdeci">int activityLevel</div><div class="ttdef"><b>Definition:</b> DBManager.h:107</div></div>
+<div class="ttc" id="interface_d_b_manager_html_aa881cd8f0940350240e3ae9a326e5563"><div class="ttname"><a href="interface_d_b_manager.html#aa881cd8f0940350240e3ae9a326e5563">DBManager::longitude</a></div><div class="ttdeci">float longitude</div><div class="ttdef"><b>Definition:</b> DBManager.h:99</div></div>
+<div class="ttc" id="interface_d_b_manager_html_a62443c98d9fade6ab9906836bf146b72"><div class="ttname"><a href="interface_d_b_manager.html#a62443c98d9fade6ab9906836bf146b72">DBManager::timestamp</a></div><div class="ttdeci">NSDate * timestamp</div><div class="ttdef"><b>Definition:</b> DBManager.h:114</div></div>
+<div class="ttc" id="interface_d_b_manager_html_aa804a3f4200ce732321d814cf86dbd2b"><div class="ttname"><a href="interface_d_b_manager.html#aa804a3f4200ce732321d814cf86dbd2b">-[DBManager purgeDatabase]</a></div><div class="ttdeci">void purgeDatabase()</div><div class="ttdef"><b>Definition:</b> DBManager.m:208</div></div>
+<div class="ttc" id="interface_d_b_manager_html_a2da5077535faad528421bada70121866"><div class="ttname"><a href="interface_d_b_manager.html#a2da5077535faad528421bada70121866">DBManager::documentsDirectory</a></div><div class="ttdeci">NSString * documentsDirectory</div><div class="ttdef"><b>Definition:</b> DBManager.h:26</div></div>
+<div class="ttc" id="interface_d_b_manager_html_a7299e28bee3f75281496adcebb46010b"><div class="ttname"><a href="interface_d_b_manager.html#a7299e28bee3f75281496adcebb46010b">DBManager::rowCount</a></div><div class="ttdeci">NSInteger rowCount</div><div class="ttdef"><b>Definition:</b> DBManager.h:64</div></div>
+<div class="ttc" id="interface_d_b_manager_html_ac89481f8c2c45def2b8edb2ba749df68"><div class="ttname"><a href="interface_d_b_manager.html#ac89481f8c2c45def2b8edb2ba749df68">DBManager::hrmeasurement</a></div><div class="ttdeci">NSInteger hrmeasurement</div><div class="ttdef"><b>Definition:</b> DBManager.h:85</div></div>
+<div class="ttc" id="interface_d_b_manager_html_a2e49fe020ebf348c2768a4c4a3dcff00"><div class="ttname"><a href="interface_d_b_manager.html#a2e49fe020ebf348c2768a4c4a3dcff00">-[DBManager copyDatabaseIntoDocumentsDirectory]</a></div><div class="ttdeci">void copyDatabaseIntoDocumentsDirectory()</div><div class="ttdef"><b>Definition:</b> DBManager.m:54</div></div>
 <div class="ttc" id="interface_d_b_manager_html_a0b390c8eab2577c30b2012e14ae821fe"><div class="ttname"><a href="interface_d_b_manager.html#a0b390c8eab2577c30b2012e14ae821fe">-[DBManager init]</a></div><div class="ttdeci">instancetype init()</div><div class="ttdef"><b>Definition:</b> DBManager.m:31</div></div>
 <div class="ttc" id="interface_local_d_b_result_html"><div class="ttname"><a href="interface_local_d_b_result.html">LocalDBResult</a></div><div class="ttdef"><b>Definition:</b> LocalDBResult.h:17</div></div>
-<div class="ttc" id="interface_d_b_manager_html_a725c101d5daf6506b59e0f7e06993982"><div class="ttname"><a href="interface_d_b_manager.html#a725c101d5daf6506b59e0f7e06993982">DBManager::databaseFilename</a></div><div class="ttdeci">NSString * databaseFilename</div><div class="ttdef"><b>Definition:</b> DBManager.h:36</div></div>
+<div class="ttc" id="interface_d_b_manager_html_a725c101d5daf6506b59e0f7e06993982"><div class="ttname"><a href="interface_d_b_manager.html#a725c101d5daf6506b59e0f7e06993982">DBManager::databaseFilename</a></div><div class="ttdeci">NSString * databaseFilename</div><div class="ttdef"><b>Definition:</b> DBManager.h:33</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 2 2014 16:13:12 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Dec 3 2014 08:20:26 for Medical Cyborgs by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

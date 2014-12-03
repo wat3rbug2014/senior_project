@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/MioGlobalLink.html">
+	<File path="Classes/LocalDBResult.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/MioGlobalLink</TokenIdentifier>
-			<Abstract type="html">This class is for the Wahoo Mio Global Link wristband device.  Device specific UUIDs for services
-and characteristics are here along with the execution path to obtain the desired data for the
-application.  Service and Characteristic UUIDs are defined in this header instead of gobally in
-an effort to reduce mental noise when reading the code.  The CBPeripheralDelegate is implemented
-so that the class can perform all the operations needed to maintain connection status and
-retrieval of the data.</Abstract>
-			<DeclaredIn>MioGlobalLink.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/LocalDBResult</TokenIdentifier>
+			<Abstract type="html">This is a simple data class that is used to pass around from the
+database to classes that are using it.  It was created to simplify
+string manipulation.</Abstract>
+			<DeclaredIn>LocalDBResult.h</DeclaredIn>
             
 			
 			<NodeRef refid="13"/>
@@ -18,329 +15,233 @@ retrieval of the data.</Abstract>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MioGlobalLink/setType:</TokenIdentifier>
-			<Abstract type="html">The device type as an enum of DeviceType.  See DeviceTypes.h for details.</Abstract>
-			<DeclaredIn>MioGlobalLink.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/LocalDBResult/setPatientID:</TokenIdentifier>
+			<Abstract type="html">The patientID that is used by the database.</Abstract>
+			<DeclaredIn>LocalDBResult.h</DeclaredIn>
 			
-			<Declaration>@property NSInteger type</Declaration>
+			<Declaration>@property NSInteger patientID</Declaration>
 			
 			
-			<Anchor>//api/name/type</Anchor>
+			<Anchor>//api/name/patientID</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MioGlobalLink/type</TokenIdentifier>
-			<Abstract type="html">The device type as an enum of DeviceType.  See DeviceTypes.h for details.</Abstract>
-			<DeclaredIn>MioGlobalLink.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/LocalDBResult/patientID</TokenIdentifier>
+			<Abstract type="html">The patientID that is used by the database.</Abstract>
+			<DeclaredIn>LocalDBResult.h</DeclaredIn>
 			
-			<Declaration>@property NSInteger type</Declaration>
+			<Declaration>@property NSInteger patientID</Declaration>
 			
 			
-			<Anchor>//api/name/type</Anchor>
+			<Anchor>//api/name/patientID</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/MioGlobalLink/type</TokenIdentifier>
-			<Abstract type="html">The device type as an enum of DeviceType.  See DeviceTypes.h for details.</Abstract>
-			<DeclaredIn>MioGlobalLink.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/LocalDBResult/patientID</TokenIdentifier>
+			<Abstract type="html">The patientID that is used by the database.</Abstract>
+			<DeclaredIn>LocalDBResult.h</DeclaredIn>
 			
-			<Declaration>@property NSInteger type</Declaration>
+			<Declaration>@property NSInteger patientID</Declaration>
 			
 			
-			<Anchor>//api/name/type</Anchor>
+			<Anchor>//api/name/patientID</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MioGlobalLink/setBatteryService:</TokenIdentifier>
-			<Abstract type="html">The CBService reference for use in detecting the battery level of the device.</Abstract>
-			<DeclaredIn>MioGlobalLink.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/LocalDBResult/setHeartRate:</TokenIdentifier>
+			<Abstract type="html">The heart rate of the patient as it was recorded by the database.</Abstract>
+			<DeclaredIn>LocalDBResult.h</DeclaredIn>
 			
-			<Declaration>@property (retain) CBService *batteryService</Declaration>
+			<Declaration>@property NSInteger heartRate</Declaration>
 			
 			
-			<Anchor>//api/name/batteryService</Anchor>
+			<Anchor>//api/name/heartRate</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MioGlobalLink/batteryService</TokenIdentifier>
-			<Abstract type="html">The CBService reference for use in detecting the battery level of the device.</Abstract>
-			<DeclaredIn>MioGlobalLink.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/LocalDBResult/heartRate</TokenIdentifier>
+			<Abstract type="html">The heart rate of the patient as it was recorded by the database.</Abstract>
+			<DeclaredIn>LocalDBResult.h</DeclaredIn>
 			
-			<Declaration>@property (retain) CBService *batteryService</Declaration>
+			<Declaration>@property NSInteger heartRate</Declaration>
 			
 			
-			<Anchor>//api/name/batteryService</Anchor>
+			<Anchor>//api/name/heartRate</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/MioGlobalLink/batteryService</TokenIdentifier>
-			<Abstract type="html">The CBService reference for use in detecting the battery level of the device.</Abstract>
-			<DeclaredIn>MioGlobalLink.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/LocalDBResult/heartRate</TokenIdentifier>
+			<Abstract type="html">The heart rate of the patient as it was recorded by the database.</Abstract>
+			<DeclaredIn>LocalDBResult.h</DeclaredIn>
 			
-			<Declaration>@property (retain) CBService *batteryService</Declaration>
+			<Declaration>@property NSInteger heartRate</Declaration>
 			
 			
-			<Anchor>//api/name/batteryService</Anchor>
+			<Anchor>//api/name/heartRate</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MioGlobalLink/setBatteryLvlChar:</TokenIdentifier>
-			<Abstract type="html">The CBCharacteristic reference for use in reading the battery level of the device.</Abstract>
-			<DeclaredIn>MioGlobalLink.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/LocalDBResult/setLatitude:</TokenIdentifier>
+			<Abstract type="html">The latitude of the patient that was recorded.  This value will not
+change much unless big changes happen.</Abstract>
+			<DeclaredIn>LocalDBResult.h</DeclaredIn>
 			
-			<Declaration>@property (retain) CBCharacteristic *batteryLvlChar</Declaration>
+			<Declaration>@property float latitude</Declaration>
 			
 			
-			<Anchor>//api/name/batteryLvlChar</Anchor>
+			<Anchor>//api/name/latitude</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MioGlobalLink/batteryLvlChar</TokenIdentifier>
-			<Abstract type="html">The CBCharacteristic reference for use in reading the battery level of the device.</Abstract>
-			<DeclaredIn>MioGlobalLink.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/LocalDBResult/latitude</TokenIdentifier>
+			<Abstract type="html">The latitude of the patient that was recorded.  This value will not
+change much unless big changes happen.</Abstract>
+			<DeclaredIn>LocalDBResult.h</DeclaredIn>
 			
-			<Declaration>@property (retain) CBCharacteristic *batteryLvlChar</Declaration>
+			<Declaration>@property float latitude</Declaration>
 			
 			
-			<Anchor>//api/name/batteryLvlChar</Anchor>
+			<Anchor>//api/name/latitude</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/MioGlobalLink/batteryLvlChar</TokenIdentifier>
-			<Abstract type="html">The CBCharacteristic reference for use in reading the battery level of the device.</Abstract>
-			<DeclaredIn>MioGlobalLink.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/LocalDBResult/latitude</TokenIdentifier>
+			<Abstract type="html">The latitude of the patient that was recorded.  This value will not
+change much unless big changes happen.</Abstract>
+			<DeclaredIn>LocalDBResult.h</DeclaredIn>
 			
-			<Declaration>@property (retain) CBCharacteristic *batteryLvlChar</Declaration>
+			<Declaration>@property float latitude</Declaration>
 			
 			
-			<Anchor>//api/name/batteryLvlChar</Anchor>
+			<Anchor>//api/name/latitude</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MioGlobalLink/setHeartRateService:</TokenIdentifier>
-			<Abstract type="html">The CBService reference for use in reading the heart rate detected by the device.</Abstract>
-			<DeclaredIn>MioGlobalLink.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/LocalDBResult/setLongitude:</TokenIdentifier>
+			<Abstract type="html">The longitude of the patient that was recorded.  This value will not
+change much unless big changes happen.</Abstract>
+			<DeclaredIn>LocalDBResult.h</DeclaredIn>
 			
-			<Declaration>@property (retain) CBService *heartRateService</Declaration>
+			<Declaration>@property float longitude</Declaration>
 			
 			
-			<Anchor>//api/name/heartRateService</Anchor>
+			<Anchor>//api/name/longitude</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MioGlobalLink/heartRateService</TokenIdentifier>
-			<Abstract type="html">The CBService reference for use in reading the heart rate detected by the device.</Abstract>
-			<DeclaredIn>MioGlobalLink.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/LocalDBResult/longitude</TokenIdentifier>
+			<Abstract type="html">The longitude of the patient that was recorded.  This value will not
+change much unless big changes happen.</Abstract>
+			<DeclaredIn>LocalDBResult.h</DeclaredIn>
 			
-			<Declaration>@property (retain) CBService *heartRateService</Declaration>
+			<Declaration>@property float longitude</Declaration>
 			
 			
-			<Anchor>//api/name/heartRateService</Anchor>
+			<Anchor>//api/name/longitude</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/MioGlobalLink/heartRateService</TokenIdentifier>
-			<Abstract type="html">The CBService reference for use in reading the heart rate detected by the device.</Abstract>
-			<DeclaredIn>MioGlobalLink.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/LocalDBResult/longitude</TokenIdentifier>
+			<Abstract type="html">The longitude of the patient that was recorded.  This value will not
+change much unless big changes happen.</Abstract>
+			<DeclaredIn>LocalDBResult.h</DeclaredIn>
 			
-			<Declaration>@property (retain) CBService *heartRateService</Declaration>
+			<Declaration>@property float longitude</Declaration>
 			
 			
-			<Anchor>//api/name/heartRateService</Anchor>
+			<Anchor>//api/name/longitude</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MioGlobalLink/setHeartRateChar:</TokenIdentifier>
-			<Abstract type="html">The CBCharacteristic reference for use in reading the heart rate value from the device.</Abstract>
-			<DeclaredIn>MioGlobalLink.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/LocalDBResult/setTimeStamp:</TokenIdentifier>
+			<Abstract type="html">The timestamp this data was recorded in the database.  It has date and
+time.  It follows the format of &apos;yyyy-mm-dd hh:mm:ss&apos;.  The hours are expressed
+in military time from 0-23.</Abstract>
+			<DeclaredIn>LocalDBResult.h</DeclaredIn>
 			
-			<Declaration>@property (retain) CBCharacteristic *heartRateChar</Declaration>
+			<Declaration>@property NSString *timeStamp</Declaration>
 			
 			
-			<Anchor>//api/name/heartRateChar</Anchor>
+			<Anchor>//api/name/timeStamp</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MioGlobalLink/heartRateChar</TokenIdentifier>
-			<Abstract type="html">The CBCharacteristic reference for use in reading the heart rate value from the device.</Abstract>
-			<DeclaredIn>MioGlobalLink.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/LocalDBResult/timeStamp</TokenIdentifier>
+			<Abstract type="html">The timestamp this data was recorded in the database.  It has date and
+time.  It follows the format of &apos;yyyy-mm-dd hh:mm:ss&apos;.  The hours are expressed
+in military time from 0-23.</Abstract>
+			<DeclaredIn>LocalDBResult.h</DeclaredIn>
 			
-			<Declaration>@property (retain) CBCharacteristic *heartRateChar</Declaration>
+			<Declaration>@property NSString *timeStamp</Declaration>
 			
 			
-			<Anchor>//api/name/heartRateChar</Anchor>
+			<Anchor>//api/name/timeStamp</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/MioGlobalLink/heartRateChar</TokenIdentifier>
-			<Abstract type="html">The CBCharacteristic reference for use in reading the heart rate value from the device.</Abstract>
-			<DeclaredIn>MioGlobalLink.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/LocalDBResult/timeStamp</TokenIdentifier>
+			<Abstract type="html">The timestamp this data was recorded in the database.  It has date and
+time.  It follows the format of &apos;yyyy-mm-dd hh:mm:ss&apos;.  The hours are expressed
+in military time from 0-23.</Abstract>
+			<DeclaredIn>LocalDBResult.h</DeclaredIn>
 			
-			<Declaration>@property (retain) CBCharacteristic *heartRateChar</Declaration>
+			<Declaration>@property NSString *timeStamp</Declaration>
 			
 			
-			<Anchor>//api/name/heartRateChar</Anchor>
+			<Anchor>//api/name/timeStamp</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MioGlobalLink/setBatteryLevel:</TokenIdentifier>
-			<Abstract type="html">The last known integer value of the battery percentage.  The default is 0 if the battery level is not
-read.</Abstract>
-			<DeclaredIn>MioGlobalLink.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/LocalDBResult/setActivityLevel:</TokenIdentifier>
+			<Abstract type="html">An integer value of the activity level based on patient age and heart rate.
+See DeviceConstantsAndStaticFunctions for a description.</Abstract>
+			<DeclaredIn>LocalDBResult.h</DeclaredIn>
 			
-			<Declaration>@property int batteryLevel</Declaration>
+			<Declaration>@property NSInteger activityLevel</Declaration>
 			
 			
-			<Anchor>//api/name/batteryLevel</Anchor>
+			<Anchor>//api/name/activityLevel</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MioGlobalLink/batteryLevel</TokenIdentifier>
-			<Abstract type="html">The last known integer value of the battery percentage.  The default is 0 if the battery level is not
-read.</Abstract>
-			<DeclaredIn>MioGlobalLink.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/LocalDBResult/activityLevel</TokenIdentifier>
+			<Abstract type="html">An integer value of the activity level based on patient age and heart rate.
+See DeviceConstantsAndStaticFunctions for a description.</Abstract>
+			<DeclaredIn>LocalDBResult.h</DeclaredIn>
 			
-			<Declaration>@property int batteryLevel</Declaration>
+			<Declaration>@property NSInteger activityLevel</Declaration>
 			
 			
-			<Anchor>//api/name/batteryLevel</Anchor>
+			<Anchor>//api/name/activityLevel</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/MioGlobalLink/batteryLevel</TokenIdentifier>
-			<Abstract type="html">The last known integer value of the battery percentage.  The default is 0 if the battery level is not
-read.</Abstract>
-			<DeclaredIn>MioGlobalLink.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/LocalDBResult/activityLevel</TokenIdentifier>
+			<Abstract type="html">An integer value of the activity level based on patient age and heart rate.
+See DeviceConstantsAndStaticFunctions for a description.</Abstract>
+			<DeclaredIn>LocalDBResult.h</DeclaredIn>
 			
-			<Declaration>@property int batteryLevel</Declaration>
-			
-			
-			<Anchor>//api/name/batteryLevel</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MioGlobalLink/setDevice:</TokenIdentifier>
-			<Abstract type="html">The CBPeripheral device that was discovered and used with this class.</Abstract>
-			<DeclaredIn>MioGlobalLink.h</DeclaredIn>
-			
-			<Declaration>@property (retain) CBPeripheral *device</Declaration>
+			<Declaration>@property NSInteger activityLevel</Declaration>
 			
 			
-			<Anchor>//api/name/device</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MioGlobalLink/device</TokenIdentifier>
-			<Abstract type="html">The CBPeripheral device that was discovered and used with this class.</Abstract>
-			<DeclaredIn>MioGlobalLink.h</DeclaredIn>
-			
-			<Declaration>@property (retain) CBPeripheral *device</Declaration>
-			
-			
-			<Anchor>//api/name/device</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/MioGlobalLink/device</TokenIdentifier>
-			<Abstract type="html">The CBPeripheral device that was discovered and used with this class.</Abstract>
-			<DeclaredIn>MioGlobalLink.h</DeclaredIn>
-			
-			<Declaration>@property (retain) CBPeripheral *device</Declaration>
-			
-			
-			<Anchor>//api/name/device</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MioGlobalLink/setDeviceManufacturer:</TokenIdentifier>
-			<Abstract type="html">The NSString value of the manufacturer as read from the device.</Abstract>
-			<DeclaredIn>MioGlobalLink.h</DeclaredIn>
-			
-			<Declaration>@property (retain) NSString *deviceManufacturer</Declaration>
-			
-			
-			<Anchor>//api/name/deviceManufacturer</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MioGlobalLink/deviceManufacturer</TokenIdentifier>
-			<Abstract type="html">The NSString value of the manufacturer as read from the device.</Abstract>
-			<DeclaredIn>MioGlobalLink.h</DeclaredIn>
-			
-			<Declaration>@property (retain) NSString *deviceManufacturer</Declaration>
-			
-			
-			<Anchor>//api/name/deviceManufacturer</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/MioGlobalLink/deviceManufacturer</TokenIdentifier>
-			<Abstract type="html">The NSString value of the manufacturer as read from the device.</Abstract>
-			<DeclaredIn>MioGlobalLink.h</DeclaredIn>
-			
-			<Declaration>@property (retain) NSString *deviceManufacturer</Declaration>
-			
-			
-			<Anchor>//api/name/deviceManufacturer</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MioGlobalLink/setCurrentHeartRate:</TokenIdentifier>
-			<Abstract type="html">The value of the last heart rate that was read.  Default is 0 if the heart rate has not been acquired.</Abstract>
-			<DeclaredIn>MioGlobalLink.h</DeclaredIn>
-			
-			<Declaration>@property NSInteger currentHeartRate</Declaration>
-			
-			
-			<Anchor>//api/name/currentHeartRate</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MioGlobalLink/currentHeartRate</TokenIdentifier>
-			<Abstract type="html">The value of the last heart rate that was read.  Default is 0 if the heart rate has not been acquired.</Abstract>
-			<DeclaredIn>MioGlobalLink.h</DeclaredIn>
-			
-			<Declaration>@property NSInteger currentHeartRate</Declaration>
-			
-			
-			<Anchor>//api/name/currentHeartRate</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/MioGlobalLink/currentHeartRate</TokenIdentifier>
-			<Abstract type="html">The value of the last heart rate that was read.  Default is 0 if the heart rate has not been acquired.</Abstract>
-			<DeclaredIn>MioGlobalLink.h</DeclaredIn>
-			
-			<Declaration>@property NSInteger currentHeartRate</Declaration>
-			
-			
-			<Anchor>//api/name/currentHeartRate</Anchor>
+			<Anchor>//api/name/activityLevel</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		

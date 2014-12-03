@@ -2,7 +2,7 @@ var searchData=
 [
   ['tablevcwithsounds',['TableVCWithSounds',['../interface_table_v_c_with_sounds.html',1,'']]],
   ['tablevcwithsounds_28_29',['TableVCWithSounds()',['../category_table_v_c_with_sounds_07_08.html',1,'']]],
-  ['timestamp',['timeStamp',['../interface_local_d_b_result.html#a7538fcbcfd150e5353d3d4e531bef2bc',1,'LocalDBResult::timeStamp()'],['../interface_d_b_manager.html#a62443c98d9fade6ab9906836bf146b72',1,'DBManager::timestamp()']]],
+  ['timestamp',['timestamp',['../interface_d_b_manager.html#a62443c98d9fade6ab9906836bf146b72',1,'DBManager::timestamp()'],['../interface_local_d_b_result.html#a7538fcbcfd150e5353d3d4e531bef2bc',1,'LocalDBResult::timeStamp()']]],
   ['timestampasstring_3a',['timeStampAsString:',['../interface_d_b_manager.html#a7c8d65202b11dbd5c926bc6a01c4259d',1,'DBManager']]],
   ['togglemonitoring_3a',['toggleMonitoring:',['../interface_home_screen_v_c.html#a7cda2112b655ee8a7b622fbfa2ea0d0f',1,'HomeScreenVC']]],
   ['togglerunbutton',['toggleRunButton',['../interface_home_screen_v_c.html#aad6f8311d7f241d28c255af76fea1c4b',1,'HomeScreenVC']]],

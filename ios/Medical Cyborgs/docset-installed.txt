@@ -1,4 +1,4 @@
 Documentation set was installed to Xcode!
 
 Path: /Users/douglas/Library/Developer/Shared/Documentation/DocSets/edu.uhcl.Medical-Cyborgs.docset
-Time: 2014-12-02 22:13:22 +0000
+Time: 2014-12-03 14:20:28 +0000
