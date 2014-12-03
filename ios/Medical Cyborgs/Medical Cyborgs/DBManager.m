@@ -38,12 +38,6 @@
         databaseFilename = dbFilename;
         [self copyDatabaseIntoDocumentsDirectory];
         databasePath = [self.documentsDirectory stringByAppendingPathComponent:self.databaseFilename];
-        _databaseLocked = ^{
-            
-            BOOL result = YES;
-            int dbHandler = sqlite3
-            return result;
-        };
     }
     return self;
 }
